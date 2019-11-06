@@ -5,22 +5,6 @@ body {
     font-family: 'Open Sans','Helvetica Neue',Arial,sans-serif;
 }
 
-a {
-    color: bg-blue;
-    -webkit-transition: all .35s;
-    -moz-transition: all .35s;
-    transition: all .35s;
-}
-
-a:hover,
-a:focus {
-    color: forestgreen;
-}
-
-p {
-    font-size: 16px;
-    line-height: 1.5;
-}
 
 header {
     position: relative;
@@ -100,7 +84,7 @@ header .header-content .header-content-inner p {
 }
 
 .content {
-    color: #fff;
+    color: #505050;
     background-color: #BEBEBE;
     padding: 90px 0;
 }
