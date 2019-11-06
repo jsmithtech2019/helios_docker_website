@@ -1,3 +1,9 @@
+/*
+ * #####################################################################
+ * ############            MAIN CSS FOR WEBSITE            #############
+ * #####################################################################
+ */
+
 html,
 body {
     width: 100%;
@@ -5,98 +11,21 @@ body {
     font-family: 'Open Sans','Helvetica Neue',Arial,sans-serif;
 }
 
-
-header {
-    position: relative;
-    width: 100%;
-    text-align: center;
-    color: #fff;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('/images/sunset_header.jpg');
-    min-height: 1px;
-    min-width: 1px;
-    background-position: center;
-    background-size: cover;
+/*
+ * #####################################################################
+ * ############          NAV BAR EXPAND ANIMATION          #############
+ * #####################################################################
+ */
+a {
+    color: bg-blue;
+    -webkit-transition: all .35s;
+    -moz-transition: all .35s;
+    transition: all .35s;
 }
 
-header .header-content {
-    position: relative;
-    width: 100%;
-    padding: 100px 15px 70px;
-    text-align: center;
-}
-
-header .header-content .header-content-inner h1 {
-    margin-top: 0;
-    margin-bottom: 20px;
-    font-size: 50px;
-    font-weight: 400;
-}
-
-header .header-content .header-content-inner p {
-    margin-bottom: 50px;
-    font-size: 16px;
-    font-weight: 300;
-    color: rgba(255,255,255,1);
-}
-
-@media(min-width:768px) {
-    header {
-        min-height: 100%;
-    }
-
-    header .header-content {
-        position: absolute;
-        top: 50%;
-        padding: 0 50px;
-        -webkit-transform: translateY(-50%);
-        -ms-transform: translateY(-50%);
-        transform: translateY(-50%);
-    }
-
-    header .header-content .header-content-inner {
-        margin-right: auto;
-        margin-left: auto;
-        max-width: 1000px;
-    }
-
-	header .header-content .header-content-inner h1 {
-    	font-size: 100px;
-		}
-
-    header .header-content .header-content-inner p {
-        margin-right: auto;
-        margin-left: auto;
-        max-width: 80%;
-        font-size: 18px;
-    }
-}
-
-.section-heading {
-    margin-top: 0;
-    margin-bottom: 20px;
-}
-
-.intro {
-	color: #fff;
-    background-color: #0E69A2;
-    padding: 70px 0;
-    text-align: center;
-}
-
-.content {
-    color: #505050;
-    background-color: #BEBEBE;
-    padding: 90px 0;
-}
-
-.content-2 {
-    color: #fff;
-    background-color: #222;
-}
-
-.content-3 {
-	padding: 90px 0 120px;
-	text-align: center;
+a:hover,
+a:focus {
+    color: forestgreen;
 }
 
 .promo,
@@ -106,7 +35,7 @@ header .header-content .header-content-inner p {
 .promo a:hover,
 .promo a:active {
     color: white;
-	text-shadow: 0px 0px 40px black;
+    text-shadow: 0px 0px 40px black;
     text-decoration: none;
 }
 
@@ -128,36 +57,11 @@ header .header-content .header-content-inner p {
     vertical-align: middle;
 }
 
-.page-footer {
-	text-align: center;
-	}
-
-.page-footer .contact {
-	padding: 40px 0;
-	background-color: #4682B4;
-	color: #fff;
-	}
-
-.page-footer .contact p {
-	font-size: 22px;
-	font-weight: 300;
-	}
-	
-.content-3 .glyphicon,	
-.page-footer .contact .glyphicon {
-	font-size: 32px;
-	font-weight: 700;
-	}
-
-.page-footer .small-print {
-	padding: 50px 0 40px;
-	font-weight: 300;
-	}
-
-.text-light {
-    color: rgba(255,255,255,.7);
-}
-
+/*
+ * #####################################################################
+ * ############            NAV BAR FORMATTING              #############
+ * #####################################################################
+ */
 .navbar-default {
     border-color: rgba(34,34,34,.05);
     background-color: #fff;
@@ -249,6 +153,174 @@ header .header-content .header-content-inner p {
     }
 }
 
+/*
+ * #####################################################################
+ * ############           PARAGRAPH TEXT FORMAT            #############
+ * #####################################################################
+ */
+p {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+/*
+ * #####################################################################
+ * ############             HEADER FORMATTING              #############
+ * #####################################################################
+ */
+header {
+    position: relative;
+    width: 100%;
+    text-align: center;
+    color: #fff;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('/images/sunset_header.jpg');
+    min-height: 1px;
+    min-width: 1px;
+    background-position: center;
+    background-size: cover;
+}
+
+header .header-content {
+    position: relative;
+    width: 100%;
+    padding: 100px 15px 70px;
+    text-align: center;
+}
+
+header .header-content .header-content-inner h1 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 50px;
+    font-weight: 400;
+}
+
+header .header-content .header-content-inner p {
+    margin-bottom: 50px;
+    font-size: 16px;
+    font-weight: 300;
+    color: rgba(255,255,255,1);
+}
+
+/*
+ * #####################################################################
+ * ############           MAIN IMAGE FORMATTING            #############
+ * #####################################################################
+ */
+@media(min-width:768px) {
+    header {
+        min-height: 100%;
+    }
+
+    header .header-content {
+        position: absolute;
+        top: 50%;
+        padding: 0 50px;
+        -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+        transform: translateY(-50%);
+    }
+
+    header .header-content .header-content-inner {
+        margin-right: auto;
+        margin-left: auto;
+        max-width: 1000px;
+    }
+
+    header .header-content .header-content-inner h1 {
+        font-size: 100px;
+    }
+
+    header .header-content .header-content-inner p {
+        margin-right: auto;
+        margin-left: auto;
+        max-width: 80%;
+        font-size: 18px;
+    }
+}
+
+/*
+ * #####################################################################
+ * ############         CONTENT FRAME FORMATTING           #############
+ * #####################################################################
+ */
+.section-heading {
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.intro {
+    color: #fff;
+    background-color: #0E69A2;
+    padding: 70px 0;
+    text-align: center;
+}
+
+.content {
+    color: #404040;
+    background-color: #BEBEBE;
+    padding: 90px 0;
+}
+
+.content-2 {
+    color: #fff;
+    background-color: #222;
+}
+
+.content-3 {
+    padding: 70px 0 120px;
+    text-align: center;
+}
+
+.content-4 {
+    padding: 25px 0 25px;
+    text-align: center;
+}
+
+.content-header {
+    padding: 50px 0 20px;
+    text-align: left;
+}
+
+/*
+ * #####################################################################
+ * ############             FOOTER FORMATTING              #############
+ * #####################################################################
+ */
+.page-footer {
+    text-align: center;
+}
+
+.page-footer .contact {
+    padding: 40px 0;
+    background-color: #4682B4;
+    color: #fff;
+}
+
+.page-footer .contact p {
+    font-size: 22px;
+    font-weight: 300;
+}
+
+.page-footer .small-print {
+    padding: 50px 0 40px;
+    font-weight: 300;
+}
+
+.content-3
+.page-footer .contact {
+    font-size: 32px;
+    font-weight: 700;
+}
+
+.text-light {
+    color: rgba(255,255,255,.7);
+}
+
+/*
+ * #####################################################################
+ * ############             BUTTON FORMATTING              #############
+ * #####################################################################
+ */
 .btn-default {
     border-color: #fff;
     color: #222;
@@ -355,7 +427,6 @@ fieldset[disabled] .btn-primary.active {
     background-color: #fff;
 }
 
-
 .btn {
     border-radius: 300px;
     text-transform: uppercase;
@@ -365,6 +436,11 @@ fieldset[disabled] .btn-primary.active {
     padding: 15px 30px;
 }
 
+/*
+ * #####################################################################
+ * ############             IMAGE FORMATTING               #############
+ * #####################################################################
+ */
 ::-moz-selection {
     text-shadow: none;
     color: #fff;
@@ -385,12 +461,4 @@ img::selection {
 img::-moz-selection {
     color: #fff;
     background: 0 0;
-}
-
-.text-primary {
-    color: #463E3F;
-}
-
-.bg-primary {
-    background-color: #463E3F;
 }
