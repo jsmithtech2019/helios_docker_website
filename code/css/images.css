@@ -1,0 +1,106 @@
+/*
+ * #####################################################################
+ * ############             IMAGE FORMATTING               #############
+ * #####################################################################
+ */
+::-moz-selection {
+    text-shadow: none;
+    color: #fff;
+    background: #222;
+}
+
+::selection {
+    text-shadow: none;
+    color: #fff;
+    background: #222;
+}
+
+img::selection {
+    color: #fff;
+    background: 0 0;
+}
+
+img::-moz-selection {
+    color: #fff;
+    background: 0 0;
+}
+
+/*
+ * #####################################################################
+ * ############           MAIN IMAGE FORMATTING            #############
+ * #####################################################################
+ */
+@media(min-width:768px) {
+    header {
+        min-height: 100%;
+    }
+
+    header .header-content {
+        position: absolute;
+        top: 50%;
+        padding: 0 50px;
+        -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+        transform: translateY(-50%);
+    }
+
+    header .header-content .header-content-inner {
+        margin-right: auto;
+        margin-left: auto;
+        max-width: 1000px;
+    }
+
+    header .header-content .header-content-inner h1 {
+        font-size: 100px;
+    }
+
+    header .header-content .header-content-inner p {
+        margin-right: auto;
+        margin-left: auto;
+        max-width: 80%;
+        font-size: 18px;
+    }
+}
+
+/*
+ * #####################################################################
+ * ############         CONTENT FRAME FORMATTING           #############
+ * #####################################################################
+ */
+.section-heading {
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.intro {
+    color: #fff;
+    background-color: #0E69A2;
+    padding: 70px 0;
+    text-align: center;
+}
+
+.content {
+    color: #404040;
+    background-color: #BEBEBE;
+    padding: 90px 0;
+}
+
+.content-2 {
+    color: #fff;
+    background-color: #222;
+}
+
+.content-3 {
+    padding: 70px 0 120px;
+    text-align: center;
+}
+
+.content-4 {
+    padding: 25px 0 25px;
+    text-align: center;
+}
+
+.content-header {
+    padding: 50px 0 20px;
+    text-align: left;
+}

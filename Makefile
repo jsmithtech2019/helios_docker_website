@@ -1,7 +1,7 @@
 # Makefile for Helios Website
 
 # Variables
-VERSION := 1
+#VERSION := 1
 
 help:	## Show this help.
 	@fgrep -h "##" $(MAKEFILE_LIST) | fgrep -v fgrep | sed -e 's/\\$$//' | sed -e 's/##//'
