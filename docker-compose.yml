@@ -1,4 +1,4 @@
-version: '3'
+version: '3.6'
 services:
 
   # Nginx Service
@@ -27,8 +27,8 @@ services:
       SERVICE_TAGS: dev
       SERVICE_NAME: mysql
     restart: unless-stopped
-    #volumes:
-    #  - ./mysql:/var/lib/mysql
+    volumes:
+      - ./db_data/:/docker-entrypoint-initdb.d
     networks:
       - app-network
 
