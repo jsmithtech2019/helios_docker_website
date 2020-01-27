@@ -1,11 +1,11 @@
 # Initialize tables
-CREATE TABLE CUSTOMERS (customer_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY, name TEXT, phone_number TEXT, license_plate TEXT NOT NULL, vehicle_type TEXT, vehicle_year INT, date TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP);
+CREATE TABLE ADMIN_DATA(name TEXT NOT NULL, phone TEXT, email TEXT NOT NULL, pass TEXT NOT NULL, employee_id TEXT NOT NULL);
 
-CREATE TABLE TRUCK_TESTS (test_number INT NOT NULL AUTO_INCREMENT PRIMARY KEY, customer_id INT NOT NULL, license_plate TEXT NOT NULL, completed BOOLEAN NOT NULL DEFAULT false, test_result TEXT, passfail BOOLEAN, date TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP);
+CREATE TABLE CUSTOMER_DATA(id INTEGER PRIMARY KEY AUTO_INCREMENT, name TEXT NOT NULL, phone TEXT NOT NULL, email TEXT, addr1 TEXT, addr2 TEXT, city TEXT, state TEXT, zip INTEGER, truckplate TEXT NOT NULL, trailerplate TEXT NOT NULL, timestamp TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP);
 
-CREATE TABLE TRAILER_TESTS (test_number INT NOT NULL AUTO_INCREMENT PRIMARY KEY, customer_id INT NOT NULL, license_plate TEXT NOT NULL, completed BOOLEAN NOT NULL DEFAULT false, test_result TEXT, passfail BOOLEAN, date TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP);
+CREATE TABLE TRUCK_TEST_DATA(id INTEGER PRIMARY KEY NOT NULL, module_id TEXT NOT NULL, employee_id TEXT NOT NULL, cust_phone TEXT NOT NULL, cust_email TEXT NOT NULL, test1_result INTEGER, test1_current REAL, test2_result INTEGER, test2_current REAL, test3_result INTEGER, test3_current REAL, test4_result INTEGER, test4_current REAL, timestamp TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP);
 
-CREATE TABLE TEST_RESULTS (customer_id INT NOT NULL PRIMARY KEY, license_plate TEXT NOT NULL, truck_result TEXT NOT NULL, truck_num_failed INT NOT NULL DEFAULT 0, trailer_result TEXT NOT NULL, trailer_num_failed INT NOT NULL DEFAULT 0, date TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP);
+CREATE TABLE TRAILER_TEST_DATA(id INTEGER PRIMARY KEY NOT NULL, module_id TEXT NOT NULL, employee_id TEXT NOT NULL, cust_phone TEXT NOT NULL, cust_email TEXT NOT NULL, test1_result INTEGER, test1_current REAL, test2_result INTEGER, test2_current REAL, test3_result INTEGER, test3_current REAL, test4_result INTEGER, test4_current REAL, timestamp TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP);
 
 # Fill customer database with seed values
-# INSERT INTO CUSTOMERS (name, phone_number, license_plate, vehicle_type, vehicle_year) VALUES ('test', '+1 000 000 0000', '000-AAA', 'Toyota Tacoma TRD Off-Road', 2019);
+INSERT INTO CUSTOMER_DATA (name, phone, email, addr1, addr2, city, state, zip, truckplate, trailerplate) VALUES ('test', '+1 000 000 0000', 'test@mail.com', 'address 1', 'apt', 'city', 'texas', 00000, '000-AAA', 'ZZZ-111');
