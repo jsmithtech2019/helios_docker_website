@@ -27,9 +27,8 @@ services:
       SERVICE_TAGS: dev
       SERVICE_NAME: mysql
     restart: unless-stopped
-    # volumes:
-    #   - dbdata:/var/lib/mysql
-    #   - ./mysql/my.cnf:/etc/mysql/my.cnf
+    #volumes:
+    #  - ./mysql:/var/lib/mysql
     networks:
       - app-network
 
@@ -37,8 +36,3 @@ services:
 networks:
   app-network:
     driver: bridge
-
-#Volumes
-volumes:
-  dbdata:
-    driver: local
