@@ -3,6 +3,9 @@ services:
 
   # Nginx Service
   nginx:
+    build:
+      context: .
+      dockerfile: Dockerfile.nginx
     image: nginx:latest
     container_name: nginx
     ports:
@@ -10,8 +13,8 @@ services:
       - "80:80"
       - "443:443"
     restart: unless-stopped
-    volumes:
-      - ./code:/usr/share/nginx/html/
+    #volumes:
+    #  - ./code:/usr/share/nginx/html/
     networks:
       - app-network
 
