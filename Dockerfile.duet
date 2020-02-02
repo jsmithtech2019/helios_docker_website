@@ -1,0 +1,21 @@
+# Django DUET Api Dockerfile
+# Build using Python 3.7 docker image.
+FROM python:3.7
+
+# Force stdout and stderr streams to print unbuffered rather than spooling.
+ENV PYTHONUNBUFFERED 1
+
+# Create the DUET file directory
+RUN mkdir /duet
+
+# Add the endpoint files to the DUET directory.
+COPY duet/ /duet/
+
+# Specify the present working directory for remaining build steps.
+WORKDIR /duet
+
+# Install Python requirements for DUET.
+RUN pip install --upgrade pip && pip install -r requirements.txt
+
+# Specify entrypoint command for container execution
+ENTRYPOINT ["executable", "param1", "param2"]
