@@ -1,0 +1,9 @@
+# Build using base MySQL docker image.
+FROM mysql
+
+# Copy seed data into initdb. This will autogen database/tables.
+COPY db_data /docker-entrypoint-initdb.d
+
+# Expose the default MySQL port 3306.
+# Likely not needed as it is only internal comms but will keep currently.
+EXPOSE 3306

@@ -1,26 +1,27 @@
-version: '3.6'
-services:
+# Specify docker-compose version.
+version: '3'
 
+# Specify containers that will be built.
+services:
   # Nginx Service
   nginx:
     build:
-      context: .
+      context: ./dockerfiles
       dockerfile: Dockerfile.nginx
-    image: nginx:latest
     container_name: nginx
     ports:
       - "8080:80"
       - "80:80"
       - "443:443"
-    restart: unless-stopped
-    #volumes:
-    #  - ./code:/usr/share/nginx/html/
+    restart: always
     networks:
-      - app-network
+      - hitch-network
 
   # MySQL Service
   mysql:
-    image: mysql:latest
+    build:
+      context: ./dockerfiles
+      dockerfile: Dockerfile.mysql
     container_name: db
     ports:
       - "3306:3306"
@@ -29,13 +30,25 @@ services:
       MYSQL_ROOT_PASSWORD: helios
       SERVICE_TAGS: dev
       SERVICE_NAME: mysql
-    restart: unless-stopped
-    volumes:
-      - ./db_data/:/docker-entrypoint-initdb.d
+    restart: always
+    depends_on:
+      - nginx
     networks:
-      - app-network
+      - hitch-network
 
-#Docker Networks
+  # DUET Service
+  # duet:
+  #   build:
+  #     context: ./dockerfiles
+  #     dockerfile: Dockerfile.duet
+  #   container_name: duet
+  #   restart: always
+  #   depends_on:
+  #     - nginx
+  #   networks:
+  #     - hitch-network
+
+# Specify docker networks for container communication.
 networks:
-  app-network:
+  hitch-network:
     driver: bridge
