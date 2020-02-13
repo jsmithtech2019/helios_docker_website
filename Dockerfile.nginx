@@ -6,6 +6,7 @@ RUN rm -rf /etc/nginx/conf.d/default.conf
 
 # Move custom NGINX configuration file into configuration directory.
 COPY conf/default.conf /etc/nginx/conf.d/default.conf
+COPY conf/nginx.conf /etc/nginx/nginx.conf
 
 # Copy HTML/CSS/Js and styling into HTML directory to be hosted.
 COPY code /usr/share/nginx/html

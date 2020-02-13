@@ -9,7 +9,7 @@ help:	## Show this help.
 build: ## Rebuild the containers.
 	docker-compose build
 
-run:	## Start the containers.
+up:	## Start the containers.
 	docker-compose up
 
 bash:	## Exec into the nginx container.
