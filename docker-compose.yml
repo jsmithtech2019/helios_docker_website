@@ -6,21 +6,25 @@ services:
   # Nginx Service
   nginx:
     build:
-      context: ./dockerfiles
+      context: .
       dockerfile: Dockerfile.nginx
     container_name: nginx
     ports:
       - "8080:80"
       - "80:80"
       - "443:443"
+    # TODO: remove this for prod.
+    extra_hosts:
+      - "duet.helioscapstone.com:127.0.0.1"
     restart: always
-    networks:
-      - hitch-network
+    network_mode: "bridge"
+    #networks:
+      #- hitch-network
 
   # MySQL Service
   mysql:
     build:
-      context: ./dockerfiles
+      context: .
       dockerfile: Dockerfile.mysql
     container_name: db
     ports:
@@ -33,22 +37,26 @@ services:
     restart: always
     depends_on:
       - nginx
-    networks:
-      - hitch-network
+    network_mode: "bridge"
+    #networks:
+     # - hitch-network
 
   # DUET Service
-  # duet:
-  #   build:
-  #     context: ./dockerfiles
-  #     dockerfile: Dockerfile.duet
-  #   container_name: duet
-  #   restart: always
-  #   depends_on:
-  #     - nginx
-  #   networks:
-  #     - hitch-network
+  duet:
+    build:
+      context: .
+      dockerfile: Dockerfile.duet
+    container_name: duet
+    restart: always
+    ports:
+      - "5000:5000"
+    depends_on:
+      - nginx
+    network_mode: "bridge"
+    #networks:
+     # - hitch-network
 
 # Specify docker networks for container communication.
-networks:
-  hitch-network:
-    driver: bridge
+#networks:
+#  hitch-network:
+#    driver: bridge
