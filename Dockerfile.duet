@@ -6,4 +6,4 @@ FROM python:3.7
 ENV PYTHONUNBUFFERED 1
 
 # Install Python requirements for DUET.
-RUN pip install flask flask_api mysql-connector-python
+RUN pip install flask flask_api mysql-connector-python json

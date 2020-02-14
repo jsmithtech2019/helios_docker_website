@@ -1,4 +1,3 @@
-// Expected request body by DUET
 {
   "application": "application name",
   "version": "controller application version",
