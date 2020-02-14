@@ -1,0 +1,78 @@
+// Expected request body by DUET
+{
+  "application": "application name",
+  "version": "controller application version",
+  "releasedate": "release date of application",
+  "date": "current date",
+  "time": "time that testing occured",
+  "dealership": {
+    "id": "dealership UUID",
+    "name": "dealership name"
+  },
+  "employee": {
+    "id": "employee id",
+    "email": "employee hashed email",
+    "password": "employee hashed password",
+    "phone": "employee hashed phone number",
+    "module": "module uuid"
+  },
+  "customer": {
+    "name": "customer name",
+    "phone": "customer phone number",
+    "email": "customer email address",
+    "addr1": "customer address 1",
+    "addr2": "customer address 2",
+    "city": "customer city",
+    "state": "customer state",
+    "zip": "customer zip code",
+    "truck": "truck license plate",
+    "trailer": "trailer license plate"
+  },
+  "results": {
+    "truck": [
+      {
+        "test": "test name (ie left turn signal)",
+        "value": "boolean pass fail",
+        "current": "current value measured"
+      },
+      {
+        "test": "test name (ie left turn signal)",
+        "value": "boolean pass fail",
+        "current": "current value measured"
+      },
+      {
+        "test": "test name (ie left turn signal)",
+        "value": "boolean pass fail",
+        "current": "current value measured"
+      },
+      {
+        "test": "test name (ie left turn signal)",
+        "value": "boolean pass fail",
+        "current": "current value measured"
+      }
+    ],
+    "trailer": [
+      {
+        "test": "test name (ie left turn signal)",
+        "value": "boolean pass fail",
+        "current": "current value measured"
+      },
+      {
+        "test": "test name (ie left turn signal)",
+        "value": "boolean pass fail",
+        "current": "current value measured"
+      },
+      {
+        "test": "test name (ie left turn signal)",
+        "value": "boolean pass fail",
+        "current": "current value measured"
+      },
+      {
+        "test": "test name (ie left turn signal)",
+        "value": "boolean pass fail",
+        "current": "current value measured"
+      }
+    ],
+    "pass": "boolean overall pass/fail"
+  }
+}
