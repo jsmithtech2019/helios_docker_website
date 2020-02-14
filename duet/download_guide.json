@@ -3,6 +3,14 @@
   "date": "current date",
   "time": "time time that response was sent",
   "recieved": "time that data request was received",
+  "customer": "which customer was requested",
+  "truckplate": "which truck license plate was requested",
+  "trailerplate": "which trailer license plate was requested",
+  "phone": "which phone number was requested"
+}
+
+// Response to download request format
+{
   "request": {
     "customer": "which customer was requested",
     "truckplate": "which truck license plate was requested",
@@ -36,7 +44,8 @@
               "result": "test result",
               "current": "test current"
             }
-          ]
+          ],
+          "pass": "boolean overall pass/fail"
         }
       ],
       "timestamp1": [
@@ -64,7 +73,37 @@
               "result": "test result",
               "current": "test current"
             }
-          ]
+          ],
+          "pass": "boolean overall pass/fail"
+        }
+      ],
+      "timestamp2": [
+        {
+          "test1": [
+            {
+              "result": "test result",
+              "current": "test current"
+            }
+          ],
+          "test2": [
+            {
+              "result": "test result",
+              "current": "test current"
+            }
+          ],
+          "test3": [
+            {
+              "result": "test result",
+              "current": "test current"
+            }
+          ],
+          "test4": [
+            {
+              "result": "test result",
+              "current": "test current"
+            }
+          ],
+          "pass": "boolean overall pass/fail"
         }
       ]
     }
@@ -96,7 +135,8 @@
               "result": "test result",
               "current": "test current"
             }
-          ]
+          ],
+          "pass": "boolean overall pass/fail"
         }
       ],
       "timestamp1": [
@@ -124,90 +164,11 @@
               "result": "test result",
               "current": "test current"
             }
-          ]
+          ],
+          "pass": "boolean overall pass/fail"
         }
       ]
     }
   ]
 }
 
-
-
-// Response to download request format
-{
-  "application": "application name",
-  "version": "controller application version",
-  "releasedate": "release date of application",
-  "date": "current date",
-  "time": "time that testing occured",
-  "dealership": {
-    "id": "dealership UUID",
-    "name": "dealership name"
-  },
-  "employee": {
-    "id": "employee id",
-    "email": "employee hashed email",
-    "password": "employee hashed password",
-    "phone": "employee hashed phone number",
-    "module": "module uuid"
-  },
-  "customer": {
-    "name": "customer name",
-    "phone": "customer phone number",
-    "email": "customer email address",
-    "addr1": "customer address 1",
-    "addr2": "customer address 2",
-    "city": "customer city",
-    "state": "customer state",
-    "zip": "customer zip code",
-    "truck": "truck license plate",
-    "trailer": "trailer license plate"
-  },
-  "results": {
-    "truck": [
-      {
-        "test": "test name (ie left turn signal)",
-        "value": "boolean pass fail",
-        "current": "current value measured"
-      },
-      {
-        "test": "test name (ie left turn signal)",
-        "value": "boolean pass fail",
-        "current": "current value measured"
-      },
-      {
-        "test": "test name (ie left turn signal)",
-        "value": "boolean pass fail",
-        "current": "current value measured"
-      },
-      {
-        "test": "test name (ie left turn signal)",
-        "value": "boolean pass fail",
-        "current": "current value measured"
-      }
-    ],
-    "trailer": [
-      {
-        "test": "test name (ie left turn signal)",
-        "value": "boolean pass fail",
-        "current": "current value measured"
-      },
-      {
-        "test": "test name (ie left turn signal)",
-        "value": "boolean pass fail",
-        "current": "current value measured"
-      },
-      {
-        "test": "test name (ie left turn signal)",
-        "value": "boolean pass fail",
-        "current": "current value measured"
-      },
-      {
-        "test": "test name (ie left turn signal)",
-        "value": "boolean pass fail",
-        "current": "current value measured"
-      }
-    ],
-    "pass": "boolean overall pass/fail"
-  }
-}
