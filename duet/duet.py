@@ -3,14 +3,35 @@ from flask_api import FlaskAPI, status, exceptions
 import mysql.connector
 import json
 
-app = FlaskAPI(__name__)
+duet = FlaskAPI(__name__)
 
-@app.route("/hello-world")
-def hello_world(dealership):
+@duet.route('/hello-world')
+def hello_world():
     return 'Hello world from DUET!'
 
+@duet.route('/sqltest/', methods=['POST'])
+def sql_test():
+    # Open MySQL connection
+    conn = mysql.connector.connect(host='db',database='hitch',password='helios')
+    cursor = conn.cursor()
+
+    # Get name from POST
+    name = str(request.data.get('text', ''))
+
+    # Execute query
+    cursor.execute('INSERT INTO ADMIN_DATA (name, email, pass, employee_id) VALUES ("{}", "test", "pass", "id");'.format(name))
+
+    # Get values and close connection
+    #c = cursor.fetchall()
+    conn.commit()
+    cursor.close()
+    conn.close()
+
+    return '', status.HTTP_201_CREATED
+
+
 # This is how the endpoint will receive data from controller applications
-@app.route('/upload/', methods=['POST'])
+@duet.route('/upload/', methods=['POST'])
 def upload_data():
     # Check if valid JSON
     if not request.is_json:
@@ -26,6 +47,14 @@ def upload_data():
     # Parse Employee information
     employee_check(request.json['employee'])
 
+    # Basic Mysql connection setup
+    # import mysql.connector
+    # conn = mysql.connector.connect(host='db',database='hitch',password='helios')
+    # cursor = conn.cursor()
+    # cursor.execute('SHOW TABLES;')
+    # c = cursor.fetchall()
+    # print(c)
+
     ## At this point everything is good, parse and evaluate
     # Parse customer information
     customer = request.json['customer']
@@ -39,7 +68,7 @@ def upload_data():
     return '', status.HTTP_201_CREATED
 
 # Returns test results for specified customer in JSON
-@app.route('/download/', methods=['POST'])
+@duet.route('/download/', methods=['POST'])
 def download_data():
     return '', status.HTTP_202_ACCEPTED
 
@@ -77,7 +106,7 @@ def employee_check(data):
     #    return '', status.HTTP_401_UNAUTHORIZED
 
 if __name__ == "__main__":
-    app.run(debug=True, port=5000)
+    duet.run(debug=True, port=5000)
 
 
 
@@ -87,7 +116,7 @@ if __name__ == "__main__":
 #         'text': notes[key]
 #     }
 
-# @app.route("/", methods=['GET', 'POST'])
+# @duet.route("/", methods=['GET', 'POST'])
 # def notes_list():
 #     """
 #     List or create notes.
@@ -102,7 +131,7 @@ if __name__ == "__main__":
 #     return [note_repr(idx) for idx in sorted(notes.keys())]
 
 
-# @app.route("/<int:key>/", methods=['GET', 'PUT', 'DELETE'])
+# @duet.route("/<int:key>/", methods=['GET', 'PUT', 'DELETE'])
 # def notes_detail(key):
 #     """
 #     Retrieve, update or delete note instances.
