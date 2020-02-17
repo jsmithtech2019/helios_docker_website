@@ -10,7 +10,7 @@ build: ## Rebuild the containers.
 	docker-compose build
 
 up:	## Start the containers.
-	docker-compose up
+	docker-compose up --force-recreate
 
 bash:	## Exec into the nginx container.
 	docker-compose exec nginx bash

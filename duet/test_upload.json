@@ -1,0 +1,77 @@
+{
+  "application": "HITCH",
+  "version": "1.0.0",
+  "releasedate": "",
+  "date": "2020-02-17",
+  "time": "11:11:11",
+  "dealership": {
+    "dealership_uuid": "8e9bb092-51bb-11ea-9e77-0242c0a83004",
+    "dealership": "helios"
+  },
+  "employee": {
+    "uuid": "8e9bb0ae-51bb-11ea-9e77-0242c0a83004",
+    "email": "test@mail",
+    "password": "password",
+    "phone": "303",
+    "module_uuid": "8e9bb0a5-51bb-11ea-9e77-0242c0a83004"
+  },
+  "customer": {
+    "name": "test cust",
+    "phone": "cust phone",
+    "email": "cust@email",
+    "addr1": "cust addr1",
+    "addr2": "",
+    "city": "cust city",
+    "state": "cust state",
+    "zip": "00000",
+    "truck": "truck plate",
+    "trailer": "trailer plate"
+  },
+  "results": {
+    "truck": [
+      {
+        "test": "test name (ie left turn signal)",
+        "value": "boolean pass fail",
+        "current": "current value measured"
+      },
+      {
+        "test": "test name (ie left turn signal)",
+        "value": "boolean pass fail",
+        "current": "current value measured"
+      },
+      {
+        "test": "test name (ie left turn signal)",
+        "value": "boolean pass fail",
+        "current": "current value measured"
+      },
+      {
+        "test": "test name (ie left turn signal)",
+        "value": "boolean pass fail",
+        "current": "current value measured"
+      }
+    ],
+    "trailer": [
+      {
+        "test": "test name (ie left turn signal)",
+        "value": "boolean pass fail",
+        "current": "current value measured"
+      },
+      {
+        "test": "test name (ie left turn signal)",
+        "value": "boolean pass fail",
+        "current": "current value measured"
+      },
+      {
+        "test": "test name (ie left turn signal)",
+        "value": "boolean pass fail",
+        "current": "current value measured"
+      },
+      {
+        "test": "test name (ie left turn signal)",
+        "value": "boolean pass fail",
+        "current": "current value measured"
+      }
+    ],
+    "pass": "boolean overall pass/fail"
+  }
+}

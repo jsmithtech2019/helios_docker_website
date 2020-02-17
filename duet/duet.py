@@ -2,24 +2,25 @@ from flask import request, url_for
 from flask_api import FlaskAPI, status, exceptions
 import mysql.connector
 import json
+import logging
 
 duet = FlaskAPI(__name__)
 
 @duet.route('/hello-world')
 def hello_world():
-    return 'Hello world from DUET!'
+    return 'Hello world from DUET!', status.HTTP_200_OK
 
 @duet.route('/sqltest/', methods=['POST'])
 def sql_test():
     # Open MySQL connection
-    conn = mysql.connector.connect(host='db',database='hitch',password='helios')
+    conn = mysql.connector.connect(host='db', database='hitch', password='helios')
     cursor = conn.cursor()
 
     # Get name from POST
     name = str(request.data.get('text', ''))
 
     # Execute query
-    cursor.execute('INSERT INTO ADMIN_DATA (name, email, pass, employee_id) VALUES ("{}", "test", "pass", "id");'.format(name))
+    cursor.execute('INSERT INTO ADMIN_DATA (name, email, pass, employee_id) VALUES ("{}", "test", "pass", "id")'.format(name))
 
     # Get values and close connection
     #c = cursor.fetchall()
@@ -33,19 +34,29 @@ def sql_test():
 # This is how the endpoint will receive data from controller applications
 @duet.route('/upload/', methods=['POST'])
 def upload_data():
+    # Open MySQL connection
+    conn = mysql.connector.connect(host='db',database='hitch',password='helios')
+    cursor = conn.cursor()
+
     # Check if valid JSON
     if not request.is_json:
         return 'Missing JSON in request', status.HTTP_400_BAD_REQUEST
-        #return '', status.HTTP_400_BAD_REQUEST
 
-    # With valid JSON, parse data from body of request
-    content = request.get_json()
+    # Check that JSON is valid
+    try:
+        content = request.get_json()
+    except Exception as e:
+        return 'Malformed JSON in request', status.HTTP_400_BAD_REQUEST
 
     # Parse dealership information
-    dealership_check(request.json['dealership'])
+    if not dealership_check(cursor, request.json['dealership']):
+        return '', status.HTTP_403_FORBIDDEN
 
     # Parse Employee information
-    employee_check(request.json['employee'])
+    if not employee_check(cursor, request.json['employee']):
+        return '', status.HTTP_403_FORBIDDEN
+
+    print("Everything worked")
 
     # Basic Mysql connection setup
     # import mysql.connector
@@ -72,40 +83,59 @@ def upload_data():
 def download_data():
     return '', status.HTTP_202_ACCEPTED
 
-def dealership_check(data):
-    # Check ID matches dealership
-    dealership_id = data['id']
-    #if not mysql.checkexists(dealership_id):
-    #    return '', status.HTTP_401_UNAUTHORIZED
+def dealership_check(cursor, data):
+    # Check UUID matches dealership UUID
+    cursor.execute('SELECT BIN_TO_UUID(dealership_uuid) dealership_uuid FROM ADMIN_DATA')
+    c = cursor.fetchall()
 
-    # Check name matches dealership
-    dealership_name = data['name']
-    #if not mysql.checkexists(dealership_name):
-    #    return '', status.HTTP_401_UNAUTHORIZED
+    # For all values fetched from MySQL, at 0, compare to received value
+    if data['dealership_uuid'] not in (p[0] for p in c):
+        logging.info('Received dealership_uuid does not match, received: {}'.format(data['dealership_uuid']))
+        return False
 
-def employee_check(data):
+    # Check dealership name matches stored dealership
+    cursor.execute('SELECT dealership FROM ADMIN_DATA LIMIT 1')
+    c = cursor.fetchone()
+
+    # Validate match
+    if data['dealership'] != c[0]:
+        logging.info('Received dealership does not match, received: {}'.format(data['dealership']))
+        return False
+
+    return True
+
+def employee_check(cursor, data):
     # Check employee id exists in database
-    employee_id = data['id']
-    #if not mysql.checkexists(employee_id):
-    #    return '', status.HTTP_401_UNAUTHORIZED
+    try:
+        # Check employee exists
+        cursor.execute('SELECT BIN_TO_UUID(employee_uuid) employee_uuid FROM ADMIN_DATA WHERE email="{}" AND pass="{}" AND phone="{}" LIMIT 1'.format(data['email'], data['password'], data['phone']))
+        c = cursor.fetchone()
 
-    employee_email = data['']
-    #if not mysql.checkexists(employee_email):
-    #    return '', status.HTTP_401_UNAUTHORIZED
+        # Validate matching UUID for the employee from server database
+        if data['uuid'] != c[0]:
+            logging.info('Employee UUID not found, received: {}'.format(data['uuid']))
+            return False
 
-    employee_password = data['password']
-    #if not mysql.checkexists(employee_password):
-    #    return '', status.HTTP_401_UNAUTHORIZED
+        # Check module exists
+        #cursor.execute('SELECT module_uuid FROM ADMIN_DATA WHERE module_uuid=UUID_TO_BIN("{}") LIMIT 1'.format(data['module_uuid']))
+        cursor.execute('SELECT BIN_TO_UUID(module_uuid) module_uuid FROM ADMIN_DATA')
+        c = cursor.fetchall()
 
-    employee_phone = data['phone']
-    #if not mysql.checkexists(employee_phone):
-    #    return '', status.HTTP_401_UNAUTHORIZED
+        # For all values fetched from MySQL, at 0, compare to received value
+        if data['module_uuid'] not in (p[0] for p in c):
+            logging.info('Module not found, received: {}'.format(data['module_uuid']))
+            return False
 
-    module_id = data['module']
-    #if not mysql.checkexists(module_id):
-    #    return '', status.HTTP_401_UNAUTHORIZED
+    except Exception as e:
+        # Malformed SQL query
+        print('Error as: {}'.format(e))
+        return False
+
+    return True
 
 if __name__ == "__main__":
+    # Setup logging
+    logging.basicConfig(filename='duet.log', level=logging.DEBUG)
     duet.run(debug=True, port=5000)
 
 
