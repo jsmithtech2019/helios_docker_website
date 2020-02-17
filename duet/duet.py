@@ -1,8 +1,16 @@
 from flask import request, url_for
 from flask_api import FlaskAPI, status, exceptions
-import mysql.connector
 import json
 import logging
+import mysql.connector
+
+# Setup logging
+logging.basicConfig(level=logging.DEBUG,
+    format='%(asctime)s %(levelname)s %(message)s',
+    handlers=[
+        logging.FileHandler(filename='/var/log/duet.log'),
+        logging.StreamHandler()
+    ])
 
 duet = FlaskAPI(__name__)
 
@@ -40,35 +48,30 @@ def upload_data():
 
     # Check if valid JSON
     if not request.is_json:
-        return 'Missing JSON in request', status.HTTP_400_BAD_REQUEST
+        logging.info('Missing JSON in request')
+        return 'Missing JSON in request\n', status.HTTP_400_BAD_REQUEST
 
     # Check that JSON is valid
     try:
         content = request.get_json()
     except Exception as e:
-        return 'Malformed JSON in request', status.HTTP_400_BAD_REQUEST
+        logging.info('Malformed JSON in request')
+        return 'Malformed JSON in request\n', status.HTTP_400_BAD_REQUEST
 
     # Parse dealership information
     if not dealership_check(cursor, request.json['dealership']):
-        return '', status.HTTP_403_FORBIDDEN
+        return 'TODO: REMOVE:: dealership no match\n', status.HTTP_403_FORBIDDEN
 
     # Parse Employee information
     if not employee_check(cursor, request.json['employee']):
-        return '', status.HTTP_403_FORBIDDEN
-
-    print("Everything worked")
-
-    # Basic Mysql connection setup
-    # import mysql.connector
-    # conn = mysql.connector.connect(host='db',database='hitch',password='helios')
-    # cursor = conn.cursor()
-    # cursor.execute('SHOW TABLES;')
-    # c = cursor.fetchall()
-    # print(c)
+        return 'TODO: REMOVE:: employee no match\n', status.HTTP_403_FORBIDDEN
 
     ## At this point everything is good, parse and evaluate
-    # Parse customer information
-    customer = request.json['customer']
+    # Parse customer information and insert into database
+    cust_insert = customer_insert(cursor, conn, request.json['customer'])
+    if not cust_insert[1]:
+        logging.warning('Insertion of customer failed: {}'.format(cust_insert[0]))
+        return '{}\n'.format(cust_insert[0]), status.HTTP_400_BAD_REQUEST
 
     # Parse test information
     truck = request.json['results']['truck']
@@ -83,6 +86,29 @@ def upload_data():
 def download_data():
     return '', status.HTTP_202_ACCEPTED
 
+def customer_insert(cursor, conn, data):
+    # Check that there are no duplicate entries
+    cursor.execute('SELECT COUNT(id) FROM CUSTOMER_DATA WHERE testtime="{}"'.format(data['timestamp']))
+    c = cursor.fetchall()
+
+    # If anything was returned exit with a failure and log duplicate
+    # List<Tuple<Val,_>> where Val = int
+    if c[0][0] != 0:
+        logging.warning('Duplicate entry found at timestamp: {}'.format(data['timestamp']))
+        return ('Duplicate entry found', False)
+
+    # No duplicates found, go ahead and insert
+    query = ('INSERT INTO CUSTOMER_DATA '
+        '(name, phone, email, addr1, addr2, city, state, zip, truckplate, trailerplate, testtime)'
+        ' VALUES ("{}", "{}", "{}", "{}", "{}", "{}", "{}", "{}", "{}", "{}", "{}")'.format(
+            data['name'], data['phone'], data['email'], data['addr1'], data['addr2'],
+            data['city'], data['state'], data['zip'], data['truck'], data['trailer'], data['timestamp']))
+    cursor.execute(query)
+    conn.commit()
+    logging.info('{} record inserted.'.format(cursor.rowcount))
+
+    return ('', True)
+
 def dealership_check(cursor, data):
     # Check UUID matches dealership UUID
     cursor.execute('SELECT BIN_TO_UUID(dealership_uuid) dealership_uuid FROM ADMIN_DATA')
@@ -90,7 +116,7 @@ def dealership_check(cursor, data):
 
     # For all values fetched from MySQL, at 0, compare to received value
     if data['dealership_uuid'] not in (p[0] for p in c):
-        logging.info('Received dealership_uuid does not match, received: {}'.format(data['dealership_uuid']))
+        logging.warning('Received dealership_uuid does not match, received: {}'.format(data['dealership_uuid']))
         return False
 
     # Check dealership name matches stored dealership
@@ -99,7 +125,7 @@ def dealership_check(cursor, data):
 
     # Validate match
     if data['dealership'] != c[0]:
-        logging.info('Received dealership does not match, received: {}'.format(data['dealership']))
+        logging.warning('Received dealership does not match, received: {}'.format(data['dealership']))
         return False
 
     return True
@@ -112,7 +138,11 @@ def employee_check(cursor, data):
         c = cursor.fetchone()
 
         # Validate matching UUID for the employee from server database
-        if data['uuid'] != c[0]:
+        if c:
+            if data['uuid'] != c[0]:
+                logging.info('Employee UUID not found, received: {}'.format(data['uuid']))
+                return False
+        else:
             logging.info('Employee UUID not found, received: {}'.format(data['uuid']))
             return False
 
@@ -128,14 +158,12 @@ def employee_check(cursor, data):
 
     except Exception as e:
         # Malformed SQL query
-        print('Error as: {}'.format(e))
+        logging.warning('Error as: {}'.format(e))
         return False
 
     return True
 
 if __name__ == "__main__":
-    # Setup logging
-    logging.basicConfig(filename='duet.log', level=logging.DEBUG)
     duet.run(debug=True, port=5000)
 
 

@@ -25,6 +25,7 @@ CREATE TABLE CUSTOMER_DATA(
     zip INTEGER, 
     truckplate TEXT NOT NULL, 
     trailerplate TEXT NOT NULL, 
+    testtime TEXT NOT NULL, 
     timestamp TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP);
 
 CREATE TABLE TRUCK_TEST_DATA(id INTEGER PRIMARY KEY NOT NULL, 
@@ -58,7 +59,7 @@ CREATE TABLE TRAILER_TEST_DATA(id INTEGER PRIMARY KEY NOT NULL,
     timestamp TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP);
 
 # Fill customer database with seed values
-INSERT INTO CUSTOMER_DATA (name, phone, email, addr1, addr2, city, state, zip, truckplate, trailerplate) VALUES ('test', '+1 000 000 0000', 'test@mail.com', 'address 1', 'apt', 'city', 'texas', 00000, '000-AAA', 'ZZZ-111');
+INSERT INTO CUSTOMER_DATA (name, phone, email, addr1, addr2, city, state, zip, truckplate, trailerplate, testtime) VALUES ('test', '+1 000 000 0000', 'test@mail.com', 'address 1', 'apt', 'city', 'texas', 00000, '000-AAA', 'ZZZ-111', 'time');
 
 # Fill admin database with seed values
 INSERT INTO ADMIN_DATA (dealership, dealership_uuid, module_uuid, name, phone, email, pass, employee_uuid) VALUES ('helios', UUID_TO_BIN(UUID()), UUID_TO_BIN(UUID()), 'testname', '303', 'test@mail', 'pass', UUID_TO_BIN(UUID()));
