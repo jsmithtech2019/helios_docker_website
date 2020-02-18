@@ -5,15 +5,15 @@
   "date": "2020-02-17",
   "time": "11:11:11",
   "dealership": {
-    "dealership_uuid": "10e53cdc-51d2-11ea-9a86-0242c0a83004",
+    "dealership_uuid": "c1cde81b-51e2-11ea-8777-0242c0a83004",
     "dealership": "helios"
   },
   "employee": {
-    "uuid": "10e54517-51d2-11ea-9a86-0242c0a83004",
+    "uuid": "c1cde8fc-51e2-11ea-8777-0242c0a83004",
     "email": "test@mail",
     "password": "pass",
     "phone": "303",
-    "module_uuid": "10e5445b-51d2-11ea-9a86-0242c0a83004"
+    "module_uuid": "c1cde887-51e2-11ea-8777-0242c0a83004"
   },
   "customer": {
     "name": "test cust",
@@ -26,51 +26,51 @@
     "zip": "10000",
     "truck": "truck plate",
     "trailer": "trailer plate",
-    "timestamp": "11:11:17"
+    "timestamp": "11:11:12"
   },
   "results": {
     "truck": [
       {
         "test": "test name (ie left turn signal)",
-        "value": "boolean pass fail",
-        "current": "current value measured"
+        "value": "0",
+        "current": "3.3"
       },
       {
         "test": "test name (ie left turn signal)",
-        "value": "boolean pass fail",
-        "current": "current value measured"
+        "value": "1",
+        "current": "3.3"
       },
       {
         "test": "test name (ie left turn signal)",
-        "value": "boolean pass fail",
-        "current": "current value measured"
+        "value": "1",
+        "current": "3.3"
       },
       {
         "test": "test name (ie left turn signal)",
-        "value": "boolean pass fail",
-        "current": "current value measured"
+        "value": "1",
+        "current": "3.3"
       }
     ],
     "trailer": [
       {
         "test": "test name (ie left turn signal)",
-        "value": "boolean pass fail",
-        "current": "current value measured"
+        "value": "1",
+        "current": "3.3"
       },
       {
         "test": "test name (ie left turn signal)",
-        "value": "boolean pass fail",
-        "current": "current value measured"
+        "value": "1",
+        "current": "3.3"
       },
       {
         "test": "test name (ie left turn signal)",
-        "value": "boolean pass fail",
-        "current": "current value measured"
+        "value": "1",
+        "current": "3.3"
       },
       {
         "test": "test name (ie left turn signal)",
-        "value": "boolean pass fail",
-        "current": "current value measured"
+        "value": "1",
+        "current": "3.3"
       }
     ],
     "pass": "boolean overall pass/fail"

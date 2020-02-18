@@ -3,6 +3,7 @@ from flask_api import FlaskAPI, status, exceptions
 import json
 import logging
 import mysql.connector
+import uuid
 
 # Setup logging
 logging.basicConfig(level=logging.DEBUG,
@@ -66,16 +67,19 @@ def upload_data():
     if not employee_check(cursor, request.json['employee']):
         return 'TODO: REMOVE:: employee no match\n', status.HTTP_403_FORBIDDEN
 
-    ## At this point everything is good, parse and evaluate
     # Parse customer information and insert into database
     cust_insert = customer_insert(cursor, conn, request.json['customer'])
     if not cust_insert[1]:
         logging.warning('Insertion of customer failed: {}'.format(cust_insert[0]))
         return '{}\n'.format(cust_insert[0]), status.HTTP_400_BAD_REQUEST
 
-    # Parse test information
-    truck = request.json['results']['truck']
-    trailer = request.json['results']['trailer']
+    # Insert truck test results
+    if not truck_insert(cursor, conn, request.json):
+        return 'Insertion of truck results failed', status.HTTP_400_BAD_REQUEST
+
+    # Insert trailer test results
+    if not trailer_insert(cursor, conn, request.json):
+        return 'Insertion of trailer results failed', status.HTTP_400_BAD_REQUEST
 
     # TODO: do things
     # return jsonify({"msg": "Missing JSON in request"}), 400
@@ -85,6 +89,60 @@ def upload_data():
 @duet.route('/download/', methods=['POST'])
 def download_data():
     return '', status.HTTP_202_ACCEPTED
+
+def truck_insert(cursor, conn, data):
+    try:
+        # Convert UUID into usable values
+        module_uuid = uuid.UUID(data['employee']['module_uuid']).bytes
+        employee_uuid = uuid.UUID(data['employee']['uuid']).bytes
+
+        testdata = data['results']['truck']
+        query = ('INSERT INTO TRUCK_TEST_DATA '
+            '(module_uuid, employee_uuid, cust_phone, cust_email, '
+            'test1_result, test1_current, test2_result, test2_current, '
+            'test3_result, test3_current, test4_result, test4_current)'
+            'VALUES (UNHEX(REPLACE("{}", "-","")), UNHEX(REPLACE("{}", "-","")), "{}", "{}", "{}", "{}", "{}", "{}", "{}", "{}", "{}", "{}")'.format(
+                data['employee']['module_uuid'], data['employee']['uuid'], data['customer']['phone'], data['customer']['email'],
+                testdata[0]['value'], testdata[0]['current'],testdata[1]['value'], testdata[1]['current'],
+                testdata[2]['value'], testdata[2]['current'],testdata[3]['value'], testdata[3]['current']
+                ))
+
+        cursor.execute(query)
+        conn.commit()
+        logging.info('{} record inserted.'.format(cursor.rowcount))
+
+    except Exception as e:
+        logging.warning('Error as: {}'.format(e))
+        return False
+
+    return True
+
+def trailer_insert(cursor, conn, data):
+    try:
+        # Convert UUID into usable values
+        module_uuid = data['employee']['module_uuid']
+        employee_uuid = data['employee']['uuid']
+
+        testdata = data['results']['trailer']
+        query = ('INSERT INTO TRAILER_TEST_DATA '
+            '(module_uuid, employee_uuid, cust_phone, cust_email, '
+            'test1_result, test1_current, test2_result, test2_current, '
+            'test3_result, test3_current, test4_result, test4_current)'
+            'VALUES (UNHEX(REPLACE("{}", "-", "")), UNHEX(REPLACE("{}", "-", "")), "{}", "{}", "{}", "{}", "{}", "{}", "{}", "{}", "{}", "{}")'.format(
+                data['employee']['module_uuid'], data['employee']['uuid'], data['customer']['phone'], data['customer']['email'],
+                testdata[0]['value'], testdata[0]['current'],testdata[1]['value'], testdata[1]['current'],
+                testdata[2]['value'], testdata[2]['current'],testdata[3]['value'], testdata[3]['current']
+                ))
+
+        cursor.execute(query)
+        conn.commit()
+        logging.info('{} record inserted.'.format(cursor.rowcount))
+
+    except Exception as e:
+        logging.warning('Error as: {}'.format(e))
+        return False
+
+    return True
 
 def customer_insert(cursor, conn, data):
     # Check that there are no duplicate entries
