@@ -19,26 +19,6 @@ duet = FlaskAPI(__name__)
 def hello_world():
     return 'Hello world from DUET!', status.HTTP_200_OK
 
-@duet.route('/sqltest/', methods=['POST'])
-def sql_test():
-    # Open MySQL connection
-    conn = mysql.connector.connect(host='db', database='hitch', password='helios')
-    cursor = conn.cursor()
-
-    # Get name from POST
-    name = str(request.data.get('text', ''))
-
-    # Execute query
-    cursor.execute('INSERT INTO ADMIN_DATA (name, email, pass, employee_id) VALUES ("{}", "test", "pass", "id")'.format(name))
-
-    # Get values and close connection
-    #c = cursor.fetchall()
-    conn.commit()
-    cursor.close()
-    conn.close()
-
-    return '', status.HTTP_201_CREATED
-
 
 # This is how the endpoint will receive data from controller applications
 @duet.route('/upload/', methods=['POST'])
@@ -68,21 +48,22 @@ def upload_data():
         return 'TODO: REMOVE:: employee no match\n', status.HTTP_403_FORBIDDEN
 
     # Parse customer information and insert into database
-    cust_insert = customer_insert(cursor, conn, request.json['customer'])
+    cust_insert = customer_insert(cursor, request.json['customer'])
     if not cust_insert[1]:
         logging.warning('Insertion of customer failed: {}'.format(cust_insert[0]))
         return '{}\n'.format(cust_insert[0]), status.HTTP_400_BAD_REQUEST
 
     # Insert truck test results
-    if not truck_insert(cursor, conn, request.json):
-        return 'Insertion of truck results failed', status.HTTP_400_BAD_REQUEST
+    if not truck_insert(cursor, request.json):
+        return 'Insertion of truck results failed\n', status.HTTP_400_BAD_REQUEST
 
     # Insert trailer test results
-    if not trailer_insert(cursor, conn, request.json):
-        return 'Insertion of trailer results failed', status.HTTP_400_BAD_REQUEST
+    if not trailer_insert(cursor, request.json):
+        return 'Insertion of trailer results failed\n', status.HTTP_400_BAD_REQUEST
 
-    # TODO: do things
-    # return jsonify({"msg": "Missing JSON in request"}), 400
+    # Commit the successfully staged changes to MySQL database
+    conn.commit()
+
     return '', status.HTTP_201_CREATED
 
 # Returns test results for specified customer in JSON
@@ -90,11 +71,11 @@ def upload_data():
 def download_data():
     return '', status.HTTP_202_ACCEPTED
 
-def truck_insert(cursor, conn, data):
+def truck_insert(cursor, data):
     try:
         # Convert UUID into usable values
         module_uuid = uuid.UUID(data['employee']['module_uuid']).bytes
-        employee_uuid = uuid.UUID(data['employee']['uuid']).bytes
+        employee_uuid = uuid.UUID(data['employee']['employee_uuid']).bytes
 
         testdata = data['results']['truck']
         query = ('INSERT INTO TRUCK_TEST_DATA '
@@ -102,13 +83,11 @@ def truck_insert(cursor, conn, data):
             'test1_result, test1_current, test2_result, test2_current, '
             'test3_result, test3_current, test4_result, test4_current)'
             'VALUES (UNHEX(REPLACE("{}", "-","")), UNHEX(REPLACE("{}", "-","")), "{}", "{}", "{}", "{}", "{}", "{}", "{}", "{}", "{}", "{}")'.format(
-                data['employee']['module_uuid'], data['employee']['uuid'], data['customer']['phone'], data['customer']['email'],
+                data['employee']['module_uuid'], data['employee']['employee_uuid'], data['customer']['phone'], data['customer']['email'],
                 testdata[0]['value'], testdata[0]['current'],testdata[1]['value'], testdata[1]['current'],
-                testdata[2]['value'], testdata[2]['current'],testdata[3]['value'], testdata[3]['current']
-                ))
+                testdata[2]['value'], testdata[2]['current'],testdata[3]['value'], testdata[3]['current']))
 
         cursor.execute(query)
-        conn.commit()
         logging.info('{} record inserted.'.format(cursor.rowcount))
 
     except Exception as e:
@@ -117,11 +96,11 @@ def truck_insert(cursor, conn, data):
 
     return True
 
-def trailer_insert(cursor, conn, data):
+def trailer_insert(cursor, data):
     try:
         # Convert UUID into usable values
         module_uuid = data['employee']['module_uuid']
-        employee_uuid = data['employee']['uuid']
+        employee_uuid = data['employee']['employee_uuid']
 
         testdata = data['results']['trailer']
         query = ('INSERT INTO TRAILER_TEST_DATA '
@@ -129,13 +108,11 @@ def trailer_insert(cursor, conn, data):
             'test1_result, test1_current, test2_result, test2_current, '
             'test3_result, test3_current, test4_result, test4_current)'
             'VALUES (UNHEX(REPLACE("{}", "-", "")), UNHEX(REPLACE("{}", "-", "")), "{}", "{}", "{}", "{}", "{}", "{}", "{}", "{}", "{}", "{}")'.format(
-                data['employee']['module_uuid'], data['employee']['uuid'], data['customer']['phone'], data['customer']['email'],
+                data['employee']['module_uuid'], data['employee']['employee_uuid'], data['customer']['phone'], data['customer']['email'],
                 testdata[0]['value'], testdata[0]['current'],testdata[1]['value'], testdata[1]['current'],
-                testdata[2]['value'], testdata[2]['current'],testdata[3]['value'], testdata[3]['current']
-                ))
+                testdata[2]['value'], testdata[2]['current'],testdata[3]['value'], testdata[3]['current']))
 
         cursor.execute(query)
-        conn.commit()
         logging.info('{} record inserted.'.format(cursor.rowcount))
 
     except Exception as e:
@@ -144,15 +121,14 @@ def trailer_insert(cursor, conn, data):
 
     return True
 
-def customer_insert(cursor, conn, data):
+def customer_insert(cursor, data):
     # Check that there are no duplicate entries
-    cursor.execute('SELECT COUNT(id) FROM CUSTOMER_DATA WHERE testtime="{}"'.format(data['timestamp']))
-    c = cursor.fetchall()
+    cursor.execute('SELECT * FROM CUSTOMER_DATA WHERE testtime="{}"'.format(data['timestamp']))
+    cursor.fetchall()
 
     # If anything was returned exit with a failure and log duplicate
-    # List<Tuple<Val,_>> where Val = int
-    if c[0][0] != 0:
-        logging.warning('Duplicate entry found at timestamp: {}'.format(data['timestamp']))
+    if cursor.rowcount > 0:
+        logging.warning('Duplicate entry found for timestamp: {}'.format(data['timestamp']))
         return ('Duplicate entry found', False)
 
     # No duplicates found, go ahead and insert
@@ -162,27 +138,27 @@ def customer_insert(cursor, conn, data):
             data['name'], data['phone'], data['email'], data['addr1'], data['addr2'],
             data['city'], data['state'], data['zip'], data['truck'], data['trailer'], data['timestamp']))
     cursor.execute(query)
-    conn.commit()
     logging.info('{} record inserted.'.format(cursor.rowcount))
 
     return ('', True)
 
 def dealership_check(cursor, data):
     # Check UUID matches dealership UUID
-    cursor.execute('SELECT BIN_TO_UUID(dealership_uuid) dealership_uuid FROM ADMIN_DATA')
-    c = cursor.fetchall()
+    #cursor.execute('SELECT BIN_TO_UUID(dealership_uuid) dealership_uuid FROM ADMIN_DATA')
+    cursor.execute('SELECT dealership FROM ADMIN_DATA WHERE dealership_uuid=UNHEX(REPLACE("{}", "-", ""))'.format(data['dealership_uuid']))
+    cursor.fetchall()
 
     # For all values fetched from MySQL, at 0, compare to received value
-    if data['dealership_uuid'] not in (p[0] for p in c):
+    if cursor.rowcount == 0:
         logging.warning('Received dealership_uuid does not match, received: {}'.format(data['dealership_uuid']))
         return False
 
     # Check dealership name matches stored dealership
-    cursor.execute('SELECT dealership FROM ADMIN_DATA LIMIT 1')
-    c = cursor.fetchone()
+    cursor.execute('SELECT dealership FROM ADMIN_DATA WHERE dealership="{}"'.format(data['dealership']))
+    cursor.fetchall()
 
     # Validate match
-    if data['dealership'] != c[0]:
+    if cursor.rowcount == 0:
         logging.warning('Received dealership does not match, received: {}'.format(data['dealership']))
         return False
 
@@ -192,25 +168,20 @@ def employee_check(cursor, data):
     # Check employee id exists in database
     try:
         # Check employee exists
-        cursor.execute('SELECT BIN_TO_UUID(employee_uuid) employee_uuid FROM ADMIN_DATA WHERE email="{}" AND pass="{}" AND phone="{}" LIMIT 1'.format(data['email'], data['password'], data['phone']))
-        c = cursor.fetchone()
+        cursor.execute('SELECT dealership FROM ADMIN_DATA WHERE employee_uuid=UNHEX(REPLACE("{}", "-", "")) AND email="{}" AND pass="{}" AND phone="{}" LIMIT 1'.format(data['employee_uuid'], data['email'], data['password'], data['phone']))
+        cursor.fetchall()
 
         # Validate matching UUID for the employee from server database
-        if c:
-            if data['uuid'] != c[0]:
-                logging.info('Employee UUID not found, received: {}'.format(data['uuid']))
-                return False
-        else:
-            logging.info('Employee UUID not found, received: {}'.format(data['uuid']))
+        if cursor.rowcount == 0:
+            logging.info('Employee UUID not found, received: {}'.format(data['employee_uuid']))
             return False
 
         # Check module exists
-        #cursor.execute('SELECT module_uuid FROM ADMIN_DATA WHERE module_uuid=UUID_TO_BIN("{}") LIMIT 1'.format(data['module_uuid']))
-        cursor.execute('SELECT BIN_TO_UUID(module_uuid) module_uuid FROM ADMIN_DATA')
-        c = cursor.fetchall()
+        cursor.execute('SELECT dealership FROM ADMIN_DATA WHERE module_uuid=UNHEX(REPLACE("{}", "-", ""))'.format(data['module_uuid']))
+        cursor.fetchall()
 
         # For all values fetched from MySQL, at 0, compare to received value
-        if data['module_uuid'] not in (p[0] for p in c):
+        if cursor.rowcount == 0:
             logging.info('Module not found, received: {}'.format(data['module_uuid']))
             return False
 
@@ -223,46 +194,3 @@ def employee_check(cursor, data):
 
 if __name__ == "__main__":
     duet.run(debug=True, port=5000)
-
-
-
-# def note_repr(key):
-#     return {
-#         'url': request.host_url.rstrip('/') + url_for('notes_detail', key=key),
-#         'text': notes[key]
-#     }
-
-# @duet.route("/", methods=['GET', 'POST'])
-# def notes_list():
-#     """
-#     List or create notes.
-#     """
-#     if request.method == 'POST':
-#         note = str(request.data.get('text', ''))
-#         idx = max(notes.keys()) + 1
-#         notes[idx] = note
-#         return note_repr(idx), status.HTTP_201_CREATED
-
-#     # request.method == 'GET'
-#     return [note_repr(idx) for idx in sorted(notes.keys())]
-
-
-# @duet.route("/<int:key>/", methods=['GET', 'PUT', 'DELETE'])
-# def notes_detail(key):
-#     """
-#     Retrieve, update or delete note instances.
-#     """
-#     if request.method == 'PUT':
-#         note = str(request.data.get('text', ''))
-#         notes[key] = note
-#         return note_repr(key)
-
-#     elif request.method == 'DELETE':
-#         notes.pop(key, None)
-#         return '', status.HTTP_204_NO_CONTENT
-
-#     # request.method == 'GET'
-#     if key not in notes:
-#         raise exceptions.NotFound()
-#     return note_repr(key)
-

@@ -9,7 +9,7 @@
     "dealership": "helios"
   },
   "employee": {
-    "uuid": "c1cde8fc-51e2-11ea-8777-0242c0a83004",
+    "employee_uuid": "c1cde8fc-51e2-11ea-8777-0242c0a83004",
     "email": "test@mail",
     "password": "pass",
     "phone": "303",
@@ -26,49 +26,49 @@
     "zip": "10000",
     "truck": "truck plate",
     "trailer": "trailer plate",
-    "timestamp": "11:11:12"
+    "timestamp": "11:11:11"
   },
   "results": {
     "truck": [
       {
-        "test": "test name (ie left turn signal)",
+        "test": "Left Turn Signal/Brake Light",
         "value": "0",
         "current": "3.3"
       },
       {
-        "test": "test name (ie left turn signal)",
+        "test": "Right Turn Signal/Brake Light",
         "value": "1",
         "current": "3.3"
       },
       {
-        "test": "test name (ie left turn signal)",
+        "test": "Tail Lights",
         "value": "1",
         "current": "3.3"
       },
       {
-        "test": "test name (ie left turn signal)",
+        "test": "Backup Lights",
         "value": "1",
         "current": "3.3"
       }
     ],
     "trailer": [
       {
-        "test": "test name (ie left turn signal)",
+        "test": "Left Turn Signal/Brake Light",
         "value": "1",
         "current": "3.3"
       },
       {
-        "test": "test name (ie left turn signal)",
+        "test": "Right Turn Signal/Brake Light",
         "value": "1",
         "current": "3.3"
       },
       {
-        "test": "test name (ie left turn signal)",
+        "test": "Tail Lights",
         "value": "1",
         "current": "3.3"
       },
       {
-        "test": "test name (ie left turn signal)",
+        "test": "Backup Lights",
         "value": "1",
         "current": "3.3"
       }
