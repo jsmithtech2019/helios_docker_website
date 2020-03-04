@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
+  <meta name="description" content="API docs for the postRequest function from the api_helper library, for the Dart programming language.">
+  <title>postRequest function - api_helper library - Dart API</title>
+  <!-- required because all the links are pseudo-absolute -->
+  <base href="..">
+
+  <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500,400i,400,300|Source+Sans+Pro:400,300,700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="static-assets/github.css">
+  <link rel="stylesheet" href="static-assets/styles.css">
+  <link rel="icon" href="static-assets/favicon.png">
+  <!-- header placeholder -->
+</head>
+
+<body>
+
+<div id="overlay-under-drawer"></div>
+
+<header id="title">
+  <button id="sidenav-left-toggle" type="button">&nbsp;</button>
+  <ol class="breadcrumbs gt-separated dark hidden-xs">
+    <li><a href="index.html">HITCH</a></li>
+    <li><a href="utils_api_helper/utils_api_helper-library.html">api_helper</a></li>
+    <li class="self-crumb">postRequest function</li>
+  </ol>
+  <div class="self-name">postRequest</div>
+  <form class="search navbar-right" role="search">
+    <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+</header>
+
+<main>
+
+  <div id="dartdoc-sidebar-left" class="col-xs-6 col-sm-3 col-md-2 sidebar sidebar-offcanvas-left">
+    <header id="header-search-sidebar" class="hidden-l">
+      <form class="search-sidebar" role="search">
+        <input type="text" id="search-sidebar" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+      </form>
+    </header>
+    
+    <ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
+      <li><a href="index.html">HITCH</a></li>
+      <li><a href="utils_api_helper/utils_api_helper-library.html">api_helper</a></li>
+      <li class="self-crumb">postRequest function</li>
+    </ol>
+    
+    <h5>api_helper library</h5>
+    <ol>
+    
+    
+    
+    
+    
+      <li class="section-title"><a href="utils_api_helper/utils_api_helper-library.html#functions">Functions</a></li>
+      <li><a href="utils_api_helper/getRequest.html">getRequest</a></li>
+      <li><a href="utils_api_helper/postRequest.html">postRequest</a></li>
+    
+    
+    
+    </ol>
+  </div><!--/.sidebar-offcanvas-left-->
+
+  <div id="dartdoc-main-content" class="col-xs-12 col-sm-9 col-md-8 main-content">
+      <div><h1><span class="kind-function">postRequest</span> function </h1></div>
+
+    <section class="multi-line-signature">
+        <span class="returntype"><a href="dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter">Response</span>&gt;</span></span>
+                <span class="name ">postRequest</span>
+(<wbr><span class="parameter" id="postRequest-param-cust"><span class="type-annotation"><a href="models_database/CustomerData-class.html">CustomerData</a></span> <span class="parameter-name">cust</span></span>)
+    </section>
+    
+    <section class="summary source-code" id="source">
+      <h2><span>Implementation</span></h2>
+      <pre class="language-dart"><code class="language-dart">Future&lt;http.Response&gt; postRequest (CustomerData cust) async {
+  &#47;&#47; TODO: update from HTTP to HTTPS
+  var url =&#39;http:&#47;&#47;duet.helioscapstone.com&#47;upload&#47;&#39;;
+
+  var globalHelper = GetIt.instance&lt;GlobalHelper&gt;();
+  Logger logHelper = GetIt.instance&lt;Logger&gt;();
+  var dbHelper = GetIt.instance&lt;DatabaseHelper&gt;();
+
+  &#47;&#47; Get Application information
+  PackageInfo packageInfo = await PackageInfo.fromPlatform();
+  var employeePass = await dbHelper.executeRawQuery(&#39;SELECT pass FROM ADMIN_DATA WHERE phone=&quot;${globalHelper.employeePhone}&quot; AND email=&quot;${globalHelper.employeeEmail}&quot;&#39;);
+
+  var customerID = await dbHelper.executeRawQuery(&#39;SELECT id FROM CUSTOMER_DATA WHERE phone=&quot;${cust.customerPhoneNumber}&quot; ORDER BY timestamp DESC LIMIT 1&#39;);
+  var truckDB = await dbHelper.executeRawQuery(&#39;SELECT * FROM TRUCK_TEST_DATA WHERE customerid=&quot;${customerID[0][&#39;id&#39;]}&quot;&#39;);
+  var trailerDB = await dbHelper.executeRawQuery(&#39;SELECT * FROM TRAILER_TEST_DATA WHERE customerid=&quot;${customerID[0][&#39;id&#39;]}&quot;&#39;);
+
+  Map testData = {
+    &#39;truck&#39;:[
+      {
+        &#39;test&#39;: &#39;Left Turn Signal&#47;Brake Light&#39;,
+        &#39;value&#39;: Null,
+        &#39;current&#39;: Null,
+      },
+      {
+        &#39;test&#39;: &#39;Right Turn Signal&#47;Brake Light&#39;,
+        &#39;value&#39;: Null,
+        &#39;current&#39;: Null,
+      },
+      {
+        &#39;test&#39;: &#39;Tail Lights&#39;,
+        &#39;value&#39;: Null,
+        &#39;current&#39;: Null,
+      },
+      {
+        &#39;test&#39;: &#39;Backup Lights&#39;,
+        &#39;value&#39;: Null,
+        &#39;current&#39;: Null,
+      }
+    ],
+    &#39;trailer&#39;:[
+      {
+        &#39;test&#39;: &#39;Left Turn Signal&#47;Brake Light&#39;,
+        &#39;value&#39;: Null,
+        &#39;current&#39;: Null,
+      },
+      {
+        &#39;test&#39;: &#39;Right Turn Signal&#47;Brake Light&#39;,
+        &#39;value&#39;: Null,
+        &#39;current&#39;: Null,
+      },
+      {
+        &#39;test&#39;: &#39;Tail Lights&#39;,
+        &#39;value&#39;: Null,
+        &#39;current&#39;: Null,
+      },
+      {
+        &#39;test&#39;: &#39;Backup Lights&#39;,
+        &#39;value&#39;: Null,
+        &#39;current&#39;: Null,
+      }
+    ]
+  };
+
+  &#47;&#47; Insert received values from Truck database
+  if(truckDB.length &gt; 0){
+    &#47;&#47; Test 1
+    testData[&#39;truck&#39;][0][&#39;value&#39;] = truckDB[0][&#39;test1_result&#39;];
+    testData[&#39;truck&#39;][0][&#39;current&#39;] = truckDB[0][&#39;test1_current&#39;];
+
+    &#47;&#47; Test 2
+    testData[&#39;truck&#39;][1][&#39;value&#39;] = truckDB[0][&#39;test2_result&#39;];
+    testData[&#39;truck&#39;][1][&#39;current&#39;] = truckDB[0][&#39;test2_current&#39;];
+
+    &#47;&#47; Test 3
+    testData[&#39;truck&#39;][2][&#39;value&#39;] = truckDB[0][&#39;test3_result&#39;];
+    testData[&#39;truck&#39;][2][&#39;current&#39;] = truckDB[0][&#39;test3_current&#39;];
+
+    &#47;&#47; Test 4
+    testData[&#39;truck&#39;][3][&#39;value&#39;] = truckDB[0][&#39;test4_result&#39;];
+    testData[&#39;truck&#39;][3][&#39;current&#39;] = truckDB[0][&#39;test4_current&#39;];
+  }
+
+  if(trailerDB.length &gt; 0){
+    &#47;&#47; Test 1
+    testData[&#39;trailer&#39;][0][&#39;value&#39;] = trailerDB[0][&#39;test1_result&#39;];
+    testData[&#39;trailer&#39;][0][&#39;current&#39;] = trailerDB[0][&#39;test1_current&#39;];
+
+    &#47;&#47; Test 2
+    testData[&#39;trailer&#39;][1][&#39;value&#39;] = trailerDB[0][&#39;test2_result&#39;];
+    testData[&#39;trailer&#39;][1][&#39;current&#39;] = trailerDB[0][&#39;test2_current&#39;];
+
+    &#47;&#47; Test 3
+    testData[&#39;trailer&#39;][2][&#39;value&#39;] = trailerDB[0][&#39;test3_result&#39;];
+    testData[&#39;trailer&#39;][2][&#39;current&#39;] = trailerDB[0][&#39;test3_current&#39;];
+
+    &#47;&#47; Test 4
+    testData[&#39;trailer&#39;][3][&#39;value&#39;] = trailerDB[0][&#39;test4_result&#39;];
+    testData[&#39;trailer&#39;][3][&#39;current&#39;] = trailerDB[0][&#39;test4_current&#39;];
+  }
+
+  if(cust.customerZipCode == null){
+    cust.customerZipCode = 0;
+  }
+
+  &#47;&#47; Generate JSON body to send to DUET
+  Map msg = {
+    &#39;application&#39;: &quot;H.I.T.C.H&quot;,
+    &#39;version&#39;: packageInfo.version,
+    &#39;date&#39;: DateFormat(&#39;yy-MM-dd&#39;).format(new DateTime.now()),
+    &#39;time&#39;: DateFormat(&#39;hh:mm:ss&#39;).format(new DateTime.now()),
+    &#39;dealership&#39;: {
+      &#39;dealership_uuid&#39;: globalHelper.dealershipUUID,
+      &#39;dealership&#39;: globalHelper.dealership,
+    },
+    &#39;employee&#39;: {
+      &quot;employee_uuid&quot;: globalHelper.employeeUUID,
+      &quot;email&quot;: globalHelper.employeeEmail,
+      &quot;password&quot;: employeePass[0][&#39;pass&#39;],
+      &quot;phone&quot;: globalHelper.employeePhone.toString(),
+      &quot;module_uuid&quot;: globalHelper.moduleUUID,
+    },
+    &quot;customer&quot;: {
+      &quot;name&quot;: cust.customerName,
+      &quot;phone&quot;: cust.customerPhoneNumber.toString(),
+      &quot;email&quot;: cust.customerEmail,
+      &quot;addr1&quot;: cust.customerAddressLine1,
+      &quot;addr2&quot;: cust.customerAddressLine2,
+      &quot;city&quot;: cust.customerCity,
+      &quot;state&quot;: cust.customerState,
+      &quot;zip&quot;: cust.customerZipCode.toString(),
+      &quot;truck&quot;: cust.truckLicensePlate,
+      &quot;trailer&quot;: cust.trailerLicensePlate,
+      &quot;timestamp&quot;: DateFormat(&#39;hh:mm:ss&#39;).format(new DateTime.now()),
+    },
+    &#39;results&#39;: {
+      ...testData,
+    }
+  };
+
+  final body = jsonEncode(msg);
+
+  Map&lt;String,String&gt; headers = {&#39;Content-Type&#39;:&#39;application&#47;json&#39;};
+  var response = await http.post(url,
+      headers: headers,
+      body: body
+  );
+
+  logHelper.d(&quot;${response.statusCode}&quot;);
+  logHelper.d(&quot;${response.body}&quot;);
+  return response;
+}</code></pre>
+    </section>
+
+  </div> <!-- /.main-content -->
+
+  <div id="dartdoc-sidebar-right" class="col-xs-6 col-sm-6 col-md-2 sidebar sidebar-offcanvas-right">
+  </div><!--/.sidebar-offcanvas-->
+
+</main>
+
+<footer>
+  <span class="no-break">
+    HITCH
+      1.0.0
+  </span>
+
+  <!-- footer-text placeholder -->
+</footer>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="static-assets/typeahead.bundle.min.js"></script>
+<script src="static-assets/highlight.pack.js"></script>
+<script src="static-assets/URI.js"></script>
+<script src="static-assets/script.js"></script>
+<!-- footer placeholder -->
+
+</body>
+
+</html>

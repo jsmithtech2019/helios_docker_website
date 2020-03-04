@@ -1,7 +1,6 @@
 {
   "application": "HITCH",
   "version": "1.0.0",
-  "releasedate": "",
   "date": "2020-02-17",
   "time": "11:11:11",
   "dealership": {
@@ -26,7 +25,7 @@
     "zip": "10000",
     "truck": "truck plate",
     "trailer": "trailer plate",
-    "timestamp": "11:11:11"
+    "timestamp": "11:11:21"
   },
   "results": {
     "truck": [

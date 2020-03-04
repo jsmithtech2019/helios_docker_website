@@ -30,7 +30,7 @@ def upload_data():
     # Check if valid JSON
     if not request.is_json:
         logging.info('Missing JSON in request')
-        return 'Missing JSON in request\n', status.HTTP_400_BAD_REQUEST
+        return 'Missing JSON in request\n', status.HTTP_406_NOT_ACCEPTABLE
 
     # Check that JSON is valid
     try:
@@ -60,6 +60,8 @@ def upload_data():
     # Insert trailer test results
     if not trailer_insert(cursor, request.json):
         return 'Insertion of trailer results failed\n', status.HTTP_400_BAD_REQUEST
+
+    # TODO: if conflicting test or truck data return HTTP_409_CONFLICT
 
     # Commit the successfully staged changes to MySQL database
     conn.commit()
