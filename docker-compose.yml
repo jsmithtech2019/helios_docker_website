@@ -5,9 +5,6 @@ version: '3'
 services:
   # Nginx Service
   nginx:
-    # build:
-    #   context: .
-    #   dockerfile: Dockerfile.nginx
     image: nginx
     container_name: nginx
     volumes:
@@ -26,6 +23,19 @@ services:
     restart: always
     networks:
       - hitch-network
+
+  # PHP Service
+  php:
+    image: php:fpm
+    container_name: php
+    volumes:
+      - ./code:/var/www/html/
+      - ./conf/log.conf:/usr/local/etc/php-fpm.d/zz-log.conf
+    networks:
+      hitch-network:
+        aliases:
+         - docker-php
+
 
   # MySQL Service
   mysql:
@@ -46,7 +56,7 @@ services:
       - nginx
     networks:
      - hitch-network
-    command: ['--default-authentication-plugin=mysql_native_password'] #'--character-set-server=utf8mb4', '--collation-server=utf8mb4_unicode_ci',
+    command: ['--default-authentication-plugin=mysql_native_password']
 
   # DUET Service
   duet:
@@ -62,12 +72,10 @@ services:
     environment:
       - FLASK_APP=/duet/duet.py
     command: flask run --host=0.0.0.0
-    # depends_on:
-    #   - nginx
     networks:
-     hitch-network:
-      aliases:
-        - docker-duet
+      hitch-network:
+        aliases:
+          - docker-duet
 
   # Certbot LetsEncrypt Manager
   # certbot:
@@ -79,5 +87,6 @@ services:
 
 # Specify docker networks for container communication.
 networks:
- hitch-network:
+  hitch-network:
+    driver: bridge
 

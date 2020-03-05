@@ -4,15 +4,15 @@
   "date": "2020-02-17",
   "time": "11:11:11",
   "dealership": {
-    "dealership_uuid": "c1cde81b-51e2-11ea-8777-0242c0a83004",
+    "dealership_uuid": "34cdcad7-5e2d-11ea-bd80-0242ac180004",
     "dealership": "helios"
   },
   "employee": {
-    "employee_uuid": "c1cde8fc-51e2-11ea-8777-0242c0a83004",
+    "employee_uuid": "34cdcb1a-5e2d-11ea-bd80-0242ac180004",
     "email": "test@mail",
     "password": "pass",
     "phone": "303",
-    "module_uuid": "c1cde887-51e2-11ea-8777-0242c0a83004"
+    "module_uuid": "34cdcaf4-5e2d-11ea-bd80-0242ac180004"
   },
   "customer": {
     "name": "test cust",
@@ -25,7 +25,7 @@
     "zip": "10000",
     "truck": "truck plate",
     "trailer": "trailer plate",
-    "timestamp": "11:11:21"
+    "timestamp": "11:11:22"
   },
   "results": {
     "truck": [
