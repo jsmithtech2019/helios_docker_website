@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
+  <meta name="description" content="API docs for the seedDatabase function from the main library, for the Dart programming language.">
+  <title>seedDatabase function - main library - Dart API</title>
+  <!-- required because all the links are pseudo-absolute -->
+  <base href="..">
+
+  <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500,400i,400,300|Source+Sans+Pro:400,300,700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="static-assets/github.css">
+  <link rel="stylesheet" href="static-assets/styles.css">
+  <link rel="icon" href="static-assets/favicon.png">
+  <!-- header placeholder -->
+</head>
+
+<body>
+
+<div id="overlay-under-drawer"></div>
+
+<header id="title">
+  <button id="sidenav-left-toggle" type="button">&nbsp;</button>
+  <ol class="breadcrumbs gt-separated dark hidden-xs">
+    <li><a href="index.html">HITCH</a></li>
+    <li><a href="main/main-library.html">main</a></li>
+    <li class="self-crumb">seedDatabase function</li>
+  </ol>
+  <div class="self-name">seedDatabase</div>
+  <form class="search navbar-right" role="search">
+    <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+</header>
+
+<main>
+
+  <div id="dartdoc-sidebar-left" class="col-xs-6 col-sm-3 col-md-2 sidebar sidebar-offcanvas-left">
+    <header id="header-search-sidebar" class="hidden-l">
+      <form class="search-sidebar" role="search">
+        <input type="text" id="search-sidebar" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+      </form>
+    </header>
+    
+    <ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
+      <li><a href="index.html">HITCH</a></li>
+      <li><a href="main/main-library.html">main</a></li>
+      <li class="self-crumb">seedDatabase function</li>
+    </ol>
+    
+    <h5>main library</h5>
+    <ol>
+      <li class="section-title"><a href="main/main-library.html#classes">Classes</a></li>
+      <li><a href="main/HeliosApp-class.html">HeliosApp</a></li>
+      <li><a href="main/HeliosAppStateful-class.html">HeliosAppStateful</a></li>
+    
+    
+    
+    
+      <li class="section-title"><a href="main/main-library.html#properties">Properties</a></li>
+      <li><a href="main/sl.html">sl</a></li>
+    
+      <li class="section-title"><a href="main/main-library.html#functions">Functions</a></li>
+      <li><a href="main/main.html">main</a></li>
+      <li><a href="main/seedDatabase.html">seedDatabase</a></li>
+    
+    
+    
+    </ol>
+  </div><!--/.sidebar-offcanvas-left-->
+
+  <div id="dartdoc-main-content" class="col-xs-12 col-sm-9 col-md-8 main-content">
+      <div><h1><span class="kind-function">seedDatabase</span> function </h1></div>
+
+    <section class="multi-line-signature">
+        <span class="returntype">void</span>
+                <span class="name ">seedDatabase</span>
+(<wbr>)
+    </section>
+    <section class="desc markdown">
+      <p>Used to seed testing data into the <code>SQLite</code> database</p>
+<p>This creates dummy truck, trailer, customer and admin data that is then
+inserted into the database and used by the controller application for
+development purposes.</p>
+<p>TODO: remove before becoming a release candidate.</p>
+    </section>
+    
+    <section class="summary source-code" id="source">
+      <h2><span>Implementation</span></h2>
+      <pre class="language-dart"><code class="language-dart">void seedDatabase(){
+  Logger logHelper = GetIt.instance&lt;Logger&gt;();
+  final DatabaseHelper dbHelper = GetIt.instance&lt;DatabaseHelper&gt;();
+  &#47;&#47; Dummy Truck Test Data
+  dbHelper.executeRawQuery(&#39;INSERT INTO TRUCK_TEST_DATA &#39;
+      &#39;(customerid, test1_result, test1_current, test2_result, test2_current, &#39;
+      &#39;test3_result, test3_current, test4_result, test4_current) &#39;
+      &#39;VALUES (1, 0, 21.0, 1, 1.24, 0, 13.9, 1, .98)&#39;);
+
+  &#47;&#47; Dummy Trailer Test Data
+  dbHelper.executeRawQuery(&#39;INSERT INTO TRAILER_TEST_DATA &#39;
+      &#39;(customerid, test1_result, test1_current, test2_result, test2_current, &#39;
+      &#39;test3_result, test3_current, test4_result, test4_current) &#39;
+      &#39;VALUES (1, 0, 21.0, 1, 1.24, 0, 13.9, 1, .98)&#39;);
+
+  &#47;&#47; Dummy Customer Data
+  dbHelper.executeRawQuery(&#39;INSERT INTO CUSTOMER_DATA (name, phone, email, &#39;
+      &#39;addr1, addr2, city, state, zip, truckplate, trailerplate) VALUES (&#39;
+      &#39;&quot;Jack Smith&quot;, &quot;3038018528&quot;, &quot;dummy@gmail.com&quot;, &quot;addr1&quot;, &quot;addr2&quot;, &quot;cstat&quot;, &#39;
+      &#39;&quot;tx&quot;, &quot;7777&quot;, &quot;246-ZLF&quot;, &quot;ZLF-246&quot;)&#39;);
+
+  &#47;&#47; Dummy Employee Data
+  dbHelper.executeRawQuery(&#39;INSERT INTO ADMIN_DATA (name, phone, email, pass, &#39;
+      &#39;moduleID, dealership, dealer_uuid, employee_uuid) VALUES (&quot;Christian Ledgard&quot;, &#39;
+      &#39;&quot;7138983810&quot;, &quot;christianledgard@tamu.edu&quot;, &#39;
+      &#39;&quot;password&quot;, &quot;c1cde887-51e2-11ea-8777-0242c0a83004&quot;, &quot;Helios&quot;, &quot;c1cde81b-51e2-11ea-8777-0242c0a83004&quot;, &quot;c1cde8fc-51e2-11ea-8777-0242c0a83004&quot;)&#39;);
+
+  dbHelper.executeRawQuery(&#39;INSERT INTO ADMIN_DATA (name, phone, email, pass, &#39;
+      &#39;moduleID, dealership, dealer_uuid, employee_uuid) VALUES (&quot;Christian Ledgard&quot;, &#39;
+      &#39;&quot;303&quot;, &quot;test@mail&quot;, &#39;
+      &#39;&quot;pass&quot;, &quot;34cdcaf4-5e2d-11ea-bd80-0242ac180004&quot;, &quot;Helios&quot;, &quot;34cdcad7-5e2d-11ea-bd80-0242ac180004&quot;, &quot;34cdcb1a-5e2d-11ea-bd80-0242ac180004&quot;)&#39;);
+
+  logHelper.d(&quot;Database has been seeded with test data.&quot;);
+}</code></pre>
+    </section>
+
+  </div> <!-- /.main-content -->
+
+  <div id="dartdoc-sidebar-right" class="col-xs-6 col-sm-6 col-md-2 sidebar sidebar-offcanvas-right">
+  </div><!--/.sidebar-offcanvas-->
+
+</main>
+
+<footer>
+  <span class="no-break">
+    HITCH
+      1.0.0
+  </span>
+
+  <!-- footer-text placeholder -->
+</footer>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="static-assets/typeahead.bundle.min.js"></script>
+<script src="static-assets/highlight.pack.js"></script>
+<script src="static-assets/URI.js"></script>
+<script src="static-assets/script.js"></script>
+<!-- footer placeholder -->
+
+</body>
+
+</html>

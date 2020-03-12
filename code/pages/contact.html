@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,8 +10,20 @@
     <!-- Bootstrap Core CSS -->
     <link href="/css/bootstrap.css" rel="stylesheet">
 
-    <!-- Custom CSS: You can use this stylesheet to override any Bootstrap styles and/or apply your own styles -->
-    <link href="/css/custom.css" rel="stylesheet">
+    <!-- Stylesheet to override any Bootstrap styles and/or apply your own styles -->
+    <link href="/css/random.css" rel="stylesheet">
+
+    <!-- CSS for formatting the text -->
+    <link href="/css/text.css" rel="stylesheet" >
+
+    <!-- CSS for formatting the top nav bar -->
+    <link href="/css/navbar.css" rel="stylesheet" >
+
+    <!-- CSS for formatting the images -->
+    <link href="/css/images.css" rel="stylesheet" >
+
+    <!-- CSS for formatting the buttons -->
+    <link href="/css/button.css" rel="stylesheet" >
 
     <!-- Custom Fonts from Google -->
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
@@ -42,19 +55,19 @@
                         <a href="/">Home</a>
                     </li>
                     <li>
-                        <a href="/pages/products.html">Products</a>
-                    </li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Testing<span class="caret"></span></a>
-                        <ul class="dropdown-menu" aria-labelledby="about-us">
-                            <!-- This is going to need to be updated with php hosting -->
-                            <li><A href="/pages/testing.html">Testing Portal</A></li>
-                            <li><a href="/pages/results.html">Results</a></li>
-                            <li><a href="/pages/admin.html">Admin Dashboard</a></li>
-                        </ul>
+                        <a href="/pages/results.php">Results</a>
                     </li>
                     <li>
-                        <a href="/pages/documentation">Docs</a>
+                        <a href="/pages/admin.php">Administration</a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Documentation<span class="caret"></span></a>
+                        <ul class="dropdown-menu" aria-labelledby="about-us">
+                            <li><a href="/documentation/webserver/index.html">Server</A></li>
+                            <li><a href="/documentation/duet/index.html">DUET</A></li>
+                            <li><a href="/documentation/controller-application/index.html">Flutter</a></li>
+                            <li><a href="/documentation/rtos/index.html">TI-RTOS</a></li>
+                        </ul>
                     </li>
                     <li class="active">
                         <a href="/pages/contact.html">Contact</a>
@@ -83,7 +96,7 @@
                     <img class="img-responsive img-circle center-block" src="/images/christian_header.jpg" alt="">
                 </div>
                 <div class="col-sm-6">
-                    <h2 class="section-header">Christian Ledegard</h2>
+                    <h2 class="section-header">Christian Ledgard</h2>
                     <h4 class="lead text-muted">Project Manager</h4>
                     <p class="lead text-muted">+1(713) 898-3810</p>
                     <a href="mailto:christian.ledgard@tamu.edu" class="lead text-muted">christian.ledgard@tamu.edu</a>
