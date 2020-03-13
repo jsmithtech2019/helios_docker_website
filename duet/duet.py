@@ -1,3 +1,21 @@
+"""
+Texas A&M University
+Electronic Systems Engineering Technology
+ESET-420 Engineering Technology Senior Design II
+File: duet.py
+Author: Jack Smith (john.d.smitherton@tamu.edu)
+"""
+
+"""@package duet
+Data Upload Endpoint Tool
+
+This RESTful API is written using Flask and allows data from controller
+applications to send their local test results to the main server where they
+are stored and can be viewed on the website. This tool takes the JSON payload
+from the POST request, validates the user information, check data integrity and
+then inserts it into the corresponding MySQL tables.
+"""
+
 from flask import request, url_for
 from flask_api import FlaskAPI, status, exceptions
 import json
@@ -5,14 +23,21 @@ import logging
 import mysql.connector
 import uuid
 
-# Setup logging
-logging.basicConfig(level=logging.DEBUG,
+## \brief Setup Logging
+# Configures logging of the API to include time, the log level and any message
+# that is to be included. This allows for filtering of logs. Files are also
+# stored in the configured path as well as standard output.
+logging.basicConfig(
+    level=logging.DEBUG,
     format='%(asctime)s %(levelname)s %(message)s',
     handlers=[
         logging.FileHandler(filename='/var/log/duet.log'),
         logging.StreamHandler()
     ])
 
+## \brief Define duet as the API for Main
+# duet will run main as a Flask API
+# \param __name__
 duet = FlaskAPI(__name__)
 
 @duet.route('/hello-world')
@@ -20,8 +45,12 @@ def hello_world():
     return 'Hello world from DUET!', status.HTTP_200_OK
 
 
-# This is how the endpoint will receive data from controller applications
 @duet.route('/upload/', methods=['POST'])
+## \brief Upload Endpoint of DUET
+# The upload endpoint is where all requests from the controller applications
+# will be sent. This endpoint expects a JSON payload with valid credentials
+# for the dealership, module and employee before inserting the data. Received
+# data is also parsed and sanitized for security purposes.
 def upload_data():
     # Open MySQL connection
     conn = mysql.connector.connect(host='db',database='hitch',password='helios')
@@ -69,10 +98,18 @@ def upload_data():
     return '', status.HTTP_201_CREATED
 
 # Returns test results for specified customer in JSON
-@duet.route('/download/', methods=['POST'])
-def download_data():
-    return '', status.HTTP_202_ACCEPTED
+# TODO: actually do this but maybe not.
+# @duet.route('/download/', methods=['POST'])
+# def download_data():
+#     return '', status.HTTP_202_ACCEPTED
 
+## \brief Insert Truck Test Results into MySQL Database
+# Function will parse the data from the received JSON payload and then upload
+# it into the MySQL database. It will ensure that the correct UUID for both
+# module and employee are attached to these results as well as the correct
+# customer entry is linked for ease of access later on.
+# \param cursor - MySQL connection cursor
+# \param data - JSON payload
 def truck_insert(cursor, data):
     try:
         # Convert UUID into usable values
@@ -98,6 +135,13 @@ def truck_insert(cursor, data):
 
     return True
 
+## \brief Insert Trailer Test Results into MySQL Database
+# Function will parse the data from the received JSON payload and then upload
+# it into the MySQL database. It will ensure that the correct UUID for both
+# module and employee are attached to these results as well as the correct
+# customer entry is linked for ease of access later on.
+# \param cursor - MySQL connection cursor
+# \param data - JSON payload
 def trailer_insert(cursor, data):
     try:
         # Convert UUID into usable values
@@ -123,6 +167,13 @@ def trailer_insert(cursor, data):
 
     return True
 
+## \brief Insert Customer data into MySQL Database
+# Function will parse the data from the received JSON payload and then upload
+# it into the MySQL database. It will validate that there are no duplicate tests
+# already existing in the database (to prevent reentry of data) as well as ensure
+# that only 1 customer profile for each customer is created.
+# \param cursor - MySQL connection cursor
+# \param data - JSON payload
 def customer_insert(cursor, data):
     # Check that there are no duplicate entries
     cursor.execute('SELECT * FROM CUSTOMER_DATA WHERE testtime="{}"'.format(data['timestamp']))
@@ -144,6 +195,13 @@ def customer_insert(cursor, data):
 
     return ('', True)
 
+## \brief Checks that Dealership information is correct
+# This function will validate that the controller application attempting to add
+# data is correctly configured for the dealership that DUET is operating for.
+# This ensures that no dealerships receive conflicting data when multiple
+# companies have implemented HITCH testing module technology.
+# \param cursor - MySQL connection cursor
+# \param data - JSON payload
 def dealership_check(cursor, data):
     # Check UUID matches dealership UUID
     #cursor.execute('SELECT BIN_TO_UUID(dealership_uuid) dealership_uuid FROM ADMIN_DATA')
@@ -166,6 +224,12 @@ def dealership_check(cursor, data):
 
     return True
 
+## \brief Checks that employee information is correct
+# This function will validate that the controller application Employee profile
+# exists and is registered with the dealership. If it is not an error will be 
+# returned, otherwise the JSON analysis will continue.
+# \param cursor - MySQL connection cursor
+# \param data - JSON payload
 def employee_check(cursor, data):
     # Check employee id exists in database
     try:
@@ -194,5 +258,7 @@ def employee_check(cursor, data):
 
     return True
 
+## \brief Start DUET
+# This starts the Flask API endpoint on port 5000.
 if __name__ == "__main__":
     duet.run(debug=True, port=5000)
