@@ -107,6 +107,12 @@ header .header-content .header-content-inner p {
     padding: 100px 0;
 }
 
+.content-1 {
+    color: #404040;
+    background-color: #BEBEBE;
+    padding: 60px 0;
+}
+
 .content-2 {
 	color: #fff;
     background-color: #222;

@@ -85,6 +85,12 @@ img::-moz-selection {
     padding: 90px 0;
 }
 
+.content-1 {
+    color: #404040;
+    background-color: #BEBEBE;
+    padding: 60px 0;
+}
+
 .content-2 {
     color: #fff;
     background-color: #222;
