@@ -31,7 +31,7 @@
                     <span class="icon-bar"></span>
                 </button>
                 <a class="navbar-brand" href="/">
-                    <span class="glyphicon glyphicon-fire"></span>
+                    <span class="glyphicon glyphicon-tint"></span>
                     TEST RESULTS
                 </a>
             </div>
