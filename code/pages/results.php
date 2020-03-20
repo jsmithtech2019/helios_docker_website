@@ -79,11 +79,10 @@
 
     <!-- Header -->
     <header>
-        <div class="header-content">
-            <div class="header-content-inner">
-                <h1>Results Portal</h1>
-                <?php include('../db.php');?>
-            </div>
+        <div class="header-content1">
+            <h1>&nbsp;</h1>
+            <h4>&nbsp;</h4>
+            <?php include('../test_data.php');?>
         </div>
     </header>
 
