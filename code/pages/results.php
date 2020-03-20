@@ -1,3 +1,5 @@
+<?php include('../login.php');?>
+
 <!-- ./var/www/html/pages/results.php -->
 <html lang="en">
 <head>
@@ -10,7 +12,19 @@
     <link href="/css/bootstrap.css" rel="stylesheet">
 
     <!-- Custom CSS: You can use this stylesheet to override any Bootstrap styles and/or apply your own styles -->
-    <link href="/css/custom.css" rel="stylesheet">
+    <link href="/css/random.css" rel="stylesheet">
+
+    <!-- CSS for formatting the text -->
+    <link href="/css/text.css" rel="stylesheet" >
+
+    <!-- CSS for formatting the top nav bar -->
+    <link href="/css/navbar.css" rel="stylesheet" >
+
+    <!-- CSS for formatting the images -->
+    <link href="/css/images.css" rel="stylesheet" >
+
+    <!-- CSS for formatting the buttons -->
+    <link href="/css/button.css" rel="stylesheet" >
 
     <!-- Custom Fonts from Google -->
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
