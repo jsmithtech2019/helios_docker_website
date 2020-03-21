@@ -93,7 +93,7 @@
 
     <!-- Header -->
     <header>
-        <div class="header-content1">
+        <div class="content-2">
             <div class="container">
                 <br><br><br>
                 <?php include('../test_data.php');?>

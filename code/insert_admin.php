@@ -3,6 +3,11 @@
 // Return to admin page after insertion
 header("Location: {$_SERVER['HTTP_REFERER']}");
 
+// Only allow access from admin page
+if ($_SERVER['HTTP_REFERER'] !== "http://www.helioscapstone.com/pages/admin.php"){
+    exit;
+}
+
 $con=mysqli_connect("db","root","helios","hitch");
 
 // Check connection

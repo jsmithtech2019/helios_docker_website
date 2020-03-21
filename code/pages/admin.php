@@ -95,7 +95,7 @@
 
     <!-- Header -->
     <header>
-        <div class="header-content1">
+        <div class="content-2">
             <div class="container">
                 <br><br><br>
                 <h2 align="left">Insert New Employee:</h2>
@@ -111,6 +111,17 @@
                 Password: &nbsp;<input style="color: black" type="password" name="password">
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 Module UUID: &nbsp;<input style="color: black" type="text" name="module_uuid"><br><br>
+                <input type="submit" style="color: black">
+            </form>
+            <div class="container">
+                <hr>
+                <h2 align="left">Remove Existing Employee:</h2>
+                <br>
+            </div>
+            <form action="../remove_admin.php" method="post">
+                Email: &nbsp;<input style="color: black" type="text" name="email">
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                UUID: &nbsp;<input style="color: black" type="text" name="employee_uuid"><br><br>
                 <input type="submit" style="color: black">
             </form>
             <div class="container">
