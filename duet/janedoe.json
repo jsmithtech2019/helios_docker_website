@@ -2,36 +2,36 @@
   "application": "HITCH",
   "version": "1.0.0",
   "date": "2020-03-21",
-  "time": "1:24:22",
+  "time": "1:25:22",
   "dealership": {
-    "dealership_uuid": "3d623540-5f1b-11ea-9acf-0242ac1e0005",
+    "dealership_uuid": "a0555951-6bb8-11ea-a4e3-0242c0a80005",
     "dealership": "Helios"
   },
   "employee": {
-    "employee_uuid": "0abb811b-16cb-45e5-8c4c-ae6ab369d30b",
+    "employee_uuid": "d0412b3d-689a-411f-987e-7795daa27141",
     "email": "john.d.smitherton@tamu.edu",
     "password": "jacksmith",
     "phone": "(303) 801-8528",
-    "module_uuid": "5951f6af-0096-427d-b10e-d357519a0073"
+    "module_uuid": "b3f56e90-1c0a-4c38-b542-2e6665e68c8a"
   },
   "customer": {
-    "name": "Baby Doe",
-    "phone": "+1 222 222 2222",
-    "email": "babydoe@gmail.com",
+    "name": "Jane Doe",
+    "phone": "+1 000 000 0000",
+    "email": "janedoe@gmail.com",
     "addr1": "101 Lakeview Drive",
     "addr2": "",
     "city": "Las Vegas",
     "state": "NV",
     "zip": "22222",
-    "truck": "444-BBB",
-    "trailer": "TTT-444",
-    "timestamp": "3:28:20"
+    "truck": "000-TTT",
+    "trailer": "TTT-000",
+    "timestamp": "3:48:20"
   },
   "results": {
     "truck": [
       {
         "test": "Left Turn Signal/Brake Light",
-        "value": "1",
+        "value": "0",
         "current": "0"
       },
       {
@@ -46,29 +46,29 @@
       },
       {
         "test": "Backup Lights",
-        "value": "1",
+        "value": "0",
         "current": "3"
       }
     ],
     "trailer": [
       {
         "test": "Left Turn Signal/Brake Light",
-        "value": "1",
+        "value": "0",
         "current": "4"
       },
       {
         "test": "Right Turn Signal/Brake Light",
-        "value": "1",
+        "value": "0",
         "current": "5"
       },
       {
         "test": "Tail Lights",
-        "value": "1",
+        "value": "0",
         "current": "6"
       },
       {
         "test": "Backup Lights",
-        "value": "1",
+        "value": "0",
         "current": "7"
       }
     ],

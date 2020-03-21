@@ -118,11 +118,11 @@ def truck_insert(cursor, data):
 
         testdata = data['results']['truck']
         query = ('INSERT INTO TRUCK_TEST_DATA '
-            '(module_uuid, employee_uuid, cust_phone, cust_email, '
+            '(module_uuid, employee_uuid, cust_phone, cust_email, truck_plate, trailer_plate, '
             'test1_result, test1_current, test2_result, test2_current, '
             'test3_result, test3_current, test4_result, test4_current)'
-            'VALUES (UNHEX(REPLACE("{}", "-","")), UNHEX(REPLACE("{}", "-","")), "{}", "{}", "{}", "{}", "{}", "{}", "{}", "{}", "{}", "{}")'.format(
-                data['employee']['module_uuid'], data['employee']['employee_uuid'], data['customer']['phone'], data['customer']['email'],
+            'VALUES (UNHEX(REPLACE("{}", "-","")), UNHEX(REPLACE("{}", "-","")), "{}", "{}", "{}", "{}", "{}", "{}", "{}", "{}", "{}", "{}", "{}", "{}")'.format(
+                data['employee']['module_uuid'], data['employee']['employee_uuid'], data['customer']['phone'], data['customer']['email'], data['customer']['truck'], data['customer']['trailer'],
                 testdata[0]['value'], testdata[0]['current'],testdata[1]['value'], testdata[1]['current'],
                 testdata[2]['value'], testdata[2]['current'],testdata[3]['value'], testdata[3]['current']))
 
@@ -145,16 +145,16 @@ def truck_insert(cursor, data):
 def trailer_insert(cursor, data):
     try:
         # Convert UUID into usable values
-        module_uuid = data['employee']['module_uuid']
-        employee_uuid = data['employee']['employee_uuid']
+        # module_uuid = data['employee']['module_uuid']
+        # employee_uuid = data['employee']['employee_uuid']
 
         testdata = data['results']['trailer']
         query = ('INSERT INTO TRAILER_TEST_DATA '
-            '(module_uuid, employee_uuid, cust_phone, cust_email, '
+            '(module_uuid, employee_uuid, cust_phone, cust_email, truck_plate, trailer_plate, '
             'test1_result, test1_current, test2_result, test2_current, '
             'test3_result, test3_current, test4_result, test4_current)'
-            'VALUES (UNHEX(REPLACE("{}", "-", "")), UNHEX(REPLACE("{}", "-", "")), "{}", "{}", "{}", "{}", "{}", "{}", "{}", "{}", "{}", "{}")'.format(
-                data['employee']['module_uuid'], data['employee']['employee_uuid'], data['customer']['phone'], data['customer']['email'],
+            'VALUES (UNHEX(REPLACE("{}", "-", "")), UNHEX(REPLACE("{}", "-", "")), "{}", "{}", "{}", "{}", "{}", "{}", "{}", "{}", "{}", "{}", "{}", "{}")'.format(
+                data['employee']['module_uuid'], data['employee']['employee_uuid'], data['customer']['phone'], data['customer']['email'], data['customer']['truck'], data['customer']['trailer'],
                 testdata[0]['value'], testdata[0]['current'],testdata[1]['value'], testdata[1]['current'],
                 testdata[2]['value'], testdata[2]['current'],testdata[3]['value'], testdata[3]['current']))
 
@@ -176,13 +176,14 @@ def trailer_insert(cursor, data):
 # \param data - JSON payload
 def customer_insert(cursor, data):
     # Check that there are no duplicate entries
-    cursor.execute('SELECT * FROM CUSTOMER_DATA WHERE testtime="{}"'.format(data['timestamp']))
+    cursor.execute('SELECT * FROM CUSTOMER_DATA WHERE (name="{}") AND (email="{}") AND (truckplate="{}") AND (trailerplate="{}")'.format(data['name'], data['email'], data['truck'], data['trailer']))
     cursor.fetchall()
 
-    # If anything was returned exit with a failure and log duplicate
+    # If anything was returned exit don't reenter a customer
     if cursor.rowcount > 0:
-        logging.warning('Duplicate entry found for timestamp: {}'.format(data['timestamp']))
-        return ('Duplicate entry found', False)
+        logging.info('Duplicate entry found for {}'.format(data['name']))
+        logging.info('Skipping customer insertion')
+        return ('Duplicate entry found', True)
 
     # No duplicates found, go ahead and insert
     query = ('INSERT INTO CUSTOMER_DATA '

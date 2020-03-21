@@ -8,7 +8,6 @@ if ($_SERVER['HTTP_REFERER'] !== "http://www.helioscapstone.com/pages/admin.php"
     exit;
 }
 
-
 $con=mysqli_connect("db","root","helios","hitch");
 
 // Check connection
