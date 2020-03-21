@@ -103,13 +103,13 @@
             </div>
             <form action="../insert_admin.php" method="post">
                 Name: &nbsp;<input style="color: black" type="text" name="name">
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;
                 Phone: &nbsp;<input style="color: black" type="text" name="phone">
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;
                 E-mail: &nbsp;<input style="color: black" type="text" name="email">
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;
                 Password: &nbsp;<input style="color: black" type="password" name="password">
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;
                 Module UUID: &nbsp;<input style="color: black" type="text" name="module_uuid"><br><br>
                 <input type="submit" style="color: black">
             </form>

@@ -55,7 +55,7 @@ while($row = mysqli_fetch_array($customer))
                 echo "<td align='center' style='font-size: 14px; color: #FFFFFF;' bgcolor='#CD5C5C'>Fail</td>";
             }
         } elseif (strpos($key, 'current')) {
-            echo "<td align='center' style='font-size: 14px;' bgcolor='#FFFFFF'>" . $truckrow['test1_current'] . " Amps</td>";
+            echo "<td align='center' style='font-size: 14px;' bgcolor='#FFFFFF'>$value Amps</td>";
         }
     }
 
@@ -74,7 +74,7 @@ while($row = mysqli_fetch_array($customer))
                     echo "<td align='center' style='font-size: 14px; color: #FFFFFF;' bgcolor='#CD5C5C'>Fail</td>";
                 }
             } elseif (strpos($key, 'current')) {
-                echo "<td align='center' style='font-size: 14px;' bgcolor='#FFFFFF'>" . $trailerrow['test1_current'] . " Amps</td>";
+                echo "<td align='center' style='font-size: 14px;' bgcolor='#FFFFFF'>$value Amps</td>";
             }
         }
     }
