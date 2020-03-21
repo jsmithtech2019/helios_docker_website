@@ -175,6 +175,7 @@ def trailer_insert(cursor, data):
 # \param cursor - MySQL connection cursor
 # \param data - JSON payload
 def customer_insert(cursor, data):
+
     # Check that there are no duplicate entries
     cursor.execute('SELECT * FROM CUSTOMER_DATA WHERE (name="{}") AND (email="{}") AND (truckplate="{}") AND (trailerplate="{}")'.format(data['name'], data['email'], data['truck'], data['trailer']))
     cursor.fetchall()
@@ -204,6 +205,7 @@ def customer_insert(cursor, data):
 # \param cursor - MySQL connection cursor
 # \param data - JSON payload
 def dealership_check(cursor, data):
+
     # Check UUID matches dealership UUID
     #cursor.execute('SELECT BIN_TO_UUID(dealership_uuid) dealership_uuid FROM ADMIN_DATA')
     cursor.execute('SELECT dealership FROM ADMIN_DATA WHERE dealership_uuid=UNHEX(REPLACE("{}", "-", ""))'.format(data['dealership_uuid']))
@@ -232,6 +234,7 @@ def dealership_check(cursor, data):
 # \param cursor - MySQL connection cursor
 # \param data - JSON payload
 def employee_check(cursor, data):
+
     # Check employee id exists in database
     try:
         # Check employee exists

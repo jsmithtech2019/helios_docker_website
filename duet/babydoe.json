@@ -23,53 +23,53 @@
     "city": "Las Vegas",
     "state": "NV",
     "zip": "22222",
-    "truck": "444-TTT",
-    "trailer": "TTT-444",
-    "timestamp": "4:37:20"
+    "truck": "333-TTT",
+    "trailer": "TTT-333",
+    "timestamp": "4:34:20"
   },
   "results": {
     "truck": [
       {
         "test": "Left Turn Signal/Brake Light",
         "value": "1",
-        "current": "24"
+        "current": "16"
       },
       {
         "test": "Right Turn Signal/Brake Light",
         "value": "1",
-        "current": "25"
+        "current": "17"
       },
       {
         "test": "Tail Lights",
         "value": "1",
-        "current": "26"
+        "current": "18"
       },
       {
         "test": "Backup Lights",
         "value": "1",
-        "current": "27"
+        "current": "19"
       }
     ],
     "trailer": [
       {
         "test": "Left Turn Signal/Brake Light",
         "value": "1",
-        "current": "28"
+        "current": "20"
       },
       {
         "test": "Right Turn Signal/Brake Light",
         "value": "1",
-        "current": "29"
+        "current": "21"
       },
       {
         "test": "Tail Lights",
         "value": "1",
-        "current": "30"
+        "current": "22"
       },
       {
         "test": "Backup Lights",
         "value": "1",
-        "current": "31"
+        "current": "23"
       }
     ],
     "pass": "0"
