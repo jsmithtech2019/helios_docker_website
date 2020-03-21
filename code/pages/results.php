@@ -29,6 +29,20 @@
     <!-- Custom Fonts from Google -->
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
 
+    <style>
+        #prettytable td, #prettytable th {
+            border: 1px solid #aaa;
+            padding: 6px;
+        }
+        #prettytable th {
+            padding-top: 10px;
+            padding-bottom: 10px;
+            text-align: center;
+            background-color: #808080;
+            color: white;
+        }
+    </style>
+
     <title>Test Results Portal</title>
 </head>
 
@@ -80,9 +94,10 @@
     <!-- Header -->
     <header>
         <div class="header-content1">
-            <h1>&nbsp;</h1>
-            <h4>&nbsp;</h4>
-            <?php include('../test_data.php');?>
+            <div class="container">
+                <br><br><br>
+                <?php include('../test_data.php');?>
+            </div>
         </div>
     </header>
 

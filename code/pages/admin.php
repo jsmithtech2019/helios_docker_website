@@ -29,6 +29,22 @@
     <!-- Custom Fonts from Google -->
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
 
+    <style>
+        #prettytable tr:nth-child(odd) td{background-color: #f2f2f2;}
+        #prettytable tr:hover td{background-color: #ddd;}
+        #prettytable td, #prettytable th {
+            border: 1px solid #ddd;
+            padding: 6px;
+        }
+        #prettytable th {
+            padding-top: 10px;
+            padding-bottom: 10px;
+            text-align: center;
+            background-color: #808080;
+            color: white;
+        }
+    </style>
+
     <title>Admin Dashboard</title>
 </head>
 
@@ -79,10 +95,27 @@
 
     <!-- Header -->
     <header>
-        <div class="header-content">
-            <div class="header-content-inner">
-                <h1>Admin Dashboard</h1>
-                <p>This page is underconstruction.</p>
+        <div class="header-content1">
+            <div class="container">
+                <br><br><br>
+                <h2 align="left">Insert New Employee:</h2>
+                <br>
+            </div>
+            <form action="../insert_admin.php" method="post">
+                Name: &nbsp;<input style="color: black" type="text" name="name">
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                Phone: &nbsp;<input style="color: black" type="text" name="phone">
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                E-mail: &nbsp;<input style="color: black" type="text" name="email">
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                Password: &nbsp;<input style="color: black" type="password" name="password">
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                Module UUID: &nbsp;<input style="color: black" type="text" name="module_uuid"><br><br>
+                <input type="submit" style="color: black">
+            </form>
+            <div class="container">
+                <?php include('../admin_data.php');?>
+                <br><br>
             </div>
         </div>
     </header>
