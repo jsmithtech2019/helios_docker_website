@@ -98,75 +98,23 @@
     <section class="multi-line-signature">
       <span class="returntype"><a href="dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="dart-core/Set-class.html">Set</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="dart-core/Object-class.html">Object</a></span>&gt;</span></span>&gt;</span></span>
             <span class="name ">syncData</span>
-(<wbr><span class="parameter" id="syncData-param-custData"><span class="type-annotation"><a href="models_customer_data/CustomerData-class.html">CustomerData</a></span> <span class="parameter-name">custData</span>, [</span> <span class="parameter" id="syncData-param-truckDataArg"><span class="type-annotation"><a href="models_truck_data/TruckTestData-class.html">TruckTestData</a></span> <span class="parameter-name">truckDataArg</span>, </span> <span class="parameter" id="syncData-param-trailerDataArg"><span class="type-annotation"><a href="models_trailer_data/TrailerTestData-class.html">TrailerTestData</a></span> <span class="parameter-name">trailerDataArg</span></span> ])
+(<wbr>)
       
+    </section>
+    <section class="desc markdown">
+      <p>Future object used to send data to DUET</p>
+<p>Takes the data objects and attempts to send them to DUET of the dealership.
+Then displays the status code and message following upload to the user.</p>
     </section>
     
     <section class="summary source-code" id="source">
       <h2><span>Implementation</span></h2>
-      <pre class="language-dart"><code class="language-dart">Future&lt;Set&lt;Object&gt;&gt; syncData(CustomerData custData, [TruckTestData truckDataArg, TrailerTestData trailerDataArg]) async {
-  &#47;&#47;GlobalHelper gbHelper = GetIt.instance&lt;GlobalHelper&gt;();
-
-  if(truckDataArg != null){
-    truckData = truckDataArg;
-  }
-
-  if(trailerDataArg != null){
-    trailerData = trailerDataArg;
-  }
-
+      <pre class="language-dart"><code class="language-dart">Future&lt;Set&lt;Object&gt;&gt; syncData() async {
   &#47;&#47; Call the server sync function (postRequest())
-  await postRequest(custData, truckData, trailerData).then((postResponse) {
-    &#47;&#47; Validate response and return error and code or success and code
-    return {postResponse.statusCode.toString(), postResponse.body};
-  });
-  &#47;&#47; Check if customer exists
-  &#47;&#47; TODO: remove limit 1
-  &#47;&#47; await dbHelper.executeRawQuery(&#39;SELECT id FROM CUSTOMER_DATA WHERE name=&quot;${custData.customerName}&quot; AND phone=&quot;${custData.customerPhoneNumber}&quot; LIMIT 1&#39;).then((custID) async {
-  &#47;&#47;   if(custID.isEmpty){
-  &#47;&#47;     await dbHelper.insertCustomerData(custData).then((custID) async {
-  &#47;&#47;       await dbHelper.executeRawQuery(&#39;SELECT id FROM CUSTOMER_DATA WHERE name=&quot;${custData.customerName}&quot; AND phone=&quot;${custData.customerPhoneNumber}&quot; LIMIT 1&#39;).then((custID) async {
-  &#47;&#47;         &#47;&#47; Send truck data to db with custID
-  &#47;&#47;         &#47;&#47;await dbHelper.executeRawQuery(&#39;INSERT INTO TRUCK_TEST_DATA (customerid, test1_result, test1_current, test2_result, test2_current, test3_result, test3_current, test4_result, test4_current) VALUES (${custID[0][&#39;id&#39;]}, ${this.truckData.truckTest1Result}, ${this.truckData.truckTest1Current}, ${this.truckData.truckTest2Result}, ${this.truckData.truckTest2Current}, ${this.truckData.truckTest3Result}, ${this.truckData.truckTest3Current}, ${this.truckData.truckTest4Result}, ${this.truckData.truckTest4Current})&#39;);
+  var postResponse = await postRequest(custData, truckData, trailerData);
 
-  &#47;&#47;         &#47;&#47; Send trailer data to DB with custID
-  &#47;&#47;         &#47;&#47;await dbHelper.executeRawQuery(&#39;INSERT INTO TRAILER_TEST_DATA (customerid, test1_result, test1_current, test2_result, test2_current, test3_result, test3_current, test4_result, test4_current) VALUES (${custID[0][&#39;id&#39;]}, ${this.trailerData.trailerTest1Result}, ${this.trailerData.trailerTest1Current}, ${this.trailerData.trailerTest2Result}, ${this.trailerData.trailerTest2Current}, ${this.trailerData.trailerTest3Result}, ${this.trailerData.trailerTest3Current}, ${this.trailerData.trailerTest4Result}, ${this.trailerData.trailerTest4Current})&#39;);
-
-  &#47;&#47;         if(truckDataArg != null){
-  &#47;&#47;           truckData = truckDataArg;
-  &#47;&#47;         }
-
-  &#47;&#47;         gbHelper.customerName = custData.customerName;
-  &#47;&#47;         gbHelper.customerID = custData.customerId.toString();
-  &#47;&#47;         gbHelper.customerTruckPlate = custData.truckLicensePlate;
-  &#47;&#47;         gbHelper.customerTrailerPlate = custData.trailerLicensePlate;
-
-  &#47;&#47;         &#47;&#47; Call the server sync function (postRequest())
-  &#47;&#47;         await postRequest(custData, truckData, trailerData).then((postResponse) {
-  &#47;&#47;           &#47;&#47; Validate response and return error and code or success and code
-  &#47;&#47;           return {postResponse.statusCode.toString(), postResponse.body};
-  &#47;&#47;         });
-  &#47;&#47;       });
-  &#47;&#47;     });
-  &#47;&#47;   } else {
-  &#47;&#47;     &#47;&#47; Send truck data to db with custID
-  &#47;&#47;     await dbHelper.executeRawQuery(&#39;INSERT INTO TRUCK_TEST_DATA (customerid, test1_result, test1_current, test2_result, test2_current, test3_result, test3_current, test4_result, test4_current) VALUES (${custID[0][&#39;id&#39;]}, ${this.truckData.truckTest1Result}, ${this.truckData.truckTest1Current}, ${this.truckData.truckTest2Result}, ${this.truckData.truckTest2Current}, ${this.truckData.truckTest3Result}, ${this.truckData.truckTest3Current}, ${this.truckData.truckTest4Result}, ${this.truckData.truckTest4Current})&#39;);
-
-  &#47;&#47;     &#47;&#47; Send trailer data to DB with custID
-  &#47;&#47;     await dbHelper.executeRawQuery(&#39;INSERT INTO TRAILER_TEST_DATA (customerid, test1_result, test1_current, test2_result, test2_current, test3_result, test3_current, test4_result, test4_current) VALUES (${custID[0][&#39;id&#39;]}, ${this.trailerData.trailerTest1Result}, ${this.trailerData.trailerTest1Current}, ${this.trailerData.trailerTest2Result}, ${this.trailerData.trailerTest2Current}, ${this.trailerData.trailerTest3Result}, ${this.trailerData.trailerTest3Current}, ${this.trailerData.trailerTest4Result}, ${this.trailerData.trailerTest4Current})&#39;);
-
-  &#47;&#47;     gbHelper.customerName = custData.customerName;
-  &#47;&#47;     gbHelper.customerID = custData.customerId.toString();
-  &#47;&#47;     gbHelper.customerTruckPlate = custData.truckLicensePlate;
-  &#47;&#47;     gbHelper.customerTrailerPlate = custData.trailerLicensePlate;
-
-  &#47;&#47;     &#47;&#47; Call the server sync function (postRequest())
-  &#47;&#47;     await postRequest(custData, truckData, trailerData).then((postResponse) {
-  &#47;&#47;       &#47;&#47; Validate response and return error and code or success and code
-  &#47;&#47;       return {postResponse.statusCode.toString(), postResponse.body};
-  &#47;&#47;     });
-  &#47;&#47;   }
-  &#47;&#47; });
+  &#47;&#47; Validate response and return error and code or success and code
+  return {postResponse.statusCode.toString(), postResponse.body};
 }</code></pre>
     </section>
 

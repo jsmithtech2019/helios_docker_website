@@ -52,9 +52,9 @@
     <h5>bluetooth library</h5>
     <ol>
       <li class="section-title"><a href="models_bluetooth/models_bluetooth-library.html#classes">Classes</a></li>
+      <li><a href="models_bluetooth/BluetoothPage-class.html">BluetoothPage</a></li>
       <li><a href="models_bluetooth/DeviceScreen-class.html">DeviceScreen</a></li>
       <li><a href="models_bluetooth/FindDevicesScreen-class.html">FindDevicesScreen</a></li>
-      <li><a href="models_bluetooth/FlutterBlueApp-class.html">FlutterBlueApp</a></li>
     
     
     
@@ -71,6 +71,15 @@
   <div id="dartdoc-main-content" class="col-xs-12 col-sm-9 col-md-8 main-content">
       <div><h1><span class="kind-class">DeviceScreen</span> class </h1></div>
 
+    <section class="desc markdown">
+      <p>Displays information about the selected HITCH module</p>
+<p>Displays information such as characteristics and services for the paired
+module. These will likely be removed in the future to not confuse the 
+operator.</p>
+<p>Also inserts a <code>BluetoothDevice</code> singleton into the <code>GetIt</code> handler to allow
+bluetooth to be accessed by all pages of the application (if one has not been
+created already).</p>
+    </section>
     
 
     <section class="summary offset-anchor" id="constructors">
@@ -81,7 +90,7 @@
           <span class="name"><a href="models_bluetooth/DeviceScreen/DeviceScreen.html">DeviceScreen</a></span><span class="signature">({<span class="parameter" id="-param-key"><span class="type-annotation">Key</span> <span class="parameter-name">key</span>, </span> <span class="parameter" id="-param-device"><span class="type-annotation">BluetoothDevice</span> <span class="parameter-name">device</span></span> })</span>
         </dt>
         <dd>
-          
+          Default constructor
           <div class="constructor-modifier features">const</div>
         </dd>
       </dl>
@@ -96,7 +105,7 @@
           <span class="signature">&#8594; BluetoothDevice</span>         
         </dt>
         <dd>
-          
+          Generate the <code>BluetoothDevice</code> object for the paired device
                   <div class="features">final</div>
 </dd>
         <dt id="hashCode" class="property inherited">

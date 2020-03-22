@@ -161,23 +161,6 @@ Widget build (BuildContext context) {
                       &#39; tab to view test results.&#39;,
                   style: TextStyle(fontSize: 25),
                 ),
-              &#47;&#47;   SizedBox(height: 15),
-              &#47;&#47;   &#47;*
-              &#47;&#47;    * This whole function is critical for reading from async function
-              &#47;&#47;    * calls to the SQLite database. The FutureBuilder class reads
-              &#47;&#47;    * on a AsyncSnapshot state that branches either waiting, error,
-              &#47;&#47;    * success or none response. This will need to be called whenever
-              &#47;&#47;    * data is needed to be read from the database and displayed on
-              &#47;&#47;    * the screen prior to drawing.
-              &#47;&#47;    *
-              &#47;&#47;    * Context: https:&#47;&#47;stackoverflow.com&#47;questions&#47;49930180&#47;flutter-render-widget-after-async-call
-              &#47;&#47;    *&#47;
-              &#47;&#47;   PrintDatabaseResponses(
-              &#47;&#47;       &#39;SELECT name FROM CUSTOMER_DATA ORDER BY id DESC LIMIT 1&#39;,
-              &#47;&#47;       &#39;Name from Database&#39;, 20),
-              &#47;&#47;   PrintDatabaseResponses(
-              &#47;&#47;       &#39;SELECT email FROM CUSTOMER_DATA ORDER BY id DESC LIMIT 1&#39;,
-              &#47;&#47;       &#39;Email from Database&#39;, 20),
               ],
             ),
             RaisedButton(
@@ -191,7 +174,7 @@ Widget build (BuildContext context) {
               child: Text(&#39;Return to Home Page&#39;),
             ),
             new FutureBuilder&lt;Set&lt;Object&gt;&gt;(
-              future: syncData(custData, truckData, trailerData),
+              future: syncData(),
               builder: (BuildContext context, AsyncSnapshot&lt;Set&lt;Object&gt;&gt; snapshot) {
                 switch (snapshot.connectionState) {
                   case ConnectionState.none: return new Text(&quot;Database Connection Failed!&quot;);
@@ -200,9 +183,9 @@ Widget build (BuildContext context) {
                   default:
                     if(snapshot.hasError){
                       return new Text(&quot;Error: ${snapshot.error}&quot;);
-                    &#47;&#47; } else if(int.parse(snapshot.data.elementAt(0)) &gt; 290){
-                    &#47;&#47;   &#47;&#47; Got an error code
-                    &#47;&#47;   return new Text(&quot;Warning, upload failure: ${snapshot.data.elementAt(1)} (${snapshot.data.elementAt(0)})&quot;);
+                    } else if(int.parse(snapshot.data.elementAt(0)) &gt; 290){
+                      &#47;&#47; Got an error code, print error
+                      return new Text(&quot;Warning, upload failure: ${snapshot.data.elementAt(1)} (${snapshot.data.elementAt(0)})&quot;);
                     } else {
                       &#47;&#47; Got good response
                       &#47;&#47;return new Text(&quot;Server Response: ${snapshot.data.elementAt(1)} (${snapshot.data.elementAt(0)})&quot;);
@@ -211,32 +194,6 @@ Widget build (BuildContext context) {
                 }
               }
             ),
-            &#47;&#47; new FutureBuilder&lt;List&lt;String&gt;&gt;(
-            &#47;&#47;   future: dbHelper.getCustomerNamesList(),
-            &#47;&#47;   initialData: List&lt;String&gt;(),
-            &#47;&#47;   builder: (BuildContext context, AsyncSnapshot&lt;List&lt;String&gt;&gt; snapshot) {
-            &#47;&#47;     switch (snapshot.connectionState) {
-            &#47;&#47;       case ConnectionState.none: return new Text(&quot;Database Connection Failed!&quot;);
-            &#47;&#47;       case ConnectionState.waiting: return new CircularProgressIndicator();
-            &#47;&#47;       case ConnectionState.active: return new CircularProgressIndicator();
-            &#47;&#47;       default:
-            &#47;&#47;         if(snapshot.hasError){
-            &#47;&#47;           return new Text(&quot;Error: ${snapshot.error}&quot;);
-            &#47;&#47;         } else {
-            &#47;&#47;           &#47;&#47;return CircularProgressIndicator();
-            &#47;&#47;           return DropdownButton&lt;String&gt;(
-            &#47;&#47;             items: snapshot.data.map((String val) {
-            &#47;&#47;               return new DropdownMenuItem&lt;String&gt;(
-            &#47;&#47;                 value: val,
-            &#47;&#47;                 child: new Text(val.toString()),
-            &#47;&#47;               );
-            &#47;&#47;             }).toList(),
-            &#47;&#47;             onChanged: (_){},
-            &#47;&#47;           );
-            &#47;&#47;         }
-            &#47;&#47;       }
-            &#47;&#47;     }
-            &#47;&#47; ),
           ],
         ),
       ),

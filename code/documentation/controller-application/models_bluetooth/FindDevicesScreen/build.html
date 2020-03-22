@@ -140,7 +140,7 @@ and</li>
 Widget build(BuildContext context) {
   return Scaffold(
     appBar: AppBar(
-      title: Text(&#39;Find Devices&#39;),
+      title: Text(&#39;Available Devices&#39;),
     ),
     body: RefreshIndicator(
       onRefresh: () =&gt;
@@ -148,50 +148,57 @@ Widget build(BuildContext context) {
       child: SingleChildScrollView(
         child: Column(
           children: &lt;Widget&gt;[
+            &#47;&#47; Generate stream of bluetooth devices found
             StreamBuilder&lt;List&lt;BluetoothDevice&gt;&gt;(
               stream: Stream.periodic(Duration(seconds: 2))
                   .asyncMap((_) =&gt; FlutterBlue.instance.connectedDevices),
               initialData: [],
               builder: (c, snapshot) =&gt; Column(
-                children: snapshot.data
-                    .map((d) =&gt; ListTile(
-                          title: Text(d.name),
-                          subtitle: Text(d.id.toString()),
-                          trailing: StreamBuilder&lt;BluetoothDeviceState&gt;(
-                            stream: d.state,
-                            initialData: BluetoothDeviceState.disconnected,
-                            builder: (c, snapshot) {
-                              if (snapshot.data ==
-                                  BluetoothDeviceState.connected) {
-                                return RaisedButton(
-                                  child: Text(&#39;OPEN&#39;),
-                                  onPressed: () =&gt; Navigator.of(context).push(
-                                      MaterialPageRoute(
-                                          builder: (context) =&gt;
-                                              DeviceScreen(device: d))),
-                                );
-                              }
-                              return Text(snapshot.data.toString());
-                            },
-                          ),
-                        ))
-                    .toList(),
+                children: snapshot.data.map((d) =&gt; ListTile(
+                  title: Text(d.name),
+                  subtitle: Text(d.id.toString()),
+                  trailing: StreamBuilder&lt;BluetoothDeviceState&gt;(
+                    stream: d.state,
+                    initialData: BluetoothDeviceState.disconnected,
+                    builder: (c, snapshot) {
+                      if (snapshot.data ==
+                          BluetoothDeviceState.connected) {
+                        return RaisedButton(
+                          child: Text(&#39;OPEN&#39;),
+                          onPressed: () =&gt; Navigator.of(context).push(
+                              MaterialPageRoute(
+                                  builder: (context) =&gt;
+                                      DeviceScreen(device: d))),
+                        );
+                      }
+                      return Text(snapshot.data.toString());
+                    },
+                  ),
+                )).toList(),
               ),
             ),
+            &#47;&#47; Generate list of scanned devices and display them in column
             StreamBuilder&lt;List&lt;ScanResult&gt;&gt;(
               stream: FlutterBlue.instance.scanResults,
               initialData: [],
               builder: (c, snapshot) =&gt; Column(
-                children: snapshot.data.map((r) =&gt; ScanResultTile(
+                children: snapshot.data.map((r) {
+                  &#47;&#47; Only display HITCH modules
+                  if(r.advertisementData.localName.contains(&#39;HELIOS&#39;) || r.advertisementData.localName.contains(&#39;HITCH&#39;)){
+                    return ScanResultTile(
                       result: r,
                       onTap: () =&gt; Navigator.of(context).push(
                         MaterialPageRoute(builder: (context) {
                           r.device.connect();
                           return DeviceScreen(device: r.device);
-                        }
-                      )),
-                    ),
-                ).toList(),
+                        })
+                      ),
+                    );
+                  } else {
+                    &#47;&#47; Cannot return a null object so return empty container
+                    return Container();
+                  }
+                }).toList(),
               ),
             ),
           ],

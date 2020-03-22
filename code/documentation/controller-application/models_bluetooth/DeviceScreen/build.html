@@ -220,10 +220,6 @@ Widget build(BuildContext context) {
             builder: (c, snapshot) =&gt; ListTile(
               title: Text(&#39;MTU Size&#39;),
               subtitle: Text(&#39;${snapshot.data} bytes&#39;),
-              &#47;&#47; trailing: IconButton(
-              &#47;&#47;   icon: Icon(Icons.edit),
-              &#47;&#47;   onPressed: () =&gt; device.requestMtu(223),
-              &#47;&#47; ),
             ),
           ),
           StreamBuilder&lt;List&lt;BluetoothService&gt;&gt;(
@@ -243,13 +239,17 @@ Widget build(BuildContext context) {
 
                 &#47;&#47; Register device on GetIt instance
                 GetIt sl = globalHelper.getIt;
+
+                &#47;&#47; Attempt to register singleton
                 try {
                   sl.registerSingleton&lt;BluetoothDevice&gt;(device);
                 } catch (e) {
+                  &#47;&#47; BluetoothDevice is not registered, register it
                   BluetoothDevice bt = GetIt.instance&lt;BluetoothDevice&gt;();
                   bt = device;
                 }
 
+                &#47;&#47; Return to TestingPage
                 Navigator.of(context).pushAndRemoveUntil(
                   MaterialPageRoute(
                     builder: (context) =&gt; Home(0)),

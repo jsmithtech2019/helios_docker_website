@@ -80,8 +80,6 @@
         <li class="section-title inherited"><a href="screens_results/TrailerResults-class.html#operators">Operators</a></li>
         <li class="inherited"><a href="dart-core/Object/operator_equals.html">operator ==</a></li>
     
-        <li class="section-title"><a href="screens_results/TrailerResults-class.html#static-properties">Static properties</a></li>
-        <li><a href="screens_results/TrailerResults/sl.html">sl</a></li>
     
     
     
@@ -97,9 +95,12 @@
           <span class="name ">dbHelper</span>
           <div class="features">final</div>
         </section>
+        <section class="desc markdown">
+          <p><code>GetIt</code> singleton for <a href="utils_database_helper/DatabaseHelper-class.html">DatabaseHelper</a></p>
+        </section>
                 <section class="summary source-code" id="source">
           <h2><span>Implementation</span></h2>
-          <pre class="language-dart"><code class="language-dart">final DatabaseHelper dbHelper = sl.get&lt;DatabaseHelper&gt;()
+          <pre class="language-dart"><code class="language-dart">final DatabaseHelper dbHelper = GetIt.instance&lt;DatabaseHelper&gt;()
 
 </code></pre>
         </section>

@@ -99,10 +99,16 @@
       <span class="name ">TestingCompletePage</span>(<wbr><span class="parameter" id="-param-cd"><span class="type-annotation"><a href="models_customer_data/CustomerData-class.html">CustomerData</a></span> <span class="parameter-name">cd</span>, [</span> <span class="parameter" id="-param-truckd"><span class="type-annotation"><a href="models_truck_data/TruckTestData-class.html">TruckTestData</a></span> <span class="parameter-name">truckd</span>, </span> <span class="parameter" id="-param-trailerd"><span class="type-annotation"><a href="models_trailer_data/TrailerTestData-class.html">TrailerTestData</a></span> <span class="parameter-name">trailerd</span></span> ])
     </section>
 
+    <section class="desc markdown">
+      <p>Default constructor</p>
+<p>Takes a <a href="models_customer_data/CustomerData-class.html">CustomerData</a> object and has two optional arguments for <a href="models_truck_data/TruckTestData-class.html">TruckTestData</a>
+and <a href="models_trailer_data/TrailerTestData-class.html">TrailerTestData</a> based on the testing that was run</p>
+    </section>
     
     <section class="summary source-code" id="source">
       <h2><span>Implementation</span></h2>
       <pre class="language-dart"><code class="language-dart">TestingCompletePage(CustomerData cd, [TruckTestData truckd, TrailerTestData trailerd]){
+  &#47;&#47; Update local variables
   this.custData = cd;
   if(truckd != null){
     this.truckData = truckd;

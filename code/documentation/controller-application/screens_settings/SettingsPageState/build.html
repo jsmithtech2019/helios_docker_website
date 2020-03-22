@@ -214,9 +214,9 @@ Widget build (BuildContext context) {
     body: SingleChildScrollView(
       child: Column(
         children: &lt;Widget&gt;[
-          new SeparatorBox(&quot;General Inquiries&quot;),
+          &#47;&#47; Create current configuration block
+          new SeparatorBox(&quot;Current Configuration&quot;),
           Container(
-            &#47;&#47;margin: EdgeInsets.all(24),
             margin: EdgeInsets.fromLTRB(24, 0, 24, 0),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -260,6 +260,7 @@ Widget build (BuildContext context) {
               ],
             ),
           ),
+          &#47;&#47; Create dropdown for existing configurations
           new SeparatorBox(&quot;Choose Existing Configuration&quot;),
           new FutureBuilder&lt;List&lt;String&gt;&gt;(
               future: dbHelper.getEmployeesList(&#39;name&#39;),
@@ -294,6 +295,7 @@ Widget build (BuildContext context) {
                 }
               }
           ),
+          &#47;&#47; Create the device pair button
           SizedBox(height: 20),
           new SeparatorBox(&quot;Pair Device&quot;),
           (widget.globalHelper.bluetoothDevice == null) ?
@@ -306,7 +308,7 @@ Widget build (BuildContext context) {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) =&gt; FlutterBlueApp(),
+                        builder: (context) =&gt; BluetoothPage(),
                       ),
                     );
                   },
@@ -328,7 +330,7 @@ Widget build (BuildContext context) {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) =&gt; FlutterBlueApp(),
+                        builder: (context) =&gt; BluetoothPage(),
                       ),
                     );
                   },
@@ -336,6 +338,7 @@ Widget build (BuildContext context) {
               ],
             ),
           SizedBox(height: 20),
+          &#47;&#47; Create the add config input step
           new SeparatorBox(&quot;Add Configuration&quot;),
           Container(
             margin: EdgeInsets.fromLTRB(24, 0, 24, 0),
@@ -488,9 +491,6 @@ Widget build (BuildContext context) {
                             &#47;&#47; Update global singleton
                             widget.globalHelper.adminData = adminData;
 
-                            print(&#39;Oh no: ${widget.globalHelper.adminData.employeeUUID}&#39;);
-
-                            &#47;&#47;dbHelper.initializeDatabase().then((onValue){print(&quot;Done initializing&quot;);});
                             dbHelper.insertAdminData(adminData);
                             Scaffold.of(context).showSnackBar(SnackBar(content: Text(&#39;Processing Data&#39;)));
                             Navigator.of(context).pushAndRemoveUntil(
