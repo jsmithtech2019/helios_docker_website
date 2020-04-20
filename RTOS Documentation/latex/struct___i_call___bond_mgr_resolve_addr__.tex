@@ -1,0 +1,93 @@
+\hypertarget{struct___i_call___bond_mgr_resolve_addr__}{}\doxysection{\+\_\+\+I\+Call\+\_\+\+Bond\+Mgr\+Resolve\+Addr\+\_\+ Struct Reference}
+\label{struct___i_call___bond_mgr_resolve_addr__}\index{\_ICall\_BondMgrResolveAddr\_@{\_ICall\_BondMgrResolveAddr\_}}
+
+
+{\ttfamily \#include $<$icall\+\_\+apimsg.\+h$>$}
+
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{icall__apimsg_8h_afa62f50d802fab57d759c527cead246e}{I\+Call\+\_\+\+Hci\+Ext\+Cmd}} \mbox{\hyperlink{struct___i_call___bond_mgr_resolve_addr___aa314acb24dbcbec1753ed26aa5f0659e}{hdr}}
+\begin{DoxyCompactList}\small\item\em hdr event field must be set as I\+C\+A\+L\+L\+\_\+\+C\+M\+D\+\_\+\+E\+V\+E\+NT \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{struct___i_call___bond_mgr_resolve_addr___ac27656f3d5c9b9065816e04893865535}{addr\+Type}}
+\begin{DoxyCompactList}\small\item\em device address type \end{DoxyCompactList}\item 
+uint8\+\_\+t $\ast$ \mbox{\hyperlink{struct___i_call___bond_mgr_resolve_addr___ad86408a2472371fc03d5f75a3b469c17}{p\+Dev\+Addr}}
+\begin{DoxyCompactList}\small\item\em device address \end{DoxyCompactList}\item 
+uint8\+\_\+t $\ast$ \mbox{\hyperlink{struct___i_call___bond_mgr_resolve_addr___a70ac2bb9485f22828e905bb7c5b3060c}{p\+Resolved\+Addr}}
+\begin{DoxyCompactList}\small\item\em pointer to buffer to put the resolved address \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+I\+Call message containing Hci\+Ext\+Cmd hdr and connection handle
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{group___g_a_p_r_o_l_e_s___b_o_n_d_m_g_r___a_p_i_ga914829de70ba2b068ae387e364757a08}{G\+A\+P\+Bond\+Mgr\+\_\+\+Resolve\+Addr}} 
+\end{DoxySeeAlso}
+
+
+Definition at line 374 of file icall\+\_\+apimsg.\+h.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{struct___i_call___bond_mgr_resolve_addr___ac27656f3d5c9b9065816e04893865535}\label{struct___i_call___bond_mgr_resolve_addr___ac27656f3d5c9b9065816e04893865535}} 
+\index{\_ICall\_BondMgrResolveAddr\_@{\_ICall\_BondMgrResolveAddr\_}!addrType@{addrType}}
+\index{addrType@{addrType}!\_ICall\_BondMgrResolveAddr\_@{\_ICall\_BondMgrResolveAddr\_}}
+\doxysubsubsection{\texorpdfstring{addrType}{addrType}}
+{\footnotesize\ttfamily uint8\+\_\+t \+\_\+\+I\+Call\+\_\+\+Bond\+Mgr\+Resolve\+Addr\+\_\+\+::addr\+Type}
+
+
+
+device address type 
+
+
+
+Definition at line 377 of file icall\+\_\+apimsg.\+h.
+
+\mbox{\Hypertarget{struct___i_call___bond_mgr_resolve_addr___aa314acb24dbcbec1753ed26aa5f0659e}\label{struct___i_call___bond_mgr_resolve_addr___aa314acb24dbcbec1753ed26aa5f0659e}} 
+\index{\_ICall\_BondMgrResolveAddr\_@{\_ICall\_BondMgrResolveAddr\_}!hdr@{hdr}}
+\index{hdr@{hdr}!\_ICall\_BondMgrResolveAddr\_@{\_ICall\_BondMgrResolveAddr\_}}
+\doxysubsubsection{\texorpdfstring{hdr}{hdr}}
+{\footnotesize\ttfamily \mbox{\hyperlink{icall__apimsg_8h_afa62f50d802fab57d759c527cead246e}{I\+Call\+\_\+\+Hci\+Ext\+Cmd}} \+\_\+\+I\+Call\+\_\+\+Bond\+Mgr\+Resolve\+Addr\+\_\+\+::hdr}
+
+
+
+hdr event field must be set as I\+C\+A\+L\+L\+\_\+\+C\+M\+D\+\_\+\+E\+V\+E\+NT 
+
+
+
+Definition at line 376 of file icall\+\_\+apimsg.\+h.
+
+\mbox{\Hypertarget{struct___i_call___bond_mgr_resolve_addr___ad86408a2472371fc03d5f75a3b469c17}\label{struct___i_call___bond_mgr_resolve_addr___ad86408a2472371fc03d5f75a3b469c17}} 
+\index{\_ICall\_BondMgrResolveAddr\_@{\_ICall\_BondMgrResolveAddr\_}!pDevAddr@{pDevAddr}}
+\index{pDevAddr@{pDevAddr}!\_ICall\_BondMgrResolveAddr\_@{\_ICall\_BondMgrResolveAddr\_}}
+\doxysubsubsection{\texorpdfstring{pDevAddr}{pDevAddr}}
+{\footnotesize\ttfamily uint8\+\_\+t$\ast$ \+\_\+\+I\+Call\+\_\+\+Bond\+Mgr\+Resolve\+Addr\+\_\+\+::p\+Dev\+Addr}
+
+
+
+device address 
+
+
+
+Definition at line 378 of file icall\+\_\+apimsg.\+h.
+
+\mbox{\Hypertarget{struct___i_call___bond_mgr_resolve_addr___a70ac2bb9485f22828e905bb7c5b3060c}\label{struct___i_call___bond_mgr_resolve_addr___a70ac2bb9485f22828e905bb7c5b3060c}} 
+\index{\_ICall\_BondMgrResolveAddr\_@{\_ICall\_BondMgrResolveAddr\_}!pResolvedAddr@{pResolvedAddr}}
+\index{pResolvedAddr@{pResolvedAddr}!\_ICall\_BondMgrResolveAddr\_@{\_ICall\_BondMgrResolveAddr\_}}
+\doxysubsubsection{\texorpdfstring{pResolvedAddr}{pResolvedAddr}}
+{\footnotesize\ttfamily uint8\+\_\+t$\ast$ \+\_\+\+I\+Call\+\_\+\+Bond\+Mgr\+Resolve\+Addr\+\_\+\+::p\+Resolved\+Addr}
+
+
+
+pointer to buffer to put the resolved address 
+
+
+
+Definition at line 379 of file icall\+\_\+apimsg.\+h.
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+I\+Call\+B\+L\+E/\mbox{\hyperlink{icall__apimsg_8h}{icall\+\_\+apimsg.\+h}}\end{DoxyCompactItemize}

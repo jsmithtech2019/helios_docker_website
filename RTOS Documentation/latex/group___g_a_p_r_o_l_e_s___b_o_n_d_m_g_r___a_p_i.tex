@@ -1,0 +1,389 @@
+\hypertarget{group___g_a_p_r_o_l_e_s___b_o_n_d_m_g_r___a_p_i}{}\doxysection{G\+AP Bond Manager A\+PI Functions}
+\label{group___g_a_p_r_o_l_e_s___b_o_n_d_m_g_r___a_p_i}\index{GAP Bond Manager API Functions@{GAP Bond Manager API Functions}}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+b\+Status\+\_\+t \mbox{\hyperlink{group___g_a_p_r_o_l_e_s___b_o_n_d_m_g_r___a_p_i_ga8c64e3dc3c38caafb72a9bb37c4b7b53}{G\+A\+P\+Bond\+Mgr\+\_\+\+Set\+Parameter}} (uint16 param, uint8 \mbox{\hyperlink{icall__apimsg_8h_a8ccac76f35f79d74917e1c5dd6f69fea}{len}}, void $\ast$p\+Value)
+\begin{DoxyCompactList}\small\item\em Set a G\+AP Bond Manager parameter. \end{DoxyCompactList}\item 
+b\+Status\+\_\+t \mbox{\hyperlink{group___g_a_p_r_o_l_e_s___b_o_n_d_m_g_r___a_p_i_ga2c3a3e432a6d3e1abb1900c37ffda8df}{G\+A\+P\+Bond\+Mgr\+\_\+\+Get\+Parameter}} (uint16 param, void $\ast$p\+Value)
+\begin{DoxyCompactList}\small\item\em Get a G\+AP Bond Manager parameter. \end{DoxyCompactList}\item 
+b\+Status\+\_\+t \mbox{\hyperlink{group___g_a_p_r_o_l_e_s___b_o_n_d_m_g_r___a_p_i_ga41a1bd772c4156fd1c787c698296cd0b}{G\+A\+P\+Bond\+Mgr\+\_\+\+Link\+Est}} (uint8 addr\+Type, uint8 $\ast$p\+Dev\+Addr, uint16 conn\+Handle, uint8 role)
+\begin{DoxyCompactList}\small\item\em Notify the Bond Manager that a connection has been made. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___g_a_p_r_o_l_e_s___b_o_n_d_m_g_r___a_p_i_ga5bd00991eeab759b26ebd98f570f91b9}{G\+A\+P\+Bond\+Mgr\+\_\+\+Link\+Term}} (uint16 conn\+Handle)
+\begin{DoxyCompactList}\small\item\em Notify the Bond Manager that a connection has been terminated. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___g_a_p_r_o_l_e_s___b_o_n_d_m_g_r___a_p_i_ga0a0b8304f626abd88fe1145b79c85ffd}{G\+A\+P\+Bond\+Mgr\+\_\+\+Slave\+Req\+Security}} (uint16 conn\+Handle, uint8 auth\+Req)
+\item 
+uint8 \mbox{\hyperlink{group___g_a_p_r_o_l_e_s___b_o_n_d_m_g_r___a_p_i_ga914829de70ba2b068ae387e364757a08}{G\+A\+P\+Bond\+Mgr\+\_\+\+Resolve\+Addr}} (uint8 addr\+Type, uint8 $\ast$p\+Dev\+Addr, uint8 $\ast$p\+Resolved\+Addr)
+\begin{DoxyCompactList}\small\item\em Resolve an address from bonding information. \end{DoxyCompactList}\item 
+b\+Status\+\_\+t \mbox{\hyperlink{group___g_a_p_r_o_l_e_s___b_o_n_d_m_g_r___a_p_i_ga611e1888433ddfd82956c551796f44f8}{G\+A\+P\+Bond\+Mgr\+\_\+\+Service\+Change\+Ind}} (uint16 connection\+Handle, uint8 set\+Param)
+\begin{DoxyCompactList}\small\item\em Set/clear the service change indication in a bond record. \end{DoxyCompactList}\item 
+b\+Status\+\_\+t \mbox{\hyperlink{group___g_a_p_r_o_l_e_s___b_o_n_d_m_g_r___a_p_i_gaa80abef0cce9c0af3619ee2ef5f40f13}{G\+A\+P\+Bond\+Mgr\+\_\+\+Update\+Char\+Cfg}} (uint16 connection\+Handle, uint16 attr\+Handle, uint16 value)
+\begin{DoxyCompactList}\small\item\em Update the Characteristic Configuration in a bond record. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___g_a_p_r_o_l_e_s___b_o_n_d_m_g_r___a_p_i_ga6f8ee9b4906eeb74ae8f10d511229eda}{G\+A\+P\+Bond\+Mgr\+\_\+\+Register}} (\mbox{\hyperlink{structgap_bond_c_bs__t}{gap\+Bond\+C\+Bs\+\_\+t}} $\ast$p\+CB)
+\begin{DoxyCompactList}\small\item\em Register callback functions with the bond manager. \end{DoxyCompactList}\item 
+b\+Status\+\_\+t \mbox{\hyperlink{group___g_a_p_r_o_l_e_s___b_o_n_d_m_g_r___a_p_i_ga3fed7c7c4af15a9f59b89374cdac5447}{G\+A\+P\+Bond\+Mgr\+\_\+\+Passcode\+Rsp}} (uint16 connection\+Handle, uint8 \mbox{\hyperlink{icall__apimsg_8h_ad94584ed274ed1d5b06d52f5bb3a178d}{status}}, uint32 passcode)
+\begin{DoxyCompactList}\small\item\em Respond to a passcode request. \end{DoxyCompactList}\item 
+b\+Status\+\_\+t \mbox{\hyperlink{group___g_a_p_r_o_l_e_s___b_o_n_d_m_g_r___a_p_i_ga9feca64c6755f452350b7e742889cf8b}{G\+A\+P\+Bond\+Mgr\+\_\+\+Read\+Cent\+Addr\+Res\+Char}} (uint16 connection\+Handle)
+\begin{DoxyCompactList}\small\item\em Send Read By Type Request to get value attribute of Central Address Resolution characteristic. Value determines if peer supports Enhanced Privacy. Bond record will automatically be updated based on peer response. \end{DoxyCompactList}\item 
+uint8 \mbox{\hyperlink{group___g_a_p_r_o_l_e_s___b_o_n_d_m_g_r___a_p_i_gac7a1ce3972087a30a6b75a2ab74c2716}{G\+A\+P\+Bond\+Mgr\+\_\+\+Supports\+Enhanced\+Priv}} (uint8 $\ast$p\+Peer\+Id\+Addr)
+\begin{DoxyCompactList}\small\item\em Determine if peer device supports enhanced privacy by checking the Enhanced Privacy state flag of the bond record that corresponds to the peer\textquotesingle{}s identity address. \end{DoxyCompactList}\item 
+uint8 \mbox{\hyperlink{group___g_a_p_r_o_l_e_s___b_o_n_d_m_g_r___a_p_i_gaf21a6554e8c0bb45e2ab1ab0c783e711}{G\+A\+P\+Bond\+Mgr\+\_\+\+Process\+G\+A\+P\+Msg}} (\mbox{\hyperlink{structgap_event_hdr__t}{gap\+Event\+Hdr\+\_\+t}} $\ast$p\+Msg)
+\begin{DoxyCompactList}\small\item\em This is a bypass mechanism to allow the bond manager to process G\+AP messages. \end{DoxyCompactList}\item 
+uint8 \mbox{\hyperlink{group___g_a_p_r_o_l_e_s___b_o_n_d_m_g_r___a_p_i_gaffd93df91108509d539ea31c53fa91c4}{G\+A\+P\+Bond\+Mgr\+\_\+\+Check\+N\+V\+Len}} (uint8 id, uint8 \mbox{\hyperlink{icall__apimsg_8h_a8ccac76f35f79d74917e1c5dd6f69fea}{len}})
+\begin{DoxyCompactList}\small\item\em This function will check the length of a Bond Manager NV Item. \end{DoxyCompactList}\item 
+b\+Status\+\_\+t \mbox{\hyperlink{group___g_a_p_r_o_l_e_s___b_o_n_d_m_g_r___a_p_i_gae45734df91ab10e3ad63bb133d955b57}{G\+A\+P\+Bond\+Mgr\+\_\+sync\+Resolving\+List}} (void)
+\begin{DoxyCompactList}\small\item\em This function will add all device address and I\+RK pairs from bond records to the Controller. Used with P\+R\+I\+V\+A\+C\+Y\+\_\+1\+\_\+2\+\_\+\+C\+FG. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{group___g_a_p_r_o_l_e_s___b_o_n_d_m_g_r___a_p_i_gaffd93df91108509d539ea31c53fa91c4}\label{group___g_a_p_r_o_l_e_s___b_o_n_d_m_g_r___a_p_i_gaffd93df91108509d539ea31c53fa91c4}} 
+\index{GAP Bond Manager API Functions@{GAP Bond Manager API Functions}!GAPBondMgr\_CheckNVLen@{GAPBondMgr\_CheckNVLen}}
+\index{GAPBondMgr\_CheckNVLen@{GAPBondMgr\_CheckNVLen}!GAP Bond Manager API Functions@{GAP Bond Manager API Functions}}
+\doxysubsubsection{\texorpdfstring{GAPBondMgr\_CheckNVLen()}{GAPBondMgr\_CheckNVLen()}}
+{\footnotesize\ttfamily uint8 G\+A\+P\+Bond\+Mgr\+\_\+\+Check\+N\+V\+Len (\begin{DoxyParamCaption}\item[{uint8}]{id,  }\item[{uint8}]{len }\end{DoxyParamCaption})}
+
+
+
+This function will check the length of a Bond Manager NV Item. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & -\/ NV ID. \\
+\hline
+{\em len} & -\/ lengths in bytes of item.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+S\+U\+C\+C\+E\+SS or F\+A\+I\+L\+U\+RE 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group___g_a_p_r_o_l_e_s___b_o_n_d_m_g_r___a_p_i_ga2c3a3e432a6d3e1abb1900c37ffda8df}\label{group___g_a_p_r_o_l_e_s___b_o_n_d_m_g_r___a_p_i_ga2c3a3e432a6d3e1abb1900c37ffda8df}} 
+\index{GAP Bond Manager API Functions@{GAP Bond Manager API Functions}!GAPBondMgr\_GetParameter@{GAPBondMgr\_GetParameter}}
+\index{GAPBondMgr\_GetParameter@{GAPBondMgr\_GetParameter}!GAP Bond Manager API Functions@{GAP Bond Manager API Functions}}
+\doxysubsubsection{\texorpdfstring{GAPBondMgr\_GetParameter()}{GAPBondMgr\_GetParameter()}}
+{\footnotesize\ttfamily b\+Status\+\_\+t G\+A\+P\+Bond\+Mgr\+\_\+\+Get\+Parameter (\begin{DoxyParamCaption}\item[{uint16}]{param,  }\item[{void $\ast$}]{p\+Value }\end{DoxyParamCaption})}
+
+
+
+Get a G\+AP Bond Manager parameter. 
+
+N\+O\+TE\+: You can call this function with a G\+AP Parameter ID and it will get a G\+AP Parameter. G\+AP Parameters are defined in (\mbox{\hyperlink{gap_8h}{gap.\+h}}). Also, the \char`\"{}p\+Value\char`\"{} field must point to a \char`\"{}uint16\char`\"{}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em param} & -\/ Profile parameter ID\+: \mbox{\hyperlink{group___g_a_p_b_o_n_d___p_r_o_f_i_l_e___p_a_r_a_m_e_t_e_r_s}{G\+AP Bond Manager Parameters}} \\
+\hline
+{\em p\+Value} & -\/ pointer to location to get the value. This is dependent on the parameter ID and W\+I\+LL be cast to the appropriate data type (example\+: data type of uint16 will be cast to uint16 pointer).\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+S\+U\+C\+C\+E\+SS or I\+N\+V\+A\+L\+I\+D\+P\+A\+R\+A\+M\+E\+T\+ER (invalid param\+ID) 
+\end{DoxyReturn}
+
+
+Definition at line 2712 of file icall\+\_\+api.\+c.
+
+\mbox{\Hypertarget{group___g_a_p_r_o_l_e_s___b_o_n_d_m_g_r___a_p_i_ga41a1bd772c4156fd1c787c698296cd0b}\label{group___g_a_p_r_o_l_e_s___b_o_n_d_m_g_r___a_p_i_ga41a1bd772c4156fd1c787c698296cd0b}} 
+\index{GAP Bond Manager API Functions@{GAP Bond Manager API Functions}!GAPBondMgr\_LinkEst@{GAPBondMgr\_LinkEst}}
+\index{GAPBondMgr\_LinkEst@{GAPBondMgr\_LinkEst}!GAP Bond Manager API Functions@{GAP Bond Manager API Functions}}
+\doxysubsubsection{\texorpdfstring{GAPBondMgr\_LinkEst()}{GAPBondMgr\_LinkEst()}}
+{\footnotesize\ttfamily b\+Status\+\_\+t G\+A\+P\+Bond\+Mgr\+\_\+\+Link\+Est (\begin{DoxyParamCaption}\item[{uint8}]{addr\+Type,  }\item[{uint8 $\ast$}]{p\+Dev\+Addr,  }\item[{uint16}]{conn\+Handle,  }\item[{uint8}]{role }\end{DoxyParamCaption})}
+
+
+
+Notify the Bond Manager that a connection has been made. 
+
+N\+O\+TE\+: The G\+AP Peripheral/\+Central Role profile will call this function, if they are included in the project.
+
+
+\begin{DoxyParams}{Parameters}
+{\em addr\+Type} & -\/ device\textquotesingle{}s address type. Reference A\+D\+D\+R\+T\+Y\+P\+E\+\_\+\+D\+E\+F\+I\+N\+ES in \mbox{\hyperlink{gap_8h}{gap.\+h}} \\
+\hline
+{\em p\+Dev\+Addr} & -\/ device\textquotesingle{}s address \\
+\hline
+{\em conn\+Handle} & -\/ connection handle \\
+\hline
+{\em role} & -\/ master or slave role. Reference G\+A\+P\+\_\+\+P\+R\+O\+F\+I\+L\+E\+\_\+\+R\+O\+L\+E\+\_\+\+D\+E\+F\+I\+N\+ES in \mbox{\hyperlink{gap_8h}{gap.\+h}}\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+S\+U\+C\+C\+E\+SS, otherwise failure 
+\end{DoxyReturn}
+
+
+Definition at line 799 of file icall\+\_\+api.\+c.
+
+\mbox{\Hypertarget{group___g_a_p_r_o_l_e_s___b_o_n_d_m_g_r___a_p_i_ga5bd00991eeab759b26ebd98f570f91b9}\label{group___g_a_p_r_o_l_e_s___b_o_n_d_m_g_r___a_p_i_ga5bd00991eeab759b26ebd98f570f91b9}} 
+\index{GAP Bond Manager API Functions@{GAP Bond Manager API Functions}!GAPBondMgr\_LinkTerm@{GAPBondMgr\_LinkTerm}}
+\index{GAPBondMgr\_LinkTerm@{GAPBondMgr\_LinkTerm}!GAP Bond Manager API Functions@{GAP Bond Manager API Functions}}
+\doxysubsubsection{\texorpdfstring{GAPBondMgr\_LinkTerm()}{GAPBondMgr\_LinkTerm()}}
+{\footnotesize\ttfamily void G\+A\+P\+Bond\+Mgr\+\_\+\+Link\+Term (\begin{DoxyParamCaption}\item[{uint16}]{conn\+Handle }\end{DoxyParamCaption})}
+
+
+
+Notify the Bond Manager that a connection has been terminated. 
+
+N\+O\+TE\+: The G\+AP Peripheral/\+Central Role profile will call this function, if they are included in the project.
+
+
+\begin{DoxyParams}{Parameters}
+{\em conn\+Handle} & -\/ connection handle\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+
+
+Definition at line 829 of file icall\+\_\+api.\+c.
+
+\mbox{\Hypertarget{group___g_a_p_r_o_l_e_s___b_o_n_d_m_g_r___a_p_i_ga3fed7c7c4af15a9f59b89374cdac5447}\label{group___g_a_p_r_o_l_e_s___b_o_n_d_m_g_r___a_p_i_ga3fed7c7c4af15a9f59b89374cdac5447}} 
+\index{GAP Bond Manager API Functions@{GAP Bond Manager API Functions}!GAPBondMgr\_PasscodeRsp@{GAPBondMgr\_PasscodeRsp}}
+\index{GAPBondMgr\_PasscodeRsp@{GAPBondMgr\_PasscodeRsp}!GAP Bond Manager API Functions@{GAP Bond Manager API Functions}}
+\doxysubsubsection{\texorpdfstring{GAPBondMgr\_PasscodeRsp()}{GAPBondMgr\_PasscodeRsp()}}
+{\footnotesize\ttfamily b\+Status\+\_\+t G\+A\+P\+Bond\+Mgr\+\_\+\+Passcode\+Rsp (\begin{DoxyParamCaption}\item[{uint16}]{connection\+Handle,  }\item[{uint8}]{status,  }\item[{uint32}]{passcode }\end{DoxyParamCaption})}
+
+
+
+Respond to a passcode request. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em connection\+Handle} & -\/ connection handle of the connected device or 0x\+F\+F\+FF if all devices in database. \\
+\hline
+{\em status} & -\/ S\+U\+C\+C\+E\+SS if passcode is available, otherwise see \mbox{\hyperlink{group___s_m_p___p_a_i_r_i_n_g___f_a_i_l_e_d___d_e_f_i_n_e_s}{Pairing failure status values}}. \\
+\hline
+{\em passcode} & -\/ integer value containing the passcode.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+S\+U\+C\+C\+E\+SS -\/ bond record found and changed,~\newline
+ ble\+Incorrect\+Mode -\/ Link not found. 
+\end{DoxyReturn}
+
+
+Definition at line 768 of file icall\+\_\+api.\+c.
+
+\mbox{\Hypertarget{group___g_a_p_r_o_l_e_s___b_o_n_d_m_g_r___a_p_i_gaf21a6554e8c0bb45e2ab1ab0c783e711}\label{group___g_a_p_r_o_l_e_s___b_o_n_d_m_g_r___a_p_i_gaf21a6554e8c0bb45e2ab1ab0c783e711}} 
+\index{GAP Bond Manager API Functions@{GAP Bond Manager API Functions}!GAPBondMgr\_ProcessGAPMsg@{GAPBondMgr\_ProcessGAPMsg}}
+\index{GAPBondMgr\_ProcessGAPMsg@{GAPBondMgr\_ProcessGAPMsg}!GAP Bond Manager API Functions@{GAP Bond Manager API Functions}}
+\doxysubsubsection{\texorpdfstring{GAPBondMgr\_ProcessGAPMsg()}{GAPBondMgr\_ProcessGAPMsg()}}
+{\footnotesize\ttfamily uint8 G\+A\+P\+Bond\+Mgr\+\_\+\+Process\+G\+A\+P\+Msg (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structgap_event_hdr__t}{gap\+Event\+Hdr\+\_\+t}} $\ast$}]{p\+Msg }\end{DoxyParamCaption})}
+
+
+
+This is a bypass mechanism to allow the bond manager to process G\+AP messages. 
+
+N\+O\+TE\+: This is an advanced feature and shouldn\textquotesingle{}t be called unless the normal G\+AP Bond Manager task ID registration is overridden.
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Msg} & -\/ G\+AP event message\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+T\+R\+UE if safe to deallocate incoming G\+AP message, F\+A\+L\+SE otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group___g_a_p_r_o_l_e_s___b_o_n_d_m_g_r___a_p_i_ga9feca64c6755f452350b7e742889cf8b}\label{group___g_a_p_r_o_l_e_s___b_o_n_d_m_g_r___a_p_i_ga9feca64c6755f452350b7e742889cf8b}} 
+\index{GAP Bond Manager API Functions@{GAP Bond Manager API Functions}!GAPBondMgr\_ReadCentAddrResChar@{GAPBondMgr\_ReadCentAddrResChar}}
+\index{GAPBondMgr\_ReadCentAddrResChar@{GAPBondMgr\_ReadCentAddrResChar}!GAP Bond Manager API Functions@{GAP Bond Manager API Functions}}
+\doxysubsubsection{\texorpdfstring{GAPBondMgr\_ReadCentAddrResChar()}{GAPBondMgr\_ReadCentAddrResChar()}}
+{\footnotesize\ttfamily b\+Status\+\_\+t G\+A\+P\+Bond\+Mgr\+\_\+\+Read\+Cent\+Addr\+Res\+Char (\begin{DoxyParamCaption}\item[{uint16}]{connection\+Handle }\end{DoxyParamCaption})}
+
+
+
+Send Read By Type Request to get value attribute of Central Address Resolution characteristic. Value determines if peer supports Enhanced Privacy. Bond record will automatically be updated based on peer response. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em connection\+Handle} & -\/ connection handle of the connected device\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+S\+U\+C\+C\+E\+SS\+: Request was sent successfully.~\newline
+ I\+N\+V\+A\+L\+I\+D\+P\+A\+R\+A\+M\+E\+T\+ER\+: Invalid connection handle or request field.~\newline
+ M\+S\+G\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+N\+O\+T\+\_\+\+A\+V\+A\+IL\+: No H\+CI buffer is available.~\newline
+ ble\+Not\+Connected\+: Connection is down.~\newline
+ ble\+Pending\+: A response is pending with this server.~\newline
+ ble\+Mem\+Alloc\+Error\+: Memory allocation error occurred.~\newline
+ ble\+Timeout\+: Previous transaction timed out.~\newline
+ 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group___g_a_p_r_o_l_e_s___b_o_n_d_m_g_r___a_p_i_ga6f8ee9b4906eeb74ae8f10d511229eda}\label{group___g_a_p_r_o_l_e_s___b_o_n_d_m_g_r___a_p_i_ga6f8ee9b4906eeb74ae8f10d511229eda}} 
+\index{GAP Bond Manager API Functions@{GAP Bond Manager API Functions}!GAPBondMgr\_Register@{GAPBondMgr\_Register}}
+\index{GAPBondMgr\_Register@{GAPBondMgr\_Register}!GAP Bond Manager API Functions@{GAP Bond Manager API Functions}}
+\doxysubsubsection{\texorpdfstring{GAPBondMgr\_Register()}{GAPBondMgr\_Register()}}
+{\footnotesize\ttfamily void G\+A\+P\+Bond\+Mgr\+\_\+\+Register (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structgap_bond_c_bs__t}{gap\+Bond\+C\+Bs\+\_\+t}} $\ast$}]{p\+CB }\end{DoxyParamCaption})}
+
+
+
+Register callback functions with the bond manager. 
+
+N\+O\+TE\+: There is no need to register a passcode callback function if the passcode will be handled with the G\+A\+P\+B\+O\+N\+D\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+P\+A\+S\+S\+C\+O\+DE parameter.
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+CB} & -\/ pointer to callback function structure.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+
+
+Definition at line 744 of file icall\+\_\+api.\+c.
+
+\mbox{\Hypertarget{group___g_a_p_r_o_l_e_s___b_o_n_d_m_g_r___a_p_i_ga914829de70ba2b068ae387e364757a08}\label{group___g_a_p_r_o_l_e_s___b_o_n_d_m_g_r___a_p_i_ga914829de70ba2b068ae387e364757a08}} 
+\index{GAP Bond Manager API Functions@{GAP Bond Manager API Functions}!GAPBondMgr\_ResolveAddr@{GAPBondMgr\_ResolveAddr}}
+\index{GAPBondMgr\_ResolveAddr@{GAPBondMgr\_ResolveAddr}!GAP Bond Manager API Functions@{GAP Bond Manager API Functions}}
+\doxysubsubsection{\texorpdfstring{GAPBondMgr\_ResolveAddr()}{GAPBondMgr\_ResolveAddr()}}
+{\footnotesize\ttfamily uint8 G\+A\+P\+Bond\+Mgr\+\_\+\+Resolve\+Addr (\begin{DoxyParamCaption}\item[{uint8}]{addr\+Type,  }\item[{uint8 $\ast$}]{p\+Dev\+Addr,  }\item[{uint8 $\ast$}]{p\+Resolved\+Addr }\end{DoxyParamCaption})}
+
+
+
+Resolve an address from bonding information. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em addr\+Type} & -\/ peer\textquotesingle{}s address type. Reference A\+D\+D\+R\+T\+Y\+P\+E\+\_\+\+D\+E\+F\+I\+N\+ES in \mbox{\hyperlink{gap_8h}{gap.\+h}} \\
+\hline
+{\em p\+Dev\+Addr} & -\/ peer\textquotesingle{}s address \\
+\hline
+{\em p\+Resolved\+Addr} & -\/ pointer to buffer to put the resolved address\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bonding index (0 -\/ (G\+A\+P\+\_\+\+B\+O\+N\+D\+I\+N\+G\+S\+\_\+\+M\+A\+X-\/1) if found, G\+A\+P\+\_\+\+B\+O\+N\+D\+I\+N\+G\+S\+\_\+\+M\+AX if not found 
+\end{DoxyReturn}
+
+
+Definition at line 880 of file icall\+\_\+api.\+c.
+
+\mbox{\Hypertarget{group___g_a_p_r_o_l_e_s___b_o_n_d_m_g_r___a_p_i_ga611e1888433ddfd82956c551796f44f8}\label{group___g_a_p_r_o_l_e_s___b_o_n_d_m_g_r___a_p_i_ga611e1888433ddfd82956c551796f44f8}} 
+\index{GAP Bond Manager API Functions@{GAP Bond Manager API Functions}!GAPBondMgr\_ServiceChangeInd@{GAPBondMgr\_ServiceChangeInd}}
+\index{GAPBondMgr\_ServiceChangeInd@{GAPBondMgr\_ServiceChangeInd}!GAP Bond Manager API Functions@{GAP Bond Manager API Functions}}
+\doxysubsubsection{\texorpdfstring{GAPBondMgr\_ServiceChangeInd()}{GAPBondMgr\_ServiceChangeInd()}}
+{\footnotesize\ttfamily b\+Status\+\_\+t G\+A\+P\+Bond\+Mgr\+\_\+\+Service\+Change\+Ind (\begin{DoxyParamCaption}\item[{uint16}]{connection\+Handle,  }\item[{uint8}]{set\+Param }\end{DoxyParamCaption})}
+
+
+
+Set/clear the service change indication in a bond record. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em connection\+Handle} & -\/ connection handle of the connected device or 0x\+F\+F\+FF if all devices in database. \\
+\hline
+{\em set\+Param} & -\/ T\+R\+UE to set the service change indication, F\+A\+L\+SE to clear it.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+S\+U\+C\+C\+E\+SS -\/ bond record found and changed,~\newline
+ ble\+No\+Resources -\/ bond record not found (for 0x\+F\+F\+FF connection\+Handle),~\newline
+ ble\+Not\+Connected -\/ connection not found -\/ connection\+Handle is invalid (for non-\/0x\+F\+F\+FF connection\+Handle). 
+\end{DoxyReturn}
+
+
+Definition at line 2763 of file icall\+\_\+api.\+c.
+
+\mbox{\Hypertarget{group___g_a_p_r_o_l_e_s___b_o_n_d_m_g_r___a_p_i_ga8c64e3dc3c38caafb72a9bb37c4b7b53}\label{group___g_a_p_r_o_l_e_s___b_o_n_d_m_g_r___a_p_i_ga8c64e3dc3c38caafb72a9bb37c4b7b53}} 
+\index{GAP Bond Manager API Functions@{GAP Bond Manager API Functions}!GAPBondMgr\_SetParameter@{GAPBondMgr\_SetParameter}}
+\index{GAPBondMgr\_SetParameter@{GAPBondMgr\_SetParameter}!GAP Bond Manager API Functions@{GAP Bond Manager API Functions}}
+\doxysubsubsection{\texorpdfstring{GAPBondMgr\_SetParameter()}{GAPBondMgr\_SetParameter()}}
+{\footnotesize\ttfamily b\+Status\+\_\+t G\+A\+P\+Bond\+Mgr\+\_\+\+Set\+Parameter (\begin{DoxyParamCaption}\item[{uint16}]{param,  }\item[{uint8}]{len,  }\item[{void $\ast$}]{p\+Value }\end{DoxyParamCaption})}
+
+
+
+Set a G\+AP Bond Manager parameter. 
+
+N\+O\+TE\+: You can call this function with a G\+AP Parameter ID and it will set the G\+AP Parameter. G\+AP Parameters are defined in (\mbox{\hyperlink{gap_8h}{gap.\+h}}). Also, the \char`\"{}len\char`\"{} field must be set to the size of a \char`\"{}uint16\char`\"{} and the \char`\"{}p\+Value\char`\"{} field must point to a \char`\"{}uint16\char`\"{}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em param} & -\/ Profile parameter ID\+: \mbox{\hyperlink{group___g_a_p_b_o_n_d___p_r_o_f_i_l_e___p_a_r_a_m_e_t_e_r_s}{G\+AP Bond Manager Parameters}} \\
+\hline
+{\em len} & -\/ length of data to write \\
+\hline
+{\em p\+Value} & -\/ pointer to data to write. This is dependent on the parameter ID and W\+I\+LL be cast to the appropriate data type (example\+: data type of uint16 will be cast to uint16 pointer).\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+S\+U\+C\+C\+E\+SS or I\+N\+V\+A\+L\+I\+D\+P\+A\+R\+A\+M\+E\+T\+ER (invalid param\+ID) 
+\end{DoxyReturn}
+
+
+Definition at line 2685 of file icall\+\_\+api.\+c.
+
+\mbox{\Hypertarget{group___g_a_p_r_o_l_e_s___b_o_n_d_m_g_r___a_p_i_ga0a0b8304f626abd88fe1145b79c85ffd}\label{group___g_a_p_r_o_l_e_s___b_o_n_d_m_g_r___a_p_i_ga0a0b8304f626abd88fe1145b79c85ffd}} 
+\index{GAP Bond Manager API Functions@{GAP Bond Manager API Functions}!GAPBondMgr\_SlaveReqSecurity@{GAPBondMgr\_SlaveReqSecurity}}
+\index{GAPBondMgr\_SlaveReqSecurity@{GAPBondMgr\_SlaveReqSecurity}!GAP Bond Manager API Functions@{GAP Bond Manager API Functions}}
+\doxysubsubsection{\texorpdfstring{GAPBondMgr\_SlaveReqSecurity()}{GAPBondMgr\_SlaveReqSecurity()}}
+{\footnotesize\ttfamily void G\+A\+P\+Bond\+Mgr\+\_\+\+Slave\+Req\+Security (\begin{DoxyParamCaption}\item[{uint16}]{conn\+Handle,  }\item[{uint8}]{auth\+Req }\end{DoxyParamCaption})}
+
+
+
+Definition at line 854 of file icall\+\_\+api.\+c.
+
+\mbox{\Hypertarget{group___g_a_p_r_o_l_e_s___b_o_n_d_m_g_r___a_p_i_gac7a1ce3972087a30a6b75a2ab74c2716}\label{group___g_a_p_r_o_l_e_s___b_o_n_d_m_g_r___a_p_i_gac7a1ce3972087a30a6b75a2ab74c2716}} 
+\index{GAP Bond Manager API Functions@{GAP Bond Manager API Functions}!GAPBondMgr\_SupportsEnhancedPriv@{GAPBondMgr\_SupportsEnhancedPriv}}
+\index{GAPBondMgr\_SupportsEnhancedPriv@{GAPBondMgr\_SupportsEnhancedPriv}!GAP Bond Manager API Functions@{GAP Bond Manager API Functions}}
+\doxysubsubsection{\texorpdfstring{GAPBondMgr\_SupportsEnhancedPriv()}{GAPBondMgr\_SupportsEnhancedPriv()}}
+{\footnotesize\ttfamily uint8 G\+A\+P\+Bond\+Mgr\+\_\+\+Supports\+Enhanced\+Priv (\begin{DoxyParamCaption}\item[{uint8 $\ast$}]{p\+Peer\+Id\+Addr }\end{DoxyParamCaption})}
+
+
+
+Determine if peer device supports enhanced privacy by checking the Enhanced Privacy state flag of the bond record that corresponds to the peer\textquotesingle{}s identity address. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Peer\+Id\+Addr} & -\/ peer identity address\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+T\+R\+UE\+: Peer supports enhanced privacy.~\newline
+ F\+A\+L\+SE\+: Peer does not support enhanced privacy.~\newline
+ 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group___g_a_p_r_o_l_e_s___b_o_n_d_m_g_r___a_p_i_gae45734df91ab10e3ad63bb133d955b57}\label{group___g_a_p_r_o_l_e_s___b_o_n_d_m_g_r___a_p_i_gae45734df91ab10e3ad63bb133d955b57}} 
+\index{GAP Bond Manager API Functions@{GAP Bond Manager API Functions}!GAPBondMgr\_syncResolvingList@{GAPBondMgr\_syncResolvingList}}
+\index{GAPBondMgr\_syncResolvingList@{GAPBondMgr\_syncResolvingList}!GAP Bond Manager API Functions@{GAP Bond Manager API Functions}}
+\doxysubsubsection{\texorpdfstring{GAPBondMgr\_syncResolvingList()}{GAPBondMgr\_syncResolvingList()}}
+{\footnotesize\ttfamily b\+Status\+\_\+t G\+A\+P\+Bond\+Mgr\+\_\+sync\+Resolving\+List (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+This function will add all device address and I\+RK pairs from bond records to the Controller. Used with P\+R\+I\+V\+A\+C\+Y\+\_\+1\+\_\+2\+\_\+\+C\+FG. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+S\+U\+C\+C\+E\+SS or F\+A\+I\+L\+U\+RE 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group___g_a_p_r_o_l_e_s___b_o_n_d_m_g_r___a_p_i_gaa80abef0cce9c0af3619ee2ef5f40f13}\label{group___g_a_p_r_o_l_e_s___b_o_n_d_m_g_r___a_p_i_gaa80abef0cce9c0af3619ee2ef5f40f13}} 
+\index{GAP Bond Manager API Functions@{GAP Bond Manager API Functions}!GAPBondMgr\_UpdateCharCfg@{GAPBondMgr\_UpdateCharCfg}}
+\index{GAPBondMgr\_UpdateCharCfg@{GAPBondMgr\_UpdateCharCfg}!GAP Bond Manager API Functions@{GAP Bond Manager API Functions}}
+\doxysubsubsection{\texorpdfstring{GAPBondMgr\_UpdateCharCfg()}{GAPBondMgr\_UpdateCharCfg()}}
+{\footnotesize\ttfamily b\+Status\+\_\+t G\+A\+P\+Bond\+Mgr\+\_\+\+Update\+Char\+Cfg (\begin{DoxyParamCaption}\item[{uint16}]{connection\+Handle,  }\item[{uint16}]{attr\+Handle,  }\item[{uint16}]{value }\end{DoxyParamCaption})}
+
+
+
+Update the Characteristic Configuration in a bond record. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em connection\+Handle} & -\/ connection handle of the connected device or 0x\+F\+F\+FF if all devices in database. \\
+\hline
+{\em attr\+Handle} & -\/ attribute handle. \\
+\hline
+{\em value} & -\/ characteristic configuration value.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+S\+U\+C\+C\+E\+SS -\/ bond record found and changed,~\newline
+ ble\+No\+Resources -\/ bond record not found (for 0x\+F\+F\+FF connection\+Handle),~\newline
+ ble\+Not\+Connected -\/ connection not found -\/ connection\+Handle is invalid (for non-\/0x\+F\+F\+FF connection\+Handle). 
+\end{DoxyReturn}

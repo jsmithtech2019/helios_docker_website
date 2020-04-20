@@ -1,0 +1,122 @@
+\hypertarget{group___g_a_t_t___c_l_i_e_n_t___a_p_i}{}\doxysection{G\+A\+TT Client A\+PI Functions}
+\label{group___g_a_t_t___c_l_i_e_n_t___a_p_i}\index{GATT Client API Functions@{GATT Client API Functions}}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+b\+Status\+\_\+t \mbox{\hyperlink{group___g_a_t_t___c_l_i_e_n_t___a_p_i_ga79026e24ddadeb7bb7e3c3109cbf1d17}{G\+A\+T\+T\+\_\+\+Init\+Client}} (void)
+\begin{DoxyCompactList}\small\item\em Initialize the Generic Attribute Profile Client. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___g_a_t_t___c_l_i_e_n_t___a_p_i_gad9bb8f53a66a74842adec59a23505635}{G\+A\+T\+T\+\_\+\+Register\+For\+Ind}} (uint8 task\+Id)
+\begin{DoxyCompactList}\small\item\em Register to receive incoming A\+TT Indications or Notifications of attribute values. \end{DoxyCompactList}\item 
+b\+Status\+\_\+t \mbox{\hyperlink{group___g_a_t_t___c_l_i_e_n_t___a_p_i_ga420ca3930ed74ea2f0b464d01ecec572}{G\+A\+T\+T\+\_\+\+Prepare\+Write\+Req}} (uint16 conn\+Handle, att\+Prepare\+Write\+Req\+\_\+t $\ast$p\+Req, uint8 task\+Id)
+\begin{DoxyCompactList}\small\item\em The Prepare Write Request is used to request the server to prepare to write the value of an attribute. \end{DoxyCompactList}\item 
+b\+Status\+\_\+t \mbox{\hyperlink{group___g_a_t_t___c_l_i_e_n_t___a_p_i_gac60dbe390176685a4df9f4dfa5e149d7}{G\+A\+T\+T\+\_\+\+Execute\+Write\+Req}} (uint16 conn\+Handle, att\+Execute\+Write\+Req\+\_\+t $\ast$p\+Req, uint8 task\+Id)
+\begin{DoxyCompactList}\small\item\em The Execute Write Request is used to request the server to write or cancel the write of all the prepared values currently held in the prepare queue from this client. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{group___g_a_t_t___c_l_i_e_n_t___a_p_i_gac60dbe390176685a4df9f4dfa5e149d7}\label{group___g_a_t_t___c_l_i_e_n_t___a_p_i_gac60dbe390176685a4df9f4dfa5e149d7}} 
+\index{GATT Client API Functions@{GATT Client API Functions}!GATT\_ExecuteWriteReq@{GATT\_ExecuteWriteReq}}
+\index{GATT\_ExecuteWriteReq@{GATT\_ExecuteWriteReq}!GATT Client API Functions@{GATT Client API Functions}}
+\doxysubsubsection{\texorpdfstring{GATT\_ExecuteWriteReq()}{GATT\_ExecuteWriteReq()}}
+{\footnotesize\ttfamily b\+Status\+\_\+t G\+A\+T\+T\+\_\+\+Execute\+Write\+Req (\begin{DoxyParamCaption}\item[{uint16}]{conn\+Handle,  }\item[{att\+Execute\+Write\+Req\+\_\+t $\ast$}]{p\+Req,  }\item[{uint8}]{task\+Id }\end{DoxyParamCaption})}
+
+
+
+The Execute Write Request is used to request the server to write or cancel the write of all the prepared values currently held in the prepare queue from this client. 
+
+Note\+: This function is needed only for G\+A\+TT testing.
+
+
+\begin{DoxyParams}{Parameters}
+{\em conn\+Handle} & -\/ connection to use \\
+\hline
+{\em p\+Req} & -\/ pointer to request to be sent \\
+\hline
+{\em task\+Id} & -\/ task to be notified of response\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+S\+U\+C\+C\+E\+SS\+: Request was sent successfully.~\newline
+ I\+N\+V\+A\+L\+I\+D\+P\+A\+R\+A\+M\+E\+T\+ER\+: Invalid connection handle or request field.~\newline
+ M\+S\+G\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+N\+O\+T\+\_\+\+A\+V\+A\+IL\+: No H\+CI buffer is available.~\newline
+ ble\+Not\+Connected\+: Connection is down.~\newline
+ ble\+Pending\+: A response is pending with this server.~\newline
+ ble\+Mem\+Alloc\+Error\+: Memory allocation error occurred.~\newline
+ ble\+Timeout\+: Previous transaction timed out.~\newline
+ 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group___g_a_t_t___c_l_i_e_n_t___a_p_i_ga79026e24ddadeb7bb7e3c3109cbf1d17}\label{group___g_a_t_t___c_l_i_e_n_t___a_p_i_ga79026e24ddadeb7bb7e3c3109cbf1d17}} 
+\index{GATT Client API Functions@{GATT Client API Functions}!GATT\_InitClient@{GATT\_InitClient}}
+\index{GATT\_InitClient@{GATT\_InitClient}!GATT Client API Functions@{GATT Client API Functions}}
+\doxysubsubsection{\texorpdfstring{GATT\_InitClient()}{GATT\_InitClient()}}
+{\footnotesize\ttfamily b\+Status\+\_\+t G\+A\+T\+T\+\_\+\+Init\+Client (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Initialize the Generic Attribute Profile Client. 
+
+\begin{DoxyReturn}{Returns}
+S\+U\+C\+C\+E\+SS\+: Client initialized successfully.~\newline
+ ble\+Mem\+Alloc\+Error\+: Memory allocation error occurred.~\newline
+ 
+\end{DoxyReturn}
+
+
+Definition at line 1095 of file icall\+\_\+api.\+c.
+
+\mbox{\Hypertarget{group___g_a_t_t___c_l_i_e_n_t___a_p_i_ga420ca3930ed74ea2f0b464d01ecec572}\label{group___g_a_t_t___c_l_i_e_n_t___a_p_i_ga420ca3930ed74ea2f0b464d01ecec572}} 
+\index{GATT Client API Functions@{GATT Client API Functions}!GATT\_PrepareWriteReq@{GATT\_PrepareWriteReq}}
+\index{GATT\_PrepareWriteReq@{GATT\_PrepareWriteReq}!GATT Client API Functions@{GATT Client API Functions}}
+\doxysubsubsection{\texorpdfstring{GATT\_PrepareWriteReq()}{GATT\_PrepareWriteReq()}}
+{\footnotesize\ttfamily b\+Status\+\_\+t G\+A\+T\+T\+\_\+\+Prepare\+Write\+Req (\begin{DoxyParamCaption}\item[{uint16}]{conn\+Handle,  }\item[{att\+Prepare\+Write\+Req\+\_\+t $\ast$}]{p\+Req,  }\item[{uint8}]{task\+Id }\end{DoxyParamCaption})}
+
+
+
+The Prepare Write Request is used to request the server to prepare to write the value of an attribute. 
+
+Note\+: This function is needed only for G\+A\+TT testing.
+
+
+\begin{DoxyParams}{Parameters}
+{\em conn\+Handle} & -\/ connection to use \\
+\hline
+{\em p\+Req} & -\/ pointer to request to be sent \\
+\hline
+{\em task\+Id} & -\/ task to be notified of response\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+S\+U\+C\+C\+E\+SS\+: Request was sent successfully.~\newline
+ I\+N\+V\+A\+L\+I\+D\+P\+A\+R\+A\+M\+E\+T\+ER\+: Invalid connection handle or request field.~\newline
+ M\+S\+G\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+N\+O\+T\+\_\+\+A\+V\+A\+IL\+: No H\+CI buffer is available.~\newline
+ ble\+Not\+Connected\+: Connection is down.~\newline
+ ble\+Pending\+: A response is pending with this server.~\newline
+ ble\+Mem\+Alloc\+Error\+: Memory allocation error occurred.~\newline
+ ble\+Timeout\+: Previous transaction timed out.~\newline
+ 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group___g_a_t_t___c_l_i_e_n_t___a_p_i_gad9bb8f53a66a74842adec59a23505635}\label{group___g_a_t_t___c_l_i_e_n_t___a_p_i_gad9bb8f53a66a74842adec59a23505635}} 
+\index{GATT Client API Functions@{GATT Client API Functions}!GATT\_RegisterForInd@{GATT\_RegisterForInd}}
+\index{GATT\_RegisterForInd@{GATT\_RegisterForInd}!GATT Client API Functions@{GATT Client API Functions}}
+\doxysubsubsection{\texorpdfstring{GATT\_RegisterForInd()}{GATT\_RegisterForInd()}}
+{\footnotesize\ttfamily void G\+A\+T\+T\+\_\+\+Register\+For\+Ind (\begin{DoxyParamCaption}\item[{uint8}]{task\+Id }\end{DoxyParamCaption})}
+
+
+
+Register to receive incoming A\+TT Indications or Notifications of attribute values. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em task\+Id} & -\/ task to forward indications or notifications to\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+Definition at line 1119 of file icall\+\_\+api.\+c.
+

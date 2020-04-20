@@ -1,0 +1,205 @@
+\hypertarget{_t_r_n_g_c_c26_x_x_8h}{}\doxysection{Drivers/\+T\+R\+N\+G/\+T\+R\+N\+G\+C\+C26\+XX.h File Reference}
+\label{_t_r_n_g_c_c26_x_x_8h}\index{Drivers/TRNG/TRNGCC26XX.h@{Drivers/TRNG/TRNGCC26XX.h}}
+
+
+T\+R\+NG driver implementation for a C\+C26\+XX device.  
+
+
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_t_r_n_g_c_c26_x_x___params}{T\+R\+N\+G\+C\+C26\+X\+X\+\_\+\+Params}}
+\begin{DoxyCompactList}\small\item\em T\+R\+N\+G\+C\+C26\+XX Parameters. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_t_r_n_g_c_c26_x_x___h_w_attrs}{T\+R\+N\+G\+C\+C26\+X\+X\+\_\+\+H\+W\+Attrs}}
+\begin{DoxyCompactList}\small\item\em T\+R\+N\+G\+C\+C26\+XX Hardware Attributes. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_t_r_n_g_c_c26_x_x___object}{T\+R\+N\+G\+C\+C26\+X\+X\+\_\+\+Object}}
+\begin{DoxyCompactList}\small\item\em T\+R\+N\+G\+C\+C26\+XX Object. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_t_r_n_g_c_c26_x_x___config}{T\+R\+N\+G\+C\+C26\+X\+X\+\_\+\+Config}}
+\begin{DoxyCompactList}\small\item\em T\+R\+N\+G\+C\+C26\+XX Global Configuration. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group___t_r_n_g___s_t_a_t_u_s_gaab8ea8ae3852c9dda6f44b92888f3476}{T\+R\+N\+G\+C\+C26\+X\+X\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+S\+U\+C\+C\+E\+SS}}~0 /$\ast$ Success                   $\ast$/
+\item 
+\#define \mbox{\hyperlink{group___t_r_n_g___s_t_a_t_u_s_gaabf40af9448795516529fb32982fa15c}{T\+R\+N\+G\+C\+C26\+X\+X\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+I\+L\+L\+E\+G\+A\+L\+\_\+\+P\+A\+R\+AM}}~-\/1 /$\ast$ Illegal parameter         $\ast$/
+\item 
+\#define \mbox{\hyperlink{group___t_r_n_g___s_t_a_t_u_s_gab47902213fa2057a42fae6673d48112c}{T\+R\+N\+G\+C\+C26\+X\+X\+\_\+\+M\+I\+N\+\_\+\+S\+A\+M\+P\+L\+E\+S\+\_\+\+M\+IN}}~64
+\item 
+\#define \mbox{\hyperlink{group___t_r_n_g___s_t_a_t_u_s_ga86f56304ec06404a73cbc42dc4b2084b}{T\+R\+N\+G\+C\+C26\+X\+X\+\_\+\+M\+I\+N\+\_\+\+S\+A\+M\+P\+L\+E\+S\+\_\+\+M\+AX}}~16384
+\item 
+\#define \mbox{\hyperlink{group___t_r_n_g___s_t_a_t_u_s_ga7dd60fd8b6db7f07c0927eec824f524c}{T\+R\+N\+G\+C\+C26\+X\+X\+\_\+\+M\+A\+X\+\_\+\+S\+A\+M\+P\+L\+E\+S\+\_\+\+M\+IN}}~256
+\item 
+\#define \mbox{\hyperlink{group___t_r_n_g___s_t_a_t_u_s_ga83bc8e416ff7ce8eea8a2040c7534386}{T\+R\+N\+G\+C\+C26\+X\+X\+\_\+\+M\+A\+X\+\_\+\+S\+A\+M\+P\+L\+E\+S\+\_\+\+M\+AX}}~16777216
+\item 
+\#define \mbox{\hyperlink{group___t_r_n_g___s_t_a_t_u_s_gacbed65b60ef6db37962d2816fe78af47}{T\+R\+N\+G\+C\+C26\+X\+X\+\_\+\+C\+L\+O\+C\+K\+S\+\_\+\+P\+E\+R\+\_\+\+S\+A\+M\+P\+L\+E\+S\+\_\+\+M\+AX}}~15
+\item 
+\#define \mbox{\hyperlink{group___t_r_n_g___s_t_a_t_u_s_gaca0045a5aee8a8902d9cf6fe5a3a91a7}{T\+R\+N\+G\+C\+C26\+X\+X\+\_\+\+I\+L\+L\+E\+G\+A\+L\+\_\+\+P\+A\+R\+A\+M\+\_\+\+R\+E\+T\+U\+R\+N\+\_\+\+V\+A\+L\+UE}}~0
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \mbox{\hyperlink{struct_t_r_n_g_c_c26_x_x___params}{T\+R\+N\+G\+C\+C26\+X\+X\+\_\+\+Params}} \mbox{\hyperlink{group___t_r_n_g___s_t_a_t_u_s_gac10858f9789e861729c383ef5ad48d4d}{T\+R\+N\+G\+C\+C26\+X\+X\+\_\+\+Params}}
+\begin{DoxyCompactList}\small\item\em T\+R\+N\+G\+C\+C26\+XX Parameters. \end{DoxyCompactList}\item 
+typedef struct \mbox{\hyperlink{struct_t_r_n_g_c_c26_x_x___h_w_attrs}{T\+R\+N\+G\+C\+C26\+X\+X\+\_\+\+H\+W\+Attrs}} \mbox{\hyperlink{group___t_r_n_g___s_t_a_t_u_s_gabb39cedd4224e7c285f30ea49d7c8979}{T\+R\+N\+G\+C\+C26\+X\+X\+\_\+\+H\+W\+Attrs}}
+\begin{DoxyCompactList}\small\item\em T\+R\+N\+G\+C\+C26\+XX Hardware Attributes. \end{DoxyCompactList}\item 
+typedef struct \mbox{\hyperlink{struct_t_r_n_g_c_c26_x_x___object}{T\+R\+N\+G\+C\+C26\+X\+X\+\_\+\+Object}} \mbox{\hyperlink{group___t_r_n_g___s_t_a_t_u_s_ga7de7d6f578ae0306918eb6c103877dad}{T\+R\+N\+G\+C\+C26\+X\+X\+\_\+\+Object}}
+\begin{DoxyCompactList}\small\item\em T\+R\+N\+G\+C\+C26\+XX Object. \end{DoxyCompactList}\item 
+typedef struct \mbox{\hyperlink{struct_t_r_n_g_c_c26_x_x___config}{T\+R\+N\+G\+C\+C26\+X\+X\+\_\+\+Config}} \mbox{\hyperlink{group___t_r_n_g___s_t_a_t_u_s_ga6df6a8b66235a9869ab34438ee039f75}{T\+R\+N\+G\+C\+C26\+X\+X\+\_\+\+Config}}
+\begin{DoxyCompactList}\small\item\em T\+R\+N\+G\+C\+C26\+XX Global Configuration. \end{DoxyCompactList}\item 
+typedef struct \mbox{\hyperlink{struct_t_r_n_g_c_c26_x_x___config}{T\+R\+N\+G\+C\+C26\+X\+X\+\_\+\+Config}} $\ast$ \mbox{\hyperlink{group___t_r_n_g___s_t_a_t_u_s_ga3625ee61c7d4ba59d1ea188be55115af}{T\+R\+N\+G\+C\+C26\+X\+X\+\_\+\+Handle}}
+\begin{DoxyCompactList}\small\item\em A handle that is returned from a \mbox{\hyperlink{group___t_r_n_g___s_t_a_t_u_s_ga1cac985e2568c3a35322bd978c32c149}{T\+R\+N\+G\+C\+C26\+X\+X\+\_\+open()}} call. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{group___t_r_n_g___s_t_a_t_u_s_ga8c0fad6d75cbcafb3e29f23ef4e9ee50}{T\+R\+N\+G\+C\+C26\+X\+X\+\_\+init}} (void)
+\begin{DoxyCompactList}\small\item\em T\+R\+NG Driver initialization. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group___t_r_n_g___s_t_a_t_u_s_ga3625ee61c7d4ba59d1ea188be55115af}{T\+R\+N\+G\+C\+C26\+X\+X\+\_\+\+Handle}} \mbox{\hyperlink{group___t_r_n_g___s_t_a_t_u_s_ga1cac985e2568c3a35322bd978c32c149}{T\+R\+N\+G\+C\+C26\+X\+X\+\_\+open}} (uint8\+\_\+t index)
+\begin{DoxyCompactList}\small\item\em Open the T\+R\+N\+G\+C\+C26\+XX peripheral specified by the index value. This peripheral will be configured as specified by p\+Params. Alternatively, if p\+Params is N\+U\+LL, default values will be used. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___t_r_n_g___s_t_a_t_u_s_ga3df37e55dae4dc57abfed49b2607a2c6}{T\+R\+N\+G\+C\+C26\+X\+X\+\_\+close}} (\mbox{\hyperlink{group___t_r_n_g___s_t_a_t_u_s_ga3625ee61c7d4ba59d1ea188be55115af}{T\+R\+N\+G\+C\+C26\+X\+X\+\_\+\+Handle}} handle)
+\begin{DoxyCompactList}\small\item\em Close the T\+R\+NG driver. \end{DoxyCompactList}\item 
+int8\+\_\+t \mbox{\hyperlink{group___t_r_n_g___s_t_a_t_u_s_ga71e12002e2dec081459ef9fd328e1890}{T\+R\+N\+G\+C\+C26\+X\+X\+\_\+\+Params\+\_\+init}} (\mbox{\hyperlink{struct_t_r_n_g_c_c26_x_x___params}{T\+R\+N\+G\+C\+C26\+X\+X\+\_\+\+Params}} $\ast$params)
+\begin{DoxyCompactList}\small\item\em Initialize T\+R\+NG configuration parameters to their defaults. \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{group___t_r_n_g___s_t_a_t_u_s_gaf231d1c7694130553631db62de51f1b3}{T\+R\+N\+G\+C\+C26\+X\+X\+\_\+get\+Number}} (\mbox{\hyperlink{group___t_r_n_g___s_t_a_t_u_s_ga3625ee61c7d4ba59d1ea188be55115af}{T\+R\+N\+G\+C\+C26\+X\+X\+\_\+\+Handle}} handle, \mbox{\hyperlink{struct_t_r_n_g_c_c26_x_x___params}{T\+R\+N\+G\+C\+C26\+X\+X\+\_\+\+Params}} $\ast$params, int8\+\_\+t $\ast$\mbox{\hyperlink{icall__apimsg_8h_ad94584ed274ed1d5b06d52f5bb3a178d}{status}})
+\begin{DoxyCompactList}\small\item\em This routine returns a 32 bit T\+R\+NG number. \end{DoxyCompactList}\item 
+int8\+\_\+t \mbox{\hyperlink{group___t_r_n_g___s_t_a_t_u_s_ga5f40df328322d2b964e659495afeb575}{T\+R\+N\+G\+C\+C26\+X\+X\+\_\+is\+Param\+Valid}} (\mbox{\hyperlink{struct_t_r_n_g_c_c26_x_x___params}{T\+R\+N\+G\+C\+C26\+X\+X\+\_\+\+Params}} $\ast$params)
+\begin{DoxyCompactList}\small\item\em Check that the parameters used are valid configurations. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+T\+R\+NG driver implementation for a C\+C26\+XX device. 
+
+============================================================================\hypertarget{_t_r_n_g_c_c26_x_x_8h_autotoc_md89}{}\doxysubsection{Driver Include}\label{_t_r_n_g_c_c26_x_x_8h_autotoc_md89}
+The T\+R\+NG header file should be included in an application as follows\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include <ti/drivers/trng/TRNGCC26XX.h>}}
+\end{DoxyCode}
+\hypertarget{_t_r_n_g_c_c26_x_x_8h_autotoc_md90}{}\doxysubsection{Overview}\label{_t_r_n_g_c_c26_x_x_8h_autotoc_md90}
+The T\+R\+N\+G\+C\+C26\+XX driver provides reentrant access to the T\+R\+NG module within the C\+C26\+XX. Reentrant access is controlled by creating a global critical section when requesting a random number. This critical section disables all Hwi\textquotesingle{}s from running.\hypertarget{_t_r_n_g_c_c26_x_x_8h_autotoc_md91}{}\doxysubsubsection{General Behavior}\label{_t_r_n_g_c_c26_x_x_8h_autotoc_md91}
+For code examples, see Use Cases below.\hypertarget{_t_r_n_g_c_c26_x_x_8h_autotoc_md92}{}\doxyparagraph{Initialing the T\+R\+N\+G\+C\+C26\+X\+X Driver}\label{_t_r_n_g_c_c26_x_x_8h_autotoc_md92}
+
+\begin{DoxyItemize}
+\item T\+R\+N\+G\+C\+C26\+X\+X\+\_\+init must be called prior to calling any other T\+R\+N\+G\+C\+C26xx A\+PI.
+\item This function need only be called once per reset, but may be called multiple times without affect.
+\end{DoxyItemize}\hypertarget{_t_r_n_g_c_c26_x_x_8h_autotoc_md93}{}\doxyparagraph{Opening the T\+R\+N\+G\+C\+C26\+X\+X Driver}\label{_t_r_n_g_c_c26_x_x_8h_autotoc_md93}
+
+\begin{DoxyItemize}
+\item T\+R\+N\+G\+C\+C26\+X\+X\+\_\+open is used to open the driver prior to requesting a number.
+\item This function powers on the T\+R\+NG peripheral.
+\item Calling this function is optional, but will increase the latency of the first call to \mbox{\hyperlink{group___t_r_n_g___s_t_a_t_u_s_gaf231d1c7694130553631db62de51f1b3}{T\+R\+N\+G\+C\+C26\+X\+X\+\_\+get\+Number()}}.
+\item This function need only be called once per reset, but may be called multiple times without affect.
+\end{DoxyItemize}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{comment}{// Open the driver}}
+\DoxyCodeLine{\mbox{\hyperlink{group___t_r_n_g___s_t_a_t_u_s_ga1cac985e2568c3a35322bd978c32c149}{TRNGCC26XX\_open}}(Board\_TRNG);}
+\end{DoxyCode}
+\hypertarget{_t_r_n_g_c_c26_x_x_8h_autotoc_md94}{}\doxyparagraph{Initializing client parameters}\label{_t_r_n_g_c_c26_x_x_8h_autotoc_md94}
+
+\begin{DoxyItemize}
+\item Client parameters are optional. The Driver may be called with a N\+U\+LL pointer to the client parameters, in which case it will use the default parameters. The default parameters configurate the T\+R\+NG to produce 256 samples per cycle at 1 clock per sample. a call to T\+R\+N\+G\+C\+C26\+X\+X\+\_\+get\+Number with default values has a latency of 14us. Increasing any of the configuration parameters will result in an increase in latency.
+\item The application initializes its parameters by calling \mbox{\hyperlink{group___t_r_n_g___s_t_a_t_u_s_ga71e12002e2dec081459ef9fd328e1890}{T\+R\+N\+G\+C\+C26\+X\+X\+\_\+\+Params\+\_\+init()}} and passing a pointer to a \mbox{\hyperlink{struct_t_r_n_g_c_c26_x_x___params}{T\+R\+N\+G\+C\+C26\+X\+X\+\_\+\+Params}} variable as an argument to it.
+\item This function can be called once or more to each initialization of parameters.
+\item This function can be called once or more with the same \mbox{\hyperlink{struct_t_r_n_g_c_c26_x_x___params}{T\+R\+N\+G\+C\+C26\+X\+X\+\_\+\+Params}} variable.
+\item The client parameter are initialized to valid default values, but may be changed by the client after this function returns. See trng.\+h for full details.
+\end{DoxyItemize}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{struct_t_r_n_g_c_c26_x_x___params}{TRNGCC26XX\_Params}} trngParams;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{// Initialize parameters.}}
+\DoxyCodeLine{\mbox{\hyperlink{group___t_r_n_g___s_t_a_t_u_s_ga71e12002e2dec081459ef9fd328e1890}{TRNGCC26XX\_Params\_init}}(\&trngParams);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{// Optionally modify trngParams}}
+\DoxyCodeLine{...}
+\end{DoxyCode}
+\hypertarget{_t_r_n_g_c_c26_x_x_8h_autotoc_md95}{}\doxyparagraph{Validating client parameters}\label{_t_r_n_g_c_c26_x_x_8h_autotoc_md95}
+
+\begin{DoxyItemize}
+\item a client may optionally choose to validate its configuration parameters before attempting to generate a number.
+\item when a client passes configuration parameters to T\+R\+N\+G\+C\+C26\+X\+X\+\_\+get\+Number these parameters will automatically be checked.
+\end{DoxyItemize}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{struct_t_r_n_g_c_c26_x_x___params}{TRNGCC26XX\_Params}} trngParams;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{// Initialize parameters.}}
+\DoxyCodeLine{\mbox{\hyperlink{group___t_r_n_g___s_t_a_t_u_s_ga71e12002e2dec081459ef9fd328e1890}{TRNGCC26XX\_Params\_init}}(\&trngParams);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{// Set client parameters.}}
+\DoxyCodeLine{trngParams.\mbox{\hyperlink{group___t_r_n_g___s_t_a_t_u_s_gaea5d9486ce7091415c4ad37b36425d8e}{minSamplesPerCycle}} = 256;}
+\DoxyCodeLine{trngParams.\mbox{\hyperlink{group___t_r_n_g___s_t_a_t_u_s_gab3de72cf3a88011408bdfa228c2058c3}{maxSamplesPerCycle}} = 256;}
+\DoxyCodeLine{trngParams.\mbox{\hyperlink{group___t_r_n_g___s_t_a_t_u_s_ga995c91f3364c4ffe397eb6fa0ac3f670}{clocksPerSample}} = 1;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{// Validate parameters.}}
+\DoxyCodeLine{\textcolor{keywordflow}{if} (\mbox{\hyperlink{group___t_r_n_g___s_t_a_t_u_s_ga5f40df328322d2b964e659495afeb575}{TRNGCC26XX\_isParamValid}}(\&trngParams) == \mbox{\hyperlink{group___t_r_n_g___s_t_a_t_u_s_gaab8ea8ae3852c9dda6f44b92888f3476}{TRNGCC26XX\_STATUS\_SUCCESS}})}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{   \textcolor{comment}{// Parameters are valid.}}
+\DoxyCodeLine{\}}
+\end{DoxyCode}
+\hypertarget{_t_r_n_g_c_c26_x_x_8h_autotoc_md96}{}\doxyparagraph{Generating a random number}\label{_t_r_n_g_c_c26_x_x_8h_autotoc_md96}
+
+\begin{DoxyItemize}
+\item The T\+R\+NG may be called without client configuration parameters and pass a N\+U\+LL pointer as an argument instead. This will result in the default values being used.
+\item Using the initialized client configuration parameters, a random number can be generated.
+\item an optional status flag pointer may be passed as an argument to check if the call successfully generated a random number.
+\end{DoxyItemize}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{struct_t_r_n_g_c_c26_x_x___params}{TRNGCC26XX\_Params}} trngParams;}
+\DoxyCodeLine{uint8\_t trngStatusFlag;}
+\DoxyCodeLine{uint32\_t trngNum1;}
+\DoxyCodeLine{uint32\_t trngNum2;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{// Init driver.}}
+\DoxyCodeLine{\mbox{\hyperlink{group___t_r_n_g___s_t_a_t_u_s_ga8c0fad6d75cbcafb3e29f23ef4e9ee50}{TRNGCC26XX\_init}}();}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{// Open TRNG peripheral.}}
+\DoxyCodeLine{\mbox{\hyperlink{group___t_r_n_g___s_t_a_t_u_s_ga1cac985e2568c3a35322bd978c32c149}{TRNGCC26XX\_open}}(Board\_TRNG);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{// Initialize parameters.}}
+\DoxyCodeLine{\mbox{\hyperlink{group___t_r_n_g___s_t_a_t_u_s_ga71e12002e2dec081459ef9fd328e1890}{TRNGCC26XX\_Params\_init}}(\&trngParams);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{// Generate a random number.  Use optional status flag.}}
+\DoxyCodeLine{trngNum1 = \mbox{\hyperlink{group___t_r_n_g___s_t_a_t_u_s_gaf231d1c7694130553631db62de51f1b3}{TRNGCC26XX\_getNumber}}(\&trngParams, \&trngStatusFlag);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{// Check if status was okay}}
+\DoxyCodeLine{\textcolor{keywordflow}{if} (trngStatusFlag == \mbox{\hyperlink{group___t_r_n_g___s_t_a_t_u_s_gaab8ea8ae3852c9dda6f44b92888f3476}{TRNGCC26XX\_STATUS\_SUCCESS}})}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{  \textcolor{comment}{// Random number was generated successfully}}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{// Generate a second random number using the default values and no}}
+\DoxyCodeLine{\textcolor{comment}{// status flag.}}
+\DoxyCodeLine{trngNum2 = \mbox{\hyperlink{group___t_r_n_g___s_t_a_t_u_s_gaf231d1c7694130553631db62de51f1b3}{TRNGCC26XX\_getNumber}}(NULL, NULL);}
+\end{DoxyCode}
+\hypertarget{_t_r_n_g_c_c26_x_x_8h_autotoc_md97}{}\doxyparagraph{Supported transaction modes}\label{_t_r_n_g_c_c26_x_x_8h_autotoc_md97}
+
+\begin{DoxyItemize}
+\item all calls to T\+R\+N\+G\+C\+C26\+X\+X\+\_\+get\+Number are blocking until the T\+R\+NG has a new random number available.
+\end{DoxyItemize}\hypertarget{_t_r_n_g_c_c26_x_x_8h_autotoc_md98}{}\doxysubsubsection{Error handling}\label{_t_r_n_g_c_c26_x_x_8h_autotoc_md98}
+If an error occurs during a call to T\+R\+N\+G\+C\+C26\+X\+X\+\_\+get\+Number, the error status will be set into the status flag and the returned random number shall be 0. passing the status flag is optional.\hypertarget{_t_r_n_g_c_c26_x_x_8h_autotoc_md99}{}\doxysubsubsection{Supported Functions}\label{_t_r_n_g_c_c26_x_x_8h_autotoc_md99}
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ A\+PI function }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Description  }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ A\+PI function }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Description  }\\\cline{1-2}
+\endhead
+\mbox{\hyperlink{group___t_r_n_g___s_t_a_t_u_s_ga1cac985e2568c3a35322bd978c32c149}{T\+R\+N\+G\+C\+C26\+X\+X\+\_\+open()}} &Open driver (stub)  \\\cline{1-2}
+\mbox{\hyperlink{group___t_r_n_g___s_t_a_t_u_s_ga3df37e55dae4dc57abfed49b2607a2c6}{T\+R\+N\+G\+C\+C26\+X\+X\+\_\+close()}} &Close driver (stub)  \\\cline{1-2}
+\mbox{\hyperlink{group___t_r_n_g___s_t_a_t_u_s_ga71e12002e2dec081459ef9fd328e1890}{T\+R\+N\+G\+C\+C26\+X\+X\+\_\+\+Params\+\_\+init()}} &Initialize parameters for random number generation  \\\cline{1-2}
+\mbox{\hyperlink{group___t_r_n_g___s_t_a_t_u_s_ga8c0fad6d75cbcafb3e29f23ef4e9ee50}{T\+R\+N\+G\+C\+C26\+X\+X\+\_\+init()}} &Generates a random number  \\\cline{1-2}
+T\+R\+N\+G\+C\+C26\+X\+X\+\_\+is\+Param\+Valid &Validate client configuration parameters  \\\cline{1-2}
+\end{longtabu}
+
+
+\DoxyHorRuler{0}
+ 

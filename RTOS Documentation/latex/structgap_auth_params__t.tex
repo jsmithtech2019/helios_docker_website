@@ -1,0 +1,56 @@
+\hypertarget{structgap_auth_params__t}{}\doxysection{gap\+Auth\+Params\+\_\+t Struct Reference}
+\label{structgap_auth_params__t}\index{gapAuthParams\_t@{gapAuthParams\_t}}
+
+
+{\ttfamily \#include $<$gap.\+h$>$}
+
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+uint16 \mbox{\hyperlink{structgap_auth_params__t_a9de09af96624f2cedab8408a8a2fefa5}{connection\+Handle}}
+\begin{DoxyCompactList}\small\item\em Connection Handle from controller,. \end{DoxyCompactList}\item 
+sm\+Link\+Security\+Req\+\_\+t \mbox{\hyperlink{structgap_auth_params__t_ad22f5013f677a3cf94fe1ee57d22d6f9}{sec\+Reqs}}
+\begin{DoxyCompactList}\small\item\em Pairing Control info. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+security\+Info and identity\+Info are only used if sec\+Reqs.\+bondable == B\+O\+U\+ND, which means that the device is already bound and we should use the security information and keys. 
+
+Definition at line 739 of file gap.\+h.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{structgap_auth_params__t_a9de09af96624f2cedab8408a8a2fefa5}\label{structgap_auth_params__t_a9de09af96624f2cedab8408a8a2fefa5}} 
+\index{gapAuthParams\_t@{gapAuthParams\_t}!connectionHandle@{connectionHandle}}
+\index{connectionHandle@{connectionHandle}!gapAuthParams\_t@{gapAuthParams\_t}}
+\doxysubsubsection{\texorpdfstring{connectionHandle}{connectionHandle}}
+{\footnotesize\ttfamily uint16 gap\+Auth\+Params\+\_\+t\+::connection\+Handle}
+
+
+
+Connection Handle from controller,. 
+
+
+
+Definition at line 741 of file gap.\+h.
+
+\mbox{\Hypertarget{structgap_auth_params__t_ad22f5013f677a3cf94fe1ee57d22d6f9}\label{structgap_auth_params__t_ad22f5013f677a3cf94fe1ee57d22d6f9}} 
+\index{gapAuthParams\_t@{gapAuthParams\_t}!secReqs@{secReqs}}
+\index{secReqs@{secReqs}!gapAuthParams\_t@{gapAuthParams\_t}}
+\doxysubsubsection{\texorpdfstring{secReqs}{secReqs}}
+{\footnotesize\ttfamily sm\+Link\+Security\+Req\+\_\+t gap\+Auth\+Params\+\_\+t\+::sec\+Reqs}
+
+
+
+Pairing Control info. 
+
+
+
+Definition at line 742 of file gap.\+h.
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Include/\mbox{\hyperlink{gap_8h}{gap.\+h}}\end{DoxyCompactItemize}

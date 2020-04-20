@@ -1,0 +1,138 @@
+\hypertarget{simplekeys_8c}{}\doxysection{P\+R\+O\+F\+I\+L\+E\+S/simplekeys.c File Reference}
+\label{simplekeys_8c}\index{PROFILES/simplekeys.c@{PROFILES/simplekeys.c}}
+{\ttfamily \#include \char`\"{}bcomdef.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}linkdb.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}att.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}gatt.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}gatt\+\_\+uuid.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}gattservapp.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}gapbondmgr.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}simplekeys.\+h\char`\"{}}\newline
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{simplekeys_8c_ad0f9f33898bc2d93f9e5ea246f811cb7}{S\+E\+R\+V\+A\+P\+P\+\_\+\+N\+U\+M\+\_\+\+A\+T\+T\+R\+\_\+\+S\+U\+P\+P\+O\+R\+T\+ED}}~5
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+b\+Status\+\_\+t \mbox{\hyperlink{simplekeys_8c_acd33b71684c5b1590259ba407bbb19f2}{S\+K\+\_\+\+Add\+Service}} (uint32 services)
+\item 
+b\+Status\+\_\+t \mbox{\hyperlink{simplekeys_8c_a63785129527fb0e62a02ce05fa124aa4}{S\+K\+\_\+\+Set\+Parameter}} (uint8 param, uint8 \mbox{\hyperlink{icall__apimsg_8h_a8ccac76f35f79d74917e1c5dd6f69fea}{len}}, void $\ast$p\+Value)
+\item 
+b\+Status\+\_\+t \mbox{\hyperlink{simplekeys_8c_ad5c6b56c036056a15e8d0f81b2ad09c2}{S\+K\+\_\+\+Get\+Parameter}} (uint8 param, void $\ast$p\+Value)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+C\+O\+N\+ST uint8 \mbox{\hyperlink{simplekeys_8c_a08f7f783df3869bafa60fd451e5365cc}{sk\+Serv\+U\+U\+ID}} \mbox{[}A\+T\+T\+\_\+\+B\+T\+\_\+\+U\+U\+I\+D\+\_\+\+S\+I\+ZE\mbox{]}
+\item 
+C\+O\+N\+ST uint8 \mbox{\hyperlink{simplekeys_8c_a5b299eafa5ee96a4d4050fe9c5bc7e20}{key\+Pressed\+U\+U\+ID}} \mbox{[}A\+T\+T\+\_\+\+B\+T\+\_\+\+U\+U\+I\+D\+\_\+\+S\+I\+ZE\mbox{]}
+\item 
+C\+O\+N\+ST gatt\+Service\+C\+Bs\+\_\+t \mbox{\hyperlink{simplekeys_8c_a589d4d79f4f76134221eb34f547daba7}{sk\+C\+Bs}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{simplekeys_8c_ad0f9f33898bc2d93f9e5ea246f811cb7}\label{simplekeys_8c_ad0f9f33898bc2d93f9e5ea246f811cb7}} 
+\index{simplekeys.c@{simplekeys.c}!SERVAPP\_NUM\_ATTR\_SUPPORTED@{SERVAPP\_NUM\_ATTR\_SUPPORTED}}
+\index{SERVAPP\_NUM\_ATTR\_SUPPORTED@{SERVAPP\_NUM\_ATTR\_SUPPORTED}!simplekeys.c@{simplekeys.c}}
+\doxysubsubsection{\texorpdfstring{SERVAPP\_NUM\_ATTR\_SUPPORTED}{SERVAPP\_NUM\_ATTR\_SUPPORTED}}
+{\footnotesize\ttfamily \#define S\+E\+R\+V\+A\+P\+P\+\_\+\+N\+U\+M\+\_\+\+A\+T\+T\+R\+\_\+\+S\+U\+P\+P\+O\+R\+T\+ED~5}
+
+
+
+Definition at line 69 of file simplekeys.\+c.
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{simplekeys_8c_acd33b71684c5b1590259ba407bbb19f2}\label{simplekeys_8c_acd33b71684c5b1590259ba407bbb19f2}} 
+\index{simplekeys.c@{simplekeys.c}!SK\_AddService@{SK\_AddService}}
+\index{SK\_AddService@{SK\_AddService}!simplekeys.c@{simplekeys.c}}
+\doxysubsubsection{\texorpdfstring{SK\_AddService()}{SK\_AddService()}}
+{\footnotesize\ttfamily b\+Status\+\_\+t S\+K\+\_\+\+Add\+Service (\begin{DoxyParamCaption}\item[{uint32}]{services }\end{DoxyParamCaption})}
+
+
+
+Definition at line 213 of file simplekeys.\+c.
+
+\mbox{\Hypertarget{simplekeys_8c_ad5c6b56c036056a15e8d0f81b2ad09c2}\label{simplekeys_8c_ad5c6b56c036056a15e8d0f81b2ad09c2}} 
+\index{simplekeys.c@{simplekeys.c}!SK\_GetParameter@{SK\_GetParameter}}
+\index{SK\_GetParameter@{SK\_GetParameter}!simplekeys.c@{simplekeys.c}}
+\doxysubsubsection{\texorpdfstring{SK\_GetParameter()}{SK\_GetParameter()}}
+{\footnotesize\ttfamily b\+Status\+\_\+t S\+K\+\_\+\+Get\+Parameter (\begin{DoxyParamCaption}\item[{uint8}]{param,  }\item[{void $\ast$}]{p\+Value }\end{DoxyParamCaption})}
+
+
+
+Definition at line 297 of file simplekeys.\+c.
+
+\mbox{\Hypertarget{simplekeys_8c_a63785129527fb0e62a02ce05fa124aa4}\label{simplekeys_8c_a63785129527fb0e62a02ce05fa124aa4}} 
+\index{simplekeys.c@{simplekeys.c}!SK\_SetParameter@{SK\_SetParameter}}
+\index{SK\_SetParameter@{SK\_SetParameter}!simplekeys.c@{simplekeys.c}}
+\doxysubsubsection{\texorpdfstring{SK\_SetParameter()}{SK\_SetParameter()}}
+{\footnotesize\ttfamily b\+Status\+\_\+t S\+K\+\_\+\+Set\+Parameter (\begin{DoxyParamCaption}\item[{uint8}]{param,  }\item[{uint8}]{len,  }\item[{void $\ast$}]{p\+Value }\end{DoxyParamCaption})}
+
+
+
+Definition at line 254 of file simplekeys.\+c.
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{simplekeys_8c_a5b299eafa5ee96a4d4050fe9c5bc7e20}\label{simplekeys_8c_a5b299eafa5ee96a4d4050fe9c5bc7e20}} 
+\index{simplekeys.c@{simplekeys.c}!keyPressedUUID@{keyPressedUUID}}
+\index{keyPressedUUID@{keyPressedUUID}!simplekeys.c@{simplekeys.c}}
+\doxysubsubsection{\texorpdfstring{keyPressedUUID}{keyPressedUUID}}
+{\footnotesize\ttfamily C\+O\+N\+ST uint8 key\+Pressed\+U\+U\+ID\mbox{[}A\+T\+T\+\_\+\+B\+T\+\_\+\+U\+U\+I\+D\+\_\+\+S\+I\+ZE\mbox{]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{  LO\_UINT16(\mbox{\hyperlink{simplekeys_8h_a087a1abc0354745c7c13d0dac4e94318}{SK\_KEYPRESSED\_UUID}}), HI\_UINT16(\mbox{\hyperlink{simplekeys_8h_a087a1abc0354745c7c13d0dac4e94318}{SK\_KEYPRESSED\_UUID}})}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+Definition at line 84 of file simplekeys.\+c.
+
+\mbox{\Hypertarget{simplekeys_8c_a589d4d79f4f76134221eb34f547daba7}\label{simplekeys_8c_a589d4d79f4f76134221eb34f547daba7}} 
+\index{simplekeys.c@{simplekeys.c}!skCBs@{skCBs}}
+\index{skCBs@{skCBs}!simplekeys.c@{simplekeys.c}}
+\doxysubsubsection{\texorpdfstring{skCBs}{skCBs}}
+{\footnotesize\ttfamily C\+O\+N\+ST gatt\+Service\+C\+Bs\+\_\+t sk\+C\+Bs}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{  SK\_readAttrCB,  }
+\DoxyCodeLine{  SK\_writeAttrCB, }
+\DoxyCodeLine{  NULL            }
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+Definition at line 191 of file simplekeys.\+c.
+
+\mbox{\Hypertarget{simplekeys_8c_a08f7f783df3869bafa60fd451e5365cc}\label{simplekeys_8c_a08f7f783df3869bafa60fd451e5365cc}} 
+\index{simplekeys.c@{simplekeys.c}!skServUUID@{skServUUID}}
+\index{skServUUID@{skServUUID}!simplekeys.c@{simplekeys.c}}
+\doxysubsubsection{\texorpdfstring{skServUUID}{skServUUID}}
+{\footnotesize\ttfamily C\+O\+N\+ST uint8 sk\+Serv\+U\+U\+ID\mbox{[}A\+T\+T\+\_\+\+B\+T\+\_\+\+U\+U\+I\+D\+\_\+\+S\+I\+ZE\mbox{]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{  LO\_UINT16(\mbox{\hyperlink{simplekeys_8h_a3ee2ac9754ff86d1c2d2700183d9fe9d}{SK\_SERV\_UUID}}), HI\_UINT16(\mbox{\hyperlink{simplekeys_8h_a3ee2ac9754ff86d1c2d2700183d9fe9d}{SK\_SERV\_UUID}})}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+Definition at line 78 of file simplekeys.\+c.
+

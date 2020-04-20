@@ -1,0 +1,526 @@
+\hypertarget{oad__target_8h}{}\doxysection{P\+R\+O\+F\+I\+L\+E\+S/oad\+\_\+target.h File Reference}
+\label{oad__target_8h}\index{PROFILES/oad\_target.h@{PROFILES/oad\_target.h}}
+{\ttfamily \#include $<$ti/sysbios/knl/\+Queue.\+h$>$}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structimg__hdr__t}{img\+\_\+hdr\+\_\+t}}
+\item 
+struct \mbox{\hyperlink{structoad_target_write__t}{oad\+Target\+Write\+\_\+t}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{oad__target_8h_ac212f8d0cbc404eb63c5828f1d7d8a3f}{O\+A\+D\+\_\+\+I\+M\+G\+\_\+\+C\+R\+C\+\_\+\+O\+S\+ET}}~0x0000
+\item 
+\#define \mbox{\hyperlink{oad__target_8h_abe8d39c305441e25c9a3bb53d7795f69}{O\+A\+D\+\_\+\+I\+M\+G\+\_\+\+H\+D\+R\+\_\+\+O\+S\+ET}}~0x0004
+\item 
+\#define \mbox{\hyperlink{oad__target_8h_ac00fb7651d7f8517f5a763d65d58abc7}{O\+A\+D\+\_\+\+I\+M\+G\+\_\+\+I\+D\+\_\+\+S\+I\+ZE}}~4
+\item 
+\#define \mbox{\hyperlink{oad__target_8h_a38ae451ab5cc36946f347ff0c229bda3}{O\+A\+D\+\_\+\+I\+M\+G\+\_\+\+H\+D\+R\+\_\+\+S\+I\+ZE}}~( 2 + 2 + \mbox{\hyperlink{oad__target_8h_ac00fb7651d7f8517f5a763d65d58abc7}{O\+A\+D\+\_\+\+I\+M\+G\+\_\+\+I\+D\+\_\+\+S\+I\+ZE}} )
+\item 
+\#define \mbox{\hyperlink{oad__target_8h_a996d684ec859c093aff264754f8e6547}{O\+A\+D\+\_\+\+B\+L\+O\+C\+K\+\_\+\+S\+I\+ZE}}~16
+\item 
+\#define \mbox{\hyperlink{oad__target_8h_a948a2323e898b8b75c19b82aaf6b9ce3}{O\+A\+D\+\_\+\+B\+L\+O\+C\+K\+S\+\_\+\+P\+E\+R\+\_\+\+P\+A\+GE}}~(H\+A\+L\+\_\+\+F\+L\+A\+S\+H\+\_\+\+P\+A\+G\+E\+\_\+\+S\+I\+ZE / \mbox{\hyperlink{oad__target_8h_a996d684ec859c093aff264754f8e6547}{O\+A\+D\+\_\+\+B\+L\+O\+C\+K\+\_\+\+S\+I\+ZE}})
+\item 
+\#define \mbox{\hyperlink{oad__target_8h_a909bd6aadc6df79c51475466a562f294}{O\+A\+D\+\_\+\+B\+L\+O\+C\+K\+\_\+\+M\+AX}}~(\mbox{\hyperlink{oad__target_8h_a948a2323e898b8b75c19b82aaf6b9ce3}{O\+A\+D\+\_\+\+B\+L\+O\+C\+K\+S\+\_\+\+P\+E\+R\+\_\+\+P\+A\+GE}} $\ast$ \mbox{\hyperlink{oad__target_8h_ab9a6c64fa09d23c1a47f9cbf064b5157}{O\+A\+D\+\_\+\+I\+M\+G\+\_\+\+D\+\_\+\+A\+R\+EA}})
+\item 
+\#define \mbox{\hyperlink{oad__target_8h_a7a121f54ebc362f55336a25d3c54f069}{O\+A\+D\+\_\+\+W\+R\+I\+T\+E\+\_\+\+I\+D\+E\+N\+T\+I\+F\+Y\+\_\+\+R\+EQ}}~0x01
+\item 
+\#define \mbox{\hyperlink{oad__target_8h_a89ab9e7dacb350e76d0bbf934386960e}{O\+A\+D\+\_\+\+W\+R\+I\+T\+E\+\_\+\+B\+L\+O\+C\+K\+\_\+\+R\+EQ}}~0x02
+\item 
+\#define \mbox{\hyperlink{oad__target_8h_ac7699d12441f49b4666ba86600cbd42e}{O\+A\+D\+\_\+\+I\+M\+A\+G\+E\+\_\+\+C\+O\+M\+P\+L\+E\+TE}}~0x03
+\item 
+\#define \mbox{\hyperlink{oad__target_8h_a5846982ef841e606f5c66bdfe59bcad0}{O\+A\+D\+\_\+\+I\+M\+G\+\_\+\+A\+\_\+\+P\+A\+GE}}~0
+\item 
+\#define \mbox{\hyperlink{oad__target_8h_ae28209a1e765cae22009744367bc00fe}{O\+A\+D\+\_\+\+I\+M\+G\+\_\+\+A\+\_\+\+O\+S\+ET}}~0x0600
+\item 
+\#define \mbox{\hyperlink{oad__target_8h_a4c731366dd4ae472839a3fdec92f356f}{O\+A\+D\+\_\+\+I\+M\+G\+\_\+\+A\+\_\+\+A\+R\+EA}}~6
+\item 
+\#define \mbox{\hyperlink{oad__target_8h_aaa609f0dd7d73ef3cb27324932a06ba7}{O\+A\+D\+\_\+\+I\+M\+G\+\_\+\+B\+\_\+\+P\+A\+GE}}~9
+\item 
+\#define \mbox{\hyperlink{oad__target_8h_abbe2248943e6916971ba6d50b2fd528c}{O\+A\+D\+\_\+\+I\+M\+G\+\_\+\+B\+\_\+\+A\+R\+EA}}~10
+\item 
+\#define \mbox{\hyperlink{oad__target_8h_a269ed79ec34d8f309485aef01b3acc46}{O\+A\+D\+\_\+\+I\+M\+G\+\_\+\+B\+\_\+\+O\+S\+ET}}~0x0000
+\item 
+\#define \mbox{\hyperlink{oad__target_8h_aec6652f906e7b39dcd32d5b7528f8414}{O\+A\+D\+\_\+\+I\+M\+G\+\_\+\+E\+\_\+\+A\+R\+EA}}~0x1C
+\item 
+\#define \mbox{\hyperlink{oad__target_8h_ab5863ac3f5cb4719c8390feac3867633}{O\+A\+D\+\_\+\+I\+M\+G\+\_\+\+E\+\_\+\+P\+A\+GE}}~1
+\item 
+\#define \mbox{\hyperlink{oad__target_8h_a64eadbf32aa236145813c2385d4b8dcf}{O\+A\+D\+\_\+\+I\+M\+G\+\_\+\+E\+\_\+\+O\+S\+ET}}~0x0000
+\item 
+\#define \mbox{\hyperlink{oad__target_8h_a8301899d4476990ff6b98138c48453b8}{O\+A\+D\+\_\+\+I\+M\+G\+\_\+\+D\+\_\+\+P\+A\+GE}}~\mbox{\hyperlink{oad__target_8h_aaa609f0dd7d73ef3cb27324932a06ba7}{O\+A\+D\+\_\+\+I\+M\+G\+\_\+\+B\+\_\+\+P\+A\+GE}}
+\item 
+\#define \mbox{\hyperlink{oad__target_8h_ab9a6c64fa09d23c1a47f9cbf064b5157}{O\+A\+D\+\_\+\+I\+M\+G\+\_\+\+D\+\_\+\+A\+R\+EA}}~\mbox{\hyperlink{oad__target_8h_abbe2248943e6916971ba6d50b2fd528c}{O\+A\+D\+\_\+\+I\+M\+G\+\_\+\+B\+\_\+\+A\+R\+EA}}
+\item 
+\#define \mbox{\hyperlink{oad__target_8h_ab3aa11f358d516dbc679717147dbd16b}{O\+A\+D\+\_\+\+I\+M\+G\+\_\+\+R\+\_\+\+P\+A\+GE}}~\mbox{\hyperlink{oad__target_8h_a5846982ef841e606f5c66bdfe59bcad0}{O\+A\+D\+\_\+\+I\+M\+G\+\_\+\+A\+\_\+\+P\+A\+GE}}
+\item 
+\#define \mbox{\hyperlink{oad__target_8h_aee8134fc7f6c53ce1cd572572371e10b}{O\+A\+D\+\_\+\+I\+M\+G\+\_\+\+R\+\_\+\+A\+R\+EA}}~\mbox{\hyperlink{oad__target_8h_a4c731366dd4ae472839a3fdec92f356f}{O\+A\+D\+\_\+\+I\+M\+G\+\_\+\+A\+\_\+\+A\+R\+EA}}
+\item 
+\#define \mbox{\hyperlink{oad__target_8h_a2b5411b44bbea9e2dbd1a498ab2a711e}{O\+A\+D\+\_\+\+I\+M\+G\+\_\+\+R\+\_\+\+O\+S\+ET}}~\mbox{\hyperlink{oad__target_8h_ae28209a1e765cae22009744367bc00fe}{O\+A\+D\+\_\+\+I\+M\+G\+\_\+\+A\+\_\+\+O\+S\+ET}}
+\item 
+\#define \mbox{\hyperlink{oad__target_8h_a1aa4b9a1dc8e0b3a566f1458ccba50e2}{O\+A\+D\+\_\+\+I\+M\+G\+\_\+\+N\+P\+\_\+\+F\+L\+AG}}~0x01
+\item 
+\#define \mbox{\hyperlink{oad__target_8h_aaae3ddaa33ec0b60fa0a99e31b90c557}{O\+A\+D\+\_\+\+I\+M\+G\+\_\+\+A\+P\+P\+\_\+\+F\+L\+AG}}~0x02
+\item 
+\#define \mbox{\hyperlink{oad__target_8h_a61c5e9edf302ed89cec556ee1f1819c6}{O\+A\+D\+\_\+\+I\+M\+G\+\_\+\+S\+T\+A\+C\+K\+\_\+\+F\+L\+AG}}~0x04
+\item 
+\#define \mbox{\hyperlink{oad__target_8h_a198ad349ff620800b68df98003666bd5}{O\+A\+D\+\_\+\+I\+M\+G\+\_\+\+ID}}(ver)~( (ver) \& 0x01 )
+\item 
+\#define \mbox{\hyperlink{oad__target_8h_a5ccaa61ba5b0c41a29cd53d30a3ec511}{O\+A\+D\+\_\+\+V\+E\+R\+\_\+\+N\+UM}}(ver)~( (ver) $>$$>$ 0x01 )
+\item 
+\#define \mbox{\hyperlink{oad__target_8h_a600b15c44e8c35c21bf23e202747798a}{O\+A\+D\+\_\+\+I\+M\+G\+\_\+\+V\+ER}}(ver)~(ver)
+\item 
+\#define \mbox{\hyperlink{oad__target_8h_a251069fd8b9e1e5a8b93871dfcc522dc}{O\+A\+D\+\_\+\+F\+L\+A\+S\+H\+\_\+\+P\+A\+G\+E\+\_\+\+M\+U\+LT}}~((uint16)(H\+A\+L\+\_\+\+F\+L\+A\+S\+H\+\_\+\+P\+A\+G\+E\+\_\+\+S\+I\+ZE / H\+A\+L\+\_\+\+F\+L\+A\+S\+H\+\_\+\+W\+O\+R\+D\+\_\+\+S\+I\+ZE))
+\item 
+\#define \mbox{\hyperlink{oad__target_8h_aa17b4e8e7710efa9d5b1b827a3725e14}{F\+L\+A\+S\+H\+\_\+\+A\+D\+D\+R\+E\+SS}}(page,  offset)~(((page) $<$$<$ 12) + (offset))
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{oad__target_8h_a9f63ae5d49f39639eb49b10476839b2b}{O\+A\+D\+Target\+\_\+open}} (void)
+\item 
+void \mbox{\hyperlink{oad__target_8h_a84d99103ac2d2d8780d0021069051068}{O\+A\+D\+Target\+\_\+close}} (void)
+\item 
+uint8\+\_\+t \mbox{\hyperlink{oad__target_8h_a235c14d97b67c29708d653696fc758da}{O\+A\+D\+Target\+\_\+has\+External\+Flash}} (void)
+\item 
+void \mbox{\hyperlink{oad__target_8h_a070cdbf27e0a7c940e9e1c4cab556576}{O\+A\+D\+Target\+\_\+store\+Image\+Header}} (uint8\+\_\+t $\ast$p\+Value)
+\item 
+uint8\+\_\+t \mbox{\hyperlink{oad__target_8h_a4749d449af696ae4f0b41f40a17a0502}{O\+A\+D\+Target\+\_\+get\+Current\+Image\+Header}} (\mbox{\hyperlink{structimg__hdr__t}{img\+\_\+hdr\+\_\+t}} $\ast$p\+Hdr)
+\item 
+void \mbox{\hyperlink{oad__target_8h_aaf57a0dc2b5d5e8d90730f444b7de25f}{O\+A\+D\+Target\+\_\+get\+Crc}} (uint16\+\_\+t $\ast$p\+Crc)
+\item 
+void \mbox{\hyperlink{oad__target_8h_ac8bd3fcba497c6ef6133e9b99c3054dc}{O\+A\+D\+Target\+\_\+set\+Crc}} (uint16\+\_\+t $\ast$p\+Crc)
+\item 
+uint32\+\_\+t \mbox{\hyperlink{oad__target_8h_aff876b30f92e02a74a626b0cd0e2905c}{O\+A\+D\+Target\+\_\+image\+Address}} (uint8\+\_\+t $\ast$p\+Value)
+\item 
+uint8\+\_\+t \mbox{\hyperlink{oad__target_8h_a16315ac2ac70829be59f37982ed1651f}{O\+A\+D\+Target\+\_\+validate\+New\+Image}} (uint8\+\_\+t $\ast$p\+Value, \mbox{\hyperlink{structimg__hdr__t}{img\+\_\+hdr\+\_\+t}} $\ast$Img\+Hdr, uint16\+\_\+t blk\+Tot)
+\item 
+void \mbox{\hyperlink{oad__target_8h_a54f7b8117d22369279432cb886cfcd2f}{O\+A\+D\+Target\+\_\+read\+Flash}} (uint8\+\_\+t page, uint32\+\_\+t offset, uint8\+\_\+t $\ast$p\+Buf, uint16\+\_\+t \mbox{\hyperlink{icall__apimsg_8h_a8ccac76f35f79d74917e1c5dd6f69fea}{len}})
+\item 
+void \mbox{\hyperlink{oad__target_8h_af1550d77c0d897035ead7c46e8be081a}{O\+A\+D\+Target\+\_\+write\+Flash}} (uint8\+\_\+t page, uint32\+\_\+t offset, uint8\+\_\+t $\ast$p\+Buf, uint16\+\_\+t \mbox{\hyperlink{icall__apimsg_8h_a8ccac76f35f79d74917e1c5dd6f69fea}{len}})
+\item 
+void \mbox{\hyperlink{oad__target_8h_a0f23bde4ff24f5b8bed7600bcdcffcb3}{O\+A\+D\+Target\+\_\+erase\+Flash}} (uint8\+\_\+t page)
+\item 
+void \mbox{\hyperlink{oad__target_8h_a609412066e6b08d87f92231a2f2d48bc}{O\+A\+D\+Target\+\_\+system\+Reset}} (void)
+\item 
+void \mbox{\hyperlink{oad__target_8h_a50c9e7916d13de31f451e2670c1b514a}{save\+Image\+Info}} (void)
+\item 
+uint8\+\_\+t \mbox{\hyperlink{oad__target_8h_aa9c58329d3861054b7c18163488d02b5}{get\+Image\+Flag}} (void)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{oad__target_8h_aa17b4e8e7710efa9d5b1b827a3725e14}\label{oad__target_8h_aa17b4e8e7710efa9d5b1b827a3725e14}} 
+\index{oad\_target.h@{oad\_target.h}!FLASH\_ADDRESS@{FLASH\_ADDRESS}}
+\index{FLASH\_ADDRESS@{FLASH\_ADDRESS}!oad\_target.h@{oad\_target.h}}
+\doxysubsubsection{\texorpdfstring{FLASH\_ADDRESS}{FLASH\_ADDRESS}}
+{\footnotesize\ttfamily \#define F\+L\+A\+S\+H\+\_\+\+A\+D\+D\+R\+E\+SS(\begin{DoxyParamCaption}\item[{}]{page,  }\item[{}]{offset }\end{DoxyParamCaption})~(((page) $<$$<$ 12) + (offset))}
+
+
+
+Definition at line 189 of file oad\+\_\+target.\+h.
+
+\mbox{\Hypertarget{oad__target_8h_a909bd6aadc6df79c51475466a562f294}\label{oad__target_8h_a909bd6aadc6df79c51475466a562f294}} 
+\index{oad\_target.h@{oad\_target.h}!OAD\_BLOCK\_MAX@{OAD\_BLOCK\_MAX}}
+\index{OAD\_BLOCK\_MAX@{OAD\_BLOCK\_MAX}!oad\_target.h@{oad\_target.h}}
+\doxysubsubsection{\texorpdfstring{OAD\_BLOCK\_MAX}{OAD\_BLOCK\_MAX}}
+{\footnotesize\ttfamily \#define O\+A\+D\+\_\+\+B\+L\+O\+C\+K\+\_\+\+M\+AX~(\mbox{\hyperlink{oad__target_8h_a948a2323e898b8b75c19b82aaf6b9ce3}{O\+A\+D\+\_\+\+B\+L\+O\+C\+K\+S\+\_\+\+P\+E\+R\+\_\+\+P\+A\+GE}} $\ast$ \mbox{\hyperlink{oad__target_8h_ab9a6c64fa09d23c1a47f9cbf064b5157}{O\+A\+D\+\_\+\+I\+M\+G\+\_\+\+D\+\_\+\+A\+R\+EA}})}
+
+
+
+Definition at line 84 of file oad\+\_\+target.\+h.
+
+\mbox{\Hypertarget{oad__target_8h_a996d684ec859c093aff264754f8e6547}\label{oad__target_8h_a996d684ec859c093aff264754f8e6547}} 
+\index{oad\_target.h@{oad\_target.h}!OAD\_BLOCK\_SIZE@{OAD\_BLOCK\_SIZE}}
+\index{OAD\_BLOCK\_SIZE@{OAD\_BLOCK\_SIZE}!oad\_target.h@{oad\_target.h}}
+\doxysubsubsection{\texorpdfstring{OAD\_BLOCK\_SIZE}{OAD\_BLOCK\_SIZE}}
+{\footnotesize\ttfamily \#define O\+A\+D\+\_\+\+B\+L\+O\+C\+K\+\_\+\+S\+I\+ZE~16}
+
+
+
+Definition at line 82 of file oad\+\_\+target.\+h.
+
+\mbox{\Hypertarget{oad__target_8h_a948a2323e898b8b75c19b82aaf6b9ce3}\label{oad__target_8h_a948a2323e898b8b75c19b82aaf6b9ce3}} 
+\index{oad\_target.h@{oad\_target.h}!OAD\_BLOCKS\_PER\_PAGE@{OAD\_BLOCKS\_PER\_PAGE}}
+\index{OAD\_BLOCKS\_PER\_PAGE@{OAD\_BLOCKS\_PER\_PAGE}!oad\_target.h@{oad\_target.h}}
+\doxysubsubsection{\texorpdfstring{OAD\_BLOCKS\_PER\_PAGE}{OAD\_BLOCKS\_PER\_PAGE}}
+{\footnotesize\ttfamily \#define O\+A\+D\+\_\+\+B\+L\+O\+C\+K\+S\+\_\+\+P\+E\+R\+\_\+\+P\+A\+GE~(H\+A\+L\+\_\+\+F\+L\+A\+S\+H\+\_\+\+P\+A\+G\+E\+\_\+\+S\+I\+ZE / \mbox{\hyperlink{oad__target_8h_a996d684ec859c093aff264754f8e6547}{O\+A\+D\+\_\+\+B\+L\+O\+C\+K\+\_\+\+S\+I\+ZE}})}
+
+
+
+Definition at line 83 of file oad\+\_\+target.\+h.
+
+\mbox{\Hypertarget{oad__target_8h_a251069fd8b9e1e5a8b93871dfcc522dc}\label{oad__target_8h_a251069fd8b9e1e5a8b93871dfcc522dc}} 
+\index{oad\_target.h@{oad\_target.h}!OAD\_FLASH\_PAGE\_MULT@{OAD\_FLASH\_PAGE\_MULT}}
+\index{OAD\_FLASH\_PAGE\_MULT@{OAD\_FLASH\_PAGE\_MULT}!oad\_target.h@{oad\_target.h}}
+\doxysubsubsection{\texorpdfstring{OAD\_FLASH\_PAGE\_MULT}{OAD\_FLASH\_PAGE\_MULT}}
+{\footnotesize\ttfamily \#define O\+A\+D\+\_\+\+F\+L\+A\+S\+H\+\_\+\+P\+A\+G\+E\+\_\+\+M\+U\+LT~((uint16)(H\+A\+L\+\_\+\+F\+L\+A\+S\+H\+\_\+\+P\+A\+G\+E\+\_\+\+S\+I\+ZE / H\+A\+L\+\_\+\+F\+L\+A\+S\+H\+\_\+\+W\+O\+R\+D\+\_\+\+S\+I\+ZE))}
+
+
+
+Definition at line 187 of file oad\+\_\+target.\+h.
+
+\mbox{\Hypertarget{oad__target_8h_ac7699d12441f49b4666ba86600cbd42e}\label{oad__target_8h_ac7699d12441f49b4666ba86600cbd42e}} 
+\index{oad\_target.h@{oad\_target.h}!OAD\_IMAGE\_COMPLETE@{OAD\_IMAGE\_COMPLETE}}
+\index{OAD\_IMAGE\_COMPLETE@{OAD\_IMAGE\_COMPLETE}!oad\_target.h@{oad\_target.h}}
+\doxysubsubsection{\texorpdfstring{OAD\_IMAGE\_COMPLETE}{OAD\_IMAGE\_COMPLETE}}
+{\footnotesize\ttfamily \#define O\+A\+D\+\_\+\+I\+M\+A\+G\+E\+\_\+\+C\+O\+M\+P\+L\+E\+TE~0x03}
+
+
+
+Definition at line 89 of file oad\+\_\+target.\+h.
+
+\mbox{\Hypertarget{oad__target_8h_a4c731366dd4ae472839a3fdec92f356f}\label{oad__target_8h_a4c731366dd4ae472839a3fdec92f356f}} 
+\index{oad\_target.h@{oad\_target.h}!OAD\_IMG\_A\_AREA@{OAD\_IMG\_A\_AREA}}
+\index{OAD\_IMG\_A\_AREA@{OAD\_IMG\_A\_AREA}!oad\_target.h@{oad\_target.h}}
+\doxysubsubsection{\texorpdfstring{OAD\_IMG\_A\_AREA}{OAD\_IMG\_A\_AREA}}
+{\footnotesize\ttfamily \#define O\+A\+D\+\_\+\+I\+M\+G\+\_\+\+A\+\_\+\+A\+R\+EA~6}
+
+
+
+Definition at line 105 of file oad\+\_\+target.\+h.
+
+\mbox{\Hypertarget{oad__target_8h_ae28209a1e765cae22009744367bc00fe}\label{oad__target_8h_ae28209a1e765cae22009744367bc00fe}} 
+\index{oad\_target.h@{oad\_target.h}!OAD\_IMG\_A\_OSET@{OAD\_IMG\_A\_OSET}}
+\index{OAD\_IMG\_A\_OSET@{OAD\_IMG\_A\_OSET}!oad\_target.h@{oad\_target.h}}
+\doxysubsubsection{\texorpdfstring{OAD\_IMG\_A\_OSET}{OAD\_IMG\_A\_OSET}}
+{\footnotesize\ttfamily \#define O\+A\+D\+\_\+\+I\+M\+G\+\_\+\+A\+\_\+\+O\+S\+ET~0x0600}
+
+
+
+Definition at line 99 of file oad\+\_\+target.\+h.
+
+\mbox{\Hypertarget{oad__target_8h_a5846982ef841e606f5c66bdfe59bcad0}\label{oad__target_8h_a5846982ef841e606f5c66bdfe59bcad0}} 
+\index{oad\_target.h@{oad\_target.h}!OAD\_IMG\_A\_PAGE@{OAD\_IMG\_A\_PAGE}}
+\index{OAD\_IMG\_A\_PAGE@{OAD\_IMG\_A\_PAGE}!oad\_target.h@{oad\_target.h}}
+\doxysubsubsection{\texorpdfstring{OAD\_IMG\_A\_PAGE}{OAD\_IMG\_A\_PAGE}}
+{\footnotesize\ttfamily \#define O\+A\+D\+\_\+\+I\+M\+G\+\_\+\+A\+\_\+\+P\+A\+GE~0}
+
+
+
+Definition at line 94 of file oad\+\_\+target.\+h.
+
+\mbox{\Hypertarget{oad__target_8h_aaae3ddaa33ec0b60fa0a99e31b90c557}\label{oad__target_8h_aaae3ddaa33ec0b60fa0a99e31b90c557}} 
+\index{oad\_target.h@{oad\_target.h}!OAD\_IMG\_APP\_FLAG@{OAD\_IMG\_APP\_FLAG}}
+\index{OAD\_IMG\_APP\_FLAG@{OAD\_IMG\_APP\_FLAG}!oad\_target.h@{oad\_target.h}}
+\doxysubsubsection{\texorpdfstring{OAD\_IMG\_APP\_FLAG}{OAD\_IMG\_APP\_FLAG}}
+{\footnotesize\ttfamily \#define O\+A\+D\+\_\+\+I\+M\+G\+\_\+\+A\+P\+P\+\_\+\+F\+L\+AG~0x02}
+
+
+
+Definition at line 152 of file oad\+\_\+target.\+h.
+
+\mbox{\Hypertarget{oad__target_8h_abbe2248943e6916971ba6d50b2fd528c}\label{oad__target_8h_abbe2248943e6916971ba6d50b2fd528c}} 
+\index{oad\_target.h@{oad\_target.h}!OAD\_IMG\_B\_AREA@{OAD\_IMG\_B\_AREA}}
+\index{OAD\_IMG\_B\_AREA@{OAD\_IMG\_B\_AREA}!oad\_target.h@{oad\_target.h}}
+\doxysubsubsection{\texorpdfstring{OAD\_IMG\_B\_AREA}{OAD\_IMG\_B\_AREA}}
+{\footnotesize\ttfamily \#define O\+A\+D\+\_\+\+I\+M\+G\+\_\+\+B\+\_\+\+A\+R\+EA~10}
+
+
+
+Definition at line 115 of file oad\+\_\+target.\+h.
+
+\mbox{\Hypertarget{oad__target_8h_a269ed79ec34d8f309485aef01b3acc46}\label{oad__target_8h_a269ed79ec34d8f309485aef01b3acc46}} 
+\index{oad\_target.h@{oad\_target.h}!OAD\_IMG\_B\_OSET@{OAD\_IMG\_B\_OSET}}
+\index{OAD\_IMG\_B\_OSET@{OAD\_IMG\_B\_OSET}!oad\_target.h@{oad\_target.h}}
+\doxysubsubsection{\texorpdfstring{OAD\_IMG\_B\_OSET}{OAD\_IMG\_B\_OSET}}
+{\footnotesize\ttfamily \#define O\+A\+D\+\_\+\+I\+M\+G\+\_\+\+B\+\_\+\+O\+S\+ET~0x0000}
+
+
+
+Definition at line 120 of file oad\+\_\+target.\+h.
+
+\mbox{\Hypertarget{oad__target_8h_aaa609f0dd7d73ef3cb27324932a06ba7}\label{oad__target_8h_aaa609f0dd7d73ef3cb27324932a06ba7}} 
+\index{oad\_target.h@{oad\_target.h}!OAD\_IMG\_B\_PAGE@{OAD\_IMG\_B\_PAGE}}
+\index{OAD\_IMG\_B\_PAGE@{OAD\_IMG\_B\_PAGE}!oad\_target.h@{oad\_target.h}}
+\doxysubsubsection{\texorpdfstring{OAD\_IMG\_B\_PAGE}{OAD\_IMG\_B\_PAGE}}
+{\footnotesize\ttfamily \#define O\+A\+D\+\_\+\+I\+M\+G\+\_\+\+B\+\_\+\+P\+A\+GE~9}
+
+
+
+Definition at line 110 of file oad\+\_\+target.\+h.
+
+\mbox{\Hypertarget{oad__target_8h_ac212f8d0cbc404eb63c5828f1d7d8a3f}\label{oad__target_8h_ac212f8d0cbc404eb63c5828f1d7d8a3f}} 
+\index{oad\_target.h@{oad\_target.h}!OAD\_IMG\_CRC\_OSET@{OAD\_IMG\_CRC\_OSET}}
+\index{OAD\_IMG\_CRC\_OSET@{OAD\_IMG\_CRC\_OSET}!oad\_target.h@{oad\_target.h}}
+\doxysubsubsection{\texorpdfstring{OAD\_IMG\_CRC\_OSET}{OAD\_IMG\_CRC\_OSET}}
+{\footnotesize\ttfamily \#define O\+A\+D\+\_\+\+I\+M\+G\+\_\+\+C\+R\+C\+\_\+\+O\+S\+ET~0x0000}
+
+
+
+Definition at line 69 of file oad\+\_\+target.\+h.
+
+\mbox{\Hypertarget{oad__target_8h_ab9a6c64fa09d23c1a47f9cbf064b5157}\label{oad__target_8h_ab9a6c64fa09d23c1a47f9cbf064b5157}} 
+\index{oad\_target.h@{oad\_target.h}!OAD\_IMG\_D\_AREA@{OAD\_IMG\_D\_AREA}}
+\index{OAD\_IMG\_D\_AREA@{OAD\_IMG\_D\_AREA}!oad\_target.h@{oad\_target.h}}
+\doxysubsubsection{\texorpdfstring{OAD\_IMG\_D\_AREA}{OAD\_IMG\_D\_AREA}}
+{\footnotesize\ttfamily \#define O\+A\+D\+\_\+\+I\+M\+G\+\_\+\+D\+\_\+\+A\+R\+EA~\mbox{\hyperlink{oad__target_8h_abbe2248943e6916971ba6d50b2fd528c}{O\+A\+D\+\_\+\+I\+M\+G\+\_\+\+B\+\_\+\+A\+R\+EA}}}
+
+
+
+Definition at line 145 of file oad\+\_\+target.\+h.
+
+\mbox{\Hypertarget{oad__target_8h_a8301899d4476990ff6b98138c48453b8}\label{oad__target_8h_a8301899d4476990ff6b98138c48453b8}} 
+\index{oad\_target.h@{oad\_target.h}!OAD\_IMG\_D\_PAGE@{OAD\_IMG\_D\_PAGE}}
+\index{OAD\_IMG\_D\_PAGE@{OAD\_IMG\_D\_PAGE}!oad\_target.h@{oad\_target.h}}
+\doxysubsubsection{\texorpdfstring{OAD\_IMG\_D\_PAGE}{OAD\_IMG\_D\_PAGE}}
+{\footnotesize\ttfamily \#define O\+A\+D\+\_\+\+I\+M\+G\+\_\+\+D\+\_\+\+P\+A\+GE~\mbox{\hyperlink{oad__target_8h_aaa609f0dd7d73ef3cb27324932a06ba7}{O\+A\+D\+\_\+\+I\+M\+G\+\_\+\+B\+\_\+\+P\+A\+GE}}}
+
+
+
+Definition at line 144 of file oad\+\_\+target.\+h.
+
+\mbox{\Hypertarget{oad__target_8h_aec6652f906e7b39dcd32d5b7528f8414}\label{oad__target_8h_aec6652f906e7b39dcd32d5b7528f8414}} 
+\index{oad\_target.h@{oad\_target.h}!OAD\_IMG\_E\_AREA@{OAD\_IMG\_E\_AREA}}
+\index{OAD\_IMG\_E\_AREA@{OAD\_IMG\_E\_AREA}!oad\_target.h@{oad\_target.h}}
+\doxysubsubsection{\texorpdfstring{OAD\_IMG\_E\_AREA}{OAD\_IMG\_E\_AREA}}
+{\footnotesize\ttfamily \#define O\+A\+D\+\_\+\+I\+M\+G\+\_\+\+E\+\_\+\+A\+R\+EA~0x1C}
+
+
+
+Definition at line 125 of file oad\+\_\+target.\+h.
+
+\mbox{\Hypertarget{oad__target_8h_a64eadbf32aa236145813c2385d4b8dcf}\label{oad__target_8h_a64eadbf32aa236145813c2385d4b8dcf}} 
+\index{oad\_target.h@{oad\_target.h}!OAD\_IMG\_E\_OSET@{OAD\_IMG\_E\_OSET}}
+\index{OAD\_IMG\_E\_OSET@{OAD\_IMG\_E\_OSET}!oad\_target.h@{oad\_target.h}}
+\doxysubsubsection{\texorpdfstring{OAD\_IMG\_E\_OSET}{OAD\_IMG\_E\_OSET}}
+{\footnotesize\ttfamily \#define O\+A\+D\+\_\+\+I\+M\+G\+\_\+\+E\+\_\+\+O\+S\+ET~0x0000}
+
+
+
+Definition at line 134 of file oad\+\_\+target.\+h.
+
+\mbox{\Hypertarget{oad__target_8h_ab5863ac3f5cb4719c8390feac3867633}\label{oad__target_8h_ab5863ac3f5cb4719c8390feac3867633}} 
+\index{oad\_target.h@{oad\_target.h}!OAD\_IMG\_E\_PAGE@{OAD\_IMG\_E\_PAGE}}
+\index{OAD\_IMG\_E\_PAGE@{OAD\_IMG\_E\_PAGE}!oad\_target.h@{oad\_target.h}}
+\doxysubsubsection{\texorpdfstring{OAD\_IMG\_E\_PAGE}{OAD\_IMG\_E\_PAGE}}
+{\footnotesize\ttfamily \#define O\+A\+D\+\_\+\+I\+M\+G\+\_\+\+E\+\_\+\+P\+A\+GE~1}
+
+
+
+Definition at line 130 of file oad\+\_\+target.\+h.
+
+\mbox{\Hypertarget{oad__target_8h_abe8d39c305441e25c9a3bb53d7795f69}\label{oad__target_8h_abe8d39c305441e25c9a3bb53d7795f69}} 
+\index{oad\_target.h@{oad\_target.h}!OAD\_IMG\_HDR\_OSET@{OAD\_IMG\_HDR\_OSET}}
+\index{OAD\_IMG\_HDR\_OSET@{OAD\_IMG\_HDR\_OSET}!oad\_target.h@{oad\_target.h}}
+\doxysubsubsection{\texorpdfstring{OAD\_IMG\_HDR\_OSET}{OAD\_IMG\_HDR\_OSET}}
+{\footnotesize\ttfamily \#define O\+A\+D\+\_\+\+I\+M\+G\+\_\+\+H\+D\+R\+\_\+\+O\+S\+ET~0x0004}
+
+
+
+Definition at line 73 of file oad\+\_\+target.\+h.
+
+\mbox{\Hypertarget{oad__target_8h_a38ae451ab5cc36946f347ff0c229bda3}\label{oad__target_8h_a38ae451ab5cc36946f347ff0c229bda3}} 
+\index{oad\_target.h@{oad\_target.h}!OAD\_IMG\_HDR\_SIZE@{OAD\_IMG\_HDR\_SIZE}}
+\index{OAD\_IMG\_HDR\_SIZE@{OAD\_IMG\_HDR\_SIZE}!oad\_target.h@{oad\_target.h}}
+\doxysubsubsection{\texorpdfstring{OAD\_IMG\_HDR\_SIZE}{OAD\_IMG\_HDR\_SIZE}}
+{\footnotesize\ttfamily \#define O\+A\+D\+\_\+\+I\+M\+G\+\_\+\+H\+D\+R\+\_\+\+S\+I\+ZE~( 2 + 2 + \mbox{\hyperlink{oad__target_8h_ac00fb7651d7f8517f5a763d65d58abc7}{O\+A\+D\+\_\+\+I\+M\+G\+\_\+\+I\+D\+\_\+\+S\+I\+ZE}} )}
+
+
+
+Definition at line 79 of file oad\+\_\+target.\+h.
+
+\mbox{\Hypertarget{oad__target_8h_a198ad349ff620800b68df98003666bd5}\label{oad__target_8h_a198ad349ff620800b68df98003666bd5}} 
+\index{oad\_target.h@{oad\_target.h}!OAD\_IMG\_ID@{OAD\_IMG\_ID}}
+\index{OAD\_IMG\_ID@{OAD\_IMG\_ID}!oad\_target.h@{oad\_target.h}}
+\doxysubsubsection{\texorpdfstring{OAD\_IMG\_ID}{OAD\_IMG\_ID}}
+{\footnotesize\ttfamily \#define O\+A\+D\+\_\+\+I\+M\+G\+\_\+\+ID(\begin{DoxyParamCaption}\item[{}]{ver }\end{DoxyParamCaption})~( (ver) \& 0x01 )}
+
+
+
+Definition at line 171 of file oad\+\_\+target.\+h.
+
+\mbox{\Hypertarget{oad__target_8h_ac00fb7651d7f8517f5a763d65d58abc7}\label{oad__target_8h_ac00fb7651d7f8517f5a763d65d58abc7}} 
+\index{oad\_target.h@{oad\_target.h}!OAD\_IMG\_ID\_SIZE@{OAD\_IMG\_ID\_SIZE}}
+\index{OAD\_IMG\_ID\_SIZE@{OAD\_IMG\_ID\_SIZE}!oad\_target.h@{oad\_target.h}}
+\doxysubsubsection{\texorpdfstring{OAD\_IMG\_ID\_SIZE}{OAD\_IMG\_ID\_SIZE}}
+{\footnotesize\ttfamily \#define O\+A\+D\+\_\+\+I\+M\+G\+\_\+\+I\+D\+\_\+\+S\+I\+ZE~4}
+
+
+
+Definition at line 76 of file oad\+\_\+target.\+h.
+
+\mbox{\Hypertarget{oad__target_8h_a1aa4b9a1dc8e0b3a566f1458ccba50e2}\label{oad__target_8h_a1aa4b9a1dc8e0b3a566f1458ccba50e2}} 
+\index{oad\_target.h@{oad\_target.h}!OAD\_IMG\_NP\_FLAG@{OAD\_IMG\_NP\_FLAG}}
+\index{OAD\_IMG\_NP\_FLAG@{OAD\_IMG\_NP\_FLAG}!oad\_target.h@{oad\_target.h}}
+\doxysubsubsection{\texorpdfstring{OAD\_IMG\_NP\_FLAG}{OAD\_IMG\_NP\_FLAG}}
+{\footnotesize\ttfamily \#define O\+A\+D\+\_\+\+I\+M\+G\+\_\+\+N\+P\+\_\+\+F\+L\+AG~0x01}
+
+
+
+Definition at line 151 of file oad\+\_\+target.\+h.
+
+\mbox{\Hypertarget{oad__target_8h_aee8134fc7f6c53ce1cd572572371e10b}\label{oad__target_8h_aee8134fc7f6c53ce1cd572572371e10b}} 
+\index{oad\_target.h@{oad\_target.h}!OAD\_IMG\_R\_AREA@{OAD\_IMG\_R\_AREA}}
+\index{OAD\_IMG\_R\_AREA@{OAD\_IMG\_R\_AREA}!oad\_target.h@{oad\_target.h}}
+\doxysubsubsection{\texorpdfstring{OAD\_IMG\_R\_AREA}{OAD\_IMG\_R\_AREA}}
+{\footnotesize\ttfamily \#define O\+A\+D\+\_\+\+I\+M\+G\+\_\+\+R\+\_\+\+A\+R\+EA~\mbox{\hyperlink{oad__target_8h_a4c731366dd4ae472839a3fdec92f356f}{O\+A\+D\+\_\+\+I\+M\+G\+\_\+\+A\+\_\+\+A\+R\+EA}}}
+
+
+
+Definition at line 147 of file oad\+\_\+target.\+h.
+
+\mbox{\Hypertarget{oad__target_8h_a2b5411b44bbea9e2dbd1a498ab2a711e}\label{oad__target_8h_a2b5411b44bbea9e2dbd1a498ab2a711e}} 
+\index{oad\_target.h@{oad\_target.h}!OAD\_IMG\_R\_OSET@{OAD\_IMG\_R\_OSET}}
+\index{OAD\_IMG\_R\_OSET@{OAD\_IMG\_R\_OSET}!oad\_target.h@{oad\_target.h}}
+\doxysubsubsection{\texorpdfstring{OAD\_IMG\_R\_OSET}{OAD\_IMG\_R\_OSET}}
+{\footnotesize\ttfamily \#define O\+A\+D\+\_\+\+I\+M\+G\+\_\+\+R\+\_\+\+O\+S\+ET~\mbox{\hyperlink{oad__target_8h_ae28209a1e765cae22009744367bc00fe}{O\+A\+D\+\_\+\+I\+M\+G\+\_\+\+A\+\_\+\+O\+S\+ET}}}
+
+
+
+Definition at line 148 of file oad\+\_\+target.\+h.
+
+\mbox{\Hypertarget{oad__target_8h_ab3aa11f358d516dbc679717147dbd16b}\label{oad__target_8h_ab3aa11f358d516dbc679717147dbd16b}} 
+\index{oad\_target.h@{oad\_target.h}!OAD\_IMG\_R\_PAGE@{OAD\_IMG\_R\_PAGE}}
+\index{OAD\_IMG\_R\_PAGE@{OAD\_IMG\_R\_PAGE}!oad\_target.h@{oad\_target.h}}
+\doxysubsubsection{\texorpdfstring{OAD\_IMG\_R\_PAGE}{OAD\_IMG\_R\_PAGE}}
+{\footnotesize\ttfamily \#define O\+A\+D\+\_\+\+I\+M\+G\+\_\+\+R\+\_\+\+P\+A\+GE~\mbox{\hyperlink{oad__target_8h_a5846982ef841e606f5c66bdfe59bcad0}{O\+A\+D\+\_\+\+I\+M\+G\+\_\+\+A\+\_\+\+P\+A\+GE}}}
+
+
+
+Definition at line 146 of file oad\+\_\+target.\+h.
+
+\mbox{\Hypertarget{oad__target_8h_a61c5e9edf302ed89cec556ee1f1819c6}\label{oad__target_8h_a61c5e9edf302ed89cec556ee1f1819c6}} 
+\index{oad\_target.h@{oad\_target.h}!OAD\_IMG\_STACK\_FLAG@{OAD\_IMG\_STACK\_FLAG}}
+\index{OAD\_IMG\_STACK\_FLAG@{OAD\_IMG\_STACK\_FLAG}!oad\_target.h@{oad\_target.h}}
+\doxysubsubsection{\texorpdfstring{OAD\_IMG\_STACK\_FLAG}{OAD\_IMG\_STACK\_FLAG}}
+{\footnotesize\ttfamily \#define O\+A\+D\+\_\+\+I\+M\+G\+\_\+\+S\+T\+A\+C\+K\+\_\+\+F\+L\+AG~0x04}
+
+
+
+Definition at line 153 of file oad\+\_\+target.\+h.
+
+\mbox{\Hypertarget{oad__target_8h_a600b15c44e8c35c21bf23e202747798a}\label{oad__target_8h_a600b15c44e8c35c21bf23e202747798a}} 
+\index{oad\_target.h@{oad\_target.h}!OAD\_IMG\_VER@{OAD\_IMG\_VER}}
+\index{OAD\_IMG\_VER@{OAD\_IMG\_VER}!oad\_target.h@{oad\_target.h}}
+\doxysubsubsection{\texorpdfstring{OAD\_IMG\_VER}{OAD\_IMG\_VER}}
+{\footnotesize\ttfamily \#define O\+A\+D\+\_\+\+I\+M\+G\+\_\+\+V\+ER(\begin{DoxyParamCaption}\item[{}]{ver }\end{DoxyParamCaption})~(ver)}
+
+
+
+Definition at line 183 of file oad\+\_\+target.\+h.
+
+\mbox{\Hypertarget{oad__target_8h_a5ccaa61ba5b0c41a29cd53d30a3ec511}\label{oad__target_8h_a5ccaa61ba5b0c41a29cd53d30a3ec511}} 
+\index{oad\_target.h@{oad\_target.h}!OAD\_VER\_NUM@{OAD\_VER\_NUM}}
+\index{OAD\_VER\_NUM@{OAD\_VER\_NUM}!oad\_target.h@{oad\_target.h}}
+\doxysubsubsection{\texorpdfstring{OAD\_VER\_NUM}{OAD\_VER\_NUM}}
+{\footnotesize\ttfamily \#define O\+A\+D\+\_\+\+V\+E\+R\+\_\+\+N\+UM(\begin{DoxyParamCaption}\item[{}]{ver }\end{DoxyParamCaption})~( (ver) $>$$>$ 0x01 )}
+
+
+
+Definition at line 172 of file oad\+\_\+target.\+h.
+
+\mbox{\Hypertarget{oad__target_8h_a89ab9e7dacb350e76d0bbf934386960e}\label{oad__target_8h_a89ab9e7dacb350e76d0bbf934386960e}} 
+\index{oad\_target.h@{oad\_target.h}!OAD\_WRITE\_BLOCK\_REQ@{OAD\_WRITE\_BLOCK\_REQ}}
+\index{OAD\_WRITE\_BLOCK\_REQ@{OAD\_WRITE\_BLOCK\_REQ}!oad\_target.h@{oad\_target.h}}
+\doxysubsubsection{\texorpdfstring{OAD\_WRITE\_BLOCK\_REQ}{OAD\_WRITE\_BLOCK\_REQ}}
+{\footnotesize\ttfamily \#define O\+A\+D\+\_\+\+W\+R\+I\+T\+E\+\_\+\+B\+L\+O\+C\+K\+\_\+\+R\+EQ~0x02}
+
+
+
+Definition at line 88 of file oad\+\_\+target.\+h.
+
+\mbox{\Hypertarget{oad__target_8h_a7a121f54ebc362f55336a25d3c54f069}\label{oad__target_8h_a7a121f54ebc362f55336a25d3c54f069}} 
+\index{oad\_target.h@{oad\_target.h}!OAD\_WRITE\_IDENTIFY\_REQ@{OAD\_WRITE\_IDENTIFY\_REQ}}
+\index{OAD\_WRITE\_IDENTIFY\_REQ@{OAD\_WRITE\_IDENTIFY\_REQ}!oad\_target.h@{oad\_target.h}}
+\doxysubsubsection{\texorpdfstring{OAD\_WRITE\_IDENTIFY\_REQ}{OAD\_WRITE\_IDENTIFY\_REQ}}
+{\footnotesize\ttfamily \#define O\+A\+D\+\_\+\+W\+R\+I\+T\+E\+\_\+\+I\+D\+E\+N\+T\+I\+F\+Y\+\_\+\+R\+EQ~0x01}
+
+
+
+Definition at line 87 of file oad\+\_\+target.\+h.
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{oad__target_8h_aa9c58329d3861054b7c18163488d02b5}\label{oad__target_8h_aa9c58329d3861054b7c18163488d02b5}} 
+\index{oad\_target.h@{oad\_target.h}!getImageFlag@{getImageFlag}}
+\index{getImageFlag@{getImageFlag}!oad\_target.h@{oad\_target.h}}
+\doxysubsubsection{\texorpdfstring{getImageFlag()}{getImageFlag()}}
+{\footnotesize\ttfamily uint8\+\_\+t get\+Image\+Flag (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{oad__target_8h_a84d99103ac2d2d8780d0021069051068}\label{oad__target_8h_a84d99103ac2d2d8780d0021069051068}} 
+\index{oad\_target.h@{oad\_target.h}!OADTarget\_close@{OADTarget\_close}}
+\index{OADTarget\_close@{OADTarget\_close}!oad\_target.h@{oad\_target.h}}
+\doxysubsubsection{\texorpdfstring{OADTarget\_close()}{OADTarget\_close()}}
+{\footnotesize\ttfamily void O\+A\+D\+Target\+\_\+close (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{oad__target_8h_a0f23bde4ff24f5b8bed7600bcdcffcb3}\label{oad__target_8h_a0f23bde4ff24f5b8bed7600bcdcffcb3}} 
+\index{oad\_target.h@{oad\_target.h}!OADTarget\_eraseFlash@{OADTarget\_eraseFlash}}
+\index{OADTarget\_eraseFlash@{OADTarget\_eraseFlash}!oad\_target.h@{oad\_target.h}}
+\doxysubsubsection{\texorpdfstring{OADTarget\_eraseFlash()}{OADTarget\_eraseFlash()}}
+{\footnotesize\ttfamily void O\+A\+D\+Target\+\_\+erase\+Flash (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{page }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{oad__target_8h_aaf57a0dc2b5d5e8d90730f444b7de25f}\label{oad__target_8h_aaf57a0dc2b5d5e8d90730f444b7de25f}} 
+\index{oad\_target.h@{oad\_target.h}!OADTarget\_getCrc@{OADTarget\_getCrc}}
+\index{OADTarget\_getCrc@{OADTarget\_getCrc}!oad\_target.h@{oad\_target.h}}
+\doxysubsubsection{\texorpdfstring{OADTarget\_getCrc()}{OADTarget\_getCrc()}}
+{\footnotesize\ttfamily void O\+A\+D\+Target\+\_\+get\+Crc (\begin{DoxyParamCaption}\item[{uint16\+\_\+t $\ast$}]{p\+Crc }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{oad__target_8h_a4749d449af696ae4f0b41f40a17a0502}\label{oad__target_8h_a4749d449af696ae4f0b41f40a17a0502}} 
+\index{oad\_target.h@{oad\_target.h}!OADTarget\_getCurrentImageHeader@{OADTarget\_getCurrentImageHeader}}
+\index{OADTarget\_getCurrentImageHeader@{OADTarget\_getCurrentImageHeader}!oad\_target.h@{oad\_target.h}}
+\doxysubsubsection{\texorpdfstring{OADTarget\_getCurrentImageHeader()}{OADTarget\_getCurrentImageHeader()}}
+{\footnotesize\ttfamily uint8\+\_\+t O\+A\+D\+Target\+\_\+get\+Current\+Image\+Header (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structimg__hdr__t}{img\+\_\+hdr\+\_\+t}} $\ast$}]{p\+Hdr }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{oad__target_8h_a235c14d97b67c29708d653696fc758da}\label{oad__target_8h_a235c14d97b67c29708d653696fc758da}} 
+\index{oad\_target.h@{oad\_target.h}!OADTarget\_hasExternalFlash@{OADTarget\_hasExternalFlash}}
+\index{OADTarget\_hasExternalFlash@{OADTarget\_hasExternalFlash}!oad\_target.h@{oad\_target.h}}
+\doxysubsubsection{\texorpdfstring{OADTarget\_hasExternalFlash()}{OADTarget\_hasExternalFlash()}}
+{\footnotesize\ttfamily uint8\+\_\+t O\+A\+D\+Target\+\_\+has\+External\+Flash (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{oad__target_8h_aff876b30f92e02a74a626b0cd0e2905c}\label{oad__target_8h_aff876b30f92e02a74a626b0cd0e2905c}} 
+\index{oad\_target.h@{oad\_target.h}!OADTarget\_imageAddress@{OADTarget\_imageAddress}}
+\index{OADTarget\_imageAddress@{OADTarget\_imageAddress}!oad\_target.h@{oad\_target.h}}
+\doxysubsubsection{\texorpdfstring{OADTarget\_imageAddress()}{OADTarget\_imageAddress()}}
+{\footnotesize\ttfamily uint32\+\_\+t O\+A\+D\+Target\+\_\+image\+Address (\begin{DoxyParamCaption}\item[{uint8\+\_\+t $\ast$}]{p\+Value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{oad__target_8h_a9f63ae5d49f39639eb49b10476839b2b}\label{oad__target_8h_a9f63ae5d49f39639eb49b10476839b2b}} 
+\index{oad\_target.h@{oad\_target.h}!OADTarget\_open@{OADTarget\_open}}
+\index{OADTarget\_open@{OADTarget\_open}!oad\_target.h@{oad\_target.h}}
+\doxysubsubsection{\texorpdfstring{OADTarget\_open()}{OADTarget\_open()}}
+{\footnotesize\ttfamily uint8\+\_\+t O\+A\+D\+Target\+\_\+open (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{oad__target_8h_a54f7b8117d22369279432cb886cfcd2f}\label{oad__target_8h_a54f7b8117d22369279432cb886cfcd2f}} 
+\index{oad\_target.h@{oad\_target.h}!OADTarget\_readFlash@{OADTarget\_readFlash}}
+\index{OADTarget\_readFlash@{OADTarget\_readFlash}!oad\_target.h@{oad\_target.h}}
+\doxysubsubsection{\texorpdfstring{OADTarget\_readFlash()}{OADTarget\_readFlash()}}
+{\footnotesize\ttfamily void O\+A\+D\+Target\+\_\+read\+Flash (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{page,  }\item[{uint32\+\_\+t}]{offset,  }\item[{uint8\+\_\+t $\ast$}]{p\+Buf,  }\item[{uint16\+\_\+t}]{len }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{oad__target_8h_ac8bd3fcba497c6ef6133e9b99c3054dc}\label{oad__target_8h_ac8bd3fcba497c6ef6133e9b99c3054dc}} 
+\index{oad\_target.h@{oad\_target.h}!OADTarget\_setCrc@{OADTarget\_setCrc}}
+\index{OADTarget\_setCrc@{OADTarget\_setCrc}!oad\_target.h@{oad\_target.h}}
+\doxysubsubsection{\texorpdfstring{OADTarget\_setCrc()}{OADTarget\_setCrc()}}
+{\footnotesize\ttfamily void O\+A\+D\+Target\+\_\+set\+Crc (\begin{DoxyParamCaption}\item[{uint16\+\_\+t $\ast$}]{p\+Crc }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{oad__target_8h_a070cdbf27e0a7c940e9e1c4cab556576}\label{oad__target_8h_a070cdbf27e0a7c940e9e1c4cab556576}} 
+\index{oad\_target.h@{oad\_target.h}!OADTarget\_storeImageHeader@{OADTarget\_storeImageHeader}}
+\index{OADTarget\_storeImageHeader@{OADTarget\_storeImageHeader}!oad\_target.h@{oad\_target.h}}
+\doxysubsubsection{\texorpdfstring{OADTarget\_storeImageHeader()}{OADTarget\_storeImageHeader()}}
+{\footnotesize\ttfamily void O\+A\+D\+Target\+\_\+store\+Image\+Header (\begin{DoxyParamCaption}\item[{uint8\+\_\+t $\ast$}]{p\+Value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{oad__target_8h_a609412066e6b08d87f92231a2f2d48bc}\label{oad__target_8h_a609412066e6b08d87f92231a2f2d48bc}} 
+\index{oad\_target.h@{oad\_target.h}!OADTarget\_systemReset@{OADTarget\_systemReset}}
+\index{OADTarget\_systemReset@{OADTarget\_systemReset}!oad\_target.h@{oad\_target.h}}
+\doxysubsubsection{\texorpdfstring{OADTarget\_systemReset()}{OADTarget\_systemReset()}}
+{\footnotesize\ttfamily void O\+A\+D\+Target\+\_\+system\+Reset (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{oad__target_8h_a16315ac2ac70829be59f37982ed1651f}\label{oad__target_8h_a16315ac2ac70829be59f37982ed1651f}} 
+\index{oad\_target.h@{oad\_target.h}!OADTarget\_validateNewImage@{OADTarget\_validateNewImage}}
+\index{OADTarget\_validateNewImage@{OADTarget\_validateNewImage}!oad\_target.h@{oad\_target.h}}
+\doxysubsubsection{\texorpdfstring{OADTarget\_validateNewImage()}{OADTarget\_validateNewImage()}}
+{\footnotesize\ttfamily uint8\+\_\+t O\+A\+D\+Target\+\_\+validate\+New\+Image (\begin{DoxyParamCaption}\item[{uint8\+\_\+t $\ast$}]{p\+Value,  }\item[{\mbox{\hyperlink{structimg__hdr__t}{img\+\_\+hdr\+\_\+t}} $\ast$}]{Img\+Hdr,  }\item[{uint16\+\_\+t}]{blk\+Tot }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{oad__target_8h_af1550d77c0d897035ead7c46e8be081a}\label{oad__target_8h_af1550d77c0d897035ead7c46e8be081a}} 
+\index{oad\_target.h@{oad\_target.h}!OADTarget\_writeFlash@{OADTarget\_writeFlash}}
+\index{OADTarget\_writeFlash@{OADTarget\_writeFlash}!oad\_target.h@{oad\_target.h}}
+\doxysubsubsection{\texorpdfstring{OADTarget\_writeFlash()}{OADTarget\_writeFlash()}}
+{\footnotesize\ttfamily void O\+A\+D\+Target\+\_\+write\+Flash (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{page,  }\item[{uint32\+\_\+t}]{offset,  }\item[{uint8\+\_\+t $\ast$}]{p\+Buf,  }\item[{uint16\+\_\+t}]{len }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{oad__target_8h_a50c9e7916d13de31f451e2670c1b514a}\label{oad__target_8h_a50c9e7916d13de31f451e2670c1b514a}} 
+\index{oad\_target.h@{oad\_target.h}!saveImageInfo@{saveImageInfo}}
+\index{saveImageInfo@{saveImageInfo}!oad\_target.h@{oad\_target.h}}
+\doxysubsubsection{\texorpdfstring{saveImageInfo()}{saveImageInfo()}}
+{\footnotesize\ttfamily void save\+Image\+Info (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+

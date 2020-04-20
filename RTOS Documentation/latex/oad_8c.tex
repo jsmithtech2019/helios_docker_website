@@ -1,0 +1,163 @@
+\hypertarget{oad_8c}{}\doxysection{P\+R\+O\+F\+I\+L\+E\+S/oad.c File Reference}
+\label{oad_8c}\index{PROFILES/oad.c@{PROFILES/oad.c}}
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}bcomdef.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}linkdb.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}att.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}gatt.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}gatt\+\_\+uuid.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}gattservapp.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}hal\+\_\+flash.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$driverlib/rom.\+h$>$}\newline
+{\ttfamily \#include $<$driverlib/vims.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}oad\+\_\+target.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}oad\+\_\+constants.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}oad.\+h\char`\"{}}\newline
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{oad_8c_a858a4db6d58f626286703dde38d9d5b2}{E\+R\+R\+O\+R\+\_\+\+B\+L\+O\+CK}}~0x\+F\+F\+FF
+\item 
+\#define \mbox{\hyperlink{oad_8c_a9c3e1a9b2bdf941ee6d19d6872fa871d}{O\+A\+D\+\_\+\+S\+U\+C\+C\+E\+SS}}~0
+\item 
+\#define \mbox{\hyperlink{oad_8c_a5d3ada76cee613959bb728667369e6fa}{O\+A\+D\+\_\+\+C\+R\+C\+\_\+\+E\+RR}}~1
+\item 
+\#define \mbox{\hyperlink{oad_8c_af7e53a6c81b1b69cea12aec029438278}{O\+A\+D\+\_\+\+F\+L\+A\+S\+H\+\_\+\+E\+RR}}~2
+\item 
+\#define \mbox{\hyperlink{oad_8c_a43ee1647eaae026efeadcca195f2da1c}{O\+A\+D\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+O\+FL}}~3
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+b\+Status\+\_\+t \mbox{\hyperlink{oad_8c_acdfda975a19d4fa055b1cf9692b8b70a}{O\+A\+D\+\_\+add\+Service}} (void)
+\item 
+void \mbox{\hyperlink{oad_8c_a87d66d35fff2fb99e519cf4d64af503c}{O\+A\+D\+\_\+register}} (\mbox{\hyperlink{structoad_target_c_bs__t}{oad\+Target\+C\+Bs\+\_\+t}} $\ast$pfn\+Oad\+C\+Bs)
+\item 
+void \mbox{\hyperlink{oad_8c_a9f157b9da1c5608661b195782959e184}{O\+A\+D\+\_\+img\+Identify\+Write}} (uint16\+\_\+t conn\+Handle, uint8\+\_\+t $\ast$p\+Value)
+\item 
+void \mbox{\hyperlink{oad_8c_aa3bc623d8713e8b1a4c75c585142e327}{O\+A\+D\+\_\+img\+Block\+Write}} (uint16\+\_\+t conn\+Handle, uint8\+\_\+t $\ast$p\+Value)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+C\+O\+N\+ST gatt\+Service\+C\+Bs\+\_\+t \mbox{\hyperlink{oad_8c_a2861ce1721aad316a899596f3a0d0509}{oad\+C\+Bs}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{oad_8c_a858a4db6d58f626286703dde38d9d5b2}\label{oad_8c_a858a4db6d58f626286703dde38d9d5b2}} 
+\index{oad.c@{oad.c}!ERROR\_BLOCK@{ERROR\_BLOCK}}
+\index{ERROR\_BLOCK@{ERROR\_BLOCK}!oad.c@{oad.c}}
+\doxysubsubsection{\texorpdfstring{ERROR\_BLOCK}{ERROR\_BLOCK}}
+{\footnotesize\ttfamily \#define E\+R\+R\+O\+R\+\_\+\+B\+L\+O\+CK~0x\+F\+F\+FF}
+
+
+
+Definition at line 72 of file oad.\+c.
+
+\mbox{\Hypertarget{oad_8c_a43ee1647eaae026efeadcca195f2da1c}\label{oad_8c_a43ee1647eaae026efeadcca195f2da1c}} 
+\index{oad.c@{oad.c}!OAD\_BUFFER\_OFL@{OAD\_BUFFER\_OFL}}
+\index{OAD\_BUFFER\_OFL@{OAD\_BUFFER\_OFL}!oad.c@{oad.c}}
+\doxysubsubsection{\texorpdfstring{OAD\_BUFFER\_OFL}{OAD\_BUFFER\_OFL}}
+{\footnotesize\ttfamily \#define O\+A\+D\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+O\+FL~3}
+
+
+
+Definition at line 77 of file oad.\+c.
+
+\mbox{\Hypertarget{oad_8c_a5d3ada76cee613959bb728667369e6fa}\label{oad_8c_a5d3ada76cee613959bb728667369e6fa}} 
+\index{oad.c@{oad.c}!OAD\_CRC\_ERR@{OAD\_CRC\_ERR}}
+\index{OAD\_CRC\_ERR@{OAD\_CRC\_ERR}!oad.c@{oad.c}}
+\doxysubsubsection{\texorpdfstring{OAD\_CRC\_ERR}{OAD\_CRC\_ERR}}
+{\footnotesize\ttfamily \#define O\+A\+D\+\_\+\+C\+R\+C\+\_\+\+E\+RR~1}
+
+
+
+Definition at line 75 of file oad.\+c.
+
+\mbox{\Hypertarget{oad_8c_af7e53a6c81b1b69cea12aec029438278}\label{oad_8c_af7e53a6c81b1b69cea12aec029438278}} 
+\index{oad.c@{oad.c}!OAD\_FLASH\_ERR@{OAD\_FLASH\_ERR}}
+\index{OAD\_FLASH\_ERR@{OAD\_FLASH\_ERR}!oad.c@{oad.c}}
+\doxysubsubsection{\texorpdfstring{OAD\_FLASH\_ERR}{OAD\_FLASH\_ERR}}
+{\footnotesize\ttfamily \#define O\+A\+D\+\_\+\+F\+L\+A\+S\+H\+\_\+\+E\+RR~2}
+
+
+
+Definition at line 76 of file oad.\+c.
+
+\mbox{\Hypertarget{oad_8c_a9c3e1a9b2bdf941ee6d19d6872fa871d}\label{oad_8c_a9c3e1a9b2bdf941ee6d19d6872fa871d}} 
+\index{oad.c@{oad.c}!OAD\_SUCCESS@{OAD\_SUCCESS}}
+\index{OAD\_SUCCESS@{OAD\_SUCCESS}!oad.c@{oad.c}}
+\doxysubsubsection{\texorpdfstring{OAD\_SUCCESS}{OAD\_SUCCESS}}
+{\footnotesize\ttfamily \#define O\+A\+D\+\_\+\+S\+U\+C\+C\+E\+SS~0}
+
+
+
+Definition at line 74 of file oad.\+c.
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{oad_8c_acdfda975a19d4fa055b1cf9692b8b70a}\label{oad_8c_acdfda975a19d4fa055b1cf9692b8b70a}} 
+\index{oad.c@{oad.c}!OAD\_addService@{OAD\_addService}}
+\index{OAD\_addService@{OAD\_addService}!oad.c@{oad.c}}
+\doxysubsubsection{\texorpdfstring{OAD\_addService()}{OAD\_addService()}}
+{\footnotesize\ttfamily b\+Status\+\_\+t O\+A\+D\+\_\+add\+Service (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 340 of file oad.\+c.
+
+\mbox{\Hypertarget{oad_8c_aa3bc623d8713e8b1a4c75c585142e327}\label{oad_8c_aa3bc623d8713e8b1a4c75c585142e327}} 
+\index{oad.c@{oad.c}!OAD\_imgBlockWrite@{OAD\_imgBlockWrite}}
+\index{OAD\_imgBlockWrite@{OAD\_imgBlockWrite}!oad.c@{oad.c}}
+\doxysubsubsection{\texorpdfstring{OAD\_imgBlockWrite()}{OAD\_imgBlockWrite()}}
+{\footnotesize\ttfamily void O\+A\+D\+\_\+img\+Block\+Write (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{conn\+Handle,  }\item[{uint8\+\_\+t $\ast$}]{p\+Value }\end{DoxyParamCaption})}
+
+
+
+Definition at line 623 of file oad.\+c.
+
+\mbox{\Hypertarget{oad_8c_a9f157b9da1c5608661b195782959e184}\label{oad_8c_a9f157b9da1c5608661b195782959e184}} 
+\index{oad.c@{oad.c}!OAD\_imgIdentifyWrite@{OAD\_imgIdentifyWrite}}
+\index{OAD\_imgIdentifyWrite@{OAD\_imgIdentifyWrite}!oad.c@{oad.c}}
+\doxysubsubsection{\texorpdfstring{OAD\_imgIdentifyWrite()}{OAD\_imgIdentifyWrite()}}
+{\footnotesize\ttfamily void O\+A\+D\+\_\+img\+Identify\+Write (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{conn\+Handle,  }\item[{uint8\+\_\+t $\ast$}]{p\+Value }\end{DoxyParamCaption})}
+
+
+
+Definition at line 548 of file oad.\+c.
+
+\mbox{\Hypertarget{oad_8c_a87d66d35fff2fb99e519cf4d64af503c}\label{oad_8c_a87d66d35fff2fb99e519cf4d64af503c}} 
+\index{oad.c@{oad.c}!OAD\_register@{OAD\_register}}
+\index{OAD\_register@{OAD\_register}!oad.c@{oad.c}}
+\doxysubsubsection{\texorpdfstring{OAD\_register()}{OAD\_register()}}
+{\footnotesize\ttfamily void O\+A\+D\+\_\+register (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structoad_target_c_bs__t}{oad\+Target\+C\+Bs\+\_\+t}} $\ast$}]{pfn\+Oad\+C\+Bs }\end{DoxyParamCaption})}
+
+
+
+Definition at line 393 of file oad.\+c.
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{oad_8c_a2861ce1721aad316a899596f3a0d0509}\label{oad_8c_a2861ce1721aad316a899596f3a0d0509}} 
+\index{oad.c@{oad.c}!oadCBs@{oadCBs}}
+\index{oadCBs@{oadCBs}!oad.c@{oad.c}}
+\doxysubsubsection{\texorpdfstring{oadCBs}{oadCBs}}
+{\footnotesize\ttfamily C\+O\+N\+ST gatt\+Service\+C\+Bs\+\_\+t oad\+C\+Bs}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{  oadReadAttrCB,  }
+\DoxyCodeLine{  oadWriteAttrCB, }
+\DoxyCodeLine{  NULL            }
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+Definition at line 323 of file oad.\+c.
+

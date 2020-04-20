@@ -1,0 +1,87 @@
+\hypertarget{osal__snv_8h}{}\doxysection{Include/osal\+\_\+snv.h File Reference}
+\label{osal__snv_8h}\index{Include/osal\_snv.h@{Include/osal\_snv.h}}
+{\ttfamily \#include \char`\"{}hal\+\_\+types.\+h\char`\"{}}\newline
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef uint8 \mbox{\hyperlink{osal__snv_8h_af081403f50bf91afa44dddff24179a03}{osal\+Snv\+Id\+\_\+t}}
+\item 
+typedef uint8 \mbox{\hyperlink{osal__snv_8h_a445ca6febfeac207c762ad6d0093dd65}{osal\+Snv\+Len\+\_\+t}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+uint8 \mbox{\hyperlink{osal__snv_8h_a4c9c2845fffca13e1f4fcd37f9121f62}{osal\+\_\+snv\+\_\+init}} (void)
+\item 
+uint8 \mbox{\hyperlink{osal__snv_8h_a035bb602a38bcd18450be7ad8075ba11}{osal\+\_\+snv\+\_\+read}} (\mbox{\hyperlink{osal__snv_8h_af081403f50bf91afa44dddff24179a03}{osal\+Snv\+Id\+\_\+t}} id, \mbox{\hyperlink{osal__snv_8h_a445ca6febfeac207c762ad6d0093dd65}{osal\+Snv\+Len\+\_\+t}} \mbox{\hyperlink{icall__apimsg_8h_a8ccac76f35f79d74917e1c5dd6f69fea}{len}}, void $\ast$p\+Buf)
+\item 
+uint8 \mbox{\hyperlink{osal__snv_8h_a029016762d0746f51511c90692db5e49}{osal\+\_\+snv\+\_\+write}} (\mbox{\hyperlink{osal__snv_8h_af081403f50bf91afa44dddff24179a03}{osal\+Snv\+Id\+\_\+t}} id, \mbox{\hyperlink{osal__snv_8h_a445ca6febfeac207c762ad6d0093dd65}{osal\+Snv\+Len\+\_\+t}} \mbox{\hyperlink{icall__apimsg_8h_a8ccac76f35f79d74917e1c5dd6f69fea}{len}}, void $\ast$p\+Buf)
+\item 
+uint8 \mbox{\hyperlink{osal__snv_8h_a49c2b52ba00bfe0f0b517f122e7a18ce}{osal\+\_\+snv\+\_\+ext\+\_\+write}} (\mbox{\hyperlink{osal__snv_8h_af081403f50bf91afa44dddff24179a03}{osal\+Snv\+Id\+\_\+t}} id, \mbox{\hyperlink{osal__snv_8h_a445ca6febfeac207c762ad6d0093dd65}{osal\+Snv\+Len\+\_\+t}} \mbox{\hyperlink{icall__apimsg_8h_a8ccac76f35f79d74917e1c5dd6f69fea}{len}}, void $\ast$p\+Buf)
+\item 
+uint8 \mbox{\hyperlink{osal__snv_8h_a26b2941d570a61dfc5e60b08a254a3ee}{osal\+\_\+snv\+\_\+compact}} (uint8 threshold)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{osal__snv_8h_af081403f50bf91afa44dddff24179a03}\label{osal__snv_8h_af081403f50bf91afa44dddff24179a03}} 
+\index{osal\_snv.h@{osal\_snv.h}!osalSnvId\_t@{osalSnvId\_t}}
+\index{osalSnvId\_t@{osalSnvId\_t}!osal\_snv.h@{osal\_snv.h}}
+\doxysubsubsection{\texorpdfstring{osalSnvId\_t}{osalSnvId\_t}}
+{\footnotesize\ttfamily typedef uint8 \mbox{\hyperlink{osal__snv_8h_af081403f50bf91afa44dddff24179a03}{osal\+Snv\+Id\+\_\+t}}}
+
+
+
+Definition at line 77 of file osal\+\_\+snv.\+h.
+
+\mbox{\Hypertarget{osal__snv_8h_a445ca6febfeac207c762ad6d0093dd65}\label{osal__snv_8h_a445ca6febfeac207c762ad6d0093dd65}} 
+\index{osal\_snv.h@{osal\_snv.h}!osalSnvLen\_t@{osalSnvLen\_t}}
+\index{osalSnvLen\_t@{osalSnvLen\_t}!osal\_snv.h@{osal\_snv.h}}
+\doxysubsubsection{\texorpdfstring{osalSnvLen\_t}{osalSnvLen\_t}}
+{\footnotesize\ttfamily typedef uint8 \mbox{\hyperlink{osal__snv_8h_a445ca6febfeac207c762ad6d0093dd65}{osal\+Snv\+Len\+\_\+t}}}
+
+
+
+Definition at line 78 of file osal\+\_\+snv.\+h.
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{osal__snv_8h_a26b2941d570a61dfc5e60b08a254a3ee}\label{osal__snv_8h_a26b2941d570a61dfc5e60b08a254a3ee}} 
+\index{osal\_snv.h@{osal\_snv.h}!osal\_snv\_compact@{osal\_snv\_compact}}
+\index{osal\_snv\_compact@{osal\_snv\_compact}!osal\_snv.h@{osal\_snv.h}}
+\doxysubsubsection{\texorpdfstring{osal\_snv\_compact()}{osal\_snv\_compact()}}
+{\footnotesize\ttfamily uint8 osal\+\_\+snv\+\_\+compact (\begin{DoxyParamCaption}\item[{uint8}]{threshold }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{osal__snv_8h_a49c2b52ba00bfe0f0b517f122e7a18ce}\label{osal__snv_8h_a49c2b52ba00bfe0f0b517f122e7a18ce}} 
+\index{osal\_snv.h@{osal\_snv.h}!osal\_snv\_ext\_write@{osal\_snv\_ext\_write}}
+\index{osal\_snv\_ext\_write@{osal\_snv\_ext\_write}!osal\_snv.h@{osal\_snv.h}}
+\doxysubsubsection{\texorpdfstring{osal\_snv\_ext\_write()}{osal\_snv\_ext\_write()}}
+{\footnotesize\ttfamily uint8 osal\+\_\+snv\+\_\+ext\+\_\+write (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{osal__snv_8h_af081403f50bf91afa44dddff24179a03}{osal\+Snv\+Id\+\_\+t}}}]{id,  }\item[{\mbox{\hyperlink{osal__snv_8h_a445ca6febfeac207c762ad6d0093dd65}{osal\+Snv\+Len\+\_\+t}}}]{len,  }\item[{void $\ast$}]{p\+Buf }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{osal__snv_8h_a4c9c2845fffca13e1f4fcd37f9121f62}\label{osal__snv_8h_a4c9c2845fffca13e1f4fcd37f9121f62}} 
+\index{osal\_snv.h@{osal\_snv.h}!osal\_snv\_init@{osal\_snv\_init}}
+\index{osal\_snv\_init@{osal\_snv\_init}!osal\_snv.h@{osal\_snv.h}}
+\doxysubsubsection{\texorpdfstring{osal\_snv\_init()}{osal\_snv\_init()}}
+{\footnotesize\ttfamily uint8 osal\+\_\+snv\+\_\+init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{osal__snv_8h_a035bb602a38bcd18450be7ad8075ba11}\label{osal__snv_8h_a035bb602a38bcd18450be7ad8075ba11}} 
+\index{osal\_snv.h@{osal\_snv.h}!osal\_snv\_read@{osal\_snv\_read}}
+\index{osal\_snv\_read@{osal\_snv\_read}!osal\_snv.h@{osal\_snv.h}}
+\doxysubsubsection{\texorpdfstring{osal\_snv\_read()}{osal\_snv\_read()}}
+{\footnotesize\ttfamily uint8 osal\+\_\+snv\+\_\+read (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{osal__snv_8h_af081403f50bf91afa44dddff24179a03}{osal\+Snv\+Id\+\_\+t}}}]{id,  }\item[{\mbox{\hyperlink{osal__snv_8h_a445ca6febfeac207c762ad6d0093dd65}{osal\+Snv\+Len\+\_\+t}}}]{len,  }\item[{void $\ast$}]{p\+Buf }\end{DoxyParamCaption})}
+
+
+
+Definition at line 6416 of file icall\+\_\+api.\+c.
+
+\mbox{\Hypertarget{osal__snv_8h_a029016762d0746f51511c90692db5e49}\label{osal__snv_8h_a029016762d0746f51511c90692db5e49}} 
+\index{osal\_snv.h@{osal\_snv.h}!osal\_snv\_write@{osal\_snv\_write}}
+\index{osal\_snv\_write@{osal\_snv\_write}!osal\_snv.h@{osal\_snv.h}}
+\doxysubsubsection{\texorpdfstring{osal\_snv\_write()}{osal\_snv\_write()}}
+{\footnotesize\ttfamily uint8 osal\+\_\+snv\+\_\+write (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{osal__snv_8h_af081403f50bf91afa44dddff24179a03}{osal\+Snv\+Id\+\_\+t}}}]{id,  }\item[{\mbox{\hyperlink{osal__snv_8h_a445ca6febfeac207c762ad6d0093dd65}{osal\+Snv\+Len\+\_\+t}}}]{len,  }\item[{void $\ast$}]{p\+Buf }\end{DoxyParamCaption})}
+
+
+
+Definition at line 6442 of file icall\+\_\+api.\+c.
+

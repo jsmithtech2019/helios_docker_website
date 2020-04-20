@@ -1,0 +1,337 @@
+\hypertarget{peripheral_8c}{}\doxysection{P\+R\+O\+F\+I\+L\+E\+S/peripheral.c File Reference}
+\label{peripheral_8c}\index{PROFILES/peripheral.c@{PROFILES/peripheral.c}}
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$xdc/std.\+h$>$}\newline
+{\ttfamily \#include $<$xdc/runtime/\+Error.\+h$>$}\newline
+{\ttfamily \#include $<$xdc/runtime/\+System.\+h$>$}\newline
+{\ttfamily \#include $<$ti/sysbios/\+B\+I\+O\+S.\+h$>$}\newline
+{\ttfamily \#include $<$ti/sysbios/knl/\+Task.\+h$>$}\newline
+{\ttfamily \#include $<$ti/sysbios/knl/\+Clock.\+h$>$}\newline
+{\ttfamily \#include $<$ti/sysbios/knl/\+Semaphore.\+h$>$}\newline
+{\ttfamily \#include $<$ti/sysbios/knl/\+Queue.\+h$>$}\newline
+{\ttfamily \#include $<$driverlib/ioc.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}gap.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}gatt.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}hci\+\_\+tl.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}linkdb.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}util.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}gattservapp.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}peripheral.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}gapbondmgr.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}osal\+\_\+snv.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}icall\+\_\+apimsg.\+h\char`\"{}}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structgap_role__update_conn_params__t}{gap\+Role\+\_\+update\+Conn\+Params\+\_\+t}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{peripheral_8c_ac9b2044c29c83c7382d58f9eef97a491}{S\+T\+A\+R\+T\+\_\+\+A\+D\+V\+E\+R\+T\+I\+S\+I\+N\+G\+\_\+\+E\+VT}}~0x0001
+\begin{DoxyCompactList}\small\item\em I\+C\+A\+L\+L\+\_\+\+E\+V\+E\+N\+TS. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{peripheral_8c_aaa220015a1fc7a50d0ee2e3afe64a7e6}{S\+T\+A\+R\+T\+\_\+\+C\+O\+N\+N\+\_\+\+U\+P\+D\+A\+T\+E\+\_\+\+E\+VT}}~0x0002
+\item 
+\#define \mbox{\hyperlink{peripheral_8c_a1676225a0db7d5b94c8160f3b3ce5489}{C\+O\+N\+N\+\_\+\+P\+A\+R\+A\+M\+\_\+\+T\+I\+M\+E\+O\+U\+T\+\_\+\+E\+VT}}~0x0004
+\item 
+\#define \mbox{\hyperlink{peripheral_8c_aaf70e44e4ced189bc679b927650e5893}{D\+E\+F\+A\+U\+L\+T\+\_\+\+A\+D\+V\+E\+R\+T\+\_\+\+O\+F\+F\+\_\+\+T\+I\+ME}}~30000
+\item 
+\#define \mbox{\hyperlink{peripheral_8c_ab1b2f80260f27503e1d1089105815697}{D\+E\+F\+A\+U\+L\+T\+\_\+\+M\+I\+N\+\_\+\+C\+O\+N\+N\+\_\+\+I\+N\+T\+E\+R\+V\+AL}}~0x0006
+\item 
+\#define \mbox{\hyperlink{peripheral_8c_a4f81e33a6bf2c68ad114593ee009c651}{D\+E\+F\+A\+U\+L\+T\+\_\+\+M\+A\+X\+\_\+\+C\+O\+N\+N\+\_\+\+I\+N\+T\+E\+R\+V\+AL}}~0x0\+C80
+\item 
+\#define \mbox{\hyperlink{peripheral_8c_a95196d5d0f40cf195a6001955d6d98cf}{M\+I\+N\+\_\+\+C\+O\+N\+N\+\_\+\+I\+N\+T\+E\+R\+V\+AL}}~0x0006
+\item 
+\#define \mbox{\hyperlink{peripheral_8c_a7d868ed8adb7d475b463fd8855907a18}{M\+A\+X\+\_\+\+C\+O\+N\+N\+\_\+\+I\+N\+T\+E\+R\+V\+AL}}~0x0\+C80
+\item 
+\#define \mbox{\hyperlink{peripheral_8c_a1ef3bea917147306e75bf5a6506709b6}{D\+E\+F\+A\+U\+L\+T\+\_\+\+T\+I\+M\+E\+O\+U\+T\+\_\+\+M\+U\+L\+T\+I\+P\+L\+I\+ER}}~1000
+\item 
+\#define \mbox{\hyperlink{peripheral_8c_a9c8d32430148f8a84e04de6c79c61f25}{C\+O\+N\+N\+\_\+\+I\+N\+T\+E\+R\+V\+A\+L\+\_\+\+M\+U\+L\+T\+I\+P\+L\+I\+ER}}~6
+\item 
+\#define \mbox{\hyperlink{peripheral_8c_a506ff1f8d1efffd51494eca313f7289b}{M\+I\+N\+\_\+\+S\+L\+A\+V\+E\+\_\+\+L\+A\+T\+E\+N\+CY}}~0
+\item 
+\#define \mbox{\hyperlink{peripheral_8c_a7954cc39c4592e47271b3ac4e143c352}{M\+A\+X\+\_\+\+S\+L\+A\+V\+E\+\_\+\+L\+A\+T\+E\+N\+CY}}~500
+\item 
+\#define \mbox{\hyperlink{peripheral_8c_aff31913b593297191b82f35959c1a5fa}{M\+I\+N\+\_\+\+T\+I\+M\+E\+O\+U\+T\+\_\+\+M\+U\+L\+T\+I\+P\+L\+I\+ER}}~0x000a
+\item 
+\#define \mbox{\hyperlink{peripheral_8c_a0373ba6a2569648dd2d92689a155fb3a}{M\+A\+X\+\_\+\+T\+I\+M\+E\+O\+U\+T\+\_\+\+M\+U\+L\+T\+I\+P\+L\+I\+ER}}~0x0c80
+\item 
+\#define \mbox{\hyperlink{peripheral_8c_af63b54190a8b00df3871ed428cb53c13}{M\+A\+X\+\_\+\+T\+I\+M\+E\+O\+U\+T\+\_\+\+V\+A\+L\+UE}}~0x\+F\+F\+FF
+\item 
+\#define \mbox{\hyperlink{peripheral_8c_abfbfe6324c65ae40b4f77eab0f8cadbb}{G\+A\+P\+R\+O\+L\+E\+\_\+\+T\+A\+S\+K\+\_\+\+P\+R\+I\+O\+R\+I\+TY}}~3
+\item 
+\#define \mbox{\hyperlink{peripheral_8c_a4ca3f239b6c435aea01c65b0bc650720}{G\+A\+P\+R\+O\+L\+E\+\_\+\+T\+A\+S\+K\+\_\+\+S\+T\+A\+C\+K\+\_\+\+S\+I\+ZE}}~440
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{peripheral_8c_a068436e9a71badde05a8e31b40f91e13}{gap\+Role\+\_\+clock\+Handler}} (U\+Arg a0)
+\item 
+b\+Status\+\_\+t \mbox{\hyperlink{group___g_a_p_r_o_l_e_s___p_e_r_i_p_h_e_r_a_l___a_p_i_ga84806b59c0e36ef53ded1ff1a0d7712f}{G\+A\+P\+Role\+\_\+\+Set\+Parameter}} (uint16\+\_\+t param, uint8\+\_\+t \mbox{\hyperlink{icall__apimsg_8h_a8ccac76f35f79d74917e1c5dd6f69fea}{len}}, void $\ast$p\+Value)
+\begin{DoxyCompactList}\small\item\em Set a G\+AP Role parameter. \end{DoxyCompactList}\item 
+b\+Status\+\_\+t \mbox{\hyperlink{group___g_a_p_r_o_l_e_s___p_e_r_i_p_h_e_r_a_l___a_p_i_ga15e8c7eb90a2bd4dc13eb6a967287031}{G\+A\+P\+Role\+\_\+\+Get\+Parameter}} (uint16\+\_\+t param, void $\ast$p\+Value)
+\begin{DoxyCompactList}\small\item\em Get a G\+AP Role parameter. \end{DoxyCompactList}\item 
+b\+Status\+\_\+t \mbox{\hyperlink{group___g_a_p_r_o_l_e_s___p_e_r_i_p_h_e_r_a_l___a_p_i_ga835a1ca8b91828b4092f471cd510724d}{G\+A\+P\+Role\+\_\+\+Start\+Device}} (\mbox{\hyperlink{structgap_roles_c_bs__t}{gap\+Roles\+C\+Bs\+\_\+t}} $\ast$p\+App\+Callbacks)
+\begin{DoxyCompactList}\small\item\em Does the device initialization. Only call this function once. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___g_a_p_r_o_l_e_s___p_e_r_i_p_h_e_r_a_l___a_p_i_gaa0ac8e3133226713e2d1800998351e34}{G\+A\+P\+Role\+\_\+\+Register\+App\+C\+Bs}} (\mbox{\hyperlink{peripheral_8h_aafb88c41cf885e406afe006dc29228bf}{gap\+Roles\+Param\+Update\+C\+B\+\_\+t}} $\ast$p\+Param\+Update\+CB)
+\begin{DoxyCompactList}\small\item\em Register application\textquotesingle{}s callbacks. \end{DoxyCompactList}\item 
+b\+Status\+\_\+t \mbox{\hyperlink{group___g_a_p_r_o_l_e_s___p_e_r_i_p_h_e_r_a_l___a_p_i_ga1e1ad911e721a59bf4746dba194fbb7d}{G\+A\+P\+Role\+\_\+\+Terminate\+Connection}} (void)
+\begin{DoxyCompactList}\small\item\em Terminates the existing connection. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{peripheral_8c_a0f2f6c58ddab6ee03e965385e859c85d}{G\+A\+P\+Role\+\_\+create\+Task}} (void)
+\begin{DoxyCompactList}\small\item\em Task creation function for the G\+AP Peripheral Role. \end{DoxyCompactList}\item 
+b\+Status\+\_\+t \mbox{\hyperlink{group___g_a_p_r_o_l_e_s___p_e_r_i_p_h_e_r_a_l___a_p_i_gacfeeaa2854f216e75fb92130ae6a6a7e}{G\+A\+P\+Role\+\_\+\+Send\+Update\+Param}} (uint16\+\_\+t min\+Conn\+Interval, uint16\+\_\+t max\+Conn\+Interval, uint16\+\_\+t latency, uint16\+\_\+t conn\+Timeout, uint8\+\_\+t handle\+Failure)
+\begin{DoxyCompactList}\small\item\em Update the parameters of an existing connection. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+uint8 \mbox{\hyperlink{peripheral_8c_a37c58edbcc921ef40b6906649b1dc155}{link\+D\+B\+Num\+Conns}}
+\item 
+Task\+\_\+\+Struct \mbox{\hyperlink{peripheral_8c_a8057fefb9b7ed3e6216b44335570cd22}{gap\+Role\+Task}}
+\item 
+Char \mbox{\hyperlink{peripheral_8c_ad3106ed917a4a6bc1ad5913fb76bfd40}{gap\+Role\+Task\+Stack}} \mbox{[}\mbox{\hyperlink{peripheral_8c_a4ca3f239b6c435aea01c65b0bc650720}{G\+A\+P\+R\+O\+L\+E\+\_\+\+T\+A\+S\+K\+\_\+\+S\+T\+A\+C\+K\+\_\+\+S\+I\+ZE}}\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{peripheral_8c_a9c8d32430148f8a84e04de6c79c61f25}\label{peripheral_8c_a9c8d32430148f8a84e04de6c79c61f25}} 
+\index{peripheral.c@{peripheral.c}!CONN\_INTERVAL\_MULTIPLIER@{CONN\_INTERVAL\_MULTIPLIER}}
+\index{CONN\_INTERVAL\_MULTIPLIER@{CONN\_INTERVAL\_MULTIPLIER}!peripheral.c@{peripheral.c}}
+\doxysubsubsection{\texorpdfstring{CONN\_INTERVAL\_MULTIPLIER}{CONN\_INTERVAL\_MULTIPLIER}}
+{\footnotesize\ttfamily \#define C\+O\+N\+N\+\_\+\+I\+N\+T\+E\+R\+V\+A\+L\+\_\+\+M\+U\+L\+T\+I\+P\+L\+I\+ER~6}
+
+
+
+Definition at line 114 of file peripheral.\+c.
+
+\mbox{\Hypertarget{peripheral_8c_a1676225a0db7d5b94c8160f3b3ce5489}\label{peripheral_8c_a1676225a0db7d5b94c8160f3b3ce5489}} 
+\index{peripheral.c@{peripheral.c}!CONN\_PARAM\_TIMEOUT\_EVT@{CONN\_PARAM\_TIMEOUT\_EVT}}
+\index{CONN\_PARAM\_TIMEOUT\_EVT@{CONN\_PARAM\_TIMEOUT\_EVT}!peripheral.c@{peripheral.c}}
+\doxysubsubsection{\texorpdfstring{CONN\_PARAM\_TIMEOUT\_EVT}{CONN\_PARAM\_TIMEOUT\_EVT}}
+{\footnotesize\ttfamily \#define C\+O\+N\+N\+\_\+\+P\+A\+R\+A\+M\+\_\+\+T\+I\+M\+E\+O\+U\+T\+\_\+\+E\+VT~0x0004}
+
+
+
+Definition at line 101 of file peripheral.\+c.
+
+\mbox{\Hypertarget{peripheral_8c_aaf70e44e4ced189bc679b927650e5893}\label{peripheral_8c_aaf70e44e4ced189bc679b927650e5893}} 
+\index{peripheral.c@{peripheral.c}!DEFAULT\_ADVERT\_OFF\_TIME@{DEFAULT\_ADVERT\_OFF\_TIME}}
+\index{DEFAULT\_ADVERT\_OFF\_TIME@{DEFAULT\_ADVERT\_OFF\_TIME}!peripheral.c@{peripheral.c}}
+\doxysubsubsection{\texorpdfstring{DEFAULT\_ADVERT\_OFF\_TIME}{DEFAULT\_ADVERT\_OFF\_TIME}}
+{\footnotesize\ttfamily \#define D\+E\+F\+A\+U\+L\+T\+\_\+\+A\+D\+V\+E\+R\+T\+\_\+\+O\+F\+F\+\_\+\+T\+I\+ME~30000}
+
+
+
+Definition at line 104 of file peripheral.\+c.
+
+\mbox{\Hypertarget{peripheral_8c_a4f81e33a6bf2c68ad114593ee009c651}\label{peripheral_8c_a4f81e33a6bf2c68ad114593ee009c651}} 
+\index{peripheral.c@{peripheral.c}!DEFAULT\_MAX\_CONN\_INTERVAL@{DEFAULT\_MAX\_CONN\_INTERVAL}}
+\index{DEFAULT\_MAX\_CONN\_INTERVAL@{DEFAULT\_MAX\_CONN\_INTERVAL}!peripheral.c@{peripheral.c}}
+\doxysubsubsection{\texorpdfstring{DEFAULT\_MAX\_CONN\_INTERVAL}{DEFAULT\_MAX\_CONN\_INTERVAL}}
+{\footnotesize\ttfamily \#define D\+E\+F\+A\+U\+L\+T\+\_\+\+M\+A\+X\+\_\+\+C\+O\+N\+N\+\_\+\+I\+N\+T\+E\+R\+V\+AL~0x0\+C80}
+
+
+
+Definition at line 107 of file peripheral.\+c.
+
+\mbox{\Hypertarget{peripheral_8c_ab1b2f80260f27503e1d1089105815697}\label{peripheral_8c_ab1b2f80260f27503e1d1089105815697}} 
+\index{peripheral.c@{peripheral.c}!DEFAULT\_MIN\_CONN\_INTERVAL@{DEFAULT\_MIN\_CONN\_INTERVAL}}
+\index{DEFAULT\_MIN\_CONN\_INTERVAL@{DEFAULT\_MIN\_CONN\_INTERVAL}!peripheral.c@{peripheral.c}}
+\doxysubsubsection{\texorpdfstring{DEFAULT\_MIN\_CONN\_INTERVAL}{DEFAULT\_MIN\_CONN\_INTERVAL}}
+{\footnotesize\ttfamily \#define D\+E\+F\+A\+U\+L\+T\+\_\+\+M\+I\+N\+\_\+\+C\+O\+N\+N\+\_\+\+I\+N\+T\+E\+R\+V\+AL~0x0006}
+
+
+
+Definition at line 106 of file peripheral.\+c.
+
+\mbox{\Hypertarget{peripheral_8c_a1ef3bea917147306e75bf5a6506709b6}\label{peripheral_8c_a1ef3bea917147306e75bf5a6506709b6}} 
+\index{peripheral.c@{peripheral.c}!DEFAULT\_TIMEOUT\_MULTIPLIER@{DEFAULT\_TIMEOUT\_MULTIPLIER}}
+\index{DEFAULT\_TIMEOUT\_MULTIPLIER@{DEFAULT\_TIMEOUT\_MULTIPLIER}!peripheral.c@{peripheral.c}}
+\doxysubsubsection{\texorpdfstring{DEFAULT\_TIMEOUT\_MULTIPLIER}{DEFAULT\_TIMEOUT\_MULTIPLIER}}
+{\footnotesize\ttfamily \#define D\+E\+F\+A\+U\+L\+T\+\_\+\+T\+I\+M\+E\+O\+U\+T\+\_\+\+M\+U\+L\+T\+I\+P\+L\+I\+ER~1000}
+
+
+
+Definition at line 112 of file peripheral.\+c.
+
+\mbox{\Hypertarget{peripheral_8c_abfbfe6324c65ae40b4f77eab0f8cadbb}\label{peripheral_8c_abfbfe6324c65ae40b4f77eab0f8cadbb}} 
+\index{peripheral.c@{peripheral.c}!GAPROLE\_TASK\_PRIORITY@{GAPROLE\_TASK\_PRIORITY}}
+\index{GAPROLE\_TASK\_PRIORITY@{GAPROLE\_TASK\_PRIORITY}!peripheral.c@{peripheral.c}}
+\doxysubsubsection{\texorpdfstring{GAPROLE\_TASK\_PRIORITY}{GAPROLE\_TASK\_PRIORITY}}
+{\footnotesize\ttfamily \#define G\+A\+P\+R\+O\+L\+E\+\_\+\+T\+A\+S\+K\+\_\+\+P\+R\+I\+O\+R\+I\+TY~3}
+
+
+
+Definition at line 125 of file peripheral.\+c.
+
+\mbox{\Hypertarget{peripheral_8c_a4ca3f239b6c435aea01c65b0bc650720}\label{peripheral_8c_a4ca3f239b6c435aea01c65b0bc650720}} 
+\index{peripheral.c@{peripheral.c}!GAPROLE\_TASK\_STACK\_SIZE@{GAPROLE\_TASK\_STACK\_SIZE}}
+\index{GAPROLE\_TASK\_STACK\_SIZE@{GAPROLE\_TASK\_STACK\_SIZE}!peripheral.c@{peripheral.c}}
+\doxysubsubsection{\texorpdfstring{GAPROLE\_TASK\_STACK\_SIZE}{GAPROLE\_TASK\_STACK\_SIZE}}
+{\footnotesize\ttfamily \#define G\+A\+P\+R\+O\+L\+E\+\_\+\+T\+A\+S\+K\+\_\+\+S\+T\+A\+C\+K\+\_\+\+S\+I\+ZE~440}
+
+
+
+Definition at line 128 of file peripheral.\+c.
+
+\mbox{\Hypertarget{peripheral_8c_a7d868ed8adb7d475b463fd8855907a18}\label{peripheral_8c_a7d868ed8adb7d475b463fd8855907a18}} 
+\index{peripheral.c@{peripheral.c}!MAX\_CONN\_INTERVAL@{MAX\_CONN\_INTERVAL}}
+\index{MAX\_CONN\_INTERVAL@{MAX\_CONN\_INTERVAL}!peripheral.c@{peripheral.c}}
+\doxysubsubsection{\texorpdfstring{MAX\_CONN\_INTERVAL}{MAX\_CONN\_INTERVAL}}
+{\footnotesize\ttfamily \#define M\+A\+X\+\_\+\+C\+O\+N\+N\+\_\+\+I\+N\+T\+E\+R\+V\+AL~0x0\+C80}
+
+
+
+Definition at line 110 of file peripheral.\+c.
+
+\mbox{\Hypertarget{peripheral_8c_a7954cc39c4592e47271b3ac4e143c352}\label{peripheral_8c_a7954cc39c4592e47271b3ac4e143c352}} 
+\index{peripheral.c@{peripheral.c}!MAX\_SLAVE\_LATENCY@{MAX\_SLAVE\_LATENCY}}
+\index{MAX\_SLAVE\_LATENCY@{MAX\_SLAVE\_LATENCY}!peripheral.c@{peripheral.c}}
+\doxysubsubsection{\texorpdfstring{MAX\_SLAVE\_LATENCY}{MAX\_SLAVE\_LATENCY}}
+{\footnotesize\ttfamily \#define M\+A\+X\+\_\+\+S\+L\+A\+V\+E\+\_\+\+L\+A\+T\+E\+N\+CY~500}
+
+
+
+Definition at line 117 of file peripheral.\+c.
+
+\mbox{\Hypertarget{peripheral_8c_a0373ba6a2569648dd2d92689a155fb3a}\label{peripheral_8c_a0373ba6a2569648dd2d92689a155fb3a}} 
+\index{peripheral.c@{peripheral.c}!MAX\_TIMEOUT\_MULTIPLIER@{MAX\_TIMEOUT\_MULTIPLIER}}
+\index{MAX\_TIMEOUT\_MULTIPLIER@{MAX\_TIMEOUT\_MULTIPLIER}!peripheral.c@{peripheral.c}}
+\doxysubsubsection{\texorpdfstring{MAX\_TIMEOUT\_MULTIPLIER}{MAX\_TIMEOUT\_MULTIPLIER}}
+{\footnotesize\ttfamily \#define M\+A\+X\+\_\+\+T\+I\+M\+E\+O\+U\+T\+\_\+\+M\+U\+L\+T\+I\+P\+L\+I\+ER~0x0c80}
+
+
+
+Definition at line 120 of file peripheral.\+c.
+
+\mbox{\Hypertarget{peripheral_8c_af63b54190a8b00df3871ed428cb53c13}\label{peripheral_8c_af63b54190a8b00df3871ed428cb53c13}} 
+\index{peripheral.c@{peripheral.c}!MAX\_TIMEOUT\_VALUE@{MAX\_TIMEOUT\_VALUE}}
+\index{MAX\_TIMEOUT\_VALUE@{MAX\_TIMEOUT\_VALUE}!peripheral.c@{peripheral.c}}
+\doxysubsubsection{\texorpdfstring{MAX\_TIMEOUT\_VALUE}{MAX\_TIMEOUT\_VALUE}}
+{\footnotesize\ttfamily \#define M\+A\+X\+\_\+\+T\+I\+M\+E\+O\+U\+T\+\_\+\+V\+A\+L\+UE~0x\+F\+F\+FF}
+
+
+
+Definition at line 122 of file peripheral.\+c.
+
+\mbox{\Hypertarget{peripheral_8c_a95196d5d0f40cf195a6001955d6d98cf}\label{peripheral_8c_a95196d5d0f40cf195a6001955d6d98cf}} 
+\index{peripheral.c@{peripheral.c}!MIN\_CONN\_INTERVAL@{MIN\_CONN\_INTERVAL}}
+\index{MIN\_CONN\_INTERVAL@{MIN\_CONN\_INTERVAL}!peripheral.c@{peripheral.c}}
+\doxysubsubsection{\texorpdfstring{MIN\_CONN\_INTERVAL}{MIN\_CONN\_INTERVAL}}
+{\footnotesize\ttfamily \#define M\+I\+N\+\_\+\+C\+O\+N\+N\+\_\+\+I\+N\+T\+E\+R\+V\+AL~0x0006}
+
+
+
+Definition at line 109 of file peripheral.\+c.
+
+\mbox{\Hypertarget{peripheral_8c_a506ff1f8d1efffd51494eca313f7289b}\label{peripheral_8c_a506ff1f8d1efffd51494eca313f7289b}} 
+\index{peripheral.c@{peripheral.c}!MIN\_SLAVE\_LATENCY@{MIN\_SLAVE\_LATENCY}}
+\index{MIN\_SLAVE\_LATENCY@{MIN\_SLAVE\_LATENCY}!peripheral.c@{peripheral.c}}
+\doxysubsubsection{\texorpdfstring{MIN\_SLAVE\_LATENCY}{MIN\_SLAVE\_LATENCY}}
+{\footnotesize\ttfamily \#define M\+I\+N\+\_\+\+S\+L\+A\+V\+E\+\_\+\+L\+A\+T\+E\+N\+CY~0}
+
+
+
+Definition at line 116 of file peripheral.\+c.
+
+\mbox{\Hypertarget{peripheral_8c_aff31913b593297191b82f35959c1a5fa}\label{peripheral_8c_aff31913b593297191b82f35959c1a5fa}} 
+\index{peripheral.c@{peripheral.c}!MIN\_TIMEOUT\_MULTIPLIER@{MIN\_TIMEOUT\_MULTIPLIER}}
+\index{MIN\_TIMEOUT\_MULTIPLIER@{MIN\_TIMEOUT\_MULTIPLIER}!peripheral.c@{peripheral.c}}
+\doxysubsubsection{\texorpdfstring{MIN\_TIMEOUT\_MULTIPLIER}{MIN\_TIMEOUT\_MULTIPLIER}}
+{\footnotesize\ttfamily \#define M\+I\+N\+\_\+\+T\+I\+M\+E\+O\+U\+T\+\_\+\+M\+U\+L\+T\+I\+P\+L\+I\+ER~0x000a}
+
+
+
+Definition at line 119 of file peripheral.\+c.
+
+\mbox{\Hypertarget{peripheral_8c_ac9b2044c29c83c7382d58f9eef97a491}\label{peripheral_8c_ac9b2044c29c83c7382d58f9eef97a491}} 
+\index{peripheral.c@{peripheral.c}!START\_ADVERTISING\_EVT@{START\_ADVERTISING\_EVT}}
+\index{START\_ADVERTISING\_EVT@{START\_ADVERTISING\_EVT}!peripheral.c@{peripheral.c}}
+\doxysubsubsection{\texorpdfstring{START\_ADVERTISING\_EVT}{START\_ADVERTISING\_EVT}}
+{\footnotesize\ttfamily \#define S\+T\+A\+R\+T\+\_\+\+A\+D\+V\+E\+R\+T\+I\+S\+I\+N\+G\+\_\+\+E\+VT~0x0001}
+
+
+
+I\+C\+A\+L\+L\+\_\+\+E\+V\+E\+N\+TS. 
+
+
+
+Definition at line 99 of file peripheral.\+c.
+
+\mbox{\Hypertarget{peripheral_8c_aaa220015a1fc7a50d0ee2e3afe64a7e6}\label{peripheral_8c_aaa220015a1fc7a50d0ee2e3afe64a7e6}} 
+\index{peripheral.c@{peripheral.c}!START\_CONN\_UPDATE\_EVT@{START\_CONN\_UPDATE\_EVT}}
+\index{START\_CONN\_UPDATE\_EVT@{START\_CONN\_UPDATE\_EVT}!peripheral.c@{peripheral.c}}
+\doxysubsubsection{\texorpdfstring{START\_CONN\_UPDATE\_EVT}{START\_CONN\_UPDATE\_EVT}}
+{\footnotesize\ttfamily \#define S\+T\+A\+R\+T\+\_\+\+C\+O\+N\+N\+\_\+\+U\+P\+D\+A\+T\+E\+\_\+\+E\+VT~0x0002}
+
+
+
+Definition at line 100 of file peripheral.\+c.
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{peripheral_8c_a068436e9a71badde05a8e31b40f91e13}\label{peripheral_8c_a068436e9a71badde05a8e31b40f91e13}} 
+\index{peripheral.c@{peripheral.c}!gapRole\_clockHandler@{gapRole\_clockHandler}}
+\index{gapRole\_clockHandler@{gapRole\_clockHandler}!peripheral.c@{peripheral.c}}
+\doxysubsubsection{\texorpdfstring{gapRole\_clockHandler()}{gapRole\_clockHandler()}}
+{\footnotesize\ttfamily void gap\+Role\+\_\+clock\+Handler (\begin{DoxyParamCaption}\item[{U\+Arg}]{a0 }\end{DoxyParamCaption})}
+
+
+
+Definition at line 1662 of file peripheral.\+c.
+
+\mbox{\Hypertarget{peripheral_8c_a0f2f6c58ddab6ee03e965385e859c85d}\label{peripheral_8c_a0f2f6c58ddab6ee03e965385e859c85d}} 
+\index{peripheral.c@{peripheral.c}!GAPRole\_createTask@{GAPRole\_createTask}}
+\index{GAPRole\_createTask@{GAPRole\_createTask}!peripheral.c@{peripheral.c}}
+\doxysubsubsection{\texorpdfstring{GAPRole\_createTask()}{GAPRole\_createTask()}}
+{\footnotesize\ttfamily void G\+A\+P\+Role\+\_\+create\+Task (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Task creation function for the G\+AP Peripheral Role. 
+
+End G\+A\+P\+R\+O\+L\+E\+S\+\_\+\+P\+E\+R\+I\+P\+H\+E\+R\+A\+L\+\_\+\+A\+PI 
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+
+
+Definition at line 825 of file peripheral.\+c.
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{peripheral_8c_a8057fefb9b7ed3e6216b44335570cd22}\label{peripheral_8c_a8057fefb9b7ed3e6216b44335570cd22}} 
+\index{peripheral.c@{peripheral.c}!gapRoleTask@{gapRoleTask}}
+\index{gapRoleTask@{gapRoleTask}!peripheral.c@{peripheral.c}}
+\doxysubsubsection{\texorpdfstring{gapRoleTask}{gapRoleTask}}
+{\footnotesize\ttfamily Task\+\_\+\+Struct gap\+Role\+Task}
+
+
+
+Definition at line 180 of file peripheral.\+c.
+
+\mbox{\Hypertarget{peripheral_8c_ad3106ed917a4a6bc1ad5913fb76bfd40}\label{peripheral_8c_ad3106ed917a4a6bc1ad5913fb76bfd40}} 
+\index{peripheral.c@{peripheral.c}!gapRoleTaskStack@{gapRoleTaskStack}}
+\index{gapRoleTaskStack@{gapRoleTaskStack}!peripheral.c@{peripheral.c}}
+\doxysubsubsection{\texorpdfstring{gapRoleTaskStack}{gapRoleTaskStack}}
+{\footnotesize\ttfamily Char gap\+Role\+Task\+Stack\mbox{[}\mbox{\hyperlink{peripheral_8c_a4ca3f239b6c435aea01c65b0bc650720}{G\+A\+P\+R\+O\+L\+E\+\_\+\+T\+A\+S\+K\+\_\+\+S\+T\+A\+C\+K\+\_\+\+S\+I\+ZE}}\mbox{]}}
+
+
+
+Definition at line 181 of file peripheral.\+c.
+
+\mbox{\Hypertarget{peripheral_8c_a37c58edbcc921ef40b6906649b1dc155}\label{peripheral_8c_a37c58edbcc921ef40b6906649b1dc155}} 
+\index{peripheral.c@{peripheral.c}!linkDBNumConns@{linkDBNumConns}}
+\index{linkDBNumConns@{linkDBNumConns}!peripheral.c@{peripheral.c}}
+\doxysubsubsection{\texorpdfstring{linkDBNumConns}{linkDBNumConns}}
+{\footnotesize\ttfamily uint8 link\+D\+B\+Num\+Conns}
+
+
+
+Definition at line 148 of file peripheral.\+c.
+

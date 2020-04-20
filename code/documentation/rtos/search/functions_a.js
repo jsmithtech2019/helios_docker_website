@@ -1,0 +1,20 @@
+var searchData=
+[
+  ['l2cap_5fbm_5falloc_5422',['L2CAP_bm_alloc',['../icall__api_8c.html#a5f9fbf871179c8cf69373d1b8993bd2f',1,'icall_api.c']]],
+  ['l2cap_5fchannelinfo_5423',['L2CAP_ChannelInfo',['../icall__api_8c.html#aa31b0cee961a10f4be7b1e3afafd1de8',1,'icall_api.c']]],
+  ['l2cap_5fconnectreq_5424',['L2CAP_ConnectReq',['../icall__api_8c.html#aa3f9f6f441fade45a6791fffdbf245f4',1,'icall_api.c']]],
+  ['l2cap_5fconnectrsp_5425',['L2CAP_ConnectRsp',['../icall__api_8c.html#a8d48a4fa576a2f9d540345628ae6c557',1,'icall_api.c']]],
+  ['l2cap_5fconnparamupdatereq_5426',['L2CAP_ConnParamUpdateReq',['../icall__api_8c.html#af9cc2df9bb0b4c9000d8c3e21adcf1d2',1,'icall_api.c']]],
+  ['l2cap_5fderegisterpsm_5427',['L2CAP_DeregisterPsm',['../icall__api_8c.html#aeced1e1f9c0d0935bc7743b684071a62',1,'icall_api.c']]],
+  ['l2cap_5fdisconnectreq_5428',['L2CAP_DisconnectReq',['../icall__api_8c.html#a3ca1bc8d6ee49d81104f62b440311dd8',1,'icall_api.c']]],
+  ['l2cap_5fflowctrlcredit_5429',['L2CAP_FlowCtrlCredit',['../icall__api_8c.html#a28ccf583adbf302cf95db9aef19d3b6e',1,'icall_api.c']]],
+  ['l2cap_5fpsmchannels_5430',['L2CAP_PsmChannels',['../icall__api_8c.html#a3fb8aaca8154b07d65f84d78346add5f',1,'icall_api.c']]],
+  ['l2cap_5fpsminfo_5431',['L2CAP_PsmInfo',['../icall__api_8c.html#afe4d689eabdbe7c83bf4e0fca2ee8921',1,'icall_api.c']]],
+  ['l2cap_5fregisterflowctrltask_5432',['L2CAP_RegisterFlowCtrlTask',['../icall__api_8c.html#abfc996b1ebbfe94febbc7e448150bf1a',1,'icall_api.c']]],
+  ['l2cap_5fregisterpsm_5433',['L2CAP_RegisterPsm',['../icall__api_8c.html#a4973f6690e33d30089ae323c6ddc2ee8',1,'icall_api.c']]],
+  ['l2cap_5fsendsdu_5434',['L2CAP_SendSDU',['../icall__api_8c.html#a4756c83b98db5cf43ff8d4e82b84e2db',1,'icall_api.c']]],
+  ['linkdb_5fgetinfo_5435',['linkDB_GetInfo',['../icall__api_8c.html#ab6889df9c6a70cd9c4016895eb3d656d',1,'icall_api.c']]],
+  ['linkdb_5fnumactive_5436',['linkDB_NumActive',['../icall__api_8c.html#a2dfebc6681d478ceb2514f79b4dec330',1,'icall_api.c']]],
+  ['linkdb_5fnumconns_5437',['linkDB_NumConns',['../icall__api_8c.html#a50a8d90705d15c1d80eba31831eab276',1,'icall_api.c']]],
+  ['linkdb_5fstate_5438',['linkDB_State',['../icall__api_8c.html#a73e393852ed170c0e5d03f20fb16d4c1',1,'icall_api.c']]]
+];

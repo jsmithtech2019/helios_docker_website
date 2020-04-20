@@ -1,0 +1,74 @@
+\hypertarget{struct_u_a_r_t___config}{}\doxysection{U\+A\+R\+T\+\_\+\+Config Struct Reference}
+\label{struct_u_a_r_t___config}\index{UART\_Config@{UART\_Config}}
+
+
+U\+A\+RT Global configuration.  
+
+
+
+
+{\ttfamily \#include $<$U\+A\+R\+T.\+h$>$}
+
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_u_a_r_t___fxn_table}{U\+A\+R\+T\+\_\+\+Fxn\+Table}} const  $\ast$ \mbox{\hyperlink{struct_u_a_r_t___config_a9e8073b7f55a5b3bc70d377e3b3f1375}{fxn\+Table\+Ptr}}
+\item 
+void $\ast$ \mbox{\hyperlink{struct_u_a_r_t___config_a6472bcf07cd2c8ed0045fe01a934f583}{object}}
+\item 
+void const  $\ast$ \mbox{\hyperlink{struct_u_a_r_t___config_ad0baf0ebc820bca98fc7fbd089d1c55c}{hw\+Attrs}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+U\+A\+RT Global configuration. 
+
+The \mbox{\hyperlink{struct_u_a_r_t___config}{U\+A\+R\+T\+\_\+\+Config}} structure contains a set of pointers used to characterize the U\+A\+RT driver implementation.
+
+This structure needs to be defined before calling \mbox{\hyperlink{_u_a_r_t_8c_ab60a36f7295d704926120d22f806dcd1}{U\+A\+R\+T\+\_\+init()}} and it must not be changed thereafter.
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{_u_a_r_t_8c_ab60a36f7295d704926120d22f806dcd1}{U\+A\+R\+T\+\_\+init()}} 
+\end{DoxySeeAlso}
+
+
+Definition at line 571 of file U\+A\+R\+T.\+h.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{struct_u_a_r_t___config_a9e8073b7f55a5b3bc70d377e3b3f1375}\label{struct_u_a_r_t___config_a9e8073b7f55a5b3bc70d377e3b3f1375}} 
+\index{UART\_Config@{UART\_Config}!fxnTablePtr@{fxnTablePtr}}
+\index{fxnTablePtr@{fxnTablePtr}!UART\_Config@{UART\_Config}}
+\doxysubsubsection{\texorpdfstring{fxnTablePtr}{fxnTablePtr}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_u_a_r_t___fxn_table}{U\+A\+R\+T\+\_\+\+Fxn\+Table}} const$\ast$ U\+A\+R\+T\+\_\+\+Config\+::fxn\+Table\+Ptr}
+
+Pointer to a table of driver-\/specific implementations of U\+A\+RT A\+P\+Is 
+
+Definition at line 573 of file U\+A\+R\+T.\+h.
+
+\mbox{\Hypertarget{struct_u_a_r_t___config_ad0baf0ebc820bca98fc7fbd089d1c55c}\label{struct_u_a_r_t___config_ad0baf0ebc820bca98fc7fbd089d1c55c}} 
+\index{UART\_Config@{UART\_Config}!hwAttrs@{hwAttrs}}
+\index{hwAttrs@{hwAttrs}!UART\_Config@{UART\_Config}}
+\doxysubsubsection{\texorpdfstring{hwAttrs}{hwAttrs}}
+{\footnotesize\ttfamily void const$\ast$ U\+A\+R\+T\+\_\+\+Config\+::hw\+Attrs}
+
+Pointer to a driver specific hardware attributes structure 
+
+Definition at line 579 of file U\+A\+R\+T.\+h.
+
+\mbox{\Hypertarget{struct_u_a_r_t___config_a6472bcf07cd2c8ed0045fe01a934f583}\label{struct_u_a_r_t___config_a6472bcf07cd2c8ed0045fe01a934f583}} 
+\index{UART\_Config@{UART\_Config}!object@{object}}
+\index{object@{object}!UART\_Config@{UART\_Config}}
+\doxysubsubsection{\texorpdfstring{object}{object}}
+{\footnotesize\ttfamily void$\ast$ U\+A\+R\+T\+\_\+\+Config\+::object}
+
+Pointer to a driver specific data object 
+
+Definition at line 576 of file U\+A\+R\+T.\+h.
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Drivers/\+U\+A\+R\+T/\mbox{\hyperlink{_u_a_r_t_8h}{U\+A\+R\+T.\+h}}\end{DoxyCompactItemize}

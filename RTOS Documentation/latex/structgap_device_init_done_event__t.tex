@@ -1,0 +1,104 @@
+\hypertarget{structgap_device_init_done_event__t}{}\doxysection{gap\+Device\+Init\+Done\+Event\+\_\+t Struct Reference}
+\label{structgap_device_init_done_event__t}\index{gapDeviceInitDoneEvent\_t@{gapDeviceInitDoneEvent\_t}}
+
+
+{\ttfamily \#include $<$gap.\+h$>$}
+
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+osal\+\_\+event\+\_\+hdr\+\_\+t \mbox{\hyperlink{structgap_device_init_done_event__t_ad6300ff4dcb5b13734e09429f6c3b9d7}{hdr}}
+\begin{DoxyCompactList}\small\item\em G\+A\+P\+\_\+\+M\+S\+G\+\_\+\+E\+V\+E\+NT and status. \end{DoxyCompactList}\item 
+uint8 \mbox{\hyperlink{structgap_device_init_done_event__t_a3c901197b281e8c118d3a649d876a68c}{opcode}}
+\begin{DoxyCompactList}\small\item\em G\+A\+P\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+I\+N\+I\+T\+\_\+\+D\+O\+N\+E\+\_\+\+E\+V\+E\+NT. \end{DoxyCompactList}\item 
+uint8 \mbox{\hyperlink{structgap_device_init_done_event__t_ac1fcb980886c1513bdc9cb6159d1a7ba}{dev\+Addr}} \mbox{[}B\+\_\+\+A\+D\+D\+R\+\_\+\+L\+EN\mbox{]}
+\begin{DoxyCompactList}\small\item\em Device\textquotesingle{}s B\+D\+\_\+\+A\+D\+DR. \end{DoxyCompactList}\item 
+uint16 \mbox{\hyperlink{structgap_device_init_done_event__t_ad12efb16cecebdcdb2ebd6fb0917d43b}{data\+Pkt\+Len}}
+\begin{DoxyCompactList}\small\item\em H\+C\+\_\+\+L\+E\+\_\+\+Data\+\_\+\+Packet\+\_\+\+Length. \end{DoxyCompactList}\item 
+uint8 \mbox{\hyperlink{structgap_device_init_done_event__t_a87b3375078c060c74cd35488f0d7e55c}{num\+Data\+Pkts}}
+\begin{DoxyCompactList}\small\item\em H\+C\+\_\+\+Total\+\_\+\+Num\+\_\+\+L\+E\+\_\+\+Data\+\_\+\+Packets. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+G\+A\+P\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+I\+N\+I\+T\+\_\+\+D\+O\+N\+E\+\_\+\+E\+V\+E\+NT message format. This message is sent to the app when the Device Initialization is done \mbox{[}initiated by calling \mbox{\hyperlink{group___g_a_p___a_p_i_ga729bcdb44b9ea7717cbfd55d25ba5194}{G\+A\+P\+\_\+\+Device\+Init()}}\mbox{]}. 
+
+Definition at line 476 of file gap.\+h.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{structgap_device_init_done_event__t_ad12efb16cecebdcdb2ebd6fb0917d43b}\label{structgap_device_init_done_event__t_ad12efb16cecebdcdb2ebd6fb0917d43b}} 
+\index{gapDeviceInitDoneEvent\_t@{gapDeviceInitDoneEvent\_t}!dataPktLen@{dataPktLen}}
+\index{dataPktLen@{dataPktLen}!gapDeviceInitDoneEvent\_t@{gapDeviceInitDoneEvent\_t}}
+\doxysubsubsection{\texorpdfstring{dataPktLen}{dataPktLen}}
+{\footnotesize\ttfamily uint16 gap\+Device\+Init\+Done\+Event\+\_\+t\+::data\+Pkt\+Len}
+
+
+
+H\+C\+\_\+\+L\+E\+\_\+\+Data\+\_\+\+Packet\+\_\+\+Length. 
+
+
+
+Definition at line 481 of file gap.\+h.
+
+\mbox{\Hypertarget{structgap_device_init_done_event__t_ac1fcb980886c1513bdc9cb6159d1a7ba}\label{structgap_device_init_done_event__t_ac1fcb980886c1513bdc9cb6159d1a7ba}} 
+\index{gapDeviceInitDoneEvent\_t@{gapDeviceInitDoneEvent\_t}!devAddr@{devAddr}}
+\index{devAddr@{devAddr}!gapDeviceInitDoneEvent\_t@{gapDeviceInitDoneEvent\_t}}
+\doxysubsubsection{\texorpdfstring{devAddr}{devAddr}}
+{\footnotesize\ttfamily uint8 gap\+Device\+Init\+Done\+Event\+\_\+t\+::dev\+Addr\mbox{[}B\+\_\+\+A\+D\+D\+R\+\_\+\+L\+EN\mbox{]}}
+
+
+
+Device\textquotesingle{}s B\+D\+\_\+\+A\+D\+DR. 
+
+
+
+Definition at line 480 of file gap.\+h.
+
+\mbox{\Hypertarget{structgap_device_init_done_event__t_ad6300ff4dcb5b13734e09429f6c3b9d7}\label{structgap_device_init_done_event__t_ad6300ff4dcb5b13734e09429f6c3b9d7}} 
+\index{gapDeviceInitDoneEvent\_t@{gapDeviceInitDoneEvent\_t}!hdr@{hdr}}
+\index{hdr@{hdr}!gapDeviceInitDoneEvent\_t@{gapDeviceInitDoneEvent\_t}}
+\doxysubsubsection{\texorpdfstring{hdr}{hdr}}
+{\footnotesize\ttfamily osal\+\_\+event\+\_\+hdr\+\_\+t gap\+Device\+Init\+Done\+Event\+\_\+t\+::hdr}
+
+
+
+G\+A\+P\+\_\+\+M\+S\+G\+\_\+\+E\+V\+E\+NT and status. 
+
+
+
+Definition at line 478 of file gap.\+h.
+
+\mbox{\Hypertarget{structgap_device_init_done_event__t_a87b3375078c060c74cd35488f0d7e55c}\label{structgap_device_init_done_event__t_a87b3375078c060c74cd35488f0d7e55c}} 
+\index{gapDeviceInitDoneEvent\_t@{gapDeviceInitDoneEvent\_t}!numDataPkts@{numDataPkts}}
+\index{numDataPkts@{numDataPkts}!gapDeviceInitDoneEvent\_t@{gapDeviceInitDoneEvent\_t}}
+\doxysubsubsection{\texorpdfstring{numDataPkts}{numDataPkts}}
+{\footnotesize\ttfamily uint8 gap\+Device\+Init\+Done\+Event\+\_\+t\+::num\+Data\+Pkts}
+
+
+
+H\+C\+\_\+\+Total\+\_\+\+Num\+\_\+\+L\+E\+\_\+\+Data\+\_\+\+Packets. 
+
+
+
+Definition at line 482 of file gap.\+h.
+
+\mbox{\Hypertarget{structgap_device_init_done_event__t_a3c901197b281e8c118d3a649d876a68c}\label{structgap_device_init_done_event__t_a3c901197b281e8c118d3a649d876a68c}} 
+\index{gapDeviceInitDoneEvent\_t@{gapDeviceInitDoneEvent\_t}!opcode@{opcode}}
+\index{opcode@{opcode}!gapDeviceInitDoneEvent\_t@{gapDeviceInitDoneEvent\_t}}
+\doxysubsubsection{\texorpdfstring{opcode}{opcode}}
+{\footnotesize\ttfamily uint8 gap\+Device\+Init\+Done\+Event\+\_\+t\+::opcode}
+
+
+
+G\+A\+P\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+I\+N\+I\+T\+\_\+\+D\+O\+N\+E\+\_\+\+E\+V\+E\+NT. 
+
+
+
+Definition at line 479 of file gap.\+h.
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Include/\mbox{\hyperlink{gap_8h}{gap.\+h}}\end{DoxyCompactItemize}

@@ -1,0 +1,70 @@
+\hypertarget{group___s_p_i___s_t_a_t_u_s}{}\doxysection{Status Codes}
+\label{group___s_p_i___s_t_a_t_u_s}\index{Status Codes@{Status Codes}}
+
+
+S\+P\+I\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+$\ast$ macros are general status codes returned by \mbox{\hyperlink{_s_p_i_8h_ab9d3a23991be2741f382749d3844cc2f}{S\+P\+I\+\_\+control()}}  
+
+
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___s_t_a_t_u_s_gab38fa90ff62128dbc98b2ecd84ca106f}{S\+P\+I\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+S\+U\+C\+C\+E\+SS}}~0
+\begin{DoxyCompactList}\small\item\em Successful status code returned by \mbox{\hyperlink{_s_p_i_8h_ab9d3a23991be2741f382749d3844cc2f}{S\+P\+I\+\_\+control()}}. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___s_p_i___s_t_a_t_u_s_ga2d0020dd673cc28a9e1c20b0ff101073}{S\+P\+I\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+E\+R\+R\+OR}}~-\/1
+\begin{DoxyCompactList}\small\item\em Generic error status code returned by \mbox{\hyperlink{_s_p_i_8h_ab9d3a23991be2741f382749d3844cc2f}{S\+P\+I\+\_\+control()}}. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___s_p_i___s_t_a_t_u_s_gacfcd15e1eecdb99b4867adc7592a8d6e}{S\+P\+I\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+U\+N\+D\+E\+F\+I\+N\+E\+D\+C\+MD}}~-\/2
+\begin{DoxyCompactList}\small\item\em An error status code returned by \mbox{\hyperlink{_s_p_i_8h_ab9d3a23991be2741f382749d3844cc2f}{S\+P\+I\+\_\+control()}} for undefined command codes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+S\+P\+I\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+$\ast$ macros are general status codes returned by \mbox{\hyperlink{_s_p_i_8h_ab9d3a23991be2741f382749d3844cc2f}{S\+P\+I\+\_\+control()}} 
+
+S\+P\+I\+C\+C26\+X\+X\+D\+M\+A\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+$\ast$ macros are command codes only defined in the \mbox{\hyperlink{_s_p_i_c_c26_x_x_d_m_a_8h}{S\+P\+I\+C\+C26\+X\+X\+D\+M\+A.\+h}} driver implementation and need to\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include <ti/drivers/sdspi/SPICC26XXDMA.h>}}
+\end{DoxyCode}
+ 
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{group___s_p_i___s_t_a_t_u_s_ga2d0020dd673cc28a9e1c20b0ff101073}\label{group___s_p_i___s_t_a_t_u_s_ga2d0020dd673cc28a9e1c20b0ff101073}} 
+\index{Status Codes@{Status Codes}!SPI\_STATUS\_ERROR@{SPI\_STATUS\_ERROR}}
+\index{SPI\_STATUS\_ERROR@{SPI\_STATUS\_ERROR}!Status Codes@{Status Codes}}
+\doxysubsubsection{\texorpdfstring{SPI\_STATUS\_ERROR}{SPI\_STATUS\_ERROR}}
+{\footnotesize\ttfamily \#define S\+P\+I\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+E\+R\+R\+OR~-\/1}
+
+
+
+Generic error status code returned by \mbox{\hyperlink{_s_p_i_8h_ab9d3a23991be2741f382749d3844cc2f}{S\+P\+I\+\_\+control()}}. 
+
+\mbox{\hyperlink{_s_p_i_8h_ab9d3a23991be2741f382749d3844cc2f}{S\+P\+I\+\_\+control()}} returns S\+P\+I\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+E\+R\+R\+OR if the control code was not executed successfully. 
+
+Definition at line 208 of file S\+P\+I.\+h.
+
+\mbox{\Hypertarget{group___s_p_i___s_t_a_t_u_s_gab38fa90ff62128dbc98b2ecd84ca106f}\label{group___s_p_i___s_t_a_t_u_s_gab38fa90ff62128dbc98b2ecd84ca106f}} 
+\index{Status Codes@{Status Codes}!SPI\_STATUS\_SUCCESS@{SPI\_STATUS\_SUCCESS}}
+\index{SPI\_STATUS\_SUCCESS@{SPI\_STATUS\_SUCCESS}!Status Codes@{Status Codes}}
+\doxysubsubsection{\texorpdfstring{SPI\_STATUS\_SUCCESS}{SPI\_STATUS\_SUCCESS}}
+{\footnotesize\ttfamily \#define S\+P\+I\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+S\+U\+C\+C\+E\+SS~0}
+
+
+
+Successful status code returned by \mbox{\hyperlink{_s_p_i_8h_ab9d3a23991be2741f382749d3844cc2f}{S\+P\+I\+\_\+control()}}. 
+
+\mbox{\hyperlink{_s_p_i_8h_ab9d3a23991be2741f382749d3844cc2f}{S\+P\+I\+\_\+control()}} returns S\+P\+I\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+S\+U\+C\+C\+E\+SS if the control code was executed successfully. 
+
+Definition at line 200 of file S\+P\+I.\+h.
+
+\mbox{\Hypertarget{group___s_p_i___s_t_a_t_u_s_gacfcd15e1eecdb99b4867adc7592a8d6e}\label{group___s_p_i___s_t_a_t_u_s_gacfcd15e1eecdb99b4867adc7592a8d6e}} 
+\index{Status Codes@{Status Codes}!SPI\_STATUS\_UNDEFINEDCMD@{SPI\_STATUS\_UNDEFINEDCMD}}
+\index{SPI\_STATUS\_UNDEFINEDCMD@{SPI\_STATUS\_UNDEFINEDCMD}!Status Codes@{Status Codes}}
+\doxysubsubsection{\texorpdfstring{SPI\_STATUS\_UNDEFINEDCMD}{SPI\_STATUS\_UNDEFINEDCMD}}
+{\footnotesize\ttfamily \#define S\+P\+I\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+U\+N\+D\+E\+F\+I\+N\+E\+D\+C\+MD~-\/2}
+
+
+
+An error status code returned by \mbox{\hyperlink{_s_p_i_8h_ab9d3a23991be2741f382749d3844cc2f}{S\+P\+I\+\_\+control()}} for undefined command codes. 
+
+\mbox{\hyperlink{_s_p_i_8h_ab9d3a23991be2741f382749d3844cc2f}{S\+P\+I\+\_\+control()}} returns S\+P\+I\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+U\+N\+D\+E\+F\+I\+N\+E\+D\+C\+MD if the control code is not recognized by the driver implementation. 
+
+Definition at line 217 of file S\+P\+I.\+h.
+

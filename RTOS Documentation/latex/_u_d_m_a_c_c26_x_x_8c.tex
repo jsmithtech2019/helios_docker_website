@@ -1,0 +1,119 @@
+\hypertarget{_u_d_m_a_c_c26_x_x_8c}{}\doxysection{Drivers/\+U\+D\+M\+A/\+U\+D\+M\+A\+C\+C26\+XX.c File Reference}
+\label{_u_d_m_a_c_c26_x_x_8c}\index{Drivers/UDMA/UDMACC26XX.c@{Drivers/UDMA/UDMACC26XX.c}}
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include $<$xdc/runtime/\+Assert.\+h$>$}\newline
+{\ttfamily \#include $<$xdc/runtime/\+Diags.\+h$>$}\newline
+{\ttfamily \#include $<$xdc/runtime/\+Error.\+h$>$}\newline
+{\ttfamily \#include $<$xdc/runtime/\+Log.\+h$>$}\newline
+{\ttfamily \#include $<$xdc/runtime/\+System.\+h$>$}\newline
+{\ttfamily \#include $<$ti/sysbios/family/arm/m3/\+Hwi.\+h$>$}\newline
+{\ttfamily \#include $<$ti/drivers/dma/\+U\+D\+M\+A\+C\+C26\+X\+X.\+h$>$}\newline
+{\ttfamily \#include $<$inc/hw\+\_\+memmap.\+h$>$}\newline
+{\ttfamily \#include $<$inc/hw\+\_\+ints.\+h$>$}\newline
+{\ttfamily \#include $<$driverlib/udma.\+h$>$}\newline
+{\ttfamily \#include $<$driverlib/prcm.\+h$>$}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{_u_d_m_a_c_c26_x_x_8c_af67794b834d122d8e85dff61d2e60af4}{U\+D\+M\+A\+C\+C26\+X\+X\+\_\+hwi\+Int\+Fxn}} (U\+Arg arg)
+\begin{DoxyCompactList}\small\item\em Handler called if the D\+MA gets an error during transfer. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_u_d_m_a_c_c26_x_x_8h_a969a9feb0f822c4764ef1da2ff5066cf}{U\+D\+M\+A\+C\+C26\+X\+X\+\_\+\+Handle}} \mbox{\hyperlink{_u_d_m_a_c_c26_x_x_8c_aa7a244c7cfec8551f11ad5d4b5afa0ff}{U\+D\+M\+A\+C\+C26\+X\+X\+\_\+open}} ()
+\begin{DoxyCompactList}\small\item\em Function to initialize the C\+C26\+XX D\+MA peripheral. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_u_d_m_a_c_c26_x_x_8c_a5529a47329f27d70c490c5ed1c1b19f0}{U\+D\+M\+A\+C\+C26\+X\+X\+\_\+close}} (\mbox{\hyperlink{_u_d_m_a_c_c26_x_x_8h_a969a9feb0f822c4764ef1da2ff5066cf}{U\+D\+M\+A\+C\+C26\+X\+X\+\_\+\+Handle}} handle)
+\begin{DoxyCompactList}\small\item\em Function to close the D\+MA driver. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const \mbox{\hyperlink{struct_u_d_m_a_c_c26_x_x___config}{U\+D\+M\+A\+C\+C26\+X\+X\+\_\+\+Config}} \mbox{\hyperlink{_u_d_m_a_c_c26_x_x_8c_aeb04a48b323750874e7ab9b0f9d2a4d2}{U\+D\+M\+A\+C\+C26\+X\+X\+\_\+config}} \mbox{[}$\,$\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{_u_d_m_a_c_c26_x_x_8c_a5529a47329f27d70c490c5ed1c1b19f0}\label{_u_d_m_a_c_c26_x_x_8c_a5529a47329f27d70c490c5ed1c1b19f0}} 
+\index{UDMACC26XX.c@{UDMACC26XX.c}!UDMACC26XX\_close@{UDMACC26XX\_close}}
+\index{UDMACC26XX\_close@{UDMACC26XX\_close}!UDMACC26XX.c@{UDMACC26XX.c}}
+\doxysubsubsection{\texorpdfstring{UDMACC26XX\_close()}{UDMACC26XX\_close()}}
+{\footnotesize\ttfamily void U\+D\+M\+A\+C\+C26\+X\+X\+\_\+close (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_u_d_m_a_c_c26_x_x_8h_a969a9feb0f822c4764ef1da2ff5066cf}{U\+D\+M\+A\+C\+C26\+X\+X\+\_\+\+Handle}}}]{handle }\end{DoxyParamCaption})}
+
+
+
+Function to close the D\+MA driver. 
+
+Will disable the D\+MA hardware, release the power dependency and destruct the H\+WI interrupt.
+
+\begin{DoxyPrecond}{Precondition}
+\mbox{\hyperlink{_u_d_m_a_c_c26_x_x_8h_aa7a244c7cfec8551f11ad5d4b5afa0ff}{U\+D\+M\+A\+C\+C26\+X\+X\+\_\+open()}} has to be called first. Calling context\+: Task
+\end{DoxyPrecond}
+
+\begin{DoxyParams}{Parameters}
+{\em handle} & A S\+P\+I\+\_\+\+Handle returned from \mbox{\hyperlink{_s_p_i_8c_a62cfe494cb1df47cd602e8747e894fd1}{S\+P\+I\+\_\+open()}}\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{_s_p_i_c_c26_x_x_d_m_a_8c_a85dd106e353eb64b10b47ea44d0591d1}{S\+P\+I\+C\+C26\+X\+X\+D\+M\+A\+\_\+open}} 
+\end{DoxySeeAlso}
+
+
+Definition at line 122 of file U\+D\+M\+A\+C\+C26\+X\+X.\+c.
+
+\mbox{\Hypertarget{_u_d_m_a_c_c26_x_x_8c_af67794b834d122d8e85dff61d2e60af4}\label{_u_d_m_a_c_c26_x_x_8c_af67794b834d122d8e85dff61d2e60af4}} 
+\index{UDMACC26XX.c@{UDMACC26XX.c}!UDMACC26XX\_hwiIntFxn@{UDMACC26XX\_hwiIntFxn}}
+\index{UDMACC26XX\_hwiIntFxn@{UDMACC26XX\_hwiIntFxn}!UDMACC26XX.c@{UDMACC26XX.c}}
+\doxysubsubsection{\texorpdfstring{UDMACC26XX\_hwiIntFxn()}{UDMACC26XX\_hwiIntFxn()}}
+{\footnotesize\ttfamily void U\+D\+M\+A\+C\+C26\+X\+X\+\_\+hwi\+Int\+Fxn (\begin{DoxyParamCaption}\item[{U\+Arg}]{arg }\end{DoxyParamCaption})}
+
+
+
+Handler called if the D\+MA gets an error during transfer. 
+
+This function will clear the error.
+
+
+\begin{DoxyParams}{Parameters}
+{\em arg} & A user defined argument.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+
+
+Definition at line 66 of file U\+D\+M\+A\+C\+C26\+X\+X.\+c.
+
+\mbox{\Hypertarget{_u_d_m_a_c_c26_x_x_8c_aa7a244c7cfec8551f11ad5d4b5afa0ff}\label{_u_d_m_a_c_c26_x_x_8c_aa7a244c7cfec8551f11ad5d4b5afa0ff}} 
+\index{UDMACC26XX.c@{UDMACC26XX.c}!UDMACC26XX\_open@{UDMACC26XX\_open}}
+\index{UDMACC26XX\_open@{UDMACC26XX\_open}!UDMACC26XX.c@{UDMACC26XX.c}}
+\doxysubsubsection{\texorpdfstring{UDMACC26XX\_open()}{UDMACC26XX\_open()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_u_d_m_a_c_c26_x_x_8h_a969a9feb0f822c4764ef1da2ff5066cf}{U\+D\+M\+A\+C\+C26\+X\+X\+\_\+\+Handle}} U\+D\+M\+A\+C\+C26\+X\+X\+\_\+open (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Function to initialize the C\+C26\+XX D\+MA peripheral. 
+
+The function will set a dependency on the peripheral power domain, i.\+e. power up the module and enable the clock. Note this function always uses the first D\+MA entry in the global U\+D\+M\+A\+C\+C26\+X\+X\+\_\+config list.
+
+\begin{DoxyPrecond}{Precondition}
+\mbox{\hyperlink{_u_d_m_a_c_c26_x_x_8h_a8bb3d9eff25abd3378f9cbc3189440bf}{U\+D\+M\+A\+C\+C26\+X\+X\+\_\+init()}} has to be called first. Calling context\+: Task
+\end{DoxyPrecond}
+\begin{DoxyReturn}{Returns}
+U\+D\+M\+A\+C\+C26\+X\+X\+\_\+\+Handle on success or N\+U\+LL if error or if it has been already opened
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{_u_d_m_a_c_c26_x_x_8h_a5529a47329f27d70c490c5ed1c1b19f0}{U\+D\+M\+A\+C\+C26\+X\+X\+\_\+close()}} 
+\end{DoxySeeAlso}
+
+
+Definition at line 82 of file U\+D\+M\+A\+C\+C26\+X\+X.\+c.
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{_u_d_m_a_c_c26_x_x_8c_aeb04a48b323750874e7ab9b0f9d2a4d2}\label{_u_d_m_a_c_c26_x_x_8c_aeb04a48b323750874e7ab9b0f9d2a4d2}} 
+\index{UDMACC26XX.c@{UDMACC26XX.c}!UDMACC26XX\_config@{UDMACC26XX\_config}}
+\index{UDMACC26XX\_config@{UDMACC26XX\_config}!UDMACC26XX.c@{UDMACC26XX.c}}
+\doxysubsubsection{\texorpdfstring{UDMACC26XX\_config}{UDMACC26XX\_config}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{struct_u_d_m_a_c_c26_x_x___config}{U\+D\+M\+A\+C\+C26\+X\+X\+\_\+\+Config}} U\+D\+M\+A\+C\+C26\+X\+X\+\_\+config\mbox{[}$\,$\mbox{]}}
+

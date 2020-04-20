@@ -1,0 +1,418 @@
+\hypertarget{_u_a_r_t_c_c26_x_x_8c}{}\doxysection{Drivers/\+U\+A\+R\+T/\+U\+A\+R\+T\+C\+C26\+XX.c File Reference}
+\label{_u_a_r_t_c_c26_x_x_8c}\index{Drivers/UART/UARTCC26XX.c@{Drivers/UART/UARTCC26XX.c}}
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include $<$xdc/runtime/\+Error.\+h$>$}\newline
+{\ttfamily \#include $<$xdc/runtime/\+Assert.\+h$>$}\newline
+{\ttfamily \#include $<$xdc/runtime/\+Diags.\+h$>$}\newline
+{\ttfamily \#include $<$xdc/runtime/\+Log.\+h$>$}\newline
+{\ttfamily \#include $<$xdc/runtime/\+Types.\+h$>$}\newline
+{\ttfamily \#include $<$ti/sysbios/\+B\+I\+O\+S.\+h$>$}\newline
+{\ttfamily \#include $<$ti/sysbios/knl/\+Semaphore.\+h$>$}\newline
+{\ttfamily \#include $<$ti/sysbios/knl/\+Swi.\+h$>$}\newline
+{\ttfamily \#include $<$ti/sysbios/family/arm/m3/\+Hwi.\+h$>$}\newline
+{\ttfamily \#include $<$ti/drivers/\+Power.\+h$>$}\newline
+{\ttfamily \#include $<$ti/drivers/power/\+Power\+C\+C26\+X\+X.\+h$>$}\newline
+{\ttfamily \#include $<$ti/drivers/uart/\+U\+A\+R\+T\+C\+C26\+X\+X.\+h$>$}\newline
+{\ttfamily \#include $<$ti/drivers/pin/\+P\+I\+N\+C\+C26\+X\+X.\+h$>$}\newline
+{\ttfamily \#include $<$inc/hw\+\_\+memmap.\+h$>$}\newline
+{\ttfamily \#include $<$inc/hw\+\_\+ints.\+h$>$}\newline
+{\ttfamily \#include $<$inc/hw\+\_\+types.\+h$>$}\newline
+{\ttfamily \#include $<$driverlib/uart.\+h$>$}\newline
+{\ttfamily \#include $<$driverlib/sys\+\_\+ctrl.\+h$>$}\newline
+{\ttfamily \#include $<$driverlib/ioc.\+h$>$}\newline
+{\ttfamily \#include $<$driverlib/aon\+\_\+ioc.\+h$>$}\newline
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{_u_a_r_t_c_c26_x_x_8c_a3acffbd305ee72dcd4593c0d8af64a4f}{M\+IN}}(a,  b)~(((a)$<$(b))?(a)\+:(b))
+\item 
+\#define \mbox{\hyperlink{_u_a_r_t_c_c26_x_x_8c_afa99ec4acc4ecb2dc3c2d05da15d0e3f}{M\+AX}}(a,  b)~(((a)$>$(b))?(a)\+:(b))
+\item 
+\#define \mbox{\hyperlink{_u_a_r_t_c_c26_x_x_8c_a8f937cf8d59c2b8e9bc71d2d59870d04}{U\+N\+I\+T\+\_\+\+D\+I\+V\+\_\+\+R\+O\+U\+N\+D\+UP}}(x,  d)~((x + ((d) -\/ 1)) / (d))
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{_u_a_r_t_c_c26_x_x_8c_a108d57bc509f39d8dea2cbd9744c6cd4}{U\+A\+R\+T\+C\+C26\+X\+X\+\_\+close}} (\mbox{\hyperlink{_u_a_r_t_8h_a13cc669fae768d8212e6491ce71b28af}{U\+A\+R\+T\+\_\+\+Handle}} handle)
+\begin{DoxyCompactList}\small\item\em Function to close a given C\+C26\+XX U\+A\+RT peripheral specified by the U\+A\+RT handle. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{_u_a_r_t_c_c26_x_x_8c_a95e05b6d510cdea7a2c755de4373d40d}{U\+A\+R\+T\+C\+C26\+X\+X\+\_\+control}} (\mbox{\hyperlink{_u_a_r_t_8h_a13cc669fae768d8212e6491ce71b28af}{U\+A\+R\+T\+\_\+\+Handle}} handle, unsigned int cmd, void $\ast$arg)
+\begin{DoxyCompactList}\small\item\em Function for setting control parameters of the U\+A\+RT after it has been opened. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_u_a_r_t_c_c26_x_x_8c_a08b02dbf2d1252c950894adaa6d6259a}{U\+A\+R\+T\+C\+C26\+X\+X\+\_\+init}} (\mbox{\hyperlink{_u_a_r_t_8h_a13cc669fae768d8212e6491ce71b28af}{U\+A\+R\+T\+\_\+\+Handle}} handle)
+\begin{DoxyCompactList}\small\item\em U\+A\+RT C\+C26\+XX initialization. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_u_a_r_t_8h_a13cc669fae768d8212e6491ce71b28af}{U\+A\+R\+T\+\_\+\+Handle}} \mbox{\hyperlink{_u_a_r_t_c_c26_x_x_8c_af5b08ff04ba86a0e1e8b9dd676c61faf}{U\+A\+R\+T\+C\+C26\+X\+X\+\_\+open}} (\mbox{\hyperlink{_u_a_r_t_8h_a13cc669fae768d8212e6491ce71b28af}{U\+A\+R\+T\+\_\+\+Handle}} handle, \mbox{\hyperlink{struct_u_a_r_t___params}{U\+A\+R\+T\+\_\+\+Params}} $\ast$params)
+\begin{DoxyCompactList}\small\item\em Function to initialize the C\+C26\+XX U\+A\+RT peripheral specified by the particular handle. The parameter specifies which mode the U\+A\+RT will operate. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{_u_a_r_t_c_c26_x_x_8c_a4fe12ed98e759c6cc96870d67ec58cf6}{U\+A\+R\+T\+C\+C26\+X\+X\+\_\+read}} (\mbox{\hyperlink{_u_a_r_t_8h_a13cc669fae768d8212e6491ce71b28af}{U\+A\+R\+T\+\_\+\+Handle}} handle, void $\ast$buffer, size\+\_\+t size)
+\begin{DoxyCompactList}\small\item\em Function for reading from U\+A\+RT interface. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{_u_a_r_t_c_c26_x_x_8c_a0c9906b3f8203736f981e7ecb13e17b7}{U\+A\+R\+T\+C\+C26\+X\+X\+\_\+read\+Polling}} (\mbox{\hyperlink{_u_a_r_t_8h_a13cc669fae768d8212e6491ce71b28af}{U\+A\+R\+T\+\_\+\+Handle}} handle, void $\ast$buf, size\+\_\+t size)
+\item 
+void \mbox{\hyperlink{_u_a_r_t_c_c26_x_x_8c_a0a316cb0a1db2e6ae67071454ec5d205}{U\+A\+R\+T\+C\+C26\+X\+X\+\_\+read\+Cancel}} (\mbox{\hyperlink{_u_a_r_t_8h_a13cc669fae768d8212e6491ce71b28af}{U\+A\+R\+T\+\_\+\+Handle}} handle)
+\begin{DoxyCompactList}\small\item\em Function that cancel U\+A\+RT read. Will disable all RX interrupt, disable RX and allow standby. Should also be called after a succeeding U\+A\+RT read if no more bytes are expected and standby is wanted. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{_u_a_r_t_c_c26_x_x_8c_a2a6805efea72cc30901593b75bc87c9f}{U\+A\+R\+T\+C\+C26\+X\+X\+\_\+write}} (\mbox{\hyperlink{_u_a_r_t_8h_a13cc669fae768d8212e6491ce71b28af}{U\+A\+R\+T\+\_\+\+Handle}} handle, const void $\ast$buffer, size\+\_\+t size)
+\begin{DoxyCompactList}\small\item\em Function that writes data to a U\+A\+RT. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{_u_a_r_t_c_c26_x_x_8c_aa1575d21de832f31c2081705a8f8e023}{U\+A\+R\+T\+C\+C26\+X\+X\+\_\+write\+Polling}} (\mbox{\hyperlink{_u_a_r_t_8h_a13cc669fae768d8212e6491ce71b28af}{U\+A\+R\+T\+\_\+\+Handle}} handle, const void $\ast$buf, size\+\_\+t size)
+\begin{DoxyCompactList}\small\item\em This function is N\+OT supported. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_u_a_r_t_c_c26_x_x_8c_a67c0d346a4359e80b8150e25ed4201c2}{U\+A\+R\+T\+C\+C26\+X\+X\+\_\+write\+Cancel}} (\mbox{\hyperlink{_u_a_r_t_8h_a13cc669fae768d8212e6491ce71b28af}{U\+A\+R\+T\+\_\+\+Handle}} handle)
+\begin{DoxyCompactList}\small\item\em Function that cancel U\+A\+RT write. Will disable TX interrupt, disable TX and allow standby. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_u_a_r_t_c_c26_x_x_8c_ab2ffba73c8b51c0fa71610379f6c37f9}{U\+A\+R\+T\+C\+C26\+X\+X\+\_\+hwi\+Int\+Fxn}} (U\+Arg arg)
+\item 
+void \mbox{\hyperlink{_u_a_r_t_c_c26_x_x_8c_aa4d7971adfedcd2d8aec9b4e298c3bc5}{U\+A\+R\+T\+C\+C26\+X\+X\+\_\+swi\+Int\+Fxn}} (U\+Arg arg0, U\+Arg arg1)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const \mbox{\hyperlink{struct_u_a_r_t___fxn_table}{U\+A\+R\+T\+\_\+\+Fxn\+Table}} \mbox{\hyperlink{_u_a_r_t_c_c26_x_x_8c_abd5f1691efe38764c7ef10750e407e5e}{U\+A\+R\+T\+C\+C26\+X\+X\+\_\+fxn\+Table}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{_u_a_r_t_c_c26_x_x_8c_afa99ec4acc4ecb2dc3c2d05da15d0e3f}\label{_u_a_r_t_c_c26_x_x_8c_afa99ec4acc4ecb2dc3c2d05da15d0e3f}} 
+\index{UARTCC26XX.c@{UARTCC26XX.c}!MAX@{MAX}}
+\index{MAX@{MAX}!UARTCC26XX.c@{UARTCC26XX.c}}
+\doxysubsubsection{\texorpdfstring{MAX}{MAX}}
+{\footnotesize\ttfamily \#define M\+AX(\begin{DoxyParamCaption}\item[{}]{a,  }\item[{}]{b }\end{DoxyParamCaption})~(((a)$>$(b))?(a)\+:(b))}
+
+
+
+Definition at line 124 of file U\+A\+R\+T\+C\+C26\+X\+X.\+c.
+
+\mbox{\Hypertarget{_u_a_r_t_c_c26_x_x_8c_a3acffbd305ee72dcd4593c0d8af64a4f}\label{_u_a_r_t_c_c26_x_x_8c_a3acffbd305ee72dcd4593c0d8af64a4f}} 
+\index{UARTCC26XX.c@{UARTCC26XX.c}!MIN@{MIN}}
+\index{MIN@{MIN}!UARTCC26XX.c@{UARTCC26XX.c}}
+\doxysubsubsection{\texorpdfstring{MIN}{MIN}}
+{\footnotesize\ttfamily \#define M\+IN(\begin{DoxyParamCaption}\item[{}]{a,  }\item[{}]{b }\end{DoxyParamCaption})~(((a)$<$(b))?(a)\+:(b))}
+
+
+
+Definition at line 123 of file U\+A\+R\+T\+C\+C26\+X\+X.\+c.
+
+\mbox{\Hypertarget{_u_a_r_t_c_c26_x_x_8c_a8f937cf8d59c2b8e9bc71d2d59870d04}\label{_u_a_r_t_c_c26_x_x_8c_a8f937cf8d59c2b8e9bc71d2d59870d04}} 
+\index{UARTCC26XX.c@{UARTCC26XX.c}!UNIT\_DIV\_ROUNDUP@{UNIT\_DIV\_ROUNDUP}}
+\index{UNIT\_DIV\_ROUNDUP@{UNIT\_DIV\_ROUNDUP}!UARTCC26XX.c@{UARTCC26XX.c}}
+\doxysubsubsection{\texorpdfstring{UNIT\_DIV\_ROUNDUP}{UNIT\_DIV\_ROUNDUP}}
+{\footnotesize\ttfamily \#define U\+N\+I\+T\+\_\+\+D\+I\+V\+\_\+\+R\+O\+U\+N\+D\+UP(\begin{DoxyParamCaption}\item[{}]{x,  }\item[{}]{d }\end{DoxyParamCaption})~((x + ((d) -\/ 1)) / (d))}
+
+
+
+Definition at line 125 of file U\+A\+R\+T\+C\+C26\+X\+X.\+c.
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{_u_a_r_t_c_c26_x_x_8c_a108d57bc509f39d8dea2cbd9744c6cd4}\label{_u_a_r_t_c_c26_x_x_8c_a108d57bc509f39d8dea2cbd9744c6cd4}} 
+\index{UARTCC26XX.c@{UARTCC26XX.c}!UARTCC26XX\_close@{UARTCC26XX\_close}}
+\index{UARTCC26XX\_close@{UARTCC26XX\_close}!UARTCC26XX.c@{UARTCC26XX.c}}
+\doxysubsubsection{\texorpdfstring{UARTCC26XX\_close()}{UARTCC26XX\_close()}}
+{\footnotesize\ttfamily void U\+A\+R\+T\+C\+C26\+X\+X\+\_\+close (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_u_a_r_t_8h_a13cc669fae768d8212e6491ce71b28af}{U\+A\+R\+T\+\_\+\+Handle}}}]{handle }\end{DoxyParamCaption})}
+
+
+
+Function to close a given C\+C26\+XX U\+A\+RT peripheral specified by the U\+A\+RT handle. 
+
+Will disable the U\+A\+RT, disable all U\+A\+RT interrupts and release the dependency on the corresponding power domain.
+
+\begin{DoxyPrecond}{Precondition}
+\mbox{\hyperlink{_u_a_r_t_c_c26_x_x_8c_af5b08ff04ba86a0e1e8b9dd676c61faf}{U\+A\+R\+T\+C\+C26\+X\+X\+\_\+open()}} had to be called first. Calling context\+: Task
+\end{DoxyPrecond}
+
+\begin{DoxyParams}{Parameters}
+{\em handle} & A U\+A\+R\+T\+\_\+\+Handle returned from \mbox{\hyperlink{_u_a_r_t_8c_a0442ea1ec23901168da31726bb3254c1}{U\+A\+R\+T\+\_\+open()}}\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{_u_a_r_t_c_c26_x_x_8c_af5b08ff04ba86a0e1e8b9dd676c61faf}{U\+A\+R\+T\+C\+C26\+X\+X\+\_\+open}} 
+\end{DoxySeeAlso}
+
+
+Definition at line 824 of file U\+A\+R\+T\+C\+C26\+X\+X.\+c.
+
+\mbox{\Hypertarget{_u_a_r_t_c_c26_x_x_8c_a95e05b6d510cdea7a2c755de4373d40d}\label{_u_a_r_t_c_c26_x_x_8c_a95e05b6d510cdea7a2c755de4373d40d}} 
+\index{UARTCC26XX.c@{UARTCC26XX.c}!UARTCC26XX\_control@{UARTCC26XX\_control}}
+\index{UARTCC26XX\_control@{UARTCC26XX\_control}!UARTCC26XX.c@{UARTCC26XX.c}}
+\doxysubsubsection{\texorpdfstring{UARTCC26XX\_control()}{UARTCC26XX\_control()}}
+{\footnotesize\ttfamily int U\+A\+R\+T\+C\+C26\+X\+X\+\_\+control (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_u_a_r_t_8h_a13cc669fae768d8212e6491ce71b28af}{U\+A\+R\+T\+\_\+\+Handle}}}]{handle,  }\item[{unsigned int}]{cmd,  }\item[{void $\ast$}]{arg }\end{DoxyParamCaption})}
+
+
+
+Function for setting control parameters of the U\+A\+RT after it has been opened. 
+
+\begin{DoxyPrecond}{Precondition}
+\mbox{\hyperlink{_u_a_r_t_c_c26_x_x_8c_af5b08ff04ba86a0e1e8b9dd676c61faf}{U\+A\+R\+T\+C\+C26\+X\+X\+\_\+open()}} has to be called first. Calling context\+: Hwi, Swi, Task
+\end{DoxyPrecond}
+
+\begin{DoxyParams}{Parameters}
+{\em handle} & A U\+A\+RT handle returned from \mbox{\hyperlink{_u_a_r_t_c_c26_x_x_8c_af5b08ff04ba86a0e1e8b9dd676c61faf}{U\+A\+R\+T\+C\+C26\+X\+X\+\_\+open()}}\\
+\hline
+{\em cmd} & The command to execute, supported commands are\+: {\begin{tabularx}{\linewidth}{|*{2}{>{\raggedright\arraybackslash}X|}}\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Command }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Description  }\\\cline{1-2}
+\mbox{\hyperlink{group___u_a_r_t___c_m_d_ga90f59d674fd3b290c3dd711128413014}{U\+A\+R\+T\+C\+C26\+X\+X\+\_\+\+C\+M\+D\+\_\+\+R\+E\+T\+U\+R\+N\+\_\+\+P\+A\+R\+T\+I\+A\+L\+\_\+\+E\+N\+A\+B\+LE}} &Enable R\+E\+T\+U\+R\+N\+\_\+\+P\+A\+R\+T\+I\+AL  \\\cline{1-2}
+\mbox{\hyperlink{group___u_a_r_t___c_m_d_ga7cc7c1551022a60bd310c79acb6b26b8}{U\+A\+R\+T\+C\+C26\+X\+X\+\_\+\+C\+M\+D\+\_\+\+R\+E\+T\+U\+R\+N\+\_\+\+P\+A\+R\+T\+I\+A\+L\+\_\+\+D\+I\+S\+A\+B\+LE}} &Disable R\+E\+T\+U\+R\+N\+\_\+\+P\+A\+R\+T\+I\+AL  \\\cline{1-2}
+\end{tabularx}}
+\\
+\hline
+{\em $\ast$arg} & Pointer to command arguments, currently not in use, set to N\+U\+LL.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{group___u_a_r_t___s_t_a_t_u_s_ga101b7761f89b3ec49f0c6726669acfed}{U\+A\+R\+T\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+S\+U\+C\+C\+E\+SS}} if success, or error code if error. 
+\end{DoxyReturn}
+
+
+Definition at line 889 of file U\+A\+R\+T\+C\+C26\+X\+X.\+c.
+
+\mbox{\Hypertarget{_u_a_r_t_c_c26_x_x_8c_ab2ffba73c8b51c0fa71610379f6c37f9}\label{_u_a_r_t_c_c26_x_x_8c_ab2ffba73c8b51c0fa71610379f6c37f9}} 
+\index{UARTCC26XX.c@{UARTCC26XX.c}!UARTCC26XX\_hwiIntFxn@{UARTCC26XX\_hwiIntFxn}}
+\index{UARTCC26XX\_hwiIntFxn@{UARTCC26XX\_hwiIntFxn}!UARTCC26XX.c@{UARTCC26XX.c}}
+\doxysubsubsection{\texorpdfstring{UARTCC26XX\_hwiIntFxn()}{UARTCC26XX\_hwiIntFxn()}}
+{\footnotesize\ttfamily void U\+A\+R\+T\+C\+C26\+X\+X\+\_\+hwi\+Int\+Fxn (\begin{DoxyParamCaption}\item[{U\+Arg}]{arg }\end{DoxyParamCaption})}
+
+
+
+Definition at line 446 of file U\+A\+R\+T\+C\+C26\+X\+X.\+c.
+
+\mbox{\Hypertarget{_u_a_r_t_c_c26_x_x_8c_a08b02dbf2d1252c950894adaa6d6259a}\label{_u_a_r_t_c_c26_x_x_8c_a08b02dbf2d1252c950894adaa6d6259a}} 
+\index{UARTCC26XX.c@{UARTCC26XX.c}!UARTCC26XX\_init@{UARTCC26XX\_init}}
+\index{UARTCC26XX\_init@{UARTCC26XX\_init}!UARTCC26XX.c@{UARTCC26XX.c}}
+\doxysubsubsection{\texorpdfstring{UARTCC26XX\_init()}{UARTCC26XX\_init()}}
+{\footnotesize\ttfamily void U\+A\+R\+T\+C\+C26\+X\+X\+\_\+init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_u_a_r_t_8h_a13cc669fae768d8212e6491ce71b28af}{U\+A\+R\+T\+\_\+\+Handle}}}]{handle }\end{DoxyParamCaption})}
+
+
+
+U\+A\+RT C\+C26\+XX initialization. 
+
+\begin{DoxyPrecond}{Precondition}
+Calling context\+: Hwi, Swi, Task, Main
+\end{DoxyPrecond}
+
+\begin{DoxyParams}{Parameters}
+{\em handle} & A U\+A\+R\+T\+\_\+\+Handle \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 636 of file U\+A\+R\+T\+C\+C26\+X\+X.\+c.
+
+\mbox{\Hypertarget{_u_a_r_t_c_c26_x_x_8c_af5b08ff04ba86a0e1e8b9dd676c61faf}\label{_u_a_r_t_c_c26_x_x_8c_af5b08ff04ba86a0e1e8b9dd676c61faf}} 
+\index{UARTCC26XX.c@{UARTCC26XX.c}!UARTCC26XX\_open@{UARTCC26XX\_open}}
+\index{UARTCC26XX\_open@{UARTCC26XX\_open}!UARTCC26XX.c@{UARTCC26XX.c}}
+\doxysubsubsection{\texorpdfstring{UARTCC26XX\_open()}{UARTCC26XX\_open()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_u_a_r_t_8h_a13cc669fae768d8212e6491ce71b28af}{U\+A\+R\+T\+\_\+\+Handle}} U\+A\+R\+T\+C\+C26\+X\+X\+\_\+open (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_u_a_r_t_8h_a13cc669fae768d8212e6491ce71b28af}{U\+A\+R\+T\+\_\+\+Handle}}}]{handle,  }\item[{\mbox{\hyperlink{struct_u_a_r_t___params}{U\+A\+R\+T\+\_\+\+Params}} $\ast$}]{params }\end{DoxyParamCaption})}
+
+
+
+Function to initialize the C\+C26\+XX U\+A\+RT peripheral specified by the particular handle. The parameter specifies which mode the U\+A\+RT will operate. 
+
+The function will set a dependency on it power domain, i.\+e. power up the module and enable the clock. The I\+Os are allocated. Neither the RX nor TX will be enabled, and none of the interrupts are enabled.
+
+\begin{DoxyPrecond}{Precondition}
+U\+A\+RT controller has been initialized Calling context\+: Task
+\end{DoxyPrecond}
+
+\begin{DoxyParams}{Parameters}
+{\em handle} & A U\+A\+R\+T\+\_\+\+Handle\\
+\hline
+{\em params} & Pointer to a parameter block, if N\+U\+LL it will use default values\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A U\+A\+R\+T\+\_\+\+Handle on success or a N\+U\+LL on an error or if it has been already opened
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{_u_a_r_t_c_c26_x_x_8c_a108d57bc509f39d8dea2cbd9744c6cd4}{U\+A\+R\+T\+C\+C26\+X\+X\+\_\+close()}} 
+\end{DoxySeeAlso}
+
+
+Definition at line 671 of file U\+A\+R\+T\+C\+C26\+X\+X.\+c.
+
+\mbox{\Hypertarget{_u_a_r_t_c_c26_x_x_8c_a4fe12ed98e759c6cc96870d67ec58cf6}\label{_u_a_r_t_c_c26_x_x_8c_a4fe12ed98e759c6cc96870d67ec58cf6}} 
+\index{UARTCC26XX.c@{UARTCC26XX.c}!UARTCC26XX\_read@{UARTCC26XX\_read}}
+\index{UARTCC26XX\_read@{UARTCC26XX\_read}!UARTCC26XX.c@{UARTCC26XX.c}}
+\doxysubsubsection{\texorpdfstring{UARTCC26XX\_read()}{UARTCC26XX\_read()}}
+{\footnotesize\ttfamily int U\+A\+R\+T\+C\+C26\+X\+X\+\_\+read (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_u_a_r_t_8h_a13cc669fae768d8212e6491ce71b28af}{U\+A\+R\+T\+\_\+\+Handle}}}]{handle,  }\item[{void $\ast$}]{buffer,  }\item[{size\+\_\+t}]{size }\end{DoxyParamCaption})}
+
+
+
+Function for reading from U\+A\+RT interface. 
+
+The function will enable the RX, enable all RX interrupts and disallow chip from going into standby.
+
+\begin{DoxyPrecond}{Precondition}
+\mbox{\hyperlink{_u_a_r_t_c_c26_x_x_8c_af5b08ff04ba86a0e1e8b9dd676c61faf}{U\+A\+R\+T\+C\+C26\+X\+X\+\_\+open()}} has to be called first. Calling context\+: Hwi and Swi (only if using \mbox{\hyperlink{_u_a_r_t_8h_a2507a620dba95cd20885c52494d19e90ae0dbd9b5195e56c3c2aed10163523754}{U\+A\+R\+T\+\_\+\+M\+O\+D\+E\+\_\+\+C\+A\+L\+L\+B\+A\+CK}}), Task
+\end{DoxyPrecond}
+
+\begin{DoxyParams}{Parameters}
+{\em handle} & A U\+A\+RT handle returned from \mbox{\hyperlink{_u_a_r_t_c_c26_x_x_8c_af5b08ff04ba86a0e1e8b9dd676c61faf}{U\+A\+R\+T\+C\+C26\+X\+X\+\_\+open()}}\\
+\hline
+{\em $\ast$buffer} & Pointer to read buffer\\
+\hline
+{\em size} & Number of bytes to read. If \mbox{\hyperlink{group___u_a_r_t___c_m_d_ga90f59d674fd3b290c3dd711128413014}{U\+A\+R\+T\+C\+C26\+X\+X\+\_\+\+C\+M\+D\+\_\+\+R\+E\+T\+U\+R\+N\+\_\+\+P\+A\+R\+T\+I\+A\+L\+\_\+\+E\+N\+A\+B\+LE}} has been set, the read will return if the reception is inactive for a 32-\/bit period (i.\+e. before all bytes are received).\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Number of samples read
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{_u_a_r_t_c_c26_x_x_8c_af5b08ff04ba86a0e1e8b9dd676c61faf}{U\+A\+R\+T\+C\+C26\+X\+X\+\_\+open()}}, \mbox{\hyperlink{_u_a_r_t_c_c26_x_x_8c_a0a316cb0a1db2e6ae67071454ec5d205}{U\+A\+R\+T\+C\+C26\+X\+X\+\_\+read\+Cancel()}} 
+\end{DoxySeeAlso}
+
+
+Definition at line 1195 of file U\+A\+R\+T\+C\+C26\+X\+X.\+c.
+
+\mbox{\Hypertarget{_u_a_r_t_c_c26_x_x_8c_a0a316cb0a1db2e6ae67071454ec5d205}\label{_u_a_r_t_c_c26_x_x_8c_a0a316cb0a1db2e6ae67071454ec5d205}} 
+\index{UARTCC26XX.c@{UARTCC26XX.c}!UARTCC26XX\_readCancel@{UARTCC26XX\_readCancel}}
+\index{UARTCC26XX\_readCancel@{UARTCC26XX\_readCancel}!UARTCC26XX.c@{UARTCC26XX.c}}
+\doxysubsubsection{\texorpdfstring{UARTCC26XX\_readCancel()}{UARTCC26XX\_readCancel()}}
+{\footnotesize\ttfamily void U\+A\+R\+T\+C\+C26\+X\+X\+\_\+read\+Cancel (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_u_a_r_t_8h_a13cc669fae768d8212e6491ce71b28af}{U\+A\+R\+T\+\_\+\+Handle}}}]{handle }\end{DoxyParamCaption})}
+
+
+
+Function that cancel U\+A\+RT read. Will disable all RX interrupt, disable RX and allow standby. Should also be called after a succeeding U\+A\+RT read if no more bytes are expected and standby is wanted. 
+
+\begin{DoxyPrecond}{Precondition}
+\mbox{\hyperlink{_u_a_r_t_c_c26_x_x_8c_af5b08ff04ba86a0e1e8b9dd676c61faf}{U\+A\+R\+T\+C\+C26\+X\+X\+\_\+open()}} has to be called first. Calling context\+: Task
+\end{DoxyPrecond}
+
+\begin{DoxyParams}{Parameters}
+{\em handle} & The U\+A\+R\+T\+\_\+\+Handle for ongoing write. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 1326 of file U\+A\+R\+T\+C\+C26\+X\+X.\+c.
+
+\mbox{\Hypertarget{_u_a_r_t_c_c26_x_x_8c_a0c9906b3f8203736f981e7ecb13e17b7}\label{_u_a_r_t_c_c26_x_x_8c_a0c9906b3f8203736f981e7ecb13e17b7}} 
+\index{UARTCC26XX.c@{UARTCC26XX.c}!UARTCC26XX\_readPolling@{UARTCC26XX\_readPolling}}
+\index{UARTCC26XX\_readPolling@{UARTCC26XX\_readPolling}!UARTCC26XX.c@{UARTCC26XX.c}}
+\doxysubsubsection{\texorpdfstring{UARTCC26XX\_readPolling()}{UARTCC26XX\_readPolling()}}
+{\footnotesize\ttfamily int U\+A\+R\+T\+C\+C26\+X\+X\+\_\+read\+Polling (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_u_a_r_t_8h_a13cc669fae768d8212e6491ce71b28af}{U\+A\+R\+T\+\_\+\+Handle}}}]{handle,  }\item[{void $\ast$}]{buf,  }\item[{size\+\_\+t}]{size }\end{DoxyParamCaption})}
+
+
+
+Definition at line 1309 of file U\+A\+R\+T\+C\+C26\+X\+X.\+c.
+
+\mbox{\Hypertarget{_u_a_r_t_c_c26_x_x_8c_aa4d7971adfedcd2d8aec9b4e298c3bc5}\label{_u_a_r_t_c_c26_x_x_8c_aa4d7971adfedcd2d8aec9b4e298c3bc5}} 
+\index{UARTCC26XX.c@{UARTCC26XX.c}!UARTCC26XX\_swiIntFxn@{UARTCC26XX\_swiIntFxn}}
+\index{UARTCC26XX\_swiIntFxn@{UARTCC26XX\_swiIntFxn}!UARTCC26XX.c@{UARTCC26XX.c}}
+\doxysubsubsection{\texorpdfstring{UARTCC26XX\_swiIntFxn()}{UARTCC26XX\_swiIntFxn()}}
+{\footnotesize\ttfamily void U\+A\+R\+T\+C\+C26\+X\+X\+\_\+swi\+Int\+Fxn (\begin{DoxyParamCaption}\item[{U\+Arg}]{arg0,  }\item[{U\+Arg}]{arg1 }\end{DoxyParamCaption})}
+
+
+
+Definition at line 606 of file U\+A\+R\+T\+C\+C26\+X\+X.\+c.
+
+\mbox{\Hypertarget{_u_a_r_t_c_c26_x_x_8c_a2a6805efea72cc30901593b75bc87c9f}\label{_u_a_r_t_c_c26_x_x_8c_a2a6805efea72cc30901593b75bc87c9f}} 
+\index{UARTCC26XX.c@{UARTCC26XX.c}!UARTCC26XX\_write@{UARTCC26XX\_write}}
+\index{UARTCC26XX\_write@{UARTCC26XX\_write}!UARTCC26XX.c@{UARTCC26XX.c}}
+\doxysubsubsection{\texorpdfstring{UARTCC26XX\_write()}{UARTCC26XX\_write()}}
+{\footnotesize\ttfamily int U\+A\+R\+T\+C\+C26\+X\+X\+\_\+write (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_u_a_r_t_8h_a13cc669fae768d8212e6491ce71b28af}{U\+A\+R\+T\+\_\+\+Handle}}}]{handle,  }\item[{const void $\ast$}]{buffer,  }\item[{size\+\_\+t}]{size }\end{DoxyParamCaption})}
+
+
+
+Function that writes data to a U\+A\+RT. 
+
+This function initiates an operation to write data to C\+C26\+XX U\+A\+RT controller.
+
+In \mbox{\hyperlink{_u_a_r_t_8h_a2507a620dba95cd20885c52494d19e90ae6b6bd5d2d5df859ad6724e89e605ebf}{U\+A\+R\+T\+\_\+\+M\+O\+D\+E\+\_\+\+B\+L\+O\+C\+K\+I\+NG}}, U\+A\+R\+T\+\_\+write will block task execution until all the data in buffer has been written.
+
+In \mbox{\hyperlink{_u_a_r_t_8h_a2507a620dba95cd20885c52494d19e90ae0dbd9b5195e56c3c2aed10163523754}{U\+A\+R\+T\+\_\+\+M\+O\+D\+E\+\_\+\+C\+A\+L\+L\+B\+A\+CK}}, U\+A\+R\+T\+\_\+write does not block task execution, but calls a callback function specified by write\+Callback when the data has been written.
+
+When the write function is called, TX is enabled, TX interrupt is enabled, and standby is not allowed.
+
+\begin{DoxyPrecond}{Precondition}
+\mbox{\hyperlink{_u_a_r_t_c_c26_x_x_8c_af5b08ff04ba86a0e1e8b9dd676c61faf}{U\+A\+R\+T\+C\+C26\+X\+X\+\_\+open()}} has to be called first. Calling context\+: Hwi and Swi (only if using \mbox{\hyperlink{_u_a_r_t_8h_a2507a620dba95cd20885c52494d19e90ae0dbd9b5195e56c3c2aed10163523754}{U\+A\+R\+T\+\_\+\+M\+O\+D\+E\+\_\+\+C\+A\+L\+L\+B\+A\+CK}}), Task
+\end{DoxyPrecond}
+
+\begin{DoxyParams}{Parameters}
+{\em handle} & A U\+A\+R\+T\+\_\+\+Handle returned from \mbox{\hyperlink{_u_a_r_t_c_c26_x_x_8c_af5b08ff04ba86a0e1e8b9dd676c61faf}{U\+A\+R\+T\+C\+C26\+X\+X\+\_\+open()}}\\
+\hline
+{\em buffer} & A pointer to buffer containing data to be written\\
+\hline
+{\em size} & The number of bytes in buffer that should be written onto the U\+A\+RT.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns the number of bytes that have been written to the U\+A\+RT, U\+A\+R\+T\+\_\+\+E\+R\+R\+OR on an error. 
+\end{DoxyReturn}
+
+
+Definition at line 977 of file U\+A\+R\+T\+C\+C26\+X\+X.\+c.
+
+\mbox{\Hypertarget{_u_a_r_t_c_c26_x_x_8c_a67c0d346a4359e80b8150e25ed4201c2}\label{_u_a_r_t_c_c26_x_x_8c_a67c0d346a4359e80b8150e25ed4201c2}} 
+\index{UARTCC26XX.c@{UARTCC26XX.c}!UARTCC26XX\_writeCancel@{UARTCC26XX\_writeCancel}}
+\index{UARTCC26XX\_writeCancel@{UARTCC26XX\_writeCancel}!UARTCC26XX.c@{UARTCC26XX.c}}
+\doxysubsubsection{\texorpdfstring{UARTCC26XX\_writeCancel()}{UARTCC26XX\_writeCancel()}}
+{\footnotesize\ttfamily void U\+A\+R\+T\+C\+C26\+X\+X\+\_\+write\+Cancel (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_u_a_r_t_8h_a13cc669fae768d8212e6491ce71b28af}{U\+A\+R\+T\+\_\+\+Handle}}}]{handle }\end{DoxyParamCaption})}
+
+
+
+Function that cancel U\+A\+RT write. Will disable TX interrupt, disable TX and allow standby. 
+
+\begin{DoxyPrecond}{Precondition}
+\mbox{\hyperlink{_u_a_r_t_c_c26_x_x_8c_af5b08ff04ba86a0e1e8b9dd676c61faf}{U\+A\+R\+T\+C\+C26\+X\+X\+\_\+open()}} and has to be called first. Calling context\+: Task
+\end{DoxyPrecond}
+
+\begin{DoxyParams}{Parameters}
+{\em handle} & The U\+A\+R\+T\+\_\+\+Handle for ongoing write. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 1125 of file U\+A\+R\+T\+C\+C26\+X\+X.\+c.
+
+\mbox{\Hypertarget{_u_a_r_t_c_c26_x_x_8c_aa1575d21de832f31c2081705a8f8e023}\label{_u_a_r_t_c_c26_x_x_8c_aa1575d21de832f31c2081705a8f8e023}} 
+\index{UARTCC26XX.c@{UARTCC26XX.c}!UARTCC26XX\_writePolling@{UARTCC26XX\_writePolling}}
+\index{UARTCC26XX\_writePolling@{UARTCC26XX\_writePolling}!UARTCC26XX.c@{UARTCC26XX.c}}
+\doxysubsubsection{\texorpdfstring{UARTCC26XX\_writePolling()}{UARTCC26XX\_writePolling()}}
+{\footnotesize\ttfamily int U\+A\+R\+T\+C\+C26\+X\+X\+\_\+write\+Polling (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_u_a_r_t_8h_a13cc669fae768d8212e6491ce71b28af}{U\+A\+R\+T\+\_\+\+Handle}}}]{handle,  }\item[{const void $\ast$}]{buf,  }\item[{size\+\_\+t}]{size }\end{DoxyParamCaption})}
+
+
+
+This function is N\+OT supported. 
+
+\begin{DoxyPrecond}{Precondition}
+\mbox{\hyperlink{_u_a_r_t_c_c26_x_x_8c_af5b08ff04ba86a0e1e8b9dd676c61faf}{U\+A\+R\+T\+C\+C26\+X\+X\+\_\+open()}} and has to be called first. Calling context\+: Task
+\end{DoxyPrecond}
+
+\begin{DoxyParams}{Parameters}
+{\em handle} & The U\+A\+R\+T\+\_\+\+Handle for ongoing write.\\
+\hline
+{\em buf} & A pointer to buffer containing data to be written\\
+\hline
+{\em size} & The number of bytes in buffer that should be written onto the U\+A\+RT.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Always \mbox{\hyperlink{_u_a_r_t_8h_a7e3562e7931cf51b41a32d8109072251}{U\+A\+R\+T\+\_\+\+E\+R\+R\+OR}} 
+\end{DoxyReturn}
+
+
+Definition at line 1110 of file U\+A\+R\+T\+C\+C26\+X\+X.\+c.
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{_u_a_r_t_c_c26_x_x_8c_abd5f1691efe38764c7ef10750e407e5e}\label{_u_a_r_t_c_c26_x_x_8c_abd5f1691efe38764c7ef10750e407e5e}} 
+\index{UARTCC26XX.c@{UARTCC26XX.c}!UARTCC26XX\_fxnTable@{UARTCC26XX\_fxnTable}}
+\index{UARTCC26XX\_fxnTable@{UARTCC26XX\_fxnTable}!UARTCC26XX.c@{UARTCC26XX.c}}
+\doxysubsubsection{\texorpdfstring{UARTCC26XX\_fxnTable}{UARTCC26XX\_fxnTable}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{struct_u_a_r_t___fxn_table}{U\+A\+R\+T\+\_\+\+Fxn\+Table}} U\+A\+R\+T\+C\+C26\+X\+X\+\_\+fxn\+Table}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{= \{}
+\DoxyCodeLine{    \mbox{\hyperlink{_u_a_r_t_c_c26_x_x_8c_a108d57bc509f39d8dea2cbd9744c6cd4}{UARTCC26XX\_close}},}
+\DoxyCodeLine{    \mbox{\hyperlink{_u_a_r_t_c_c26_x_x_8c_a95e05b6d510cdea7a2c755de4373d40d}{UARTCC26XX\_control}},}
+\DoxyCodeLine{    \mbox{\hyperlink{_u_a_r_t_c_c26_x_x_8c_a08b02dbf2d1252c950894adaa6d6259a}{UARTCC26XX\_init}},}
+\DoxyCodeLine{    \mbox{\hyperlink{_u_a_r_t_c_c26_x_x_8c_af5b08ff04ba86a0e1e8b9dd676c61faf}{UARTCC26XX\_open}},}
+\DoxyCodeLine{    \mbox{\hyperlink{_u_a_r_t_c_c26_x_x_8c_a4fe12ed98e759c6cc96870d67ec58cf6}{UARTCC26XX\_read}},}
+\DoxyCodeLine{    \mbox{\hyperlink{_u_a_r_t_c_c26_x_x_8c_a0c9906b3f8203736f981e7ecb13e17b7}{UARTCC26XX\_readPolling}},}
+\DoxyCodeLine{    \mbox{\hyperlink{_u_a_r_t_c_c26_x_x_8c_a0a316cb0a1db2e6ae67071454ec5d205}{UARTCC26XX\_readCancel}},}
+\DoxyCodeLine{    \mbox{\hyperlink{_u_a_r_t_c_c26_x_x_8c_a2a6805efea72cc30901593b75bc87c9f}{UARTCC26XX\_write}},}
+\DoxyCodeLine{    \mbox{\hyperlink{_u_a_r_t_c_c26_x_x_8c_aa1575d21de832f31c2081705a8f8e023}{UARTCC26XX\_writePolling}},}
+\DoxyCodeLine{    \mbox{\hyperlink{_u_a_r_t_c_c26_x_x_8c_a67c0d346a4359e80b8150e25ed4201c2}{UARTCC26XX\_writeCancel}}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+Definition at line 77 of file U\+A\+R\+T\+C\+C26\+X\+X.\+c.
+

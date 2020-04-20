@@ -1,0 +1,125 @@
+\hypertarget{struct___i_call___gap_bond__}{}\doxysection{\+\_\+\+I\+Call\+\_\+\+Gap\+Bond\+\_\+ Struct Reference}
+\label{struct___i_call___gap_bond__}\index{\_ICall\_GapBond\_@{\_ICall\_GapBond\_}}
+
+
+{\ttfamily \#include $<$icall\+\_\+apimsg.\+h$>$}
+
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{icall__apimsg_8h_afa62f50d802fab57d759c527cead246e}{I\+Call\+\_\+\+Hci\+Ext\+Cmd}} \mbox{\hyperlink{struct___i_call___gap_bond___a43fef7bf2fa0d01f45f2cafd5c04d096}{hdr}}
+\begin{DoxyCompactList}\small\item\em hdr event field must be set as I\+C\+A\+L\+L\+\_\+\+C\+M\+D\+\_\+\+E\+V\+E\+NT \end{DoxyCompactList}\item 
+uint16\+\_\+t \mbox{\hyperlink{struct___i_call___gap_bond___a48620bdffb9b58eb7a5d6dcff73fb56a}{conn\+Handle}}
+\begin{DoxyCompactList}\small\item\em connection handle \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{struct___i_call___gap_bond___ac5dfe76137f1b28558a3d821adb6bcb4}{authenticated}}
+\begin{DoxyCompactList}\small\item\em field for authentication \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{struct___i_call___gap_bond___a3cac4a3b3285c837905b8cabc8278c61}{secure\+Connections}}
+\begin{DoxyCompactList}\small\item\em field for Secure Connections. \end{DoxyCompactList}\item 
+sm\+Security\+Info\+\_\+t $\ast$ \mbox{\hyperlink{struct___i_call___gap_bond___a3cf25133d002c9cfa38e8ae8d4c24c1b}{p\+Params}}
+\begin{DoxyCompactList}\small\item\em security parameters \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{struct___i_call___gap_bond___a946acd0052d5e63f62212fafc3463af2}{start\+Encryption}}
+\begin{DoxyCompactList}\small\item\em start Encryption \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+I\+Call message containing Hci\+Ext\+Cmd hdr, connection handle and other security parameters
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{group___g_a_p___a_p_i_ga54c684222fd69ffdfed61ed57cb5e64e}{G\+A\+P\+\_\+\+Bond}} 
+\end{DoxySeeAlso}
+
+
+Definition at line 388 of file icall\+\_\+apimsg.\+h.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{struct___i_call___gap_bond___ac5dfe76137f1b28558a3d821adb6bcb4}\label{struct___i_call___gap_bond___ac5dfe76137f1b28558a3d821adb6bcb4}} 
+\index{\_ICall\_GapBond\_@{\_ICall\_GapBond\_}!authenticated@{authenticated}}
+\index{authenticated@{authenticated}!\_ICall\_GapBond\_@{\_ICall\_GapBond\_}}
+\doxysubsubsection{\texorpdfstring{authenticated}{authenticated}}
+{\footnotesize\ttfamily uint8\+\_\+t \+\_\+\+I\+Call\+\_\+\+Gap\+Bond\+\_\+\+::authenticated}
+
+
+
+field for authentication 
+
+
+
+Definition at line 392 of file icall\+\_\+apimsg.\+h.
+
+\mbox{\Hypertarget{struct___i_call___gap_bond___a48620bdffb9b58eb7a5d6dcff73fb56a}\label{struct___i_call___gap_bond___a48620bdffb9b58eb7a5d6dcff73fb56a}} 
+\index{\_ICall\_GapBond\_@{\_ICall\_GapBond\_}!connHandle@{connHandle}}
+\index{connHandle@{connHandle}!\_ICall\_GapBond\_@{\_ICall\_GapBond\_}}
+\doxysubsubsection{\texorpdfstring{connHandle}{connHandle}}
+{\footnotesize\ttfamily uint16\+\_\+t \+\_\+\+I\+Call\+\_\+\+Gap\+Bond\+\_\+\+::conn\+Handle}
+
+
+
+connection handle 
+
+
+
+Definition at line 391 of file icall\+\_\+apimsg.\+h.
+
+\mbox{\Hypertarget{struct___i_call___gap_bond___a43fef7bf2fa0d01f45f2cafd5c04d096}\label{struct___i_call___gap_bond___a43fef7bf2fa0d01f45f2cafd5c04d096}} 
+\index{\_ICall\_GapBond\_@{\_ICall\_GapBond\_}!hdr@{hdr}}
+\index{hdr@{hdr}!\_ICall\_GapBond\_@{\_ICall\_GapBond\_}}
+\doxysubsubsection{\texorpdfstring{hdr}{hdr}}
+{\footnotesize\ttfamily \mbox{\hyperlink{icall__apimsg_8h_afa62f50d802fab57d759c527cead246e}{I\+Call\+\_\+\+Hci\+Ext\+Cmd}} \+\_\+\+I\+Call\+\_\+\+Gap\+Bond\+\_\+\+::hdr}
+
+
+
+hdr event field must be set as I\+C\+A\+L\+L\+\_\+\+C\+M\+D\+\_\+\+E\+V\+E\+NT 
+
+
+
+Definition at line 390 of file icall\+\_\+apimsg.\+h.
+
+\mbox{\Hypertarget{struct___i_call___gap_bond___a3cf25133d002c9cfa38e8ae8d4c24c1b}\label{struct___i_call___gap_bond___a3cf25133d002c9cfa38e8ae8d4c24c1b}} 
+\index{\_ICall\_GapBond\_@{\_ICall\_GapBond\_}!pParams@{pParams}}
+\index{pParams@{pParams}!\_ICall\_GapBond\_@{\_ICall\_GapBond\_}}
+\doxysubsubsection{\texorpdfstring{pParams}{pParams}}
+{\footnotesize\ttfamily sm\+Security\+Info\+\_\+t$\ast$ \+\_\+\+I\+Call\+\_\+\+Gap\+Bond\+\_\+\+::p\+Params}
+
+
+
+security parameters 
+
+
+
+Definition at line 394 of file icall\+\_\+apimsg.\+h.
+
+\mbox{\Hypertarget{struct___i_call___gap_bond___a3cac4a3b3285c837905b8cabc8278c61}\label{struct___i_call___gap_bond___a3cac4a3b3285c837905b8cabc8278c61}} 
+\index{\_ICall\_GapBond\_@{\_ICall\_GapBond\_}!secureConnections@{secureConnections}}
+\index{secureConnections@{secureConnections}!\_ICall\_GapBond\_@{\_ICall\_GapBond\_}}
+\doxysubsubsection{\texorpdfstring{secureConnections}{secureConnections}}
+{\footnotesize\ttfamily uint8\+\_\+t \+\_\+\+I\+Call\+\_\+\+Gap\+Bond\+\_\+\+::secure\+Connections}
+
+
+
+field for Secure Connections. 
+
+
+
+Definition at line 393 of file icall\+\_\+apimsg.\+h.
+
+\mbox{\Hypertarget{struct___i_call___gap_bond___a946acd0052d5e63f62212fafc3463af2}\label{struct___i_call___gap_bond___a946acd0052d5e63f62212fafc3463af2}} 
+\index{\_ICall\_GapBond\_@{\_ICall\_GapBond\_}!startEncryption@{startEncryption}}
+\index{startEncryption@{startEncryption}!\_ICall\_GapBond\_@{\_ICall\_GapBond\_}}
+\doxysubsubsection{\texorpdfstring{startEncryption}{startEncryption}}
+{\footnotesize\ttfamily uint8\+\_\+t \+\_\+\+I\+Call\+\_\+\+Gap\+Bond\+\_\+\+::start\+Encryption}
+
+
+
+start Encryption 
+
+
+
+Definition at line 395 of file icall\+\_\+apimsg.\+h.
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+I\+Call\+B\+L\+E/\mbox{\hyperlink{icall__apimsg_8h}{icall\+\_\+apimsg.\+h}}\end{DoxyCompactItemize}

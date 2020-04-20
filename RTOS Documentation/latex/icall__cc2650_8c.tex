@@ -1,0 +1,177 @@
+\hypertarget{icall__cc2650_8c}{}\doxysection{I\+Call/icall\+\_\+cc2650.c File Reference}
+\label{icall__cc2650_8c}\index{ICall/icall\_cc2650.c@{ICall/icall\_cc2650.c}}
+{\ttfamily \#include \char`\"{}icall\+\_\+platform.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$icall\+\_\+cc26xx\+\_\+defs.\+h$>$}\newline
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include $<$ti/drivers/\+Power.\+h$>$}\newline
+{\ttfamily \#include $<$ti/drivers/power/\+Power\+C\+C26\+X\+X.\+h$>$}\newline
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{icall__cc2650_8c_a9710e4f5c6e2380ebc4a8a0e07bdfa19}{I\+C\+A\+L\+L\+C\+C2650\+\_\+\+P\+W\+R\+\_\+\+C\+F\+G\+\_\+\+D\+\_\+\+O\+F\+F\+S\+ET}}~5
+\item 
+\#define \mbox{\hyperlink{icall__cc2650_8c_af910030ed97ef832c7a74b136e62785e}{I\+C\+A\+L\+L\+C\+C2650\+\_\+\+P\+W\+R\+\_\+\+C\+F\+G\+\_\+\+N\+M\+A\+SK}}~0xff000000l
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef uint\+\_\+least32\+\_\+t \mbox{\hyperlink{icall__cc2650_8c_aef0840809c892e8ac50795527e13898a}{I\+Call\+Platform\+\_\+pwr\+Bitmap\+\_\+t}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{icall__cc2650_8c_ac415ca8b39f16660c12bc636ed429b6b}{Power\+C\+C26\+X\+X\+\_\+is\+Stable\+X\+O\+S\+C\+\_\+\+HF}} (void)
+\item 
+\mbox{\hyperlink{icall_8h_aa1e75d643f27bb9a660eaa51171b4ebb}{I\+Call\+\_\+\+Errno}} \mbox{\hyperlink{icall__cc2650_8c_a2439451ff775428f3868a7e7fb8f068a}{I\+Call\+Platform\+\_\+pwr\+Upd\+Activity\+Counter}} (\mbox{\hyperlink{icall_8h_aa9d097ed39c4e0ff2abf0f24bad002e8}{I\+Call\+\_\+\+Pwr\+Upd\+Activity\+Counter\+Args}} $\ast$args)
+\item 
+\mbox{\hyperlink{icall_8h_aa1e75d643f27bb9a660eaa51171b4ebb}{I\+Call\+\_\+\+Errno}} \mbox{\hyperlink{icall__cc2650_8c_aa497074ce1d85f269f7a3acb166c3d08}{I\+Call\+Platform\+\_\+pwr\+Config\+A\+C\+Action}} (\mbox{\hyperlink{icall_8h_a0c1d1f78047c381c5eb94286884995d9}{I\+Call\+\_\+\+Pwr\+Bitmap\+Args}} $\ast$args)
+\item 
+\mbox{\hyperlink{icall_8h_aa1e75d643f27bb9a660eaa51171b4ebb}{I\+Call\+\_\+\+Errno}} \mbox{\hyperlink{icall__cc2650_8c_ad9ca609330eb5654175cab1368e8a8d7}{I\+Call\+Platform\+\_\+pwr\+Require}} (\mbox{\hyperlink{icall_8h_a0c1d1f78047c381c5eb94286884995d9}{I\+Call\+\_\+\+Pwr\+Bitmap\+Args}} $\ast$args)
+\item 
+\mbox{\hyperlink{icall_8h_aa1e75d643f27bb9a660eaa51171b4ebb}{I\+Call\+\_\+\+Errno}} \mbox{\hyperlink{icall__cc2650_8c_a756116ca84a1b26cb288319d52bc8e56}{I\+Call\+Platform\+\_\+pwr\+Dispense}} (\mbox{\hyperlink{icall_8h_a0c1d1f78047c381c5eb94286884995d9}{I\+Call\+\_\+\+Pwr\+Bitmap\+Args}} $\ast$args)
+\item 
+\mbox{\hyperlink{icall_8h_aa1e75d643f27bb9a660eaa51171b4ebb}{I\+Call\+\_\+\+Errno}} \mbox{\hyperlink{icall__cc2650_8c_a80634d8e52dd5414a08abc67d4900f1a}{I\+Call\+Platform\+\_\+pwr\+Register\+Notify}} (\mbox{\hyperlink{icall_8h_a41fdea0844929909b859f3a3a3a03755}{I\+Call\+\_\+\+Pwr\+Register\+Notify\+Args}} $\ast$args)
+\item 
+\mbox{\hyperlink{icall_8h_aa1e75d643f27bb9a660eaa51171b4ebb}{I\+Call\+\_\+\+Errno}} \mbox{\hyperlink{icall__cc2650_8c_ab41b6ccf822fee21d107b9340945fdd0}{I\+Call\+Platform\+\_\+pwr\+Is\+Stable\+X\+O\+S\+C\+HF}} (\mbox{\hyperlink{icall_8h_ae76eff983ceeb37431dbaca9ac8676dc}{I\+Call\+\_\+\+Get\+Bool\+Args}} $\ast$args)
+\item 
+\mbox{\hyperlink{icall_8h_aa1e75d643f27bb9a660eaa51171b4ebb}{I\+Call\+\_\+\+Errno}} \mbox{\hyperlink{icall__cc2650_8c_aec7f5bc44dbdc98e7cc4efd562ef6f45}{I\+Call\+Platform\+\_\+pwr\+Switch\+X\+O\+S\+C\+HF}} (\mbox{\hyperlink{icall_8h_a1fefe5653d98fdef5c119ec70ae661b1}{I\+Call\+\_\+\+Func\+Args\+Hdr}} $\ast$args)
+\item 
+\mbox{\hyperlink{icall_8h_aa1e75d643f27bb9a660eaa51171b4ebb}{I\+Call\+\_\+\+Errno}} \mbox{\hyperlink{icall__cc2650_8c_a48efa771d298a4c1de702ad8b21d7e9b}{I\+Call\+Platform\+\_\+pwr\+Get\+Transition\+State}} (\mbox{\hyperlink{icall_8h_a89ea6364628c774fce9b66cd9cdfae30}{I\+Call\+\_\+\+Pwr\+Get\+Transition\+State\+Args}} $\ast$args)
+\item 
+\mbox{\hyperlink{icall_8h_aa1e75d643f27bb9a660eaa51171b4ebb}{I\+Call\+\_\+\+Errno}} \mbox{\hyperlink{icall__cc2650_8c_ac6e8641ce180477bebbabb60b75c362b}{I\+Call\+Platform\+\_\+pwr\+Get\+X\+O\+S\+C\+Startup\+Time}} (\mbox{\hyperlink{icall_8h_a9dac419660d6cef7cac3470a2be3ca4a}{I\+Call\+\_\+\+Pwr\+Get\+X\+O\+S\+C\+Startup\+Time\+Args}} $\ast$args)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{icall__cc2650_8c_a9710e4f5c6e2380ebc4a8a0e07bdfa19}\label{icall__cc2650_8c_a9710e4f5c6e2380ebc4a8a0e07bdfa19}} 
+\index{icall\_cc2650.c@{icall\_cc2650.c}!ICALLCC2650\_PWR\_CFG\_D\_OFFSET@{ICALLCC2650\_PWR\_CFG\_D\_OFFSET}}
+\index{ICALLCC2650\_PWR\_CFG\_D\_OFFSET@{ICALLCC2650\_PWR\_CFG\_D\_OFFSET}!icall\_cc2650.c@{icall\_cc2650.c}}
+\doxysubsubsection{\texorpdfstring{ICALLCC2650\_PWR\_CFG\_D\_OFFSET}{ICALLCC2650\_PWR\_CFG\_D\_OFFSET}}
+{\footnotesize\ttfamily \#define I\+C\+A\+L\+L\+C\+C2650\+\_\+\+P\+W\+R\+\_\+\+C\+F\+G\+\_\+\+D\+\_\+\+O\+F\+F\+S\+ET~5}
+
+
+
+Definition at line 68 of file icall\+\_\+cc2650.\+c.
+
+\mbox{\Hypertarget{icall__cc2650_8c_af910030ed97ef832c7a74b136e62785e}\label{icall__cc2650_8c_af910030ed97ef832c7a74b136e62785e}} 
+\index{icall\_cc2650.c@{icall\_cc2650.c}!ICALLCC2650\_PWR\_CFG\_NMASK@{ICALLCC2650\_PWR\_CFG\_NMASK}}
+\index{ICALLCC2650\_PWR\_CFG\_NMASK@{ICALLCC2650\_PWR\_CFG\_NMASK}!icall\_cc2650.c@{icall\_cc2650.c}}
+\doxysubsubsection{\texorpdfstring{ICALLCC2650\_PWR\_CFG\_NMASK}{ICALLCC2650\_PWR\_CFG\_NMASK}}
+{\footnotesize\ttfamily \#define I\+C\+A\+L\+L\+C\+C2650\+\_\+\+P\+W\+R\+\_\+\+C\+F\+G\+\_\+\+N\+M\+A\+SK~0xff000000l}
+
+
+
+Definition at line 76 of file icall\+\_\+cc2650.\+c.
+
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{icall__cc2650_8c_aef0840809c892e8ac50795527e13898a}\label{icall__cc2650_8c_aef0840809c892e8ac50795527e13898a}} 
+\index{icall\_cc2650.c@{icall\_cc2650.c}!ICallPlatform\_pwrBitmap\_t@{ICallPlatform\_pwrBitmap\_t}}
+\index{ICallPlatform\_pwrBitmap\_t@{ICallPlatform\_pwrBitmap\_t}!icall\_cc2650.c@{icall\_cc2650.c}}
+\doxysubsubsection{\texorpdfstring{ICallPlatform\_pwrBitmap\_t}{ICallPlatform\_pwrBitmap\_t}}
+{\footnotesize\ttfamily typedef uint\+\_\+least32\+\_\+t \mbox{\hyperlink{icall__cc2650_8c_aef0840809c892e8ac50795527e13898a}{I\+Call\+Platform\+\_\+pwr\+Bitmap\+\_\+t}}}
+
+
+
+Definition at line 84 of file icall\+\_\+cc2650.\+c.
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{icall__cc2650_8c_aa497074ce1d85f269f7a3acb166c3d08}\label{icall__cc2650_8c_aa497074ce1d85f269f7a3acb166c3d08}} 
+\index{icall\_cc2650.c@{icall\_cc2650.c}!ICallPlatform\_pwrConfigACAction@{ICallPlatform\_pwrConfigACAction}}
+\index{ICallPlatform\_pwrConfigACAction@{ICallPlatform\_pwrConfigACAction}!icall\_cc2650.c@{icall\_cc2650.c}}
+\doxysubsubsection{\texorpdfstring{ICallPlatform\_pwrConfigACAction()}{ICallPlatform\_pwrConfigACAction()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{icall_8h_aa1e75d643f27bb9a660eaa51171b4ebb}{I\+Call\+\_\+\+Errno}} I\+Call\+Platform\+\_\+pwr\+Config\+A\+C\+Action (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{icall_8h_a0c1d1f78047c381c5eb94286884995d9}{I\+Call\+\_\+\+Pwr\+Bitmap\+Args}} $\ast$}]{args }\end{DoxyParamCaption})}
+
+
+
+Definition at line 233 of file icall\+\_\+cc2650.\+c.
+
+\mbox{\Hypertarget{icall__cc2650_8c_a756116ca84a1b26cb288319d52bc8e56}\label{icall__cc2650_8c_a756116ca84a1b26cb288319d52bc8e56}} 
+\index{icall\_cc2650.c@{icall\_cc2650.c}!ICallPlatform\_pwrDispense@{ICallPlatform\_pwrDispense}}
+\index{ICallPlatform\_pwrDispense@{ICallPlatform\_pwrDispense}!icall\_cc2650.c@{icall\_cc2650.c}}
+\doxysubsubsection{\texorpdfstring{ICallPlatform\_pwrDispense()}{ICallPlatform\_pwrDispense()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{icall_8h_aa1e75d643f27bb9a660eaa51171b4ebb}{I\+Call\+\_\+\+Errno}} I\+Call\+Platform\+\_\+pwr\+Dispense (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{icall_8h_a0c1d1f78047c381c5eb94286884995d9}{I\+Call\+\_\+\+Pwr\+Bitmap\+Args}} $\ast$}]{args }\end{DoxyParamCaption})}
+
+
+
+Definition at line 273 of file icall\+\_\+cc2650.\+c.
+
+\mbox{\Hypertarget{icall__cc2650_8c_a48efa771d298a4c1de702ad8b21d7e9b}\label{icall__cc2650_8c_a48efa771d298a4c1de702ad8b21d7e9b}} 
+\index{icall\_cc2650.c@{icall\_cc2650.c}!ICallPlatform\_pwrGetTransitionState@{ICallPlatform\_pwrGetTransitionState}}
+\index{ICallPlatform\_pwrGetTransitionState@{ICallPlatform\_pwrGetTransitionState}!icall\_cc2650.c@{icall\_cc2650.c}}
+\doxysubsubsection{\texorpdfstring{ICallPlatform\_pwrGetTransitionState()}{ICallPlatform\_pwrGetTransitionState()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{icall_8h_aa1e75d643f27bb9a660eaa51171b4ebb}{I\+Call\+\_\+\+Errno}} I\+Call\+Platform\+\_\+pwr\+Get\+Transition\+State (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{icall_8h_a89ea6364628c774fce9b66cd9cdfae30}{I\+Call\+\_\+\+Pwr\+Get\+Transition\+State\+Args}} $\ast$}]{args }\end{DoxyParamCaption})}
+
+
+
+Definition at line 341 of file icall\+\_\+cc2650.\+c.
+
+\mbox{\Hypertarget{icall__cc2650_8c_ac6e8641ce180477bebbabb60b75c362b}\label{icall__cc2650_8c_ac6e8641ce180477bebbabb60b75c362b}} 
+\index{icall\_cc2650.c@{icall\_cc2650.c}!ICallPlatform\_pwrGetXOSCStartupTime@{ICallPlatform\_pwrGetXOSCStartupTime}}
+\index{ICallPlatform\_pwrGetXOSCStartupTime@{ICallPlatform\_pwrGetXOSCStartupTime}!icall\_cc2650.c@{icall\_cc2650.c}}
+\doxysubsubsection{\texorpdfstring{ICallPlatform\_pwrGetXOSCStartupTime()}{ICallPlatform\_pwrGetXOSCStartupTime()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{icall_8h_aa1e75d643f27bb9a660eaa51171b4ebb}{I\+Call\+\_\+\+Errno}} I\+Call\+Platform\+\_\+pwr\+Get\+X\+O\+S\+C\+Startup\+Time (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{icall_8h_a9dac419660d6cef7cac3470a2be3ca4a}{I\+Call\+\_\+\+Pwr\+Get\+X\+O\+S\+C\+Startup\+Time\+Args}} $\ast$}]{args }\end{DoxyParamCaption})}
+
+
+
+Definition at line 349 of file icall\+\_\+cc2650.\+c.
+
+\mbox{\Hypertarget{icall__cc2650_8c_ab41b6ccf822fee21d107b9340945fdd0}\label{icall__cc2650_8c_ab41b6ccf822fee21d107b9340945fdd0}} 
+\index{icall\_cc2650.c@{icall\_cc2650.c}!ICallPlatform\_pwrIsStableXOSCHF@{ICallPlatform\_pwrIsStableXOSCHF}}
+\index{ICallPlatform\_pwrIsStableXOSCHF@{ICallPlatform\_pwrIsStableXOSCHF}!icall\_cc2650.c@{icall\_cc2650.c}}
+\doxysubsubsection{\texorpdfstring{ICallPlatform\_pwrIsStableXOSCHF()}{ICallPlatform\_pwrIsStableXOSCHF()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{icall_8h_aa1e75d643f27bb9a660eaa51171b4ebb}{I\+Call\+\_\+\+Errno}} I\+Call\+Platform\+\_\+pwr\+Is\+Stable\+X\+O\+S\+C\+HF (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{icall_8h_ae76eff983ceeb37431dbaca9ac8676dc}{I\+Call\+\_\+\+Get\+Bool\+Args}} $\ast$}]{args }\end{DoxyParamCaption})}
+
+
+
+Definition at line 325 of file icall\+\_\+cc2650.\+c.
+
+\mbox{\Hypertarget{icall__cc2650_8c_a80634d8e52dd5414a08abc67d4900f1a}\label{icall__cc2650_8c_a80634d8e52dd5414a08abc67d4900f1a}} 
+\index{icall\_cc2650.c@{icall\_cc2650.c}!ICallPlatform\_pwrRegisterNotify@{ICallPlatform\_pwrRegisterNotify}}
+\index{ICallPlatform\_pwrRegisterNotify@{ICallPlatform\_pwrRegisterNotify}!icall\_cc2650.c@{icall\_cc2650.c}}
+\doxysubsubsection{\texorpdfstring{ICallPlatform\_pwrRegisterNotify()}{ICallPlatform\_pwrRegisterNotify()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{icall_8h_aa1e75d643f27bb9a660eaa51171b4ebb}{I\+Call\+\_\+\+Errno}} I\+Call\+Platform\+\_\+pwr\+Register\+Notify (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{icall_8h_a41fdea0844929909b859f3a3a3a03755}{I\+Call\+\_\+\+Pwr\+Register\+Notify\+Args}} $\ast$}]{args }\end{DoxyParamCaption})}
+
+
+
+Definition at line 287 of file icall\+\_\+cc2650.\+c.
+
+\mbox{\Hypertarget{icall__cc2650_8c_ad9ca609330eb5654175cab1368e8a8d7}\label{icall__cc2650_8c_ad9ca609330eb5654175cab1368e8a8d7}} 
+\index{icall\_cc2650.c@{icall\_cc2650.c}!ICallPlatform\_pwrRequire@{ICallPlatform\_pwrRequire}}
+\index{ICallPlatform\_pwrRequire@{ICallPlatform\_pwrRequire}!icall\_cc2650.c@{icall\_cc2650.c}}
+\doxysubsubsection{\texorpdfstring{ICallPlatform\_pwrRequire()}{ICallPlatform\_pwrRequire()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{icall_8h_aa1e75d643f27bb9a660eaa51171b4ebb}{I\+Call\+\_\+\+Errno}} I\+Call\+Platform\+\_\+pwr\+Require (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{icall_8h_a0c1d1f78047c381c5eb94286884995d9}{I\+Call\+\_\+\+Pwr\+Bitmap\+Args}} $\ast$}]{args }\end{DoxyParamCaption})}
+
+
+
+Definition at line 259 of file icall\+\_\+cc2650.\+c.
+
+\mbox{\Hypertarget{icall__cc2650_8c_aec7f5bc44dbdc98e7cc4efd562ef6f45}\label{icall__cc2650_8c_aec7f5bc44dbdc98e7cc4efd562ef6f45}} 
+\index{icall\_cc2650.c@{icall\_cc2650.c}!ICallPlatform\_pwrSwitchXOSCHF@{ICallPlatform\_pwrSwitchXOSCHF}}
+\index{ICallPlatform\_pwrSwitchXOSCHF@{ICallPlatform\_pwrSwitchXOSCHF}!icall\_cc2650.c@{icall\_cc2650.c}}
+\doxysubsubsection{\texorpdfstring{ICallPlatform\_pwrSwitchXOSCHF()}{ICallPlatform\_pwrSwitchXOSCHF()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{icall_8h_aa1e75d643f27bb9a660eaa51171b4ebb}{I\+Call\+\_\+\+Errno}} I\+Call\+Platform\+\_\+pwr\+Switch\+X\+O\+S\+C\+HF (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{icall_8h_a1fefe5653d98fdef5c119ec70ae661b1}{I\+Call\+\_\+\+Func\+Args\+Hdr}} $\ast$}]{args }\end{DoxyParamCaption})}
+
+
+
+Definition at line 333 of file icall\+\_\+cc2650.\+c.
+
+\mbox{\Hypertarget{icall__cc2650_8c_a2439451ff775428f3868a7e7fb8f068a}\label{icall__cc2650_8c_a2439451ff775428f3868a7e7fb8f068a}} 
+\index{icall\_cc2650.c@{icall\_cc2650.c}!ICallPlatform\_pwrUpdActivityCounter@{ICallPlatform\_pwrUpdActivityCounter}}
+\index{ICallPlatform\_pwrUpdActivityCounter@{ICallPlatform\_pwrUpdActivityCounter}!icall\_cc2650.c@{icall\_cc2650.c}}
+\doxysubsubsection{\texorpdfstring{ICallPlatform\_pwrUpdActivityCounter()}{ICallPlatform\_pwrUpdActivityCounter()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{icall_8h_aa1e75d643f27bb9a660eaa51171b4ebb}{I\+Call\+\_\+\+Errno}} I\+Call\+Platform\+\_\+pwr\+Upd\+Activity\+Counter (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{icall_8h_aa9d097ed39c4e0ff2abf0f24bad002e8}{I\+Call\+\_\+\+Pwr\+Upd\+Activity\+Counter\+Args}} $\ast$}]{args }\end{DoxyParamCaption})}
+
+
+
+Definition at line 182 of file icall\+\_\+cc2650.\+c.
+
+\mbox{\Hypertarget{icall__cc2650_8c_ac415ca8b39f16660c12bc636ed429b6b}\label{icall__cc2650_8c_ac415ca8b39f16660c12bc636ed429b6b}} 
+\index{icall\_cc2650.c@{icall\_cc2650.c}!PowerCC26XX\_isStableXOSC\_HF@{PowerCC26XX\_isStableXOSC\_HF}}
+\index{PowerCC26XX\_isStableXOSC\_HF@{PowerCC26XX\_isStableXOSC\_HF}!icall\_cc2650.c@{icall\_cc2650.c}}
+\doxysubsubsection{\texorpdfstring{PowerCC26XX\_isStableXOSC\_HF()}{PowerCC26XX\_isStableXOSC\_HF()}}
+{\footnotesize\ttfamily bool Power\+C\+C26\+X\+X\+\_\+is\+Stable\+X\+O\+S\+C\+\_\+\+HF (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+

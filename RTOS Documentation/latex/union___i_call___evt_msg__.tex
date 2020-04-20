@@ -1,0 +1,88 @@
+\hypertarget{union___i_call___evt_msg__}{}\doxysection{\+\_\+\+I\+Call\+\_\+\+Evt\+Msg\+\_\+ Union Reference}
+\label{union___i_call___evt_msg__}\index{\_ICall\_EvtMsg\_@{\_ICall\_EvtMsg\_}}
+
+
+{\ttfamily \#include $<$icall\+\_\+apimsg.\+h$>$}
+
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{icall__apimsg_8h_a92c1ce232a1d64cf89259e48fa114f9a}{I\+Call\+\_\+\+Hdr}} \mbox{\hyperlink{union___i_call___evt_msg___af4d6bd836b4f3fd411b68728d0c2aa9c}{hdr}}
+\begin{DoxyCompactList}\small\item\em message header \end{DoxyCompactList}\item 
+\mbox{\hyperlink{icall__apimsg_8h_a8431813ff38e83dcecdf8b9181ff89b6}{I\+Call\+\_\+\+Hci\+Ext\+Evt}} \mbox{\hyperlink{union___i_call___evt_msg___aa3ce5596c230542d29768413f47b42a5}{hci\+Ext\+Evt}}
+\begin{DoxyCompactList}\small\item\em H\+CI E\+XT C\+MD event message header. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{icall__apimsg_8h_a1a491a06df782b6c52f3a1e2468e979c}{I\+Call\+\_\+\+Gap\+Cmd\+Status}} \mbox{\hyperlink{union___i_call___evt_msg___aaa6d74f7f8438b388383eef0620eee33}{gap\+Cmd\+Status}}
+\begin{DoxyCompactList}\small\item\em G\+AP Command Status event. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{icall__apimsg_8h_a348a64338930af0f88ece54cd715e626}{I\+Call\+\_\+\+N\+P\+I\+Uart\+Msg}} \mbox{\hyperlink{union___i_call___evt_msg___a2df60980c3b6db7c4e0a0883f8ede6ab}{npi\+Uart\+Rx\+Buf}}
+\begin{DoxyCompactList}\small\item\em N\+PI U\+A\+RT message to app. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A union for application to be able to access a received B\+LE stack event message through, in order not to violate strict aliasing rule. 
+
+Definition at line 1141 of file icall\+\_\+apimsg.\+h.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{union___i_call___evt_msg___aaa6d74f7f8438b388383eef0620eee33}\label{union___i_call___evt_msg___aaa6d74f7f8438b388383eef0620eee33}} 
+\index{\_ICall\_EvtMsg\_@{\_ICall\_EvtMsg\_}!gapCmdStatus@{gapCmdStatus}}
+\index{gapCmdStatus@{gapCmdStatus}!\_ICall\_EvtMsg\_@{\_ICall\_EvtMsg\_}}
+\doxysubsubsection{\texorpdfstring{gapCmdStatus}{gapCmdStatus}}
+{\footnotesize\ttfamily \mbox{\hyperlink{icall__apimsg_8h_a1a491a06df782b6c52f3a1e2468e979c}{I\+Call\+\_\+\+Gap\+Cmd\+Status}} \+\_\+\+I\+Call\+\_\+\+Evt\+Msg\+\_\+\+::gap\+Cmd\+Status}
+
+
+
+G\+AP Command Status event. 
+
+
+
+Definition at line 1145 of file icall\+\_\+apimsg.\+h.
+
+\mbox{\Hypertarget{union___i_call___evt_msg___aa3ce5596c230542d29768413f47b42a5}\label{union___i_call___evt_msg___aa3ce5596c230542d29768413f47b42a5}} 
+\index{\_ICall\_EvtMsg\_@{\_ICall\_EvtMsg\_}!hciExtEvt@{hciExtEvt}}
+\index{hciExtEvt@{hciExtEvt}!\_ICall\_EvtMsg\_@{\_ICall\_EvtMsg\_}}
+\doxysubsubsection{\texorpdfstring{hciExtEvt}{hciExtEvt}}
+{\footnotesize\ttfamily \mbox{\hyperlink{icall__apimsg_8h_a8431813ff38e83dcecdf8b9181ff89b6}{I\+Call\+\_\+\+Hci\+Ext\+Evt}} \+\_\+\+I\+Call\+\_\+\+Evt\+Msg\+\_\+\+::hci\+Ext\+Evt}
+
+
+
+H\+CI E\+XT C\+MD event message header. 
+
+
+
+Definition at line 1144 of file icall\+\_\+apimsg.\+h.
+
+\mbox{\Hypertarget{union___i_call___evt_msg___af4d6bd836b4f3fd411b68728d0c2aa9c}\label{union___i_call___evt_msg___af4d6bd836b4f3fd411b68728d0c2aa9c}} 
+\index{\_ICall\_EvtMsg\_@{\_ICall\_EvtMsg\_}!hdr@{hdr}}
+\index{hdr@{hdr}!\_ICall\_EvtMsg\_@{\_ICall\_EvtMsg\_}}
+\doxysubsubsection{\texorpdfstring{hdr}{hdr}}
+{\footnotesize\ttfamily \mbox{\hyperlink{icall__apimsg_8h_a92c1ce232a1d64cf89259e48fa114f9a}{I\+Call\+\_\+\+Hdr}} \+\_\+\+I\+Call\+\_\+\+Evt\+Msg\+\_\+\+::hdr}
+
+
+
+message header 
+
+
+
+Definition at line 1143 of file icall\+\_\+apimsg.\+h.
+
+\mbox{\Hypertarget{union___i_call___evt_msg___a2df60980c3b6db7c4e0a0883f8ede6ab}\label{union___i_call___evt_msg___a2df60980c3b6db7c4e0a0883f8ede6ab}} 
+\index{\_ICall\_EvtMsg\_@{\_ICall\_EvtMsg\_}!npiUartRxBuf@{npiUartRxBuf}}
+\index{npiUartRxBuf@{npiUartRxBuf}!\_ICall\_EvtMsg\_@{\_ICall\_EvtMsg\_}}
+\doxysubsubsection{\texorpdfstring{npiUartRxBuf}{npiUartRxBuf}}
+{\footnotesize\ttfamily \mbox{\hyperlink{icall__apimsg_8h_a348a64338930af0f88ece54cd715e626}{I\+Call\+\_\+\+N\+P\+I\+Uart\+Msg}} \+\_\+\+I\+Call\+\_\+\+Evt\+Msg\+\_\+\+::npi\+Uart\+Rx\+Buf}
+
+
+
+N\+PI U\+A\+RT message to app. 
+
+
+
+Definition at line 1146 of file icall\+\_\+apimsg.\+h.
+
+
+
+The documentation for this union was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+I\+Call\+B\+L\+E/\mbox{\hyperlink{icall__apimsg_8h}{icall\+\_\+apimsg.\+h}}\end{DoxyCompactItemize}

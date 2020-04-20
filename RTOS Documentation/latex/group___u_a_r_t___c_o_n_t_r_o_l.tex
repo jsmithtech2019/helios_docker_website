@@ -1,0 +1,64 @@
+\hypertarget{group___u_a_r_t___c_o_n_t_r_o_l}{}\doxysection{U\+A\+R\+T\+\_\+control command and status codes}
+\label{group___u_a_r_t___c_o_n_t_r_o_l}\index{UART\_control command and status codes@{UART\_control command and status codes}}
+
+
+These U\+A\+RT macros are reservations for \mbox{\hyperlink{_u_a_r_t_8h}{U\+A\+R\+T.\+h}}.  
+
+
+\doxysubsection*{Modules}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{group___u_a_r_t___s_t_a_t_u_s}{Status Codes}}
+\begin{DoxyCompactList}\small\item\em U\+A\+R\+T\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+$\ast$ macros are general status codes returned by \mbox{\hyperlink{_u_a_r_t_8h_a9de3c26cfe4ce6b7f350a6ea6e16801d}{U\+A\+R\+T\+\_\+control()}} \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group___u_a_r_t___c_m_d}{Command Codes}}
+\begin{DoxyCompactList}\small\item\em U\+A\+R\+T\+\_\+\+C\+M\+D\+\_\+$\ast$ macros are general command codes for \mbox{\hyperlink{_u_a_r_t_8h_a9de3c26cfe4ce6b7f350a6ea6e16801d}{U\+A\+R\+T\+\_\+control()}}. Not all U\+A\+RT driver implementations support these command codes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group___u_a_r_t___c_o_n_t_r_o_l_ga0f5a809e0884da33fef102236eb51644}{U\+A\+R\+T\+\_\+\+C\+M\+D\+\_\+\+R\+E\+S\+E\+R\+V\+ED}}~32
+\item 
+\#define \mbox{\hyperlink{group___u_a_r_t___c_o_n_t_r_o_l_ga8f35027907fbab6a9ee302d2ee52a879}{U\+A\+R\+T\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+R\+E\+S\+E\+R\+V\+ED}}~-\/32
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+These U\+A\+RT macros are reservations for \mbox{\hyperlink{_u_a_r_t_8h}{U\+A\+R\+T.\+h}}. 
+
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{group___u_a_r_t___c_o_n_t_r_o_l_ga0f5a809e0884da33fef102236eb51644}\label{group___u_a_r_t___c_o_n_t_r_o_l_ga0f5a809e0884da33fef102236eb51644}} 
+\index{UART\_control command and status codes@{UART\_control command and status codes}!UART\_CMD\_RESERVED@{UART\_CMD\_RESERVED}}
+\index{UART\_CMD\_RESERVED@{UART\_CMD\_RESERVED}!UART\_control command and status codes@{UART\_control command and status codes}}
+\doxysubsubsection{\texorpdfstring{UART\_CMD\_RESERVED}{UART\_CMD\_RESERVED}}
+{\footnotesize\ttfamily \#define U\+A\+R\+T\+\_\+\+C\+M\+D\+\_\+\+R\+E\+S\+E\+R\+V\+ED~32}
+
+Common U\+A\+R\+T\+\_\+control command code reservation offset. U\+A\+RT driver implementations should offset command codes with U\+A\+R\+T\+\_\+\+C\+M\+D\+\_\+\+R\+E\+S\+E\+R\+V\+ED growing positively
+
+Example implementation specific command codes\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define UARTXYZ\_CMD\_COMMAND0     UART\_CMD\_RESERVED + 0}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define UARTXYZ\_CMD\_COMMAND1     UART\_CMD\_RESERVED + 1}}
+\end{DoxyCode}
+ 
+
+Definition at line 170 of file U\+A\+R\+T.\+h.
+
+\mbox{\Hypertarget{group___u_a_r_t___c_o_n_t_r_o_l_ga8f35027907fbab6a9ee302d2ee52a879}\label{group___u_a_r_t___c_o_n_t_r_o_l_ga8f35027907fbab6a9ee302d2ee52a879}} 
+\index{UART\_control command and status codes@{UART\_control command and status codes}!UART\_STATUS\_RESERVED@{UART\_STATUS\_RESERVED}}
+\index{UART\_STATUS\_RESERVED@{UART\_STATUS\_RESERVED}!UART\_control command and status codes@{UART\_control command and status codes}}
+\doxysubsubsection{\texorpdfstring{UART\_STATUS\_RESERVED}{UART\_STATUS\_RESERVED}}
+{\footnotesize\ttfamily \#define U\+A\+R\+T\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+R\+E\+S\+E\+R\+V\+ED~-\/32}
+
+Common U\+A\+R\+T\+\_\+control status code reservation offset. U\+A\+RT driver implementations should offset status codes with U\+A\+R\+T\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+R\+E\+S\+E\+R\+V\+ED growing negatively.
+
+Example implementation specific status codes\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define UARTXYZ\_STATUS\_ERROR0    UART\_STATUS\_RESERVED -\/ 0}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define UARTXYZ\_STATUS\_ERROR1    UART\_STATUS\_RESERVED -\/ 1}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define UARTXYZ\_STATUS\_ERROR2    UART\_STATUS\_RESERVED -\/ 2}}
+\end{DoxyCode}
+ 
+
+Definition at line 184 of file U\+A\+R\+T.\+h.
+

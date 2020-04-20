@@ -1,0 +1,93 @@
+\hypertarget{struct___i_call___gatt_send_rsp__}{}\doxysection{\+\_\+\+I\+Call\+\_\+\+Gatt\+Send\+Rsp\+\_\+ Struct Reference}
+\label{struct___i_call___gatt_send_rsp__}\index{\_ICall\_GattSendRsp\_@{\_ICall\_GattSendRsp\_}}
+
+
+{\ttfamily \#include $<$icall\+\_\+apimsg.\+h$>$}
+
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{icall__apimsg_8h_afa62f50d802fab57d759c527cead246e}{I\+Call\+\_\+\+Hci\+Ext\+Cmd}} \mbox{\hyperlink{struct___i_call___gatt_send_rsp___a840308ad0137b1ccf36937a70add6ed8}{hdr}}
+\begin{DoxyCompactList}\small\item\em hdr event field must be set as I\+C\+A\+L\+L\+\_\+\+C\+M\+D\+\_\+\+E\+V\+E\+NT \end{DoxyCompactList}\item 
+uint16\+\_\+t \mbox{\hyperlink{struct___i_call___gatt_send_rsp___a46c9a79c12bec9a784681e9a6ac83078}{conn\+Handle}}
+\begin{DoxyCompactList}\small\item\em connection handle \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{struct___i_call___gatt_send_rsp___ae7f1334331af92a1b675c5643e7af906}{method}}
+\begin{DoxyCompactList}\small\item\em type of response message \end{DoxyCompactList}\item 
+\mbox{\hyperlink{uniongatt_msg__t}{gatt\+Msg\+\_\+t}} $\ast$ \mbox{\hyperlink{struct___i_call___gatt_send_rsp___ab7b377e0d010720b1775b4f57ebb7b8b}{p\+Rsp}}
+\begin{DoxyCompactList}\small\item\em pointer to A\+TT response \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+I\+Call message containing Hci\+Ext\+Cmd hdr, connection handle, method and A\+TT response
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{group___g_a_t_t___s_e_r_v_e_r___a_p_i_ga86fbb6053b23d4eb562109d9241ec335}{G\+A\+T\+T\+\_\+\+Send\+Rsp}} 
+\end{DoxySeeAlso}
+
+
+Definition at line 672 of file icall\+\_\+apimsg.\+h.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{struct___i_call___gatt_send_rsp___a46c9a79c12bec9a784681e9a6ac83078}\label{struct___i_call___gatt_send_rsp___a46c9a79c12bec9a784681e9a6ac83078}} 
+\index{\_ICall\_GattSendRsp\_@{\_ICall\_GattSendRsp\_}!connHandle@{connHandle}}
+\index{connHandle@{connHandle}!\_ICall\_GattSendRsp\_@{\_ICall\_GattSendRsp\_}}
+\doxysubsubsection{\texorpdfstring{connHandle}{connHandle}}
+{\footnotesize\ttfamily uint16\+\_\+t \+\_\+\+I\+Call\+\_\+\+Gatt\+Send\+Rsp\+\_\+\+::conn\+Handle}
+
+
+
+connection handle 
+
+
+
+Definition at line 675 of file icall\+\_\+apimsg.\+h.
+
+\mbox{\Hypertarget{struct___i_call___gatt_send_rsp___a840308ad0137b1ccf36937a70add6ed8}\label{struct___i_call___gatt_send_rsp___a840308ad0137b1ccf36937a70add6ed8}} 
+\index{\_ICall\_GattSendRsp\_@{\_ICall\_GattSendRsp\_}!hdr@{hdr}}
+\index{hdr@{hdr}!\_ICall\_GattSendRsp\_@{\_ICall\_GattSendRsp\_}}
+\doxysubsubsection{\texorpdfstring{hdr}{hdr}}
+{\footnotesize\ttfamily \mbox{\hyperlink{icall__apimsg_8h_afa62f50d802fab57d759c527cead246e}{I\+Call\+\_\+\+Hci\+Ext\+Cmd}} \+\_\+\+I\+Call\+\_\+\+Gatt\+Send\+Rsp\+\_\+\+::hdr}
+
+
+
+hdr event field must be set as I\+C\+A\+L\+L\+\_\+\+C\+M\+D\+\_\+\+E\+V\+E\+NT 
+
+
+
+Definition at line 674 of file icall\+\_\+apimsg.\+h.
+
+\mbox{\Hypertarget{struct___i_call___gatt_send_rsp___ae7f1334331af92a1b675c5643e7af906}\label{struct___i_call___gatt_send_rsp___ae7f1334331af92a1b675c5643e7af906}} 
+\index{\_ICall\_GattSendRsp\_@{\_ICall\_GattSendRsp\_}!method@{method}}
+\index{method@{method}!\_ICall\_GattSendRsp\_@{\_ICall\_GattSendRsp\_}}
+\doxysubsubsection{\texorpdfstring{method}{method}}
+{\footnotesize\ttfamily uint8\+\_\+t \+\_\+\+I\+Call\+\_\+\+Gatt\+Send\+Rsp\+\_\+\+::method}
+
+
+
+type of response message 
+
+
+
+Definition at line 676 of file icall\+\_\+apimsg.\+h.
+
+\mbox{\Hypertarget{struct___i_call___gatt_send_rsp___ab7b377e0d010720b1775b4f57ebb7b8b}\label{struct___i_call___gatt_send_rsp___ab7b377e0d010720b1775b4f57ebb7b8b}} 
+\index{\_ICall\_GattSendRsp\_@{\_ICall\_GattSendRsp\_}!pRsp@{pRsp}}
+\index{pRsp@{pRsp}!\_ICall\_GattSendRsp\_@{\_ICall\_GattSendRsp\_}}
+\doxysubsubsection{\texorpdfstring{pRsp}{pRsp}}
+{\footnotesize\ttfamily \mbox{\hyperlink{uniongatt_msg__t}{gatt\+Msg\+\_\+t}}$\ast$ \+\_\+\+I\+Call\+\_\+\+Gatt\+Send\+Rsp\+\_\+\+::p\+Rsp}
+
+
+
+pointer to A\+TT response 
+
+
+
+Definition at line 677 of file icall\+\_\+apimsg.\+h.
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+I\+Call\+B\+L\+E/\mbox{\hyperlink{icall__apimsg_8h}{icall\+\_\+apimsg.\+h}}\end{DoxyCompactItemize}

@@ -1,0 +1,1423 @@
+\hypertarget{icall__api_8c}{}\doxysection{I\+Call\+B\+L\+E/icall\+\_\+api.c File Reference}
+\label{icall__api_8c}\index{ICallBLE/icall\_api.c@{ICallBLE/icall\_api.c}}
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$icall.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}gap.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}sm.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}linkdb.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}gatt.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}l2cap.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}hci\+\_\+tl.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}gattservapp.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}gapgattserver.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}gapbondmgr.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}osal\+\_\+snv.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}hci.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}hci\+\_\+ext.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}icall\+\_\+apimsg.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}ble\+\_\+dispatch.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{group___g_a_p___a_p_i_ga29744ff36f2789227405780eea015a24}{G\+A\+P\+\_\+\+Register\+For\+Msgs}} (uint8 task\+ID)
+\begin{DoxyCompactList}\small\item\em Register your task ID to receive extra (unprocessed) H\+CI status and complete, and Host events. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{icall__api_8c_a228ea47838a43bd9417535eb5c5a04ee}{N\+P\+I\+\_\+\+Register\+Task}} (uint8\+\_\+t task\+Id)
+\item 
+void \mbox{\hyperlink{icall__api_8c_abfc996b1ebbfe94febbc7e448150bf1a}{L2\+C\+A\+P\+\_\+\+Register\+Flow\+Ctrl\+Task}} (uint8\+\_\+t task\+Id)
+\item 
+void \mbox{\hyperlink{group___g_a_p_r_o_l_e_s___b_o_n_d_m_g_r___a_p_i_ga6f8ee9b4906eeb74ae8f10d511229eda}{G\+A\+P\+Bond\+Mgr\+\_\+\+Register}} (\mbox{\hyperlink{structgap_bond_c_bs__t}{gap\+Bond\+C\+Bs\+\_\+t}} $\ast$p\+CB)
+\begin{DoxyCompactList}\small\item\em Register callback functions with the bond manager. \end{DoxyCompactList}\item 
+b\+Status\+\_\+t \mbox{\hyperlink{group___g_a_p_r_o_l_e_s___b_o_n_d_m_g_r___a_p_i_ga3fed7c7c4af15a9f59b89374cdac5447}{G\+A\+P\+Bond\+Mgr\+\_\+\+Passcode\+Rsp}} (uint16 connection\+Handle, uint8 \mbox{\hyperlink{icall__apimsg_8h_ad94584ed274ed1d5b06d52f5bb3a178d}{status}}, uint32 passcode)
+\begin{DoxyCompactList}\small\item\em Respond to a passcode request. \end{DoxyCompactList}\item 
+b\+Status\+\_\+t \mbox{\hyperlink{group___g_a_p_r_o_l_e_s___b_o_n_d_m_g_r___a_p_i_ga41a1bd772c4156fd1c787c698296cd0b}{G\+A\+P\+Bond\+Mgr\+\_\+\+Link\+Est}} (uint8 addr\+Type, uint8 $\ast$p\+Dev\+Addr, uint16 conn\+Handle, uint8 role)
+\begin{DoxyCompactList}\small\item\em Notify the Bond Manager that a connection has been made. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___g_a_p_r_o_l_e_s___b_o_n_d_m_g_r___a_p_i_ga5bd00991eeab759b26ebd98f570f91b9}{G\+A\+P\+Bond\+Mgr\+\_\+\+Link\+Term}} (uint16 conn\+Handle)
+\begin{DoxyCompactList}\small\item\em Notify the Bond Manager that a connection has been terminated. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___g_a_p_r_o_l_e_s___b_o_n_d_m_g_r___a_p_i_ga0a0b8304f626abd88fe1145b79c85ffd}{G\+A\+P\+Bond\+Mgr\+\_\+\+Slave\+Req\+Security}} (uint16 conn\+Handle, uint8 auth\+Req)
+\item 
+uint8 \mbox{\hyperlink{group___g_a_p_r_o_l_e_s___b_o_n_d_m_g_r___a_p_i_ga914829de70ba2b068ae387e364757a08}{G\+A\+P\+Bond\+Mgr\+\_\+\+Resolve\+Addr}} (uint8 addr\+Type, uint8 $\ast$p\+Dev\+Addr, uint8 $\ast$p\+Resolved\+Addr)
+\begin{DoxyCompactList}\small\item\em Resolve an address from bonding information. \end{DoxyCompactList}\item 
+b\+Status\+\_\+t \mbox{\hyperlink{icall__api_8c_a726a49f31f433e4d38257002f2179f67}{G\+A\+T\+T\+Serv\+App\+\_\+\+Add\+Service}} (uint32 services)
+\item 
+b\+Status\+\_\+t \mbox{\hyperlink{icall__api_8c_ab03b16f9f82020807d82ee44d2479acf}{G\+A\+T\+T\+Serv\+App\+\_\+\+Register\+Service}} (\mbox{\hyperlink{gatt_8h_a8dca0d941f79cbc3bca13ab038e2e963}{gatt\+Attribute\+\_\+t}} $\ast$p\+Attrs, uint16 num\+Attrs, uint8 enc\+Key\+Size, C\+O\+N\+ST gatt\+Service\+C\+Bs\+\_\+t $\ast$p\+Service\+C\+Bs)
+\item 
+b\+Status\+\_\+t \mbox{\hyperlink{icall__api_8c_ac0b963de3de2af3d0a4d378f0a7a225c}{G\+A\+T\+T\+Serv\+App\+\_\+\+Deregister\+Service}} (uint16 handle, \mbox{\hyperlink{gatt_8h_a8dca0d941f79cbc3bca13ab038e2e963}{gatt\+Attribute\+\_\+t}} $\ast$$\ast$p2p\+Attrs)
+\item 
+b\+Status\+\_\+t \mbox{\hyperlink{icall__api_8c_af2aa76d834234b792d90115154789302}{G\+A\+T\+T\+Serv\+App\+\_\+\+Set\+Parameter}} (uint8 param, uint8 \mbox{\hyperlink{icall__apimsg_8h_a8ccac76f35f79d74917e1c5dd6f69fea}{len}}, void $\ast$p\+Value)
+\item 
+b\+Status\+\_\+t \mbox{\hyperlink{icall__api_8c_aba3d441734e26ee1e6ec77f05614dd84}{G\+A\+T\+T\+Serv\+App\+\_\+\+Get\+Parameter}} (uint8 param, void $\ast$p\+Value)
+\item 
+b\+Status\+\_\+t \mbox{\hyperlink{icall__api_8c_a731f6d7cbb40a4517fa865c98d1e5f66}{G\+A\+T\+T\+Serv\+App\+\_\+\+Send\+Service\+Changed\+Ind}} (uint16 conn\+Handle, uint8 task\+Id)
+\item 
+b\+Status\+\_\+t \mbox{\hyperlink{icall__api_8c_a31d434da47600dddba8363b625cfa296}{G\+A\+T\+T\+Serv\+App\+\_\+\+Read\+Rsp}} (uint16 conn\+Handle, uint8 $\ast$p\+Attr\+Value, uint16 attr\+Len, uint16 attr\+Handle)
+\item 
+void \mbox{\hyperlink{group___g_a_t_t___c_o_m_m_o_n___a_p_i_ga8866d184372ade2b19bc4f4684dc95b0}{G\+A\+T\+T\+\_\+\+Register\+For\+Msgs}} (uint8 task\+ID)
+\begin{DoxyCompactList}\small\item\em Register your task ID to receive G\+A\+TT local events and A\+TT Response messages pending for transmission. When the G\+A\+TT Server fails to respond to an incoming A\+TT Request due to lack of H\+CI Tx buffers, the response will be forwarded the app for retransmission. \end{DoxyCompactList}\item 
+b\+Status\+\_\+t \mbox{\hyperlink{group___g_a_t_t___c_l_i_e_n_t___a_p_i_ga79026e24ddadeb7bb7e3c3109cbf1d17}{G\+A\+T\+T\+\_\+\+Init\+Client}} (void)
+\begin{DoxyCompactList}\small\item\em Initialize the Generic Attribute Profile Client. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___g_a_t_t___c_l_i_e_n_t___a_p_i_gad9bb8f53a66a74842adec59a23505635}{G\+A\+T\+T\+\_\+\+Register\+For\+Ind}} (uint8 task\+Id)
+\begin{DoxyCompactList}\small\item\em Register to receive incoming A\+TT Indications or Notifications of attribute values. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___g_a_t_t___f_l_o_w___c_t_r_l___a_p_i_ga186d864b6591723505b3f0ff6d94ecb0}{G\+A\+T\+T\+\_\+\+Set\+Host\+To\+App\+Flow\+Ctrl}} (uint16 heap\+Size, uint8 flow\+Ctrl\+Mode)
+\begin{DoxyCompactList}\small\item\em This A\+PI is used by the Application to turn flow control on or off for G\+A\+TT messages sent from the Host to the Application. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___g_a_t_t___f_l_o_w___c_t_r_l___a_p_i_gaf879443ffb9fa104d6905246a2337828}{G\+A\+T\+T\+\_\+\+App\+Completed\+Msg}} (\mbox{\hyperlink{structgatt_msg_event__t}{gatt\+Msg\+Event\+\_\+t}} $\ast$p\+Msg)
+\begin{DoxyCompactList}\small\item\em This A\+PI is used by the Application to notify G\+A\+TT that the processing of a message has been completed. \end{DoxyCompactList}\item 
+b\+Status\+\_\+t \mbox{\hyperlink{group___g_a_t_t___s_e_r_v_e_r___a_p_i_ga86fbb6053b23d4eb562109d9241ec335}{G\+A\+T\+T\+\_\+\+Send\+Rsp}} (uint16 conn\+Handle, uint8 method, \mbox{\hyperlink{uniongatt_msg__t}{gatt\+Msg\+\_\+t}} $\ast$p\+Rsp)
+\begin{DoxyCompactList}\small\item\em Send an A\+TT Response message out. \end{DoxyCompactList}\item 
+b\+Status\+\_\+t \mbox{\hyperlink{icall__api_8c_a378d66bb6f1fc9863df3727a6920c752}{G\+G\+S\+\_\+\+Add\+Service}} (uint32 services)
+\begin{DoxyCompactList}\small\item\em Add function for the G\+AP G\+A\+TT Service. \end{DoxyCompactList}\item 
+b\+Status\+\_\+t \mbox{\hyperlink{icall__api_8c_aa199a7c7fe4464c84e4440135d2e91f8}{G\+G\+S\+\_\+\+Set\+Parameter}} (uint8 param, uint8 \mbox{\hyperlink{icall__apimsg_8h_a8ccac76f35f79d74917e1c5dd6f69fea}{len}}, void $\ast$value)
+\begin{DoxyCompactList}\small\item\em Set a G\+AP G\+A\+TT Server parameter. \end{DoxyCompactList}\item 
+b\+Status\+\_\+t \mbox{\hyperlink{icall__api_8c_a4ae1b24aef90dc8dd36dcfe7592b395c}{G\+G\+S\+\_\+\+Get\+Parameter}} (uint8 param, void $\ast$value)
+\begin{DoxyCompactList}\small\item\em Get a G\+AP G\+A\+TT Server parameter. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{icall__api_8c_a10a83d35cf8405bd4e4b5f34c72fa66e}{G\+G\+S\+\_\+\+Register\+App\+C\+Bs}} (\mbox{\hyperlink{structggs_app_c_bs__t}{ggs\+App\+C\+Bs\+\_\+t}} $\ast$app\+Callbacks)
+\begin{DoxyCompactList}\small\item\em Registers the application callback function. \end{DoxyCompactList}\item 
+b\+Status\+\_\+t \mbox{\hyperlink{group___g_a_t_t___c_l_i_e_n_t___s_u_b___p_r_o_c_e_d_u_r_e___a_p_i_ga58a47b344f83a98c94fbf551e6ae7355}{G\+A\+T\+T\+\_\+\+Exchange\+M\+TU}} (uint16 conn\+Handle, att\+Exchange\+M\+T\+U\+Req\+\_\+t $\ast$p\+Req, uint8 task\+Id)
+\begin{DoxyCompactList}\small\item\em This sub-\/procedure is used by the client to set the A\+T\+T\+\_\+\+M\+TU to the maximum possible value that can be supported by both devices when the client supports a value greater than the default A\+T\+T\+\_\+\+M\+TU for the Attribute Protocol. This sub-\/procedure shall only be initiated once during a connection. \end{DoxyCompactList}\item 
+b\+Status\+\_\+t \mbox{\hyperlink{group___g_a_t_t___c_l_i_e_n_t___s_u_b___p_r_o_c_e_d_u_r_e___a_p_i_gaa9323c71f318bcf8a1cddad9ac4458ac}{G\+A\+T\+T\+\_\+\+Disc\+All\+Primary\+Services}} (uint16 conn\+Handle, uint8 task\+Id)
+\begin{DoxyCompactList}\small\item\em This sub-\/procedure is used by a client to discover all the primary services on a server. \end{DoxyCompactList}\item 
+b\+Status\+\_\+t \mbox{\hyperlink{group___g_a_t_t___c_l_i_e_n_t___s_u_b___p_r_o_c_e_d_u_r_e___a_p_i_gab3f4fbcaa18ec38accf7ac22eff3365e}{G\+A\+T\+T\+\_\+\+Disc\+Primary\+Service\+By\+U\+U\+ID}} (uint16 conn\+Handle, uint8 $\ast$p\+Value, uint8 \mbox{\hyperlink{icall__apimsg_8h_a8ccac76f35f79d74917e1c5dd6f69fea}{len}}, uint8 task\+Id)
+\begin{DoxyCompactList}\small\item\em This sub-\/procedure is used by a client to discover a specific primary service on a server when only the Service U\+U\+ID is known. The primary specific service may exist multiple times on a server. The primary service being discovered is identified by the service U\+U\+ID. \end{DoxyCompactList}\item 
+b\+Status\+\_\+t \mbox{\hyperlink{group___g_a_t_t___c_l_i_e_n_t___s_u_b___p_r_o_c_e_d_u_r_e___a_p_i_ga4877d9e791c2083e8637cb744d259d5f}{G\+A\+T\+T\+\_\+\+Find\+Included\+Services}} (uint16 conn\+Handle, uint16 start\+Handle, uint16 end\+Handle, uint8 task\+Id)
+\begin{DoxyCompactList}\small\item\em This sub-\/procedure is used by a client to find include service declarations within a service definition on a server. The service specified is identified by the service handle range. \end{DoxyCompactList}\item 
+b\+Status\+\_\+t \mbox{\hyperlink{group___g_a_t_t___c_l_i_e_n_t___s_u_b___p_r_o_c_e_d_u_r_e___a_p_i_gac824af509fbd28c84ae6a1d1d4a1ba11}{G\+A\+T\+T\+\_\+\+Disc\+All\+Chars}} (uint16 conn\+Handle, uint16 start\+Handle, uint16 end\+Handle, uint8 task\+Id)
+\begin{DoxyCompactList}\small\item\em This sub-\/procedure is used by a client to find all the characteristic declarations within a service definition on a server when only the service handle range is known. The service specified is identified by the service handle range. \end{DoxyCompactList}\item 
+b\+Status\+\_\+t \mbox{\hyperlink{group___g_a_t_t___c_l_i_e_n_t___s_u_b___p_r_o_c_e_d_u_r_e___a_p_i_ga747eaf3fb0358c4e05171b40d09c1906}{G\+A\+T\+T\+\_\+\+Disc\+Chars\+By\+U\+U\+ID}} (uint16 conn\+Handle, att\+Read\+By\+Type\+Req\+\_\+t $\ast$p\+Req, uint8 task\+Id)
+\begin{DoxyCompactList}\small\item\em This sub-\/procedure is used by a client to discover service characteristics on a server when only the service handle ranges are known and the characteristic U\+U\+ID is known. The specific service may exist multiple times on a server. The characteristic being discovered is identified by the characteristic U\+U\+ID. \end{DoxyCompactList}\item 
+b\+Status\+\_\+t \mbox{\hyperlink{group___g_a_t_t___c_l_i_e_n_t___s_u_b___p_r_o_c_e_d_u_r_e___a_p_i_ga6d111c5d5b479a10ef92b900481b3027}{G\+A\+T\+T\+\_\+\+Disc\+All\+Char\+Descs}} (uint16 conn\+Handle, uint16 start\+Handle, uint16 end\+Handle, uint8 task\+Id)
+\begin{DoxyCompactList}\small\item\em This sub-\/procedure is used by a client to find all the characteristic descriptor\textquotesingle{}s Attribute Handles and Attribute Types within a characteristic definition when only the characteristic handle range is known. The characteristic specified is identified by the characteristic handle range. \end{DoxyCompactList}\item 
+b\+Status\+\_\+t \mbox{\hyperlink{group___g_a_t_t___c_l_i_e_n_t___s_u_b___p_r_o_c_e_d_u_r_e___a_p_i_gab1628c683ea6ba34a41af178c8b88bb3}{G\+A\+T\+T\+\_\+\+Read\+Char\+Value}} (uint16 conn\+Handle, att\+Read\+Req\+\_\+t $\ast$p\+Req, uint8 task\+Id)
+\begin{DoxyCompactList}\small\item\em This sub-\/procedure is used to read a Characteristic Value from a server when the client knows the Characteristic Value Handle. The A\+TT Read Request is used with the Attribute Handle parameter set to the Characteristic Value Handle. The Read Response returns the Characteristic Value in the Attribute Value parameter. \end{DoxyCompactList}\item 
+b\+Status\+\_\+t \mbox{\hyperlink{group___g_a_t_t___c_l_i_e_n_t___s_u_b___p_r_o_c_e_d_u_r_e___a_p_i_gae945c86f97b691117321bf9711f73a91}{G\+A\+T\+T\+\_\+\+Read\+Using\+Char\+U\+U\+ID}} (uint16 conn\+Handle, att\+Read\+By\+Type\+Req\+\_\+t $\ast$p\+Req, uint8 task\+Id)
+\begin{DoxyCompactList}\small\item\em This sub-\/procedure is used to read a Characteristic Value from a server when the client only knows the characteristic U\+U\+ID and does not know the handle of the characteristic. \end{DoxyCompactList}\item 
+b\+Status\+\_\+t \mbox{\hyperlink{group___g_a_t_t___c_l_i_e_n_t___s_u_b___p_r_o_c_e_d_u_r_e___a_p_i_ga744166541693717d82614ef58a4d9422}{G\+A\+T\+T\+\_\+\+Read\+Long\+Char\+Value}} (uint16 conn\+Handle, att\+Read\+Blob\+Req\+\_\+t $\ast$p\+Req, uint8 task\+Id)
+\begin{DoxyCompactList}\small\item\em This sub-\/procedure is used to read a Characteristic Value from a server when the client knows the Characteristic Value Handle and the length of the Characteristic Value is longer than can be sent in a single Read Response Attribute Protocol message. \end{DoxyCompactList}\item 
+b\+Status\+\_\+t \mbox{\hyperlink{group___g_a_t_t___c_l_i_e_n_t___s_u_b___p_r_o_c_e_d_u_r_e___a_p_i_ga3fdec76101411585cc6e0ec3c40933cc}{G\+A\+T\+T\+\_\+\+Read\+Multi\+Char\+Values}} (uint16 conn\+Handle, att\+Read\+Multi\+Req\+\_\+t $\ast$p\+Req, uint8 task\+Id)
+\begin{DoxyCompactList}\small\item\em This sub-\/procedure is used to read multiple Characteristic Values from a server when the client knows the Characteristic Value Handles. The Attribute Protocol Read Multiple Requests is used with the Set Of Handles parameter set to the Characteristic Value Handles. The Read Multiple Response returns the Characteristic Values in the Set Of Values parameter. \end{DoxyCompactList}\item 
+b\+Status\+\_\+t \mbox{\hyperlink{group___g_a_t_t___c_l_i_e_n_t___s_u_b___p_r_o_c_e_d_u_r_e___a_p_i_ga3bd8c1e5f6a00cc9c2206f2c8bd8444a}{G\+A\+T\+T\+\_\+\+Write\+No\+Rsp}} (uint16 conn\+Handle, att\+Write\+Req\+\_\+t $\ast$p\+Req)
+\begin{DoxyCompactList}\small\item\em This sub-\/procedure is used to write a Characteristic Value to a server when the client knows the Characteristic Value Handle and the client does not need an acknowledgement that the write was successfully performed. This sub-\/procedure only writes the first (A\+T\+T\+\_\+\+M\+TU -\/ 3) octets of a Characteristic Value. This sub-\/procedure can not be used to write a long characteristic; instead the Write Long Characteristic Values sub-\/procedure should be used. \end{DoxyCompactList}\item 
+b\+Status\+\_\+t \mbox{\hyperlink{group___g_a_t_t___c_l_i_e_n_t___s_u_b___p_r_o_c_e_d_u_r_e___a_p_i_ga44c2843c50e3ea43a77be4a19b326961}{G\+A\+T\+T\+\_\+\+Signed\+Write\+No\+Rsp}} (uint16 conn\+Handle, att\+Write\+Req\+\_\+t $\ast$p\+Req)
+\begin{DoxyCompactList}\small\item\em This sub-\/procedure is used to write a Characteristic Value to a server when the client knows the Characteristic Value Handle and the A\+TT Bearer is not encrypted. This sub-\/procedure shall only be used if the Characteristic Properties authenticated bit is enabled and the client and server device share a bond as defined in the G\+AP. \end{DoxyCompactList}\item 
+b\+Status\+\_\+t \mbox{\hyperlink{group___g_a_t_t___c_l_i_e_n_t___s_u_b___p_r_o_c_e_d_u_r_e___a_p_i_ga6e54905495daa3e3dfa5d5b7b40d8afb}{G\+A\+T\+T\+\_\+\+Write\+Char\+Value}} (uint16 conn\+Handle, att\+Write\+Req\+\_\+t $\ast$p\+Req, uint8 task\+Id)
+\begin{DoxyCompactList}\small\item\em This sub-\/procedure is used to write a characteristic value to a server when the client knows the characteristic value handle. This sub-\/procedure only writes the first (A\+T\+T\+\_\+\+M\+T\+U-\/3) octets of a characteristic value. This sub-\/procedure can not be used to write a long attribute; instead the Write Long Characteristic Values sub-\/procedure should be used. \end{DoxyCompactList}\item 
+b\+Status\+\_\+t \mbox{\hyperlink{group___g_a_t_t___c_l_i_e_n_t___s_u_b___p_r_o_c_e_d_u_r_e___a_p_i_gadae7477ab0c50a97545bb2fb5100de98}{G\+A\+T\+T\+\_\+\+Write\+Long\+Char\+Value}} (uint16 conn\+Handle, att\+Prepare\+Write\+Req\+\_\+t $\ast$p\+Req, uint8 task\+Id)
+\begin{DoxyCompactList}\small\item\em This sub-\/procedure is used to write a Characteristic Value to a server when the client knows the Characteristic Value Handle but the length of the Characteristic Value is longer than can be sent in a single Write Request Attribute Protocol message. \end{DoxyCompactList}\item 
+b\+Status\+\_\+t \mbox{\hyperlink{group___g_a_t_t___c_l_i_e_n_t___s_u_b___p_r_o_c_e_d_u_r_e___a_p_i_gab0299a1f320972b558eeb461714264dc}{G\+A\+T\+T\+\_\+\+Write\+Long\+Char\+Desc}} (uint16 conn\+Handle, att\+Prepare\+Write\+Req\+\_\+t $\ast$p\+Req, uint8 task\+Id)
+\begin{DoxyCompactList}\small\item\em This sub-\/procedure is used to write a Characteristic Value to a server when the client knows the Characteristic Value Handle but the length of the Characteristic Value is longer than can be sent in a single Write Request Attribute Protocol message. \end{DoxyCompactList}\item 
+b\+Status\+\_\+t \mbox{\hyperlink{group___g_a_t_t___c_l_i_e_n_t___s_u_b___p_r_o_c_e_d_u_r_e___a_p_i_gac67b8a29558fe754676f808c174cc11c}{G\+A\+T\+T\+\_\+\+Reliable\+Writes}} (uint16 conn\+Handle, att\+Prepare\+Write\+Req\+\_\+t $\ast$p\+Reqs, uint8 num\+Reqs, uint8 flags, uint8 task\+Id)
+\begin{DoxyCompactList}\small\item\em This sub-\/procedure is used to write a Characteristic Value to a server when the client knows the Characteristic Value Handle, and assurance is required that the correct Characteristic Value is going to be written by transferring the Characteristic Value to be written in both directions before the write is performed. This sub-\/procedure can also be used when multiple values must be written, in order, in a single operation. \end{DoxyCompactList}\item 
+b\+Status\+\_\+t \mbox{\hyperlink{group___g_a_t_t___c_l_i_e_n_t___s_u_b___p_r_o_c_e_d_u_r_e___a_p_i_ga9122c4c743a85d61240a068db4007a4f}{G\+A\+T\+T\+\_\+\+Read\+Char\+Desc}} (uint16 conn\+Handle, att\+Read\+Req\+\_\+t $\ast$p\+Req, uint8 task\+Id)
+\begin{DoxyCompactList}\small\item\em This sub-\/procedure is used to read a characteristic descriptor from a server when the client knows the characteristic descriptor declaration\textquotesingle{}s Attribute handle. \end{DoxyCompactList}\item 
+b\+Status\+\_\+t \mbox{\hyperlink{group___g_a_t_t___c_l_i_e_n_t___s_u_b___p_r_o_c_e_d_u_r_e___a_p_i_ga2a0db35f92a234f277c04d2ce46f49e4}{G\+A\+T\+T\+\_\+\+Read\+Long\+Char\+Desc}} (uint16 conn\+Handle, att\+Read\+Blob\+Req\+\_\+t $\ast$p\+Req, uint8 task\+Id)
+\begin{DoxyCompactList}\small\item\em This sub-\/procedure is used to read a characteristic descriptor from a server when the client knows the characteristic descriptor declaration\textquotesingle{}s Attribute handle and the length of the characteristic descriptor declaration is longer than can be sent in a single Read Response attribute protocol message. \end{DoxyCompactList}\item 
+b\+Status\+\_\+t \mbox{\hyperlink{group___g_a_t_t___c_l_i_e_n_t___s_u_b___p_r_o_c_e_d_u_r_e___a_p_i_ga28b10e627cb735bd5de5b58212e5443e}{G\+A\+T\+T\+\_\+\+Write\+Char\+Desc}} (uint16 conn\+Handle, att\+Write\+Req\+\_\+t $\ast$p\+Req, uint8 task\+Id)
+\begin{DoxyCompactList}\small\item\em This sub-\/procedure is used to write a characteristic descriptor value to a server when the client knows the characteristic descriptor handle. \end{DoxyCompactList}\item 
+b\+Status\+\_\+t \mbox{\hyperlink{group___g_a_t_t___s_e_r_v_e_r___s_u_b___p_r_o_c_e_d_u_r_e___a_p_i_gac61599736be6b39a5b18d3ef6eb7a45a}{G\+A\+T\+T\+\_\+\+Notification}} (uint16 conn\+Handle, att\+Handle\+Value\+Noti\+\_\+t $\ast$p\+Noti, uint8 authenticated)
+\begin{DoxyCompactList}\small\item\em This sub-\/procedure is used when a server is configured to notify a characteristic value to a client without expecting any attribute protocol layer acknowledgement that the notification was successfully received. \end{DoxyCompactList}\item 
+uint16\+\_\+t \mbox{\hyperlink{icall__api_8c_a4c9843ebd931e2a38bdf5c24030d02c7}{G\+A\+T\+T\+\_\+\+Get\+Next\+Handle}} (void)
+\item 
+b\+Status\+\_\+t \mbox{\hyperlink{group___g_a_t_t___s_e_r_v_e_r___s_u_b___p_r_o_c_e_d_u_r_e___a_p_i_gadaadba59a7d29ede06abc3b30bec89ad}{G\+A\+T\+T\+\_\+\+Indication}} (uint16 conn\+Handle, att\+Handle\+Value\+Ind\+\_\+t $\ast$p\+Ind, uint8 authenticated, uint8 task\+Id)
+\begin{DoxyCompactList}\small\item\em This sub-\/procedure is used when a server is configured to indicate a characteristic value to a client and expects an attribute protocol layer acknowledgement that the indication was successfully received. \end{DoxyCompactList}\item 
+b\+Status\+\_\+t \mbox{\hyperlink{icall__api_8c_ada72af21cc1ab89b7d802b895e6c1f91}{A\+T\+T\+\_\+\+Error\+Rsp}} (uint16 conn\+Handle, att\+Error\+Rsp\+\_\+t $\ast$p\+Rsp)
+\item 
+b\+Status\+\_\+t \mbox{\hyperlink{icall__api_8c_aeda7a7f37fdb7d6ca02dba1d6a4f8d6e}{A\+T\+T\+\_\+\+Read\+Rsp}} (uint16 conn\+Handle, att\+Read\+Rsp\+\_\+t $\ast$p\+Rsp)
+\item 
+b\+Status\+\_\+t \mbox{\hyperlink{icall__api_8c_a192c559bc6b8763c0b7498bacb86e245}{A\+T\+T\+\_\+\+Read\+Blob\+Rsp}} (uint16 conn\+Handle, att\+Read\+Blob\+Rsp\+\_\+t $\ast$p\+Rsp)
+\item 
+b\+Status\+\_\+t \mbox{\hyperlink{icall__api_8c_a0170c24dbfc9827737a1096aa9279380}{A\+T\+T\+\_\+\+Write\+Rsp}} (uint16 conn\+Handle)
+\item 
+b\+Status\+\_\+t \mbox{\hyperlink{icall__api_8c_a32fbe6fb42062c2359d992177062e89c}{A\+T\+T\+\_\+\+Execute\+Write\+Rsp}} (uint16 conn\+Handle)
+\item 
+b\+Status\+\_\+t \mbox{\hyperlink{icall__api_8c_ad81ac287724f2622fe15462e6cae6438}{A\+T\+T\+\_\+\+Handle\+Value\+Cfm}} (uint16 conn\+Handle)
+\item 
+b\+Status\+\_\+t \mbox{\hyperlink{group___g_a_p___a_p_i_ga729bcdb44b9ea7717cbfd55d25ba5194}{G\+A\+P\+\_\+\+Device\+Init}} (uint8 task\+ID, uint8 profile\+Role, uint8 max\+Scan\+Responses, uint8 $\ast$p\+I\+RK, uint8 $\ast$p\+S\+RK, uint32 $\ast$p\+Sign\+Counter)
+\begin{DoxyCompactList}\small\item\em Called to setup the device. Call just once on initialization. \end{DoxyCompactList}\item 
+b\+Status\+\_\+t \mbox{\hyperlink{group___g_a_p___a_p_i_gaaffa833dc484847afd019d087eefb2c6}{G\+A\+P\+\_\+\+Config\+Device\+Addr}} (uint8 addr\+Type, uint8 $\ast$p\+Static\+Addr)
+\begin{DoxyCompactList}\small\item\em Setup the device\textquotesingle{}s address type. If A\+D\+D\+R\+M\+O\+D\+E\+\_\+\+P\+R\+I\+V\+A\+T\+E\+\_\+\+R\+E\+S\+O\+L\+VE is selected, the address will change periodically. \end{DoxyCompactList}\item 
+b\+Status\+\_\+t \mbox{\hyperlink{group___g_a_p___a_p_i_gac1850075e9bd9ca2823999c8f2246041}{G\+A\+P\+\_\+\+Establish\+Link\+Req}} (\mbox{\hyperlink{structgap_est_link_req__t}{gap\+Est\+Link\+Req\+\_\+t}} $\ast$p\+Params)
+\begin{DoxyCompactList}\small\item\em Establish a link to a slave device. \end{DoxyCompactList}\item 
+b\+Status\+\_\+t \mbox{\hyperlink{group___g_a_p___a_p_i_gaad99f6598df0ee36c4cd2608afa09618}{G\+A\+P\+\_\+\+Update\+Link\+Param\+Req}} (\mbox{\hyperlink{structgap_update_link_param_req__t}{gap\+Update\+Link\+Param\+Req\+\_\+t}} $\ast$p\+Params)
+\begin{DoxyCompactList}\small\item\em Update the link parameters to a Master or Slave device. \end{DoxyCompactList}\item 
+b\+Status\+\_\+t \mbox{\hyperlink{group___g_a_p___a_p_i_gaed1b6299bfe3b0469e2baf53cba04fe1}{G\+A\+P\+\_\+\+Update\+Link\+Param\+Req\+Reply}} (\mbox{\hyperlink{structgap_update_link_param_req_reply__t}{gap\+Update\+Link\+Param\+Req\+Reply\+\_\+t}} $\ast$p\+Params)
+\begin{DoxyCompactList}\small\item\em Reply to a Connection Parameter Update Request sent from a remote device. \end{DoxyCompactList}\item 
+b\+Status\+\_\+t \mbox{\hyperlink{group___g_a_p___a_p_i_ga45287a9df199ff8fd90b5fe1bfdc249a}{G\+A\+P\+\_\+\+Terminate\+Link\+Req}} (uint8 task\+ID, uint16 conn\+Handle, uint8 reason)
+\begin{DoxyCompactList}\small\item\em Terminate a link connection. \end{DoxyCompactList}\item 
+b\+Status\+\_\+t \mbox{\hyperlink{group___g_a_p___a_p_i_gacd309bbef61eb5f83f369d98ef1b2529}{G\+A\+P\+\_\+\+Device\+Discovery\+Request}} (\mbox{\hyperlink{structgap_dev_disc_req__t}{gap\+Dev\+Disc\+Req\+\_\+t}} $\ast$p\+Params)
+\begin{DoxyCompactList}\small\item\em Start a device discovery scan. \end{DoxyCompactList}\item 
+b\+Status\+\_\+t \mbox{\hyperlink{group___g_a_p___a_p_i_ga1ec38cafcaf928e48ed2b859711fb0df}{G\+A\+P\+\_\+\+Device\+Discovery\+Cancel}} (uint8 task\+ID)
+\begin{DoxyCompactList}\small\item\em Cancel an existing device discovery request. \end{DoxyCompactList}\item 
+b\+Status\+\_\+t \mbox{\hyperlink{group___g_a_p___a_p_i_gae51c3724416b31db3c8fc350e3ceef3e}{G\+A\+P\+\_\+\+Make\+Discoverable}} (uint8 task\+ID, \mbox{\hyperlink{structgap_advertising_params__t}{gap\+Advertising\+Params\+\_\+t}} $\ast$p\+Params)
+\begin{DoxyCompactList}\small\item\em Setup or change advertising. Also starts advertising. \end{DoxyCompactList}\item 
+b\+Status\+\_\+t \mbox{\hyperlink{group___g_a_p___a_p_i_gaded667b28065286cf5851b8672112c23}{G\+A\+P\+\_\+\+Update\+Advertising\+Data}} (uint8 task\+ID, uint8 ad\+Type, uint8 data\+Len, uint8 $\ast$p\+Advert\+Data)
+\begin{DoxyCompactList}\small\item\em Setup or change advertising and scan response data. \end{DoxyCompactList}\item 
+b\+Status\+\_\+t \mbox{\hyperlink{group___g_a_p___a_p_i_gaf766e38b0823c4f9ca015e86ef806778}{G\+A\+P\+\_\+\+End\+Discoverable}} (uint8 task\+ID)
+\begin{DoxyCompactList}\small\item\em Stops advertising. \end{DoxyCompactList}\item 
+b\+Status\+\_\+t \mbox{\hyperlink{group___g_a_p___a_p_i_ga7a5784b0b07fa89d6896a5c5e6345aef}{G\+A\+P\+\_\+\+Set\+Adv\+Token}} (\mbox{\hyperlink{structgap_adv_data_token__t}{gap\+Adv\+Data\+Token\+\_\+t}} $\ast$p\+Token)
+\begin{DoxyCompactList}\small\item\em Called to setup a G\+AP Advertisement/\+Scan Response data token. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structgap_adv_data_token__t}{gap\+Adv\+Data\+Token\+\_\+t}} $\ast$ \mbox{\hyperlink{group___g_a_p___a_p_i_gae98a99bcf9423126a2896bcf794cce76}{G\+A\+P\+\_\+\+Remove\+Adv\+Token}} (uint8 ad\+Type)
+\begin{DoxyCompactList}\small\item\em Called to remove a G\+AP Advertisement/\+Scan Response data token. \end{DoxyCompactList}\item 
+b\+Status\+\_\+t \mbox{\hyperlink{icall__api_8c_a8680d82e797280a42846ae8932b87a1b}{G\+A\+P\+\_\+\+Update\+Adv\+Token}} (void)
+\item 
+b\+Status\+\_\+t \mbox{\hyperlink{group___g_a_p___a_p_i_ga21cd72be1c8feccc658a7b0faec167a5}{G\+A\+P\+\_\+\+Authenticate}} (\mbox{\hyperlink{structgap_auth_params__t}{gap\+Auth\+Params\+\_\+t}} $\ast$p\+Params, \mbox{\hyperlink{structgap_pairing_req__t}{gap\+Pairing\+Req\+\_\+t}} $\ast$p\+Pair\+Req)
+\begin{DoxyCompactList}\small\item\em Start the Authentication process with the requested device. This function is used to Initiate/\+Allow pairing. Called by both master and slave device (Central and Peripheral). \end{DoxyCompactList}\item 
+b\+Status\+\_\+t \mbox{\hyperlink{group___g_a_p___a_p_i_gac9528b14ce20c351bae25ce6067a5d49}{G\+A\+P\+\_\+\+Terminate\+Auth}} (uint16 connection\+Handle, uint8 reason)
+\begin{DoxyCompactList}\small\item\em Send a Pairing Failed message and end any existing pairing. \end{DoxyCompactList}\item 
+b\+Status\+\_\+t \mbox{\hyperlink{group___g_a_p___a_p_i_ga54c684222fd69ffdfed61ed57cb5e64e}{G\+A\+P\+\_\+\+Bond}} (uint16 connection\+Handle, uint8 authenticated, uint8 secure\+Connections, sm\+Security\+Info\+\_\+t $\ast$p\+Params, uint8 start\+Encryption)
+\begin{DoxyCompactList}\small\item\em Set up the connection\textquotesingle{}s bound paramaters. \end{DoxyCompactList}\item 
+b\+Status\+\_\+t \mbox{\hyperlink{group___g_a_p___a_p_i_ga6a978b3a5b0441b2538a5da87ee9c409}{G\+A\+P\+\_\+\+Signable}} (uint16 connection\+Handle, uint8 authenticated, sm\+Signing\+Info\+\_\+t $\ast$p\+Params)
+\begin{DoxyCompactList}\small\item\em Set up the connection to accept signed data. \end{DoxyCompactList}\item 
+b\+Status\+\_\+t \mbox{\hyperlink{group___g_a_p___a_p_i_ga95006a6e09ec3bbe5d29dadb30e2f464}{G\+A\+P\+\_\+\+Passkey\+Update}} (uint8 $\ast$p\+Passkey, uint16 connection\+Handle)
+\begin{DoxyCompactList}\small\item\em Update the passkey in string format. This function is called by the application/profile in response to receiving the G\+A\+P\+\_\+\+P\+A\+S\+S\+K\+E\+Y\+\_\+\+N\+E\+E\+D\+E\+D\+\_\+\+E\+V\+E\+NT message. \end{DoxyCompactList}\item 
+b\+Status\+\_\+t \mbox{\hyperlink{group___g_a_p___a_p_i_ga45fab6682fc253681d7abe697a4fc0b5}{G\+A\+P\+\_\+\+Set\+Param\+Value}} (\mbox{\hyperlink{group___b_l_e___g_a_p___d_e_f_i_n_e_s_ga5ab906d5f305edeefbfc865f7405e6a0}{gap\+Param\+I\+Ds\+\_\+t}} param\+ID, uint16 param\+Value)
+\begin{DoxyCompactList}\small\item\em Set a G\+AP Parameter value. Use this function to change the default G\+AP parameter values. \end{DoxyCompactList}\item 
+uint16 \mbox{\hyperlink{group___g_a_p___a_p_i_ga357fe8676645fcc9b09b1d1317a6f193}{G\+A\+P\+\_\+\+Get\+Param\+Value}} (\mbox{\hyperlink{group___b_l_e___g_a_p___d_e_f_i_n_e_s_ga5ab906d5f305edeefbfc865f7405e6a0}{gap\+Param\+I\+Ds\+\_\+t}} param\+ID)
+\begin{DoxyCompactList}\small\item\em Get a G\+AP Parameter value. \end{DoxyCompactList}\item 
+b\+Status\+\_\+t \mbox{\hyperlink{group___g_a_p___a_p_i_gaeb699212aa5c8048af8b251165b5c1d5}{G\+A\+P\+\_\+\+Resolve\+Private\+Addr}} (uint8 $\ast$p\+I\+RK, uint8 $\ast$p\+Addr)
+\begin{DoxyCompactList}\small\item\em Resolves a private address against an I\+RK. \end{DoxyCompactList}\item 
+b\+Status\+\_\+t \mbox{\hyperlink{group___g_a_p___a_p_i_ga44473883ee83b5c18f956aab5570db3c}{G\+A\+P\+\_\+\+Send\+Slave\+Security\+Request}} (uint16 conn\+Handle, uint8 auth\+Req)
+\begin{DoxyCompactList}\small\item\em Generate a Slave Requested Security message to the master. \end{DoxyCompactList}\item 
+uint8 \mbox{\hyperlink{icall__api_8c_a73e393852ed170c0e5d03f20fb16d4c1}{link\+D\+B\+\_\+\+State}} (uint16 connection\+Handle, uint8 state)
+\item 
+uint8 \mbox{\hyperlink{icall__api_8c_a50a8d90705d15c1d80eba31831eab276}{link\+D\+B\+\_\+\+Num\+Conns}} (void)
+\item 
+uint8 \mbox{\hyperlink{icall__api_8c_a2dfebc6681d478ceb2514f79b4dec330}{link\+D\+B\+\_\+\+Num\+Active}} (void)
+\item 
+uint8 \mbox{\hyperlink{icall__api_8c_ab6889df9c6a70cd9c4016895eb3d656d}{link\+D\+B\+\_\+\+Get\+Info}} (uint16 conn\+Handle, link\+D\+B\+Info\+\_\+t $\ast$p\+Info)
+\item 
+b\+Status\+\_\+t \mbox{\hyperlink{group___g_a_p_r_o_l_e_s___b_o_n_d_m_g_r___a_p_i_ga8c64e3dc3c38caafb72a9bb37c4b7b53}{G\+A\+P\+Bond\+Mgr\+\_\+\+Set\+Parameter}} (uint16 param, uint8 \mbox{\hyperlink{icall__apimsg_8h_a8ccac76f35f79d74917e1c5dd6f69fea}{len}}, void $\ast$p\+Value)
+\begin{DoxyCompactList}\small\item\em Set a G\+AP Bond Manager parameter. \end{DoxyCompactList}\item 
+b\+Status\+\_\+t \mbox{\hyperlink{group___g_a_p_r_o_l_e_s___b_o_n_d_m_g_r___a_p_i_ga2c3a3e432a6d3e1abb1900c37ffda8df}{G\+A\+P\+Bond\+Mgr\+\_\+\+Get\+Parameter}} (uint16 param, void $\ast$p\+Value)
+\begin{DoxyCompactList}\small\item\em Get a G\+AP Bond Manager parameter. \end{DoxyCompactList}\item 
+b\+Status\+\_\+t \mbox{\hyperlink{group___g_a_p_r_o_l_e_s___b_o_n_d_m_g_r___a_p_i_ga611e1888433ddfd82956c551796f44f8}{G\+A\+P\+Bond\+Mgr\+\_\+\+Service\+Change\+Ind}} (uint16 conn\+Handle, uint8 set\+Param)
+\begin{DoxyCompactList}\small\item\em Set/clear the service change indication in a bond record. \end{DoxyCompactList}\item 
+b\+Status\+\_\+t \mbox{\hyperlink{icall__api_8c_af9cc2df9bb0b4c9000d8c3e21adcf1d2}{L2\+C\+A\+P\+\_\+\+Conn\+Param\+Update\+Req}} (uint16 conn\+Handle, l2cap\+Param\+Update\+Req\+\_\+t $\ast$p\+Update\+Req, uint8 task\+Id)
+\item 
+b\+Status\+\_\+t \mbox{\hyperlink{icall__api_8c_a4973f6690e33d30089ae323c6ddc2ee8}{L2\+C\+A\+P\+\_\+\+Register\+Psm}} (l2cap\+Psm\+\_\+t $\ast$p\+Psm)
+\item 
+b\+Status\+\_\+t \mbox{\hyperlink{icall__api_8c_aeced1e1f9c0d0935bc7743b684071a62}{L2\+C\+A\+P\+\_\+\+Deregister\+Psm}} (uint8 task\+Id, uint16 psm)
+\item 
+b\+Status\+\_\+t \mbox{\hyperlink{icall__api_8c_afe4d689eabdbe7c83bf4e0fca2ee8921}{L2\+C\+A\+P\+\_\+\+Psm\+Info}} (uint16 psm, l2cap\+Psm\+Info\+\_\+t $\ast$p\+Info)
+\item 
+b\+Status\+\_\+t \mbox{\hyperlink{icall__api_8c_a3fb8aaca8154b07d65f84d78346add5f}{L2\+C\+A\+P\+\_\+\+Psm\+Channels}} (uint16 psm, uint8 num\+C\+I\+Ds, uint16 $\ast$p\+C\+I\+Ds)
+\item 
+b\+Status\+\_\+t \mbox{\hyperlink{icall__api_8c_aa31b0cee961a10f4be7b1e3afafd1de8}{L2\+C\+A\+P\+\_\+\+Channel\+Info}} (uint16 C\+ID, l2cap\+Channel\+Info\+\_\+t $\ast$p\+Info)
+\item 
+b\+Status\+\_\+t \mbox{\hyperlink{icall__api_8c_a4756c83b98db5cf43ff8d4e82b84e2db}{L2\+C\+A\+P\+\_\+\+Send\+S\+DU}} (l2cap\+Packet\+\_\+t $\ast$p\+Pkt)
+\item 
+b\+Status\+\_\+t \mbox{\hyperlink{icall__api_8c_aa3f9f6f441fade45a6791fffdbf245f4}{L2\+C\+A\+P\+\_\+\+Connect\+Req}} (uint16 conn\+Handle, uint16 psm, uint16 peer\+Psm)
+\item 
+b\+Status\+\_\+t \mbox{\hyperlink{icall__api_8c_a8d48a4fa576a2f9d540345628ae6c557}{L2\+C\+A\+P\+\_\+\+Connect\+Rsp}} (uint16 conn\+Handle, uint8 id, uint16 result)
+\item 
+b\+Status\+\_\+t \mbox{\hyperlink{icall__api_8c_a3ca1bc8d6ee49d81104f62b440311dd8}{L2\+C\+A\+P\+\_\+\+Disconnect\+Req}} (uint16 C\+ID)
+\item 
+b\+Status\+\_\+t \mbox{\hyperlink{icall__api_8c_a28ccf583adbf302cf95db9aef19d3b6e}{L2\+C\+A\+P\+\_\+\+Flow\+Ctrl\+Credit}} (uint16 C\+ID, uint16 peer\+Credits)
+\item 
+void \mbox{\hyperlink{icall__api_8c_ada8acfef4816d49c0fd3233dae8b2df4}{G\+A\+T\+T\+Serv\+App\+\_\+\+Send\+C\+C\+C\+Updated\+Event}} (uint16 conn\+Handle, uint16 attr\+Handle, uint16 value)
+\item 
+void $\ast$ \mbox{\hyperlink{group___g_a_t_t___b_m___a_p_i_gaaf21b84a128832b1f4b5ef0638580d9b}{G\+A\+T\+T\+\_\+bm\+\_\+alloc}} (uint16 conn\+Handle, uint8 \mbox{\hyperlink{icall__apimsg_8h_a2f91dfde180796f5efbaf6db19ac9c09}{opcode}}, uint16 size, uint16 $\ast$p\+Size\+Alloc)
+\begin{DoxyCompactList}\small\item\em G\+A\+TT implementation of the allocator functionality. \end{DoxyCompactList}\item 
+void $\ast$ \mbox{\hyperlink{icall__api_8c_a5f9fbf871179c8cf69373d1b8993bd2f}{L2\+C\+A\+P\+\_\+bm\+\_\+alloc}} (uint16 size)
+\item 
+void \mbox{\hyperlink{group___g_a_t_t___b_m___a_p_i_ga2aa77ddaedaf91c5bea41697716586eb}{G\+A\+T\+T\+\_\+bm\+\_\+free}} (\mbox{\hyperlink{uniongatt_msg__t}{gatt\+Msg\+\_\+t}} $\ast$p\+Msg, uint8 \mbox{\hyperlink{icall__apimsg_8h_a2f91dfde180796f5efbaf6db19ac9c09}{opcode}})
+\begin{DoxyCompactList}\small\item\em G\+A\+TT implementation of the de-\/allocator functionality. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{icall__api_8c_afb34690bb276bbb0a1b507611ae3b74c}{B\+M\+\_\+free}} (void $\ast$payload\+\_\+ptr)
+\item 
+b\+Status\+\_\+t \mbox{\hyperlink{icall__api_8c_a5fdcdfe623843b10e919648e3cc8f11c}{S\+M\+\_\+\+Get\+Sc\+Confirm\+Oob}} (uint8 $\ast$public\+Key, uint8 $\ast$oob, uint8 $\ast$p\+Out)
+\item 
+\mbox{\hyperlink{hci_8h_a160d48a9feb9427468f8b9162227da59}{hci\+Status\+\_\+t}} \mbox{\hyperlink{icall__api_8c_ad3702645425557c240a4c97973cb7a6b}{H\+C\+I\+\_\+\+Read\+Remote\+Version\+Info\+Cmd}} (uint16 conn\+Handle)
+\item 
+\mbox{\hyperlink{hci_8h_a160d48a9feb9427468f8b9162227da59}{hci\+Status\+\_\+t}} \mbox{\hyperlink{icall__api_8c_a08cbfd3dc69cc0c6aca88d0f917645b5}{H\+C\+I\+\_\+\+Set\+Event\+Mask\+Cmd}} (uint8 $\ast$p\+Mask)
+\item 
+\mbox{\hyperlink{hci_8h_a160d48a9feb9427468f8b9162227da59}{hci\+Status\+\_\+t}} \mbox{\hyperlink{icall__api_8c_a77d8589b4668b1c03ca86710adc67e70}{H\+C\+I\+\_\+\+Set\+Event\+Mask\+Page2\+Cmd}} (uint8 $\ast$p\+Mask)
+\item 
+\mbox{\hyperlink{hci_8h_a160d48a9feb9427468f8b9162227da59}{hci\+Status\+\_\+t}} \mbox{\hyperlink{icall__api_8c_ab80ed0dca9d58e9f825843768e52813d}{H\+C\+I\+\_\+\+Reset\+Cmd}} (void)
+\item 
+\mbox{\hyperlink{hci_8h_a160d48a9feb9427468f8b9162227da59}{hci\+Status\+\_\+t}} \mbox{\hyperlink{icall__api_8c_a7910b451e12513208df3cef4d03c92b5}{H\+C\+I\+\_\+\+Read\+Transmit\+Power\+Level\+Cmd}} (uint16 conn\+Handle, uint8 tx\+Pwr\+Type)
+\item 
+\mbox{\hyperlink{hci_8h_a160d48a9feb9427468f8b9162227da59}{hci\+Status\+\_\+t}} \mbox{\hyperlink{icall__api_8c_a2d19d2c9c976694627750177f1fba000}{H\+C\+I\+\_\+\+Read\+Local\+Version\+Info\+Cmd}} (void)
+\item 
+\mbox{\hyperlink{hci_8h_a160d48a9feb9427468f8b9162227da59}{hci\+Status\+\_\+t}} \mbox{\hyperlink{icall__api_8c_aecae8cf9fe12a3ff6299055b4c269458}{H\+C\+I\+\_\+\+Read\+Local\+Supported\+Commands\+Cmd}} (void)
+\item 
+\mbox{\hyperlink{hci_8h_a160d48a9feb9427468f8b9162227da59}{hci\+Status\+\_\+t}} \mbox{\hyperlink{icall__api_8c_a42654b2da8f810e7f33f68e5e96aab1d}{H\+C\+I\+\_\+\+Read\+Local\+Supported\+Features\+Cmd}} (void)
+\item 
+\mbox{\hyperlink{hci_8h_a160d48a9feb9427468f8b9162227da59}{hci\+Status\+\_\+t}} \mbox{\hyperlink{icall__api_8c_ac92bf295ab302f25d70d88105a12b3e9}{H\+C\+I\+\_\+\+Read\+B\+D\+A\+D\+D\+R\+Cmd}} (void)
+\item 
+\mbox{\hyperlink{hci_8h_a160d48a9feb9427468f8b9162227da59}{hci\+Status\+\_\+t}} \mbox{\hyperlink{icall__api_8c_a19d1f14a0fde7b049a92f46e96671b40}{H\+C\+I\+\_\+\+Read\+Rssi\+Cmd}} (uint16 conn\+Handle)
+\item 
+\mbox{\hyperlink{hci_8h_a160d48a9feb9427468f8b9162227da59}{hci\+Status\+\_\+t}} \mbox{\hyperlink{icall__api_8c_afb25fb9df2c46262deeb88cc16298572}{H\+C\+I\+\_\+\+L\+E\+\_\+\+Set\+Event\+Mask\+Cmd}} (uint8 $\ast$p\+Event\+Mask)
+\item 
+\mbox{\hyperlink{hci_8h_a160d48a9feb9427468f8b9162227da59}{hci\+Status\+\_\+t}} \mbox{\hyperlink{icall__api_8c_a12e3a9546d06a0516ae45f3fdc5ca303}{H\+C\+I\+\_\+\+L\+E\+\_\+\+Read\+Local\+Supported\+Features\+Cmd}} (void)
+\item 
+\mbox{\hyperlink{hci_8h_a160d48a9feb9427468f8b9162227da59}{hci\+Status\+\_\+t}} \mbox{\hyperlink{icall__api_8c_a56cf789ffe423a546c1fed1034250774}{H\+C\+I\+\_\+\+L\+E\+\_\+\+Read\+Adv\+Chan\+Tx\+Power\+Cmd}} (void)
+\item 
+\mbox{\hyperlink{hci_8h_a160d48a9feb9427468f8b9162227da59}{hci\+Status\+\_\+t}} \mbox{\hyperlink{icall__api_8c_a3c8a0df6d7e823036ac6a56ce320e6be}{H\+C\+I\+\_\+\+L\+E\+\_\+\+Read\+White\+List\+Size\+Cmd}} (void)
+\item 
+\mbox{\hyperlink{hci_8h_a160d48a9feb9427468f8b9162227da59}{hci\+Status\+\_\+t}} \mbox{\hyperlink{icall__api_8c_ad05927cc6b7ba91244c98fc6e5c97165}{H\+C\+I\+\_\+\+L\+E\+\_\+\+Clear\+White\+List\+Cmd}} (void)
+\item 
+\mbox{\hyperlink{hci_8h_a160d48a9feb9427468f8b9162227da59}{hci\+Status\+\_\+t}} \mbox{\hyperlink{icall__api_8c_a5034b56f0d3c79d6382f7fea041e58af}{H\+C\+I\+\_\+\+L\+E\+\_\+\+Add\+White\+List\+Cmd}} (uint8 addr\+Type, uint8 $\ast$dev\+Addr)
+\item 
+\mbox{\hyperlink{hci_8h_a160d48a9feb9427468f8b9162227da59}{hci\+Status\+\_\+t}} \mbox{\hyperlink{icall__api_8c_af96813717228957d73470f1e2a338669}{H\+C\+I\+\_\+\+L\+E\+\_\+\+Remove\+White\+List\+Cmd}} (uint8 addr\+Type, uint8 $\ast$dev\+Addr)
+\item 
+\mbox{\hyperlink{hci_8h_a160d48a9feb9427468f8b9162227da59}{hci\+Status\+\_\+t}} \mbox{\hyperlink{icall__api_8c_a41200c44c2cb5cd7ce482fa3a7810e91}{H\+C\+I\+\_\+\+L\+E\+\_\+\+Set\+Host\+Chan\+Classification\+Cmd}} (uint8 $\ast$chan\+Map)
+\item 
+\mbox{\hyperlink{hci_8h_a160d48a9feb9427468f8b9162227da59}{hci\+Status\+\_\+t}} \mbox{\hyperlink{icall__api_8c_a50de8065346a67994490aa38ebe04d0e}{H\+C\+I\+\_\+\+L\+E\+\_\+\+Read\+Channel\+Map\+Cmd}} (uint16 conn\+Handle)
+\item 
+\mbox{\hyperlink{hci_8h_a160d48a9feb9427468f8b9162227da59}{hci\+Status\+\_\+t}} \mbox{\hyperlink{icall__api_8c_aaeb3711c7bee46ba5258c94a64ce4865}{H\+C\+I\+\_\+\+L\+E\+\_\+\+Read\+Remote\+Used\+Features\+Cmd}} (uint16 conn\+Handle)
+\item 
+\mbox{\hyperlink{hci_8h_a160d48a9feb9427468f8b9162227da59}{hci\+Status\+\_\+t}} \mbox{\hyperlink{icall__api_8c_aa04634abdbb8e70e012fbdb44c2968df}{H\+C\+I\+\_\+\+L\+E\+\_\+\+Encrypt\+Cmd}} (uint8 $\ast$key, uint8 $\ast$plain\+Text)
+\item 
+\mbox{\hyperlink{hci_8h_a160d48a9feb9427468f8b9162227da59}{hci\+Status\+\_\+t}} \mbox{\hyperlink{icall__api_8c_a9e6faf65c4c8aae12f639f0f60c2fbb4}{H\+C\+I\+\_\+\+L\+E\+\_\+\+Read\+Supported\+States\+Cmd}} (void)
+\item 
+\mbox{\hyperlink{hci_8h_a160d48a9feb9427468f8b9162227da59}{hci\+Status\+\_\+t}} \mbox{\hyperlink{icall__api_8c_a76d88fd2ee34027ecd370b9659e81922}{H\+C\+I\+\_\+\+L\+E\+\_\+\+Read\+Max\+Data\+Len\+Cmd}} (void)
+\item 
+\mbox{\hyperlink{hci_8h_a160d48a9feb9427468f8b9162227da59}{hci\+Status\+\_\+t}} \mbox{\hyperlink{icall__api_8c_aec617ade902119b1cb23e4c1dc35acdf}{H\+C\+I\+\_\+\+L\+E\+\_\+\+Read\+Suggested\+Default\+Data\+Len\+Cmd}} (void)
+\item 
+\mbox{\hyperlink{hci_8h_a160d48a9feb9427468f8b9162227da59}{hci\+Status\+\_\+t}} \mbox{\hyperlink{icall__api_8c_aee60ea41f67b959589e696984356a30e}{H\+C\+I\+\_\+\+L\+E\+\_\+\+Write\+Suggested\+Default\+Data\+Len\+Cmd}} (uint16 tx\+Octets, uint16 tx\+Time)
+\item 
+\mbox{\hyperlink{hci_8h_a160d48a9feb9427468f8b9162227da59}{hci\+Status\+\_\+t}} \mbox{\hyperlink{icall__api_8c_ae69c8fd7434c02abe3cf504cbe37db21}{H\+C\+I\+\_\+\+L\+E\+\_\+\+Set\+Data\+Len\+Cmd}} (uint16 conn\+Handle, uint16 tx\+Octets, uint16 tx\+Time)
+\item 
+\mbox{\hyperlink{hci_8h_a160d48a9feb9427468f8b9162227da59}{hci\+Status\+\_\+t}} \mbox{\hyperlink{icall__api_8c_ab545b388268bc697b0a49e15ebc87023}{H\+C\+I\+\_\+\+L\+E\+\_\+\+Transmitter\+Test\+Cmd}} (uint8 tx\+Chan, uint8 data\+Len, uint8 payload\+Type)
+\item 
+\mbox{\hyperlink{hci_8h_a160d48a9feb9427468f8b9162227da59}{hci\+Status\+\_\+t}} \mbox{\hyperlink{icall__api_8c_adef9488661d9ad2897a38ae0e2479337}{H\+C\+I\+\_\+\+L\+E\+\_\+\+Receiver\+Test\+Cmd}} (uint8 rx\+Freq)
+\item 
+\mbox{\hyperlink{hci_8h_a160d48a9feb9427468f8b9162227da59}{hci\+Status\+\_\+t}} \mbox{\hyperlink{icall__api_8c_a6cf7b2e9c5ed8b112e3c0a6c5731b173}{H\+C\+I\+\_\+\+L\+E\+\_\+\+Test\+End\+Cmd}} (void)
+\item 
+\mbox{\hyperlink{hci_8h_a160d48a9feb9427468f8b9162227da59}{hci\+Status\+\_\+t}} \mbox{\hyperlink{icall__api_8c_afb44c5a388a047db7c3c4d0a4ac57320}{H\+C\+I\+\_\+\+E\+X\+T\+\_\+\+Set\+Tx\+Power\+Cmd}} (uint8 tx\+Power)
+\item 
+\mbox{\hyperlink{hci_8h_a160d48a9feb9427468f8b9162227da59}{hci\+Status\+\_\+t}} \mbox{\hyperlink{icall__api_8c_a907c6645b4711a44f7b1d704b4455959}{H\+C\+I\+\_\+\+E\+X\+T\+\_\+\+One\+Pkt\+Per\+Evt\+Cmd}} (uint8 control)
+\item 
+\mbox{\hyperlink{hci_8h_a160d48a9feb9427468f8b9162227da59}{hci\+Status\+\_\+t}} \mbox{\hyperlink{icall__api_8c_a9d7f1a977db36ca4adfddabbfcda75f4}{H\+C\+I\+\_\+\+E\+X\+T\+\_\+\+Decrypt\+Cmd}} (uint8 $\ast$key, uint8 $\ast$enc\+Text)
+\item 
+\mbox{\hyperlink{hci_8h_a160d48a9feb9427468f8b9162227da59}{hci\+Status\+\_\+t}} \mbox{\hyperlink{icall__api_8c_a040091db19b02697911fb043179070fc}{H\+C\+I\+\_\+\+E\+X\+T\+\_\+\+Set\+Local\+Supported\+Features\+Cmd}} (uint8 $\ast$local\+Features)
+\item 
+\mbox{\hyperlink{hci_8h_a160d48a9feb9427468f8b9162227da59}{hci\+Status\+\_\+t}} \mbox{\hyperlink{icall__api_8c_a71a3dbc1fc56c9f79be1dfaf288db85d}{H\+C\+I\+\_\+\+E\+X\+T\+\_\+\+Set\+Fast\+Tx\+Response\+Time\+Cmd}} (uint8 control)
+\item 
+\mbox{\hyperlink{hci_8h_a160d48a9feb9427468f8b9162227da59}{hci\+Status\+\_\+t}} \mbox{\hyperlink{icall__api_8c_a6791ec01d5a12ed53ae2fd71d0416b81}{H\+C\+I\+\_\+\+E\+X\+T\+\_\+\+Set\+Slave\+Latency\+Override\+Cmd}} (uint8 control)
+\item 
+\mbox{\hyperlink{hci_8h_a160d48a9feb9427468f8b9162227da59}{hci\+Status\+\_\+t}} \mbox{\hyperlink{icall__api_8c_a52026c1baa694196730ac4270438c759}{H\+C\+I\+\_\+\+E\+X\+T\+\_\+\+Modem\+Test\+Tx\+Cmd}} (uint8 cw\+Mode, uint8 tx\+Freq)
+\item 
+\mbox{\hyperlink{hci_8h_a160d48a9feb9427468f8b9162227da59}{hci\+Status\+\_\+t}} \mbox{\hyperlink{icall__api_8c_aaf39f9be672b4fd59d16e62daeb947a5}{H\+C\+I\+\_\+\+E\+X\+T\+\_\+\+Modem\+Hop\+Test\+Tx\+Cmd}} (void)
+\item 
+\mbox{\hyperlink{hci_8h_a160d48a9feb9427468f8b9162227da59}{hci\+Status\+\_\+t}} \mbox{\hyperlink{icall__api_8c_aaea6b9ea2b0c6dc4920ea9000454fc6c}{H\+C\+I\+\_\+\+E\+X\+T\+\_\+\+Modem\+Test\+Rx\+Cmd}} (uint8 rx\+Freq)
+\item 
+\mbox{\hyperlink{hci_8h_a160d48a9feb9427468f8b9162227da59}{hci\+Status\+\_\+t}} \mbox{\hyperlink{icall__api_8c_a7e01adfef46ab871273fb785ddb66533}{H\+C\+I\+\_\+\+E\+X\+T\+\_\+\+End\+Modem\+Test\+Cmd}} (void)
+\item 
+\mbox{\hyperlink{hci_8h_a160d48a9feb9427468f8b9162227da59}{hci\+Status\+\_\+t}} \mbox{\hyperlink{icall__api_8c_aea8af8b8d0099e813cde1e30b864a0a7}{H\+C\+I\+\_\+\+E\+X\+T\+\_\+\+Set\+B\+D\+A\+D\+D\+R\+Cmd}} (uint8 $\ast$bd\+Addr)
+\item 
+\mbox{\hyperlink{hci_8h_a160d48a9feb9427468f8b9162227da59}{hci\+Status\+\_\+t}} \mbox{\hyperlink{icall__api_8c_a650463588bfd77c7c745cb93dff3ce2d}{H\+C\+I\+\_\+\+E\+X\+T\+\_\+\+Set\+S\+C\+A\+Cmd}} (uint16 sca\+In\+P\+PM)
+\item 
+\mbox{\hyperlink{hci_8h_a160d48a9feb9427468f8b9162227da59}{hci\+Status\+\_\+t}} \mbox{\hyperlink{icall__api_8c_a880b1f54c64ded6c9d862c18cefe75de}{H\+C\+I\+\_\+\+E\+X\+T\+\_\+\+Enable\+P\+T\+M\+Cmd}} (void)
+\item 
+\mbox{\hyperlink{hci_8h_a160d48a9feb9427468f8b9162227da59}{hci\+Status\+\_\+t}} \mbox{\hyperlink{icall__api_8c_a20c174d3b24b6c6e488dd21c8523fbab}{H\+C\+I\+\_\+\+E\+X\+T\+\_\+\+Set\+Max\+Dtm\+Tx\+Power\+Cmd}} (uint8 tx\+Power)
+\item 
+\mbox{\hyperlink{hci_8h_a160d48a9feb9427468f8b9162227da59}{hci\+Status\+\_\+t}} \mbox{\hyperlink{icall__api_8c_a2af670b9721f3bcd327dec23d5b0bd16}{H\+C\+I\+\_\+\+E\+X\+T\+\_\+\+Disconnect\+Immed\+Cmd}} (uint16 conn\+Handle)
+\item 
+\mbox{\hyperlink{hci_8h_a160d48a9feb9427468f8b9162227da59}{hci\+Status\+\_\+t}} \mbox{\hyperlink{icall__api_8c_af3ee3e4fc190bb0d226b83d76deb5c95}{H\+C\+I\+\_\+\+E\+X\+T\+\_\+\+Packet\+Error\+Rate\+Cmd}} (uint16 conn\+Handle, uint8 command)
+\item 
+\mbox{\hyperlink{hci_8h_a160d48a9feb9427468f8b9162227da59}{hci\+Status\+\_\+t}} \mbox{\hyperlink{icall__api_8c_a86206c316f719c8f721a989c88219f34}{H\+C\+I\+\_\+\+E\+X\+T\+\_\+\+P\+E\+Rby\+Chan\+Cmd}} (uint16 conn\+Handle, per\+By\+Chan\+\_\+t $\ast$per\+By\+Chan)
+\item 
+\mbox{\hyperlink{hci_8h_a160d48a9feb9427468f8b9162227da59}{hci\+Status\+\_\+t}} \mbox{\hyperlink{icall__api_8c_ad238105c7e58cac8100c185682e12d5f}{H\+C\+I\+\_\+\+E\+X\+T\+\_\+\+Adv\+Event\+Notice\+Cmd}} (uint8 task\+ID, uint16 task\+Event)
+\item 
+\mbox{\hyperlink{hci_8h_a160d48a9feb9427468f8b9162227da59}{hci\+Status\+\_\+t}} \mbox{\hyperlink{icall__api_8c_a48c34bf7059b2e104e4756256572a9a1}{H\+C\+I\+\_\+\+E\+X\+T\+\_\+\+Conn\+Event\+Notice\+Cmd}} (uint16 conn\+Handle, uint8 task\+ID, uint16 task\+Event)
+\item 
+\mbox{\hyperlink{hci_8h_a160d48a9feb9427468f8b9162227da59}{hci\+Status\+\_\+t}} \mbox{\hyperlink{icall__api_8c_af59d0226376224f8e9a53b4c909e3321}{H\+C\+I\+\_\+\+E\+X\+T\+\_\+\+Build\+Revision\+Cmd}} (uint8 mode, uint16 user\+Rev\+Num)
+\item 
+\mbox{\hyperlink{hci_8h_a160d48a9feb9427468f8b9162227da59}{hci\+Status\+\_\+t}} \mbox{\hyperlink{icall__api_8c_ac30290b47a22c998b70019be8edb4bab}{H\+C\+I\+\_\+\+E\+X\+T\+\_\+\+Delay\+Sleep\+Cmd}} (uint16 delay)
+\item 
+\mbox{\hyperlink{hci_8h_a160d48a9feb9427468f8b9162227da59}{hci\+Status\+\_\+t}} \mbox{\hyperlink{icall__api_8c_affef67bdc99da95079971d9cabe512c1}{H\+C\+I\+\_\+\+E\+X\+T\+\_\+\+Reset\+System\+Cmd}} (uint8 mode)
+\item 
+\mbox{\hyperlink{hci_8h_a160d48a9feb9427468f8b9162227da59}{hci\+Status\+\_\+t}} \mbox{\hyperlink{icall__api_8c_a0a0341663923541452f94a057abd0932}{H\+C\+I\+\_\+\+E\+X\+T\+\_\+\+Num\+Compl\+Pkts\+Limit\+Cmd}} (uint8 limit, uint8 flush\+On\+Evt)
+\item 
+\mbox{\hyperlink{hci_8h_a160d48a9feb9427468f8b9162227da59}{hci\+Status\+\_\+t}} \mbox{\hyperlink{icall__api_8c_afc46efb446fa7328ca7bc70078c1c2ac}{H\+C\+I\+\_\+\+E\+X\+T\+\_\+\+Get\+Conn\+Info\+Cmd}} (uint8 $\ast$num\+Alloc\+Conns, uint8 $\ast$num\+Active\+Conns, \mbox{\hyperlink{structhci_conn_info__t}{hci\+Conn\+Info\+\_\+t}} $\ast$active\+Conn\+Info)
+\item 
+uint8 \mbox{\hyperlink{icall__api_8c_a035bb602a38bcd18450be7ad8075ba11}{osal\+\_\+snv\+\_\+read}} (\mbox{\hyperlink{osal__snv_8h_af081403f50bf91afa44dddff24179a03}{osal\+Snv\+Id\+\_\+t}} id, \mbox{\hyperlink{osal__snv_8h_a445ca6febfeac207c762ad6d0093dd65}{osal\+Snv\+Len\+\_\+t}} \mbox{\hyperlink{icall__apimsg_8h_a8ccac76f35f79d74917e1c5dd6f69fea}{len}}, void $\ast$p\+Buf)
+\item 
+uint8 \mbox{\hyperlink{icall__api_8c_a029016762d0746f51511c90692db5e49}{osal\+\_\+snv\+\_\+write}} (\mbox{\hyperlink{osal__snv_8h_af081403f50bf91afa44dddff24179a03}{osal\+Snv\+Id\+\_\+t}} id, \mbox{\hyperlink{osal__snv_8h_a445ca6febfeac207c762ad6d0093dd65}{osal\+Snv\+Len\+\_\+t}} \mbox{\hyperlink{icall__apimsg_8h_a8ccac76f35f79d74917e1c5dd6f69fea}{len}}, void $\ast$p\+Buf)
+\item 
+b\+Status\+\_\+t \mbox{\hyperlink{icall__api_8c_ad9cf5e8a9556ac33d32131e5bae15d43}{Util\+\_\+build\+Revision}} (\mbox{\hyperlink{icall__apimsg_8h_a65ee593b8bd7efb678328b6f87838d44}{I\+Call\+\_\+\+Build\+Revision}} $\ast$p\+Build\+Rev)
+\item 
+uint32\+\_\+t \mbox{\hyperlink{icall__api_8c_a169dc1ac175efe8d9fac0c63d725b241}{Util\+\_\+\+Get\+T\+R\+NG}} (void)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+uint16 \mbox{\hyperlink{icall__api_8c_a3416c65d751a9d8f82b6cbd42bd9d223}{last\+App\+Opcode\+Sent}} = 0x\+F\+F\+FF
+\item 
+pfn\+B\+M\+Alloc\+\_\+t \mbox{\hyperlink{icall__api_8c_a8b253e34752c76f85e00e41682955b00}{pfn\+B\+M\+Alloc}} = N\+U\+LL
+\item 
+pfn\+B\+M\+Free\+\_\+t \mbox{\hyperlink{icall__api_8c_a60bc5555f431090573cda634d6977232}{pfn\+B\+M\+Free}} = N\+U\+LL
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{icall__api_8c_ada72af21cc1ab89b7d802b895e6c1f91}\label{icall__api_8c_ada72af21cc1ab89b7d802b895e6c1f91}} 
+\index{icall\_api.c@{icall\_api.c}!ATT\_ErrorRsp@{ATT\_ErrorRsp}}
+\index{ATT\_ErrorRsp@{ATT\_ErrorRsp}!icall\_api.c@{icall\_api.c}}
+\doxysubsubsection{\texorpdfstring{ATT\_ErrorRsp()}{ATT\_ErrorRsp()}}
+{\footnotesize\ttfamily b\+Status\+\_\+t A\+T\+T\+\_\+\+Error\+Rsp (\begin{DoxyParamCaption}\item[{uint16}]{conn\+Handle,  }\item[{att\+Error\+Rsp\+\_\+t $\ast$}]{p\+Rsp }\end{DoxyParamCaption})}
+
+
+
+Definition at line 1994 of file icall\+\_\+api.\+c.
+
+\mbox{\Hypertarget{icall__api_8c_a32fbe6fb42062c2359d992177062e89c}\label{icall__api_8c_a32fbe6fb42062c2359d992177062e89c}} 
+\index{icall\_api.c@{icall\_api.c}!ATT\_ExecuteWriteRsp@{ATT\_ExecuteWriteRsp}}
+\index{ATT\_ExecuteWriteRsp@{ATT\_ExecuteWriteRsp}!icall\_api.c@{icall\_api.c}}
+\doxysubsubsection{\texorpdfstring{ATT\_ExecuteWriteRsp()}{ATT\_ExecuteWriteRsp()}}
+{\footnotesize\ttfamily b\+Status\+\_\+t A\+T\+T\+\_\+\+Execute\+Write\+Rsp (\begin{DoxyParamCaption}\item[{uint16}]{conn\+Handle }\end{DoxyParamCaption})}
+
+
+
+Definition at line 2046 of file icall\+\_\+api.\+c.
+
+\mbox{\Hypertarget{icall__api_8c_ad81ac287724f2622fe15462e6cae6438}\label{icall__api_8c_ad81ac287724f2622fe15462e6cae6438}} 
+\index{icall\_api.c@{icall\_api.c}!ATT\_HandleValueCfm@{ATT\_HandleValueCfm}}
+\index{ATT\_HandleValueCfm@{ATT\_HandleValueCfm}!icall\_api.c@{icall\_api.c}}
+\doxysubsubsection{\texorpdfstring{ATT\_HandleValueCfm()}{ATT\_HandleValueCfm()}}
+{\footnotesize\ttfamily b\+Status\+\_\+t A\+T\+T\+\_\+\+Handle\+Value\+Cfm (\begin{DoxyParamCaption}\item[{uint16}]{conn\+Handle }\end{DoxyParamCaption})}
+
+
+
+Definition at line 2059 of file icall\+\_\+api.\+c.
+
+\mbox{\Hypertarget{icall__api_8c_a192c559bc6b8763c0b7498bacb86e245}\label{icall__api_8c_a192c559bc6b8763c0b7498bacb86e245}} 
+\index{icall\_api.c@{icall\_api.c}!ATT\_ReadBlobRsp@{ATT\_ReadBlobRsp}}
+\index{ATT\_ReadBlobRsp@{ATT\_ReadBlobRsp}!icall\_api.c@{icall\_api.c}}
+\doxysubsubsection{\texorpdfstring{ATT\_ReadBlobRsp()}{ATT\_ReadBlobRsp()}}
+{\footnotesize\ttfamily b\+Status\+\_\+t A\+T\+T\+\_\+\+Read\+Blob\+Rsp (\begin{DoxyParamCaption}\item[{uint16}]{conn\+Handle,  }\item[{att\+Read\+Blob\+Rsp\+\_\+t $\ast$}]{p\+Rsp }\end{DoxyParamCaption})}
+
+
+
+Definition at line 2020 of file icall\+\_\+api.\+c.
+
+\mbox{\Hypertarget{icall__api_8c_aeda7a7f37fdb7d6ca02dba1d6a4f8d6e}\label{icall__api_8c_aeda7a7f37fdb7d6ca02dba1d6a4f8d6e}} 
+\index{icall\_api.c@{icall\_api.c}!ATT\_ReadRsp@{ATT\_ReadRsp}}
+\index{ATT\_ReadRsp@{ATT\_ReadRsp}!icall\_api.c@{icall\_api.c}}
+\doxysubsubsection{\texorpdfstring{ATT\_ReadRsp()}{ATT\_ReadRsp()}}
+{\footnotesize\ttfamily b\+Status\+\_\+t A\+T\+T\+\_\+\+Read\+Rsp (\begin{DoxyParamCaption}\item[{uint16}]{conn\+Handle,  }\item[{att\+Read\+Rsp\+\_\+t $\ast$}]{p\+Rsp }\end{DoxyParamCaption})}
+
+
+
+Definition at line 2007 of file icall\+\_\+api.\+c.
+
+\mbox{\Hypertarget{icall__api_8c_a0170c24dbfc9827737a1096aa9279380}\label{icall__api_8c_a0170c24dbfc9827737a1096aa9279380}} 
+\index{icall\_api.c@{icall\_api.c}!ATT\_WriteRsp@{ATT\_WriteRsp}}
+\index{ATT\_WriteRsp@{ATT\_WriteRsp}!icall\_api.c@{icall\_api.c}}
+\doxysubsubsection{\texorpdfstring{ATT\_WriteRsp()}{ATT\_WriteRsp()}}
+{\footnotesize\ttfamily b\+Status\+\_\+t A\+T\+T\+\_\+\+Write\+Rsp (\begin{DoxyParamCaption}\item[{uint16}]{conn\+Handle }\end{DoxyParamCaption})}
+
+
+
+Definition at line 2033 of file icall\+\_\+api.\+c.
+
+\mbox{\Hypertarget{icall__api_8c_afb34690bb276bbb0a1b507611ae3b74c}\label{icall__api_8c_afb34690bb276bbb0a1b507611ae3b74c}} 
+\index{icall\_api.c@{icall\_api.c}!BM\_free@{BM\_free}}
+\index{BM\_free@{BM\_free}!icall\_api.c@{icall\_api.c}}
+\doxysubsubsection{\texorpdfstring{BM\_free()}{BM\_free()}}
+{\footnotesize\ttfamily void B\+M\+\_\+free (\begin{DoxyParamCaption}\item[{void $\ast$}]{payload\+\_\+ptr }\end{DoxyParamCaption})}
+
+
+
+Definition at line 3308 of file icall\+\_\+api.\+c.
+
+\mbox{\Hypertarget{icall__api_8c_a8680d82e797280a42846ae8932b87a1b}\label{icall__api_8c_a8680d82e797280a42846ae8932b87a1b}} 
+\index{icall\_api.c@{icall\_api.c}!GAP\_UpdateAdvToken@{GAP\_UpdateAdvToken}}
+\index{GAP\_UpdateAdvToken@{GAP\_UpdateAdvToken}!icall\_api.c@{icall\_api.c}}
+\doxysubsubsection{\texorpdfstring{GAP\_UpdateAdvToken()}{GAP\_UpdateAdvToken()}}
+{\footnotesize\ttfamily b\+Status\+\_\+t G\+A\+P\+\_\+\+Update\+Adv\+Token (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 2363 of file icall\+\_\+api.\+c.
+
+\mbox{\Hypertarget{icall__api_8c_a4c9843ebd931e2a38bdf5c24030d02c7}\label{icall__api_8c_a4c9843ebd931e2a38bdf5c24030d02c7}} 
+\index{icall\_api.c@{icall\_api.c}!GATT\_GetNextHandle@{GATT\_GetNextHandle}}
+\index{GATT\_GetNextHandle@{GATT\_GetNextHandle}!icall\_api.c@{icall\_api.c}}
+\doxysubsubsection{\texorpdfstring{GATT\_GetNextHandle()}{GATT\_GetNextHandle()}}
+{\footnotesize\ttfamily uint16\+\_\+t G\+A\+T\+T\+\_\+\+Get\+Next\+Handle (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 1953 of file icall\+\_\+api.\+c.
+
+\mbox{\Hypertarget{icall__api_8c_a726a49f31f433e4d38257002f2179f67}\label{icall__api_8c_a726a49f31f433e4d38257002f2179f67}} 
+\index{icall\_api.c@{icall\_api.c}!GATTServApp\_AddService@{GATTServApp\_AddService}}
+\index{GATTServApp\_AddService@{GATTServApp\_AddService}!icall\_api.c@{icall\_api.c}}
+\doxysubsubsection{\texorpdfstring{GATTServApp\_AddService()}{GATTServApp\_AddService()}}
+{\footnotesize\ttfamily b\+Status\+\_\+t G\+A\+T\+T\+Serv\+App\+\_\+\+Add\+Service (\begin{DoxyParamCaption}\item[{uint32}]{services }\end{DoxyParamCaption})}
+
+
+
+Definition at line 912 of file icall\+\_\+api.\+c.
+
+\mbox{\Hypertarget{icall__api_8c_ac0b963de3de2af3d0a4d378f0a7a225c}\label{icall__api_8c_ac0b963de3de2af3d0a4d378f0a7a225c}} 
+\index{icall\_api.c@{icall\_api.c}!GATTServApp\_DeregisterService@{GATTServApp\_DeregisterService}}
+\index{GATTServApp\_DeregisterService@{GATTServApp\_DeregisterService}!icall\_api.c@{icall\_api.c}}
+\doxysubsubsection{\texorpdfstring{GATTServApp\_DeregisterService()}{GATTServApp\_DeregisterService()}}
+{\footnotesize\ttfamily b\+Status\+\_\+t G\+A\+T\+T\+Serv\+App\+\_\+\+Deregister\+Service (\begin{DoxyParamCaption}\item[{uint16}]{handle,  }\item[{\mbox{\hyperlink{gatt_8h_a8dca0d941f79cbc3bca13ab038e2e963}{gatt\+Attribute\+\_\+t}} $\ast$$\ast$}]{p2p\+Attrs }\end{DoxyParamCaption})}
+
+
+
+Definition at line 955 of file icall\+\_\+api.\+c.
+
+\mbox{\Hypertarget{icall__api_8c_aba3d441734e26ee1e6ec77f05614dd84}\label{icall__api_8c_aba3d441734e26ee1e6ec77f05614dd84}} 
+\index{icall\_api.c@{icall\_api.c}!GATTServApp\_GetParameter@{GATTServApp\_GetParameter}}
+\index{GATTServApp\_GetParameter@{GATTServApp\_GetParameter}!icall\_api.c@{icall\_api.c}}
+\doxysubsubsection{\texorpdfstring{GATTServApp\_GetParameter()}{GATTServApp\_GetParameter()}}
+{\footnotesize\ttfamily b\+Status\+\_\+t G\+A\+T\+T\+Serv\+App\+\_\+\+Get\+Parameter (\begin{DoxyParamCaption}\item[{uint8}]{param,  }\item[{void $\ast$}]{p\+Value }\end{DoxyParamCaption})}
+
+
+
+Definition at line 993 of file icall\+\_\+api.\+c.
+
+\mbox{\Hypertarget{icall__api_8c_a31d434da47600dddba8363b625cfa296}\label{icall__api_8c_a31d434da47600dddba8363b625cfa296}} 
+\index{icall\_api.c@{icall\_api.c}!GATTServApp\_ReadRsp@{GATTServApp\_ReadRsp}}
+\index{GATTServApp\_ReadRsp@{GATTServApp\_ReadRsp}!icall\_api.c@{icall\_api.c}}
+\doxysubsubsection{\texorpdfstring{GATTServApp\_ReadRsp()}{GATTServApp\_ReadRsp()}}
+{\footnotesize\ttfamily b\+Status\+\_\+t G\+A\+T\+T\+Serv\+App\+\_\+\+Read\+Rsp (\begin{DoxyParamCaption}\item[{uint16}]{conn\+Handle,  }\item[{uint8 $\ast$}]{p\+Attr\+Value,  }\item[{uint16}]{attr\+Len,  }\item[{uint16}]{attr\+Handle }\end{DoxyParamCaption})}
+
+
+
+Definition at line 1031 of file icall\+\_\+api.\+c.
+
+\mbox{\Hypertarget{icall__api_8c_ab03b16f9f82020807d82ee44d2479acf}\label{icall__api_8c_ab03b16f9f82020807d82ee44d2479acf}} 
+\index{icall\_api.c@{icall\_api.c}!GATTServApp\_RegisterService@{GATTServApp\_RegisterService}}
+\index{GATTServApp\_RegisterService@{GATTServApp\_RegisterService}!icall\_api.c@{icall\_api.c}}
+\doxysubsubsection{\texorpdfstring{GATTServApp\_RegisterService()}{GATTServApp\_RegisterService()}}
+{\footnotesize\ttfamily b\+Status\+\_\+t G\+A\+T\+T\+Serv\+App\+\_\+\+Register\+Service (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{gatt_8h_a8dca0d941f79cbc3bca13ab038e2e963}{gatt\+Attribute\+\_\+t}} $\ast$}]{p\+Attrs,  }\item[{uint16}]{num\+Attrs,  }\item[{uint8}]{enc\+Key\+Size,  }\item[{C\+O\+N\+ST gatt\+Service\+C\+Bs\+\_\+t $\ast$}]{p\+Service\+C\+Bs }\end{DoxyParamCaption})}
+
+
+
+Definition at line 923 of file icall\+\_\+api.\+c.
+
+\mbox{\Hypertarget{icall__api_8c_ada8acfef4816d49c0fd3233dae8b2df4}\label{icall__api_8c_ada8acfef4816d49c0fd3233dae8b2df4}} 
+\index{icall\_api.c@{icall\_api.c}!GATTServApp\_SendCCCUpdatedEvent@{GATTServApp\_SendCCCUpdatedEvent}}
+\index{GATTServApp\_SendCCCUpdatedEvent@{GATTServApp\_SendCCCUpdatedEvent}!icall\_api.c@{icall\_api.c}}
+\doxysubsubsection{\texorpdfstring{GATTServApp\_SendCCCUpdatedEvent()}{GATTServApp\_SendCCCUpdatedEvent()}}
+{\footnotesize\ttfamily void G\+A\+T\+T\+Serv\+App\+\_\+\+Send\+C\+C\+C\+Updated\+Event (\begin{DoxyParamCaption}\item[{uint16}]{conn\+Handle,  }\item[{uint16}]{attr\+Handle,  }\item[{uint16}]{value }\end{DoxyParamCaption})}
+
+
+
+Definition at line 3215 of file icall\+\_\+api.\+c.
+
+\mbox{\Hypertarget{icall__api_8c_a731f6d7cbb40a4517fa865c98d1e5f66}\label{icall__api_8c_a731f6d7cbb40a4517fa865c98d1e5f66}} 
+\index{icall\_api.c@{icall\_api.c}!GATTServApp\_SendServiceChangedInd@{GATTServApp\_SendServiceChangedInd}}
+\index{GATTServApp\_SendServiceChangedInd@{GATTServApp\_SendServiceChangedInd}!icall\_api.c@{icall\_api.c}}
+\doxysubsubsection{\texorpdfstring{GATTServApp\_SendServiceChangedInd()}{GATTServApp\_SendServiceChangedInd()}}
+{\footnotesize\ttfamily b\+Status\+\_\+t G\+A\+T\+T\+Serv\+App\+\_\+\+Send\+Service\+Changed\+Ind (\begin{DoxyParamCaption}\item[{uint16}]{conn\+Handle,  }\item[{uint8}]{task\+Id }\end{DoxyParamCaption})}
+
+
+
+Definition at line 1004 of file icall\+\_\+api.\+c.
+
+\mbox{\Hypertarget{icall__api_8c_af2aa76d834234b792d90115154789302}\label{icall__api_8c_af2aa76d834234b792d90115154789302}} 
+\index{icall\_api.c@{icall\_api.c}!GATTServApp\_SetParameter@{GATTServApp\_SetParameter}}
+\index{GATTServApp\_SetParameter@{GATTServApp\_SetParameter}!icall\_api.c@{icall\_api.c}}
+\doxysubsubsection{\texorpdfstring{GATTServApp\_SetParameter()}{GATTServApp\_SetParameter()}}
+{\footnotesize\ttfamily b\+Status\+\_\+t G\+A\+T\+T\+Serv\+App\+\_\+\+Set\+Parameter (\begin{DoxyParamCaption}\item[{uint8}]{param,  }\item[{uint8}]{len,  }\item[{void $\ast$}]{p\+Value }\end{DoxyParamCaption})}
+
+
+
+Definition at line 982 of file icall\+\_\+api.\+c.
+
+\mbox{\Hypertarget{icall__api_8c_a378d66bb6f1fc9863df3727a6920c752}\label{icall__api_8c_a378d66bb6f1fc9863df3727a6920c752}} 
+\index{icall\_api.c@{icall\_api.c}!GGS\_AddService@{GGS\_AddService}}
+\index{GGS\_AddService@{GGS\_AddService}!icall\_api.c@{icall\_api.c}}
+\doxysubsubsection{\texorpdfstring{GGS\_AddService()}{GGS\_AddService()}}
+{\footnotesize\ttfamily b\+Status\+\_\+t G\+G\+S\+\_\+\+Add\+Service (\begin{DoxyParamCaption}\item[{uint32}]{services }\end{DoxyParamCaption})}
+
+
+
+Add function for the G\+AP G\+A\+TT Service. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em services} & -\/ services to add. This is a bit map and can contain more than one service.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+S\+U\+C\+C\+E\+SS\+: Service added successfully.~\newline
+ I\+N\+V\+A\+L\+I\+D\+P\+A\+R\+A\+M\+E\+T\+ER\+: Invalid service field.~\newline
+ F\+A\+I\+L\+U\+RE\+: Not enough attribute handles available.~\newline
+ ble\+Mem\+Alloc\+Error\+: Memory allocation error occurred.~\newline
+ 
+\end{DoxyReturn}
+
+
+Definition at line 1228 of file icall\+\_\+api.\+c.
+
+\mbox{\Hypertarget{icall__api_8c_a4ae1b24aef90dc8dd36dcfe7592b395c}\label{icall__api_8c_a4ae1b24aef90dc8dd36dcfe7592b395c}} 
+\index{icall\_api.c@{icall\_api.c}!GGS\_GetParameter@{GGS\_GetParameter}}
+\index{GGS\_GetParameter@{GGS\_GetParameter}!icall\_api.c@{icall\_api.c}}
+\doxysubsubsection{\texorpdfstring{GGS\_GetParameter()}{GGS\_GetParameter()}}
+{\footnotesize\ttfamily b\+Status\+\_\+t G\+G\+S\+\_\+\+Get\+Parameter (\begin{DoxyParamCaption}\item[{uint8}]{param,  }\item[{void $\ast$}]{value }\end{DoxyParamCaption})}
+
+
+
+Get a G\+AP G\+A\+TT Server parameter. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em param} & -\/ Profile parameter ID~\newline
+ \\
+\hline
+{\em value} & -\/ pointer to data to put. This is dependent on the parameter ID and W\+I\+LL be cast to the appropriate data type (example\+: data type of uint16 will be cast to uint16 pointer).~\newline
+\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+b\+Status\+\_\+t 
+\end{DoxyReturn}
+
+
+Definition at line 1250 of file icall\+\_\+api.\+c.
+
+\mbox{\Hypertarget{icall__api_8c_a10a83d35cf8405bd4e4b5f34c72fa66e}\label{icall__api_8c_a10a83d35cf8405bd4e4b5f34c72fa66e}} 
+\index{icall\_api.c@{icall\_api.c}!GGS\_RegisterAppCBs@{GGS\_RegisterAppCBs}}
+\index{GGS\_RegisterAppCBs@{GGS\_RegisterAppCBs}!icall\_api.c@{icall\_api.c}}
+\doxysubsubsection{\texorpdfstring{GGS\_RegisterAppCBs()}{GGS\_RegisterAppCBs()}}
+{\footnotesize\ttfamily void G\+G\+S\+\_\+\+Register\+App\+C\+Bs (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structggs_app_c_bs__t}{ggs\+App\+C\+Bs\+\_\+t}} $\ast$}]{app\+Callbacks }\end{DoxyParamCaption})}
+
+
+
+Registers the application callback function. 
+
+\begin{DoxyVerb}     Note: Callback registration is needed only when the
+           Device Name is made writable. The application
+           will be notified when the Device Name is changed
+           over the air.
+\end{DoxyVerb}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em app\+Callbacks} & -\/ pointer to application callbacks.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+
+
+Definition at line 1261 of file icall\+\_\+api.\+c.
+
+\mbox{\Hypertarget{icall__api_8c_aa199a7c7fe4464c84e4440135d2e91f8}\label{icall__api_8c_aa199a7c7fe4464c84e4440135d2e91f8}} 
+\index{icall\_api.c@{icall\_api.c}!GGS\_SetParameter@{GGS\_SetParameter}}
+\index{GGS\_SetParameter@{GGS\_SetParameter}!icall\_api.c@{icall\_api.c}}
+\doxysubsubsection{\texorpdfstring{GGS\_SetParameter()}{GGS\_SetParameter()}}
+{\footnotesize\ttfamily b\+Status\+\_\+t G\+G\+S\+\_\+\+Set\+Parameter (\begin{DoxyParamCaption}\item[{uint8}]{param,  }\item[{uint8}]{len,  }\item[{void $\ast$}]{value }\end{DoxyParamCaption})}
+
+
+
+Set a G\+AP G\+A\+TT Server parameter. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em param} & -\/ Profile parameter ID~\newline
+ \\
+\hline
+{\em len} & -\/ length of data to right \\
+\hline
+{\em value} & -\/ pointer to data to write. This is dependent on the parameter ID and W\+I\+LL be cast to the appropriate data type (example\+: data type of uint16 will be cast to uint16 pointer).~\newline
+\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+b\+Status\+\_\+t 
+\end{DoxyReturn}
+
+
+Definition at line 1239 of file icall\+\_\+api.\+c.
+
+\mbox{\Hypertarget{icall__api_8c_ad238105c7e58cac8100c185682e12d5f}\label{icall__api_8c_ad238105c7e58cac8100c185682e12d5f}} 
+\index{icall\_api.c@{icall\_api.c}!HCI\_EXT\_AdvEventNoticeCmd@{HCI\_EXT\_AdvEventNoticeCmd}}
+\index{HCI\_EXT\_AdvEventNoticeCmd@{HCI\_EXT\_AdvEventNoticeCmd}!icall\_api.c@{icall\_api.c}}
+\doxysubsubsection{\texorpdfstring{HCI\_EXT\_AdvEventNoticeCmd()}{HCI\_EXT\_AdvEventNoticeCmd()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{hci_8h_a160d48a9feb9427468f8b9162227da59}{hci\+Status\+\_\+t}} H\+C\+I\+\_\+\+E\+X\+T\+\_\+\+Adv\+Event\+Notice\+Cmd (\begin{DoxyParamCaption}\item[{uint8}]{task\+ID,  }\item[{uint16}]{task\+Event }\end{DoxyParamCaption})}
+
+
+
+Definition at line 5924 of file icall\+\_\+api.\+c.
+
+\mbox{\Hypertarget{icall__api_8c_af59d0226376224f8e9a53b4c909e3321}\label{icall__api_8c_af59d0226376224f8e9a53b4c909e3321}} 
+\index{icall\_api.c@{icall\_api.c}!HCI\_EXT\_BuildRevisionCmd@{HCI\_EXT\_BuildRevisionCmd}}
+\index{HCI\_EXT\_BuildRevisionCmd@{HCI\_EXT\_BuildRevisionCmd}!icall\_api.c@{icall\_api.c}}
+\doxysubsubsection{\texorpdfstring{HCI\_EXT\_BuildRevisionCmd()}{HCI\_EXT\_BuildRevisionCmd()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{hci_8h_a160d48a9feb9427468f8b9162227da59}{hci\+Status\+\_\+t}} H\+C\+I\+\_\+\+E\+X\+T\+\_\+\+Build\+Revision\+Cmd (\begin{DoxyParamCaption}\item[{uint8}]{mode,  }\item[{uint16}]{user\+Rev\+Num }\end{DoxyParamCaption})}
+
+
+
+Definition at line 5959 of file icall\+\_\+api.\+c.
+
+\mbox{\Hypertarget{icall__api_8c_a48c34bf7059b2e104e4756256572a9a1}\label{icall__api_8c_a48c34bf7059b2e104e4756256572a9a1}} 
+\index{icall\_api.c@{icall\_api.c}!HCI\_EXT\_ConnEventNoticeCmd@{HCI\_EXT\_ConnEventNoticeCmd}}
+\index{HCI\_EXT\_ConnEventNoticeCmd@{HCI\_EXT\_ConnEventNoticeCmd}!icall\_api.c@{icall\_api.c}}
+\doxysubsubsection{\texorpdfstring{HCI\_EXT\_ConnEventNoticeCmd()}{HCI\_EXT\_ConnEventNoticeCmd()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{hci_8h_a160d48a9feb9427468f8b9162227da59}{hci\+Status\+\_\+t}} H\+C\+I\+\_\+\+E\+X\+T\+\_\+\+Conn\+Event\+Notice\+Cmd (\begin{DoxyParamCaption}\item[{uint16}]{conn\+Handle,  }\item[{uint8}]{task\+ID,  }\item[{uint16}]{task\+Event }\end{DoxyParamCaption})}
+
+
+
+Definition at line 5941 of file icall\+\_\+api.\+c.
+
+\mbox{\Hypertarget{icall__api_8c_a9d7f1a977db36ca4adfddabbfcda75f4}\label{icall__api_8c_a9d7f1a977db36ca4adfddabbfcda75f4}} 
+\index{icall\_api.c@{icall\_api.c}!HCI\_EXT\_DecryptCmd@{HCI\_EXT\_DecryptCmd}}
+\index{HCI\_EXT\_DecryptCmd@{HCI\_EXT\_DecryptCmd}!icall\_api.c@{icall\_api.c}}
+\doxysubsubsection{\texorpdfstring{HCI\_EXT\_DecryptCmd()}{HCI\_EXT\_DecryptCmd()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{hci_8h_a160d48a9feb9427468f8b9162227da59}{hci\+Status\+\_\+t}} H\+C\+I\+\_\+\+E\+X\+T\+\_\+\+Decrypt\+Cmd (\begin{DoxyParamCaption}\item[{uint8 $\ast$}]{key,  }\item[{uint8 $\ast$}]{enc\+Text }\end{DoxyParamCaption})}
+
+
+
+Definition at line 5728 of file icall\+\_\+api.\+c.
+
+\mbox{\Hypertarget{icall__api_8c_ac30290b47a22c998b70019be8edb4bab}\label{icall__api_8c_ac30290b47a22c998b70019be8edb4bab}} 
+\index{icall\_api.c@{icall\_api.c}!HCI\_EXT\_DelaySleepCmd@{HCI\_EXT\_DelaySleepCmd}}
+\index{HCI\_EXT\_DelaySleepCmd@{HCI\_EXT\_DelaySleepCmd}!icall\_api.c@{icall\_api.c}}
+\doxysubsubsection{\texorpdfstring{HCI\_EXT\_DelaySleepCmd()}{HCI\_EXT\_DelaySleepCmd()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{hci_8h_a160d48a9feb9427468f8b9162227da59}{hci\+Status\+\_\+t}} H\+C\+I\+\_\+\+E\+X\+T\+\_\+\+Delay\+Sleep\+Cmd (\begin{DoxyParamCaption}\item[{uint16}]{delay }\end{DoxyParamCaption})}
+
+
+
+Definition at line 5970 of file icall\+\_\+api.\+c.
+
+\mbox{\Hypertarget{icall__api_8c_a2af670b9721f3bcd327dec23d5b0bd16}\label{icall__api_8c_a2af670b9721f3bcd327dec23d5b0bd16}} 
+\index{icall\_api.c@{icall\_api.c}!HCI\_EXT\_DisconnectImmedCmd@{HCI\_EXT\_DisconnectImmedCmd}}
+\index{HCI\_EXT\_DisconnectImmedCmd@{HCI\_EXT\_DisconnectImmedCmd}!icall\_api.c@{icall\_api.c}}
+\doxysubsubsection{\texorpdfstring{HCI\_EXT\_DisconnectImmedCmd()}{HCI\_EXT\_DisconnectImmedCmd()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{hci_8h_a160d48a9feb9427468f8b9162227da59}{hci\+Status\+\_\+t}} H\+C\+I\+\_\+\+E\+X\+T\+\_\+\+Disconnect\+Immed\+Cmd (\begin{DoxyParamCaption}\item[{uint16}]{conn\+Handle }\end{DoxyParamCaption})}
+
+
+
+Definition at line 5886 of file icall\+\_\+api.\+c.
+
+\mbox{\Hypertarget{icall__api_8c_a880b1f54c64ded6c9d862c18cefe75de}\label{icall__api_8c_a880b1f54c64ded6c9d862c18cefe75de}} 
+\index{icall\_api.c@{icall\_api.c}!HCI\_EXT\_EnablePTMCmd@{HCI\_EXT\_EnablePTMCmd}}
+\index{HCI\_EXT\_EnablePTMCmd@{HCI\_EXT\_EnablePTMCmd}!icall\_api.c@{icall\_api.c}}
+\doxysubsubsection{\texorpdfstring{HCI\_EXT\_EnablePTMCmd()}{HCI\_EXT\_EnablePTMCmd()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{hci_8h_a160d48a9feb9427468f8b9162227da59}{hci\+Status\+\_\+t}} H\+C\+I\+\_\+\+E\+X\+T\+\_\+\+Enable\+P\+T\+M\+Cmd (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 5864 of file icall\+\_\+api.\+c.
+
+\mbox{\Hypertarget{icall__api_8c_a7e01adfef46ab871273fb785ddb66533}\label{icall__api_8c_a7e01adfef46ab871273fb785ddb66533}} 
+\index{icall\_api.c@{icall\_api.c}!HCI\_EXT\_EndModemTestCmd@{HCI\_EXT\_EndModemTestCmd}}
+\index{HCI\_EXT\_EndModemTestCmd@{HCI\_EXT\_EndModemTestCmd}!icall\_api.c@{icall\_api.c}}
+\doxysubsubsection{\texorpdfstring{HCI\_EXT\_EndModemTestCmd()}{HCI\_EXT\_EndModemTestCmd()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{hci_8h_a160d48a9feb9427468f8b9162227da59}{hci\+Status\+\_\+t}} H\+C\+I\+\_\+\+E\+X\+T\+\_\+\+End\+Modem\+Test\+Cmd (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 5831 of file icall\+\_\+api.\+c.
+
+\mbox{\Hypertarget{icall__api_8c_afc46efb446fa7328ca7bc70078c1c2ac}\label{icall__api_8c_afc46efb446fa7328ca7bc70078c1c2ac}} 
+\index{icall\_api.c@{icall\_api.c}!HCI\_EXT\_GetConnInfoCmd@{HCI\_EXT\_GetConnInfoCmd}}
+\index{HCI\_EXT\_GetConnInfoCmd@{HCI\_EXT\_GetConnInfoCmd}!icall\_api.c@{icall\_api.c}}
+\doxysubsubsection{\texorpdfstring{HCI\_EXT\_GetConnInfoCmd()}{HCI\_EXT\_GetConnInfoCmd()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{hci_8h_a160d48a9feb9427468f8b9162227da59}{hci\+Status\+\_\+t}} H\+C\+I\+\_\+\+E\+X\+T\+\_\+\+Get\+Conn\+Info\+Cmd (\begin{DoxyParamCaption}\item[{uint8 $\ast$}]{num\+Alloc\+Conns,  }\item[{uint8 $\ast$}]{num\+Active\+Conns,  }\item[{\mbox{\hyperlink{structhci_conn_info__t}{hci\+Conn\+Info\+\_\+t}} $\ast$}]{active\+Conn\+Info }\end{DoxyParamCaption})}
+
+
+
+Definition at line 6008 of file icall\+\_\+api.\+c.
+
+\mbox{\Hypertarget{icall__api_8c_aaf39f9be672b4fd59d16e62daeb947a5}\label{icall__api_8c_aaf39f9be672b4fd59d16e62daeb947a5}} 
+\index{icall\_api.c@{icall\_api.c}!HCI\_EXT\_ModemHopTestTxCmd@{HCI\_EXT\_ModemHopTestTxCmd}}
+\index{HCI\_EXT\_ModemHopTestTxCmd@{HCI\_EXT\_ModemHopTestTxCmd}!icall\_api.c@{icall\_api.c}}
+\doxysubsubsection{\texorpdfstring{HCI\_EXT\_ModemHopTestTxCmd()}{HCI\_EXT\_ModemHopTestTxCmd()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{hci_8h_a160d48a9feb9427468f8b9162227da59}{hci\+Status\+\_\+t}} H\+C\+I\+\_\+\+E\+X\+T\+\_\+\+Modem\+Hop\+Test\+Tx\+Cmd (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 5802 of file icall\+\_\+api.\+c.
+
+\mbox{\Hypertarget{icall__api_8c_aaea6b9ea2b0c6dc4920ea9000454fc6c}\label{icall__api_8c_aaea6b9ea2b0c6dc4920ea9000454fc6c}} 
+\index{icall\_api.c@{icall\_api.c}!HCI\_EXT\_ModemTestRxCmd@{HCI\_EXT\_ModemTestRxCmd}}
+\index{HCI\_EXT\_ModemTestRxCmd@{HCI\_EXT\_ModemTestRxCmd}!icall\_api.c@{icall\_api.c}}
+\doxysubsubsection{\texorpdfstring{HCI\_EXT\_ModemTestRxCmd()}{HCI\_EXT\_ModemTestRxCmd()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{hci_8h_a160d48a9feb9427468f8b9162227da59}{hci\+Status\+\_\+t}} H\+C\+I\+\_\+\+E\+X\+T\+\_\+\+Modem\+Test\+Rx\+Cmd (\begin{DoxyParamCaption}\item[{uint8}]{rx\+Freq }\end{DoxyParamCaption})}
+
+
+
+Definition at line 5819 of file icall\+\_\+api.\+c.
+
+\mbox{\Hypertarget{icall__api_8c_a52026c1baa694196730ac4270438c759}\label{icall__api_8c_a52026c1baa694196730ac4270438c759}} 
+\index{icall\_api.c@{icall\_api.c}!HCI\_EXT\_ModemTestTxCmd@{HCI\_EXT\_ModemTestTxCmd}}
+\index{HCI\_EXT\_ModemTestTxCmd@{HCI\_EXT\_ModemTestTxCmd}!icall\_api.c@{icall\_api.c}}
+\doxysubsubsection{\texorpdfstring{HCI\_EXT\_ModemTestTxCmd()}{HCI\_EXT\_ModemTestTxCmd()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{hci_8h_a160d48a9feb9427468f8b9162227da59}{hci\+Status\+\_\+t}} H\+C\+I\+\_\+\+E\+X\+T\+\_\+\+Modem\+Test\+Tx\+Cmd (\begin{DoxyParamCaption}\item[{uint8}]{cw\+Mode,  }\item[{uint8}]{tx\+Freq }\end{DoxyParamCaption})}
+
+
+
+Definition at line 5782 of file icall\+\_\+api.\+c.
+
+\mbox{\Hypertarget{icall__api_8c_a0a0341663923541452f94a057abd0932}\label{icall__api_8c_a0a0341663923541452f94a057abd0932}} 
+\index{icall\_api.c@{icall\_api.c}!HCI\_EXT\_NumComplPktsLimitCmd@{HCI\_EXT\_NumComplPktsLimitCmd}}
+\index{HCI\_EXT\_NumComplPktsLimitCmd@{HCI\_EXT\_NumComplPktsLimitCmd}!icall\_api.c@{icall\_api.c}}
+\doxysubsubsection{\texorpdfstring{HCI\_EXT\_NumComplPktsLimitCmd()}{HCI\_EXT\_NumComplPktsLimitCmd()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{hci_8h_a160d48a9feb9427468f8b9162227da59}{hci\+Status\+\_\+t}} H\+C\+I\+\_\+\+E\+X\+T\+\_\+\+Num\+Compl\+Pkts\+Limit\+Cmd (\begin{DoxyParamCaption}\item[{uint8}]{limit,  }\item[{uint8}]{flush\+On\+Evt }\end{DoxyParamCaption})}
+
+
+
+Definition at line 5996 of file icall\+\_\+api.\+c.
+
+\mbox{\Hypertarget{icall__api_8c_a907c6645b4711a44f7b1d704b4455959}\label{icall__api_8c_a907c6645b4711a44f7b1d704b4455959}} 
+\index{icall\_api.c@{icall\_api.c}!HCI\_EXT\_OnePktPerEvtCmd@{HCI\_EXT\_OnePktPerEvtCmd}}
+\index{HCI\_EXT\_OnePktPerEvtCmd@{HCI\_EXT\_OnePktPerEvtCmd}!icall\_api.c@{icall\_api.c}}
+\doxysubsubsection{\texorpdfstring{HCI\_EXT\_OnePktPerEvtCmd()}{HCI\_EXT\_OnePktPerEvtCmd()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{hci_8h_a160d48a9feb9427468f8b9162227da59}{hci\+Status\+\_\+t}} H\+C\+I\+\_\+\+E\+X\+T\+\_\+\+One\+Pkt\+Per\+Evt\+Cmd (\begin{DoxyParamCaption}\item[{uint8}]{control }\end{DoxyParamCaption})}
+
+
+
+Definition at line 5717 of file icall\+\_\+api.\+c.
+
+\mbox{\Hypertarget{icall__api_8c_af3ee3e4fc190bb0d226b83d76deb5c95}\label{icall__api_8c_af3ee3e4fc190bb0d226b83d76deb5c95}} 
+\index{icall\_api.c@{icall\_api.c}!HCI\_EXT\_PacketErrorRateCmd@{HCI\_EXT\_PacketErrorRateCmd}}
+\index{HCI\_EXT\_PacketErrorRateCmd@{HCI\_EXT\_PacketErrorRateCmd}!icall\_api.c@{icall\_api.c}}
+\doxysubsubsection{\texorpdfstring{HCI\_EXT\_PacketErrorRateCmd()}{HCI\_EXT\_PacketErrorRateCmd()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{hci_8h_a160d48a9feb9427468f8b9162227da59}{hci\+Status\+\_\+t}} H\+C\+I\+\_\+\+E\+X\+T\+\_\+\+Packet\+Error\+Rate\+Cmd (\begin{DoxyParamCaption}\item[{uint16}]{conn\+Handle,  }\item[{uint8}]{command }\end{DoxyParamCaption})}
+
+
+
+Definition at line 5898 of file icall\+\_\+api.\+c.
+
+\mbox{\Hypertarget{icall__api_8c_a86206c316f719c8f721a989c88219f34}\label{icall__api_8c_a86206c316f719c8f721a989c88219f34}} 
+\index{icall\_api.c@{icall\_api.c}!HCI\_EXT\_PERbyChanCmd@{HCI\_EXT\_PERbyChanCmd}}
+\index{HCI\_EXT\_PERbyChanCmd@{HCI\_EXT\_PERbyChanCmd}!icall\_api.c@{icall\_api.c}}
+\doxysubsubsection{\texorpdfstring{HCI\_EXT\_PERbyChanCmd()}{HCI\_EXT\_PERbyChanCmd()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{hci_8h_a160d48a9feb9427468f8b9162227da59}{hci\+Status\+\_\+t}} H\+C\+I\+\_\+\+E\+X\+T\+\_\+\+P\+E\+Rby\+Chan\+Cmd (\begin{DoxyParamCaption}\item[{uint16}]{conn\+Handle,  }\item[{per\+By\+Chan\+\_\+t $\ast$}]{per\+By\+Chan }\end{DoxyParamCaption})}
+
+
+
+Definition at line 5910 of file icall\+\_\+api.\+c.
+
+\mbox{\Hypertarget{icall__api_8c_affef67bdc99da95079971d9cabe512c1}\label{icall__api_8c_affef67bdc99da95079971d9cabe512c1}} 
+\index{icall\_api.c@{icall\_api.c}!HCI\_EXT\_ResetSystemCmd@{HCI\_EXT\_ResetSystemCmd}}
+\index{HCI\_EXT\_ResetSystemCmd@{HCI\_EXT\_ResetSystemCmd}!icall\_api.c@{icall\_api.c}}
+\doxysubsubsection{\texorpdfstring{HCI\_EXT\_ResetSystemCmd()}{HCI\_EXT\_ResetSystemCmd()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{hci_8h_a160d48a9feb9427468f8b9162227da59}{hci\+Status\+\_\+t}} H\+C\+I\+\_\+\+E\+X\+T\+\_\+\+Reset\+System\+Cmd (\begin{DoxyParamCaption}\item[{uint8}]{mode }\end{DoxyParamCaption})}
+
+
+
+Definition at line 5981 of file icall\+\_\+api.\+c.
+
+\mbox{\Hypertarget{icall__api_8c_aea8af8b8d0099e813cde1e30b864a0a7}\label{icall__api_8c_aea8af8b8d0099e813cde1e30b864a0a7}} 
+\index{icall\_api.c@{icall\_api.c}!HCI\_EXT\_SetBDADDRCmd@{HCI\_EXT\_SetBDADDRCmd}}
+\index{HCI\_EXT\_SetBDADDRCmd@{HCI\_EXT\_SetBDADDRCmd}!icall\_api.c@{icall\_api.c}}
+\doxysubsubsection{\texorpdfstring{HCI\_EXT\_SetBDADDRCmd()}{HCI\_EXT\_SetBDADDRCmd()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{hci_8h_a160d48a9feb9427468f8b9162227da59}{hci\+Status\+\_\+t}} H\+C\+I\+\_\+\+E\+X\+T\+\_\+\+Set\+B\+D\+A\+D\+D\+R\+Cmd (\begin{DoxyParamCaption}\item[{uint8 $\ast$}]{bd\+Addr }\end{DoxyParamCaption})}
+
+
+
+Definition at line 5843 of file icall\+\_\+api.\+c.
+
+\mbox{\Hypertarget{icall__api_8c_a71a3dbc1fc56c9f79be1dfaf288db85d}\label{icall__api_8c_a71a3dbc1fc56c9f79be1dfaf288db85d}} 
+\index{icall\_api.c@{icall\_api.c}!HCI\_EXT\_SetFastTxResponseTimeCmd@{HCI\_EXT\_SetFastTxResponseTimeCmd}}
+\index{HCI\_EXT\_SetFastTxResponseTimeCmd@{HCI\_EXT\_SetFastTxResponseTimeCmd}!icall\_api.c@{icall\_api.c}}
+\doxysubsubsection{\texorpdfstring{HCI\_EXT\_SetFastTxResponseTimeCmd()}{HCI\_EXT\_SetFastTxResponseTimeCmd()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{hci_8h_a160d48a9feb9427468f8b9162227da59}{hci\+Status\+\_\+t}} H\+C\+I\+\_\+\+E\+X\+T\+\_\+\+Set\+Fast\+Tx\+Response\+Time\+Cmd (\begin{DoxyParamCaption}\item[{uint8}]{control }\end{DoxyParamCaption})}
+
+
+
+Definition at line 5751 of file icall\+\_\+api.\+c.
+
+\mbox{\Hypertarget{icall__api_8c_a040091db19b02697911fb043179070fc}\label{icall__api_8c_a040091db19b02697911fb043179070fc}} 
+\index{icall\_api.c@{icall\_api.c}!HCI\_EXT\_SetLocalSupportedFeaturesCmd@{HCI\_EXT\_SetLocalSupportedFeaturesCmd}}
+\index{HCI\_EXT\_SetLocalSupportedFeaturesCmd@{HCI\_EXT\_SetLocalSupportedFeaturesCmd}!icall\_api.c@{icall\_api.c}}
+\doxysubsubsection{\texorpdfstring{HCI\_EXT\_SetLocalSupportedFeaturesCmd()}{HCI\_EXT\_SetLocalSupportedFeaturesCmd()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{hci_8h_a160d48a9feb9427468f8b9162227da59}{hci\+Status\+\_\+t}} H\+C\+I\+\_\+\+E\+X\+T\+\_\+\+Set\+Local\+Supported\+Features\+Cmd (\begin{DoxyParamCaption}\item[{uint8 $\ast$}]{local\+Features }\end{DoxyParamCaption})}
+
+
+
+Definition at line 5739 of file icall\+\_\+api.\+c.
+
+\mbox{\Hypertarget{icall__api_8c_a20c174d3b24b6c6e488dd21c8523fbab}\label{icall__api_8c_a20c174d3b24b6c6e488dd21c8523fbab}} 
+\index{icall\_api.c@{icall\_api.c}!HCI\_EXT\_SetMaxDtmTxPowerCmd@{HCI\_EXT\_SetMaxDtmTxPowerCmd}}
+\index{HCI\_EXT\_SetMaxDtmTxPowerCmd@{HCI\_EXT\_SetMaxDtmTxPowerCmd}!icall\_api.c@{icall\_api.c}}
+\doxysubsubsection{\texorpdfstring{HCI\_EXT\_SetMaxDtmTxPowerCmd()}{HCI\_EXT\_SetMaxDtmTxPowerCmd()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{hci_8h_a160d48a9feb9427468f8b9162227da59}{hci\+Status\+\_\+t}} H\+C\+I\+\_\+\+E\+X\+T\+\_\+\+Set\+Max\+Dtm\+Tx\+Power\+Cmd (\begin{DoxyParamCaption}\item[{uint8}]{tx\+Power }\end{DoxyParamCaption})}
+
+
+
+Definition at line 5874 of file icall\+\_\+api.\+c.
+
+\mbox{\Hypertarget{icall__api_8c_a650463588bfd77c7c745cb93dff3ce2d}\label{icall__api_8c_a650463588bfd77c7c745cb93dff3ce2d}} 
+\index{icall\_api.c@{icall\_api.c}!HCI\_EXT\_SetSCACmd@{HCI\_EXT\_SetSCACmd}}
+\index{HCI\_EXT\_SetSCACmd@{HCI\_EXT\_SetSCACmd}!icall\_api.c@{icall\_api.c}}
+\doxysubsubsection{\texorpdfstring{HCI\_EXT\_SetSCACmd()}{HCI\_EXT\_SetSCACmd()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{hci_8h_a160d48a9feb9427468f8b9162227da59}{hci\+Status\+\_\+t}} H\+C\+I\+\_\+\+E\+X\+T\+\_\+\+Set\+S\+C\+A\+Cmd (\begin{DoxyParamCaption}\item[{uint16}]{sca\+In\+P\+PM }\end{DoxyParamCaption})}
+
+
+
+Definition at line 5854 of file icall\+\_\+api.\+c.
+
+\mbox{\Hypertarget{icall__api_8c_a6791ec01d5a12ed53ae2fd71d0416b81}\label{icall__api_8c_a6791ec01d5a12ed53ae2fd71d0416b81}} 
+\index{icall\_api.c@{icall\_api.c}!HCI\_EXT\_SetSlaveLatencyOverrideCmd@{HCI\_EXT\_SetSlaveLatencyOverrideCmd}}
+\index{HCI\_EXT\_SetSlaveLatencyOverrideCmd@{HCI\_EXT\_SetSlaveLatencyOverrideCmd}!icall\_api.c@{icall\_api.c}}
+\doxysubsubsection{\texorpdfstring{HCI\_EXT\_SetSlaveLatencyOverrideCmd()}{HCI\_EXT\_SetSlaveLatencyOverrideCmd()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{hci_8h_a160d48a9feb9427468f8b9162227da59}{hci\+Status\+\_\+t}} H\+C\+I\+\_\+\+E\+X\+T\+\_\+\+Set\+Slave\+Latency\+Override\+Cmd (\begin{DoxyParamCaption}\item[{uint8}]{control }\end{DoxyParamCaption})}
+
+
+
+Definition at line 5763 of file icall\+\_\+api.\+c.
+
+\mbox{\Hypertarget{icall__api_8c_afb44c5a388a047db7c3c4d0a4ac57320}\label{icall__api_8c_afb44c5a388a047db7c3c4d0a4ac57320}} 
+\index{icall\_api.c@{icall\_api.c}!HCI\_EXT\_SetTxPowerCmd@{HCI\_EXT\_SetTxPowerCmd}}
+\index{HCI\_EXT\_SetTxPowerCmd@{HCI\_EXT\_SetTxPowerCmd}!icall\_api.c@{icall\_api.c}}
+\doxysubsubsection{\texorpdfstring{HCI\_EXT\_SetTxPowerCmd()}{HCI\_EXT\_SetTxPowerCmd()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{hci_8h_a160d48a9feb9427468f8b9162227da59}{hci\+Status\+\_\+t}} H\+C\+I\+\_\+\+E\+X\+T\+\_\+\+Set\+Tx\+Power\+Cmd (\begin{DoxyParamCaption}\item[{uint8}]{tx\+Power }\end{DoxyParamCaption})}
+
+
+
+Definition at line 5705 of file icall\+\_\+api.\+c.
+
+\mbox{\Hypertarget{icall__api_8c_a5034b56f0d3c79d6382f7fea041e58af}\label{icall__api_8c_a5034b56f0d3c79d6382f7fea041e58af}} 
+\index{icall\_api.c@{icall\_api.c}!HCI\_LE\_AddWhiteListCmd@{HCI\_LE\_AddWhiteListCmd}}
+\index{HCI\_LE\_AddWhiteListCmd@{HCI\_LE\_AddWhiteListCmd}!icall\_api.c@{icall\_api.c}}
+\doxysubsubsection{\texorpdfstring{HCI\_LE\_AddWhiteListCmd()}{HCI\_LE\_AddWhiteListCmd()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{hci_8h_a160d48a9feb9427468f8b9162227da59}{hci\+Status\+\_\+t}} H\+C\+I\+\_\+\+L\+E\+\_\+\+Add\+White\+List\+Cmd (\begin{DoxyParamCaption}\item[{uint8}]{addr\+Type,  }\item[{uint8 $\ast$}]{dev\+Addr }\end{DoxyParamCaption})}
+
+
+
+Definition at line 4867 of file icall\+\_\+api.\+c.
+
+\mbox{\Hypertarget{icall__api_8c_ad05927cc6b7ba91244c98fc6e5c97165}\label{icall__api_8c_ad05927cc6b7ba91244c98fc6e5c97165}} 
+\index{icall\_api.c@{icall\_api.c}!HCI\_LE\_ClearWhiteListCmd@{HCI\_LE\_ClearWhiteListCmd}}
+\index{HCI\_LE\_ClearWhiteListCmd@{HCI\_LE\_ClearWhiteListCmd}!icall\_api.c@{icall\_api.c}}
+\doxysubsubsection{\texorpdfstring{HCI\_LE\_ClearWhiteListCmd()}{HCI\_LE\_ClearWhiteListCmd()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{hci_8h_a160d48a9feb9427468f8b9162227da59}{hci\+Status\+\_\+t}} H\+C\+I\+\_\+\+L\+E\+\_\+\+Clear\+White\+List\+Cmd (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 4857 of file icall\+\_\+api.\+c.
+
+\mbox{\Hypertarget{icall__api_8c_aa04634abdbb8e70e012fbdb44c2968df}\label{icall__api_8c_aa04634abdbb8e70e012fbdb44c2968df}} 
+\index{icall\_api.c@{icall\_api.c}!HCI\_LE\_EncryptCmd@{HCI\_LE\_EncryptCmd}}
+\index{HCI\_LE\_EncryptCmd@{HCI\_LE\_EncryptCmd}!icall\_api.c@{icall\_api.c}}
+\doxysubsubsection{\texorpdfstring{HCI\_LE\_EncryptCmd()}{HCI\_LE\_EncryptCmd()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{hci_8h_a160d48a9feb9427468f8b9162227da59}{hci\+Status\+\_\+t}} H\+C\+I\+\_\+\+L\+E\+\_\+\+Encrypt\+Cmd (\begin{DoxyParamCaption}\item[{uint8 $\ast$}]{key,  }\item[{uint8 $\ast$}]{plain\+Text }\end{DoxyParamCaption})}
+
+
+
+Definition at line 4924 of file icall\+\_\+api.\+c.
+
+\mbox{\Hypertarget{icall__api_8c_a56cf789ffe423a546c1fed1034250774}\label{icall__api_8c_a56cf789ffe423a546c1fed1034250774}} 
+\index{icall\_api.c@{icall\_api.c}!HCI\_LE\_ReadAdvChanTxPowerCmd@{HCI\_LE\_ReadAdvChanTxPowerCmd}}
+\index{HCI\_LE\_ReadAdvChanTxPowerCmd@{HCI\_LE\_ReadAdvChanTxPowerCmd}!icall\_api.c@{icall\_api.c}}
+\doxysubsubsection{\texorpdfstring{HCI\_LE\_ReadAdvChanTxPowerCmd()}{HCI\_LE\_ReadAdvChanTxPowerCmd()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{hci_8h_a160d48a9feb9427468f8b9162227da59}{hci\+Status\+\_\+t}} H\+C\+I\+\_\+\+L\+E\+\_\+\+Read\+Adv\+Chan\+Tx\+Power\+Cmd (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 4835 of file icall\+\_\+api.\+c.
+
+\mbox{\Hypertarget{icall__api_8c_a50de8065346a67994490aa38ebe04d0e}\label{icall__api_8c_a50de8065346a67994490aa38ebe04d0e}} 
+\index{icall\_api.c@{icall\_api.c}!HCI\_LE\_ReadChannelMapCmd@{HCI\_LE\_ReadChannelMapCmd}}
+\index{HCI\_LE\_ReadChannelMapCmd@{HCI\_LE\_ReadChannelMapCmd}!icall\_api.c@{icall\_api.c}}
+\doxysubsubsection{\texorpdfstring{HCI\_LE\_ReadChannelMapCmd()}{HCI\_LE\_ReadChannelMapCmd()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{hci_8h_a160d48a9feb9427468f8b9162227da59}{hci\+Status\+\_\+t}} H\+C\+I\+\_\+\+L\+E\+\_\+\+Read\+Channel\+Map\+Cmd (\begin{DoxyParamCaption}\item[{uint16}]{conn\+Handle }\end{DoxyParamCaption})}
+
+
+
+Definition at line 4900 of file icall\+\_\+api.\+c.
+
+\mbox{\Hypertarget{icall__api_8c_a12e3a9546d06a0516ae45f3fdc5ca303}\label{icall__api_8c_a12e3a9546d06a0516ae45f3fdc5ca303}} 
+\index{icall\_api.c@{icall\_api.c}!HCI\_LE\_ReadLocalSupportedFeaturesCmd@{HCI\_LE\_ReadLocalSupportedFeaturesCmd}}
+\index{HCI\_LE\_ReadLocalSupportedFeaturesCmd@{HCI\_LE\_ReadLocalSupportedFeaturesCmd}!icall\_api.c@{icall\_api.c}}
+\doxysubsubsection{\texorpdfstring{HCI\_LE\_ReadLocalSupportedFeaturesCmd()}{HCI\_LE\_ReadLocalSupportedFeaturesCmd()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{hci_8h_a160d48a9feb9427468f8b9162227da59}{hci\+Status\+\_\+t}} H\+C\+I\+\_\+\+L\+E\+\_\+\+Read\+Local\+Supported\+Features\+Cmd (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 4824 of file icall\+\_\+api.\+c.
+
+\mbox{\Hypertarget{icall__api_8c_a76d88fd2ee34027ecd370b9659e81922}\label{icall__api_8c_a76d88fd2ee34027ecd370b9659e81922}} 
+\index{icall\_api.c@{icall\_api.c}!HCI\_LE\_ReadMaxDataLenCmd@{HCI\_LE\_ReadMaxDataLenCmd}}
+\index{HCI\_LE\_ReadMaxDataLenCmd@{HCI\_LE\_ReadMaxDataLenCmd}!icall\_api.c@{icall\_api.c}}
+\doxysubsubsection{\texorpdfstring{HCI\_LE\_ReadMaxDataLenCmd()}{HCI\_LE\_ReadMaxDataLenCmd()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{hci_8h_a160d48a9feb9427468f8b9162227da59}{hci\+Status\+\_\+t}} H\+C\+I\+\_\+\+L\+E\+\_\+\+Read\+Max\+Data\+Len\+Cmd (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 4947 of file icall\+\_\+api.\+c.
+
+\mbox{\Hypertarget{icall__api_8c_aaeb3711c7bee46ba5258c94a64ce4865}\label{icall__api_8c_aaeb3711c7bee46ba5258c94a64ce4865}} 
+\index{icall\_api.c@{icall\_api.c}!HCI\_LE\_ReadRemoteUsedFeaturesCmd@{HCI\_LE\_ReadRemoteUsedFeaturesCmd}}
+\index{HCI\_LE\_ReadRemoteUsedFeaturesCmd@{HCI\_LE\_ReadRemoteUsedFeaturesCmd}!icall\_api.c@{icall\_api.c}}
+\doxysubsubsection{\texorpdfstring{HCI\_LE\_ReadRemoteUsedFeaturesCmd()}{HCI\_LE\_ReadRemoteUsedFeaturesCmd()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{hci_8h_a160d48a9feb9427468f8b9162227da59}{hci\+Status\+\_\+t}} H\+C\+I\+\_\+\+L\+E\+\_\+\+Read\+Remote\+Used\+Features\+Cmd (\begin{DoxyParamCaption}\item[{uint16}]{conn\+Handle }\end{DoxyParamCaption})}
+
+
+
+Definition at line 4911 of file icall\+\_\+api.\+c.
+
+\mbox{\Hypertarget{icall__api_8c_aec617ade902119b1cb23e4c1dc35acdf}\label{icall__api_8c_aec617ade902119b1cb23e4c1dc35acdf}} 
+\index{icall\_api.c@{icall\_api.c}!HCI\_LE\_ReadSuggestedDefaultDataLenCmd@{HCI\_LE\_ReadSuggestedDefaultDataLenCmd}}
+\index{HCI\_LE\_ReadSuggestedDefaultDataLenCmd@{HCI\_LE\_ReadSuggestedDefaultDataLenCmd}!icall\_api.c@{icall\_api.c}}
+\doxysubsubsection{\texorpdfstring{HCI\_LE\_ReadSuggestedDefaultDataLenCmd()}{HCI\_LE\_ReadSuggestedDefaultDataLenCmd()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{hci_8h_a160d48a9feb9427468f8b9162227da59}{hci\+Status\+\_\+t}} H\+C\+I\+\_\+\+L\+E\+\_\+\+Read\+Suggested\+Default\+Data\+Len\+Cmd (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 4977 of file icall\+\_\+api.\+c.
+
+\mbox{\Hypertarget{icall__api_8c_a9e6faf65c4c8aae12f639f0f60c2fbb4}\label{icall__api_8c_a9e6faf65c4c8aae12f639f0f60c2fbb4}} 
+\index{icall\_api.c@{icall\_api.c}!HCI\_LE\_ReadSupportedStatesCmd@{HCI\_LE\_ReadSupportedStatesCmd}}
+\index{HCI\_LE\_ReadSupportedStatesCmd@{HCI\_LE\_ReadSupportedStatesCmd}!icall\_api.c@{icall\_api.c}}
+\doxysubsubsection{\texorpdfstring{HCI\_LE\_ReadSupportedStatesCmd()}{HCI\_LE\_ReadSupportedStatesCmd()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{hci_8h_a160d48a9feb9427468f8b9162227da59}{hci\+Status\+\_\+t}} H\+C\+I\+\_\+\+L\+E\+\_\+\+Read\+Supported\+States\+Cmd (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 4935 of file icall\+\_\+api.\+c.
+
+\mbox{\Hypertarget{icall__api_8c_a3c8a0df6d7e823036ac6a56ce320e6be}\label{icall__api_8c_a3c8a0df6d7e823036ac6a56ce320e6be}} 
+\index{icall\_api.c@{icall\_api.c}!HCI\_LE\_ReadWhiteListSizeCmd@{HCI\_LE\_ReadWhiteListSizeCmd}}
+\index{HCI\_LE\_ReadWhiteListSizeCmd@{HCI\_LE\_ReadWhiteListSizeCmd}!icall\_api.c@{icall\_api.c}}
+\doxysubsubsection{\texorpdfstring{HCI\_LE\_ReadWhiteListSizeCmd()}{HCI\_LE\_ReadWhiteListSizeCmd()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{hci_8h_a160d48a9feb9427468f8b9162227da59}{hci\+Status\+\_\+t}} H\+C\+I\+\_\+\+L\+E\+\_\+\+Read\+White\+List\+Size\+Cmd (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 4847 of file icall\+\_\+api.\+c.
+
+\mbox{\Hypertarget{icall__api_8c_adef9488661d9ad2897a38ae0e2479337}\label{icall__api_8c_adef9488661d9ad2897a38ae0e2479337}} 
+\index{icall\_api.c@{icall\_api.c}!HCI\_LE\_ReceiverTestCmd@{HCI\_LE\_ReceiverTestCmd}}
+\index{HCI\_LE\_ReceiverTestCmd@{HCI\_LE\_ReceiverTestCmd}!icall\_api.c@{icall\_api.c}}
+\doxysubsubsection{\texorpdfstring{HCI\_LE\_ReceiverTestCmd()}{HCI\_LE\_ReceiverTestCmd()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{hci_8h_a160d48a9feb9427468f8b9162227da59}{hci\+Status\+\_\+t}} H\+C\+I\+\_\+\+L\+E\+\_\+\+Receiver\+Test\+Cmd (\begin{DoxyParamCaption}\item[{uint8}]{rx\+Freq }\end{DoxyParamCaption})}
+
+
+
+Definition at line 5100 of file icall\+\_\+api.\+c.
+
+\mbox{\Hypertarget{icall__api_8c_af96813717228957d73470f1e2a338669}\label{icall__api_8c_af96813717228957d73470f1e2a338669}} 
+\index{icall\_api.c@{icall\_api.c}!HCI\_LE\_RemoveWhiteListCmd@{HCI\_LE\_RemoveWhiteListCmd}}
+\index{HCI\_LE\_RemoveWhiteListCmd@{HCI\_LE\_RemoveWhiteListCmd}!icall\_api.c@{icall\_api.c}}
+\doxysubsubsection{\texorpdfstring{HCI\_LE\_RemoveWhiteListCmd()}{HCI\_LE\_RemoveWhiteListCmd()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{hci_8h_a160d48a9feb9427468f8b9162227da59}{hci\+Status\+\_\+t}} H\+C\+I\+\_\+\+L\+E\+\_\+\+Remove\+White\+List\+Cmd (\begin{DoxyParamCaption}\item[{uint8}]{addr\+Type,  }\item[{uint8 $\ast$}]{dev\+Addr }\end{DoxyParamCaption})}
+
+
+
+Definition at line 4878 of file icall\+\_\+api.\+c.
+
+\mbox{\Hypertarget{icall__api_8c_ae69c8fd7434c02abe3cf504cbe37db21}\label{icall__api_8c_ae69c8fd7434c02abe3cf504cbe37db21}} 
+\index{icall\_api.c@{icall\_api.c}!HCI\_LE\_SetDataLenCmd@{HCI\_LE\_SetDataLenCmd}}
+\index{HCI\_LE\_SetDataLenCmd@{HCI\_LE\_SetDataLenCmd}!icall\_api.c@{icall\_api.c}}
+\doxysubsubsection{\texorpdfstring{HCI\_LE\_SetDataLenCmd()}{HCI\_LE\_SetDataLenCmd()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{hci_8h_a160d48a9feb9427468f8b9162227da59}{hci\+Status\+\_\+t}} H\+C\+I\+\_\+\+L\+E\+\_\+\+Set\+Data\+Len\+Cmd (\begin{DoxyParamCaption}\item[{uint16}]{conn\+Handle,  }\item[{uint16}]{tx\+Octets,  }\item[{uint16}]{tx\+Time }\end{DoxyParamCaption})}
+
+
+
+Definition at line 5038 of file icall\+\_\+api.\+c.
+
+\mbox{\Hypertarget{icall__api_8c_afb25fb9df2c46262deeb88cc16298572}\label{icall__api_8c_afb25fb9df2c46262deeb88cc16298572}} 
+\index{icall\_api.c@{icall\_api.c}!HCI\_LE\_SetEventMaskCmd@{HCI\_LE\_SetEventMaskCmd}}
+\index{HCI\_LE\_SetEventMaskCmd@{HCI\_LE\_SetEventMaskCmd}!icall\_api.c@{icall\_api.c}}
+\doxysubsubsection{\texorpdfstring{HCI\_LE\_SetEventMaskCmd()}{HCI\_LE\_SetEventMaskCmd()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{hci_8h_a160d48a9feb9427468f8b9162227da59}{hci\+Status\+\_\+t}} H\+C\+I\+\_\+\+L\+E\+\_\+\+Set\+Event\+Mask\+Cmd (\begin{DoxyParamCaption}\item[{uint8 $\ast$}]{p\+Event\+Mask }\end{DoxyParamCaption})}
+
+
+
+Definition at line 4813 of file icall\+\_\+api.\+c.
+
+\mbox{\Hypertarget{icall__api_8c_a41200c44c2cb5cd7ce482fa3a7810e91}\label{icall__api_8c_a41200c44c2cb5cd7ce482fa3a7810e91}} 
+\index{icall\_api.c@{icall\_api.c}!HCI\_LE\_SetHostChanClassificationCmd@{HCI\_LE\_SetHostChanClassificationCmd}}
+\index{HCI\_LE\_SetHostChanClassificationCmd@{HCI\_LE\_SetHostChanClassificationCmd}!icall\_api.c@{icall\_api.c}}
+\doxysubsubsection{\texorpdfstring{HCI\_LE\_SetHostChanClassificationCmd()}{HCI\_LE\_SetHostChanClassificationCmd()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{hci_8h_a160d48a9feb9427468f8b9162227da59}{hci\+Status\+\_\+t}} H\+C\+I\+\_\+\+L\+E\+\_\+\+Set\+Host\+Chan\+Classification\+Cmd (\begin{DoxyParamCaption}\item[{uint8 $\ast$}]{chan\+Map }\end{DoxyParamCaption})}
+
+
+
+Definition at line 4889 of file icall\+\_\+api.\+c.
+
+\mbox{\Hypertarget{icall__api_8c_a6cf7b2e9c5ed8b112e3c0a6c5731b173}\label{icall__api_8c_a6cf7b2e9c5ed8b112e3c0a6c5731b173}} 
+\index{icall\_api.c@{icall\_api.c}!HCI\_LE\_TestEndCmd@{HCI\_LE\_TestEndCmd}}
+\index{HCI\_LE\_TestEndCmd@{HCI\_LE\_TestEndCmd}!icall\_api.c@{icall\_api.c}}
+\doxysubsubsection{\texorpdfstring{HCI\_LE\_TestEndCmd()}{HCI\_LE\_TestEndCmd()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{hci_8h_a160d48a9feb9427468f8b9162227da59}{hci\+Status\+\_\+t}} H\+C\+I\+\_\+\+L\+E\+\_\+\+Test\+End\+Cmd (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 5110 of file icall\+\_\+api.\+c.
+
+\mbox{\Hypertarget{icall__api_8c_ab545b388268bc697b0a49e15ebc87023}\label{icall__api_8c_ab545b388268bc697b0a49e15ebc87023}} 
+\index{icall\_api.c@{icall\_api.c}!HCI\_LE\_TransmitterTestCmd@{HCI\_LE\_TransmitterTestCmd}}
+\index{HCI\_LE\_TransmitterTestCmd@{HCI\_LE\_TransmitterTestCmd}!icall\_api.c@{icall\_api.c}}
+\doxysubsubsection{\texorpdfstring{HCI\_LE\_TransmitterTestCmd()}{HCI\_LE\_TransmitterTestCmd()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{hci_8h_a160d48a9feb9427468f8b9162227da59}{hci\+Status\+\_\+t}} H\+C\+I\+\_\+\+L\+E\+\_\+\+Transmitter\+Test\+Cmd (\begin{DoxyParamCaption}\item[{uint8}]{tx\+Chan,  }\item[{uint8}]{data\+Len,  }\item[{uint8}]{payload\+Type }\end{DoxyParamCaption})}
+
+
+
+Definition at line 5068 of file icall\+\_\+api.\+c.
+
+\mbox{\Hypertarget{icall__api_8c_aee60ea41f67b959589e696984356a30e}\label{icall__api_8c_aee60ea41f67b959589e696984356a30e}} 
+\index{icall\_api.c@{icall\_api.c}!HCI\_LE\_WriteSuggestedDefaultDataLenCmd@{HCI\_LE\_WriteSuggestedDefaultDataLenCmd}}
+\index{HCI\_LE\_WriteSuggestedDefaultDataLenCmd@{HCI\_LE\_WriteSuggestedDefaultDataLenCmd}!icall\_api.c@{icall\_api.c}}
+\doxysubsubsection{\texorpdfstring{HCI\_LE\_WriteSuggestedDefaultDataLenCmd()}{HCI\_LE\_WriteSuggestedDefaultDataLenCmd()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{hci_8h_a160d48a9feb9427468f8b9162227da59}{hci\+Status\+\_\+t}} H\+C\+I\+\_\+\+L\+E\+\_\+\+Write\+Suggested\+Default\+Data\+Len\+Cmd (\begin{DoxyParamCaption}\item[{uint16}]{tx\+Octets,  }\item[{uint16}]{tx\+Time }\end{DoxyParamCaption})}
+
+
+
+Definition at line 5007 of file icall\+\_\+api.\+c.
+
+\mbox{\Hypertarget{icall__api_8c_ac92bf295ab302f25d70d88105a12b3e9}\label{icall__api_8c_ac92bf295ab302f25d70d88105a12b3e9}} 
+\index{icall\_api.c@{icall\_api.c}!HCI\_ReadBDADDRCmd@{HCI\_ReadBDADDRCmd}}
+\index{HCI\_ReadBDADDRCmd@{HCI\_ReadBDADDRCmd}!icall\_api.c@{icall\_api.c}}
+\doxysubsubsection{\texorpdfstring{HCI\_ReadBDADDRCmd()}{HCI\_ReadBDADDRCmd()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{hci_8h_a160d48a9feb9427468f8b9162227da59}{hci\+Status\+\_\+t}} H\+C\+I\+\_\+\+Read\+B\+D\+A\+D\+D\+R\+Cmd (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 4789 of file icall\+\_\+api.\+c.
+
+\mbox{\Hypertarget{icall__api_8c_aecae8cf9fe12a3ff6299055b4c269458}\label{icall__api_8c_aecae8cf9fe12a3ff6299055b4c269458}} 
+\index{icall\_api.c@{icall\_api.c}!HCI\_ReadLocalSupportedCommandsCmd@{HCI\_ReadLocalSupportedCommandsCmd}}
+\index{HCI\_ReadLocalSupportedCommandsCmd@{HCI\_ReadLocalSupportedCommandsCmd}!icall\_api.c@{icall\_api.c}}
+\doxysubsubsection{\texorpdfstring{HCI\_ReadLocalSupportedCommandsCmd()}{HCI\_ReadLocalSupportedCommandsCmd()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{hci_8h_a160d48a9feb9427468f8b9162227da59}{hci\+Status\+\_\+t}} H\+C\+I\+\_\+\+Read\+Local\+Supported\+Commands\+Cmd (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 4765 of file icall\+\_\+api.\+c.
+
+\mbox{\Hypertarget{icall__api_8c_a42654b2da8f810e7f33f68e5e96aab1d}\label{icall__api_8c_a42654b2da8f810e7f33f68e5e96aab1d}} 
+\index{icall\_api.c@{icall\_api.c}!HCI\_ReadLocalSupportedFeaturesCmd@{HCI\_ReadLocalSupportedFeaturesCmd}}
+\index{HCI\_ReadLocalSupportedFeaturesCmd@{HCI\_ReadLocalSupportedFeaturesCmd}!icall\_api.c@{icall\_api.c}}
+\doxysubsubsection{\texorpdfstring{HCI\_ReadLocalSupportedFeaturesCmd()}{HCI\_ReadLocalSupportedFeaturesCmd()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{hci_8h_a160d48a9feb9427468f8b9162227da59}{hci\+Status\+\_\+t}} H\+C\+I\+\_\+\+Read\+Local\+Supported\+Features\+Cmd (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 4776 of file icall\+\_\+api.\+c.
+
+\mbox{\Hypertarget{icall__api_8c_a2d19d2c9c976694627750177f1fba000}\label{icall__api_8c_a2d19d2c9c976694627750177f1fba000}} 
+\index{icall\_api.c@{icall\_api.c}!HCI\_ReadLocalVersionInfoCmd@{HCI\_ReadLocalVersionInfoCmd}}
+\index{HCI\_ReadLocalVersionInfoCmd@{HCI\_ReadLocalVersionInfoCmd}!icall\_api.c@{icall\_api.c}}
+\doxysubsubsection{\texorpdfstring{HCI\_ReadLocalVersionInfoCmd()}{HCI\_ReadLocalVersionInfoCmd()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{hci_8h_a160d48a9feb9427468f8b9162227da59}{hci\+Status\+\_\+t}} H\+C\+I\+\_\+\+Read\+Local\+Version\+Info\+Cmd (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 4755 of file icall\+\_\+api.\+c.
+
+\mbox{\Hypertarget{icall__api_8c_ad3702645425557c240a4c97973cb7a6b}\label{icall__api_8c_ad3702645425557c240a4c97973cb7a6b}} 
+\index{icall\_api.c@{icall\_api.c}!HCI\_ReadRemoteVersionInfoCmd@{HCI\_ReadRemoteVersionInfoCmd}}
+\index{HCI\_ReadRemoteVersionInfoCmd@{HCI\_ReadRemoteVersionInfoCmd}!icall\_api.c@{icall\_api.c}}
+\doxysubsubsection{\texorpdfstring{HCI\_ReadRemoteVersionInfoCmd()}{HCI\_ReadRemoteVersionInfoCmd()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{hci_8h_a160d48a9feb9427468f8b9162227da59}{hci\+Status\+\_\+t}} H\+C\+I\+\_\+\+Read\+Remote\+Version\+Info\+Cmd (\begin{DoxyParamCaption}\item[{uint16}]{conn\+Handle }\end{DoxyParamCaption})}
+
+
+
+Definition at line 4691 of file icall\+\_\+api.\+c.
+
+\mbox{\Hypertarget{icall__api_8c_a19d1f14a0fde7b049a92f46e96671b40}\label{icall__api_8c_a19d1f14a0fde7b049a92f46e96671b40}} 
+\index{icall\_api.c@{icall\_api.c}!HCI\_ReadRssiCmd@{HCI\_ReadRssiCmd}}
+\index{HCI\_ReadRssiCmd@{HCI\_ReadRssiCmd}!icall\_api.c@{icall\_api.c}}
+\doxysubsubsection{\texorpdfstring{HCI\_ReadRssiCmd()}{HCI\_ReadRssiCmd()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{hci_8h_a160d48a9feb9427468f8b9162227da59}{hci\+Status\+\_\+t}} H\+C\+I\+\_\+\+Read\+Rssi\+Cmd (\begin{DoxyParamCaption}\item[{uint16}]{conn\+Handle }\end{DoxyParamCaption})}
+
+
+
+Definition at line 4799 of file icall\+\_\+api.\+c.
+
+\mbox{\Hypertarget{icall__api_8c_a7910b451e12513208df3cef4d03c92b5}\label{icall__api_8c_a7910b451e12513208df3cef4d03c92b5}} 
+\index{icall\_api.c@{icall\_api.c}!HCI\_ReadTransmitPowerLevelCmd@{HCI\_ReadTransmitPowerLevelCmd}}
+\index{HCI\_ReadTransmitPowerLevelCmd@{HCI\_ReadTransmitPowerLevelCmd}!icall\_api.c@{icall\_api.c}}
+\doxysubsubsection{\texorpdfstring{HCI\_ReadTransmitPowerLevelCmd()}{HCI\_ReadTransmitPowerLevelCmd()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{hci_8h_a160d48a9feb9427468f8b9162227da59}{hci\+Status\+\_\+t}} H\+C\+I\+\_\+\+Read\+Transmit\+Power\+Level\+Cmd (\begin{DoxyParamCaption}\item[{uint16}]{conn\+Handle,  }\item[{uint8}]{tx\+Pwr\+Type }\end{DoxyParamCaption})}
+
+
+
+Definition at line 4744 of file icall\+\_\+api.\+c.
+
+\mbox{\Hypertarget{icall__api_8c_ab80ed0dca9d58e9f825843768e52813d}\label{icall__api_8c_ab80ed0dca9d58e9f825843768e52813d}} 
+\index{icall\_api.c@{icall\_api.c}!HCI\_ResetCmd@{HCI\_ResetCmd}}
+\index{HCI\_ResetCmd@{HCI\_ResetCmd}!icall\_api.c@{icall\_api.c}}
+\doxysubsubsection{\texorpdfstring{HCI\_ResetCmd()}{HCI\_ResetCmd()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{hci_8h_a160d48a9feb9427468f8b9162227da59}{hci\+Status\+\_\+t}} H\+C\+I\+\_\+\+Reset\+Cmd (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 4733 of file icall\+\_\+api.\+c.
+
+\mbox{\Hypertarget{icall__api_8c_a08cbfd3dc69cc0c6aca88d0f917645b5}\label{icall__api_8c_a08cbfd3dc69cc0c6aca88d0f917645b5}} 
+\index{icall\_api.c@{icall\_api.c}!HCI\_SetEventMaskCmd@{HCI\_SetEventMaskCmd}}
+\index{HCI\_SetEventMaskCmd@{HCI\_SetEventMaskCmd}!icall\_api.c@{icall\_api.c}}
+\doxysubsubsection{\texorpdfstring{HCI\_SetEventMaskCmd()}{HCI\_SetEventMaskCmd()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{hci_8h_a160d48a9feb9427468f8b9162227da59}{hci\+Status\+\_\+t}} H\+C\+I\+\_\+\+Set\+Event\+Mask\+Cmd (\begin{DoxyParamCaption}\item[{uint8 $\ast$}]{p\+Mask }\end{DoxyParamCaption})}
+
+
+
+Definition at line 4706 of file icall\+\_\+api.\+c.
+
+\mbox{\Hypertarget{icall__api_8c_a77d8589b4668b1c03ca86710adc67e70}\label{icall__api_8c_a77d8589b4668b1c03ca86710adc67e70}} 
+\index{icall\_api.c@{icall\_api.c}!HCI\_SetEventMaskPage2Cmd@{HCI\_SetEventMaskPage2Cmd}}
+\index{HCI\_SetEventMaskPage2Cmd@{HCI\_SetEventMaskPage2Cmd}!icall\_api.c@{icall\_api.c}}
+\doxysubsubsection{\texorpdfstring{HCI\_SetEventMaskPage2Cmd()}{HCI\_SetEventMaskPage2Cmd()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{hci_8h_a160d48a9feb9427468f8b9162227da59}{hci\+Status\+\_\+t}} H\+C\+I\+\_\+\+Set\+Event\+Mask\+Page2\+Cmd (\begin{DoxyParamCaption}\item[{uint8 $\ast$}]{p\+Mask }\end{DoxyParamCaption})}
+
+
+
+Definition at line 4721 of file icall\+\_\+api.\+c.
+
+\mbox{\Hypertarget{icall__api_8c_a5f9fbf871179c8cf69373d1b8993bd2f}\label{icall__api_8c_a5f9fbf871179c8cf69373d1b8993bd2f}} 
+\index{icall\_api.c@{icall\_api.c}!L2CAP\_bm\_alloc@{L2CAP\_bm\_alloc}}
+\index{L2CAP\_bm\_alloc@{L2CAP\_bm\_alloc}!icall\_api.c@{icall\_api.c}}
+\doxysubsubsection{\texorpdfstring{L2CAP\_bm\_alloc()}{L2CAP\_bm\_alloc()}}
+{\footnotesize\ttfamily void$\ast$ L2\+C\+A\+P\+\_\+bm\+\_\+alloc (\begin{DoxyParamCaption}\item[{uint16}]{size }\end{DoxyParamCaption})}
+
+
+
+Definition at line 3271 of file icall\+\_\+api.\+c.
+
+\mbox{\Hypertarget{icall__api_8c_aa31b0cee961a10f4be7b1e3afafd1de8}\label{icall__api_8c_aa31b0cee961a10f4be7b1e3afafd1de8}} 
+\index{icall\_api.c@{icall\_api.c}!L2CAP\_ChannelInfo@{L2CAP\_ChannelInfo}}
+\index{L2CAP\_ChannelInfo@{L2CAP\_ChannelInfo}!icall\_api.c@{icall\_api.c}}
+\doxysubsubsection{\texorpdfstring{L2CAP\_ChannelInfo()}{L2CAP\_ChannelInfo()}}
+{\footnotesize\ttfamily b\+Status\+\_\+t L2\+C\+A\+P\+\_\+\+Channel\+Info (\begin{DoxyParamCaption}\item[{uint16}]{C\+ID,  }\item[{l2cap\+Channel\+Info\+\_\+t $\ast$}]{p\+Info }\end{DoxyParamCaption})}
+
+
+
+Definition at line 2929 of file icall\+\_\+api.\+c.
+
+\mbox{\Hypertarget{icall__api_8c_aa3f9f6f441fade45a6791fffdbf245f4}\label{icall__api_8c_aa3f9f6f441fade45a6791fffdbf245f4}} 
+\index{icall\_api.c@{icall\_api.c}!L2CAP\_ConnectReq@{L2CAP\_ConnectReq}}
+\index{L2CAP\_ConnectReq@{L2CAP\_ConnectReq}!icall\_api.c@{icall\_api.c}}
+\doxysubsubsection{\texorpdfstring{L2CAP\_ConnectReq()}{L2CAP\_ConnectReq()}}
+{\footnotesize\ttfamily b\+Status\+\_\+t L2\+C\+A\+P\+\_\+\+Connect\+Req (\begin{DoxyParamCaption}\item[{uint16}]{conn\+Handle,  }\item[{uint16}]{psm,  }\item[{uint16}]{peer\+Psm }\end{DoxyParamCaption})}
+
+
+
+Definition at line 2987 of file icall\+\_\+api.\+c.
+
+\mbox{\Hypertarget{icall__api_8c_a8d48a4fa576a2f9d540345628ae6c557}\label{icall__api_8c_a8d48a4fa576a2f9d540345628ae6c557}} 
+\index{icall\_api.c@{icall\_api.c}!L2CAP\_ConnectRsp@{L2CAP\_ConnectRsp}}
+\index{L2CAP\_ConnectRsp@{L2CAP\_ConnectRsp}!icall\_api.c@{icall\_api.c}}
+\doxysubsubsection{\texorpdfstring{L2CAP\_ConnectRsp()}{L2CAP\_ConnectRsp()}}
+{\footnotesize\ttfamily b\+Status\+\_\+t L2\+C\+A\+P\+\_\+\+Connect\+Rsp (\begin{DoxyParamCaption}\item[{uint16}]{conn\+Handle,  }\item[{uint8}]{id,  }\item[{uint16}]{result }\end{DoxyParamCaption})}
+
+
+
+Definition at line 3017 of file icall\+\_\+api.\+c.
+
+\mbox{\Hypertarget{icall__api_8c_af9cc2df9bb0b4c9000d8c3e21adcf1d2}\label{icall__api_8c_af9cc2df9bb0b4c9000d8c3e21adcf1d2}} 
+\index{icall\_api.c@{icall\_api.c}!L2CAP\_ConnParamUpdateReq@{L2CAP\_ConnParamUpdateReq}}
+\index{L2CAP\_ConnParamUpdateReq@{L2CAP\_ConnParamUpdateReq}!icall\_api.c@{icall\_api.c}}
+\doxysubsubsection{\texorpdfstring{L2CAP\_ConnParamUpdateReq()}{L2CAP\_ConnParamUpdateReq()}}
+{\footnotesize\ttfamily b\+Status\+\_\+t L2\+C\+A\+P\+\_\+\+Conn\+Param\+Update\+Req (\begin{DoxyParamCaption}\item[{uint16}]{conn\+Handle,  }\item[{l2cap\+Param\+Update\+Req\+\_\+t $\ast$}]{p\+Update\+Req,  }\item[{uint8}]{task\+Id }\end{DoxyParamCaption})}
+
+
+
+Definition at line 2776 of file icall\+\_\+api.\+c.
+
+\mbox{\Hypertarget{icall__api_8c_aeced1e1f9c0d0935bc7743b684071a62}\label{icall__api_8c_aeced1e1f9c0d0935bc7743b684071a62}} 
+\index{icall\_api.c@{icall\_api.c}!L2CAP\_DeregisterPsm@{L2CAP\_DeregisterPsm}}
+\index{L2CAP\_DeregisterPsm@{L2CAP\_DeregisterPsm}!icall\_api.c@{icall\_api.c}}
+\doxysubsubsection{\texorpdfstring{L2CAP\_DeregisterPsm()}{L2CAP\_DeregisterPsm()}}
+{\footnotesize\ttfamily b\+Status\+\_\+t L2\+C\+A\+P\+\_\+\+Deregister\+Psm (\begin{DoxyParamCaption}\item[{uint8}]{task\+Id,  }\item[{uint16}]{psm }\end{DoxyParamCaption})}
+
+
+
+Definition at line 2839 of file icall\+\_\+api.\+c.
+
+\mbox{\Hypertarget{icall__api_8c_a3ca1bc8d6ee49d81104f62b440311dd8}\label{icall__api_8c_a3ca1bc8d6ee49d81104f62b440311dd8}} 
+\index{icall\_api.c@{icall\_api.c}!L2CAP\_DisconnectReq@{L2CAP\_DisconnectReq}}
+\index{L2CAP\_DisconnectReq@{L2CAP\_DisconnectReq}!icall\_api.c@{icall\_api.c}}
+\doxysubsubsection{\texorpdfstring{L2CAP\_DisconnectReq()}{L2CAP\_DisconnectReq()}}
+{\footnotesize\ttfamily b\+Status\+\_\+t L2\+C\+A\+P\+\_\+\+Disconnect\+Req (\begin{DoxyParamCaption}\item[{uint16}]{C\+ID }\end{DoxyParamCaption})}
+
+
+
+Definition at line 3047 of file icall\+\_\+api.\+c.
+
+\mbox{\Hypertarget{icall__api_8c_a28ccf583adbf302cf95db9aef19d3b6e}\label{icall__api_8c_a28ccf583adbf302cf95db9aef19d3b6e}} 
+\index{icall\_api.c@{icall\_api.c}!L2CAP\_FlowCtrlCredit@{L2CAP\_FlowCtrlCredit}}
+\index{L2CAP\_FlowCtrlCredit@{L2CAP\_FlowCtrlCredit}!icall\_api.c@{icall\_api.c}}
+\doxysubsubsection{\texorpdfstring{L2CAP\_FlowCtrlCredit()}{L2CAP\_FlowCtrlCredit()}}
+{\footnotesize\ttfamily b\+Status\+\_\+t L2\+C\+A\+P\+\_\+\+Flow\+Ctrl\+Credit (\begin{DoxyParamCaption}\item[{uint16}]{C\+ID,  }\item[{uint16}]{peer\+Credits }\end{DoxyParamCaption})}
+
+
+
+Definition at line 3077 of file icall\+\_\+api.\+c.
+
+\mbox{\Hypertarget{icall__api_8c_a3fb8aaca8154b07d65f84d78346add5f}\label{icall__api_8c_a3fb8aaca8154b07d65f84d78346add5f}} 
+\index{icall\_api.c@{icall\_api.c}!L2CAP\_PsmChannels@{L2CAP\_PsmChannels}}
+\index{L2CAP\_PsmChannels@{L2CAP\_PsmChannels}!icall\_api.c@{icall\_api.c}}
+\doxysubsubsection{\texorpdfstring{L2CAP\_PsmChannels()}{L2CAP\_PsmChannels()}}
+{\footnotesize\ttfamily b\+Status\+\_\+t L2\+C\+A\+P\+\_\+\+Psm\+Channels (\begin{DoxyParamCaption}\item[{uint16}]{psm,  }\item[{uint8}]{num\+C\+I\+Ds,  }\item[{uint16 $\ast$}]{p\+C\+I\+Ds }\end{DoxyParamCaption})}
+
+
+
+Definition at line 2899 of file icall\+\_\+api.\+c.
+
+\mbox{\Hypertarget{icall__api_8c_afe4d689eabdbe7c83bf4e0fca2ee8921}\label{icall__api_8c_afe4d689eabdbe7c83bf4e0fca2ee8921}} 
+\index{icall\_api.c@{icall\_api.c}!L2CAP\_PsmInfo@{L2CAP\_PsmInfo}}
+\index{L2CAP\_PsmInfo@{L2CAP\_PsmInfo}!icall\_api.c@{icall\_api.c}}
+\doxysubsubsection{\texorpdfstring{L2CAP\_PsmInfo()}{L2CAP\_PsmInfo()}}
+{\footnotesize\ttfamily b\+Status\+\_\+t L2\+C\+A\+P\+\_\+\+Psm\+Info (\begin{DoxyParamCaption}\item[{uint16}]{psm,  }\item[{l2cap\+Psm\+Info\+\_\+t $\ast$}]{p\+Info }\end{DoxyParamCaption})}
+
+
+
+Definition at line 2870 of file icall\+\_\+api.\+c.
+
+\mbox{\Hypertarget{icall__api_8c_abfc996b1ebbfe94febbc7e448150bf1a}\label{icall__api_8c_abfc996b1ebbfe94febbc7e448150bf1a}} 
+\index{icall\_api.c@{icall\_api.c}!L2CAP\_RegisterFlowCtrlTask@{L2CAP\_RegisterFlowCtrlTask}}
+\index{L2CAP\_RegisterFlowCtrlTask@{L2CAP\_RegisterFlowCtrlTask}!icall\_api.c@{icall\_api.c}}
+\doxysubsubsection{\texorpdfstring{L2CAP\_RegisterFlowCtrlTask()}{L2CAP\_RegisterFlowCtrlTask()}}
+{\footnotesize\ttfamily void L2\+C\+A\+P\+\_\+\+Register\+Flow\+Ctrl\+Task (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{task\+Id }\end{DoxyParamCaption})}
+
+
+
+Definition at line 734 of file icall\+\_\+api.\+c.
+
+\mbox{\Hypertarget{icall__api_8c_a4973f6690e33d30089ae323c6ddc2ee8}\label{icall__api_8c_a4973f6690e33d30089ae323c6ddc2ee8}} 
+\index{icall\_api.c@{icall\_api.c}!L2CAP\_RegisterPsm@{L2CAP\_RegisterPsm}}
+\index{L2CAP\_RegisterPsm@{L2CAP\_RegisterPsm}!icall\_api.c@{icall\_api.c}}
+\doxysubsubsection{\texorpdfstring{L2CAP\_RegisterPsm()}{L2CAP\_RegisterPsm()}}
+{\footnotesize\ttfamily b\+Status\+\_\+t L2\+C\+A\+P\+\_\+\+Register\+Psm (\begin{DoxyParamCaption}\item[{l2cap\+Psm\+\_\+t $\ast$}]{p\+Psm }\end{DoxyParamCaption})}
+
+
+
+Definition at line 2809 of file icall\+\_\+api.\+c.
+
+\mbox{\Hypertarget{icall__api_8c_a4756c83b98db5cf43ff8d4e82b84e2db}\label{icall__api_8c_a4756c83b98db5cf43ff8d4e82b84e2db}} 
+\index{icall\_api.c@{icall\_api.c}!L2CAP\_SendSDU@{L2CAP\_SendSDU}}
+\index{L2CAP\_SendSDU@{L2CAP\_SendSDU}!icall\_api.c@{icall\_api.c}}
+\doxysubsubsection{\texorpdfstring{L2CAP\_SendSDU()}{L2CAP\_SendSDU()}}
+{\footnotesize\ttfamily b\+Status\+\_\+t L2\+C\+A\+P\+\_\+\+Send\+S\+DU (\begin{DoxyParamCaption}\item[{l2cap\+Packet\+\_\+t $\ast$}]{p\+Pkt }\end{DoxyParamCaption})}
+
+
+
+Definition at line 2959 of file icall\+\_\+api.\+c.
+
+\mbox{\Hypertarget{icall__api_8c_ab6889df9c6a70cd9c4016895eb3d656d}\label{icall__api_8c_ab6889df9c6a70cd9c4016895eb3d656d}} 
+\index{icall\_api.c@{icall\_api.c}!linkDB\_GetInfo@{linkDB\_GetInfo}}
+\index{linkDB\_GetInfo@{linkDB\_GetInfo}!icall\_api.c@{icall\_api.c}}
+\doxysubsubsection{\texorpdfstring{linkDB\_GetInfo()}{linkDB\_GetInfo()}}
+{\footnotesize\ttfamily uint8 link\+D\+B\+\_\+\+Get\+Info (\begin{DoxyParamCaption}\item[{uint16}]{conn\+Handle,  }\item[{link\+D\+B\+Info\+\_\+t $\ast$}]{p\+Info }\end{DoxyParamCaption})}
+
+
+
+Definition at line 2659 of file icall\+\_\+api.\+c.
+
+\mbox{\Hypertarget{icall__api_8c_a2dfebc6681d478ceb2514f79b4dec330}\label{icall__api_8c_a2dfebc6681d478ceb2514f79b4dec330}} 
+\index{icall\_api.c@{icall\_api.c}!linkDB\_NumActive@{linkDB\_NumActive}}
+\index{linkDB\_NumActive@{linkDB\_NumActive}!icall\_api.c@{icall\_api.c}}
+\doxysubsubsection{\texorpdfstring{linkDB\_NumActive()}{linkDB\_NumActive()}}
+{\footnotesize\ttfamily uint8 link\+D\+B\+\_\+\+Num\+Active (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 2633 of file icall\+\_\+api.\+c.
+
+\mbox{\Hypertarget{icall__api_8c_a50a8d90705d15c1d80eba31831eab276}\label{icall__api_8c_a50a8d90705d15c1d80eba31831eab276}} 
+\index{icall\_api.c@{icall\_api.c}!linkDB\_NumConns@{linkDB\_NumConns}}
+\index{linkDB\_NumConns@{linkDB\_NumConns}!icall\_api.c@{icall\_api.c}}
+\doxysubsubsection{\texorpdfstring{linkDB\_NumConns()}{linkDB\_NumConns()}}
+{\footnotesize\ttfamily uint8 link\+D\+B\+\_\+\+Num\+Conns (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 2607 of file icall\+\_\+api.\+c.
+
+\mbox{\Hypertarget{icall__api_8c_a73e393852ed170c0e5d03f20fb16d4c1}\label{icall__api_8c_a73e393852ed170c0e5d03f20fb16d4c1}} 
+\index{icall\_api.c@{icall\_api.c}!linkDB\_State@{linkDB\_State}}
+\index{linkDB\_State@{linkDB\_State}!icall\_api.c@{icall\_api.c}}
+\doxysubsubsection{\texorpdfstring{linkDB\_State()}{linkDB\_State()}}
+{\footnotesize\ttfamily uint8 link\+D\+B\+\_\+\+State (\begin{DoxyParamCaption}\item[{uint16}]{connection\+Handle,  }\item[{uint8}]{state }\end{DoxyParamCaption})}
+
+
+
+Definition at line 2577 of file icall\+\_\+api.\+c.
+
+\mbox{\Hypertarget{icall__api_8c_a228ea47838a43bd9417535eb5c5a04ee}\label{icall__api_8c_a228ea47838a43bd9417535eb5c5a04ee}} 
+\index{icall\_api.c@{icall\_api.c}!NPI\_RegisterTask@{NPI\_RegisterTask}}
+\index{NPI\_RegisterTask@{NPI\_RegisterTask}!icall\_api.c@{icall\_api.c}}
+\doxysubsubsection{\texorpdfstring{NPI\_RegisterTask()}{NPI\_RegisterTask()}}
+{\footnotesize\ttfamily void N\+P\+I\+\_\+\+Register\+Task (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{task\+Id }\end{DoxyParamCaption})}
+
+
+
+Definition at line 713 of file icall\+\_\+api.\+c.
+
+\mbox{\Hypertarget{icall__api_8c_a035bb602a38bcd18450be7ad8075ba11}\label{icall__api_8c_a035bb602a38bcd18450be7ad8075ba11}} 
+\index{icall\_api.c@{icall\_api.c}!osal\_snv\_read@{osal\_snv\_read}}
+\index{osal\_snv\_read@{osal\_snv\_read}!icall\_api.c@{icall\_api.c}}
+\doxysubsubsection{\texorpdfstring{osal\_snv\_read()}{osal\_snv\_read()}}
+{\footnotesize\ttfamily uint8 osal\+\_\+snv\+\_\+read (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{osal__snv_8h_af081403f50bf91afa44dddff24179a03}{osal\+Snv\+Id\+\_\+t}}}]{id,  }\item[{\mbox{\hyperlink{osal__snv_8h_a445ca6febfeac207c762ad6d0093dd65}{osal\+Snv\+Len\+\_\+t}}}]{len,  }\item[{void $\ast$}]{p\+Buf }\end{DoxyParamCaption})}
+
+
+
+Definition at line 6416 of file icall\+\_\+api.\+c.
+
+\mbox{\Hypertarget{icall__api_8c_a029016762d0746f51511c90692db5e49}\label{icall__api_8c_a029016762d0746f51511c90692db5e49}} 
+\index{icall\_api.c@{icall\_api.c}!osal\_snv\_write@{osal\_snv\_write}}
+\index{osal\_snv\_write@{osal\_snv\_write}!icall\_api.c@{icall\_api.c}}
+\doxysubsubsection{\texorpdfstring{osal\_snv\_write()}{osal\_snv\_write()}}
+{\footnotesize\ttfamily uint8 osal\+\_\+snv\+\_\+write (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{osal__snv_8h_af081403f50bf91afa44dddff24179a03}{osal\+Snv\+Id\+\_\+t}}}]{id,  }\item[{\mbox{\hyperlink{osal__snv_8h_a445ca6febfeac207c762ad6d0093dd65}{osal\+Snv\+Len\+\_\+t}}}]{len,  }\item[{void $\ast$}]{p\+Buf }\end{DoxyParamCaption})}
+
+
+
+Definition at line 6442 of file icall\+\_\+api.\+c.
+
+\mbox{\Hypertarget{icall__api_8c_a5fdcdfe623843b10e919648e3cc8f11c}\label{icall__api_8c_a5fdcdfe623843b10e919648e3cc8f11c}} 
+\index{icall\_api.c@{icall\_api.c}!SM\_GetScConfirmOob@{SM\_GetScConfirmOob}}
+\index{SM\_GetScConfirmOob@{SM\_GetScConfirmOob}!icall\_api.c@{icall\_api.c}}
+\doxysubsubsection{\texorpdfstring{SM\_GetScConfirmOob()}{SM\_GetScConfirmOob()}}
+{\footnotesize\ttfamily b\+Status\+\_\+t S\+M\+\_\+\+Get\+Sc\+Confirm\+Oob (\begin{DoxyParamCaption}\item[{uint8 $\ast$}]{public\+Key,  }\item[{uint8 $\ast$}]{oob,  }\item[{uint8 $\ast$}]{p\+Out }\end{DoxyParamCaption})}
+
+
+
+Definition at line 4608 of file icall\+\_\+api.\+c.
+
+\mbox{\Hypertarget{icall__api_8c_ad9cf5e8a9556ac33d32131e5bae15d43}\label{icall__api_8c_ad9cf5e8a9556ac33d32131e5bae15d43}} 
+\index{icall\_api.c@{icall\_api.c}!Util\_buildRevision@{Util\_buildRevision}}
+\index{Util\_buildRevision@{Util\_buildRevision}!icall\_api.c@{icall\_api.c}}
+\doxysubsubsection{\texorpdfstring{Util\_buildRevision()}{Util\_buildRevision()}}
+{\footnotesize\ttfamily b\+Status\+\_\+t Util\+\_\+build\+Revision (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{icall__apimsg_8h_a65ee593b8bd7efb678328b6f87838d44}{I\+Call\+\_\+\+Build\+Revision}} $\ast$}]{p\+Build\+Rev }\end{DoxyParamCaption})}
+
+
+
+Definition at line 6529 of file icall\+\_\+api.\+c.
+
+\mbox{\Hypertarget{icall__api_8c_a169dc1ac175efe8d9fac0c63d725b241}\label{icall__api_8c_a169dc1ac175efe8d9fac0c63d725b241}} 
+\index{icall\_api.c@{icall\_api.c}!Util\_GetTRNG@{Util\_GetTRNG}}
+\index{Util\_GetTRNG@{Util\_GetTRNG}!icall\_api.c@{icall\_api.c}}
+\doxysubsubsection{\texorpdfstring{Util\_GetTRNG()}{Util\_GetTRNG()}}
+{\footnotesize\ttfamily uint32\+\_\+t Util\+\_\+\+Get\+T\+R\+NG (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 6557 of file icall\+\_\+api.\+c.
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{icall__api_8c_a3416c65d751a9d8f82b6cbd42bd9d223}\label{icall__api_8c_a3416c65d751a9d8f82b6cbd42bd9d223}} 
+\index{icall\_api.c@{icall\_api.c}!lastAppOpcodeSent@{lastAppOpcodeSent}}
+\index{lastAppOpcodeSent@{lastAppOpcodeSent}!icall\_api.c@{icall\_api.c}}
+\doxysubsubsection{\texorpdfstring{lastAppOpcodeSent}{lastAppOpcodeSent}}
+{\footnotesize\ttfamily uint16 last\+App\+Opcode\+Sent = 0x\+F\+F\+FF}
+
+
+
+Definition at line 77 of file icall\+\_\+api.\+c.
+
+\mbox{\Hypertarget{icall__api_8c_a8b253e34752c76f85e00e41682955b00}\label{icall__api_8c_a8b253e34752c76f85e00e41682955b00}} 
+\index{icall\_api.c@{icall\_api.c}!pfnBMAlloc@{pfnBMAlloc}}
+\index{pfnBMAlloc@{pfnBMAlloc}!icall\_api.c@{icall\_api.c}}
+\doxysubsubsection{\texorpdfstring{pfnBMAlloc}{pfnBMAlloc}}
+{\footnotesize\ttfamily pfn\+B\+M\+Alloc\+\_\+t pfn\+B\+M\+Alloc = N\+U\+LL}
+
+
+
+Definition at line 80 of file icall\+\_\+api.\+c.
+
+\mbox{\Hypertarget{icall__api_8c_a60bc5555f431090573cda634d6977232}\label{icall__api_8c_a60bc5555f431090573cda634d6977232}} 
+\index{icall\_api.c@{icall\_api.c}!pfnBMFree@{pfnBMFree}}
+\index{pfnBMFree@{pfnBMFree}!icall\_api.c@{icall\_api.c}}
+\doxysubsubsection{\texorpdfstring{pfnBMFree}{pfnBMFree}}
+{\footnotesize\ttfamily pfn\+B\+M\+Free\+\_\+t pfn\+B\+M\+Free = N\+U\+LL}
+
+
+
+Definition at line 81 of file icall\+\_\+api.\+c.
+

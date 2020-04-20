@@ -1,0 +1,73 @@
+\hypertarget{struct_p_i_n_c_c26_x_x___h_w_attrs}{}\doxysection{P\+I\+N\+C\+C26\+X\+X\+\_\+\+H\+W\+Attrs Struct Reference}
+\label{struct_p_i_n_c_c26_x_x___h_w_attrs}\index{PINCC26XX\_HWAttrs@{PINCC26XX\_HWAttrs}}
+
+
+P\+I\+N\+C\+C26\+XX Hardware attributes.  
+
+
+
+
+{\ttfamily \#include $<$P\+I\+N\+C\+C26\+X\+X.\+h$>$}
+
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{struct_p_i_n_c_c26_x_x___h_w_attrs_a6e4e12f10aa905a5e6a7cf566c1dfe44}{int\+Priority}}
+\begin{DoxyCompactList}\small\item\em S\+PI C\+C26\+X\+X\+D\+MA Peripheral\textquotesingle{}s interrupt priority. \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{struct_p_i_n_c_c26_x_x___h_w_attrs_af7aa538ec5ac9d067fd7eb9fce31f0f9}{swi\+Priority}}
+\begin{DoxyCompactList}\small\item\em S\+PI S\+WI priority. The higher the number, the higher the priority. The minimum is 0 and the maximum is 15 by default. The maximum can be reduced to save R\+AM by adding or modifying Swi.\+num\+Priorities in the kernel configuration file. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+P\+I\+N\+C\+C26\+XX Hardware attributes. 
+
+int\+Priority is the P\+IN driver\textquotesingle{}s interrupt priority, as defined by the underlying OS. It is passed unmodified to the underlying OS\textquotesingle{}s interrupt handler creation code, so you need to refer to the OS documentation for usage. For example, for S\+Y\+S/\+B\+I\+OS applications, refer to the ti.\+sysbios.\+family.\+arm.\+m3.\+Hwi documentation for S\+Y\+S/\+B\+I\+OS usage of interrupt priorities. If the driver uses the ti.\+drivers.\+ports interface instead of making OS calls directly, then the HwiP port handles the interrupt priority in an OS specific way. In the case of the S\+Y\+S/\+B\+I\+OS port, int\+Priority is passed unmodified to Hwi\+\_\+create().
+
+swi\+Priority defines the priority of the S\+WI the registered callback function will be called in. 
+
+Definition at line 366 of file P\+I\+N\+C\+C26\+X\+X.\+h.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{struct_p_i_n_c_c26_x_x___h_w_attrs_a6e4e12f10aa905a5e6a7cf566c1dfe44}\label{struct_p_i_n_c_c26_x_x___h_w_attrs_a6e4e12f10aa905a5e6a7cf566c1dfe44}} 
+\index{PINCC26XX\_HWAttrs@{PINCC26XX\_HWAttrs}!intPriority@{intPriority}}
+\index{intPriority@{intPriority}!PINCC26XX\_HWAttrs@{PINCC26XX\_HWAttrs}}
+\doxysubsubsection{\texorpdfstring{intPriority}{intPriority}}
+{\footnotesize\ttfamily uint8\+\_\+t P\+I\+N\+C\+C26\+X\+X\+\_\+\+H\+W\+Attrs\+::int\+Priority}
+
+
+
+S\+PI C\+C26\+X\+X\+D\+MA Peripheral\textquotesingle{}s interrupt priority. 
+
+The C\+C26xx uses three of the priority bits, meaning $\sim$0 has the same effect as (7 $<$$<$ 5).
+
+(7 $<$$<$ 5) will apply the lowest priority.
+
+(1 $<$$<$ 5) will apply the highest priority.
+
+Setting the priority to 0 is not supported by this driver.
+
+H\+WI\textquotesingle{}s with priority 0 ignore the H\+WI dispatcher to support zero-\/latency interrupts, thus invalidating the critical sections in this driver. 
+
+Definition at line 380 of file P\+I\+N\+C\+C26\+X\+X.\+h.
+
+\mbox{\Hypertarget{struct_p_i_n_c_c26_x_x___h_w_attrs_af7aa538ec5ac9d067fd7eb9fce31f0f9}\label{struct_p_i_n_c_c26_x_x___h_w_attrs_af7aa538ec5ac9d067fd7eb9fce31f0f9}} 
+\index{PINCC26XX\_HWAttrs@{PINCC26XX\_HWAttrs}!swiPriority@{swiPriority}}
+\index{swiPriority@{swiPriority}!PINCC26XX\_HWAttrs@{PINCC26XX\_HWAttrs}}
+\doxysubsubsection{\texorpdfstring{swiPriority}{swiPriority}}
+{\footnotesize\ttfamily uint32\+\_\+t P\+I\+N\+C\+C26\+X\+X\+\_\+\+H\+W\+Attrs\+::swi\+Priority}
+
+
+
+S\+PI S\+WI priority. The higher the number, the higher the priority. The minimum is 0 and the maximum is 15 by default. The maximum can be reduced to save R\+AM by adding or modifying Swi.\+num\+Priorities in the kernel configuration file. 
+
+
+
+Definition at line 386 of file P\+I\+N\+C\+C26\+X\+X.\+h.
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Drivers/\+P\+I\+N/\mbox{\hyperlink{_p_i_n_c_c26_x_x_8h}{P\+I\+N\+C\+C26\+X\+X.\+h}}\end{DoxyCompactItemize}

@@ -1,0 +1,136 @@
+\hypertarget{structgap_passkey_needed_event__t}{}\doxysection{gap\+Passkey\+Needed\+Event\+\_\+t Struct Reference}
+\label{structgap_passkey_needed_event__t}\index{gapPasskeyNeededEvent\_t@{gapPasskeyNeededEvent\_t}}
+
+
+{\ttfamily \#include $<$gap.\+h$>$}
+
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+osal\+\_\+event\+\_\+hdr\+\_\+t \mbox{\hyperlink{structgap_passkey_needed_event__t_a04ae407030ed6b5a1d0aa30bef6cf930}{hdr}}
+\begin{DoxyCompactList}\small\item\em G\+A\+P\+\_\+\+M\+S\+G\+\_\+\+E\+V\+E\+NT and status. \end{DoxyCompactList}\item 
+uint8 \mbox{\hyperlink{structgap_passkey_needed_event__t_a5d6821415ff142bd3d1f4fad86046c71}{opcode}}
+\begin{DoxyCompactList}\small\item\em G\+A\+P\+\_\+\+P\+A\+S\+S\+K\+E\+Y\+\_\+\+N\+E\+E\+D\+E\+D\+\_\+\+E\+V\+E\+NT. \end{DoxyCompactList}\item 
+uint8 \mbox{\hyperlink{structgap_passkey_needed_event__t_af4c0037b02d87a7e900eb116d54dfd33}{device\+Addr}} \mbox{[}B\+\_\+\+A\+D\+D\+R\+\_\+\+L\+EN\mbox{]}
+\begin{DoxyCompactList}\small\item\em address of device to pair with, and could be either public or random. \end{DoxyCompactList}\item 
+uint16 \mbox{\hyperlink{structgap_passkey_needed_event__t_a7c667024983a9188d0d7535bc4981115}{connection\+Handle}}
+\begin{DoxyCompactList}\small\item\em Connection handle. \end{DoxyCompactList}\item 
+uint8 \mbox{\hyperlink{structgap_passkey_needed_event__t_a973adab528045117eeced8eab18f74e7}{ui\+Inputs}}
+\begin{DoxyCompactList}\small\item\em Pairing User Interface Inputs -\/ Ask user to input passcode. \end{DoxyCompactList}\item 
+uint8 \mbox{\hyperlink{structgap_passkey_needed_event__t_aa8b1a8a698e9c6e1472c9ca3a947f299}{ui\+Outputs}}
+\begin{DoxyCompactList}\small\item\em Pairing User Interface Outputs -\/ Display passcode. \end{DoxyCompactList}\item 
+uint32 \mbox{\hyperlink{structgap_passkey_needed_event__t_ad30c1bf3c6a1ec9424d07d06b2f024fb}{num\+Comparison}}
+\begin{DoxyCompactList}\small\item\em Numeric Comparison value to be displayed. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+G\+A\+P\+\_\+\+P\+A\+S\+S\+K\+E\+Y\+\_\+\+N\+E\+E\+D\+E\+D\+\_\+\+E\+V\+E\+NT message format. This message is sent to the app when a Passkey is needed from the app\textquotesingle{}s user interface. 
+
+Definition at line 708 of file gap.\+h.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{structgap_passkey_needed_event__t_a7c667024983a9188d0d7535bc4981115}\label{structgap_passkey_needed_event__t_a7c667024983a9188d0d7535bc4981115}} 
+\index{gapPasskeyNeededEvent\_t@{gapPasskeyNeededEvent\_t}!connectionHandle@{connectionHandle}}
+\index{connectionHandle@{connectionHandle}!gapPasskeyNeededEvent\_t@{gapPasskeyNeededEvent\_t}}
+\doxysubsubsection{\texorpdfstring{connectionHandle}{connectionHandle}}
+{\footnotesize\ttfamily uint16 gap\+Passkey\+Needed\+Event\+\_\+t\+::connection\+Handle}
+
+
+
+Connection handle. 
+
+
+
+Definition at line 713 of file gap.\+h.
+
+\mbox{\Hypertarget{structgap_passkey_needed_event__t_af4c0037b02d87a7e900eb116d54dfd33}\label{structgap_passkey_needed_event__t_af4c0037b02d87a7e900eb116d54dfd33}} 
+\index{gapPasskeyNeededEvent\_t@{gapPasskeyNeededEvent\_t}!deviceAddr@{deviceAddr}}
+\index{deviceAddr@{deviceAddr}!gapPasskeyNeededEvent\_t@{gapPasskeyNeededEvent\_t}}
+\doxysubsubsection{\texorpdfstring{deviceAddr}{deviceAddr}}
+{\footnotesize\ttfamily uint8 gap\+Passkey\+Needed\+Event\+\_\+t\+::device\+Addr\mbox{[}B\+\_\+\+A\+D\+D\+R\+\_\+\+L\+EN\mbox{]}}
+
+
+
+address of device to pair with, and could be either public or random. 
+
+
+
+Definition at line 712 of file gap.\+h.
+
+\mbox{\Hypertarget{structgap_passkey_needed_event__t_a04ae407030ed6b5a1d0aa30bef6cf930}\label{structgap_passkey_needed_event__t_a04ae407030ed6b5a1d0aa30bef6cf930}} 
+\index{gapPasskeyNeededEvent\_t@{gapPasskeyNeededEvent\_t}!hdr@{hdr}}
+\index{hdr@{hdr}!gapPasskeyNeededEvent\_t@{gapPasskeyNeededEvent\_t}}
+\doxysubsubsection{\texorpdfstring{hdr}{hdr}}
+{\footnotesize\ttfamily osal\+\_\+event\+\_\+hdr\+\_\+t gap\+Passkey\+Needed\+Event\+\_\+t\+::hdr}
+
+
+
+G\+A\+P\+\_\+\+M\+S\+G\+\_\+\+E\+V\+E\+NT and status. 
+
+
+
+Definition at line 710 of file gap.\+h.
+
+\mbox{\Hypertarget{structgap_passkey_needed_event__t_ad30c1bf3c6a1ec9424d07d06b2f024fb}\label{structgap_passkey_needed_event__t_ad30c1bf3c6a1ec9424d07d06b2f024fb}} 
+\index{gapPasskeyNeededEvent\_t@{gapPasskeyNeededEvent\_t}!numComparison@{numComparison}}
+\index{numComparison@{numComparison}!gapPasskeyNeededEvent\_t@{gapPasskeyNeededEvent\_t}}
+\doxysubsubsection{\texorpdfstring{numComparison}{numComparison}}
+{\footnotesize\ttfamily uint32 gap\+Passkey\+Needed\+Event\+\_\+t\+::num\+Comparison}
+
+
+
+Numeric Comparison value to be displayed. 
+
+
+
+Definition at line 716 of file gap.\+h.
+
+\mbox{\Hypertarget{structgap_passkey_needed_event__t_a5d6821415ff142bd3d1f4fad86046c71}\label{structgap_passkey_needed_event__t_a5d6821415ff142bd3d1f4fad86046c71}} 
+\index{gapPasskeyNeededEvent\_t@{gapPasskeyNeededEvent\_t}!opcode@{opcode}}
+\index{opcode@{opcode}!gapPasskeyNeededEvent\_t@{gapPasskeyNeededEvent\_t}}
+\doxysubsubsection{\texorpdfstring{opcode}{opcode}}
+{\footnotesize\ttfamily uint8 gap\+Passkey\+Needed\+Event\+\_\+t\+::opcode}
+
+
+
+G\+A\+P\+\_\+\+P\+A\+S\+S\+K\+E\+Y\+\_\+\+N\+E\+E\+D\+E\+D\+\_\+\+E\+V\+E\+NT. 
+
+
+
+Definition at line 711 of file gap.\+h.
+
+\mbox{\Hypertarget{structgap_passkey_needed_event__t_a973adab528045117eeced8eab18f74e7}\label{structgap_passkey_needed_event__t_a973adab528045117eeced8eab18f74e7}} 
+\index{gapPasskeyNeededEvent\_t@{gapPasskeyNeededEvent\_t}!uiInputs@{uiInputs}}
+\index{uiInputs@{uiInputs}!gapPasskeyNeededEvent\_t@{gapPasskeyNeededEvent\_t}}
+\doxysubsubsection{\texorpdfstring{uiInputs}{uiInputs}}
+{\footnotesize\ttfamily uint8 gap\+Passkey\+Needed\+Event\+\_\+t\+::ui\+Inputs}
+
+
+
+Pairing User Interface Inputs -\/ Ask user to input passcode. 
+
+
+
+Definition at line 714 of file gap.\+h.
+
+\mbox{\Hypertarget{structgap_passkey_needed_event__t_aa8b1a8a698e9c6e1472c9ca3a947f299}\label{structgap_passkey_needed_event__t_aa8b1a8a698e9c6e1472c9ca3a947f299}} 
+\index{gapPasskeyNeededEvent\_t@{gapPasskeyNeededEvent\_t}!uiOutputs@{uiOutputs}}
+\index{uiOutputs@{uiOutputs}!gapPasskeyNeededEvent\_t@{gapPasskeyNeededEvent\_t}}
+\doxysubsubsection{\texorpdfstring{uiOutputs}{uiOutputs}}
+{\footnotesize\ttfamily uint8 gap\+Passkey\+Needed\+Event\+\_\+t\+::ui\+Outputs}
+
+
+
+Pairing User Interface Outputs -\/ Display passcode. 
+
+
+
+Definition at line 715 of file gap.\+h.
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Include/\mbox{\hyperlink{gap_8h}{gap.\+h}}\end{DoxyCompactItemize}

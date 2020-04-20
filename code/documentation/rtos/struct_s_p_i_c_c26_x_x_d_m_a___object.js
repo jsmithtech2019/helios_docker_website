@@ -1,0 +1,27 @@
+var struct_s_p_i_c_c26_x_x_d_m_a___object =
+[
+    [ "bitRate", "struct_s_p_i_c_c26_x_x_d_m_a___object.html#a056c615ea06764de3732a88bc0933422", null ],
+    [ "csnPin", "struct_s_p_i_c_c26_x_x_d_m_a___object.html#a436d2148d95d8cbb1f4ab7750ea4e081", null ],
+    [ "currentTransaction", "struct_s_p_i_c_c26_x_x_d_m_a___object.html#a4a6ed13c8b6215e83ba22084f1ffc69b", null ],
+    [ "dataSize", "struct_s_p_i_c_c26_x_x_d_m_a___object.html#ad5f703751ac0581fd69ad7b984bea44a", null ],
+    [ "frameFormat", "struct_s_p_i_c_c26_x_x_d_m_a___object.html#a8a73c6d84d6a8080f76e7b97421d2733", null ],
+    [ "frameSize", "struct_s_p_i_c_c26_x_x_d_m_a___object.html#add4190b9bb9d623e4593056021ec19a8", null ],
+    [ "hwi", "struct_s_p_i_c_c26_x_x_d_m_a___object.html#ac7e6dd667c4ea0d3529cecd4899ad6a0", null ],
+    [ "isOpen", "struct_s_p_i_c_c26_x_x_d_m_a___object.html#a54ded097b995c036bd7e12fc2e00139f", null ],
+    [ "mode", "struct_s_p_i_c_c26_x_x_d_m_a___object.html#acd71f040d34bcc9de82225b8e99bc7a2", null ],
+    [ "pinHandle", "struct_s_p_i_c_c26_x_x_d_m_a___object.html#a253e7758ec60b0deb706c12bf2cac7d8", null ],
+    [ "pinState", "struct_s_p_i_c_c26_x_x_d_m_a___object.html#a2bf05a9ab13570614b205faef838a60f", null ],
+    [ "returnPartial", "struct_s_p_i_c_c26_x_x_d_m_a___object.html#aaad712b779c3c23a1a9c7b4e444c82fd", null ],
+    [ "scratchBuf", "struct_s_p_i_c_c26_x_x_d_m_a___object.html#a9d4b85fd8a20f01c8ef9d83818394678", null ],
+    [ "spiPostFxn", "struct_s_p_i_c_c26_x_x_d_m_a___object.html#a1f7b7de23148a962619517a66132a602", null ],
+    [ "spiPostObj", "struct_s_p_i_c_c26_x_x_d_m_a___object.html#a0507bf0f4300ed38ede4a414a619a8ea", null ],
+    [ "spiPowerConstraint", "struct_s_p_i_c_c26_x_x_d_m_a___object.html#adbcda45a5bec189d12b7122426126181", null ],
+    [ "spiPreFxn", "struct_s_p_i_c_c26_x_x_d_m_a___object.html#accb678d98cf66ed2d15a6ddf9ea993ae", null ],
+    [ "spiPreObj", "struct_s_p_i_c_c26_x_x_d_m_a___object.html#aaf7de912547eb0e0d6040e816329d942", null ],
+    [ "swi", "struct_s_p_i_c_c26_x_x_d_m_a___object.html#ad1e027f77895b756d5f8ad5529fb22a4", null ],
+    [ "transferCallbackFxn", "struct_s_p_i_c_c26_x_x_d_m_a___object.html#acee695558ae9a3f4108d8322c41b5c2c", null ],
+    [ "transferComplete", "struct_s_p_i_c_c26_x_x_d_m_a___object.html#a88610fb9250608f777900d3652f5115f", null ],
+    [ "transferMode", "struct_s_p_i_c_c26_x_x_d_m_a___object.html#a12fcb093793c5a34ff32f9e29a3d7cf4", null ],
+    [ "transferTimeout", "struct_s_p_i_c_c26_x_x_d_m_a___object.html#a6a89c25b77087f8298df74b52fde9615", null ],
+    [ "udmaHandle", "struct_s_p_i_c_c26_x_x_d_m_a___object.html#ad1b5299f66bd0ed6a1feb66bb17dbb70", null ]
+];

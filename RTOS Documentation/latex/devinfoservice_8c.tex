@@ -1,0 +1,289 @@
+\hypertarget{devinfoservice_8c}{}\doxysection{P\+R\+O\+F\+I\+L\+E\+S/devinfoservice.c File Reference}
+\label{devinfoservice_8c}\index{PROFILES/devinfoservice.c@{PROFILES/devinfoservice.c}}
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}bcomdef.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}osal.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}att.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}gatt.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}gatt\+\_\+uuid.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}gatt\+\_\+profile\+\_\+uuid.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}gattservapp.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}devinfoservice.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void $\ast$ \mbox{\hyperlink{devinfoservice_8c_ab68eb7b07f8ada1c6c8bde74731d3de7}{memcpy}} (void $\ast$dest, const void $\ast$src, size\+\_\+t \mbox{\hyperlink{icall__apimsg_8h_a8ccac76f35f79d74917e1c5dd6f69fea}{len}})
+\item 
+b\+Status\+\_\+t \mbox{\hyperlink{devinfoservice_8c_ad0caa0b1979e874973e9478e7cf9e74b}{Dev\+Info\+\_\+\+Add\+Service}} (void)
+\item 
+b\+Status\+\_\+t \mbox{\hyperlink{devinfoservice_8c_a53541d76af5af6b183fbfdc2cb7e450d}{Dev\+Info\+\_\+\+Set\+Parameter}} (uint8 param, uint8 \mbox{\hyperlink{icall__apimsg_8h_a8ccac76f35f79d74917e1c5dd6f69fea}{len}}, void $\ast$value)
+\item 
+b\+Status\+\_\+t \mbox{\hyperlink{devinfoservice_8c_ad33eb7fe07d5567a6baed2f0cbcef1c5}{Dev\+Info\+\_\+\+Get\+Parameter}} (uint8 param, void $\ast$value)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+C\+O\+N\+ST uint8 \mbox{\hyperlink{devinfoservice_8c_a98b8b23fe0777f7cd832ce4568097acc}{dev\+Info\+Serv\+U\+U\+ID}} \mbox{[}A\+T\+T\+\_\+\+B\+T\+\_\+\+U\+U\+I\+D\+\_\+\+S\+I\+ZE\mbox{]}
+\item 
+C\+O\+N\+ST uint8 \mbox{\hyperlink{devinfoservice_8c_a0c3fd4ab26ce9b0ef9566f4c2565dbb8}{dev\+Info\+System\+Id\+U\+U\+ID}} \mbox{[}A\+T\+T\+\_\+\+B\+T\+\_\+\+U\+U\+I\+D\+\_\+\+S\+I\+ZE\mbox{]}
+\item 
+C\+O\+N\+ST uint8 \mbox{\hyperlink{devinfoservice_8c_addb4149f372a8eb6d766920ad6e6bfd4}{dev\+Info\+Model\+Number\+U\+U\+ID}} \mbox{[}A\+T\+T\+\_\+\+B\+T\+\_\+\+U\+U\+I\+D\+\_\+\+S\+I\+ZE\mbox{]}
+\item 
+C\+O\+N\+ST uint8 \mbox{\hyperlink{devinfoservice_8c_acb1f03ea05e2c846f09e2a99be2eebff}{dev\+Info\+Serial\+Number\+U\+U\+ID}} \mbox{[}A\+T\+T\+\_\+\+B\+T\+\_\+\+U\+U\+I\+D\+\_\+\+S\+I\+ZE\mbox{]}
+\item 
+C\+O\+N\+ST uint8 \mbox{\hyperlink{devinfoservice_8c_ab64fad825764581ee5ef76a722f4d89a}{dev\+Info\+Firmware\+Rev\+U\+U\+ID}} \mbox{[}A\+T\+T\+\_\+\+B\+T\+\_\+\+U\+U\+I\+D\+\_\+\+S\+I\+ZE\mbox{]}
+\item 
+C\+O\+N\+ST uint8 \mbox{\hyperlink{devinfoservice_8c_a2934869a6dac5f804ad59609e0fa5b3d}{dev\+Info\+Hardware\+Rev\+U\+U\+ID}} \mbox{[}A\+T\+T\+\_\+\+B\+T\+\_\+\+U\+U\+I\+D\+\_\+\+S\+I\+ZE\mbox{]}
+\item 
+C\+O\+N\+ST uint8 \mbox{\hyperlink{devinfoservice_8c_a955a34a0b93acce31e0e984ea4105166}{dev\+Info\+Software\+Rev\+U\+U\+ID}} \mbox{[}A\+T\+T\+\_\+\+B\+T\+\_\+\+U\+U\+I\+D\+\_\+\+S\+I\+ZE\mbox{]}
+\item 
+C\+O\+N\+ST uint8 \mbox{\hyperlink{devinfoservice_8c_a51d3609a4d240b83998aad2405738eba}{dev\+Info\+Mfr\+Name\+U\+U\+ID}} \mbox{[}A\+T\+T\+\_\+\+B\+T\+\_\+\+U\+U\+I\+D\+\_\+\+S\+I\+ZE\mbox{]}
+\item 
+C\+O\+N\+ST uint8 \mbox{\hyperlink{devinfoservice_8c_a7aa775803588401590248492af25647e}{dev\+Info11073\+Cert\+U\+U\+ID}} \mbox{[}A\+T\+T\+\_\+\+B\+T\+\_\+\+U\+U\+I\+D\+\_\+\+S\+I\+ZE\mbox{]}
+\item 
+C\+O\+N\+ST uint8 \mbox{\hyperlink{devinfoservice_8c_ad104ef470fe62334efc8688d61443044}{dev\+Info\+Pnp\+Id\+U\+U\+ID}} \mbox{[}A\+T\+T\+\_\+\+B\+T\+\_\+\+U\+U\+I\+D\+\_\+\+S\+I\+ZE\mbox{]}
+\item 
+C\+O\+N\+ST gatt\+Service\+C\+Bs\+\_\+t \mbox{\hyperlink{devinfoservice_8c_a7a821d286a3975faa30bf99d8b750659}{dev\+Info\+C\+Bs}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{devinfoservice_8c_ad0caa0b1979e874973e9478e7cf9e74b}\label{devinfoservice_8c_ad0caa0b1979e874973e9478e7cf9e74b}} 
+\index{devinfoservice.c@{devinfoservice.c}!DevInfo\_AddService@{DevInfo\_AddService}}
+\index{DevInfo\_AddService@{DevInfo\_AddService}!devinfoservice.c@{devinfoservice.c}}
+\doxysubsubsection{\texorpdfstring{DevInfo\_AddService()}{DevInfo\_AddService()}}
+{\footnotesize\ttfamily b\+Status\+\_\+t Dev\+Info\+\_\+\+Add\+Service (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 412 of file devinfoservice.\+c.
+
+\mbox{\Hypertarget{devinfoservice_8c_ad33eb7fe07d5567a6baed2f0cbcef1c5}\label{devinfoservice_8c_ad33eb7fe07d5567a6baed2f0cbcef1c5}} 
+\index{devinfoservice.c@{devinfoservice.c}!DevInfo\_GetParameter@{DevInfo\_GetParameter}}
+\index{DevInfo\_GetParameter@{DevInfo\_GetParameter}!devinfoservice.c@{devinfoservice.c}}
+\doxysubsubsection{\texorpdfstring{DevInfo\_GetParameter()}{DevInfo\_GetParameter()}}
+{\footnotesize\ttfamily b\+Status\+\_\+t Dev\+Info\+\_\+\+Get\+Parameter (\begin{DoxyParamCaption}\item[{uint8}]{param,  }\item[{void $\ast$}]{value }\end{DoxyParamCaption})}
+
+
+
+Definition at line 589 of file devinfoservice.\+c.
+
+\mbox{\Hypertarget{devinfoservice_8c_a53541d76af5af6b183fbfdc2cb7e450d}\label{devinfoservice_8c_a53541d76af5af6b183fbfdc2cb7e450d}} 
+\index{devinfoservice.c@{devinfoservice.c}!DevInfo\_SetParameter@{DevInfo\_SetParameter}}
+\index{DevInfo\_SetParameter@{DevInfo\_SetParameter}!devinfoservice.c@{devinfoservice.c}}
+\doxysubsubsection{\texorpdfstring{DevInfo\_SetParameter()}{DevInfo\_SetParameter()}}
+{\footnotesize\ttfamily b\+Status\+\_\+t Dev\+Info\+\_\+\+Set\+Parameter (\begin{DoxyParamCaption}\item[{uint8}]{param,  }\item[{uint8}]{len,  }\item[{void $\ast$}]{value }\end{DoxyParamCaption})}
+
+
+
+Definition at line 435 of file devinfoservice.\+c.
+
+\mbox{\Hypertarget{devinfoservice_8c_ab68eb7b07f8ada1c6c8bde74731d3de7}\label{devinfoservice_8c_ab68eb7b07f8ada1c6c8bde74731d3de7}} 
+\index{devinfoservice.c@{devinfoservice.c}!memcpy@{memcpy}}
+\index{memcpy@{memcpy}!devinfoservice.c@{devinfoservice.c}}
+\doxysubsubsection{\texorpdfstring{memcpy()}{memcpy()}}
+{\footnotesize\ttfamily void$\ast$ memcpy (\begin{DoxyParamCaption}\item[{void $\ast$}]{dest,  }\item[{const void $\ast$}]{src,  }\item[{size\+\_\+t}]{len }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{devinfoservice_8c_a7aa775803588401590248492af25647e}\label{devinfoservice_8c_a7aa775803588401590248492af25647e}} 
+\index{devinfoservice.c@{devinfoservice.c}!devInfo11073CertUUID@{devInfo11073CertUUID}}
+\index{devInfo11073CertUUID@{devInfo11073CertUUID}!devinfoservice.c@{devinfoservice.c}}
+\doxysubsubsection{\texorpdfstring{devInfo11073CertUUID}{devInfo11073CertUUID}}
+{\footnotesize\ttfamily C\+O\+N\+ST uint8 dev\+Info11073\+Cert\+U\+U\+ID\mbox{[}A\+T\+T\+\_\+\+B\+T\+\_\+\+U\+U\+I\+D\+\_\+\+S\+I\+ZE\mbox{]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{  LO\_UINT16(\mbox{\hyperlink{group___b_t___b_a_s_e___u_u_i_d___g_r_p_gafbb63b01b761bbb043b3124c009b8f4a}{IEEE\_11073\_CERT\_DATA\_UUID}}), HI\_UINT16(\mbox{\hyperlink{group___b_t___b_a_s_e___u_u_i_d___g_r_p_gafbb63b01b761bbb043b3124c009b8f4a}{IEEE\_11073\_CERT\_DATA\_UUID}})}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+Definition at line 126 of file devinfoservice.\+c.
+
+\mbox{\Hypertarget{devinfoservice_8c_a7a821d286a3975faa30bf99d8b750659}\label{devinfoservice_8c_a7a821d286a3975faa30bf99d8b750659}} 
+\index{devinfoservice.c@{devinfoservice.c}!devInfoCBs@{devInfoCBs}}
+\index{devInfoCBs@{devInfoCBs}!devinfoservice.c@{devinfoservice.c}}
+\doxysubsubsection{\texorpdfstring{devInfoCBs}{devInfoCBs}}
+{\footnotesize\ttfamily C\+O\+N\+ST gatt\+Service\+C\+Bs\+\_\+t dev\+Info\+C\+Bs}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{  devInfo\_ReadAttrCB, }
+\DoxyCodeLine{  NULL,               }
+\DoxyCodeLine{  NULL                }
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+Definition at line 389 of file devinfoservice.\+c.
+
+\mbox{\Hypertarget{devinfoservice_8c_ab64fad825764581ee5ef76a722f4d89a}\label{devinfoservice_8c_ab64fad825764581ee5ef76a722f4d89a}} 
+\index{devinfoservice.c@{devinfoservice.c}!devInfoFirmwareRevUUID@{devInfoFirmwareRevUUID}}
+\index{devInfoFirmwareRevUUID@{devInfoFirmwareRevUUID}!devinfoservice.c@{devinfoservice.c}}
+\doxysubsubsection{\texorpdfstring{devInfoFirmwareRevUUID}{devInfoFirmwareRevUUID}}
+{\footnotesize\ttfamily C\+O\+N\+ST uint8 dev\+Info\+Firmware\+Rev\+U\+U\+ID\mbox{[}A\+T\+T\+\_\+\+B\+T\+\_\+\+U\+U\+I\+D\+\_\+\+S\+I\+ZE\mbox{]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{  LO\_UINT16(\mbox{\hyperlink{group___b_t___b_a_s_e___u_u_i_d___g_r_p_ga0872047295cd3dd215d68c66102f8396}{FIRMWARE\_REV\_UUID}}), HI\_UINT16(\mbox{\hyperlink{group___b_t___b_a_s_e___u_u_i_d___g_r_p_ga0872047295cd3dd215d68c66102f8396}{FIRMWARE\_REV\_UUID}})}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+Definition at line 102 of file devinfoservice.\+c.
+
+\mbox{\Hypertarget{devinfoservice_8c_a2934869a6dac5f804ad59609e0fa5b3d}\label{devinfoservice_8c_a2934869a6dac5f804ad59609e0fa5b3d}} 
+\index{devinfoservice.c@{devinfoservice.c}!devInfoHardwareRevUUID@{devInfoHardwareRevUUID}}
+\index{devInfoHardwareRevUUID@{devInfoHardwareRevUUID}!devinfoservice.c@{devinfoservice.c}}
+\doxysubsubsection{\texorpdfstring{devInfoHardwareRevUUID}{devInfoHardwareRevUUID}}
+{\footnotesize\ttfamily C\+O\+N\+ST uint8 dev\+Info\+Hardware\+Rev\+U\+U\+ID\mbox{[}A\+T\+T\+\_\+\+B\+T\+\_\+\+U\+U\+I\+D\+\_\+\+S\+I\+ZE\mbox{]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{  LO\_UINT16(\mbox{\hyperlink{group___b_t___b_a_s_e___u_u_i_d___g_r_p_ga73ddf5c8696fc28db24586b1fde2d5a2}{HARDWARE\_REV\_UUID}}), HI\_UINT16(\mbox{\hyperlink{group___b_t___b_a_s_e___u_u_i_d___g_r_p_ga73ddf5c8696fc28db24586b1fde2d5a2}{HARDWARE\_REV\_UUID}})}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+Definition at line 108 of file devinfoservice.\+c.
+
+\mbox{\Hypertarget{devinfoservice_8c_a51d3609a4d240b83998aad2405738eba}\label{devinfoservice_8c_a51d3609a4d240b83998aad2405738eba}} 
+\index{devinfoservice.c@{devinfoservice.c}!devInfoMfrNameUUID@{devInfoMfrNameUUID}}
+\index{devInfoMfrNameUUID@{devInfoMfrNameUUID}!devinfoservice.c@{devinfoservice.c}}
+\doxysubsubsection{\texorpdfstring{devInfoMfrNameUUID}{devInfoMfrNameUUID}}
+{\footnotesize\ttfamily C\+O\+N\+ST uint8 dev\+Info\+Mfr\+Name\+U\+U\+ID\mbox{[}A\+T\+T\+\_\+\+B\+T\+\_\+\+U\+U\+I\+D\+\_\+\+S\+I\+ZE\mbox{]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{  LO\_UINT16(\mbox{\hyperlink{group___b_t___b_a_s_e___u_u_i_d___g_r_p_ga6a49ffd631ba9b9d1a654cafa6ed38a3}{MANUFACTURER\_NAME\_UUID}}), HI\_UINT16(\mbox{\hyperlink{group___b_t___b_a_s_e___u_u_i_d___g_r_p_ga6a49ffd631ba9b9d1a654cafa6ed38a3}{MANUFACTURER\_NAME\_UUID}})}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+Definition at line 120 of file devinfoservice.\+c.
+
+\mbox{\Hypertarget{devinfoservice_8c_addb4149f372a8eb6d766920ad6e6bfd4}\label{devinfoservice_8c_addb4149f372a8eb6d766920ad6e6bfd4}} 
+\index{devinfoservice.c@{devinfoservice.c}!devInfoModelNumberUUID@{devInfoModelNumberUUID}}
+\index{devInfoModelNumberUUID@{devInfoModelNumberUUID}!devinfoservice.c@{devinfoservice.c}}
+\doxysubsubsection{\texorpdfstring{devInfoModelNumberUUID}{devInfoModelNumberUUID}}
+{\footnotesize\ttfamily C\+O\+N\+ST uint8 dev\+Info\+Model\+Number\+U\+U\+ID\mbox{[}A\+T\+T\+\_\+\+B\+T\+\_\+\+U\+U\+I\+D\+\_\+\+S\+I\+ZE\mbox{]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{  LO\_UINT16(\mbox{\hyperlink{group___b_t___b_a_s_e___u_u_i_d___g_r_p_ga238ec106003e49f8e70d9b4523606f4d}{MODEL\_NUMBER\_UUID}}), HI\_UINT16(\mbox{\hyperlink{group___b_t___b_a_s_e___u_u_i_d___g_r_p_ga238ec106003e49f8e70d9b4523606f4d}{MODEL\_NUMBER\_UUID}})}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+Definition at line 90 of file devinfoservice.\+c.
+
+\mbox{\Hypertarget{devinfoservice_8c_ad104ef470fe62334efc8688d61443044}\label{devinfoservice_8c_ad104ef470fe62334efc8688d61443044}} 
+\index{devinfoservice.c@{devinfoservice.c}!devInfoPnpIdUUID@{devInfoPnpIdUUID}}
+\index{devInfoPnpIdUUID@{devInfoPnpIdUUID}!devinfoservice.c@{devinfoservice.c}}
+\doxysubsubsection{\texorpdfstring{devInfoPnpIdUUID}{devInfoPnpIdUUID}}
+{\footnotesize\ttfamily C\+O\+N\+ST uint8 dev\+Info\+Pnp\+Id\+U\+U\+ID\mbox{[}A\+T\+T\+\_\+\+B\+T\+\_\+\+U\+U\+I\+D\+\_\+\+S\+I\+ZE\mbox{]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{  LO\_UINT16(\mbox{\hyperlink{group___b_t___b_a_s_e___u_u_i_d___g_r_p_ga4f3c8a4b47ede8ab322ebafc582e6b7e}{PNP\_ID\_UUID}}), HI\_UINT16(\mbox{\hyperlink{group___b_t___b_a_s_e___u_u_i_d___g_r_p_ga4f3c8a4b47ede8ab322ebafc582e6b7e}{PNP\_ID\_UUID}})}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+Definition at line 132 of file devinfoservice.\+c.
+
+\mbox{\Hypertarget{devinfoservice_8c_acb1f03ea05e2c846f09e2a99be2eebff}\label{devinfoservice_8c_acb1f03ea05e2c846f09e2a99be2eebff}} 
+\index{devinfoservice.c@{devinfoservice.c}!devInfoSerialNumberUUID@{devInfoSerialNumberUUID}}
+\index{devInfoSerialNumberUUID@{devInfoSerialNumberUUID}!devinfoservice.c@{devinfoservice.c}}
+\doxysubsubsection{\texorpdfstring{devInfoSerialNumberUUID}{devInfoSerialNumberUUID}}
+{\footnotesize\ttfamily C\+O\+N\+ST uint8 dev\+Info\+Serial\+Number\+U\+U\+ID\mbox{[}A\+T\+T\+\_\+\+B\+T\+\_\+\+U\+U\+I\+D\+\_\+\+S\+I\+ZE\mbox{]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{  LO\_UINT16(\mbox{\hyperlink{group___b_t___b_a_s_e___u_u_i_d___g_r_p_ga50841b172a3b9c3ded7fce7f12efe24e}{SERIAL\_NUMBER\_UUID}}), HI\_UINT16(\mbox{\hyperlink{group___b_t___b_a_s_e___u_u_i_d___g_r_p_ga50841b172a3b9c3ded7fce7f12efe24e}{SERIAL\_NUMBER\_UUID}})}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+Definition at line 96 of file devinfoservice.\+c.
+
+\mbox{\Hypertarget{devinfoservice_8c_a98b8b23fe0777f7cd832ce4568097acc}\label{devinfoservice_8c_a98b8b23fe0777f7cd832ce4568097acc}} 
+\index{devinfoservice.c@{devinfoservice.c}!devInfoServUUID@{devInfoServUUID}}
+\index{devInfoServUUID@{devInfoServUUID}!devinfoservice.c@{devinfoservice.c}}
+\doxysubsubsection{\texorpdfstring{devInfoServUUID}{devInfoServUUID}}
+{\footnotesize\ttfamily C\+O\+N\+ST uint8 dev\+Info\+Serv\+U\+U\+ID\mbox{[}A\+T\+T\+\_\+\+B\+T\+\_\+\+U\+U\+I\+D\+\_\+\+S\+I\+ZE\mbox{]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{  LO\_UINT16(\mbox{\hyperlink{group___b_t___b_a_s_e___u_u_i_d___g_r_p_ga027a8da5bacd7f84a5e45403e2b9190a}{DEVINFO\_SERV\_UUID}}), HI\_UINT16(\mbox{\hyperlink{group___b_t___b_a_s_e___u_u_i_d___g_r_p_ga027a8da5bacd7f84a5e45403e2b9190a}{DEVINFO\_SERV\_UUID}})}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+Definition at line 78 of file devinfoservice.\+c.
+
+\mbox{\Hypertarget{devinfoservice_8c_a955a34a0b93acce31e0e984ea4105166}\label{devinfoservice_8c_a955a34a0b93acce31e0e984ea4105166}} 
+\index{devinfoservice.c@{devinfoservice.c}!devInfoSoftwareRevUUID@{devInfoSoftwareRevUUID}}
+\index{devInfoSoftwareRevUUID@{devInfoSoftwareRevUUID}!devinfoservice.c@{devinfoservice.c}}
+\doxysubsubsection{\texorpdfstring{devInfoSoftwareRevUUID}{devInfoSoftwareRevUUID}}
+{\footnotesize\ttfamily C\+O\+N\+ST uint8 dev\+Info\+Software\+Rev\+U\+U\+ID\mbox{[}A\+T\+T\+\_\+\+B\+T\+\_\+\+U\+U\+I\+D\+\_\+\+S\+I\+ZE\mbox{]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{  LO\_UINT16(\mbox{\hyperlink{group___b_t___b_a_s_e___u_u_i_d___g_r_p_ga529eb1eb5f0e932c4c2d769652f9f8a3}{SOFTWARE\_REV\_UUID}}), HI\_UINT16(\mbox{\hyperlink{group___b_t___b_a_s_e___u_u_i_d___g_r_p_ga529eb1eb5f0e932c4c2d769652f9f8a3}{SOFTWARE\_REV\_UUID}})}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+Definition at line 114 of file devinfoservice.\+c.
+
+\mbox{\Hypertarget{devinfoservice_8c_a0c3fd4ab26ce9b0ef9566f4c2565dbb8}\label{devinfoservice_8c_a0c3fd4ab26ce9b0ef9566f4c2565dbb8}} 
+\index{devinfoservice.c@{devinfoservice.c}!devInfoSystemIdUUID@{devInfoSystemIdUUID}}
+\index{devInfoSystemIdUUID@{devInfoSystemIdUUID}!devinfoservice.c@{devinfoservice.c}}
+\doxysubsubsection{\texorpdfstring{devInfoSystemIdUUID}{devInfoSystemIdUUID}}
+{\footnotesize\ttfamily C\+O\+N\+ST uint8 dev\+Info\+System\+Id\+U\+U\+ID\mbox{[}A\+T\+T\+\_\+\+B\+T\+\_\+\+U\+U\+I\+D\+\_\+\+S\+I\+ZE\mbox{]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{  LO\_UINT16(\mbox{\hyperlink{group___b_t___b_a_s_e___u_u_i_d___g_r_p_gab90c87d88060a920b3ee5d737f2d8ff0}{SYSTEM\_ID\_UUID}}), HI\_UINT16(\mbox{\hyperlink{group___b_t___b_a_s_e___u_u_i_d___g_r_p_gab90c87d88060a920b3ee5d737f2d8ff0}{SYSTEM\_ID\_UUID}})}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+Definition at line 84 of file devinfoservice.\+c.
+

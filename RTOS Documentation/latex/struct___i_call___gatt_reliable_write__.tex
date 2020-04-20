@@ -1,0 +1,125 @@
+\hypertarget{struct___i_call___gatt_reliable_write__}{}\doxysection{\+\_\+\+I\+Call\+\_\+\+Gatt\+Reliable\+Write\+\_\+ Struct Reference}
+\label{struct___i_call___gatt_reliable_write__}\index{\_ICall\_GattReliableWrite\_@{\_ICall\_GattReliableWrite\_}}
+
+
+{\ttfamily \#include $<$icall\+\_\+apimsg.\+h$>$}
+
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{icall__apimsg_8h_afa62f50d802fab57d759c527cead246e}{I\+Call\+\_\+\+Hci\+Ext\+Cmd}} \mbox{\hyperlink{struct___i_call___gatt_reliable_write___acaba24a8ffb1da7760d1e8b484831cc6}{hdr}}
+\begin{DoxyCompactList}\small\item\em hdr field must be set as I\+C\+A\+L\+L\+\_\+\+C\+M\+D\+\_\+\+E\+V\+E\+NT \end{DoxyCompactList}\item 
+uint16\+\_\+t \mbox{\hyperlink{struct___i_call___gatt_reliable_write___af32238c7bf4675b7f4268e0d51644e99}{conn\+Handle}}
+\begin{DoxyCompactList}\small\item\em connection Handle \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{struct___i_call___gatt_reliable_write___a92f2ccd44e97e44265e3b4d666fb4ada}{flags}}
+\begin{DoxyCompactList}\small\item\em flags \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{struct___i_call___gatt_reliable_write___a6d770d03a45f431958e5c535ddb653e2}{num\+Reqs}}
+\begin{DoxyCompactList}\small\item\em number of requests \end{DoxyCompactList}\item 
+att\+Prepare\+Write\+Req\+\_\+t $\ast$ \mbox{\hyperlink{struct___i_call___gatt_reliable_write___a05fb8c644511ffbd085ddabba7d74df7}{p\+Reqs}}
+\begin{DoxyCompactList}\small\item\em att prepare write request \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{struct___i_call___gatt_reliable_write___acc2ee3ef9568fa741b85ad721f09f294}{task\+Id}}
+\begin{DoxyCompactList}\small\item\em task Id \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+I\+Call message containing Hci\+Ext\+Cmd hdr, connection handle, flags and att\+Prepare\+Write\+Requests. The num\+Reqs refers to number of requests
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{group___g_a_t_t___c_l_i_e_n_t___s_u_b___p_r_o_c_e_d_u_r_e___a_p_i_gac67b8a29558fe754676f808c174cc11c}{G\+A\+T\+T\+\_\+\+Reliable\+Writes}} 
+\end{DoxySeeAlso}
+
+
+Definition at line 592 of file icall\+\_\+apimsg.\+h.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{struct___i_call___gatt_reliable_write___af32238c7bf4675b7f4268e0d51644e99}\label{struct___i_call___gatt_reliable_write___af32238c7bf4675b7f4268e0d51644e99}} 
+\index{\_ICall\_GattReliableWrite\_@{\_ICall\_GattReliableWrite\_}!connHandle@{connHandle}}
+\index{connHandle@{connHandle}!\_ICall\_GattReliableWrite\_@{\_ICall\_GattReliableWrite\_}}
+\doxysubsubsection{\texorpdfstring{connHandle}{connHandle}}
+{\footnotesize\ttfamily uint16\+\_\+t \+\_\+\+I\+Call\+\_\+\+Gatt\+Reliable\+Write\+\_\+\+::conn\+Handle}
+
+
+
+connection Handle 
+
+
+
+Definition at line 595 of file icall\+\_\+apimsg.\+h.
+
+\mbox{\Hypertarget{struct___i_call___gatt_reliable_write___a92f2ccd44e97e44265e3b4d666fb4ada}\label{struct___i_call___gatt_reliable_write___a92f2ccd44e97e44265e3b4d666fb4ada}} 
+\index{\_ICall\_GattReliableWrite\_@{\_ICall\_GattReliableWrite\_}!flags@{flags}}
+\index{flags@{flags}!\_ICall\_GattReliableWrite\_@{\_ICall\_GattReliableWrite\_}}
+\doxysubsubsection{\texorpdfstring{flags}{flags}}
+{\footnotesize\ttfamily uint8\+\_\+t \+\_\+\+I\+Call\+\_\+\+Gatt\+Reliable\+Write\+\_\+\+::flags}
+
+
+
+flags 
+
+
+
+Definition at line 596 of file icall\+\_\+apimsg.\+h.
+
+\mbox{\Hypertarget{struct___i_call___gatt_reliable_write___acaba24a8ffb1da7760d1e8b484831cc6}\label{struct___i_call___gatt_reliable_write___acaba24a8ffb1da7760d1e8b484831cc6}} 
+\index{\_ICall\_GattReliableWrite\_@{\_ICall\_GattReliableWrite\_}!hdr@{hdr}}
+\index{hdr@{hdr}!\_ICall\_GattReliableWrite\_@{\_ICall\_GattReliableWrite\_}}
+\doxysubsubsection{\texorpdfstring{hdr}{hdr}}
+{\footnotesize\ttfamily \mbox{\hyperlink{icall__apimsg_8h_afa62f50d802fab57d759c527cead246e}{I\+Call\+\_\+\+Hci\+Ext\+Cmd}} \+\_\+\+I\+Call\+\_\+\+Gatt\+Reliable\+Write\+\_\+\+::hdr}
+
+
+
+hdr field must be set as I\+C\+A\+L\+L\+\_\+\+C\+M\+D\+\_\+\+E\+V\+E\+NT 
+
+
+
+Definition at line 594 of file icall\+\_\+apimsg.\+h.
+
+\mbox{\Hypertarget{struct___i_call___gatt_reliable_write___a6d770d03a45f431958e5c535ddb653e2}\label{struct___i_call___gatt_reliable_write___a6d770d03a45f431958e5c535ddb653e2}} 
+\index{\_ICall\_GattReliableWrite\_@{\_ICall\_GattReliableWrite\_}!numReqs@{numReqs}}
+\index{numReqs@{numReqs}!\_ICall\_GattReliableWrite\_@{\_ICall\_GattReliableWrite\_}}
+\doxysubsubsection{\texorpdfstring{numReqs}{numReqs}}
+{\footnotesize\ttfamily uint8\+\_\+t \+\_\+\+I\+Call\+\_\+\+Gatt\+Reliable\+Write\+\_\+\+::num\+Reqs}
+
+
+
+number of requests 
+
+
+
+Definition at line 597 of file icall\+\_\+apimsg.\+h.
+
+\mbox{\Hypertarget{struct___i_call___gatt_reliable_write___a05fb8c644511ffbd085ddabba7d74df7}\label{struct___i_call___gatt_reliable_write___a05fb8c644511ffbd085ddabba7d74df7}} 
+\index{\_ICall\_GattReliableWrite\_@{\_ICall\_GattReliableWrite\_}!pReqs@{pReqs}}
+\index{pReqs@{pReqs}!\_ICall\_GattReliableWrite\_@{\_ICall\_GattReliableWrite\_}}
+\doxysubsubsection{\texorpdfstring{pReqs}{pReqs}}
+{\footnotesize\ttfamily att\+Prepare\+Write\+Req\+\_\+t$\ast$ \+\_\+\+I\+Call\+\_\+\+Gatt\+Reliable\+Write\+\_\+\+::p\+Reqs}
+
+
+
+att prepare write request 
+
+
+
+Definition at line 598 of file icall\+\_\+apimsg.\+h.
+
+\mbox{\Hypertarget{struct___i_call___gatt_reliable_write___acc2ee3ef9568fa741b85ad721f09f294}\label{struct___i_call___gatt_reliable_write___acc2ee3ef9568fa741b85ad721f09f294}} 
+\index{\_ICall\_GattReliableWrite\_@{\_ICall\_GattReliableWrite\_}!taskId@{taskId}}
+\index{taskId@{taskId}!\_ICall\_GattReliableWrite\_@{\_ICall\_GattReliableWrite\_}}
+\doxysubsubsection{\texorpdfstring{taskId}{taskId}}
+{\footnotesize\ttfamily uint8\+\_\+t \+\_\+\+I\+Call\+\_\+\+Gatt\+Reliable\+Write\+\_\+\+::task\+Id}
+
+
+
+task Id 
+
+
+
+Definition at line 599 of file icall\+\_\+apimsg.\+h.
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+I\+Call\+B\+L\+E/\mbox{\hyperlink{icall__apimsg_8h}{icall\+\_\+apimsg.\+h}}\end{DoxyCompactItemize}

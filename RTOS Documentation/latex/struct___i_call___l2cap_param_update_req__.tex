@@ -1,0 +1,93 @@
+\hypertarget{struct___i_call___l2cap_param_update_req__}{}\doxysection{\+\_\+\+I\+Call\+\_\+\+L2cap\+Param\+Update\+Req\+\_\+ Struct Reference}
+\label{struct___i_call___l2cap_param_update_req__}\index{\_ICall\_L2capParamUpdateReq\_@{\_ICall\_L2capParamUpdateReq\_}}
+
+
+{\ttfamily \#include $<$icall\+\_\+apimsg.\+h$>$}
+
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{icall__apimsg_8h_afa62f50d802fab57d759c527cead246e}{I\+Call\+\_\+\+Hci\+Ext\+Cmd}} \mbox{\hyperlink{struct___i_call___l2cap_param_update_req___a4319c4931cce38bdbf24d205961bbb8c}{hdr}}
+\begin{DoxyCompactList}\small\item\em hdr event field must be set as I\+C\+A\+L\+L\+\_\+\+C\+M\+D\+\_\+\+E\+V\+E\+NT \end{DoxyCompactList}\item 
+uint16\+\_\+t \mbox{\hyperlink{struct___i_call___l2cap_param_update_req___a5f065218de5a3cdcead1b7ad78ca2d51}{conn\+Handle}}
+\begin{DoxyCompactList}\small\item\em connection Handle \end{DoxyCompactList}\item 
+l2cap\+Param\+Update\+Req\+\_\+t $\ast$ \mbox{\hyperlink{struct___i_call___l2cap_param_update_req___a77ba11e23f2c9efcb22abf701f740722}{p\+Update\+Req}}
+\begin{DoxyCompactList}\small\item\em update request \end{DoxyCompactList}\item 
+uint8 \mbox{\hyperlink{struct___i_call___l2cap_param_update_req___afb1c4aacbbddbee89f4a980032e23199}{task\+Id}}
+\begin{DoxyCompactList}\small\item\em task Id \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+I\+Call message containing Hci\+Ext\+Cmd hdr, connection handle and L2\+C\+AP Parameter update request
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{icall__api_8c_af9cc2df9bb0b4c9000d8c3e21adcf1d2}{L2\+C\+A\+P\+\_\+\+Conn\+Param\+Update\+Req}} 
+\end{DoxySeeAlso}
+
+
+Definition at line 711 of file icall\+\_\+apimsg.\+h.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{struct___i_call___l2cap_param_update_req___a5f065218de5a3cdcead1b7ad78ca2d51}\label{struct___i_call___l2cap_param_update_req___a5f065218de5a3cdcead1b7ad78ca2d51}} 
+\index{\_ICall\_L2capParamUpdateReq\_@{\_ICall\_L2capParamUpdateReq\_}!connHandle@{connHandle}}
+\index{connHandle@{connHandle}!\_ICall\_L2capParamUpdateReq\_@{\_ICall\_L2capParamUpdateReq\_}}
+\doxysubsubsection{\texorpdfstring{connHandle}{connHandle}}
+{\footnotesize\ttfamily uint16\+\_\+t \+\_\+\+I\+Call\+\_\+\+L2cap\+Param\+Update\+Req\+\_\+\+::conn\+Handle}
+
+
+
+connection Handle 
+
+
+
+Definition at line 714 of file icall\+\_\+apimsg.\+h.
+
+\mbox{\Hypertarget{struct___i_call___l2cap_param_update_req___a4319c4931cce38bdbf24d205961bbb8c}\label{struct___i_call___l2cap_param_update_req___a4319c4931cce38bdbf24d205961bbb8c}} 
+\index{\_ICall\_L2capParamUpdateReq\_@{\_ICall\_L2capParamUpdateReq\_}!hdr@{hdr}}
+\index{hdr@{hdr}!\_ICall\_L2capParamUpdateReq\_@{\_ICall\_L2capParamUpdateReq\_}}
+\doxysubsubsection{\texorpdfstring{hdr}{hdr}}
+{\footnotesize\ttfamily \mbox{\hyperlink{icall__apimsg_8h_afa62f50d802fab57d759c527cead246e}{I\+Call\+\_\+\+Hci\+Ext\+Cmd}} \+\_\+\+I\+Call\+\_\+\+L2cap\+Param\+Update\+Req\+\_\+\+::hdr}
+
+
+
+hdr event field must be set as I\+C\+A\+L\+L\+\_\+\+C\+M\+D\+\_\+\+E\+V\+E\+NT 
+
+
+
+Definition at line 713 of file icall\+\_\+apimsg.\+h.
+
+\mbox{\Hypertarget{struct___i_call___l2cap_param_update_req___a77ba11e23f2c9efcb22abf701f740722}\label{struct___i_call___l2cap_param_update_req___a77ba11e23f2c9efcb22abf701f740722}} 
+\index{\_ICall\_L2capParamUpdateReq\_@{\_ICall\_L2capParamUpdateReq\_}!pUpdateReq@{pUpdateReq}}
+\index{pUpdateReq@{pUpdateReq}!\_ICall\_L2capParamUpdateReq\_@{\_ICall\_L2capParamUpdateReq\_}}
+\doxysubsubsection{\texorpdfstring{pUpdateReq}{pUpdateReq}}
+{\footnotesize\ttfamily l2cap\+Param\+Update\+Req\+\_\+t$\ast$ \+\_\+\+I\+Call\+\_\+\+L2cap\+Param\+Update\+Req\+\_\+\+::p\+Update\+Req}
+
+
+
+update request 
+
+
+
+Definition at line 715 of file icall\+\_\+apimsg.\+h.
+
+\mbox{\Hypertarget{struct___i_call___l2cap_param_update_req___afb1c4aacbbddbee89f4a980032e23199}\label{struct___i_call___l2cap_param_update_req___afb1c4aacbbddbee89f4a980032e23199}} 
+\index{\_ICall\_L2capParamUpdateReq\_@{\_ICall\_L2capParamUpdateReq\_}!taskId@{taskId}}
+\index{taskId@{taskId}!\_ICall\_L2capParamUpdateReq\_@{\_ICall\_L2capParamUpdateReq\_}}
+\doxysubsubsection{\texorpdfstring{taskId}{taskId}}
+{\footnotesize\ttfamily uint8 \+\_\+\+I\+Call\+\_\+\+L2cap\+Param\+Update\+Req\+\_\+\+::task\+Id}
+
+
+
+task Id 
+
+
+
+Definition at line 716 of file icall\+\_\+apimsg.\+h.
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+I\+Call\+B\+L\+E/\mbox{\hyperlink{icall__apimsg_8h}{icall\+\_\+apimsg.\+h}}\end{DoxyCompactItemize}

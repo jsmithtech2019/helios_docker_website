@@ -1,0 +1,1496 @@
+\hypertarget{_r_f_c_c26_x_x__single_mode_8c}{}\doxysection{Drivers/\+R\+F/\+R\+F\+C\+C26\+X\+X\+\_\+single\+Mode.c File Reference}
+\label{_r_f_c_c26_x_x__single_mode_8c}\index{Drivers/RF/RFCC26XX\_singleMode.c@{Drivers/RF/RFCC26XX\_singleMode.c}}
+{\ttfamily \#include $<$ti/sysbios/\+B\+I\+O\+S.\+h$>$}\newline
+{\ttfamily \#include $<$ti/sysbios/knl/\+Semaphore.\+h$>$}\newline
+{\ttfamily \#include $<$ti/sysbios/family/arm/m3/\+Hwi.\+h$>$}\newline
+{\ttfamily \#include $<$ti/sysbios/knl/\+Swi.\+h$>$}\newline
+{\ttfamily \#include $<$ti/drivers/\+Power.\+h$>$}\newline
+{\ttfamily \#include $<$ti/drivers/power/\+Power\+C\+C26\+X\+X.\+h$>$}\newline
+{\ttfamily \#include $<$inc/hw\+\_\+memmap.\+h$>$}\newline
+{\ttfamily \#include $<$inc/hw\+\_\+ints.\+h$>$}\newline
+{\ttfamily \#include $<$inc/hw\+\_\+types.\+h$>$}\newline
+{\ttfamily \#include $<$inc/hw\+\_\+rfc\+\_\+rat.\+h$>$}\newline
+{\ttfamily \#include $<$inc/hw\+\_\+rfc\+\_\+dbell.\+h$>$}\newline
+{\ttfamily \#include $<$driverlib/rfc.\+h$>$}\newline
+{\ttfamily \#include $<$driverlib/sys\+\_\+ctrl.\+h$>$}\newline
+{\ttfamily \#include $<$driverlib/ioc.\+h$>$}\newline
+{\ttfamily \#include $<$driverlib/aon\+\_\+ioc.\+h$>$}\newline
+{\ttfamily \#include $<$driverlib/rf\+\_\+mailbox.\+h$>$}\newline
+{\ttfamily \#include $<$driverlib/adi.\+h$>$}\newline
+{\ttfamily \#include $<$driverlib/aon\+\_\+rtc.\+h$>$}\newline
+{\ttfamily \#include $<$ti/drivers/rf/\+R\+F.\+h$>$}\newline
+{\ttfamily \#include $<$driverlib/chipinfo.\+h$>$}\newline
+{\ttfamily \#include $<$xdc/runtime/\+Assert.\+h$>$}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_r_f___cmd__s}{R\+F\+\_\+\+Cmd\+\_\+s}}
+\item 
+struct \mbox{\hyperlink{struct_r_f___cmd_dir_imm__s}{R\+F\+\_\+\+Cmd\+Dir\+Imm\+\_\+s}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{_r_f_c_c26_x_x__single_mode_8c_adea643e7a9b07b563be0292d6a2c4ead}{N\+\_\+\+M\+A\+X\+\_\+\+C\+L\+I\+E\+N\+TS}}~1
+\item 
+\#define \mbox{\hyperlink{_r_f_c_c26_x_x__single_mode_8c_a906d62c867e901cdb4fcfffe40bd5ae1}{N\+\_\+\+C\+M\+D\+\_\+\+P\+O\+OL}}~8
+\item 
+\#define \mbox{\hyperlink{_r_f_c_c26_x_x__single_mode_8c_a361568f8933a495cab2fe9748df014ea}{N\+\_\+\+C\+M\+D\+\_\+\+M\+O\+D\+M\+A\+SK}}~0x\+F\+FF
+\item 
+\#define \mbox{\hyperlink{_r_f_c_c26_x_x__single_mode_8c_a996f7be338ccb40d1a2a5abc1ad61759}{A\+BS}}(x)~(((x) $<$ 0) ? -\/(x) \+: (x))
+\item 
+\#define \mbox{\hyperlink{_r_f_c_c26_x_x__single_mode_8c_afa99ec4acc4ecb2dc3c2d05da15d0e3f}{M\+AX}}(a,  b)~(((a) $>$ (b)) ? (a) \+: (b))
+\item 
+\#define \mbox{\hyperlink{_r_f_c_c26_x_x__single_mode_8c_a28552a08f05cdca9a60053453132192d}{R\+F\+\_\+\+C\+M\+D0}}~0x0607
+\item 
+\#define \mbox{\hyperlink{_r_f_c_c26_x_x__single_mode_8c_ab9647e43237842b3f6570f0fb73df5bc}{R\+F\+\_\+\+I\+N\+T\+E\+R\+N\+A\+L\+\_\+\+I\+F\+G\+\_\+\+M\+A\+SK}}~0x\+F\+F\+F\+F\+F\+F\+D\+F6000100E
+\item 
+\#define \mbox{\hyperlink{_r_f_c_c26_x_x__single_mode_8c_a1547ecdf32c62f3e1e497048a16a62cc}{R\+F\+\_\+\+C\+M\+D\+\_\+\+A\+B\+O\+R\+T\+E\+D\+\_\+\+F\+L\+AG}}~(1 $<$$<$ 0)
+\item 
+\#define \mbox{\hyperlink{_r_f_c_c26_x_x__single_mode_8c_a1faa211ec43118fb93e0caa8ffda2d94}{R\+F\+\_\+\+C\+M\+D\+\_\+\+S\+T\+O\+P\+P\+E\+D\+\_\+\+F\+L\+AG}}~(1 $<$$<$ 1)
+\item 
+\#define \mbox{\hyperlink{_r_f_c_c26_x_x__single_mode_8c_a95f4d1b477771e7ea8fb9b58235e97a7}{R\+F\+\_\+\+C\+M\+D\+\_\+\+C\+A\+N\+C\+E\+L\+L\+E\+D\+\_\+\+F\+L\+AG}}~(1 $<$$<$ 2)
+\item 
+\#define \mbox{\hyperlink{_r_f_c_c26_x_x__single_mode_8c_a9aafe252d15be0d9d86133f38239e66c}{R\+F\+\_\+\+C\+M\+D\+\_\+\+C\+A\+N\+C\+E\+L\+\_\+\+M\+A\+SK}}~(\mbox{\hyperlink{_r_f_c_c26_x_x__single_mode_8c_a1547ecdf32c62f3e1e497048a16a62cc}{R\+F\+\_\+\+C\+M\+D\+\_\+\+A\+B\+O\+R\+T\+E\+D\+\_\+\+F\+L\+AG}} $\vert$ \mbox{\hyperlink{_r_f_c_c26_x_x__single_mode_8c_a1faa211ec43118fb93e0caa8ffda2d94}{R\+F\+\_\+\+C\+M\+D\+\_\+\+S\+T\+O\+P\+P\+E\+D\+\_\+\+F\+L\+AG}} $\vert$ \mbox{\hyperlink{_r_f_c_c26_x_x__single_mode_8c_a95f4d1b477771e7ea8fb9b58235e97a7}{R\+F\+\_\+\+C\+M\+D\+\_\+\+C\+A\+N\+C\+E\+L\+L\+E\+D\+\_\+\+F\+L\+AG}})
+\item 
+\#define \mbox{\hyperlink{_r_f_c_c26_x_x__single_mode_8c_a8bcc1428d8a982a358da78d0994febd5}{R\+F\+\_\+\+C\+M\+D\+\_\+\+A\+L\+L\+O\+C\+\_\+\+F\+L\+AG}}~(1 $<$$<$ 7)
+\item 
+\#define \mbox{\hyperlink{_r_f_c_c26_x_x__single_mode_8c_a408f87e9b109af88f6f2ae5a85473983}{R\+F\+\_\+\+R\+U\+N\+\_\+\+C\+M\+D\+\_\+\+O\+N\+\_\+\+R\+E\+S\+T\+A\+R\+T\+\_\+\+F\+L\+AG}}~(1 $<$$<$ 0)
+\item 
+\#define \mbox{\hyperlink{_r_f_c_c26_x_x__single_mode_8c_a3d799130cc5fc43c256238088be55c81}{R\+F\+\_\+\+R\+A\+T\+\_\+\+E\+R\+R\+\_\+\+C\+B\+\_\+\+E\+V\+E\+N\+T\+\_\+\+F\+L\+AG}}~(1 $<$$<$ 1)
+\item 
+\#define \mbox{\hyperlink{_r_f_c_c26_x_x__single_mode_8c_a570313296fc52cbc4487063f56c15501}{R\+F\+\_\+\+R\+A\+T\+\_\+\+R\+P\+T\+\_\+\+C\+P\+T\+\_\+\+F\+L\+AG}}~(1 $<$$<$ 2)
+\item 
+\#define \mbox{\hyperlink{_r_f_c_c26_x_x__single_mode_8c_a1a2c210ab604fb28b41ac1ffb74b1d1f}{R\+F\+\_\+\+H\+W\+\_\+\+I\+N\+T\+\_\+\+R\+A\+T\+\_\+\+C\+H\+\_\+\+M\+A\+SK}}~(R\+F\+C\+\_\+\+D\+B\+E\+L\+L\+\_\+\+R\+F\+H\+W\+I\+F\+G\+\_\+\+R\+A\+T\+C\+H7 $\vert$ R\+F\+C\+\_\+\+D\+B\+E\+L\+L\+\_\+\+R\+F\+H\+W\+I\+F\+G\+\_\+\+R\+A\+T\+C\+H6 $\vert$ R\+F\+C\+\_\+\+D\+B\+E\+L\+L\+\_\+\+R\+F\+H\+W\+I\+F\+G\+\_\+\+R\+A\+T\+C\+H5)
+\item 
+\#define \mbox{\hyperlink{_r_f_c_c26_x_x__single_mode_8c_a0598f05249a5701a981c2cc2931995d6}{R\+F\+\_\+\+M\+A\+X\+\_\+\+R\+A\+T\+\_\+\+C\+H\+\_\+\+C\+NT}}~3
+\item 
+\#define \mbox{\hyperlink{_r_f_c_c26_x_x__single_mode_8c_a3f9cee3a9064c7a24a2a522b649e629d}{R\+F\+\_\+\+I\+N\+T\+E\+R\+N\+A\+L\+\_\+\+H\+W\+\_\+\+I\+F\+G\+\_\+\+M\+A\+S\+K\+\_\+32\+\_\+\+B\+IT}}~R\+F\+C\+\_\+\+D\+B\+E\+L\+L\+\_\+\+R\+F\+H\+W\+I\+F\+G\+\_\+\+M\+D\+M\+S\+O\+FT
+\item 
+\#define \mbox{\hyperlink{_r_f_c_c26_x_x__single_mode_8c_a701bc9e3e05002371dc1f4410e115242}{R\+F\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+P\+O\+W\+E\+R\+\_\+\+U\+P\+\_\+\+T\+I\+ME}}~2500
+\item 
+\#define \mbox{\hyperlink{_r_f_c_c26_x_x__single_mode_8c_ab8f98e23f2e115bfad87997b02be05f7}{R\+F\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+P\+O\+W\+E\+R\+\_\+\+D\+O\+W\+N\+\_\+\+T\+I\+ME}}~1000
+\item 
+\#define \mbox{\hyperlink{_r_f_c_c26_x_x__single_mode_8c_a0c9fc358d022065ff55f84a132b976f6}{R\+F\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+M\+I\+N\+\_\+\+P\+O\+W\+E\+R\+\_\+\+U\+P\+\_\+\+T\+I\+ME}}~750
+\item 
+\#define \mbox{\hyperlink{_r_f_c_c26_x_x__single_mode_8c_ad40922613244e43e89ce514c1b273a52}{R\+F\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+P\+O\+W\+E\+R\+\_\+\+U\+P\+\_\+\+M\+A\+R\+G\+IN}}~(250+32)
+\item 
+\#define \mbox{\hyperlink{_r_f_c_c26_x_x__single_mode_8c_a9aba26bde1408fae09bf454caf619f8b}{R\+F\+\_\+\+M\+A\+X\+\_\+\+C\+H\+A\+I\+N\+\_\+\+C\+M\+D\+\_\+\+L\+EN}}~32
+\item 
+\#define \mbox{\hyperlink{_r_f_c_c26_x_x__single_mode_8c_ac3211e52b6d2bc485a39e022c9df2a55}{R\+F\+\_\+\+R\+A\+T\+\_\+\+C\+H\+\_\+5\+\_\+\+I\+N\+D\+EX}}~0x0
+\item 
+\#define \mbox{\hyperlink{_r_f_c_c26_x_x__single_mode_8c_af214777e611275ed26ae56dd034bcbce}{R\+F\+\_\+\+R\+A\+T\+\_\+\+C\+H\+\_\+6\+\_\+\+I\+N\+D\+EX}}~0x1
+\item 
+\#define \mbox{\hyperlink{_r_f_c_c26_x_x__single_mode_8c_a1183426022f9cabf340508a7bfb31057}{R\+F\+\_\+\+R\+A\+T\+\_\+\+C\+H\+\_\+7\+\_\+\+I\+N\+D\+EX}}~0x2
+\item 
+\#define \mbox{\hyperlink{_r_f_c_c26_x_x__single_mode_8c_a8cc4df12abd18293a85d8f6d6423abb0}{R\+F\+\_\+\+R\+A\+T\+\_\+\+C\+H\+\_\+\+O\+F\+F\+S\+ET}}~5
+\item 
+\#define \mbox{\hyperlink{_r_f_c_c26_x_x__single_mode_8c_a22a3f2ba9c73abc31d1bfcaafffb0355}{R\+F\+\_\+\+S\+E\+N\+D\+\_\+\+R\+A\+T\+\_\+\+S\+T\+O\+P\+\_\+\+R\+A\+T\+IO}}~7
+\item 
+\#define \mbox{\hyperlink{_r_f_c_c26_x_x__single_mode_8c_a5a46b9bcc42d213f48df36b120e23eba}{R\+F\+\_\+\+R\+T\+C\+\_\+\+C\+O\+N\+V\+\_\+\+T\+O\+\_\+\+U\+S\+\_\+\+S\+H\+I\+FT}}~12
+\item 
+\#define \mbox{\hyperlink{_r_f_c_c26_x_x__single_mode_8c_a4a6a328d834f86955a2202e413abb65a}{R\+F\+\_\+\+S\+H\+I\+F\+T\+\_\+32\+\_\+\+B\+I\+TS}}~32
+\item 
+\#define \mbox{\hyperlink{_r_f_c_c26_x_x__single_mode_8c_a8d0550902c2916af0cc68acd0812a3ee}{R\+F\+\_\+\+S\+H\+I\+F\+T\+\_\+8\+\_\+\+B\+I\+TS}}~8
+\item 
+\#define \mbox{\hyperlink{_r_f_c_c26_x_x__single_mode_8c_ab29594a1cd6f0fa396a5c71433c033ca}{R\+F\+\_\+\+S\+H\+I\+F\+T\+\_\+16\+\_\+\+B\+I\+TS}}~16
+\item 
+\#define \mbox{\hyperlink{_r_f_c_c26_x_x__single_mode_8c_a2ca8c6fd3e474b628ca48647f4758d16}{R\+F\+\_\+\+R\+T\+C\+\_\+\+T\+I\+C\+K\+\_\+\+I\+NC}}~(0x100000000\+LL/32768)
+\item 
+\#define \mbox{\hyperlink{_r_f_c_c26_x_x__single_mode_8c_a7d37490369be8740edb122ee9bb211ff}{R\+F\+\_\+\+S\+C\+A\+L\+E\+\_\+\+R\+T\+C\+\_\+\+T\+O\+\_\+4\+M\+HZ}}~4000000
+\item 
+\#define \mbox{\hyperlink{_r_f_c_c26_x_x__single_mode_8c_a51778e72f78a9c6ce627c7e18aaa698c}{R\+F\+\_\+\+N\+U\+M\+\_\+\+R\+A\+T\+\_\+\+T\+I\+C\+K\+S\+\_\+\+I\+N\+\_\+1\+\_\+\+US}}~4
+\item 
+\#define \mbox{\hyperlink{_r_f_c_c26_x_x__single_mode_8c_a594ae9fdf985cdc0b63ce429855a81c2}{R\+F\+\_\+\+D\+I\+S\+P\+A\+T\+C\+H\+\_\+\+M\+A\+X\+\_\+\+T\+I\+M\+E\+\_\+\+US}}~(U\+I\+N\+T32\+\_\+\+M\+AX / \mbox{\hyperlink{_r_f_c_c26_x_x__single_mode_8c_a51778e72f78a9c6ce627c7e18aaa698c}{R\+F\+\_\+\+N\+U\+M\+\_\+\+R\+A\+T\+\_\+\+T\+I\+C\+K\+S\+\_\+\+I\+N\+\_\+1\+\_\+\+US}} $\ast$ 3 / 4)
+\item 
+\#define \mbox{\hyperlink{_r_f_c_c26_x_x__single_mode_8c_a5c70297604e599c0a358b8af7fb4310d}{R\+F\+\_\+\+I\+N\+T\+E\+R\+N\+A\+L\+\_\+\+C\+P\+E\+\_\+\+I\+F\+G\+\_\+\+M\+A\+S\+K\+\_\+32\+\_\+\+B\+IT}}~0x\+F\+F\+F\+F\+F\+F\+FF
+\item 
+\#define \mbox{\hyperlink{_r_f_c_c26_x_x__single_mode_8c_ae6ec8bb79da533c8324fb9f28bbe437c}{R\+F\+\_\+\+X\+O\+S\+C\+\_\+\+H\+F\+\_\+\+S\+W\+I\+T\+C\+H\+\_\+\+C\+H\+E\+C\+K\+\_\+\+P\+E\+R\+I\+OD}}~50
+\item 
+\#define \mbox{\hyperlink{_r_f_c_c26_x_x__single_mode_8c_a46eff849b77ab2b493020735d522713d}{R\+F\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+A\+V\+A\+I\+L\+R\+A\+T\+C\+H\+\_\+\+V\+AL}}~0x\+F\+F\+FF
+\item 
+\#define \mbox{\hyperlink{_r_f_c_c26_x_x__single_mode_8c_aca447b4e1aee5c6e8183570d52d2a26e}{R\+F\+\_\+\+A\+B\+O\+R\+T\+\_\+\+C\+A\+N\+C\+E\+L\+\_\+\+M\+U\+L\+T\+I\+P\+L\+E\+\_\+\+C\+MD}}~0x2
+\item 
+\#define \mbox{\hyperlink{_r_f_c_c26_x_x__single_mode_8c_a678cb81625c3d6952466262650cbab1e}{R\+F\+\_\+\+A\+B\+O\+R\+T\+\_\+\+C\+A\+N\+C\+E\+L\+\_\+\+S\+I\+N\+G\+L\+E\+\_\+\+C\+MD}}~0x1
+\item 
+\#define \mbox{\hyperlink{_r_f_c_c26_x_x__single_mode_8c_a3829f5843f8a49c12c0e949f20026b32}{R\+F\+\_\+\+C\+M\+D\+S\+T\+A\+\_\+\+R\+E\+G\+\_\+\+V\+A\+L\+\_\+\+M\+A\+SK}}~0x\+FF
+\item 
+\#define \mbox{\hyperlink{_r_f_c_c26_x_x__single_mode_8c_a5c3e055b844dcdeb34fea0177207b15b}{R\+F\+\_\+\+R\+A\+T\+\_\+\+C\+P\+T\+\_\+\+C\+O\+N\+F\+I\+G\+\_\+\+R\+A\+T\+C\+H\+\_\+\+M\+A\+SK}}~0x0\+F00
+\item 
+\#define \mbox{\hyperlink{_r_f_c_c26_x_x__single_mode_8c_ae21b20a5571edc62ed87fdc114718b34}{R\+F\+\_\+\+R\+A\+T\+\_\+\+C\+P\+T\+\_\+\+C\+O\+N\+F\+I\+G\+\_\+\+R\+E\+P\+\_\+\+M\+A\+SK}}~0x1000
+\item 
+\#define \mbox{\hyperlink{_r_f_c_c26_x_x__single_mode_8c_a08900356fbe451903209e7f4ab28644f}{R\+F\+\_\+\+P\+H\+Y\+\_\+\+S\+W\+I\+T\+C\+H\+I\+N\+G\+\_\+\+M\+O\+DE}}~1
+\item 
+\#define \mbox{\hyperlink{_r_f_c_c26_x_x__single_mode_8c_afe95dafbc1485cbbe127206407071d68}{R\+F\+\_\+\+P\+H\+Y\+\_\+\+B\+O\+O\+T\+U\+P\+\_\+\+M\+O\+DE}}~0
+\item 
+\#define \mbox{\hyperlink{_r_f_c_c26_x_x__single_mode_8c_a9c9a6db7c2b5d0079da3b7f6c12e887b}{R\+F\+\_\+\+A\+N\+A\+L\+O\+G\+\_\+\+C\+F\+G\+\_\+\+T\+I\+M\+E\+\_\+\+US}}~96
+\item 
+\#define \mbox{\hyperlink{_r_f_c_c26_x_x__single_mode_8c_a4571220bf687b83d1e26f8f5b51f2293}{R\+F\+\_\+\+S\+E\+T\+U\+P\+\_\+\+A\+N\+A\+L\+O\+G\+C\+F\+G\+\_\+\+U\+P\+D\+A\+TE}}~0
+\item 
+\#define \mbox{\hyperlink{_r_f_c_c26_x_x__single_mode_8c_ae9847fa7595088e44d0adc7ea4fcfae0}{R\+F\+\_\+\+S\+E\+T\+U\+P\+\_\+\+A\+N\+A\+L\+O\+G\+C\+F\+G\+\_\+\+N\+O\+U\+P\+D\+A\+TE}}~0x2D
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \mbox{\hyperlink{struct_r_f___cmd__s}{R\+F\+\_\+\+Cmd\+\_\+s}} \mbox{\hyperlink{_r_f_c_c26_x_x__single_mode_8c_a2dd38e247b33e21ae1729c7ae47a49cb}{R\+F\+\_\+\+Cmd}}
+\item 
+typedef struct \mbox{\hyperlink{struct_r_f___cmd_dir_imm__s}{R\+F\+\_\+\+Cmd\+Dir\+Imm\+\_\+s}} \mbox{\hyperlink{_r_f_c_c26_x_x__single_mode_8c_a3a9c25ac900ee9b2bf9e20bbb7d2d603}{R\+F\+\_\+\+Cmd\+Dir\+Imm}}
+\item 
+typedef void($\ast$ \mbox{\hyperlink{_r_f_c_c26_x_x__single_mode_8c_ac936a5ee9c3b7dc0b4c7670cee47dc83}{Fsm\+\_\+\+State\+Fxn}}) (\mbox{\hyperlink{struct_r_f___object}{R\+F\+\_\+\+Object}} $\ast$, \mbox{\hyperlink{_r_f_c_c26_x_x__single_mode_8c_a07cd5044d3ff83097392bd09b9a82a62}{Fsm\+\_\+\+Event}} const)
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{_r_f_c_c26_x_x__single_mode_8c_a07cd5044d3ff83097392bd09b9a82a62}{Fsm\+\_\+\+Event}} \{ \newline
+\mbox{\hyperlink{_r_f_c_c26_x_x__single_mode_8c_a07cd5044d3ff83097392bd09b9a82a62a71ea2cb44b27fdf9b75c4aed152cc8c3}{Fsm\+\_\+\+Event\+Boot\+Done}} = (1$<$$<$30), 
+\mbox{\hyperlink{_r_f_c_c26_x_x__single_mode_8c_a07cd5044d3ff83097392bd09b9a82a62ac29afb23bebd3a381037fd5866af6002}{Fsm\+\_\+\+Event\+Power\+Step}} = (1$<$$<$29), 
+\mbox{\hyperlink{_r_f_c_c26_x_x__single_mode_8c_a07cd5044d3ff83097392bd09b9a82a62a9870446dec8b607eccd002f90f51a7fa}{Fsm\+\_\+\+Event\+Last\+Command\+Done}} = (1$<$$<$1), 
+\mbox{\hyperlink{_r_f_c_c26_x_x__single_mode_8c_a07cd5044d3ff83097392bd09b9a82a62a867b1e26242904f4df12e385341ef5e7}{Fsm\+\_\+\+Event\+Wakeup}} = (1$<$$<$2), 
+\newline
+\mbox{\hyperlink{_r_f_c_c26_x_x__single_mode_8c_a07cd5044d3ff83097392bd09b9a82a62a4ad98fb025a8cd3d953353a0e53e1612}{Fsm\+\_\+\+Event\+Power\+Down}} = (1$<$$<$3), 
+\mbox{\hyperlink{_r_f_c_c26_x_x__single_mode_8c_a07cd5044d3ff83097392bd09b9a82a62ac2c0637639ae233bca0ccd6db208085b}{Fsm\+\_\+\+Event\+Change\+Phy}} = (1$<$$<$12), 
+\mbox{\hyperlink{_r_f_c_c26_x_x__single_mode_8c_a07cd5044d3ff83097392bd09b9a82a62a3387200710fa40fdb7fcfad679535289}{Fsm\+\_\+\+Event\+Hw\+Int}} = (1$<$$<$13), 
+\mbox{\hyperlink{_r_f_c_c26_x_x__single_mode_8c_a07cd5044d3ff83097392bd09b9a82a62abd07d61d8f31522563b425c4a4eb2564}{Fsm\+\_\+\+Event\+Cpe\+Int}} = (1$<$$<$14)
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_r_f_8h_a5e8ab7fc87fb818f435d9b6226ee573f}{R\+F\+\_\+\+Handle}} \mbox{\hyperlink{_r_f_c_c26_x_x__single_mode_8c_a13a7c6f5a2b797e0aac18fecfaba6f64}{R\+F\+\_\+open}} (\mbox{\hyperlink{struct_r_f___object}{R\+F\+\_\+\+Object}} $\ast$p\+Obj, \mbox{\hyperlink{struct_r_f___mode}{R\+F\+\_\+\+Mode}} $\ast$p\+Rf\+Mode, \mbox{\hyperlink{union_r_f___radio_setup}{R\+F\+\_\+\+Radio\+Setup}} $\ast$p\+Op\+Setup, \mbox{\hyperlink{struct_r_f___params}{R\+F\+\_\+\+Params}} $\ast$params)
+\begin{DoxyCompactList}\small\item\em Open client connection to RF driver. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_r_f_c_c26_x_x__single_mode_8c_a9ff7e64561f7aa5526837521bceb5f88}{R\+F\+\_\+close}} (\mbox{\hyperlink{_r_f_8h_a5e8ab7fc87fb818f435d9b6226ee573f}{R\+F\+\_\+\+Handle}} h)
+\begin{DoxyCompactList}\small\item\em Close client connection to RF driver. \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{_r_f_c_c26_x_x__single_mode_8c_aedfdf0bdf0f64a071d50a6d78446fef4}{R\+F\+\_\+get\+Current\+Time}} (void)
+\begin{DoxyCompactList}\small\item\em Return current radio timer value. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_r_f_8h_acab1f56c62a9fd1ad0a91a46b6da23f1}{R\+F\+\_\+\+Cmd\+Handle}} \mbox{\hyperlink{_r_f_c_c26_x_x__single_mode_8c_a2b0ee444fcb74917df94eefea804ecbb}{R\+F\+\_\+post\+Cmd}} (\mbox{\hyperlink{_r_f_8h_a5e8ab7fc87fb818f435d9b6226ee573f}{R\+F\+\_\+\+Handle}} h, \mbox{\hyperlink{_r_f_8h_a47ea3dea78019340e8f8ceb854de5f02}{R\+F\+\_\+\+Op}} $\ast$p\+Op, \mbox{\hyperlink{_r_f_8h_ae5f9a893d178e64e6d0a7a783ea06e32}{R\+F\+\_\+\+Priority}} e\+Pri, \mbox{\hyperlink{_r_f_8h_a4d2ce6dc70b0f329dc5e249ec10c574a}{R\+F\+\_\+\+Callback}} p\+Cb, \mbox{\hyperlink{_r_f_8h_a128c46e18dbbaa781abb7abafc35233a}{R\+F\+\_\+\+Event\+Mask}} bm\+Event)
+\begin{DoxyCompactList}\small\item\em Post an RF operation (chain) to the command queue Post an \mbox{\hyperlink{_r_f_8h_a47ea3dea78019340e8f8ceb854de5f02}{R\+F\+\_\+\+Op}} to the RF command queue of the client with handle h. ~\newline
+ The command can be the first in a chain of RF operations or a standalone RF operation. If a chain of operations are posted they are treated atomically, i.\+e. either all or none of the chained operations are run. ~\newline
+ All operations must be posted in strictly increasing chronological order. Function returns immediately. ~\newline
+ To facilitate code optimization \mbox{\hyperlink{_r_f_8h_a2b0ee444fcb74917df94eefea804ecbb}{R\+F\+\_\+post\+Cmd()}} should be used when running in single client environment. It does not call the internal dual mode functions and the implementation are same across R\+F\+C\+C26\+X\+X\+\_\+multi\+Mode.\+c and \mbox{\hyperlink{_r_f_c_c26_x_x__single_mode_8c}{R\+F\+C\+C26\+X\+X\+\_\+single\+Mode.\+c}} files.~\newline
+ Alternately \mbox{\hyperlink{_r_f_8h_a5e7f25943b5f3942bf4c09cb87f9aa76}{R\+F\+\_\+schedule\+Cmd()}} can be used in single or multi client environment. ~\newline
+ \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_r_f_8h_a128c46e18dbbaa781abb7abafc35233a}{R\+F\+\_\+\+Event\+Mask}} \mbox{\hyperlink{_r_f_c_c26_x_x__single_mode_8c_a91c1cb2508311f822acbc08ace568a83}{R\+F\+\_\+pend\+Cmd}} (\mbox{\hyperlink{_r_f_8h_a5e8ab7fc87fb818f435d9b6226ee573f}{R\+F\+\_\+\+Handle}} h, \mbox{\hyperlink{_r_f_8h_acab1f56c62a9fd1ad0a91a46b6da23f1}{R\+F\+\_\+\+Cmd\+Handle}} ch, \mbox{\hyperlink{_r_f_8h_a128c46e18dbbaa781abb7abafc35233a}{R\+F\+\_\+\+Event\+Mask}} bm\+Event)
+\begin{DoxyCompactList}\small\item\em Wait for posted command to complete Wait until completion of RF command identified by handle ch for client identified by handle h to complete. ~\newline
+ Some RF operations (or chains of operations) use additional events during \mbox{\hyperlink{_r_f_8h_a2b0ee444fcb74917df94eefea804ecbb}{R\+F\+\_\+post\+Cmd()}} which, if enabled in event mask bm\+Event for the \mbox{\hyperlink{_r_f_8h_a91c1cb2508311f822acbc08ace568a83}{R\+F\+\_\+pend\+Cmd()}} will make the \mbox{\hyperlink{_r_f_8h_a91c1cb2508311f822acbc08ace568a83}{R\+F\+\_\+pend\+Cmd()}} return early, when that event occurs. In this case, multiple calls to \mbox{\hyperlink{_r_f_8h_a91c1cb2508311f822acbc08ace568a83}{R\+F\+\_\+pend\+Cmd()}} for a single command can be made. ~\newline
+ If \mbox{\hyperlink{_r_f_8h_a91c1cb2508311f822acbc08ace568a83}{R\+F\+\_\+pend\+Cmd()}} is called for a command that registered a callback function it will take precedence and the callback function will never be called. ~\newline
+ \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_r_f_8h_a128c46e18dbbaa781abb7abafc35233a}{R\+F\+\_\+\+Event\+Mask}} \mbox{\hyperlink{_r_f_c_c26_x_x__single_mode_8c_a248bebdd1d0bd6e0812cf18116987e54}{R\+F\+\_\+run\+Cmd}} (\mbox{\hyperlink{_r_f_8h_a5e8ab7fc87fb818f435d9b6226ee573f}{R\+F\+\_\+\+Handle}} h, \mbox{\hyperlink{_r_f_8h_a47ea3dea78019340e8f8ceb854de5f02}{R\+F\+\_\+\+Op}} $\ast$p\+Op, \mbox{\hyperlink{_r_f_8h_ae5f9a893d178e64e6d0a7a783ea06e32}{R\+F\+\_\+\+Priority}} e\+Pri, \mbox{\hyperlink{_r_f_8h_a4d2ce6dc70b0f329dc5e249ec10c574a}{R\+F\+\_\+\+Callback}} p\+Cb, \mbox{\hyperlink{_r_f_8h_a128c46e18dbbaa781abb7abafc35233a}{R\+F\+\_\+\+Event\+Mask}} bm\+Event)
+\begin{DoxyCompactList}\small\item\em Runs synchronously a (chain of) RF operation(s) Allows a (chain of) operation(s) to be posted to the command queue and then waits for it to complete. ~\newline
+ A command is completed if one of the R\+F\+\_\+\+Event\+Last\+Cmd\+Done, R\+F\+\_\+\+Event\+Cmd\+Cancelled, R\+F\+\_\+\+Event\+Cmd\+Aborted, R\+F\+\_\+\+Event\+Cmd\+Stopped or R\+F\+\_\+\+Event\+Cmd\+Error occured. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_r_f_c_c26_x_x__single_mode_8c_a299ada7963c727a40466d7d1bb7296a3}{R\+F\+\_\+yield}} (\mbox{\hyperlink{_r_f_8h_a5e8ab7fc87fb818f435d9b6226ee573f}{R\+F\+\_\+\+Handle}} h)
+\begin{DoxyCompactList}\small\item\em Signal that radio client is not going to issue more commands in a while. ~\newline
+ \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_r_f_8h_afdc219ddabc8427ecd552a6c78d9988f}{R\+F\+\_\+\+Stat}} \mbox{\hyperlink{_r_f_c_c26_x_x__single_mode_8c_aabe22ceae13a372be4ba135318aa849a}{R\+F\+\_\+cancel\+Cmd}} (\mbox{\hyperlink{_r_f_8h_a5e8ab7fc87fb818f435d9b6226ee573f}{R\+F\+\_\+\+Handle}} h, \mbox{\hyperlink{_r_f_8h_acab1f56c62a9fd1ad0a91a46b6da23f1}{R\+F\+\_\+\+Cmd\+Handle}} ch, uint8\+\_\+t mode)
+\begin{DoxyCompactList}\small\item\em Abort/stop/cancel single command in command queue If command is running, aborts/stops it and posts callback for the aborted/stopped command. ~\newline
+ If command has not yet run, cancels it it and posts callback for the cancelled command. ~\newline
+ If command has already run or been aborted/stopped/cancelled, has no effect.~\newline
+ \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_r_f_8h_afdc219ddabc8427ecd552a6c78d9988f}{R\+F\+\_\+\+Stat}} \mbox{\hyperlink{_r_f_c_c26_x_x__single_mode_8c_ae3ff5c614f4a63cb4e79c90f9229149a}{R\+F\+\_\+flush\+Cmd}} (\mbox{\hyperlink{_r_f_8h_a5e8ab7fc87fb818f435d9b6226ee573f}{R\+F\+\_\+\+Handle}} h, \mbox{\hyperlink{_r_f_8h_acab1f56c62a9fd1ad0a91a46b6da23f1}{R\+F\+\_\+\+Cmd\+Handle}} ch, uint8\+\_\+t mode)
+\begin{DoxyCompactList}\small\item\em Abort/stop/cancel command and any subsequent commands in command queue If command is running, aborts/stops it and then cancels all later commands in queue.~\newline
+ If command has not yet run, cancels it and all later commands in queue.~\newline
+ If command has already run or been aborted/stopped/cancelled, has no effect.~\newline
+ \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_r_f_c_c26_x_x__single_mode_8c_ab956de3745437cb7a69c4edfb006434e}{R\+F\+\_\+\+Params\+\_\+init}} (\mbox{\hyperlink{struct_r_f___params}{R\+F\+\_\+\+Params}} $\ast$params)
+\begin{DoxyCompactList}\small\item\em Function to initialize the \mbox{\hyperlink{struct_r_f___params}{R\+F\+\_\+\+Params}} struct to its defaults. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_r_f_8h_afdc219ddabc8427ecd552a6c78d9988f}{R\+F\+\_\+\+Stat}} \mbox{\hyperlink{_r_f_c_c26_x_x__single_mode_8c_a6159b409f8d99954529a8ebf6f98cd85}{R\+F\+\_\+run\+Immediate\+Cmd}} (\mbox{\hyperlink{_r_f_8h_a5e8ab7fc87fb818f435d9b6226ee573f}{R\+F\+\_\+\+Handle}} h, uint32\+\_\+t $\ast$p\+Cmd\+Struct)
+\begin{DoxyCompactList}\small\item\em Send any Immediate command. ~\newline
+ \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_r_f_8h_afdc219ddabc8427ecd552a6c78d9988f}{R\+F\+\_\+\+Stat}} \mbox{\hyperlink{_r_f_c_c26_x_x__single_mode_8c_aafce617271300f2bee1a52ebda6d654e}{R\+F\+\_\+run\+Direct\+Cmd}} (\mbox{\hyperlink{_r_f_8h_a5e8ab7fc87fb818f435d9b6226ee573f}{R\+F\+\_\+\+Handle}} h, uint32\+\_\+t cmd)
+\begin{DoxyCompactList}\small\item\em Send any Direct command. ~\newline
+ \end{DoxyCompactList}\item 
+int8\+\_\+t \mbox{\hyperlink{_r_f_c_c26_x_x__single_mode_8c_ac3fe0d39243fb6bbefe0216d958a6779}{R\+F\+\_\+get\+Rssi}} (\mbox{\hyperlink{_r_f_8h_a5e8ab7fc87fb818f435d9b6226ee573f}{R\+F\+\_\+\+Handle}} h)
+\begin{DoxyCompactList}\small\item\em Get rssi value. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_r_f_8h_afdc219ddabc8427ecd552a6c78d9988f}{R\+F\+\_\+\+Stat}} \mbox{\hyperlink{_r_f_c_c26_x_x__single_mode_8c_a4bd7985a3e0c5ad2b9f5e94aa945db63}{R\+F\+\_\+get\+Info}} (\mbox{\hyperlink{_r_f_8h_a5e8ab7fc87fb818f435d9b6226ee573f}{R\+F\+\_\+\+Handle}} h, \mbox{\hyperlink{_r_f_8h_a22596109459422a7a4d4f386dffbb8fa}{R\+F\+\_\+\+Info\+Type}} type, \mbox{\hyperlink{union_r_f___info_val}{R\+F\+\_\+\+Info\+Val}} $\ast$p\+Value)
+\begin{DoxyCompactList}\small\item\em Get value for some RF driver parameters. ~\newline
+ \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_r_f_8h_a47ea3dea78019340e8f8ceb854de5f02}{R\+F\+\_\+\+Op}} $\ast$ \mbox{\hyperlink{_r_f_c_c26_x_x__single_mode_8c_abdde833057385980d0ae1b2c844b97b7}{R\+F\+\_\+get\+Cmd\+Op}} (\mbox{\hyperlink{_r_f_8h_a5e8ab7fc87fb818f435d9b6226ee573f}{R\+F\+\_\+\+Handle}} h, \mbox{\hyperlink{_r_f_8h_acab1f56c62a9fd1ad0a91a46b6da23f1}{R\+F\+\_\+\+Cmd\+Handle}} cmd\+Hnd)
+\begin{DoxyCompactList}\small\item\em Get command structure pointer. \end{DoxyCompactList}\item 
+int8\+\_\+t \mbox{\hyperlink{_r_f_c_c26_x_x__single_mode_8c_a8e24e90ec802b1d85d517e2075a4d129}{R\+F\+\_\+rat\+Compare}} (\mbox{\hyperlink{_r_f_8h_a5e8ab7fc87fb818f435d9b6226ee573f}{R\+F\+\_\+\+Handle}} h, rfc\+\_\+\+C\+M\+D\+\_\+\+S\+E\+T\+\_\+\+R\+A\+T\+\_\+\+C\+M\+P\+\_\+t $\ast$p\+Cmd\+Struct, uint32\+\_\+t compare\+Time, \mbox{\hyperlink{_r_f_8h_a4d2ce6dc70b0f329dc5e249ec10c574a}{R\+F\+\_\+\+Callback}} p\+Rat\+Cb)
+\begin{DoxyCompactList}\small\item\em Setup R\+AT compare, and callback when compare matches. Note radio needs to be on for R\+AT to operate. If radio is off, this A\+PI returns R\+F\+\_\+\+A\+L\+L\+O\+C\+\_\+\+E\+R\+R\+OR. \end{DoxyCompactList}\item 
+int8\+\_\+t \mbox{\hyperlink{_r_f_c_c26_x_x__single_mode_8c_a68013d7c8a5a0eed8add518b30679abe}{R\+F\+\_\+rat\+Capture}} (\mbox{\hyperlink{_r_f_8h_a5e8ab7fc87fb818f435d9b6226ee573f}{R\+F\+\_\+\+Handle}} h, uint16\+\_\+t config, \mbox{\hyperlink{_r_f_8h_a4d2ce6dc70b0f329dc5e249ec10c574a}{R\+F\+\_\+\+Callback}} p\+Rat\+Cb)
+\begin{DoxyCompactList}\small\item\em Setup R\+AT capture, and callback when capture event happens. Note radio needs to be on for R\+AT to operate. If radio is off, this A\+PI returns R\+F\+\_\+\+A\+L\+L\+O\+C\+\_\+\+E\+R\+R\+OR. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_r_f_8h_afdc219ddabc8427ecd552a6c78d9988f}{R\+F\+\_\+\+Stat}} \mbox{\hyperlink{_r_f_c_c26_x_x__single_mode_8c_ad55cb257d42afee6a93016a37e7f9027}{R\+F\+\_\+rat\+Hw\+Output}} (\mbox{\hyperlink{_r_f_8h_a5e8ab7fc87fb818f435d9b6226ee573f}{R\+F\+\_\+\+Handle}} h, uint16\+\_\+t config)
+\begin{DoxyCompactList}\small\item\em Setup R\+AT HW output. Note radio needs to be on for R\+AT to operate. If radio is off, this A\+PI returns R\+F\+\_\+\+A\+L\+L\+O\+C\+\_\+\+E\+R\+R\+OR. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_r_f_8h_afdc219ddabc8427ecd552a6c78d9988f}{R\+F\+\_\+\+Stat}} \mbox{\hyperlink{_r_f_c_c26_x_x__single_mode_8c_a46e80aefad925b12066a7a94d532dc25}{R\+F\+\_\+rat\+Disable\+Channel}} (\mbox{\hyperlink{_r_f_8h_a5e8ab7fc87fb818f435d9b6226ee573f}{R\+F\+\_\+\+Handle}} h, int8\+\_\+t rat\+Channel\+Num)
+\begin{DoxyCompactList}\small\item\em Disable a R\+AT channel. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_r_f_8h_afdc219ddabc8427ecd552a6c78d9988f}{R\+F\+\_\+\+Stat}} \mbox{\hyperlink{_r_f_c_c26_x_x__single_mode_8c_aa31772d56afb197fd812d24aa6f07f1b}{R\+F\+\_\+control}} (\mbox{\hyperlink{_r_f_8h_a5e8ab7fc87fb818f435d9b6226ee573f}{R\+F\+\_\+\+Handle}} h, int8\+\_\+t ctrl, void $\ast$args)
+\begin{DoxyCompactList}\small\item\em Set RF control parameters. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const \mbox{\hyperlink{struct_r_f_c_c26_x_x___h_w_attrs}{R\+F\+C\+C26\+X\+X\+\_\+\+H\+W\+Attrs}} \mbox{\hyperlink{_r_f_c_c26_x_x__single_mode_8c_a57ef100cc886361375274656373b9af6}{R\+F\+C\+C26\+X\+X\+\_\+hw\+Attrs}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{_r_f_c_c26_x_x__single_mode_8c_a996f7be338ccb40d1a2a5abc1ad61759}\label{_r_f_c_c26_x_x__single_mode_8c_a996f7be338ccb40d1a2a5abc1ad61759}} 
+\index{RFCC26XX\_singleMode.c@{RFCC26XX\_singleMode.c}!ABS@{ABS}}
+\index{ABS@{ABS}!RFCC26XX\_singleMode.c@{RFCC26XX\_singleMode.c}}
+\doxysubsubsection{\texorpdfstring{ABS}{ABS}}
+{\footnotesize\ttfamily \#define A\+BS(\begin{DoxyParamCaption}\item[{}]{x }\end{DoxyParamCaption})~(((x) $<$ 0) ? -\/(x) \+: (x))}
+
+
+
+Definition at line 77 of file R\+F\+C\+C26\+X\+X\+\_\+single\+Mode.\+c.
+
+\mbox{\Hypertarget{_r_f_c_c26_x_x__single_mode_8c_afa99ec4acc4ecb2dc3c2d05da15d0e3f}\label{_r_f_c_c26_x_x__single_mode_8c_afa99ec4acc4ecb2dc3c2d05da15d0e3f}} 
+\index{RFCC26XX\_singleMode.c@{RFCC26XX\_singleMode.c}!MAX@{MAX}}
+\index{MAX@{MAX}!RFCC26XX\_singleMode.c@{RFCC26XX\_singleMode.c}}
+\doxysubsubsection{\texorpdfstring{MAX}{MAX}}
+{\footnotesize\ttfamily \#define M\+AX(\begin{DoxyParamCaption}\item[{}]{a,  }\item[{}]{b }\end{DoxyParamCaption})~(((a) $>$ (b)) ? (a) \+: (b))}
+
+
+
+Definition at line 78 of file R\+F\+C\+C26\+X\+X\+\_\+single\+Mode.\+c.
+
+\mbox{\Hypertarget{_r_f_c_c26_x_x__single_mode_8c_a361568f8933a495cab2fe9748df014ea}\label{_r_f_c_c26_x_x__single_mode_8c_a361568f8933a495cab2fe9748df014ea}} 
+\index{RFCC26XX\_singleMode.c@{RFCC26XX\_singleMode.c}!N\_CMD\_MODMASK@{N\_CMD\_MODMASK}}
+\index{N\_CMD\_MODMASK@{N\_CMD\_MODMASK}!RFCC26XX\_singleMode.c@{RFCC26XX\_singleMode.c}}
+\doxysubsubsection{\texorpdfstring{N\_CMD\_MODMASK}{N\_CMD\_MODMASK}}
+{\footnotesize\ttfamily \#define N\+\_\+\+C\+M\+D\+\_\+\+M\+O\+D\+M\+A\+SK~0x\+F\+FF}
+
+
+
+Definition at line 74 of file R\+F\+C\+C26\+X\+X\+\_\+single\+Mode.\+c.
+
+\mbox{\Hypertarget{_r_f_c_c26_x_x__single_mode_8c_a906d62c867e901cdb4fcfffe40bd5ae1}\label{_r_f_c_c26_x_x__single_mode_8c_a906d62c867e901cdb4fcfffe40bd5ae1}} 
+\index{RFCC26XX\_singleMode.c@{RFCC26XX\_singleMode.c}!N\_CMD\_POOL@{N\_CMD\_POOL}}
+\index{N\_CMD\_POOL@{N\_CMD\_POOL}!RFCC26XX\_singleMode.c@{RFCC26XX\_singleMode.c}}
+\doxysubsubsection{\texorpdfstring{N\_CMD\_POOL}{N\_CMD\_POOL}}
+{\footnotesize\ttfamily \#define N\+\_\+\+C\+M\+D\+\_\+\+P\+O\+OL~8}
+
+
+
+Definition at line 73 of file R\+F\+C\+C26\+X\+X\+\_\+single\+Mode.\+c.
+
+\mbox{\Hypertarget{_r_f_c_c26_x_x__single_mode_8c_adea643e7a9b07b563be0292d6a2c4ead}\label{_r_f_c_c26_x_x__single_mode_8c_adea643e7a9b07b563be0292d6a2c4ead}} 
+\index{RFCC26XX\_singleMode.c@{RFCC26XX\_singleMode.c}!N\_MAX\_CLIENTS@{N\_MAX\_CLIENTS}}
+\index{N\_MAX\_CLIENTS@{N\_MAX\_CLIENTS}!RFCC26XX\_singleMode.c@{RFCC26XX\_singleMode.c}}
+\doxysubsubsection{\texorpdfstring{N\_MAX\_CLIENTS}{N\_MAX\_CLIENTS}}
+{\footnotesize\ttfamily \#define N\+\_\+\+M\+A\+X\+\_\+\+C\+L\+I\+E\+N\+TS~1}
+
+
+
+Definition at line 72 of file R\+F\+C\+C26\+X\+X\+\_\+single\+Mode.\+c.
+
+\mbox{\Hypertarget{_r_f_c_c26_x_x__single_mode_8c_aca447b4e1aee5c6e8183570d52d2a26e}\label{_r_f_c_c26_x_x__single_mode_8c_aca447b4e1aee5c6e8183570d52d2a26e}} 
+\index{RFCC26XX\_singleMode.c@{RFCC26XX\_singleMode.c}!RF\_ABORT\_CANCEL\_MULTIPLE\_CMD@{RF\_ABORT\_CANCEL\_MULTIPLE\_CMD}}
+\index{RF\_ABORT\_CANCEL\_MULTIPLE\_CMD@{RF\_ABORT\_CANCEL\_MULTIPLE\_CMD}!RFCC26XX\_singleMode.c@{RFCC26XX\_singleMode.c}}
+\doxysubsubsection{\texorpdfstring{RF\_ABORT\_CANCEL\_MULTIPLE\_CMD}{RF\_ABORT\_CANCEL\_MULTIPLE\_CMD}}
+{\footnotesize\ttfamily \#define R\+F\+\_\+\+A\+B\+O\+R\+T\+\_\+\+C\+A\+N\+C\+E\+L\+\_\+\+M\+U\+L\+T\+I\+P\+L\+E\+\_\+\+C\+MD~0x2}
+
+
+
+Definition at line 115 of file R\+F\+C\+C26\+X\+X\+\_\+single\+Mode.\+c.
+
+\mbox{\Hypertarget{_r_f_c_c26_x_x__single_mode_8c_a678cb81625c3d6952466262650cbab1e}\label{_r_f_c_c26_x_x__single_mode_8c_a678cb81625c3d6952466262650cbab1e}} 
+\index{RFCC26XX\_singleMode.c@{RFCC26XX\_singleMode.c}!RF\_ABORT\_CANCEL\_SINGLE\_CMD@{RF\_ABORT\_CANCEL\_SINGLE\_CMD}}
+\index{RF\_ABORT\_CANCEL\_SINGLE\_CMD@{RF\_ABORT\_CANCEL\_SINGLE\_CMD}!RFCC26XX\_singleMode.c@{RFCC26XX\_singleMode.c}}
+\doxysubsubsection{\texorpdfstring{RF\_ABORT\_CANCEL\_SINGLE\_CMD}{RF\_ABORT\_CANCEL\_SINGLE\_CMD}}
+{\footnotesize\ttfamily \#define R\+F\+\_\+\+A\+B\+O\+R\+T\+\_\+\+C\+A\+N\+C\+E\+L\+\_\+\+S\+I\+N\+G\+L\+E\+\_\+\+C\+MD~0x1}
+
+
+
+Definition at line 116 of file R\+F\+C\+C26\+X\+X\+\_\+single\+Mode.\+c.
+
+\mbox{\Hypertarget{_r_f_c_c26_x_x__single_mode_8c_a9c9a6db7c2b5d0079da3b7f6c12e887b}\label{_r_f_c_c26_x_x__single_mode_8c_a9c9a6db7c2b5d0079da3b7f6c12e887b}} 
+\index{RFCC26XX\_singleMode.c@{RFCC26XX\_singleMode.c}!RF\_ANALOG\_CFG\_TIME\_US@{RF\_ANALOG\_CFG\_TIME\_US}}
+\index{RF\_ANALOG\_CFG\_TIME\_US@{RF\_ANALOG\_CFG\_TIME\_US}!RFCC26XX\_singleMode.c@{RFCC26XX\_singleMode.c}}
+\doxysubsubsection{\texorpdfstring{RF\_ANALOG\_CFG\_TIME\_US}{RF\_ANALOG\_CFG\_TIME\_US}}
+{\footnotesize\ttfamily \#define R\+F\+\_\+\+A\+N\+A\+L\+O\+G\+\_\+\+C\+F\+G\+\_\+\+T\+I\+M\+E\+\_\+\+US~96}
+
+
+
+Definition at line 122 of file R\+F\+C\+C26\+X\+X\+\_\+single\+Mode.\+c.
+
+\mbox{\Hypertarget{_r_f_c_c26_x_x__single_mode_8c_a28552a08f05cdca9a60053453132192d}\label{_r_f_c_c26_x_x__single_mode_8c_a28552a08f05cdca9a60053453132192d}} 
+\index{RFCC26XX\_singleMode.c@{RFCC26XX\_singleMode.c}!RF\_CMD0@{RF\_CMD0}}
+\index{RF\_CMD0@{RF\_CMD0}!RFCC26XX\_singleMode.c@{RFCC26XX\_singleMode.c}}
+\doxysubsubsection{\texorpdfstring{RF\_CMD0}{RF\_CMD0}}
+{\footnotesize\ttfamily \#define R\+F\+\_\+\+C\+M\+D0~0x0607}
+
+
+
+Definition at line 81 of file R\+F\+C\+C26\+X\+X\+\_\+single\+Mode.\+c.
+
+\mbox{\Hypertarget{_r_f_c_c26_x_x__single_mode_8c_a1547ecdf32c62f3e1e497048a16a62cc}\label{_r_f_c_c26_x_x__single_mode_8c_a1547ecdf32c62f3e1e497048a16a62cc}} 
+\index{RFCC26XX\_singleMode.c@{RFCC26XX\_singleMode.c}!RF\_CMD\_ABORTED\_FLAG@{RF\_CMD\_ABORTED\_FLAG}}
+\index{RF\_CMD\_ABORTED\_FLAG@{RF\_CMD\_ABORTED\_FLAG}!RFCC26XX\_singleMode.c@{RFCC26XX\_singleMode.c}}
+\doxysubsubsection{\texorpdfstring{RF\_CMD\_ABORTED\_FLAG}{RF\_CMD\_ABORTED\_FLAG}}
+{\footnotesize\ttfamily \#define R\+F\+\_\+\+C\+M\+D\+\_\+\+A\+B\+O\+R\+T\+E\+D\+\_\+\+F\+L\+AG~(1 $<$$<$ 0)}
+
+
+
+Definition at line 83 of file R\+F\+C\+C26\+X\+X\+\_\+single\+Mode.\+c.
+
+\mbox{\Hypertarget{_r_f_c_c26_x_x__single_mode_8c_a8bcc1428d8a982a358da78d0994febd5}\label{_r_f_c_c26_x_x__single_mode_8c_a8bcc1428d8a982a358da78d0994febd5}} 
+\index{RFCC26XX\_singleMode.c@{RFCC26XX\_singleMode.c}!RF\_CMD\_ALLOC\_FLAG@{RF\_CMD\_ALLOC\_FLAG}}
+\index{RF\_CMD\_ALLOC\_FLAG@{RF\_CMD\_ALLOC\_FLAG}!RFCC26XX\_singleMode.c@{RFCC26XX\_singleMode.c}}
+\doxysubsubsection{\texorpdfstring{RF\_CMD\_ALLOC\_FLAG}{RF\_CMD\_ALLOC\_FLAG}}
+{\footnotesize\ttfamily \#define R\+F\+\_\+\+C\+M\+D\+\_\+\+A\+L\+L\+O\+C\+\_\+\+F\+L\+AG~(1 $<$$<$ 7)}
+
+
+
+Definition at line 87 of file R\+F\+C\+C26\+X\+X\+\_\+single\+Mode.\+c.
+
+\mbox{\Hypertarget{_r_f_c_c26_x_x__single_mode_8c_a9aafe252d15be0d9d86133f38239e66c}\label{_r_f_c_c26_x_x__single_mode_8c_a9aafe252d15be0d9d86133f38239e66c}} 
+\index{RFCC26XX\_singleMode.c@{RFCC26XX\_singleMode.c}!RF\_CMD\_CANCEL\_MASK@{RF\_CMD\_CANCEL\_MASK}}
+\index{RF\_CMD\_CANCEL\_MASK@{RF\_CMD\_CANCEL\_MASK}!RFCC26XX\_singleMode.c@{RFCC26XX\_singleMode.c}}
+\doxysubsubsection{\texorpdfstring{RF\_CMD\_CANCEL\_MASK}{RF\_CMD\_CANCEL\_MASK}}
+{\footnotesize\ttfamily \#define R\+F\+\_\+\+C\+M\+D\+\_\+\+C\+A\+N\+C\+E\+L\+\_\+\+M\+A\+SK~(\mbox{\hyperlink{_r_f_c_c26_x_x__single_mode_8c_a1547ecdf32c62f3e1e497048a16a62cc}{R\+F\+\_\+\+C\+M\+D\+\_\+\+A\+B\+O\+R\+T\+E\+D\+\_\+\+F\+L\+AG}} $\vert$ \mbox{\hyperlink{_r_f_c_c26_x_x__single_mode_8c_a1faa211ec43118fb93e0caa8ffda2d94}{R\+F\+\_\+\+C\+M\+D\+\_\+\+S\+T\+O\+P\+P\+E\+D\+\_\+\+F\+L\+AG}} $\vert$ \mbox{\hyperlink{_r_f_c_c26_x_x__single_mode_8c_a95f4d1b477771e7ea8fb9b58235e97a7}{R\+F\+\_\+\+C\+M\+D\+\_\+\+C\+A\+N\+C\+E\+L\+L\+E\+D\+\_\+\+F\+L\+AG}})}
+
+
+
+Definition at line 86 of file R\+F\+C\+C26\+X\+X\+\_\+single\+Mode.\+c.
+
+\mbox{\Hypertarget{_r_f_c_c26_x_x__single_mode_8c_a95f4d1b477771e7ea8fb9b58235e97a7}\label{_r_f_c_c26_x_x__single_mode_8c_a95f4d1b477771e7ea8fb9b58235e97a7}} 
+\index{RFCC26XX\_singleMode.c@{RFCC26XX\_singleMode.c}!RF\_CMD\_CANCELLED\_FLAG@{RF\_CMD\_CANCELLED\_FLAG}}
+\index{RF\_CMD\_CANCELLED\_FLAG@{RF\_CMD\_CANCELLED\_FLAG}!RFCC26XX\_singleMode.c@{RFCC26XX\_singleMode.c}}
+\doxysubsubsection{\texorpdfstring{RF\_CMD\_CANCELLED\_FLAG}{RF\_CMD\_CANCELLED\_FLAG}}
+{\footnotesize\ttfamily \#define R\+F\+\_\+\+C\+M\+D\+\_\+\+C\+A\+N\+C\+E\+L\+L\+E\+D\+\_\+\+F\+L\+AG~(1 $<$$<$ 2)}
+
+
+
+Definition at line 85 of file R\+F\+C\+C26\+X\+X\+\_\+single\+Mode.\+c.
+
+\mbox{\Hypertarget{_r_f_c_c26_x_x__single_mode_8c_a1faa211ec43118fb93e0caa8ffda2d94}\label{_r_f_c_c26_x_x__single_mode_8c_a1faa211ec43118fb93e0caa8ffda2d94}} 
+\index{RFCC26XX\_singleMode.c@{RFCC26XX\_singleMode.c}!RF\_CMD\_STOPPED\_FLAG@{RF\_CMD\_STOPPED\_FLAG}}
+\index{RF\_CMD\_STOPPED\_FLAG@{RF\_CMD\_STOPPED\_FLAG}!RFCC26XX\_singleMode.c@{RFCC26XX\_singleMode.c}}
+\doxysubsubsection{\texorpdfstring{RF\_CMD\_STOPPED\_FLAG}{RF\_CMD\_STOPPED\_FLAG}}
+{\footnotesize\ttfamily \#define R\+F\+\_\+\+C\+M\+D\+\_\+\+S\+T\+O\+P\+P\+E\+D\+\_\+\+F\+L\+AG~(1 $<$$<$ 1)}
+
+
+
+Definition at line 84 of file R\+F\+C\+C26\+X\+X\+\_\+single\+Mode.\+c.
+
+\mbox{\Hypertarget{_r_f_c_c26_x_x__single_mode_8c_a3829f5843f8a49c12c0e949f20026b32}\label{_r_f_c_c26_x_x__single_mode_8c_a3829f5843f8a49c12c0e949f20026b32}} 
+\index{RFCC26XX\_singleMode.c@{RFCC26XX\_singleMode.c}!RF\_CMDSTA\_REG\_VAL\_MASK@{RF\_CMDSTA\_REG\_VAL\_MASK}}
+\index{RF\_CMDSTA\_REG\_VAL\_MASK@{RF\_CMDSTA\_REG\_VAL\_MASK}!RFCC26XX\_singleMode.c@{RFCC26XX\_singleMode.c}}
+\doxysubsubsection{\texorpdfstring{RF\_CMDSTA\_REG\_VAL\_MASK}{RF\_CMDSTA\_REG\_VAL\_MASK}}
+{\footnotesize\ttfamily \#define R\+F\+\_\+\+C\+M\+D\+S\+T\+A\+\_\+\+R\+E\+G\+\_\+\+V\+A\+L\+\_\+\+M\+A\+SK~0x\+FF}
+
+
+
+Definition at line 117 of file R\+F\+C\+C26\+X\+X\+\_\+single\+Mode.\+c.
+
+\mbox{\Hypertarget{_r_f_c_c26_x_x__single_mode_8c_a46eff849b77ab2b493020735d522713d}\label{_r_f_c_c26_x_x__single_mode_8c_a46eff849b77ab2b493020735d522713d}} 
+\index{RFCC26XX\_singleMode.c@{RFCC26XX\_singleMode.c}!RF\_DEFAULT\_AVAILRATCH\_VAL@{RF\_DEFAULT\_AVAILRATCH\_VAL}}
+\index{RF\_DEFAULT\_AVAILRATCH\_VAL@{RF\_DEFAULT\_AVAILRATCH\_VAL}!RFCC26XX\_singleMode.c@{RFCC26XX\_singleMode.c}}
+\doxysubsubsection{\texorpdfstring{RF\_DEFAULT\_AVAILRATCH\_VAL}{RF\_DEFAULT\_AVAILRATCH\_VAL}}
+{\footnotesize\ttfamily \#define R\+F\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+A\+V\+A\+I\+L\+R\+A\+T\+C\+H\+\_\+\+V\+AL~0x\+F\+F\+FF}
+
+
+
+Definition at line 114 of file R\+F\+C\+C26\+X\+X\+\_\+single\+Mode.\+c.
+
+\mbox{\Hypertarget{_r_f_c_c26_x_x__single_mode_8c_a0c9fc358d022065ff55f84a132b976f6}\label{_r_f_c_c26_x_x__single_mode_8c_a0c9fc358d022065ff55f84a132b976f6}} 
+\index{RFCC26XX\_singleMode.c@{RFCC26XX\_singleMode.c}!RF\_DEFAULT\_MIN\_POWER\_UP\_TIME@{RF\_DEFAULT\_MIN\_POWER\_UP\_TIME}}
+\index{RF\_DEFAULT\_MIN\_POWER\_UP\_TIME@{RF\_DEFAULT\_MIN\_POWER\_UP\_TIME}!RFCC26XX\_singleMode.c@{RFCC26XX\_singleMode.c}}
+\doxysubsubsection{\texorpdfstring{RF\_DEFAULT\_MIN\_POWER\_UP\_TIME}{RF\_DEFAULT\_MIN\_POWER\_UP\_TIME}}
+{\footnotesize\ttfamily \#define R\+F\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+M\+I\+N\+\_\+\+P\+O\+W\+E\+R\+\_\+\+U\+P\+\_\+\+T\+I\+ME~750}
+
+
+
+Definition at line 96 of file R\+F\+C\+C26\+X\+X\+\_\+single\+Mode.\+c.
+
+\mbox{\Hypertarget{_r_f_c_c26_x_x__single_mode_8c_ab8f98e23f2e115bfad87997b02be05f7}\label{_r_f_c_c26_x_x__single_mode_8c_ab8f98e23f2e115bfad87997b02be05f7}} 
+\index{RFCC26XX\_singleMode.c@{RFCC26XX\_singleMode.c}!RF\_DEFAULT\_POWER\_DOWN\_TIME@{RF\_DEFAULT\_POWER\_DOWN\_TIME}}
+\index{RF\_DEFAULT\_POWER\_DOWN\_TIME@{RF\_DEFAULT\_POWER\_DOWN\_TIME}!RFCC26XX\_singleMode.c@{RFCC26XX\_singleMode.c}}
+\doxysubsubsection{\texorpdfstring{RF\_DEFAULT\_POWER\_DOWN\_TIME}{RF\_DEFAULT\_POWER\_DOWN\_TIME}}
+{\footnotesize\ttfamily \#define R\+F\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+P\+O\+W\+E\+R\+\_\+\+D\+O\+W\+N\+\_\+\+T\+I\+ME~1000}
+
+
+
+Definition at line 95 of file R\+F\+C\+C26\+X\+X\+\_\+single\+Mode.\+c.
+
+\mbox{\Hypertarget{_r_f_c_c26_x_x__single_mode_8c_ad40922613244e43e89ce514c1b273a52}\label{_r_f_c_c26_x_x__single_mode_8c_ad40922613244e43e89ce514c1b273a52}} 
+\index{RFCC26XX\_singleMode.c@{RFCC26XX\_singleMode.c}!RF\_DEFAULT\_POWER\_UP\_MARGIN@{RF\_DEFAULT\_POWER\_UP\_MARGIN}}
+\index{RF\_DEFAULT\_POWER\_UP\_MARGIN@{RF\_DEFAULT\_POWER\_UP\_MARGIN}!RFCC26XX\_singleMode.c@{RFCC26XX\_singleMode.c}}
+\doxysubsubsection{\texorpdfstring{RF\_DEFAULT\_POWER\_UP\_MARGIN}{RF\_DEFAULT\_POWER\_UP\_MARGIN}}
+{\footnotesize\ttfamily \#define R\+F\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+P\+O\+W\+E\+R\+\_\+\+U\+P\+\_\+\+M\+A\+R\+G\+IN~(250+32)}
+
+
+
+Definition at line 97 of file R\+F\+C\+C26\+X\+X\+\_\+single\+Mode.\+c.
+
+\mbox{\Hypertarget{_r_f_c_c26_x_x__single_mode_8c_a701bc9e3e05002371dc1f4410e115242}\label{_r_f_c_c26_x_x__single_mode_8c_a701bc9e3e05002371dc1f4410e115242}} 
+\index{RFCC26XX\_singleMode.c@{RFCC26XX\_singleMode.c}!RF\_DEFAULT\_POWER\_UP\_TIME@{RF\_DEFAULT\_POWER\_UP\_TIME}}
+\index{RF\_DEFAULT\_POWER\_UP\_TIME@{RF\_DEFAULT\_POWER\_UP\_TIME}!RFCC26XX\_singleMode.c@{RFCC26XX\_singleMode.c}}
+\doxysubsubsection{\texorpdfstring{RF\_DEFAULT\_POWER\_UP\_TIME}{RF\_DEFAULT\_POWER\_UP\_TIME}}
+{\footnotesize\ttfamily \#define R\+F\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+P\+O\+W\+E\+R\+\_\+\+U\+P\+\_\+\+T\+I\+ME~2500}
+
+
+
+Definition at line 94 of file R\+F\+C\+C26\+X\+X\+\_\+single\+Mode.\+c.
+
+\mbox{\Hypertarget{_r_f_c_c26_x_x__single_mode_8c_a594ae9fdf985cdc0b63ce429855a81c2}\label{_r_f_c_c26_x_x__single_mode_8c_a594ae9fdf985cdc0b63ce429855a81c2}} 
+\index{RFCC26XX\_singleMode.c@{RFCC26XX\_singleMode.c}!RF\_DISPATCH\_MAX\_TIME\_US@{RF\_DISPATCH\_MAX\_TIME\_US}}
+\index{RF\_DISPATCH\_MAX\_TIME\_US@{RF\_DISPATCH\_MAX\_TIME\_US}!RFCC26XX\_singleMode.c@{RFCC26XX\_singleMode.c}}
+\doxysubsubsection{\texorpdfstring{RF\_DISPATCH\_MAX\_TIME\_US}{RF\_DISPATCH\_MAX\_TIME\_US}}
+{\footnotesize\ttfamily \#define R\+F\+\_\+\+D\+I\+S\+P\+A\+T\+C\+H\+\_\+\+M\+A\+X\+\_\+\+T\+I\+M\+E\+\_\+\+US~(U\+I\+N\+T32\+\_\+\+M\+AX / \mbox{\hyperlink{_r_f_c_c26_x_x__single_mode_8c_a51778e72f78a9c6ce627c7e18aaa698c}{R\+F\+\_\+\+N\+U\+M\+\_\+\+R\+A\+T\+\_\+\+T\+I\+C\+K\+S\+\_\+\+I\+N\+\_\+1\+\_\+\+US}} $\ast$ 3 / 4)}
+
+
+
+Definition at line 111 of file R\+F\+C\+C26\+X\+X\+\_\+single\+Mode.\+c.
+
+\mbox{\Hypertarget{_r_f_c_c26_x_x__single_mode_8c_a1a2c210ab604fb28b41ac1ffb74b1d1f}\label{_r_f_c_c26_x_x__single_mode_8c_a1a2c210ab604fb28b41ac1ffb74b1d1f}} 
+\index{RFCC26XX\_singleMode.c@{RFCC26XX\_singleMode.c}!RF\_HW\_INT\_RAT\_CH\_MASK@{RF\_HW\_INT\_RAT\_CH\_MASK}}
+\index{RF\_HW\_INT\_RAT\_CH\_MASK@{RF\_HW\_INT\_RAT\_CH\_MASK}!RFCC26XX\_singleMode.c@{RFCC26XX\_singleMode.c}}
+\doxysubsubsection{\texorpdfstring{RF\_HW\_INT\_RAT\_CH\_MASK}{RF\_HW\_INT\_RAT\_CH\_MASK}}
+{\footnotesize\ttfamily \#define R\+F\+\_\+\+H\+W\+\_\+\+I\+N\+T\+\_\+\+R\+A\+T\+\_\+\+C\+H\+\_\+\+M\+A\+SK~(R\+F\+C\+\_\+\+D\+B\+E\+L\+L\+\_\+\+R\+F\+H\+W\+I\+F\+G\+\_\+\+R\+A\+T\+C\+H7 $\vert$ R\+F\+C\+\_\+\+D\+B\+E\+L\+L\+\_\+\+R\+F\+H\+W\+I\+F\+G\+\_\+\+R\+A\+T\+C\+H6 $\vert$ R\+F\+C\+\_\+\+D\+B\+E\+L\+L\+\_\+\+R\+F\+H\+W\+I\+F\+G\+\_\+\+R\+A\+T\+C\+H5)}
+
+
+
+Definition at line 91 of file R\+F\+C\+C26\+X\+X\+\_\+single\+Mode.\+c.
+
+\mbox{\Hypertarget{_r_f_c_c26_x_x__single_mode_8c_a5c70297604e599c0a358b8af7fb4310d}\label{_r_f_c_c26_x_x__single_mode_8c_a5c70297604e599c0a358b8af7fb4310d}} 
+\index{RFCC26XX\_singleMode.c@{RFCC26XX\_singleMode.c}!RF\_INTERNAL\_CPE\_IFG\_MASK\_32\_BIT@{RF\_INTERNAL\_CPE\_IFG\_MASK\_32\_BIT}}
+\index{RF\_INTERNAL\_CPE\_IFG\_MASK\_32\_BIT@{RF\_INTERNAL\_CPE\_IFG\_MASK\_32\_BIT}!RFCC26XX\_singleMode.c@{RFCC26XX\_singleMode.c}}
+\doxysubsubsection{\texorpdfstring{RF\_INTERNAL\_CPE\_IFG\_MASK\_32\_BIT}{RF\_INTERNAL\_CPE\_IFG\_MASK\_32\_BIT}}
+{\footnotesize\ttfamily \#define R\+F\+\_\+\+I\+N\+T\+E\+R\+N\+A\+L\+\_\+\+C\+P\+E\+\_\+\+I\+F\+G\+\_\+\+M\+A\+S\+K\+\_\+32\+\_\+\+B\+IT~0x\+F\+F\+F\+F\+F\+F\+FF}
+
+
+
+Definition at line 112 of file R\+F\+C\+C26\+X\+X\+\_\+single\+Mode.\+c.
+
+\mbox{\Hypertarget{_r_f_c_c26_x_x__single_mode_8c_a3f9cee3a9064c7a24a2a522b649e629d}\label{_r_f_c_c26_x_x__single_mode_8c_a3f9cee3a9064c7a24a2a522b649e629d}} 
+\index{RFCC26XX\_singleMode.c@{RFCC26XX\_singleMode.c}!RF\_INTERNAL\_HW\_IFG\_MASK\_32\_BIT@{RF\_INTERNAL\_HW\_IFG\_MASK\_32\_BIT}}
+\index{RF\_INTERNAL\_HW\_IFG\_MASK\_32\_BIT@{RF\_INTERNAL\_HW\_IFG\_MASK\_32\_BIT}!RFCC26XX\_singleMode.c@{RFCC26XX\_singleMode.c}}
+\doxysubsubsection{\texorpdfstring{RF\_INTERNAL\_HW\_IFG\_MASK\_32\_BIT}{RF\_INTERNAL\_HW\_IFG\_MASK\_32\_BIT}}
+{\footnotesize\ttfamily \#define R\+F\+\_\+\+I\+N\+T\+E\+R\+N\+A\+L\+\_\+\+H\+W\+\_\+\+I\+F\+G\+\_\+\+M\+A\+S\+K\+\_\+32\+\_\+\+B\+IT~R\+F\+C\+\_\+\+D\+B\+E\+L\+L\+\_\+\+R\+F\+H\+W\+I\+F\+G\+\_\+\+M\+D\+M\+S\+O\+FT}
+
+
+
+Definition at line 93 of file R\+F\+C\+C26\+X\+X\+\_\+single\+Mode.\+c.
+
+\mbox{\Hypertarget{_r_f_c_c26_x_x__single_mode_8c_ab9647e43237842b3f6570f0fb73df5bc}\label{_r_f_c_c26_x_x__single_mode_8c_ab9647e43237842b3f6570f0fb73df5bc}} 
+\index{RFCC26XX\_singleMode.c@{RFCC26XX\_singleMode.c}!RF\_INTERNAL\_IFG\_MASK@{RF\_INTERNAL\_IFG\_MASK}}
+\index{RF\_INTERNAL\_IFG\_MASK@{RF\_INTERNAL\_IFG\_MASK}!RFCC26XX\_singleMode.c@{RFCC26XX\_singleMode.c}}
+\doxysubsubsection{\texorpdfstring{RF\_INTERNAL\_IFG\_MASK}{RF\_INTERNAL\_IFG\_MASK}}
+{\footnotesize\ttfamily \#define R\+F\+\_\+\+I\+N\+T\+E\+R\+N\+A\+L\+\_\+\+I\+F\+G\+\_\+\+M\+A\+SK~0x\+F\+F\+F\+F\+F\+F\+D\+F6000100E}
+
+
+
+Definition at line 82 of file R\+F\+C\+C26\+X\+X\+\_\+single\+Mode.\+c.
+
+\mbox{\Hypertarget{_r_f_c_c26_x_x__single_mode_8c_a9aba26bde1408fae09bf454caf619f8b}\label{_r_f_c_c26_x_x__single_mode_8c_a9aba26bde1408fae09bf454caf619f8b}} 
+\index{RFCC26XX\_singleMode.c@{RFCC26XX\_singleMode.c}!RF\_MAX\_CHAIN\_CMD\_LEN@{RF\_MAX\_CHAIN\_CMD\_LEN}}
+\index{RF\_MAX\_CHAIN\_CMD\_LEN@{RF\_MAX\_CHAIN\_CMD\_LEN}!RFCC26XX\_singleMode.c@{RFCC26XX\_singleMode.c}}
+\doxysubsubsection{\texorpdfstring{RF\_MAX\_CHAIN\_CMD\_LEN}{RF\_MAX\_CHAIN\_CMD\_LEN}}
+{\footnotesize\ttfamily \#define R\+F\+\_\+\+M\+A\+X\+\_\+\+C\+H\+A\+I\+N\+\_\+\+C\+M\+D\+\_\+\+L\+EN~32}
+
+
+
+Definition at line 98 of file R\+F\+C\+C26\+X\+X\+\_\+single\+Mode.\+c.
+
+\mbox{\Hypertarget{_r_f_c_c26_x_x__single_mode_8c_a0598f05249a5701a981c2cc2931995d6}\label{_r_f_c_c26_x_x__single_mode_8c_a0598f05249a5701a981c2cc2931995d6}} 
+\index{RFCC26XX\_singleMode.c@{RFCC26XX\_singleMode.c}!RF\_MAX\_RAT\_CH\_CNT@{RF\_MAX\_RAT\_CH\_CNT}}
+\index{RF\_MAX\_RAT\_CH\_CNT@{RF\_MAX\_RAT\_CH\_CNT}!RFCC26XX\_singleMode.c@{RFCC26XX\_singleMode.c}}
+\doxysubsubsection{\texorpdfstring{RF\_MAX\_RAT\_CH\_CNT}{RF\_MAX\_RAT\_CH\_CNT}}
+{\footnotesize\ttfamily \#define R\+F\+\_\+\+M\+A\+X\+\_\+\+R\+A\+T\+\_\+\+C\+H\+\_\+\+C\+NT~3}
+
+
+
+Definition at line 92 of file R\+F\+C\+C26\+X\+X\+\_\+single\+Mode.\+c.
+
+\mbox{\Hypertarget{_r_f_c_c26_x_x__single_mode_8c_a51778e72f78a9c6ce627c7e18aaa698c}\label{_r_f_c_c26_x_x__single_mode_8c_a51778e72f78a9c6ce627c7e18aaa698c}} 
+\index{RFCC26XX\_singleMode.c@{RFCC26XX\_singleMode.c}!RF\_NUM\_RAT\_TICKS\_IN\_1\_US@{RF\_NUM\_RAT\_TICKS\_IN\_1\_US}}
+\index{RF\_NUM\_RAT\_TICKS\_IN\_1\_US@{RF\_NUM\_RAT\_TICKS\_IN\_1\_US}!RFCC26XX\_singleMode.c@{RFCC26XX\_singleMode.c}}
+\doxysubsubsection{\texorpdfstring{RF\_NUM\_RAT\_TICKS\_IN\_1\_US}{RF\_NUM\_RAT\_TICKS\_IN\_1\_US}}
+{\footnotesize\ttfamily \#define R\+F\+\_\+\+N\+U\+M\+\_\+\+R\+A\+T\+\_\+\+T\+I\+C\+K\+S\+\_\+\+I\+N\+\_\+1\+\_\+\+US~4}
+
+
+
+Definition at line 110 of file R\+F\+C\+C26\+X\+X\+\_\+single\+Mode.\+c.
+
+\mbox{\Hypertarget{_r_f_c_c26_x_x__single_mode_8c_afe95dafbc1485cbbe127206407071d68}\label{_r_f_c_c26_x_x__single_mode_8c_afe95dafbc1485cbbe127206407071d68}} 
+\index{RFCC26XX\_singleMode.c@{RFCC26XX\_singleMode.c}!RF\_PHY\_BOOTUP\_MODE@{RF\_PHY\_BOOTUP\_MODE}}
+\index{RF\_PHY\_BOOTUP\_MODE@{RF\_PHY\_BOOTUP\_MODE}!RFCC26XX\_singleMode.c@{RFCC26XX\_singleMode.c}}
+\doxysubsubsection{\texorpdfstring{RF\_PHY\_BOOTUP\_MODE}{RF\_PHY\_BOOTUP\_MODE}}
+{\footnotesize\ttfamily \#define R\+F\+\_\+\+P\+H\+Y\+\_\+\+B\+O\+O\+T\+U\+P\+\_\+\+M\+O\+DE~0}
+
+
+
+Definition at line 121 of file R\+F\+C\+C26\+X\+X\+\_\+single\+Mode.\+c.
+
+\mbox{\Hypertarget{_r_f_c_c26_x_x__single_mode_8c_a08900356fbe451903209e7f4ab28644f}\label{_r_f_c_c26_x_x__single_mode_8c_a08900356fbe451903209e7f4ab28644f}} 
+\index{RFCC26XX\_singleMode.c@{RFCC26XX\_singleMode.c}!RF\_PHY\_SWITCHING\_MODE@{RF\_PHY\_SWITCHING\_MODE}}
+\index{RF\_PHY\_SWITCHING\_MODE@{RF\_PHY\_SWITCHING\_MODE}!RFCC26XX\_singleMode.c@{RFCC26XX\_singleMode.c}}
+\doxysubsubsection{\texorpdfstring{RF\_PHY\_SWITCHING\_MODE}{RF\_PHY\_SWITCHING\_MODE}}
+{\footnotesize\ttfamily \#define R\+F\+\_\+\+P\+H\+Y\+\_\+\+S\+W\+I\+T\+C\+H\+I\+N\+G\+\_\+\+M\+O\+DE~1}
+
+
+
+Definition at line 120 of file R\+F\+C\+C26\+X\+X\+\_\+single\+Mode.\+c.
+
+\mbox{\Hypertarget{_r_f_c_c26_x_x__single_mode_8c_ac3211e52b6d2bc485a39e022c9df2a55}\label{_r_f_c_c26_x_x__single_mode_8c_ac3211e52b6d2bc485a39e022c9df2a55}} 
+\index{RFCC26XX\_singleMode.c@{RFCC26XX\_singleMode.c}!RF\_RAT\_CH\_5\_INDEX@{RF\_RAT\_CH\_5\_INDEX}}
+\index{RF\_RAT\_CH\_5\_INDEX@{RF\_RAT\_CH\_5\_INDEX}!RFCC26XX\_singleMode.c@{RFCC26XX\_singleMode.c}}
+\doxysubsubsection{\texorpdfstring{RF\_RAT\_CH\_5\_INDEX}{RF\_RAT\_CH\_5\_INDEX}}
+{\footnotesize\ttfamily \#define R\+F\+\_\+\+R\+A\+T\+\_\+\+C\+H\+\_\+5\+\_\+\+I\+N\+D\+EX~0x0}
+
+
+
+Definition at line 99 of file R\+F\+C\+C26\+X\+X\+\_\+single\+Mode.\+c.
+
+\mbox{\Hypertarget{_r_f_c_c26_x_x__single_mode_8c_af214777e611275ed26ae56dd034bcbce}\label{_r_f_c_c26_x_x__single_mode_8c_af214777e611275ed26ae56dd034bcbce}} 
+\index{RFCC26XX\_singleMode.c@{RFCC26XX\_singleMode.c}!RF\_RAT\_CH\_6\_INDEX@{RF\_RAT\_CH\_6\_INDEX}}
+\index{RF\_RAT\_CH\_6\_INDEX@{RF\_RAT\_CH\_6\_INDEX}!RFCC26XX\_singleMode.c@{RFCC26XX\_singleMode.c}}
+\doxysubsubsection{\texorpdfstring{RF\_RAT\_CH\_6\_INDEX}{RF\_RAT\_CH\_6\_INDEX}}
+{\footnotesize\ttfamily \#define R\+F\+\_\+\+R\+A\+T\+\_\+\+C\+H\+\_\+6\+\_\+\+I\+N\+D\+EX~0x1}
+
+
+
+Definition at line 100 of file R\+F\+C\+C26\+X\+X\+\_\+single\+Mode.\+c.
+
+\mbox{\Hypertarget{_r_f_c_c26_x_x__single_mode_8c_a1183426022f9cabf340508a7bfb31057}\label{_r_f_c_c26_x_x__single_mode_8c_a1183426022f9cabf340508a7bfb31057}} 
+\index{RFCC26XX\_singleMode.c@{RFCC26XX\_singleMode.c}!RF\_RAT\_CH\_7\_INDEX@{RF\_RAT\_CH\_7\_INDEX}}
+\index{RF\_RAT\_CH\_7\_INDEX@{RF\_RAT\_CH\_7\_INDEX}!RFCC26XX\_singleMode.c@{RFCC26XX\_singleMode.c}}
+\doxysubsubsection{\texorpdfstring{RF\_RAT\_CH\_7\_INDEX}{RF\_RAT\_CH\_7\_INDEX}}
+{\footnotesize\ttfamily \#define R\+F\+\_\+\+R\+A\+T\+\_\+\+C\+H\+\_\+7\+\_\+\+I\+N\+D\+EX~0x2}
+
+
+
+Definition at line 101 of file R\+F\+C\+C26\+X\+X\+\_\+single\+Mode.\+c.
+
+\mbox{\Hypertarget{_r_f_c_c26_x_x__single_mode_8c_a8cc4df12abd18293a85d8f6d6423abb0}\label{_r_f_c_c26_x_x__single_mode_8c_a8cc4df12abd18293a85d8f6d6423abb0}} 
+\index{RFCC26XX\_singleMode.c@{RFCC26XX\_singleMode.c}!RF\_RAT\_CH\_OFFSET@{RF\_RAT\_CH\_OFFSET}}
+\index{RF\_RAT\_CH\_OFFSET@{RF\_RAT\_CH\_OFFSET}!RFCC26XX\_singleMode.c@{RFCC26XX\_singleMode.c}}
+\doxysubsubsection{\texorpdfstring{RF\_RAT\_CH\_OFFSET}{RF\_RAT\_CH\_OFFSET}}
+{\footnotesize\ttfamily \#define R\+F\+\_\+\+R\+A\+T\+\_\+\+C\+H\+\_\+\+O\+F\+F\+S\+ET~5}
+
+
+
+Definition at line 102 of file R\+F\+C\+C26\+X\+X\+\_\+single\+Mode.\+c.
+
+\mbox{\Hypertarget{_r_f_c_c26_x_x__single_mode_8c_a5c3e055b844dcdeb34fea0177207b15b}\label{_r_f_c_c26_x_x__single_mode_8c_a5c3e055b844dcdeb34fea0177207b15b}} 
+\index{RFCC26XX\_singleMode.c@{RFCC26XX\_singleMode.c}!RF\_RAT\_CPT\_CONFIG\_RATCH\_MASK@{RF\_RAT\_CPT\_CONFIG\_RATCH\_MASK}}
+\index{RF\_RAT\_CPT\_CONFIG\_RATCH\_MASK@{RF\_RAT\_CPT\_CONFIG\_RATCH\_MASK}!RFCC26XX\_singleMode.c@{RFCC26XX\_singleMode.c}}
+\doxysubsubsection{\texorpdfstring{RF\_RAT\_CPT\_CONFIG\_RATCH\_MASK}{RF\_RAT\_CPT\_CONFIG\_RATCH\_MASK}}
+{\footnotesize\ttfamily \#define R\+F\+\_\+\+R\+A\+T\+\_\+\+C\+P\+T\+\_\+\+C\+O\+N\+F\+I\+G\+\_\+\+R\+A\+T\+C\+H\+\_\+\+M\+A\+SK~0x0\+F00}
+
+
+
+Definition at line 118 of file R\+F\+C\+C26\+X\+X\+\_\+single\+Mode.\+c.
+
+\mbox{\Hypertarget{_r_f_c_c26_x_x__single_mode_8c_ae21b20a5571edc62ed87fdc114718b34}\label{_r_f_c_c26_x_x__single_mode_8c_ae21b20a5571edc62ed87fdc114718b34}} 
+\index{RFCC26XX\_singleMode.c@{RFCC26XX\_singleMode.c}!RF\_RAT\_CPT\_CONFIG\_REP\_MASK@{RF\_RAT\_CPT\_CONFIG\_REP\_MASK}}
+\index{RF\_RAT\_CPT\_CONFIG\_REP\_MASK@{RF\_RAT\_CPT\_CONFIG\_REP\_MASK}!RFCC26XX\_singleMode.c@{RFCC26XX\_singleMode.c}}
+\doxysubsubsection{\texorpdfstring{RF\_RAT\_CPT\_CONFIG\_REP\_MASK}{RF\_RAT\_CPT\_CONFIG\_REP\_MASK}}
+{\footnotesize\ttfamily \#define R\+F\+\_\+\+R\+A\+T\+\_\+\+C\+P\+T\+\_\+\+C\+O\+N\+F\+I\+G\+\_\+\+R\+E\+P\+\_\+\+M\+A\+SK~0x1000}
+
+
+
+Definition at line 119 of file R\+F\+C\+C26\+X\+X\+\_\+single\+Mode.\+c.
+
+\mbox{\Hypertarget{_r_f_c_c26_x_x__single_mode_8c_a3d799130cc5fc43c256238088be55c81}\label{_r_f_c_c26_x_x__single_mode_8c_a3d799130cc5fc43c256238088be55c81}} 
+\index{RFCC26XX\_singleMode.c@{RFCC26XX\_singleMode.c}!RF\_RAT\_ERR\_CB\_EVENT\_FLAG@{RF\_RAT\_ERR\_CB\_EVENT\_FLAG}}
+\index{RF\_RAT\_ERR\_CB\_EVENT\_FLAG@{RF\_RAT\_ERR\_CB\_EVENT\_FLAG}!RFCC26XX\_singleMode.c@{RFCC26XX\_singleMode.c}}
+\doxysubsubsection{\texorpdfstring{RF\_RAT\_ERR\_CB\_EVENT\_FLAG}{RF\_RAT\_ERR\_CB\_EVENT\_FLAG}}
+{\footnotesize\ttfamily \#define R\+F\+\_\+\+R\+A\+T\+\_\+\+E\+R\+R\+\_\+\+C\+B\+\_\+\+E\+V\+E\+N\+T\+\_\+\+F\+L\+AG~(1 $<$$<$ 1)}
+
+
+
+Definition at line 89 of file R\+F\+C\+C26\+X\+X\+\_\+single\+Mode.\+c.
+
+\mbox{\Hypertarget{_r_f_c_c26_x_x__single_mode_8c_a570313296fc52cbc4487063f56c15501}\label{_r_f_c_c26_x_x__single_mode_8c_a570313296fc52cbc4487063f56c15501}} 
+\index{RFCC26XX\_singleMode.c@{RFCC26XX\_singleMode.c}!RF\_RAT\_RPT\_CPT\_FLAG@{RF\_RAT\_RPT\_CPT\_FLAG}}
+\index{RF\_RAT\_RPT\_CPT\_FLAG@{RF\_RAT\_RPT\_CPT\_FLAG}!RFCC26XX\_singleMode.c@{RFCC26XX\_singleMode.c}}
+\doxysubsubsection{\texorpdfstring{RF\_RAT\_RPT\_CPT\_FLAG}{RF\_RAT\_RPT\_CPT\_FLAG}}
+{\footnotesize\ttfamily \#define R\+F\+\_\+\+R\+A\+T\+\_\+\+R\+P\+T\+\_\+\+C\+P\+T\+\_\+\+F\+L\+AG~(1 $<$$<$ 2)}
+
+
+
+Definition at line 90 of file R\+F\+C\+C26\+X\+X\+\_\+single\+Mode.\+c.
+
+\mbox{\Hypertarget{_r_f_c_c26_x_x__single_mode_8c_a5a46b9bcc42d213f48df36b120e23eba}\label{_r_f_c_c26_x_x__single_mode_8c_a5a46b9bcc42d213f48df36b120e23eba}} 
+\index{RFCC26XX\_singleMode.c@{RFCC26XX\_singleMode.c}!RF\_RTC\_CONV\_TO\_US\_SHIFT@{RF\_RTC\_CONV\_TO\_US\_SHIFT}}
+\index{RF\_RTC\_CONV\_TO\_US\_SHIFT@{RF\_RTC\_CONV\_TO\_US\_SHIFT}!RFCC26XX\_singleMode.c@{RFCC26XX\_singleMode.c}}
+\doxysubsubsection{\texorpdfstring{RF\_RTC\_CONV\_TO\_US\_SHIFT}{RF\_RTC\_CONV\_TO\_US\_SHIFT}}
+{\footnotesize\ttfamily \#define R\+F\+\_\+\+R\+T\+C\+\_\+\+C\+O\+N\+V\+\_\+\+T\+O\+\_\+\+U\+S\+\_\+\+S\+H\+I\+FT~12}
+
+
+
+Definition at line 104 of file R\+F\+C\+C26\+X\+X\+\_\+single\+Mode.\+c.
+
+\mbox{\Hypertarget{_r_f_c_c26_x_x__single_mode_8c_a2ca8c6fd3e474b628ca48647f4758d16}\label{_r_f_c_c26_x_x__single_mode_8c_a2ca8c6fd3e474b628ca48647f4758d16}} 
+\index{RFCC26XX\_singleMode.c@{RFCC26XX\_singleMode.c}!RF\_RTC\_TICK\_INC@{RF\_RTC\_TICK\_INC}}
+\index{RF\_RTC\_TICK\_INC@{RF\_RTC\_TICK\_INC}!RFCC26XX\_singleMode.c@{RFCC26XX\_singleMode.c}}
+\doxysubsubsection{\texorpdfstring{RF\_RTC\_TICK\_INC}{RF\_RTC\_TICK\_INC}}
+{\footnotesize\ttfamily \#define R\+F\+\_\+\+R\+T\+C\+\_\+\+T\+I\+C\+K\+\_\+\+I\+NC~(0x100000000\+LL/32768)}
+
+
+
+Definition at line 108 of file R\+F\+C\+C26\+X\+X\+\_\+single\+Mode.\+c.
+
+\mbox{\Hypertarget{_r_f_c_c26_x_x__single_mode_8c_a408f87e9b109af88f6f2ae5a85473983}\label{_r_f_c_c26_x_x__single_mode_8c_a408f87e9b109af88f6f2ae5a85473983}} 
+\index{RFCC26XX\_singleMode.c@{RFCC26XX\_singleMode.c}!RF\_RUN\_CMD\_ON\_RESTART\_FLAG@{RF\_RUN\_CMD\_ON\_RESTART\_FLAG}}
+\index{RF\_RUN\_CMD\_ON\_RESTART\_FLAG@{RF\_RUN\_CMD\_ON\_RESTART\_FLAG}!RFCC26XX\_singleMode.c@{RFCC26XX\_singleMode.c}}
+\doxysubsubsection{\texorpdfstring{RF\_RUN\_CMD\_ON\_RESTART\_FLAG}{RF\_RUN\_CMD\_ON\_RESTART\_FLAG}}
+{\footnotesize\ttfamily \#define R\+F\+\_\+\+R\+U\+N\+\_\+\+C\+M\+D\+\_\+\+O\+N\+\_\+\+R\+E\+S\+T\+A\+R\+T\+\_\+\+F\+L\+AG~(1 $<$$<$ 0)}
+
+
+
+Definition at line 88 of file R\+F\+C\+C26\+X\+X\+\_\+single\+Mode.\+c.
+
+\mbox{\Hypertarget{_r_f_c_c26_x_x__single_mode_8c_a7d37490369be8740edb122ee9bb211ff}\label{_r_f_c_c26_x_x__single_mode_8c_a7d37490369be8740edb122ee9bb211ff}} 
+\index{RFCC26XX\_singleMode.c@{RFCC26XX\_singleMode.c}!RF\_SCALE\_RTC\_TO\_4MHZ@{RF\_SCALE\_RTC\_TO\_4MHZ}}
+\index{RF\_SCALE\_RTC\_TO\_4MHZ@{RF\_SCALE\_RTC\_TO\_4MHZ}!RFCC26XX\_singleMode.c@{RFCC26XX\_singleMode.c}}
+\doxysubsubsection{\texorpdfstring{RF\_SCALE\_RTC\_TO\_4MHZ}{RF\_SCALE\_RTC\_TO\_4MHZ}}
+{\footnotesize\ttfamily \#define R\+F\+\_\+\+S\+C\+A\+L\+E\+\_\+\+R\+T\+C\+\_\+\+T\+O\+\_\+4\+M\+HZ~4000000}
+
+
+
+Definition at line 109 of file R\+F\+C\+C26\+X\+X\+\_\+single\+Mode.\+c.
+
+\mbox{\Hypertarget{_r_f_c_c26_x_x__single_mode_8c_a22a3f2ba9c73abc31d1bfcaafffb0355}\label{_r_f_c_c26_x_x__single_mode_8c_a22a3f2ba9c73abc31d1bfcaafffb0355}} 
+\index{RFCC26XX\_singleMode.c@{RFCC26XX\_singleMode.c}!RF\_SEND\_RAT\_STOP\_RATIO@{RF\_SEND\_RAT\_STOP\_RATIO}}
+\index{RF\_SEND\_RAT\_STOP\_RATIO@{RF\_SEND\_RAT\_STOP\_RATIO}!RFCC26XX\_singleMode.c@{RFCC26XX\_singleMode.c}}
+\doxysubsubsection{\texorpdfstring{RF\_SEND\_RAT\_STOP\_RATIO}{RF\_SEND\_RAT\_STOP\_RATIO}}
+{\footnotesize\ttfamily \#define R\+F\+\_\+\+S\+E\+N\+D\+\_\+\+R\+A\+T\+\_\+\+S\+T\+O\+P\+\_\+\+R\+A\+T\+IO~7}
+
+
+
+Definition at line 103 of file R\+F\+C\+C26\+X\+X\+\_\+single\+Mode.\+c.
+
+\mbox{\Hypertarget{_r_f_c_c26_x_x__single_mode_8c_ae9847fa7595088e44d0adc7ea4fcfae0}\label{_r_f_c_c26_x_x__single_mode_8c_ae9847fa7595088e44d0adc7ea4fcfae0}} 
+\index{RFCC26XX\_singleMode.c@{RFCC26XX\_singleMode.c}!RF\_SETUP\_ANALOGCFG\_NOUPDATE@{RF\_SETUP\_ANALOGCFG\_NOUPDATE}}
+\index{RF\_SETUP\_ANALOGCFG\_NOUPDATE@{RF\_SETUP\_ANALOGCFG\_NOUPDATE}!RFCC26XX\_singleMode.c@{RFCC26XX\_singleMode.c}}
+\doxysubsubsection{\texorpdfstring{RF\_SETUP\_ANALOGCFG\_NOUPDATE}{RF\_SETUP\_ANALOGCFG\_NOUPDATE}}
+{\footnotesize\ttfamily \#define R\+F\+\_\+\+S\+E\+T\+U\+P\+\_\+\+A\+N\+A\+L\+O\+G\+C\+F\+G\+\_\+\+N\+O\+U\+P\+D\+A\+TE~0x2D}
+
+
+
+Definition at line 124 of file R\+F\+C\+C26\+X\+X\+\_\+single\+Mode.\+c.
+
+\mbox{\Hypertarget{_r_f_c_c26_x_x__single_mode_8c_a4571220bf687b83d1e26f8f5b51f2293}\label{_r_f_c_c26_x_x__single_mode_8c_a4571220bf687b83d1e26f8f5b51f2293}} 
+\index{RFCC26XX\_singleMode.c@{RFCC26XX\_singleMode.c}!RF\_SETUP\_ANALOGCFG\_UPDATE@{RF\_SETUP\_ANALOGCFG\_UPDATE}}
+\index{RF\_SETUP\_ANALOGCFG\_UPDATE@{RF\_SETUP\_ANALOGCFG\_UPDATE}!RFCC26XX\_singleMode.c@{RFCC26XX\_singleMode.c}}
+\doxysubsubsection{\texorpdfstring{RF\_SETUP\_ANALOGCFG\_UPDATE}{RF\_SETUP\_ANALOGCFG\_UPDATE}}
+{\footnotesize\ttfamily \#define R\+F\+\_\+\+S\+E\+T\+U\+P\+\_\+\+A\+N\+A\+L\+O\+G\+C\+F\+G\+\_\+\+U\+P\+D\+A\+TE~0}
+
+
+
+Definition at line 123 of file R\+F\+C\+C26\+X\+X\+\_\+single\+Mode.\+c.
+
+\mbox{\Hypertarget{_r_f_c_c26_x_x__single_mode_8c_ab29594a1cd6f0fa396a5c71433c033ca}\label{_r_f_c_c26_x_x__single_mode_8c_ab29594a1cd6f0fa396a5c71433c033ca}} 
+\index{RFCC26XX\_singleMode.c@{RFCC26XX\_singleMode.c}!RF\_SHIFT\_16\_BITS@{RF\_SHIFT\_16\_BITS}}
+\index{RF\_SHIFT\_16\_BITS@{RF\_SHIFT\_16\_BITS}!RFCC26XX\_singleMode.c@{RFCC26XX\_singleMode.c}}
+\doxysubsubsection{\texorpdfstring{RF\_SHIFT\_16\_BITS}{RF\_SHIFT\_16\_BITS}}
+{\footnotesize\ttfamily \#define R\+F\+\_\+\+S\+H\+I\+F\+T\+\_\+16\+\_\+\+B\+I\+TS~16}
+
+
+
+Definition at line 107 of file R\+F\+C\+C26\+X\+X\+\_\+single\+Mode.\+c.
+
+\mbox{\Hypertarget{_r_f_c_c26_x_x__single_mode_8c_a4a6a328d834f86955a2202e413abb65a}\label{_r_f_c_c26_x_x__single_mode_8c_a4a6a328d834f86955a2202e413abb65a}} 
+\index{RFCC26XX\_singleMode.c@{RFCC26XX\_singleMode.c}!RF\_SHIFT\_32\_BITS@{RF\_SHIFT\_32\_BITS}}
+\index{RF\_SHIFT\_32\_BITS@{RF\_SHIFT\_32\_BITS}!RFCC26XX\_singleMode.c@{RFCC26XX\_singleMode.c}}
+\doxysubsubsection{\texorpdfstring{RF\_SHIFT\_32\_BITS}{RF\_SHIFT\_32\_BITS}}
+{\footnotesize\ttfamily \#define R\+F\+\_\+\+S\+H\+I\+F\+T\+\_\+32\+\_\+\+B\+I\+TS~32}
+
+
+
+Definition at line 105 of file R\+F\+C\+C26\+X\+X\+\_\+single\+Mode.\+c.
+
+\mbox{\Hypertarget{_r_f_c_c26_x_x__single_mode_8c_a8d0550902c2916af0cc68acd0812a3ee}\label{_r_f_c_c26_x_x__single_mode_8c_a8d0550902c2916af0cc68acd0812a3ee}} 
+\index{RFCC26XX\_singleMode.c@{RFCC26XX\_singleMode.c}!RF\_SHIFT\_8\_BITS@{RF\_SHIFT\_8\_BITS}}
+\index{RF\_SHIFT\_8\_BITS@{RF\_SHIFT\_8\_BITS}!RFCC26XX\_singleMode.c@{RFCC26XX\_singleMode.c}}
+\doxysubsubsection{\texorpdfstring{RF\_SHIFT\_8\_BITS}{RF\_SHIFT\_8\_BITS}}
+{\footnotesize\ttfamily \#define R\+F\+\_\+\+S\+H\+I\+F\+T\+\_\+8\+\_\+\+B\+I\+TS~8}
+
+
+
+Definition at line 106 of file R\+F\+C\+C26\+X\+X\+\_\+single\+Mode.\+c.
+
+\mbox{\Hypertarget{_r_f_c_c26_x_x__single_mode_8c_ae6ec8bb79da533c8324fb9f28bbe437c}\label{_r_f_c_c26_x_x__single_mode_8c_ae6ec8bb79da533c8324fb9f28bbe437c}} 
+\index{RFCC26XX\_singleMode.c@{RFCC26XX\_singleMode.c}!RF\_XOSC\_HF\_SWITCH\_CHECK\_PERIOD@{RF\_XOSC\_HF\_SWITCH\_CHECK\_PERIOD}}
+\index{RF\_XOSC\_HF\_SWITCH\_CHECK\_PERIOD@{RF\_XOSC\_HF\_SWITCH\_CHECK\_PERIOD}!RFCC26XX\_singleMode.c@{RFCC26XX\_singleMode.c}}
+\doxysubsubsection{\texorpdfstring{RF\_XOSC\_HF\_SWITCH\_CHECK\_PERIOD}{RF\_XOSC\_HF\_SWITCH\_CHECK\_PERIOD}}
+{\footnotesize\ttfamily \#define R\+F\+\_\+\+X\+O\+S\+C\+\_\+\+H\+F\+\_\+\+S\+W\+I\+T\+C\+H\+\_\+\+C\+H\+E\+C\+K\+\_\+\+P\+E\+R\+I\+OD~50}
+
+
+
+Definition at line 113 of file R\+F\+C\+C26\+X\+X\+\_\+single\+Mode.\+c.
+
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{_r_f_c_c26_x_x__single_mode_8c_ac936a5ee9c3b7dc0b4c7670cee47dc83}\label{_r_f_c_c26_x_x__single_mode_8c_ac936a5ee9c3b7dc0b4c7670cee47dc83}} 
+\index{RFCC26XX\_singleMode.c@{RFCC26XX\_singleMode.c}!Fsm\_StateFxn@{Fsm\_StateFxn}}
+\index{Fsm\_StateFxn@{Fsm\_StateFxn}!RFCC26XX\_singleMode.c@{RFCC26XX\_singleMode.c}}
+\doxysubsubsection{\texorpdfstring{Fsm\_StateFxn}{Fsm\_StateFxn}}
+{\footnotesize\ttfamily typedef void($\ast$ Fsm\+\_\+\+State\+Fxn) (\mbox{\hyperlink{struct_r_f___object}{R\+F\+\_\+\+Object}} $\ast$, \mbox{\hyperlink{_r_f_c_c26_x_x__single_mode_8c_a07cd5044d3ff83097392bd09b9a82a62}{Fsm\+\_\+\+Event}} const)}
+
+
+
+Definition at line 158 of file R\+F\+C\+C26\+X\+X\+\_\+single\+Mode.\+c.
+
+\mbox{\Hypertarget{_r_f_c_c26_x_x__single_mode_8c_a2dd38e247b33e21ae1729c7ae47a49cb}\label{_r_f_c_c26_x_x__single_mode_8c_a2dd38e247b33e21ae1729c7ae47a49cb}} 
+\index{RFCC26XX\_singleMode.c@{RFCC26XX\_singleMode.c}!RF\_Cmd@{RF\_Cmd}}
+\index{RF\_Cmd@{RF\_Cmd}!RFCC26XX\_singleMode.c@{RFCC26XX\_singleMode.c}}
+\doxysubsubsection{\texorpdfstring{RF\_Cmd}{RF\_Cmd}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_r_f___cmd__s}{R\+F\+\_\+\+Cmd\+\_\+s}} \mbox{\hyperlink{_r_f_c_c26_x_x__single_mode_8c_a2dd38e247b33e21ae1729c7ae47a49cb}{R\+F\+\_\+\+Cmd}}}
+
+
+
+Definition at line 1 of file R\+F\+C\+C26\+X\+X\+\_\+single\+Mode.\+c.
+
+\mbox{\Hypertarget{_r_f_c_c26_x_x__single_mode_8c_a3a9c25ac900ee9b2bf9e20bbb7d2d603}\label{_r_f_c_c26_x_x__single_mode_8c_a3a9c25ac900ee9b2bf9e20bbb7d2d603}} 
+\index{RFCC26XX\_singleMode.c@{RFCC26XX\_singleMode.c}!RF\_CmdDirImm@{RF\_CmdDirImm}}
+\index{RF\_CmdDirImm@{RF\_CmdDirImm}!RFCC26XX\_singleMode.c@{RFCC26XX\_singleMode.c}}
+\doxysubsubsection{\texorpdfstring{RF\_CmdDirImm}{RF\_CmdDirImm}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_r_f___cmd_dir_imm__s}{R\+F\+\_\+\+Cmd\+Dir\+Imm\+\_\+s}} \mbox{\hyperlink{_r_f_c_c26_x_x__single_mode_8c_a3a9c25ac900ee9b2bf9e20bbb7d2d603}{R\+F\+\_\+\+Cmd\+Dir\+Imm}}}
+
+
+
+Definition at line 1 of file R\+F\+C\+C26\+X\+X\+\_\+single\+Mode.\+c.
+
+
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{_r_f_c_c26_x_x__single_mode_8c_a07cd5044d3ff83097392bd09b9a82a62}\label{_r_f_c_c26_x_x__single_mode_8c_a07cd5044d3ff83097392bd09b9a82a62}} 
+\index{RFCC26XX\_singleMode.c@{RFCC26XX\_singleMode.c}!Fsm\_Event@{Fsm\_Event}}
+\index{Fsm\_Event@{Fsm\_Event}!RFCC26XX\_singleMode.c@{RFCC26XX\_singleMode.c}}
+\doxysubsubsection{\texorpdfstring{Fsm\_Event}{Fsm\_Event}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{_r_f_c_c26_x_x__single_mode_8c_a07cd5044d3ff83097392bd09b9a82a62}{Fsm\+\_\+\+Event}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Fsm\_EventBootDone@{Fsm\_EventBootDone}!RFCC26XX\_singleMode.c@{RFCC26XX\_singleMode.c}}\index{RFCC26XX\_singleMode.c@{RFCC26XX\_singleMode.c}!Fsm\_EventBootDone@{Fsm\_EventBootDone}}}\mbox{\Hypertarget{_r_f_c_c26_x_x__single_mode_8c_a07cd5044d3ff83097392bd09b9a82a62a71ea2cb44b27fdf9b75c4aed152cc8c3}\label{_r_f_c_c26_x_x__single_mode_8c_a07cd5044d3ff83097392bd09b9a82a62a71ea2cb44b27fdf9b75c4aed152cc8c3}} 
+Fsm\+\_\+\+Event\+Boot\+Done&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Fsm\_EventPowerStep@{Fsm\_EventPowerStep}!RFCC26XX\_singleMode.c@{RFCC26XX\_singleMode.c}}\index{RFCC26XX\_singleMode.c@{RFCC26XX\_singleMode.c}!Fsm\_EventPowerStep@{Fsm\_EventPowerStep}}}\mbox{\Hypertarget{_r_f_c_c26_x_x__single_mode_8c_a07cd5044d3ff83097392bd09b9a82a62ac29afb23bebd3a381037fd5866af6002}\label{_r_f_c_c26_x_x__single_mode_8c_a07cd5044d3ff83097392bd09b9a82a62ac29afb23bebd3a381037fd5866af6002}} 
+Fsm\+\_\+\+Event\+Power\+Step&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Fsm\_EventLastCommandDone@{Fsm\_EventLastCommandDone}!RFCC26XX\_singleMode.c@{RFCC26XX\_singleMode.c}}\index{RFCC26XX\_singleMode.c@{RFCC26XX\_singleMode.c}!Fsm\_EventLastCommandDone@{Fsm\_EventLastCommandDone}}}\mbox{\Hypertarget{_r_f_c_c26_x_x__single_mode_8c_a07cd5044d3ff83097392bd09b9a82a62a9870446dec8b607eccd002f90f51a7fa}\label{_r_f_c_c26_x_x__single_mode_8c_a07cd5044d3ff83097392bd09b9a82a62a9870446dec8b607eccd002f90f51a7fa}} 
+Fsm\+\_\+\+Event\+Last\+Command\+Done&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Fsm\_EventWakeup@{Fsm\_EventWakeup}!RFCC26XX\_singleMode.c@{RFCC26XX\_singleMode.c}}\index{RFCC26XX\_singleMode.c@{RFCC26XX\_singleMode.c}!Fsm\_EventWakeup@{Fsm\_EventWakeup}}}\mbox{\Hypertarget{_r_f_c_c26_x_x__single_mode_8c_a07cd5044d3ff83097392bd09b9a82a62a867b1e26242904f4df12e385341ef5e7}\label{_r_f_c_c26_x_x__single_mode_8c_a07cd5044d3ff83097392bd09b9a82a62a867b1e26242904f4df12e385341ef5e7}} 
+Fsm\+\_\+\+Event\+Wakeup&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Fsm\_EventPowerDown@{Fsm\_EventPowerDown}!RFCC26XX\_singleMode.c@{RFCC26XX\_singleMode.c}}\index{RFCC26XX\_singleMode.c@{RFCC26XX\_singleMode.c}!Fsm\_EventPowerDown@{Fsm\_EventPowerDown}}}\mbox{\Hypertarget{_r_f_c_c26_x_x__single_mode_8c_a07cd5044d3ff83097392bd09b9a82a62a4ad98fb025a8cd3d953353a0e53e1612}\label{_r_f_c_c26_x_x__single_mode_8c_a07cd5044d3ff83097392bd09b9a82a62a4ad98fb025a8cd3d953353a0e53e1612}} 
+Fsm\+\_\+\+Event\+Power\+Down&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Fsm\_EventChangePhy@{Fsm\_EventChangePhy}!RFCC26XX\_singleMode.c@{RFCC26XX\_singleMode.c}}\index{RFCC26XX\_singleMode.c@{RFCC26XX\_singleMode.c}!Fsm\_EventChangePhy@{Fsm\_EventChangePhy}}}\mbox{\Hypertarget{_r_f_c_c26_x_x__single_mode_8c_a07cd5044d3ff83097392bd09b9a82a62ac2c0637639ae233bca0ccd6db208085b}\label{_r_f_c_c26_x_x__single_mode_8c_a07cd5044d3ff83097392bd09b9a82a62ac2c0637639ae233bca0ccd6db208085b}} 
+Fsm\+\_\+\+Event\+Change\+Phy&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Fsm\_EventHwInt@{Fsm\_EventHwInt}!RFCC26XX\_singleMode.c@{RFCC26XX\_singleMode.c}}\index{RFCC26XX\_singleMode.c@{RFCC26XX\_singleMode.c}!Fsm\_EventHwInt@{Fsm\_EventHwInt}}}\mbox{\Hypertarget{_r_f_c_c26_x_x__single_mode_8c_a07cd5044d3ff83097392bd09b9a82a62a3387200710fa40fdb7fcfad679535289}\label{_r_f_c_c26_x_x__single_mode_8c_a07cd5044d3ff83097392bd09b9a82a62a3387200710fa40fdb7fcfad679535289}} 
+Fsm\+\_\+\+Event\+Hw\+Int&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Fsm\_EventCpeInt@{Fsm\_EventCpeInt}!RFCC26XX\_singleMode.c@{RFCC26XX\_singleMode.c}}\index{RFCC26XX\_singleMode.c@{RFCC26XX\_singleMode.c}!Fsm\_EventCpeInt@{Fsm\_EventCpeInt}}}\mbox{\Hypertarget{_r_f_c_c26_x_x__single_mode_8c_a07cd5044d3ff83097392bd09b9a82a62abd07d61d8f31522563b425c4a4eb2564}\label{_r_f_c_c26_x_x__single_mode_8c_a07cd5044d3ff83097392bd09b9a82a62abd07d61d8f31522563b425c4a4eb2564}} 
+Fsm\+\_\+\+Event\+Cpe\+Int&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line 60 of file R\+F\+C\+C26\+X\+X\+\_\+single\+Mode.\+c.
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{_r_f_c_c26_x_x__single_mode_8c_aabe22ceae13a372be4ba135318aa849a}\label{_r_f_c_c26_x_x__single_mode_8c_aabe22ceae13a372be4ba135318aa849a}} 
+\index{RFCC26XX\_singleMode.c@{RFCC26XX\_singleMode.c}!RF\_cancelCmd@{RF\_cancelCmd}}
+\index{RF\_cancelCmd@{RF\_cancelCmd}!RFCC26XX\_singleMode.c@{RFCC26XX\_singleMode.c}}
+\doxysubsubsection{\texorpdfstring{RF\_cancelCmd()}{RF\_cancelCmd()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_r_f_8h_afdc219ddabc8427ecd552a6c78d9988f}{R\+F\+\_\+\+Stat}} R\+F\+\_\+cancel\+Cmd (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_r_f_8h_a5e8ab7fc87fb818f435d9b6226ee573f}{R\+F\+\_\+\+Handle}}}]{h,  }\item[{\mbox{\hyperlink{_r_f_8h_acab1f56c62a9fd1ad0a91a46b6da23f1}{R\+F\+\_\+\+Cmd\+Handle}}}]{ch,  }\item[{uint8\+\_\+t}]{mode }\end{DoxyParamCaption})}
+
+
+
+Abort/stop/cancel single command in command queue If command is running, aborts/stops it and posts callback for the aborted/stopped command. ~\newline
+ If command has not yet run, cancels it it and posts callback for the cancelled command. ~\newline
+ If command has already run or been aborted/stopped/cancelled, has no effect.~\newline
+ 
+
+\begin{DoxyNote}{Note}
+Calling context \+: Task/\+S\+WI
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em h} & Handle previously returned by \mbox{\hyperlink{_r_f_8h_a13a7c6f5a2b797e0aac18fecfaba6f64}{R\+F\+\_\+open()}} \\
+\hline
+{\em ch} & Command handle previously returned by \mbox{\hyperlink{_r_f_8h_a2b0ee444fcb74917df94eefea804ecbb}{R\+F\+\_\+post\+Cmd()}}. \\
+\hline
+{\em mode} & 1\+: Stop gracefully, 0\+: abort abruptly \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+R\+F\+\_\+\+Stat indicates if command was successfully completed 
+\end{DoxyReturn}
+
+
+Definition at line 1764 of file R\+F\+C\+C26\+X\+X\+\_\+single\+Mode.\+c.
+
+\mbox{\Hypertarget{_r_f_c_c26_x_x__single_mode_8c_a9ff7e64561f7aa5526837521bceb5f88}\label{_r_f_c_c26_x_x__single_mode_8c_a9ff7e64561f7aa5526837521bceb5f88}} 
+\index{RFCC26XX\_singleMode.c@{RFCC26XX\_singleMode.c}!RF\_close@{RF\_close}}
+\index{RF\_close@{RF\_close}!RFCC26XX\_singleMode.c@{RFCC26XX\_singleMode.c}}
+\doxysubsubsection{\texorpdfstring{RF\_close()}{RF\_close()}}
+{\footnotesize\ttfamily void R\+F\+\_\+close (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_r_f_8h_a5e8ab7fc87fb818f435d9b6226ee573f}{R\+F\+\_\+\+Handle}}}]{h }\end{DoxyParamCaption})}
+
+
+
+Close client connection to RF driver. 
+
+Allows a RF client (high-\/level driver or application) to close its connection to the RF driver.
+
+\begin{DoxyNote}{Note}
+Calling context \+: Task
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em h} & Handle previously returned by \mbox{\hyperlink{_r_f_8h_a13a7c6f5a2b797e0aac18fecfaba6f64}{R\+F\+\_\+open()}} \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 1434 of file R\+F\+C\+C26\+X\+X\+\_\+single\+Mode.\+c.
+
+\mbox{\Hypertarget{_r_f_c_c26_x_x__single_mode_8c_aa31772d56afb197fd812d24aa6f07f1b}\label{_r_f_c_c26_x_x__single_mode_8c_aa31772d56afb197fd812d24aa6f07f1b}} 
+\index{RFCC26XX\_singleMode.c@{RFCC26XX\_singleMode.c}!RF\_control@{RF\_control}}
+\index{RF\_control@{RF\_control}!RFCC26XX\_singleMode.c@{RFCC26XX\_singleMode.c}}
+\doxysubsubsection{\texorpdfstring{RF\_control()}{RF\_control()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_r_f_8h_afdc219ddabc8427ecd552a6c78d9988f}{R\+F\+\_\+\+Stat}} R\+F\+\_\+control (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_r_f_8h_a5e8ab7fc87fb818f435d9b6226ee573f}{R\+F\+\_\+\+Handle}}}]{h,  }\item[{int8\+\_\+t}]{ctrl,  }\item[{void $\ast$}]{args }\end{DoxyParamCaption})}
+
+
+
+Set RF control parameters. 
+
+\begin{DoxyNote}{Note}
+Calling context \+: Task
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em h} & Handle previously returned by \mbox{\hyperlink{_r_f_8h_a13a7c6f5a2b797e0aac18fecfaba6f64}{R\+F\+\_\+open()}} \\
+\hline
+{\em ctrl} & Control codes \\
+\hline
+{\em args} & Pointer to control arguments \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+R\+F\+\_\+\+Stat indicates if A\+PI call was successfully completed. 
+\end{DoxyReturn}
+
+
+Definition at line 2205 of file R\+F\+C\+C26\+X\+X\+\_\+single\+Mode.\+c.
+
+\mbox{\Hypertarget{_r_f_c_c26_x_x__single_mode_8c_ae3ff5c614f4a63cb4e79c90f9229149a}\label{_r_f_c_c26_x_x__single_mode_8c_ae3ff5c614f4a63cb4e79c90f9229149a}} 
+\index{RFCC26XX\_singleMode.c@{RFCC26XX\_singleMode.c}!RF\_flushCmd@{RF\_flushCmd}}
+\index{RF\_flushCmd@{RF\_flushCmd}!RFCC26XX\_singleMode.c@{RFCC26XX\_singleMode.c}}
+\doxysubsubsection{\texorpdfstring{RF\_flushCmd()}{RF\_flushCmd()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_r_f_8h_afdc219ddabc8427ecd552a6c78d9988f}{R\+F\+\_\+\+Stat}} R\+F\+\_\+flush\+Cmd (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_r_f_8h_a5e8ab7fc87fb818f435d9b6226ee573f}{R\+F\+\_\+\+Handle}}}]{h,  }\item[{\mbox{\hyperlink{_r_f_8h_acab1f56c62a9fd1ad0a91a46b6da23f1}{R\+F\+\_\+\+Cmd\+Handle}}}]{ch,  }\item[{uint8\+\_\+t}]{mode }\end{DoxyParamCaption})}
+
+
+
+Abort/stop/cancel command and any subsequent commands in command queue If command is running, aborts/stops it and then cancels all later commands in queue.~\newline
+ If command has not yet run, cancels it and all later commands in queue.~\newline
+ If command has already run or been aborted/stopped/cancelled, has no effect.~\newline
+ 
+
+The callbacks for all cancelled commands are issued in chronological order.~\newline
+
+
+\begin{DoxyNote}{Note}
+Calling context \+: Task/\+S\+WI
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em h} & Handle previously returned by \mbox{\hyperlink{_r_f_8h_a13a7c6f5a2b797e0aac18fecfaba6f64}{R\+F\+\_\+open()}} \\
+\hline
+{\em ch} & Command handle previously returned by \mbox{\hyperlink{_r_f_8h_a2b0ee444fcb74917df94eefea804ecbb}{R\+F\+\_\+post\+Cmd()}}. \\
+\hline
+{\em mode} & 1\+: Stop gracefully, 0\+: abort abruptly \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+R\+F\+\_\+\+Stat indicates if command was successfully completed 
+\end{DoxyReturn}
+
+
+Definition at line 1769 of file R\+F\+C\+C26\+X\+X\+\_\+single\+Mode.\+c.
+
+\mbox{\Hypertarget{_r_f_c_c26_x_x__single_mode_8c_abdde833057385980d0ae1b2c844b97b7}\label{_r_f_c_c26_x_x__single_mode_8c_abdde833057385980d0ae1b2c844b97b7}} 
+\index{RFCC26XX\_singleMode.c@{RFCC26XX\_singleMode.c}!RF\_getCmdOp@{RF\_getCmdOp}}
+\index{RF\_getCmdOp@{RF\_getCmdOp}!RFCC26XX\_singleMode.c@{RFCC26XX\_singleMode.c}}
+\doxysubsubsection{\texorpdfstring{RF\_getCmdOp()}{RF\_getCmdOp()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_r_f_8h_a47ea3dea78019340e8f8ceb854de5f02}{R\+F\+\_\+\+Op}}$\ast$ R\+F\+\_\+get\+Cmd\+Op (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_r_f_8h_a5e8ab7fc87fb818f435d9b6226ee573f}{R\+F\+\_\+\+Handle}}}]{h,  }\item[{\mbox{\hyperlink{_r_f_8h_acab1f56c62a9fd1ad0a91a46b6da23f1}{R\+F\+\_\+\+Cmd\+Handle}}}]{cmd\+Hnd }\end{DoxyParamCaption})}
+
+
+
+Get command structure pointer. 
+
+\begin{DoxyNote}{Note}
+Calling context \+: Task/\+S\+W\+I/\+H\+WI
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em h} & Handle previously returned by \mbox{\hyperlink{_r_f_8h_a13a7c6f5a2b797e0aac18fecfaba6f64}{R\+F\+\_\+open()}} \\
+\hline
+{\em cmd\+Hnd} & Command handle returned by \mbox{\hyperlink{_r_f_8h_a2b0ee444fcb74917df94eefea804ecbb}{R\+F\+\_\+post\+Cmd()}} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to the command structure. 
+\end{DoxyReturn}
+
+
+Definition at line 2034 of file R\+F\+C\+C26\+X\+X\+\_\+single\+Mode.\+c.
+
+\mbox{\Hypertarget{_r_f_c_c26_x_x__single_mode_8c_aedfdf0bdf0f64a071d50a6d78446fef4}\label{_r_f_c_c26_x_x__single_mode_8c_aedfdf0bdf0f64a071d50a6d78446fef4}} 
+\index{RFCC26XX\_singleMode.c@{RFCC26XX\_singleMode.c}!RF\_getCurrentTime@{RF\_getCurrentTime}}
+\index{RF\_getCurrentTime@{RF\_getCurrentTime}!RFCC26XX\_singleMode.c@{RFCC26XX\_singleMode.c}}
+\doxysubsubsection{\texorpdfstring{RF\_getCurrentTime()}{RF\_getCurrentTime()}}
+{\footnotesize\ttfamily uint32\+\_\+t R\+F\+\_\+get\+Current\+Time (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Return current radio timer value. 
+
+If the radio is powered returns the current radio timer value, if not returns a conservative estimate of the current radio timer value
+
+\begin{DoxyNote}{Note}
+Calling context \+: Task/\+S\+W\+I/\+H\+WI
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+Current radio timer value 
+\end{DoxyReturn}
+
+
+Definition at line 1504 of file R\+F\+C\+C26\+X\+X\+\_\+single\+Mode.\+c.
+
+\mbox{\Hypertarget{_r_f_c_c26_x_x__single_mode_8c_a4bd7985a3e0c5ad2b9f5e94aa945db63}\label{_r_f_c_c26_x_x__single_mode_8c_a4bd7985a3e0c5ad2b9f5e94aa945db63}} 
+\index{RFCC26XX\_singleMode.c@{RFCC26XX\_singleMode.c}!RF\_getInfo@{RF\_getInfo}}
+\index{RF\_getInfo@{RF\_getInfo}!RFCC26XX\_singleMode.c@{RFCC26XX\_singleMode.c}}
+\doxysubsubsection{\texorpdfstring{RF\_getInfo()}{RF\_getInfo()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_r_f_8h_afdc219ddabc8427ecd552a6c78d9988f}{R\+F\+\_\+\+Stat}} R\+F\+\_\+get\+Info (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_r_f_8h_a5e8ab7fc87fb818f435d9b6226ee573f}{R\+F\+\_\+\+Handle}}}]{h,  }\item[{\mbox{\hyperlink{_r_f_8h_a22596109459422a7a4d4f386dffbb8fa}{R\+F\+\_\+\+Info\+Type}}}]{type,  }\item[{\mbox{\hyperlink{union_r_f___info_val}{R\+F\+\_\+\+Info\+Val}} $\ast$}]{p\+Value }\end{DoxyParamCaption})}
+
+
+
+Get value for some RF driver parameters. ~\newline
+ 
+
+\begin{DoxyNote}{Note}
+Calling context \+: Task/\+S\+W\+I/\+H\+WI
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em h} & Handle previously returned by \mbox{\hyperlink{_r_f_8h_a13a7c6f5a2b797e0aac18fecfaba6f64}{R\+F\+\_\+open()}} \\
+\hline
+{\em type} & Request value paramter defined by R\+F\+\_\+\+Info\+Type \\
+\hline
+{\em p\+Value} & Pointer to return parameter values specified by \mbox{\hyperlink{union_r_f___info_val}{R\+F\+\_\+\+Info\+Val}} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+R\+F\+\_\+\+Stat indicates if command was successfully completed 
+\end{DoxyReturn}
+
+
+Definition at line 1995 of file R\+F\+C\+C26\+X\+X\+\_\+single\+Mode.\+c.
+
+\mbox{\Hypertarget{_r_f_c_c26_x_x__single_mode_8c_ac3fe0d39243fb6bbefe0216d958a6779}\label{_r_f_c_c26_x_x__single_mode_8c_ac3fe0d39243fb6bbefe0216d958a6779}} 
+\index{RFCC26XX\_singleMode.c@{RFCC26XX\_singleMode.c}!RF\_getRssi@{RF\_getRssi}}
+\index{RF\_getRssi@{RF\_getRssi}!RFCC26XX\_singleMode.c@{RFCC26XX\_singleMode.c}}
+\doxysubsubsection{\texorpdfstring{RF\_getRssi()}{RF\_getRssi()}}
+{\footnotesize\ttfamily int8\+\_\+t R\+F\+\_\+get\+Rssi (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_r_f_8h_a5e8ab7fc87fb818f435d9b6226ee573f}{R\+F\+\_\+\+Handle}}}]{h }\end{DoxyParamCaption})}
+
+
+
+Get rssi value. 
+
+\begin{DoxyNote}{Note}
+Calling context \+: Task/\+S\+W\+I/\+H\+WI
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em h} & Handle previously returned by \mbox{\hyperlink{_r_f_8h_a13a7c6f5a2b797e0aac18fecfaba6f64}{R\+F\+\_\+open()}} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+R\+S\+SI value. Return value of R\+F\+\_\+\+G\+E\+T\+\_\+\+R\+S\+S\+I\+\_\+\+E\+R\+R\+O\+R\+\_\+\+V\+AL indicates error case. 
+\end{DoxyReturn}
+
+
+Definition at line 1974 of file R\+F\+C\+C26\+X\+X\+\_\+single\+Mode.\+c.
+
+\mbox{\Hypertarget{_r_f_c_c26_x_x__single_mode_8c_a13a7c6f5a2b797e0aac18fecfaba6f64}\label{_r_f_c_c26_x_x__single_mode_8c_a13a7c6f5a2b797e0aac18fecfaba6f64}} 
+\index{RFCC26XX\_singleMode.c@{RFCC26XX\_singleMode.c}!RF\_open@{RF\_open}}
+\index{RF\_open@{RF\_open}!RFCC26XX\_singleMode.c@{RFCC26XX\_singleMode.c}}
+\doxysubsubsection{\texorpdfstring{RF\_open()}{RF\_open()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_r_f_8h_a5e8ab7fc87fb818f435d9b6226ee573f}{R\+F\+\_\+\+Handle}} R\+F\+\_\+open (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_r_f___object}{R\+F\+\_\+\+Object}} $\ast$}]{p\+Obj,  }\item[{\mbox{\hyperlink{struct_r_f___mode}{R\+F\+\_\+\+Mode}} $\ast$}]{p\+Rf\+Mode,  }\item[{\mbox{\hyperlink{union_r_f___radio_setup}{R\+F\+\_\+\+Radio\+Setup}} $\ast$}]{p\+Op\+Setup,  }\item[{\mbox{\hyperlink{struct_r_f___params}{R\+F\+\_\+\+Params}} $\ast$}]{params }\end{DoxyParamCaption})}
+
+
+
+Open client connection to RF driver. 
+
+Allows a RF client (high-\/level driver or application) to request access to RF hardware.~\newline
+
+
+\begin{DoxyNote}{Note}
+Calling context \+: Task 
+
+This A\+PI does not start the radio. 
+
+For dual mode operation, rf\+Mode in the \mbox{\hyperlink{struct_r_f___mode}{R\+F\+\_\+\+Mode}} struct must be set to R\+F\+\_\+\+M\+O\+D\+E\+\_\+\+M\+U\+L\+T\+I\+P\+LE.
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Obj} & Pointer to a \mbox{\hyperlink{struct_r_f___object}{R\+F\+\_\+\+Object}} that will hold the state for this RF client. The object must be in persistent and writeable memory \\
+\hline
+{\em p\+Rf\+Mode} & Pointer to a \mbox{\hyperlink{struct_r_f___mode}{R\+F\+\_\+\+Mode}} struct holding patch information \\
+\hline
+{\em p\+Op\+Setup} & Pointer to the setup command used in this RF configuration. This is used by RF Driver during power-\/up so the user should allocated setup command in persistent memory. \\
+\hline
+{\em params} & Pointer to an \mbox{\hyperlink{struct_r_f___params}{R\+F\+\_\+\+Params}} object that is initialized with desired RF parameters. Can be set to N\+U\+LL for defaults \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A handle for further RF driver calls or N\+U\+LL if a client connection was not possible or the supplied parameters invalid 
+\end{DoxyReturn}
+
+
+Definition at line 1351 of file R\+F\+C\+C26\+X\+X\+\_\+single\+Mode.\+c.
+
+\mbox{\Hypertarget{_r_f_c_c26_x_x__single_mode_8c_ab956de3745437cb7a69c4edfb006434e}\label{_r_f_c_c26_x_x__single_mode_8c_ab956de3745437cb7a69c4edfb006434e}} 
+\index{RFCC26XX\_singleMode.c@{RFCC26XX\_singleMode.c}!RF\_Params\_init@{RF\_Params\_init}}
+\index{RF\_Params\_init@{RF\_Params\_init}!RFCC26XX\_singleMode.c@{RFCC26XX\_singleMode.c}}
+\doxysubsubsection{\texorpdfstring{RF\_Params\_init()}{RF\_Params\_init()}}
+{\footnotesize\ttfamily void R\+F\+\_\+\+Params\+\_\+init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_r_f___params}{R\+F\+\_\+\+Params}} $\ast$}]{params }\end{DoxyParamCaption})}
+
+
+
+Function to initialize the \mbox{\hyperlink{struct_r_f___params}{R\+F\+\_\+\+Params}} struct to its defaults. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em params} & An pointer to \mbox{\hyperlink{struct_r_f___params}{R\+F\+\_\+\+Params}} structure for initialization\\
+\hline
+\end{DoxyParams}
+Defaults values are\+: n\+Inactivity\+Timeout = B\+I\+O\+S\+\_\+\+W\+A\+I\+T\+\_\+\+F\+O\+R\+E\+V\+ER n\+Power\+Up\+Duration = R\+F\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+P\+O\+W\+E\+R\+\_\+\+U\+P\+\_\+\+T\+I\+ME b\+Power\+Up\+X\+O\+SC = T\+R\+UE 
+
+Definition at line 1911 of file R\+F\+C\+C26\+X\+X\+\_\+single\+Mode.\+c.
+
+\mbox{\Hypertarget{_r_f_c_c26_x_x__single_mode_8c_a91c1cb2508311f822acbc08ace568a83}\label{_r_f_c_c26_x_x__single_mode_8c_a91c1cb2508311f822acbc08ace568a83}} 
+\index{RFCC26XX\_singleMode.c@{RFCC26XX\_singleMode.c}!RF\_pendCmd@{RF\_pendCmd}}
+\index{RF\_pendCmd@{RF\_pendCmd}!RFCC26XX\_singleMode.c@{RFCC26XX\_singleMode.c}}
+\doxysubsubsection{\texorpdfstring{RF\_pendCmd()}{RF\_pendCmd()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_r_f_8h_a128c46e18dbbaa781abb7abafc35233a}{R\+F\+\_\+\+Event\+Mask}} R\+F\+\_\+pend\+Cmd (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_r_f_8h_a5e8ab7fc87fb818f435d9b6226ee573f}{R\+F\+\_\+\+Handle}}}]{h,  }\item[{\mbox{\hyperlink{_r_f_8h_acab1f56c62a9fd1ad0a91a46b6da23f1}{R\+F\+\_\+\+Cmd\+Handle}}}]{ch,  }\item[{\mbox{\hyperlink{_r_f_8h_a128c46e18dbbaa781abb7abafc35233a}{R\+F\+\_\+\+Event\+Mask}}}]{bm\+Event }\end{DoxyParamCaption})}
+
+
+
+Wait for posted command to complete Wait until completion of RF command identified by handle ch for client identified by handle h to complete. ~\newline
+ Some RF operations (or chains of operations) use additional events during \mbox{\hyperlink{_r_f_8h_a2b0ee444fcb74917df94eefea804ecbb}{R\+F\+\_\+post\+Cmd()}} which, if enabled in event mask bm\+Event for the \mbox{\hyperlink{_r_f_8h_a91c1cb2508311f822acbc08ace568a83}{R\+F\+\_\+pend\+Cmd()}} will make the \mbox{\hyperlink{_r_f_8h_a91c1cb2508311f822acbc08ace568a83}{R\+F\+\_\+pend\+Cmd()}} return early, when that event occurs. In this case, multiple calls to \mbox{\hyperlink{_r_f_8h_a91c1cb2508311f822acbc08ace568a83}{R\+F\+\_\+pend\+Cmd()}} for a single command can be made. ~\newline
+ If \mbox{\hyperlink{_r_f_8h_a91c1cb2508311f822acbc08ace568a83}{R\+F\+\_\+pend\+Cmd()}} is called for a command that registered a callback function it will take precedence and the callback function will never be called. ~\newline
+ 
+
+\begin{DoxyNote}{Note}
+Calling context \+: Task 
+
+Only one call to \mbox{\hyperlink{_r_f_8h_a91c1cb2508311f822acbc08ace568a83}{R\+F\+\_\+pend\+Cmd()}} or \mbox{\hyperlink{_r_f_8h_a248bebdd1d0bd6e0812cf18116987e54}{R\+F\+\_\+run\+Cmd()}} can be made at a time for each client 
+
+Returns immediately if command has already run or has been aborted/cancelled
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em h} & Handle previously returned by \mbox{\hyperlink{_r_f_8h_a13a7c6f5a2b797e0aac18fecfaba6f64}{R\+F\+\_\+open()}} \\
+\hline
+{\em ch} & Command handle previously returned by \mbox{\hyperlink{_r_f_8h_a2b0ee444fcb74917df94eefea804ecbb}{R\+F\+\_\+post\+Cmd()}}. \\
+\hline
+{\em bm\+Event} & Bitmask of events that make \mbox{\hyperlink{_r_f_8h_a91c1cb2508311f822acbc08ace568a83}{R\+F\+\_\+pend\+Cmd()}} return. The command done event can not be masked away. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The relevant R\+F\+\_\+\+Event\+Mask (including R\+F\+\_\+\+Event\+Cmd\+Done) for the command or last command in a chain 
+\end{DoxyReturn}
+
+
+Definition at line 1652 of file R\+F\+C\+C26\+X\+X\+\_\+single\+Mode.\+c.
+
+\mbox{\Hypertarget{_r_f_c_c26_x_x__single_mode_8c_a2b0ee444fcb74917df94eefea804ecbb}\label{_r_f_c_c26_x_x__single_mode_8c_a2b0ee444fcb74917df94eefea804ecbb}} 
+\index{RFCC26XX\_singleMode.c@{RFCC26XX\_singleMode.c}!RF\_postCmd@{RF\_postCmd}}
+\index{RF\_postCmd@{RF\_postCmd}!RFCC26XX\_singleMode.c@{RFCC26XX\_singleMode.c}}
+\doxysubsubsection{\texorpdfstring{RF\_postCmd()}{RF\_postCmd()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_r_f_8h_acab1f56c62a9fd1ad0a91a46b6da23f1}{R\+F\+\_\+\+Cmd\+Handle}} R\+F\+\_\+post\+Cmd (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_r_f_8h_a5e8ab7fc87fb818f435d9b6226ee573f}{R\+F\+\_\+\+Handle}}}]{h,  }\item[{\mbox{\hyperlink{_r_f_8h_a47ea3dea78019340e8f8ceb854de5f02}{R\+F\+\_\+\+Op}} $\ast$}]{p\+Op,  }\item[{\mbox{\hyperlink{_r_f_8h_ae5f9a893d178e64e6d0a7a783ea06e32}{R\+F\+\_\+\+Priority}}}]{e\+Pri,  }\item[{\mbox{\hyperlink{_r_f_8h_a4d2ce6dc70b0f329dc5e249ec10c574a}{R\+F\+\_\+\+Callback}}}]{p\+Cb,  }\item[{\mbox{\hyperlink{_r_f_8h_a128c46e18dbbaa781abb7abafc35233a}{R\+F\+\_\+\+Event\+Mask}}}]{bm\+Event }\end{DoxyParamCaption})}
+
+
+
+Post an RF operation (chain) to the command queue Post an \mbox{\hyperlink{_r_f_8h_a47ea3dea78019340e8f8ceb854de5f02}{R\+F\+\_\+\+Op}} to the RF command queue of the client with handle h. ~\newline
+ The command can be the first in a chain of RF operations or a standalone RF operation. If a chain of operations are posted they are treated atomically, i.\+e. either all or none of the chained operations are run. ~\newline
+ All operations must be posted in strictly increasing chronological order. Function returns immediately. ~\newline
+ To facilitate code optimization \mbox{\hyperlink{_r_f_8h_a2b0ee444fcb74917df94eefea804ecbb}{R\+F\+\_\+post\+Cmd()}} should be used when running in single client environment. It does not call the internal dual mode functions and the implementation are same across R\+F\+C\+C26\+X\+X\+\_\+multi\+Mode.\+c and \mbox{\hyperlink{_r_f_c_c26_x_x__single_mode_8c}{R\+F\+C\+C26\+X\+X\+\_\+single\+Mode.\+c}} files.~\newline
+ Alternately \mbox{\hyperlink{_r_f_8h_a5e7f25943b5f3942bf4c09cb87f9aa76}{R\+F\+\_\+schedule\+Cmd()}} can be used in single or multi client environment. ~\newline
+ 
+
+Limitations apply to the operations posted\+:
+\begin{DoxyItemize}
+\item The operation must be in the set supported in the chosen radio mode when \mbox{\hyperlink{_r_f_8h_a13a7c6f5a2b797e0aac18fecfaba6f64}{R\+F\+\_\+open()}} was called
+\item Only a subset of radio operations are supported
+\item Only some of the trigger modes are supported
+\begin{DoxyItemize}
+\item T\+R\+I\+G\+\_\+\+N\+OW, T\+R\+I\+G\+\_\+\+A\+B\+S\+T\+I\+ME
+\end{DoxyItemize}
+\item Only some of the conditional execution modes are supported
+\begin{DoxyItemize}
+\item C\+O\+N\+D\+\_\+\+A\+L\+W\+A\+YS, C\+O\+N\+D\+\_\+\+N\+E\+V\+ER
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+\begin{DoxyNote}{Note}
+Calling context \+: Task/\+S\+WI
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em h} & Handle previously returned by \mbox{\hyperlink{_r_f_8h_a13a7c6f5a2b797e0aac18fecfaba6f64}{R\+F\+\_\+open()}} \\
+\hline
+{\em p\+Op} & Pointer to the \mbox{\hyperlink{_r_f_8h_a47ea3dea78019340e8f8ceb854de5f02}{R\+F\+\_\+\+Op}}. Must normally be in persistent and writeable memory \\
+\hline
+{\em e\+Pri} & Priority of this RF command (used for arbitration in multi-\/client systems) \\
+\hline
+{\em p\+Cb} & Callback function called upon command completion (and some other events). If \mbox{\hyperlink{_r_f_8h_a2b0ee444fcb74917df94eefea804ecbb}{R\+F\+\_\+post\+Cmd()}} fails no callback is made \\
+\hline
+{\em bm\+Event} & Bitmask of events that will trigger the callback. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A handle to the RF command. Return value of R\+F\+\_\+\+A\+L\+L\+O\+C\+\_\+\+E\+R\+R\+OR indicates error. 
+\end{DoxyReturn}
+
+
+Definition at line 1530 of file R\+F\+C\+C26\+X\+X\+\_\+single\+Mode.\+c.
+
+\mbox{\Hypertarget{_r_f_c_c26_x_x__single_mode_8c_a68013d7c8a5a0eed8add518b30679abe}\label{_r_f_c_c26_x_x__single_mode_8c_a68013d7c8a5a0eed8add518b30679abe}} 
+\index{RFCC26XX\_singleMode.c@{RFCC26XX\_singleMode.c}!RF\_ratCapture@{RF\_ratCapture}}
+\index{RF\_ratCapture@{RF\_ratCapture}!RFCC26XX\_singleMode.c@{RFCC26XX\_singleMode.c}}
+\doxysubsubsection{\texorpdfstring{RF\_ratCapture()}{RF\_ratCapture()}}
+{\footnotesize\ttfamily int8\+\_\+t R\+F\+\_\+rat\+Capture (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_r_f_8h_a5e8ab7fc87fb818f435d9b6226ee573f}{R\+F\+\_\+\+Handle}}}]{h,  }\item[{uint16\+\_\+t}]{config,  }\item[{\mbox{\hyperlink{_r_f_8h_a4d2ce6dc70b0f329dc5e249ec10c574a}{R\+F\+\_\+\+Callback}}}]{p\+Rat\+Cb }\end{DoxyParamCaption})}
+
+
+
+Setup R\+AT capture, and callback when capture event happens. Note radio needs to be on for R\+AT to operate. If radio is off, this A\+PI returns R\+F\+\_\+\+A\+L\+L\+O\+C\+\_\+\+E\+R\+R\+OR. 
+
+\begin{DoxyNote}{Note}
+Calling context \+: Task/\+S\+WI
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em h} & Handle previously returned by \mbox{\hyperlink{_r_f_8h_a13a7c6f5a2b797e0aac18fecfaba6f64}{R\+F\+\_\+open()}} \\
+\hline
+{\em config} & Config field of R\+AT capture command structure \\
+\hline
+{\em p\+Rat\+Cb} & Callback function when capture event happens \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Allocated R\+AT channel. Returned value R\+F\+\_\+\+A\+L\+L\+O\+C\+\_\+\+E\+R\+R\+OR indicates error. 
+\end{DoxyReturn}
+
+
+Definition at line 2121 of file R\+F\+C\+C26\+X\+X\+\_\+single\+Mode.\+c.
+
+\mbox{\Hypertarget{_r_f_c_c26_x_x__single_mode_8c_a8e24e90ec802b1d85d517e2075a4d129}\label{_r_f_c_c26_x_x__single_mode_8c_a8e24e90ec802b1d85d517e2075a4d129}} 
+\index{RFCC26XX\_singleMode.c@{RFCC26XX\_singleMode.c}!RF\_ratCompare@{RF\_ratCompare}}
+\index{RF\_ratCompare@{RF\_ratCompare}!RFCC26XX\_singleMode.c@{RFCC26XX\_singleMode.c}}
+\doxysubsubsection{\texorpdfstring{RF\_ratCompare()}{RF\_ratCompare()}}
+{\footnotesize\ttfamily int8\+\_\+t R\+F\+\_\+rat\+Compare (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_r_f_8h_a5e8ab7fc87fb818f435d9b6226ee573f}{R\+F\+\_\+\+Handle}}}]{h,  }\item[{rfc\+\_\+\+C\+M\+D\+\_\+\+S\+E\+T\+\_\+\+R\+A\+T\+\_\+\+C\+M\+P\+\_\+t $\ast$}]{p\+Cmd\+Struct,  }\item[{uint32\+\_\+t}]{compare\+Time,  }\item[{\mbox{\hyperlink{_r_f_8h_a4d2ce6dc70b0f329dc5e249ec10c574a}{R\+F\+\_\+\+Callback}}}]{p\+Rat\+Cb }\end{DoxyParamCaption})}
+
+
+
+Setup R\+AT compare, and callback when compare matches. Note radio needs to be on for R\+AT to operate. If radio is off, this A\+PI returns R\+F\+\_\+\+A\+L\+L\+O\+C\+\_\+\+E\+R\+R\+OR. 
+
+\begin{DoxyNote}{Note}
+Calling context \+: Task/\+S\+WI
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em h} & Handle previously returned by \mbox{\hyperlink{_r_f_8h_a13a7c6f5a2b797e0aac18fecfaba6f64}{R\+F\+\_\+open()}} \\
+\hline
+{\em p\+Cmd\+Struct} & Pointer to the R\+AT compare command structure. \\
+\hline
+{\em compare\+Time} & Compare time in R\+AT ticks \\
+\hline
+{\em p\+Rat\+Cb} & Callback function when capture event happens \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Allocated R\+AT channel. Returned value R\+F\+\_\+\+A\+L\+L\+O\+C\+\_\+\+E\+R\+R\+OR indicates error. 
+\end{DoxyReturn}
+
+
+Definition at line 2081 of file R\+F\+C\+C26\+X\+X\+\_\+single\+Mode.\+c.
+
+\mbox{\Hypertarget{_r_f_c_c26_x_x__single_mode_8c_a46e80aefad925b12066a7a94d532dc25}\label{_r_f_c_c26_x_x__single_mode_8c_a46e80aefad925b12066a7a94d532dc25}} 
+\index{RFCC26XX\_singleMode.c@{RFCC26XX\_singleMode.c}!RF\_ratDisableChannel@{RF\_ratDisableChannel}}
+\index{RF\_ratDisableChannel@{RF\_ratDisableChannel}!RFCC26XX\_singleMode.c@{RFCC26XX\_singleMode.c}}
+\doxysubsubsection{\texorpdfstring{RF\_ratDisableChannel()}{RF\_ratDisableChannel()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_r_f_8h_afdc219ddabc8427ecd552a6c78d9988f}{R\+F\+\_\+\+Stat}} R\+F\+\_\+rat\+Disable\+Channel (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_r_f_8h_a5e8ab7fc87fb818f435d9b6226ee573f}{R\+F\+\_\+\+Handle}}}]{h,  }\item[{int8\+\_\+t}]{rat\+Channel\+Num }\end{DoxyParamCaption})}
+
+
+
+Disable a R\+AT channel. 
+
+\begin{DoxyNote}{Note}
+Calling context \+: Task/\+S\+WI
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em h} & Handle previously returned by \mbox{\hyperlink{_r_f_8h_a13a7c6f5a2b797e0aac18fecfaba6f64}{R\+F\+\_\+open()}} \\
+\hline
+{\em rat\+Channel\+Num} & R\+AT channel number to be disabled \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+R\+F\+\_\+\+Stat indicates if command was successfully completed. 
+\end{DoxyReturn}
+
+
+Definition at line 2176 of file R\+F\+C\+C26\+X\+X\+\_\+single\+Mode.\+c.
+
+\mbox{\Hypertarget{_r_f_c_c26_x_x__single_mode_8c_ad55cb257d42afee6a93016a37e7f9027}\label{_r_f_c_c26_x_x__single_mode_8c_ad55cb257d42afee6a93016a37e7f9027}} 
+\index{RFCC26XX\_singleMode.c@{RFCC26XX\_singleMode.c}!RF\_ratHwOutput@{RF\_ratHwOutput}}
+\index{RF\_ratHwOutput@{RF\_ratHwOutput}!RFCC26XX\_singleMode.c@{RFCC26XX\_singleMode.c}}
+\doxysubsubsection{\texorpdfstring{RF\_ratHwOutput()}{RF\_ratHwOutput()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_r_f_8h_afdc219ddabc8427ecd552a6c78d9988f}{R\+F\+\_\+\+Stat}} R\+F\+\_\+rat\+Hw\+Output (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_r_f_8h_a5e8ab7fc87fb818f435d9b6226ee573f}{R\+F\+\_\+\+Handle}}}]{h,  }\item[{uint16\+\_\+t}]{config }\end{DoxyParamCaption})}
+
+
+
+Setup R\+AT HW output. Note radio needs to be on for R\+AT to operate. If radio is off, this A\+PI returns R\+F\+\_\+\+A\+L\+L\+O\+C\+\_\+\+E\+R\+R\+OR. 
+
+\begin{DoxyNote}{Note}
+Calling context \+: Task/\+S\+WI
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em h} & Handle previously returned by \mbox{\hyperlink{_r_f_8h_a13a7c6f5a2b797e0aac18fecfaba6f64}{R\+F\+\_\+open()}} \\
+\hline
+{\em config} & Config field of R\+AT HW output command structure \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+R\+F\+\_\+\+Stat indicates if command was successfully completed 
+\end{DoxyReturn}
+
+
+Definition at line 2165 of file R\+F\+C\+C26\+X\+X\+\_\+single\+Mode.\+c.
+
+\mbox{\Hypertarget{_r_f_c_c26_x_x__single_mode_8c_a248bebdd1d0bd6e0812cf18116987e54}\label{_r_f_c_c26_x_x__single_mode_8c_a248bebdd1d0bd6e0812cf18116987e54}} 
+\index{RFCC26XX\_singleMode.c@{RFCC26XX\_singleMode.c}!RF\_runCmd@{RF\_runCmd}}
+\index{RF\_runCmd@{RF\_runCmd}!RFCC26XX\_singleMode.c@{RFCC26XX\_singleMode.c}}
+\doxysubsubsection{\texorpdfstring{RF\_runCmd()}{RF\_runCmd()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_r_f_8h_a128c46e18dbbaa781abb7abafc35233a}{R\+F\+\_\+\+Event\+Mask}} R\+F\+\_\+run\+Cmd (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_r_f_8h_a5e8ab7fc87fb818f435d9b6226ee573f}{R\+F\+\_\+\+Handle}}}]{h,  }\item[{\mbox{\hyperlink{_r_f_8h_a47ea3dea78019340e8f8ceb854de5f02}{R\+F\+\_\+\+Op}} $\ast$}]{p\+Op,  }\item[{\mbox{\hyperlink{_r_f_8h_ae5f9a893d178e64e6d0a7a783ea06e32}{R\+F\+\_\+\+Priority}}}]{e\+Pri,  }\item[{\mbox{\hyperlink{_r_f_8h_a4d2ce6dc70b0f329dc5e249ec10c574a}{R\+F\+\_\+\+Callback}}}]{p\+Cb,  }\item[{\mbox{\hyperlink{_r_f_8h_a128c46e18dbbaa781abb7abafc35233a}{R\+F\+\_\+\+Event\+Mask}}}]{bm\+Event }\end{DoxyParamCaption})}
+
+
+
+Runs synchronously a (chain of) RF operation(s) Allows a (chain of) operation(s) to be posted to the command queue and then waits for it to complete. ~\newline
+ A command is completed if one of the R\+F\+\_\+\+Event\+Last\+Cmd\+Done, R\+F\+\_\+\+Event\+Cmd\+Cancelled, R\+F\+\_\+\+Event\+Cmd\+Aborted, R\+F\+\_\+\+Event\+Cmd\+Stopped or R\+F\+\_\+\+Event\+Cmd\+Error occured. 
+
+\begin{DoxyNote}{Note}
+Calling context \+: Task 
+
+Only one call to \mbox{\hyperlink{_r_f_8h_a91c1cb2508311f822acbc08ace568a83}{R\+F\+\_\+pend\+Cmd()}} or \mbox{\hyperlink{_r_f_8h_a248bebdd1d0bd6e0812cf18116987e54}{R\+F\+\_\+run\+Cmd()}} can be made at a time for each client
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em h} & Handle previously returned by \mbox{\hyperlink{_r_f_8h_a13a7c6f5a2b797e0aac18fecfaba6f64}{R\+F\+\_\+open()}} \\
+\hline
+{\em p\+Op} & Pointer to the \mbox{\hyperlink{_r_f_8h_a47ea3dea78019340e8f8ceb854de5f02}{R\+F\+\_\+\+Op}}. Must normally be in persistent and writeable memory \\
+\hline
+{\em e\+Pri} & Priority of this RF command (used for arbitration in multi-\/client systems) \\
+\hline
+{\em p\+Cb} & Callback function called upon command completion (and some other events). If \mbox{\hyperlink{_r_f_8h_a248bebdd1d0bd6e0812cf18116987e54}{R\+F\+\_\+run\+Cmd()}} fails no callback is made \\
+\hline
+{\em bm\+Event} & Bitmask of events that will trigger the callback. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The relevant commmand completed event. 
+\end{DoxyReturn}
+
+
+Definition at line 1700 of file R\+F\+C\+C26\+X\+X\+\_\+single\+Mode.\+c.
+
+\mbox{\Hypertarget{_r_f_c_c26_x_x__single_mode_8c_aafce617271300f2bee1a52ebda6d654e}\label{_r_f_c_c26_x_x__single_mode_8c_aafce617271300f2bee1a52ebda6d654e}} 
+\index{RFCC26XX\_singleMode.c@{RFCC26XX\_singleMode.c}!RF\_runDirectCmd@{RF\_runDirectCmd}}
+\index{RF\_runDirectCmd@{RF\_runDirectCmd}!RFCC26XX\_singleMode.c@{RFCC26XX\_singleMode.c}}
+\doxysubsubsection{\texorpdfstring{RF\_runDirectCmd()}{RF\_runDirectCmd()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_r_f_8h_afdc219ddabc8427ecd552a6c78d9988f}{R\+F\+\_\+\+Stat}} R\+F\+\_\+run\+Direct\+Cmd (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_r_f_8h_a5e8ab7fc87fb818f435d9b6226ee573f}{R\+F\+\_\+\+Handle}}}]{h,  }\item[{uint32\+\_\+t}]{cmd }\end{DoxyParamCaption})}
+
+
+
+Send any Direct command. ~\newline
+ 
+
+Direct Comamnd value is send to R\+D\+B\+E\+LL immediately, if radio is active and the R\+F\+\_\+\+Handle point to the current client. ~\newline
+ In other appropriate R\+F\+\_\+\+Stat values are returned. ~\newline
+
+
+\begin{DoxyNote}{Note}
+Calling context \+: Task/\+S\+W\+I/\+H\+WI
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em h} & Handle previously returned by \mbox{\hyperlink{_r_f_8h_a13a7c6f5a2b797e0aac18fecfaba6f64}{R\+F\+\_\+open()}} \\
+\hline
+{\em cmd} & Direct command value. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+R\+F\+\_\+\+Stat indicates if command was successfully completed. 
+\end{DoxyReturn}
+
+
+Definition at line 1959 of file R\+F\+C\+C26\+X\+X\+\_\+single\+Mode.\+c.
+
+\mbox{\Hypertarget{_r_f_c_c26_x_x__single_mode_8c_a6159b409f8d99954529a8ebf6f98cd85}\label{_r_f_c_c26_x_x__single_mode_8c_a6159b409f8d99954529a8ebf6f98cd85}} 
+\index{RFCC26XX\_singleMode.c@{RFCC26XX\_singleMode.c}!RF\_runImmediateCmd@{RF\_runImmediateCmd}}
+\index{RF\_runImmediateCmd@{RF\_runImmediateCmd}!RFCC26XX\_singleMode.c@{RFCC26XX\_singleMode.c}}
+\doxysubsubsection{\texorpdfstring{RF\_runImmediateCmd()}{RF\_runImmediateCmd()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_r_f_8h_afdc219ddabc8427ecd552a6c78d9988f}{R\+F\+\_\+\+Stat}} R\+F\+\_\+run\+Immediate\+Cmd (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_r_f_8h_a5e8ab7fc87fb818f435d9b6226ee573f}{R\+F\+\_\+\+Handle}}}]{h,  }\item[{uint32\+\_\+t $\ast$}]{p\+Cmd\+Struct }\end{DoxyParamCaption})}
+
+
+
+Send any Immediate command. ~\newline
+ 
+
+Immediate Comamnd is send to R\+D\+B\+E\+LL, if radio is active and the R\+F\+\_\+\+Handle points to the current client. ~\newline
+ In other appropriate R\+F\+\_\+\+Stat values are returned. ~\newline
+
+
+\begin{DoxyNote}{Note}
+Calling context \+: Task/\+S\+W\+I/\+H\+WI
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em h} & Handle previously returned by \mbox{\hyperlink{_r_f_8h_a13a7c6f5a2b797e0aac18fecfaba6f64}{R\+F\+\_\+open()}} \\
+\hline
+{\em p\+Cmd\+Struct} & Pointer to the immediate command structure \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+R\+F\+\_\+\+Stat indicates if command was successfully completed 
+\end{DoxyReturn}
+
+
+Definition at line 1944 of file R\+F\+C\+C26\+X\+X\+\_\+single\+Mode.\+c.
+
+\mbox{\Hypertarget{_r_f_c_c26_x_x__single_mode_8c_a299ada7963c727a40466d7d1bb7296a3}\label{_r_f_c_c26_x_x__single_mode_8c_a299ada7963c727a40466d7d1bb7296a3}} 
+\index{RFCC26XX\_singleMode.c@{RFCC26XX\_singleMode.c}!RF\_yield@{RF\_yield}}
+\index{RF\_yield@{RF\_yield}!RFCC26XX\_singleMode.c@{RFCC26XX\_singleMode.c}}
+\doxysubsubsection{\texorpdfstring{RF\_yield()}{RF\_yield()}}
+{\footnotesize\ttfamily void R\+F\+\_\+yield (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_r_f_8h_a5e8ab7fc87fb818f435d9b6226ee573f}{R\+F\+\_\+\+Handle}}}]{h }\end{DoxyParamCaption})}
+
+
+
+Signal that radio client is not going to issue more commands in a while. ~\newline
+ 
+
+Hint to RF driver that, irrespective of inactivity timeout, no new further commands will be issued for a while and thus the radio can be powered down at the earliest convenience.~\newline
+
+
+\begin{DoxyNote}{Note}
+Calling context \+: Task
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em h} & Handle previously returned by \mbox{\hyperlink{_r_f_8h_a13a7c6f5a2b797e0aac18fecfaba6f64}{R\+F\+\_\+open()}} \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 1717 of file R\+F\+C\+C26\+X\+X\+\_\+single\+Mode.\+c.
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{_r_f_c_c26_x_x__single_mode_8c_ae8d0e13e54c3d90453a1b4e6fea1809f}\label{_r_f_c_c26_x_x__single_mode_8c_ae8d0e13e54c3d90453a1b4e6fea1809f}} 
+\index{RFCC26XX\_singleMode.c@{RFCC26XX\_singleMode.c}!nSeqDone@{nSeqDone}}
+\index{nSeqDone@{nSeqDone}!RFCC26XX\_singleMode.c@{RFCC26XX\_singleMode.c}}
+\doxysubsubsection{\texorpdfstring{nSeqDone}{nSeqDone}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_r_f_8h_acab1f56c62a9fd1ad0a91a46b6da23f1}{R\+F\+\_\+\+Cmd\+Handle}} volatile n\+Seq\+Done}
+
+
+
+Definition at line 208 of file R\+F\+C\+C26\+X\+X\+\_\+single\+Mode.\+c.
+
+\mbox{\Hypertarget{_r_f_c_c26_x_x__single_mode_8c_a398d4307a5b2c66e1887c85eba7ffbc9}\label{_r_f_c_c26_x_x__single_mode_8c_a398d4307a5b2c66e1887c85eba7ffbc9}} 
+\index{RFCC26XX\_singleMode.c@{RFCC26XX\_singleMode.c}!nSeqPost@{nSeqPost}}
+\index{nSeqPost@{nSeqPost}!RFCC26XX\_singleMode.c@{RFCC26XX\_singleMode.c}}
+\doxysubsubsection{\texorpdfstring{nSeqPost}{nSeqPost}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_r_f_8h_acab1f56c62a9fd1ad0a91a46b6da23f1}{R\+F\+\_\+\+Cmd\+Handle}} volatile n\+Seq\+Post}
+
+
+
+Definition at line 207 of file R\+F\+C\+C26\+X\+X\+\_\+single\+Mode.\+c.
+
+\mbox{\Hypertarget{_r_f_c_c26_x_x__single_mode_8c_a7c4e16c154bd11fb03fe2bf433fb2956}\label{_r_f_c_c26_x_x__single_mode_8c_a7c4e16c154bd11fb03fe2bf433fb2956}} 
+\index{RFCC26XX\_singleMode.c@{RFCC26XX\_singleMode.c}!pCurrCmd@{pCurrCmd}}
+\index{pCurrCmd@{pCurrCmd}!RFCC26XX\_singleMode.c@{RFCC26XX\_singleMode.c}}
+\doxysubsubsection{\texorpdfstring{pCurrCmd}{pCurrCmd}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_r_f_c_c26_x_x__single_mode_8c_a2dd38e247b33e21ae1729c7ae47a49cb}{R\+F\+\_\+\+Cmd}}$\ast$ volatile p\+Curr\+Cmd}
+
+
+
+Definition at line 204 of file R\+F\+C\+C26\+X\+X\+\_\+single\+Mode.\+c.
+
+\mbox{\Hypertarget{_r_f_c_c26_x_x__single_mode_8c_a4bee584f66e6739ee3f41a5993ef4c55}\label{_r_f_c_c26_x_x__single_mode_8c_a4bee584f66e6739ee3f41a5993ef4c55}} 
+\index{RFCC26XX\_singleMode.c@{RFCC26XX\_singleMode.c}!pCurrCmdCb@{pCurrCmdCb}}
+\index{pCurrCmdCb@{pCurrCmdCb}!RFCC26XX\_singleMode.c@{RFCC26XX\_singleMode.c}}
+\doxysubsubsection{\texorpdfstring{pCurrCmdCb}{pCurrCmdCb}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_r_f_c_c26_x_x__single_mode_8c_a2dd38e247b33e21ae1729c7ae47a49cb}{R\+F\+\_\+\+Cmd}}$\ast$ volatile p\+Curr\+Cmd\+Cb}
+
+
+
+Definition at line 205 of file R\+F\+C\+C26\+X\+X\+\_\+single\+Mode.\+c.
+
+\mbox{\Hypertarget{_r_f_c_c26_x_x__single_mode_8c_a13a4a17b1a88fdf5bf35a24aa0e37dd6}\label{_r_f_c_c26_x_x__single_mode_8c_a13a4a17b1a88fdf5bf35a24aa0e37dd6}} 
+\index{RFCC26XX\_singleMode.c@{RFCC26XX\_singleMode.c}!pDone@{pDone}}
+\index{pDone@{pDone}!RFCC26XX\_singleMode.c@{RFCC26XX\_singleMode.c}}
+\doxysubsubsection{\texorpdfstring{pDone}{pDone}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_r_f_c_c26_x_x__single_mode_8c_a2dd38e247b33e21ae1729c7ae47a49cb}{R\+F\+\_\+\+Cmd}}$\ast$ volatile p\+Done}
+
+
+
+Definition at line 206 of file R\+F\+C\+C26\+X\+X\+\_\+single\+Mode.\+c.
+
+\mbox{\Hypertarget{_r_f_c_c26_x_x__single_mode_8c_a22f9c7300809a2fbd9e5ff1611e82d7f}\label{_r_f_c_c26_x_x__single_mode_8c_a22f9c7300809a2fbd9e5ff1611e82d7f}} 
+\index{RFCC26XX\_singleMode.c@{RFCC26XX\_singleMode.c}!pPend@{pPend}}
+\index{pPend@{pPend}!RFCC26XX\_singleMode.c@{RFCC26XX\_singleMode.c}}
+\doxysubsubsection{\texorpdfstring{pPend}{pPend}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_r_f_c_c26_x_x__single_mode_8c_a2dd38e247b33e21ae1729c7ae47a49cb}{R\+F\+\_\+\+Cmd}}$\ast$ volatile p\+Pend}
+
+
+
+Definition at line 203 of file R\+F\+C\+C26\+X\+X\+\_\+single\+Mode.\+c.
+
+\mbox{\Hypertarget{_r_f_c_c26_x_x__single_mode_8c_a57ef100cc886361375274656373b9af6}\label{_r_f_c_c26_x_x__single_mode_8c_a57ef100cc886361375274656373b9af6}} 
+\index{RFCC26XX\_singleMode.c@{RFCC26XX\_singleMode.c}!RFCC26XX\_hwAttrs@{RFCC26XX\_hwAttrs}}
+\index{RFCC26XX\_hwAttrs@{RFCC26XX\_hwAttrs}!RFCC26XX\_singleMode.c@{RFCC26XX\_singleMode.c}}
+\doxysubsubsection{\texorpdfstring{RFCC26XX\_hwAttrs}{RFCC26XX\_hwAttrs}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{struct_r_f_c_c26_x_x___h_w_attrs}{R\+F\+C\+C26\+X\+X\+\_\+\+H\+W\+Attrs}} R\+F\+C\+C26\+X\+X\+\_\+hw\+Attrs}
+
+\mbox{\Hypertarget{_r_f_c_c26_x_x__single_mode_8c_a3368745a7d9857f85e2555093e1cc6c5}\label{_r_f_c_c26_x_x__single_mode_8c_a3368745a7d9857f85e2555093e1cc6c5}} 
+\index{RFCC26XX\_singleMode.c@{RFCC26XX\_singleMode.c}!start@{start}}
+\index{start@{start}!RFCC26XX\_singleMode.c@{RFCC26XX\_singleMode.c}}
+\doxysubsubsection{\texorpdfstring{start}{start}}
+{\footnotesize\ttfamily rfc\+\_\+\+C\+M\+D\+\_\+\+S\+Y\+N\+C\+\_\+\+S\+T\+A\+R\+T\+\_\+\+R\+A\+T\+\_\+t start}
+
+
+
+Definition at line 237 of file R\+F\+C\+C26\+X\+X\+\_\+single\+Mode.\+c.
+
+\mbox{\Hypertarget{_r_f_c_c26_x_x__single_mode_8c_a03109624aac058c9a69dd75b83c35996}\label{_r_f_c_c26_x_x__single_mode_8c_a03109624aac058c9a69dd75b83c35996}} 
+\index{RFCC26XX\_singleMode.c@{RFCC26XX\_singleMode.c}!stop@{stop}}
+\index{stop@{stop}!RFCC26XX\_singleMode.c@{RFCC26XX\_singleMode.c}}
+\doxysubsubsection{\texorpdfstring{stop}{stop}}
+{\footnotesize\ttfamily rfc\+\_\+\+C\+M\+D\+\_\+\+S\+Y\+N\+C\+\_\+\+S\+T\+O\+P\+\_\+\+R\+A\+T\+\_\+t stop}
+
+
+
+Definition at line 238 of file R\+F\+C\+C26\+X\+X\+\_\+single\+Mode.\+c.
+

@@ -1,0 +1,346 @@
+\hypertarget{group___g_a_t_t___s_e_r_v_e_r___a_p_i}{}\doxysection{G\+A\+TT Server A\+PI Functions}
+\label{group___g_a_t_t___s_e_r_v_e_r___a_p_i}\index{GATT Server API Functions@{GATT Server API Functions}}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+b\+Status\+\_\+t \mbox{\hyperlink{group___g_a_t_t___s_e_r_v_e_r___a_p_i_ga9ca810167792408f4031a365620ab728}{G\+A\+T\+T\+\_\+\+Init\+Server}} (void)
+\begin{DoxyCompactList}\small\item\em Initialize the Generic Attribute Profile Server. \end{DoxyCompactList}\item 
+b\+Status\+\_\+t \mbox{\hyperlink{group___g_a_t_t___s_e_r_v_e_r___a_p_i_gaeba4228830d1fc449203a5a7cfeba5ec}{G\+A\+T\+T\+\_\+\+Register\+Service}} (\mbox{\hyperlink{structgatt_service__t}{gatt\+Service\+\_\+t}} $\ast$p\+Service)
+\begin{DoxyCompactList}\small\item\em Register a service attribute list with the G\+A\+TT Server. A service is composed of characteristics or references to other services. Each characteristic contains a value and may contain optional information about the value. There are two types of services\+: primary service and secondary service. \end{DoxyCompactList}\item 
+b\+Status\+\_\+t \mbox{\hyperlink{group___g_a_t_t___s_e_r_v_e_r___a_p_i_gab28df99ed1c4ee2f5ea1d661f68af588}{G\+A\+T\+T\+\_\+\+Deregister\+Service}} (uint16 handle, \mbox{\hyperlink{structgatt_service__t}{gatt\+Service\+\_\+t}} $\ast$p\+Service)
+\begin{DoxyCompactList}\small\item\em Deregister a service attribute list with the G\+A\+TT Server. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___g_a_t_t___s_e_r_v_e_r___a_p_i_ga355aa7260b9b562e9be14f9b82c0775a}{G\+A\+T\+T\+\_\+\+Register\+For\+Req}} (uint8 task\+Id)
+\begin{DoxyCompactList}\small\item\em Register to receive incoming A\+TT Requests. \end{DoxyCompactList}\item 
+b\+Status\+\_\+t \mbox{\hyperlink{group___g_a_t_t___s_e_r_v_e_r___a_p_i_ga0f47d29997f5d3bcdb4dfca443072b75}{G\+A\+T\+T\+\_\+\+Verify\+Read\+Permissions}} (uint16 conn\+Handle, \mbox{\hyperlink{gatt_8h_a8dca0d941f79cbc3bca13ab038e2e963}{gatt\+Attribute\+\_\+t}} $\ast$p\+Attr, uint16 service)
+\begin{DoxyCompactList}\small\item\em Verify the permissions of an attribute for reading. \end{DoxyCompactList}\item 
+b\+Status\+\_\+t \mbox{\hyperlink{group___g_a_t_t___s_e_r_v_e_r___a_p_i_ga3161911d885d4fa08f0ae38e0740e938}{G\+A\+T\+T\+\_\+\+Verify\+Write\+Permissions}} (uint16 conn\+Handle, \mbox{\hyperlink{gatt_8h_a8dca0d941f79cbc3bca13ab038e2e963}{gatt\+Attribute\+\_\+t}} $\ast$p\+Attr, uint16 service, att\+Write\+Req\+\_\+t $\ast$p\+Req)
+\begin{DoxyCompactList}\small\item\em Verify the permissions of an attribute for writing. \end{DoxyCompactList}\item 
+uint8 \mbox{\hyperlink{group___g_a_t_t___s_e_r_v_e_r___a_p_i_ga5d3b326374bd8a5424d6171d36980d98}{G\+A\+T\+T\+\_\+\+Service\+Changed\+Ind}} (uint16 conn\+Handle, uint8 task\+Id)
+\begin{DoxyCompactList}\small\item\em Send out a Service Changed Indication. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{gatt_8h_a8dca0d941f79cbc3bca13ab038e2e963}{gatt\+Attribute\+\_\+t}} $\ast$ \mbox{\hyperlink{group___g_a_t_t___s_e_r_v_e_r___a_p_i_gad8fa1f55bcffcd098cff1b11546391b9}{G\+A\+T\+T\+\_\+\+Find\+Handle\+U\+U\+ID}} (uint16 start\+Handle, uint16 end\+Handle, const uint8 $\ast$p\+U\+U\+ID, uint16 \mbox{\hyperlink{icall__apimsg_8h_a8ccac76f35f79d74917e1c5dd6f69fea}{len}}, uint16 $\ast$p\+Handle)
+\begin{DoxyCompactList}\small\item\em Find the attribute record for a given handle and U\+U\+ID. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{gatt_8h_a8dca0d941f79cbc3bca13ab038e2e963}{gatt\+Attribute\+\_\+t}} $\ast$ \mbox{\hyperlink{group___g_a_t_t___s_e_r_v_e_r___a_p_i_ga6d28d4a14b56b428c2f5f30d526c12c2}{G\+A\+T\+T\+\_\+\+Find\+Handle}} (uint16 handle, uint16 $\ast$p\+Handle)
+\begin{DoxyCompactList}\small\item\em Find the attribute record for a given handle. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{gatt_8h_a8dca0d941f79cbc3bca13ab038e2e963}{gatt\+Attribute\+\_\+t}} $\ast$ \mbox{\hyperlink{group___g_a_t_t___s_e_r_v_e_r___a_p_i_ga0ebec213ece7fb3979de6490894f7c4a}{G\+A\+T\+T\+\_\+\+Find\+Next\+Attr}} (\mbox{\hyperlink{gatt_8h_a8dca0d941f79cbc3bca13ab038e2e963}{gatt\+Attribute\+\_\+t}} $\ast$p\+Attr, uint16 end\+Handle, uint16 service, uint16 $\ast$p\+Last\+Handle)
+\begin{DoxyCompactList}\small\item\em Find the next attribute of the same type for a given attribute. \end{DoxyCompactList}\item 
+uint16 \mbox{\hyperlink{group___g_a_t_t___s_e_r_v_e_r___a_p_i_ga9497be8a28dcf7275441db9e81e265d2}{G\+A\+T\+T\+\_\+\+Service\+Num\+Attrs}} (uint16 handle)
+\begin{DoxyCompactList}\small\item\em Get the number of attributes for a given service. \end{DoxyCompactList}\item 
+uint8 \mbox{\hyperlink{group___g_a_t_t___s_e_r_v_e_r___a_p_i_ga393d8e2bd51764e5336282953f644ee7}{G\+A\+T\+T\+\_\+\+Service\+Enc\+Key\+Size}} (uint16 handle)
+\begin{DoxyCompactList}\small\item\em Get the minimum encryption key size required by a given service. \end{DoxyCompactList}\item 
+b\+Status\+\_\+t \mbox{\hyperlink{group___g_a_t_t___s_e_r_v_e_r___a_p_i_ga86fbb6053b23d4eb562109d9241ec335}{G\+A\+T\+T\+\_\+\+Send\+Rsp}} (uint16 conn\+Handle, uint8 method, \mbox{\hyperlink{uniongatt_msg__t}{gatt\+Msg\+\_\+t}} $\ast$p\+Rsp)
+\begin{DoxyCompactList}\small\item\em Send an A\+TT Response message out. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{group___g_a_t_t___s_e_r_v_e_r___a_p_i_gab28df99ed1c4ee2f5ea1d661f68af588}\label{group___g_a_t_t___s_e_r_v_e_r___a_p_i_gab28df99ed1c4ee2f5ea1d661f68af588}} 
+\index{GATT Server API Functions@{GATT Server API Functions}!GATT\_DeregisterService@{GATT\_DeregisterService}}
+\index{GATT\_DeregisterService@{GATT\_DeregisterService}!GATT Server API Functions@{GATT Server API Functions}}
+\doxysubsubsection{\texorpdfstring{GATT\_DeregisterService()}{GATT\_DeregisterService()}}
+{\footnotesize\ttfamily b\+Status\+\_\+t G\+A\+T\+T\+\_\+\+Deregister\+Service (\begin{DoxyParamCaption}\item[{uint16}]{handle,  }\item[{\mbox{\hyperlink{structgatt_service__t}{gatt\+Service\+\_\+t}} $\ast$}]{p\+Service }\end{DoxyParamCaption})}
+
+
+
+Deregister a service attribute list with the G\+A\+TT Server. 
+
+\begin{DoxyVerb}     NOTE: It's the caller's responsibility to free the service attribute
+     list returned from this API.
+\end{DoxyVerb}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em handle} & -\/ handle of service to be deregistered \\
+\hline
+{\em p\+Service} & -\/ pointer to deregistered service (to be returned)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+S\+U\+C\+C\+E\+SS\+: Service deregistered successfully.~\newline
+ F\+A\+I\+L\+U\+RE\+: Service not found.~\newline
+ 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group___g_a_t_t___s_e_r_v_e_r___a_p_i_ga6d28d4a14b56b428c2f5f30d526c12c2}\label{group___g_a_t_t___s_e_r_v_e_r___a_p_i_ga6d28d4a14b56b428c2f5f30d526c12c2}} 
+\index{GATT Server API Functions@{GATT Server API Functions}!GATT\_FindHandle@{GATT\_FindHandle}}
+\index{GATT\_FindHandle@{GATT\_FindHandle}!GATT Server API Functions@{GATT Server API Functions}}
+\doxysubsubsection{\texorpdfstring{GATT\_FindHandle()}{GATT\_FindHandle()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{gatt_8h_a8dca0d941f79cbc3bca13ab038e2e963}{gatt\+Attribute\+\_\+t}}$\ast$ G\+A\+T\+T\+\_\+\+Find\+Handle (\begin{DoxyParamCaption}\item[{uint16}]{handle,  }\item[{uint16 $\ast$}]{p\+Handle }\end{DoxyParamCaption})}
+
+
+
+Find the attribute record for a given handle. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em handle} & -\/ handle to look for \\
+\hline
+{\em p\+Handle} & -\/ handle of owner of attribute (to be returned)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to attribute record. N\+U\+LL, otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group___g_a_t_t___s_e_r_v_e_r___a_p_i_gad8fa1f55bcffcd098cff1b11546391b9}\label{group___g_a_t_t___s_e_r_v_e_r___a_p_i_gad8fa1f55bcffcd098cff1b11546391b9}} 
+\index{GATT Server API Functions@{GATT Server API Functions}!GATT\_FindHandleUUID@{GATT\_FindHandleUUID}}
+\index{GATT\_FindHandleUUID@{GATT\_FindHandleUUID}!GATT Server API Functions@{GATT Server API Functions}}
+\doxysubsubsection{\texorpdfstring{GATT\_FindHandleUUID()}{GATT\_FindHandleUUID()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{gatt_8h_a8dca0d941f79cbc3bca13ab038e2e963}{gatt\+Attribute\+\_\+t}}$\ast$ G\+A\+T\+T\+\_\+\+Find\+Handle\+U\+U\+ID (\begin{DoxyParamCaption}\item[{uint16}]{start\+Handle,  }\item[{uint16}]{end\+Handle,  }\item[{const uint8 $\ast$}]{p\+U\+U\+ID,  }\item[{uint16}]{len,  }\item[{uint16 $\ast$}]{p\+Handle }\end{DoxyParamCaption})}
+
+
+
+Find the attribute record for a given handle and U\+U\+ID. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em start\+Handle} & -\/ first handle to look for \\
+\hline
+{\em end\+Handle} & -\/ last handle to look for \\
+\hline
+{\em p\+U\+U\+ID} & -\/ pointer to U\+U\+ID to look for \\
+\hline
+{\em len} & -\/ length of U\+U\+ID \\
+\hline
+{\em p\+Handle} & -\/ handle of owner of attribute (to be returned)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to attribute record. N\+U\+LL, otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group___g_a_t_t___s_e_r_v_e_r___a_p_i_ga0ebec213ece7fb3979de6490894f7c4a}\label{group___g_a_t_t___s_e_r_v_e_r___a_p_i_ga0ebec213ece7fb3979de6490894f7c4a}} 
+\index{GATT Server API Functions@{GATT Server API Functions}!GATT\_FindNextAttr@{GATT\_FindNextAttr}}
+\index{GATT\_FindNextAttr@{GATT\_FindNextAttr}!GATT Server API Functions@{GATT Server API Functions}}
+\doxysubsubsection{\texorpdfstring{GATT\_FindNextAttr()}{GATT\_FindNextAttr()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{gatt_8h_a8dca0d941f79cbc3bca13ab038e2e963}{gatt\+Attribute\+\_\+t}}$\ast$ G\+A\+T\+T\+\_\+\+Find\+Next\+Attr (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{gatt_8h_a8dca0d941f79cbc3bca13ab038e2e963}{gatt\+Attribute\+\_\+t}} $\ast$}]{p\+Attr,  }\item[{uint16}]{end\+Handle,  }\item[{uint16}]{service,  }\item[{uint16 $\ast$}]{p\+Last\+Handle }\end{DoxyParamCaption})}
+
+
+
+Find the next attribute of the same type for a given attribute. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Attr} & -\/ pointer to attribute to find a next for \\
+\hline
+{\em end\+Handle} & -\/ last handle to look for \\
+\hline
+{\em service} & -\/ handle of owner service \\
+\hline
+{\em p\+Last\+Handle} & -\/ handle of last attribute (to be returned)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to next attribute record. N\+U\+LL, otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group___g_a_t_t___s_e_r_v_e_r___a_p_i_ga9ca810167792408f4031a365620ab728}\label{group___g_a_t_t___s_e_r_v_e_r___a_p_i_ga9ca810167792408f4031a365620ab728}} 
+\index{GATT Server API Functions@{GATT Server API Functions}!GATT\_InitServer@{GATT\_InitServer}}
+\index{GATT\_InitServer@{GATT\_InitServer}!GATT Server API Functions@{GATT Server API Functions}}
+\doxysubsubsection{\texorpdfstring{GATT\_InitServer()}{GATT\_InitServer()}}
+{\footnotesize\ttfamily b\+Status\+\_\+t G\+A\+T\+T\+\_\+\+Init\+Server (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Initialize the Generic Attribute Profile Server. 
+
+\begin{DoxyReturn}{Returns}
+S\+U\+C\+C\+E\+SS\+: Server initialized successfully.~\newline
+ ble\+Mem\+Alloc\+Error\+: Memory allocation error occurred.~\newline
+ 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group___g_a_t_t___s_e_r_v_e_r___a_p_i_ga355aa7260b9b562e9be14f9b82c0775a}\label{group___g_a_t_t___s_e_r_v_e_r___a_p_i_ga355aa7260b9b562e9be14f9b82c0775a}} 
+\index{GATT Server API Functions@{GATT Server API Functions}!GATT\_RegisterForReq@{GATT\_RegisterForReq}}
+\index{GATT\_RegisterForReq@{GATT\_RegisterForReq}!GATT Server API Functions@{GATT Server API Functions}}
+\doxysubsubsection{\texorpdfstring{GATT\_RegisterForReq()}{GATT\_RegisterForReq()}}
+{\footnotesize\ttfamily void G\+A\+T\+T\+\_\+\+Register\+For\+Req (\begin{DoxyParamCaption}\item[{uint8}]{task\+Id }\end{DoxyParamCaption})}
+
+
+
+Register to receive incoming A\+TT Requests. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em task\+Id} & -\/ task to forward requests to\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group___g_a_t_t___s_e_r_v_e_r___a_p_i_gaeba4228830d1fc449203a5a7cfeba5ec}\label{group___g_a_t_t___s_e_r_v_e_r___a_p_i_gaeba4228830d1fc449203a5a7cfeba5ec}} 
+\index{GATT Server API Functions@{GATT Server API Functions}!GATT\_RegisterService@{GATT\_RegisterService}}
+\index{GATT\_RegisterService@{GATT\_RegisterService}!GATT Server API Functions@{GATT Server API Functions}}
+\doxysubsubsection{\texorpdfstring{GATT\_RegisterService()}{GATT\_RegisterService()}}
+{\footnotesize\ttfamily b\+Status\+\_\+t G\+A\+T\+T\+\_\+\+Register\+Service (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structgatt_service__t}{gatt\+Service\+\_\+t}} $\ast$}]{p\+Service }\end{DoxyParamCaption})}
+
+
+
+Register a service attribute list with the G\+A\+TT Server. A service is composed of characteristics or references to other services. Each characteristic contains a value and may contain optional information about the value. There are two types of services\+: primary service and secondary service. 
+
+A service definition begins with a service declaration and ends before the next service declaration or the maximum Attribute Handle.
+
+A characteristic definition begins with a characteristic declaration and ends before the next characteristic or service declaration or maximum Attribute Handle.
+
+The attribute server will only keep a pointer to the attribute list, so the calling application will have to maintain the code and R\+AM associated with this list.
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Service} & -\/ pointer to service attribute list to be registered\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+S\+U\+C\+C\+E\+SS\+: Service registered successfully.~\newline
+ I\+N\+V\+A\+L\+I\+D\+P\+A\+R\+A\+M\+E\+T\+ER\+: Invalid service field.~\newline
+ F\+A\+I\+L\+U\+RE\+: Not enough attribute handles available.~\newline
+ ble\+Mem\+Alloc\+Error\+: Memory allocation error occurred.~\newline
+ ble\+Invalid\+Range\+: Encryption key size\textquotesingle{}s out of range.~\newline
+ 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group___g_a_t_t___s_e_r_v_e_r___a_p_i_ga86fbb6053b23d4eb562109d9241ec335}\label{group___g_a_t_t___s_e_r_v_e_r___a_p_i_ga86fbb6053b23d4eb562109d9241ec335}} 
+\index{GATT Server API Functions@{GATT Server API Functions}!GATT\_SendRsp@{GATT\_SendRsp}}
+\index{GATT\_SendRsp@{GATT\_SendRsp}!GATT Server API Functions@{GATT Server API Functions}}
+\doxysubsubsection{\texorpdfstring{GATT\_SendRsp()}{GATT\_SendRsp()}}
+{\footnotesize\ttfamily b\+Status\+\_\+t G\+A\+T\+T\+\_\+\+Send\+Rsp (\begin{DoxyParamCaption}\item[{uint16}]{conn\+Handle,  }\item[{uint8}]{method,  }\item[{\mbox{\hyperlink{uniongatt_msg__t}{gatt\+Msg\+\_\+t}} $\ast$}]{p\+Rsp }\end{DoxyParamCaption})}
+
+
+
+Send an A\+TT Response message out. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em conn\+Handle} & -\/ connection to use \\
+\hline
+{\em method} & -\/ type of response message \\
+\hline
+{\em p\+Rsp} & -\/ pointer to A\+TT response to be sent\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+S\+U\+C\+C\+E\+SS\+: Response was sent successfully. I\+N\+V\+A\+L\+I\+D\+P\+A\+R\+A\+M\+E\+T\+ER\+: Invalid response field. M\+S\+G\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+N\+O\+T\+\_\+\+A\+V\+A\+IL\+: No H\+CI buffer is available. ble\+Not\+Connected\+: Connection is down. ble\+Mem\+Alloc\+Error\+: Memory allocation error occurred. ble\+Pending\+: In the middle of another transmit. ble\+Invalid\+Mtu\+Size\+: Packet length is larger than connection\textquotesingle{}s M\+TU size. 
+\end{DoxyReturn}
+
+
+Definition at line 1197 of file icall\+\_\+api.\+c.
+
+\mbox{\Hypertarget{group___g_a_t_t___s_e_r_v_e_r___a_p_i_ga5d3b326374bd8a5424d6171d36980d98}\label{group___g_a_t_t___s_e_r_v_e_r___a_p_i_ga5d3b326374bd8a5424d6171d36980d98}} 
+\index{GATT Server API Functions@{GATT Server API Functions}!GATT\_ServiceChangedInd@{GATT\_ServiceChangedInd}}
+\index{GATT\_ServiceChangedInd@{GATT\_ServiceChangedInd}!GATT Server API Functions@{GATT Server API Functions}}
+\doxysubsubsection{\texorpdfstring{GATT\_ServiceChangedInd()}{GATT\_ServiceChangedInd()}}
+{\footnotesize\ttfamily uint8 G\+A\+T\+T\+\_\+\+Service\+Changed\+Ind (\begin{DoxyParamCaption}\item[{uint16}]{conn\+Handle,  }\item[{uint8}]{task\+Id }\end{DoxyParamCaption})}
+
+
+
+Send out a Service Changed Indication. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em conn\+Handle} & -\/ connection to use \\
+\hline
+{\em task\+Id} & -\/ task to be notified of confirmation\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+S\+U\+C\+C\+E\+SS\+: Indication was sent successfully.~\newline
+ F\+A\+I\+L\+U\+RE\+: Service Changed attribute not found.~\newline
+ I\+N\+V\+A\+L\+I\+D\+P\+A\+R\+A\+M\+E\+T\+ER\+: Invalid connection handle or request field.~\newline
+ M\+S\+G\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+N\+O\+T\+\_\+\+A\+V\+A\+IL\+: No H\+CI buffer is available.~\newline
+ ble\+Not\+Connected\+: Connection is down.~\newline
+ ble\+Pending\+: A confirmation is pending with this client.~\newline
+ 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group___g_a_t_t___s_e_r_v_e_r___a_p_i_ga393d8e2bd51764e5336282953f644ee7}\label{group___g_a_t_t___s_e_r_v_e_r___a_p_i_ga393d8e2bd51764e5336282953f644ee7}} 
+\index{GATT Server API Functions@{GATT Server API Functions}!GATT\_ServiceEncKeySize@{GATT\_ServiceEncKeySize}}
+\index{GATT\_ServiceEncKeySize@{GATT\_ServiceEncKeySize}!GATT Server API Functions@{GATT Server API Functions}}
+\doxysubsubsection{\texorpdfstring{GATT\_ServiceEncKeySize()}{GATT\_ServiceEncKeySize()}}
+{\footnotesize\ttfamily uint8 G\+A\+T\+T\+\_\+\+Service\+Enc\+Key\+Size (\begin{DoxyParamCaption}\item[{uint16}]{handle }\end{DoxyParamCaption})}
+
+
+
+Get the minimum encryption key size required by a given service. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em handle} & -\/ service handle to look for\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Encryption key size if service found. Default key size, otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group___g_a_t_t___s_e_r_v_e_r___a_p_i_ga9497be8a28dcf7275441db9e81e265d2}\label{group___g_a_t_t___s_e_r_v_e_r___a_p_i_ga9497be8a28dcf7275441db9e81e265d2}} 
+\index{GATT Server API Functions@{GATT Server API Functions}!GATT\_ServiceNumAttrs@{GATT\_ServiceNumAttrs}}
+\index{GATT\_ServiceNumAttrs@{GATT\_ServiceNumAttrs}!GATT Server API Functions@{GATT Server API Functions}}
+\doxysubsubsection{\texorpdfstring{GATT\_ServiceNumAttrs()}{GATT\_ServiceNumAttrs()}}
+{\footnotesize\ttfamily uint16 G\+A\+T\+T\+\_\+\+Service\+Num\+Attrs (\begin{DoxyParamCaption}\item[{uint16}]{handle }\end{DoxyParamCaption})}
+
+
+
+Get the number of attributes for a given service. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em handle} & -\/ service handle to look for\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Number of attributes if service found. 0, otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group___g_a_t_t___s_e_r_v_e_r___a_p_i_ga0f47d29997f5d3bcdb4dfca443072b75}\label{group___g_a_t_t___s_e_r_v_e_r___a_p_i_ga0f47d29997f5d3bcdb4dfca443072b75}} 
+\index{GATT Server API Functions@{GATT Server API Functions}!GATT\_VerifyReadPermissions@{GATT\_VerifyReadPermissions}}
+\index{GATT\_VerifyReadPermissions@{GATT\_VerifyReadPermissions}!GATT Server API Functions@{GATT Server API Functions}}
+\doxysubsubsection{\texorpdfstring{GATT\_VerifyReadPermissions()}{GATT\_VerifyReadPermissions()}}
+{\footnotesize\ttfamily b\+Status\+\_\+t G\+A\+T\+T\+\_\+\+Verify\+Read\+Permissions (\begin{DoxyParamCaption}\item[{uint16}]{conn\+Handle,  }\item[{\mbox{\hyperlink{gatt_8h_a8dca0d941f79cbc3bca13ab038e2e963}{gatt\+Attribute\+\_\+t}} $\ast$}]{p\+Attr,  }\item[{uint16}]{service }\end{DoxyParamCaption})}
+
+
+
+Verify the permissions of an attribute for reading. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em conn\+Handle} & -\/ connection to use \\
+\hline
+{\em p\+Attr} & -\/ pointer to attribute \\
+\hline
+{\em service} & -\/ service handle\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+S\+U\+C\+C\+E\+SS \+: Attribute can be read. 
+
+A\+T\+T\+\_\+\+E\+R\+R\+\_\+\+I\+N\+S\+U\+F\+F\+I\+C\+I\+E\+N\+T\+\_\+\+E\+N\+C\+R\+Y\+PT \+: Attribute cannot be read. 
+
+A\+T\+T\+\_\+\+E\+R\+R\+\_\+\+I\+N\+S\+U\+F\+F\+I\+C\+I\+E\+N\+T\+\_\+\+A\+U\+T\+H\+EN \+: Attribute requires authentication. 
+
+A\+T\+T\+\_\+\+E\+R\+R\+\_\+\+I\+N\+S\+U\+F\+F\+I\+C\+I\+E\+N\+T\+\_\+\+K\+E\+Y\+\_\+\+S\+I\+ZE \+: Key Size used for encrypting is insufficient. 
+
+A\+T\+T\+\_\+\+E\+R\+R\+\_\+\+I\+N\+S\+U\+F\+F\+I\+C\+I\+E\+N\+T\+\_\+\+E\+N\+C\+R\+Y\+PT \+: Attribute requires encryption. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group___g_a_t_t___s_e_r_v_e_r___a_p_i_ga3161911d885d4fa08f0ae38e0740e938}\label{group___g_a_t_t___s_e_r_v_e_r___a_p_i_ga3161911d885d4fa08f0ae38e0740e938}} 
+\index{GATT Server API Functions@{GATT Server API Functions}!GATT\_VerifyWritePermissions@{GATT\_VerifyWritePermissions}}
+\index{GATT\_VerifyWritePermissions@{GATT\_VerifyWritePermissions}!GATT Server API Functions@{GATT Server API Functions}}
+\doxysubsubsection{\texorpdfstring{GATT\_VerifyWritePermissions()}{GATT\_VerifyWritePermissions()}}
+{\footnotesize\ttfamily b\+Status\+\_\+t G\+A\+T\+T\+\_\+\+Verify\+Write\+Permissions (\begin{DoxyParamCaption}\item[{uint16}]{conn\+Handle,  }\item[{\mbox{\hyperlink{gatt_8h_a8dca0d941f79cbc3bca13ab038e2e963}{gatt\+Attribute\+\_\+t}} $\ast$}]{p\+Attr,  }\item[{uint16}]{service,  }\item[{att\+Write\+Req\+\_\+t $\ast$}]{p\+Req }\end{DoxyParamCaption})}
+
+
+
+Verify the permissions of an attribute for writing. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em conn\+Handle} & -\/ connection to use \\
+\hline
+{\em p\+Attr} & -\/ pointer to attribute \\
+\hline
+{\em service} & -\/ service handle \\
+\hline
+{\em p\+Req} & -\/ pointer to write request\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+S\+U\+C\+C\+E\+SS \+: Attribute can be written. 
+
+A\+T\+T\+\_\+\+E\+R\+R\+\_\+\+I\+N\+S\+U\+F\+F\+I\+C\+I\+E\+N\+T\+\_\+\+E\+N\+C\+R\+Y\+PT \+: Attribute cannot be written. 
+
+A\+T\+T\+\_\+\+E\+R\+R\+\_\+\+I\+N\+S\+U\+F\+F\+I\+C\+I\+E\+N\+T\+\_\+\+A\+U\+T\+H\+EN \+: Attribute requires authentication. 
+
+A\+T\+T\+\_\+\+E\+R\+R\+\_\+\+I\+N\+S\+U\+F\+F\+I\+C\+I\+E\+N\+T\+\_\+\+K\+E\+Y\+\_\+\+S\+I\+ZE \+: Key Size used for encrypting is insufficient. 
+
+A\+T\+T\+\_\+\+E\+R\+R\+\_\+\+I\+N\+S\+U\+F\+F\+I\+C\+I\+E\+N\+T\+\_\+\+E\+N\+C\+R\+Y\+PT \+: Attribute requires encryption. 
+\end{DoxyReturn}

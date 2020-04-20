@@ -1,0 +1,109 @@
+\hypertarget{struct___i_call___g_s_a___read_rsp__}{}\doxysection{\+\_\+\+I\+Call\+\_\+\+G\+S\+A\+\_\+\+Read\+Rsp\+\_\+ Struct Reference}
+\label{struct___i_call___g_s_a___read_rsp__}\index{\_ICall\_GSA\_ReadRsp\_@{\_ICall\_GSA\_ReadRsp\_}}
+
+
+{\ttfamily \#include $<$icall\+\_\+apimsg.\+h$>$}
+
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{icall__apimsg_8h_afa62f50d802fab57d759c527cead246e}{I\+Call\+\_\+\+Hci\+Ext\+Cmd}} \mbox{\hyperlink{struct___i_call___g_s_a___read_rsp___a5f99f77e15e0a79f528c669bf8a6643d}{hdr}}
+\begin{DoxyCompactList}\small\item\em header event field must be set as I\+C\+A\+L\+L\+\_\+\+C\+M\+D\+\_\+\+E\+V\+E\+NT \end{DoxyCompactList}\item 
+uint16\+\_\+t \mbox{\hyperlink{struct___i_call___g_s_a___read_rsp___a0335dba2c5449e5a3f9cfb10b9c1e7b7}{conn\+Handle}}
+\begin{DoxyCompactList}\small\item\em Connection Handle. \end{DoxyCompactList}\item 
+uint8\+\_\+t $\ast$ \mbox{\hyperlink{struct___i_call___g_s_a___read_rsp___a3b5ab5a3caa651b20e05f763cc741b79}{p\+Attr\+Value}}
+\begin{DoxyCompactList}\small\item\em Pointer to Attribute Value. \end{DoxyCompactList}\item 
+uint16\+\_\+t \mbox{\hyperlink{struct___i_call___g_s_a___read_rsp___aceb8c7307214bdfbe201457414161d61}{attr\+Len}}
+\begin{DoxyCompactList}\small\item\em Length of Attribute Read. \end{DoxyCompactList}\item 
+uint16\+\_\+t \mbox{\hyperlink{struct___i_call___g_s_a___read_rsp___a6022bce2aca641dab45f24dffcdd3741}{attr\+Handle}}
+\begin{DoxyCompactList}\small\item\em Attribute Handle. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+I\+Call message containing Hci\+Ext\+Cmd hdr, conn\+Handle, attribute value pointer, attribute length, and attribute handle
+
+\begin{DoxySeeAlso}{See also}
+G\+A\+T\+T\+Serv\+App\+\_\+\+G\+A\+T\+T\+Serv\+App\+\_\+\+Read\+Rsp() 
+\end{DoxySeeAlso}
+
+
+Definition at line 889 of file icall\+\_\+apimsg.\+h.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{struct___i_call___g_s_a___read_rsp___a6022bce2aca641dab45f24dffcdd3741}\label{struct___i_call___g_s_a___read_rsp___a6022bce2aca641dab45f24dffcdd3741}} 
+\index{\_ICall\_GSA\_ReadRsp\_@{\_ICall\_GSA\_ReadRsp\_}!attrHandle@{attrHandle}}
+\index{attrHandle@{attrHandle}!\_ICall\_GSA\_ReadRsp\_@{\_ICall\_GSA\_ReadRsp\_}}
+\doxysubsubsection{\texorpdfstring{attrHandle}{attrHandle}}
+{\footnotesize\ttfamily uint16\+\_\+t \+\_\+\+I\+Call\+\_\+\+G\+S\+A\+\_\+\+Read\+Rsp\+\_\+\+::attr\+Handle}
+
+
+
+Attribute Handle. 
+
+
+
+Definition at line 895 of file icall\+\_\+apimsg.\+h.
+
+\mbox{\Hypertarget{struct___i_call___g_s_a___read_rsp___aceb8c7307214bdfbe201457414161d61}\label{struct___i_call___g_s_a___read_rsp___aceb8c7307214bdfbe201457414161d61}} 
+\index{\_ICall\_GSA\_ReadRsp\_@{\_ICall\_GSA\_ReadRsp\_}!attrLen@{attrLen}}
+\index{attrLen@{attrLen}!\_ICall\_GSA\_ReadRsp\_@{\_ICall\_GSA\_ReadRsp\_}}
+\doxysubsubsection{\texorpdfstring{attrLen}{attrLen}}
+{\footnotesize\ttfamily uint16\+\_\+t \+\_\+\+I\+Call\+\_\+\+G\+S\+A\+\_\+\+Read\+Rsp\+\_\+\+::attr\+Len}
+
+
+
+Length of Attribute Read. 
+
+
+
+Definition at line 894 of file icall\+\_\+apimsg.\+h.
+
+\mbox{\Hypertarget{struct___i_call___g_s_a___read_rsp___a0335dba2c5449e5a3f9cfb10b9c1e7b7}\label{struct___i_call___g_s_a___read_rsp___a0335dba2c5449e5a3f9cfb10b9c1e7b7}} 
+\index{\_ICall\_GSA\_ReadRsp\_@{\_ICall\_GSA\_ReadRsp\_}!connHandle@{connHandle}}
+\index{connHandle@{connHandle}!\_ICall\_GSA\_ReadRsp\_@{\_ICall\_GSA\_ReadRsp\_}}
+\doxysubsubsection{\texorpdfstring{connHandle}{connHandle}}
+{\footnotesize\ttfamily uint16\+\_\+t \+\_\+\+I\+Call\+\_\+\+G\+S\+A\+\_\+\+Read\+Rsp\+\_\+\+::conn\+Handle}
+
+
+
+Connection Handle. 
+
+
+
+Definition at line 892 of file icall\+\_\+apimsg.\+h.
+
+\mbox{\Hypertarget{struct___i_call___g_s_a___read_rsp___a5f99f77e15e0a79f528c669bf8a6643d}\label{struct___i_call___g_s_a___read_rsp___a5f99f77e15e0a79f528c669bf8a6643d}} 
+\index{\_ICall\_GSA\_ReadRsp\_@{\_ICall\_GSA\_ReadRsp\_}!hdr@{hdr}}
+\index{hdr@{hdr}!\_ICall\_GSA\_ReadRsp\_@{\_ICall\_GSA\_ReadRsp\_}}
+\doxysubsubsection{\texorpdfstring{hdr}{hdr}}
+{\footnotesize\ttfamily \mbox{\hyperlink{icall__apimsg_8h_afa62f50d802fab57d759c527cead246e}{I\+Call\+\_\+\+Hci\+Ext\+Cmd}} \+\_\+\+I\+Call\+\_\+\+G\+S\+A\+\_\+\+Read\+Rsp\+\_\+\+::hdr}
+
+
+
+header event field must be set as I\+C\+A\+L\+L\+\_\+\+C\+M\+D\+\_\+\+E\+V\+E\+NT 
+
+
+
+Definition at line 891 of file icall\+\_\+apimsg.\+h.
+
+\mbox{\Hypertarget{struct___i_call___g_s_a___read_rsp___a3b5ab5a3caa651b20e05f763cc741b79}\label{struct___i_call___g_s_a___read_rsp___a3b5ab5a3caa651b20e05f763cc741b79}} 
+\index{\_ICall\_GSA\_ReadRsp\_@{\_ICall\_GSA\_ReadRsp\_}!pAttrValue@{pAttrValue}}
+\index{pAttrValue@{pAttrValue}!\_ICall\_GSA\_ReadRsp\_@{\_ICall\_GSA\_ReadRsp\_}}
+\doxysubsubsection{\texorpdfstring{pAttrValue}{pAttrValue}}
+{\footnotesize\ttfamily uint8\+\_\+t$\ast$ \+\_\+\+I\+Call\+\_\+\+G\+S\+A\+\_\+\+Read\+Rsp\+\_\+\+::p\+Attr\+Value}
+
+
+
+Pointer to Attribute Value. 
+
+
+
+Definition at line 893 of file icall\+\_\+apimsg.\+h.
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+I\+Call\+B\+L\+E/\mbox{\hyperlink{icall__apimsg_8h}{icall\+\_\+apimsg.\+h}}\end{DoxyCompactItemize}

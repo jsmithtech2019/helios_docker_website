@@ -1,0 +1,1284 @@
+\hypertarget{icall__apimsg_8h}{}\doxysection{I\+Call\+B\+L\+E/icall\+\_\+apimsg.h File Reference}
+\label{icall__apimsg_8h}\index{ICallBLE/icall\_apimsg.h@{ICallBLE/icall\_apimsg.h}}
+{\ttfamily \#include \char`\"{}gapgattserver.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}linkdb.\+h\char`\"{}}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct___i_call___hdr__}{\+\_\+\+I\+Call\+\_\+\+Hdr\+\_\+}}
+\item 
+struct \mbox{\hyperlink{struct___i_call___stack___event__}{\+\_\+\+I\+Call\+\_\+\+Stack\+\_\+\+Event\+\_\+}}
+\item 
+struct \mbox{\hyperlink{struct___i_call___hci_ext_cmd__}{\+\_\+\+I\+Call\+\_\+\+Hci\+Ext\+Cmd\+\_\+}}
+\item 
+struct \mbox{\hyperlink{struct___i_call___gap_device_init__}{\+\_\+\+I\+Call\+\_\+\+Gap\+Device\+Init\+\_\+}}
+\item 
+struct \mbox{\hyperlink{struct___i_call__param_id_len_val__}{\+\_\+\+I\+Call\+\_\+param\+Id\+Len\+Val\+\_\+}}
+\item 
+struct \mbox{\hyperlink{struct___i_call__param_id_val__}{\+\_\+\+I\+Call\+\_\+param\+Id\+Val\+\_\+}}
+\item 
+struct \mbox{\hyperlink{struct___i_call___gap_set_param__}{\+\_\+\+I\+Call\+\_\+\+Gap\+Set\+Param\+\_\+}}
+\item 
+struct \mbox{\hyperlink{struct___i_call___gap_get_param__}{\+\_\+\+I\+Call\+\_\+\+Gap\+Get\+Param\+\_\+}}
+\item 
+struct \mbox{\hyperlink{struct___i_call___profile_add_service__}{\+\_\+\+I\+Call\+\_\+\+Profile\+Add\+Service\+\_\+}}
+\item 
+struct \mbox{\hyperlink{struct___i_call___profile_set_param__}{\+\_\+\+I\+Call\+\_\+\+Profile\+Set\+Param\+\_\+}}
+\item 
+struct \mbox{\hyperlink{struct___i_call___profile_get_param__}{\+\_\+\+I\+Call\+\_\+\+Profile\+Get\+Param\+\_\+}}
+\item 
+struct \mbox{\hyperlink{struct___i_call___link_d_b_state__}{\+\_\+\+I\+Call\+\_\+\+Link\+D\+B\+State\+\_\+}}
+\item 
+struct \mbox{\hyperlink{struct___i_call___link_d_b_num_conns__}{\+\_\+\+I\+Call\+\_\+\+Link\+D\+B\+Num\+Conns\+\_\+}}
+\item 
+struct \mbox{\hyperlink{struct___i_call___link_d_b_num_active__}{\+\_\+\+I\+Call\+\_\+\+Link\+D\+B\+Num\+Active\+\_\+}}
+\item 
+struct \mbox{\hyperlink{struct___i_call___link_d_b_get_info__}{\+\_\+\+I\+Call\+\_\+\+Link\+D\+B\+Get\+Info\+\_\+}}
+\item 
+struct \mbox{\hyperlink{struct___i_call___s_m_register_task__}{\+\_\+\+I\+Call\+\_\+\+S\+M\+Register\+Task\+\_\+}}
+\item 
+struct \mbox{\hyperlink{struct___i_call___s_m_get_ecc_keys__}{\+\_\+\+I\+Call\+\_\+\+S\+M\+Get\+Ecc\+Keys\+\_\+}}
+\item 
+struct \mbox{\hyperlink{struct___i_call___s_m_get_d_h_key__}{\+\_\+\+I\+Call\+\_\+\+S\+M\+Get\+D\+H\+Key\+\_\+}}
+\item 
+struct \mbox{\hyperlink{struct___i_call___s_m_get_sc_confirm_oob__}{\+\_\+\+I\+Call\+\_\+\+S\+M\+Get\+Sc\+Confirm\+Oob\+\_\+}}
+\item 
+struct \mbox{\hyperlink{struct___i_call___g_g_s_register_app_c_bs__}{\+\_\+\+I\+Call\+\_\+\+G\+G\+S\+Register\+App\+C\+Bs\+\_\+}}
+\item 
+struct \mbox{\hyperlink{struct___i_call___bond_mgr_register__}{\+\_\+\+I\+Call\+\_\+\+Bond\+Mgr\+Register\+\_\+}}
+\item 
+struct \mbox{\hyperlink{struct___i_call___bond_mgr_passcode_rsp__}{\+\_\+\+I\+Call\+\_\+\+Bond\+Mgr\+Passcode\+Rsp\+\_\+}}
+\item 
+struct \mbox{\hyperlink{struct___i_call___bond_mgr_link_est__}{\+\_\+\+I\+Call\+\_\+\+Bond\+Mgr\+Link\+Est\+\_\+}}
+\item 
+struct \mbox{\hyperlink{struct___i_call___bond_mgr_link_term__}{\+\_\+\+I\+Call\+\_\+\+Bond\+Mgr\+Link\+Term\+\_\+}}
+\item 
+struct \mbox{\hyperlink{struct___i_call___bond_mgr_slave_req_sec__}{\+\_\+\+I\+Call\+\_\+\+Bond\+Mgr\+Slave\+Req\+Sec\+\_\+}}
+\item 
+struct \mbox{\hyperlink{struct___i_call___bond_mgr_resolve_addr__}{\+\_\+\+I\+Call\+\_\+\+Bond\+Mgr\+Resolve\+Addr\+\_\+}}
+\item 
+struct \mbox{\hyperlink{struct___i_call___gap_bond__}{\+\_\+\+I\+Call\+\_\+\+Gap\+Bond\+\_\+}}
+\item 
+struct \mbox{\hyperlink{struct___i_call___gap_params__}{\+\_\+\+I\+Call\+\_\+\+Gap\+Params\+\_\+}}
+\item 
+struct \mbox{\hyperlink{struct___i_call___gap_ptr_params__}{\+\_\+\+I\+Call\+\_\+\+Gap\+Ptr\+Params\+\_\+}}
+\item 
+struct \mbox{\hyperlink{struct___i_call___gap_param_and_ptr__}{\+\_\+\+I\+Call\+\_\+\+Gap\+Param\+And\+Ptr\+\_\+}}
+\item 
+struct \mbox{\hyperlink{struct___i_call___gap_terminate_link__}{\+\_\+\+I\+Call\+\_\+\+Gap\+Terminate\+Link\+\_\+}}
+\item 
+struct \mbox{\hyperlink{struct___i_call___gap_config_dev_addr__}{\+\_\+\+I\+Call\+\_\+\+Gap\+Config\+Dev\+Addr\+\_\+}}
+\item 
+struct \mbox{\hyperlink{struct___i_call___gap_update_adv_params__}{\+\_\+\+I\+Call\+\_\+\+Gap\+Update\+Adv\+Params\+\_\+}}
+\item 
+struct \mbox{\hyperlink{struct___i_call___gap_signable__}{\+\_\+\+I\+Call\+\_\+\+Gap\+Signable\+\_\+}}
+\item 
+struct \mbox{\hyperlink{struct___i_call___gap_remove_adv_token__}{\+\_\+\+I\+Call\+\_\+\+Gap\+Remove\+Adv\+Token\+\_\+}}
+\item 
+struct \mbox{\hyperlink{struct___i_call___gap_update_adv_token__}{\+\_\+\+I\+Call\+\_\+\+Gap\+Update\+Adv\+Token\+\_\+}}
+\item 
+struct \mbox{\hyperlink{struct___i_call___gap_pass_key_update_param__}{\+\_\+\+I\+Call\+\_\+\+Gap\+Pass\+Key\+Update\+Param\+\_\+}}
+\item 
+struct \mbox{\hyperlink{struct___i_call___gatt_req__}{\+\_\+\+I\+Call\+\_\+\+Gatt\+Req\+\_\+}}
+\item 
+struct \mbox{\hyperlink{struct___i_call___gatt_disc_all_primary_serv__}{\+\_\+\+I\+Call\+\_\+\+Gatt\+Disc\+All\+Primary\+Serv\+\_\+}}
+\item 
+struct \mbox{\hyperlink{struct___i_call___gatt_disc_prim_serv_by_u_u_i_d__}{\+\_\+\+I\+Call\+\_\+\+Gatt\+Disc\+Prim\+Serv\+By\+U\+U\+I\+D\+\_\+}}
+\item 
+struct \mbox{\hyperlink{struct___i_call___gatt_disc_all_chars__}{\+\_\+\+I\+Call\+\_\+\+Gatt\+Disc\+All\+Chars\+\_\+}}
+\item 
+struct \mbox{\hyperlink{struct___i_call___gatt_write_long__}{\+\_\+\+I\+Call\+\_\+\+Gatt\+Write\+Long\+\_\+}}
+\item 
+struct \mbox{\hyperlink{struct___i_call___gatt_reliable_write__}{\+\_\+\+I\+Call\+\_\+\+Gatt\+Reliable\+Write\+\_\+}}
+\item 
+struct \mbox{\hyperlink{struct___i_call___gatt_ind__}{\+\_\+\+I\+Call\+\_\+\+Gatt\+Ind\+\_\+}}
+\item 
+struct \mbox{\hyperlink{struct___i_call___gatt_init_client__}{\+\_\+\+I\+Call\+\_\+\+Gatt\+Init\+Client\+\_\+}}
+\item 
+struct \mbox{\hyperlink{struct___i_call___gatt_get_next_handle__}{\+\_\+\+I\+Call\+\_\+\+Gatt\+Get\+Next\+Handle\+\_\+}}
+\item 
+struct \mbox{\hyperlink{struct___i_call___gatt_register_for_ind__}{\+\_\+\+I\+Call\+\_\+\+Gatt\+Register\+For\+Ind\+\_\+}}
+\item 
+struct \mbox{\hyperlink{struct___i_call___gatt_hta_flow_ctrl__}{\+\_\+\+I\+Call\+\_\+\+Gatt\+Hta\+Flow\+Ctrl\+\_\+}}
+\item 
+struct \mbox{\hyperlink{struct___i_call___gatt_app_compl_msg__}{\+\_\+\+I\+Call\+\_\+\+Gatt\+App\+Compl\+Msg\+\_\+}}
+\item 
+struct \mbox{\hyperlink{struct___i_call___gatt_send_rsp__}{\+\_\+\+I\+Call\+\_\+\+Gatt\+Send\+Rsp\+\_\+}}
+\item 
+struct \mbox{\hyperlink{struct___i_call___att_param_and_ptr__}{\+\_\+\+I\+Call\+\_\+\+Att\+Param\+And\+Ptr\+\_\+}}
+\item 
+struct \mbox{\hyperlink{struct___i_call__ccc_update_msg__}{\+\_\+\+I\+Call\+\_\+ccc\+Update\+Msg\+\_\+}}
+\item 
+struct \mbox{\hyperlink{struct___i_call___l2cap_param_update_req__}{\+\_\+\+I\+Call\+\_\+\+L2cap\+Param\+Update\+Req\+\_\+}}
+\item 
+struct \mbox{\hyperlink{struct___i_call___l2cap_send_s_d_u__}{\+\_\+\+I\+Call\+\_\+\+L2cap\+Send\+S\+D\+U\+\_\+}}
+\item 
+struct \mbox{\hyperlink{struct___i_call___l2cap_register_psm__}{\+\_\+\+I\+Call\+\_\+\+L2cap\+Register\+Psm\+\_\+}}
+\item 
+struct \mbox{\hyperlink{struct___i_call___l2cap_deregister_psm__}{\+\_\+\+I\+Call\+\_\+\+L2cap\+Deregister\+Psm\+\_\+}}
+\item 
+struct \mbox{\hyperlink{struct___i_call___l2cap_psm_info__}{\+\_\+\+I\+Call\+\_\+\+L2cap\+Psm\+Info\+\_\+}}
+\item 
+struct \mbox{\hyperlink{struct___i_call___l2cap_psm_channels__}{\+\_\+\+I\+Call\+\_\+\+L2cap\+Psm\+Channels\+\_\+}}
+\item 
+struct \mbox{\hyperlink{struct___i_call___l2cap_channel_info__}{\+\_\+\+I\+Call\+\_\+\+L2cap\+Channel\+Info\+\_\+}}
+\item 
+struct \mbox{\hyperlink{struct___i_call___l2cap_connect_req__}{\+\_\+\+I\+Call\+\_\+\+L2cap\+Connect\+Req\+\_\+}}
+\item 
+struct \mbox{\hyperlink{struct___i_call___ll2cap_connect_rsp__}{\+\_\+\+I\+Call\+\_\+\+Ll2cap\+Connect\+Rsp\+\_\+}}
+\item 
+struct \mbox{\hyperlink{struct___i_call___l2cap_disconnect_req__}{\+\_\+\+I\+Call\+\_\+\+L2cap\+Disconnect\+Req\+\_\+}}
+\item 
+struct \mbox{\hyperlink{struct___i_call___l2cap_flow_ctrl_credit__}{\+\_\+\+I\+Call\+\_\+\+L2cap\+Flow\+Ctrl\+Credit\+\_\+}}
+\item 
+struct \mbox{\hyperlink{struct___i_call___g_s_a___reg_service__}{\+\_\+\+I\+Call\+\_\+\+G\+S\+A\+\_\+\+Reg\+Service\+\_\+}}
+\item 
+struct \mbox{\hyperlink{struct___i_call___g_s_a___dereg_service__}{\+\_\+\+I\+Call\+\_\+\+G\+S\+A\+\_\+\+Dereg\+Service\+\_\+}}
+\item 
+struct \mbox{\hyperlink{struct___i_call___g_s_a___service_change_ind__}{\+\_\+\+I\+Call\+\_\+\+G\+S\+A\+\_\+\+Service\+Change\+Ind\+\_\+}}
+\item 
+struct \mbox{\hyperlink{struct___i_call___g_s_a___read_rsp__}{\+\_\+\+I\+Call\+\_\+\+G\+S\+A\+\_\+\+Read\+Rsp\+\_\+}}
+\item 
+struct \mbox{\hyperlink{struct___i_call___hci___params__}{\+\_\+\+I\+Call\+\_\+\+Hci\+\_\+\+Params\+\_\+}}
+\item 
+struct \mbox{\hyperlink{struct___i_call___hci___ptr_params__}{\+\_\+\+I\+Call\+\_\+\+Hci\+\_\+\+Ptr\+Params\+\_\+}}
+\item 
+struct \mbox{\hyperlink{struct___i_call___hci___param_and_ptr__}{\+\_\+\+I\+Call\+\_\+\+Hci\+\_\+\+Param\+And\+Ptr\+\_\+}}
+\item 
+struct \mbox{\hyperlink{struct___i_call___hci_le___tx_test__}{\+\_\+\+I\+Call\+\_\+\+Hci\+Le\+\_\+\+Tx\+Test\+\_\+}}
+\item 
+struct \mbox{\hyperlink{struct___i_call___util_nv_read__}{\+\_\+\+I\+Call\+\_\+\+Util\+Nv\+Read\+\_\+}}
+\item 
+struct \mbox{\hyperlink{struct___i_call___util_nv_write__}{\+\_\+\+I\+Call\+\_\+\+Util\+Nv\+Write\+\_\+}}
+\item 
+struct \mbox{\hyperlink{struct___i_call___build_revision__}{\+\_\+\+I\+Call\+\_\+\+Build\+Revision\+\_\+}}
+\item 
+struct \mbox{\hyperlink{struct___i_call___util_build_rev__}{\+\_\+\+I\+Call\+\_\+\+Util\+Build\+Rev\+\_\+}}
+\item 
+struct \mbox{\hyperlink{struct___i_call___util_get_t_r_n_g__}{\+\_\+\+I\+Call\+\_\+\+Util\+Get\+T\+R\+N\+G\+\_\+}}
+\item 
+struct \mbox{\hyperlink{struct___i_call___register_task_msg__}{\+\_\+\+I\+Call\+\_\+\+Register\+Task\+Msg\+\_\+}}
+\item 
+union \mbox{\hyperlink{union___i_call___cmd_msg__}{\+\_\+\+I\+Call\+\_\+\+Cmd\+Msg\+\_\+}}
+\item 
+struct \mbox{\hyperlink{struct___i_call___hci_ext_evt__}{\+\_\+\+I\+Call\+\_\+\+Hci\+Ext\+Evt\+\_\+}}
+\item 
+struct \mbox{\hyperlink{struct___i_call___gap_cmd_status__}{\+\_\+\+I\+Call\+\_\+\+Gap\+Cmd\+Status\+\_\+}}
+\item 
+struct \mbox{\hyperlink{struct___i_call___n_p_i_uart_msg__}{\+\_\+\+I\+Call\+\_\+\+N\+P\+I\+Uart\+Msg\+\_\+}}
+\item 
+union \mbox{\hyperlink{union___i_call___evt_msg__}{\+\_\+\+I\+Call\+\_\+\+Evt\+Msg\+\_\+}}
+\item 
+struct \mbox{\hyperlink{struct_i_call___hci_cmd_complete_evt_msg}{I\+Call\+\_\+\+Hci\+Cmd\+Complete\+Evt\+Msg}}
+\item 
+struct \mbox{\hyperlink{struct_i_call___hci_read_bdaddr_evt_msg}{I\+Call\+\_\+\+Hci\+Read\+Bdaddr\+Evt\+Msg}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \mbox{\hyperlink{struct___i_call___hdr__}{\+\_\+\+I\+Call\+\_\+\+Hdr\+\_\+}} \mbox{\hyperlink{icall__apimsg_8h_a92c1ce232a1d64cf89259e48fa114f9a}{I\+Call\+\_\+\+Hdr}}
+\item 
+typedef struct \mbox{\hyperlink{struct___i_call___stack___event__}{\+\_\+\+I\+Call\+\_\+\+Stack\+\_\+\+Event\+\_\+}} \mbox{\hyperlink{icall__apimsg_8h_ac104ba4c8bd349d99e466aa975510bb0}{I\+Call\+\_\+\+Stack\+\_\+\+Event}}
+\item 
+typedef struct \mbox{\hyperlink{struct___i_call___hci_ext_cmd__}{\+\_\+\+I\+Call\+\_\+\+Hci\+Ext\+Cmd\+\_\+}} \mbox{\hyperlink{icall__apimsg_8h_afa62f50d802fab57d759c527cead246e}{I\+Call\+\_\+\+Hci\+Ext\+Cmd}}
+\item 
+typedef struct \mbox{\hyperlink{struct___i_call___gap_device_init__}{\+\_\+\+I\+Call\+\_\+\+Gap\+Device\+Init\+\_\+}} \mbox{\hyperlink{icall__apimsg_8h_a34b0607fd298991b3a219456c711733f}{I\+Call\+\_\+\+Gap\+Device\+Init}}
+\item 
+typedef struct \mbox{\hyperlink{struct___i_call__param_id_len_val__}{\+\_\+\+I\+Call\+\_\+param\+Id\+Len\+Val\+\_\+}} \mbox{\hyperlink{icall__apimsg_8h_aad72fcb451761a706a3af7d0d43761fe}{I\+Call\+\_\+param\+Id\+Len\+Val}}
+\item 
+typedef struct \mbox{\hyperlink{struct___i_call__param_id_val__}{\+\_\+\+I\+Call\+\_\+param\+Id\+Val\+\_\+}} \mbox{\hyperlink{icall__apimsg_8h_ab681614c82cfdd0e9f9aed1323fe34a3}{I\+Call\+\_\+param\+Id\+Val}}
+\item 
+typedef struct \mbox{\hyperlink{struct___i_call___gap_set_param__}{\+\_\+\+I\+Call\+\_\+\+Gap\+Set\+Param\+\_\+}} \mbox{\hyperlink{icall__apimsg_8h_aa3c8a3423c1224b313adb8c4ab6c2061}{I\+Call\+\_\+\+Gap\+Set\+Param}}
+\item 
+typedef struct \mbox{\hyperlink{struct___i_call___gap_get_param__}{\+\_\+\+I\+Call\+\_\+\+Gap\+Get\+Param\+\_\+}} \mbox{\hyperlink{icall__apimsg_8h_aa6aa32ecc960504924d97e8d4f288e68}{I\+Call\+\_\+\+Gap\+Get\+Param}}
+\item 
+typedef struct \mbox{\hyperlink{struct___i_call___profile_add_service__}{\+\_\+\+I\+Call\+\_\+\+Profile\+Add\+Service\+\_\+}} \mbox{\hyperlink{icall__apimsg_8h_a778af320f8deafd7c59a293746f83c69}{I\+Call\+\_\+\+Profile\+Add\+Service}}
+\item 
+typedef struct \mbox{\hyperlink{struct___i_call___profile_set_param__}{\+\_\+\+I\+Call\+\_\+\+Profile\+Set\+Param\+\_\+}} \mbox{\hyperlink{icall__apimsg_8h_a28e85272e49fbbe748697d25f49a84e0}{I\+Call\+\_\+\+Profile\+Set\+Param}}
+\item 
+typedef struct \mbox{\hyperlink{struct___i_call___profile_get_param__}{\+\_\+\+I\+Call\+\_\+\+Profile\+Get\+Param\+\_\+}} \mbox{\hyperlink{icall__apimsg_8h_aa4afb4ea39bffac3af60f9691805a6ac}{I\+Call\+\_\+\+Profile\+Get\+Param}}
+\item 
+typedef struct \mbox{\hyperlink{struct___i_call___link_d_b_state__}{\+\_\+\+I\+Call\+\_\+\+Link\+D\+B\+State\+\_\+}} \mbox{\hyperlink{icall__apimsg_8h_aa80063db4ddcca671abfee6a1a1361ba}{I\+Call\+\_\+\+Link\+D\+B\+State}}
+\item 
+typedef struct \mbox{\hyperlink{struct___i_call___link_d_b_num_conns__}{\+\_\+\+I\+Call\+\_\+\+Link\+D\+B\+Num\+Conns\+\_\+}} \mbox{\hyperlink{icall__apimsg_8h_ac515628f80bd617ed18ea42f5f2caaf3}{I\+Call\+\_\+\+Link\+D\+B\+Num\+Conns}}
+\item 
+typedef struct \mbox{\hyperlink{struct___i_call___link_d_b_num_active__}{\+\_\+\+I\+Call\+\_\+\+Link\+D\+B\+Num\+Active\+\_\+}} \mbox{\hyperlink{icall__apimsg_8h_adb7c2c3a0486a31a03b97aa2e57e41f0}{I\+Call\+\_\+\+Link\+D\+B\+Num\+Active}}
+\item 
+typedef struct \mbox{\hyperlink{struct___i_call___link_d_b_get_info__}{\+\_\+\+I\+Call\+\_\+\+Link\+D\+B\+Get\+Info\+\_\+}} \mbox{\hyperlink{icall__apimsg_8h_aadf0e8acc077620e72cf77dd06351fe0}{I\+Call\+\_\+\+Link\+D\+B\+Get\+Info}}
+\item 
+typedef struct \mbox{\hyperlink{struct___i_call___s_m_register_task__}{\+\_\+\+I\+Call\+\_\+\+S\+M\+Register\+Task\+\_\+}} \mbox{\hyperlink{icall__apimsg_8h_a1a6356de1bd19d9e298ae66f27d73275}{I\+Call\+\_\+\+S\+M\+Register\+Task}}
+\item 
+typedef struct \mbox{\hyperlink{struct___i_call___s_m_get_ecc_keys__}{\+\_\+\+I\+Call\+\_\+\+S\+M\+Get\+Ecc\+Keys\+\_\+}} \mbox{\hyperlink{icall__apimsg_8h_a1681472ecea38f7615bf7bf6748741ed}{I\+Call\+\_\+\+S\+M\+Get\+Ecc\+Keys}}
+\item 
+typedef struct \mbox{\hyperlink{struct___i_call___s_m_get_d_h_key__}{\+\_\+\+I\+Call\+\_\+\+S\+M\+Get\+D\+H\+Key\+\_\+}} \mbox{\hyperlink{icall__apimsg_8h_a819a13f1b3d9cac26b061d8ef5d685d2}{I\+Call\+\_\+\+S\+M\+Get\+D\+H\+Key}}
+\item 
+typedef struct \mbox{\hyperlink{struct___i_call___s_m_get_sc_confirm_oob__}{\+\_\+\+I\+Call\+\_\+\+S\+M\+Get\+Sc\+Confirm\+Oob\+\_\+}} \mbox{\hyperlink{icall__apimsg_8h_a16caf2cecccb599f428e134207da3c60}{I\+Call\+\_\+\+S\+M\+Get\+Sc\+Confirm\+Oob}}
+\item 
+typedef struct \mbox{\hyperlink{struct___i_call___g_g_s_register_app_c_bs__}{\+\_\+\+I\+Call\+\_\+\+G\+G\+S\+Register\+App\+C\+Bs\+\_\+}} \mbox{\hyperlink{icall__apimsg_8h_ab23f301181d445349682abe192d948f8}{I\+Call\+\_\+\+G\+G\+S\+Register\+App\+C\+Bs}}
+\item 
+typedef struct \mbox{\hyperlink{struct___i_call___bond_mgr_register__}{\+\_\+\+I\+Call\+\_\+\+Bond\+Mgr\+Register\+\_\+}} \mbox{\hyperlink{icall__apimsg_8h_ab77532c9678485231d5530a0cce1f547}{I\+Call\+\_\+\+Bond\+Mgr\+Register}}
+\item 
+typedef struct \mbox{\hyperlink{struct___i_call___bond_mgr_passcode_rsp__}{\+\_\+\+I\+Call\+\_\+\+Bond\+Mgr\+Passcode\+Rsp\+\_\+}} \mbox{\hyperlink{icall__apimsg_8h_ae2b424042f889a954e1ddc9d2b7773bd}{I\+Call\+\_\+\+Bond\+Mgr\+Passcode\+Rsp}}
+\item 
+typedef struct \mbox{\hyperlink{struct___i_call___bond_mgr_link_est__}{\+\_\+\+I\+Call\+\_\+\+Bond\+Mgr\+Link\+Est\+\_\+}} \mbox{\hyperlink{icall__apimsg_8h_a28da44224be3cc139d760aa970e9abeb}{I\+Call\+\_\+\+Bond\+Mgr\+Link\+Est}}
+\item 
+typedef struct \mbox{\hyperlink{struct___i_call___bond_mgr_link_term__}{\+\_\+\+I\+Call\+\_\+\+Bond\+Mgr\+Link\+Term\+\_\+}} \mbox{\hyperlink{icall__apimsg_8h_a714eb4a9e3329a1cbbcaf7e3762e063c}{I\+Call\+\_\+\+Bond\+Mgr\+Link\+Term}}
+\item 
+typedef struct \mbox{\hyperlink{struct___i_call___bond_mgr_slave_req_sec__}{\+\_\+\+I\+Call\+\_\+\+Bond\+Mgr\+Slave\+Req\+Sec\+\_\+}} \mbox{\hyperlink{icall__apimsg_8h_a65c172b5b211e0193637be2269203a48}{I\+Call\+\_\+\+Bond\+Mgr\+Slave\+Req\+Sec}}
+\item 
+typedef struct \mbox{\hyperlink{struct___i_call___bond_mgr_resolve_addr__}{\+\_\+\+I\+Call\+\_\+\+Bond\+Mgr\+Resolve\+Addr\+\_\+}} \mbox{\hyperlink{icall__apimsg_8h_ad0915403045afd2dfdcf3d3c273561b2}{I\+Call\+\_\+\+Bond\+Mgr\+Resolve\+Addr}}
+\item 
+typedef struct \mbox{\hyperlink{struct___i_call___gap_bond__}{\+\_\+\+I\+Call\+\_\+\+Gap\+Bond\+\_\+}} \mbox{\hyperlink{icall__apimsg_8h_a06c98fe5c67735cd8c3f692676a116c8}{I\+Call\+\_\+\+Gap\+Bond}}
+\item 
+typedef struct \mbox{\hyperlink{struct___i_call___gap_params__}{\+\_\+\+I\+Call\+\_\+\+Gap\+Params\+\_\+}} \mbox{\hyperlink{icall__apimsg_8h_a67dda012c819659c2d19ac59c94983be}{I\+Call\+\_\+\+Gap\+Params}}
+\item 
+typedef struct \mbox{\hyperlink{struct___i_call___gap_ptr_params__}{\+\_\+\+I\+Call\+\_\+\+Gap\+Ptr\+Params\+\_\+}} \mbox{\hyperlink{icall__apimsg_8h_a839b6387bab28aea69b4384743f006ef}{I\+Call\+\_\+\+Gap\+Ptr\+Params}}
+\item 
+typedef struct \mbox{\hyperlink{struct___i_call___gap_param_and_ptr__}{\+\_\+\+I\+Call\+\_\+\+Gap\+Param\+And\+Ptr\+\_\+}} \mbox{\hyperlink{icall__apimsg_8h_a3ed1c8945eaa34a9903e35a7903636a7}{I\+Call\+\_\+\+Gap\+Param\+And\+Ptr}}
+\item 
+typedef struct \mbox{\hyperlink{struct___i_call___gap_terminate_link__}{\+\_\+\+I\+Call\+\_\+\+Gap\+Terminate\+Link\+\_\+}} \mbox{\hyperlink{icall__apimsg_8h_ae7f4b60b7234b061f45be037597dbb27}{I\+Call\+\_\+\+Gap\+Terminate\+Link}}
+\item 
+typedef struct \mbox{\hyperlink{struct___i_call___gap_config_dev_addr__}{\+\_\+\+I\+Call\+\_\+\+Gap\+Config\+Dev\+Addr\+\_\+}} \mbox{\hyperlink{icall__apimsg_8h_a859eef0baa76f09f1e604dfe10cc4bdb}{I\+Call\+\_\+\+Gap\+Config\+Dev\+Addr}}
+\item 
+typedef struct \mbox{\hyperlink{struct___i_call___gap_update_adv_params__}{\+\_\+\+I\+Call\+\_\+\+Gap\+Update\+Adv\+Params\+\_\+}} \mbox{\hyperlink{icall__apimsg_8h_a96c210e05e657f09a21e4ca21161f619}{I\+Call\+\_\+\+Gap\+Update\+Adv\+Params}}
+\item 
+typedef struct \mbox{\hyperlink{struct___i_call___gap_signable__}{\+\_\+\+I\+Call\+\_\+\+Gap\+Signable\+\_\+}} \mbox{\hyperlink{icall__apimsg_8h_a30848c95f9ac371712a670951b8a776a}{I\+Call\+\_\+\+Gap\+Signable}}
+\item 
+typedef struct \mbox{\hyperlink{struct___i_call___gap_remove_adv_token__}{\+\_\+\+I\+Call\+\_\+\+Gap\+Remove\+Adv\+Token\+\_\+}} \mbox{\hyperlink{icall__apimsg_8h_aaac8fbe3af787ca011a43dd6d4c6fa16}{I\+Call\+\_\+\+Gap\+Remove\+Adv\+Token}}
+\item 
+typedef struct \mbox{\hyperlink{struct___i_call___gap_update_adv_token__}{\+\_\+\+I\+Call\+\_\+\+Gap\+Update\+Adv\+Token\+\_\+}} \mbox{\hyperlink{icall__apimsg_8h_a9b584f536edafbd093befe2ea26feaf0}{I\+Call\+\_\+\+Gap\+Update\+Adv\+Token}}
+\item 
+typedef struct \mbox{\hyperlink{struct___i_call___gap_pass_key_update_param__}{\+\_\+\+I\+Call\+\_\+\+Gap\+Pass\+Key\+Update\+Param\+\_\+}} \mbox{\hyperlink{icall__apimsg_8h_a93a8030864cc18f72524aa5e274c545f}{I\+Call\+\_\+\+Gap\+Pass\+Key\+Update\+Param}}
+\item 
+typedef struct \mbox{\hyperlink{struct___i_call___gatt_req__}{\+\_\+\+I\+Call\+\_\+\+Gatt\+Req\+\_\+}} \mbox{\hyperlink{icall__apimsg_8h_a69903a87fc14f7e29808779563e54372}{I\+Call\+\_\+\+Gatt\+Req}}
+\item 
+typedef struct \mbox{\hyperlink{struct___i_call___gatt_disc_all_primary_serv__}{\+\_\+\+I\+Call\+\_\+\+Gatt\+Disc\+All\+Primary\+Serv\+\_\+}} \mbox{\hyperlink{icall__apimsg_8h_ae515431a9d3596cd6314bbb2ab0ee56a}{I\+Call\+\_\+\+Gatt\+Disc\+All\+Primary\+Serv}}
+\item 
+typedef struct \mbox{\hyperlink{struct___i_call___gatt_disc_prim_serv_by_u_u_i_d__}{\+\_\+\+I\+Call\+\_\+\+Gatt\+Disc\+Prim\+Serv\+By\+U\+U\+I\+D\+\_\+}} \mbox{\hyperlink{icall__apimsg_8h_a1549a1274b081cf3abb503662d848292}{I\+Call\+\_\+\+Gatt\+Disc\+Prim\+Serv\+By\+U\+U\+ID}}
+\item 
+typedef struct \mbox{\hyperlink{struct___i_call___gatt_disc_all_chars__}{\+\_\+\+I\+Call\+\_\+\+Gatt\+Disc\+All\+Chars\+\_\+}} \mbox{\hyperlink{icall__apimsg_8h_a46519816b29cd48af6a53e5d82a4b08c}{I\+Call\+\_\+\+Gatt\+Disc\+All\+Chars}}
+\item 
+typedef struct \mbox{\hyperlink{struct___i_call___gatt_write_long__}{\+\_\+\+I\+Call\+\_\+\+Gatt\+Write\+Long\+\_\+}} \mbox{\hyperlink{icall__apimsg_8h_a15b450e1dc5e01d639754bd823d7c19a}{I\+Call\+\_\+\+Gatt\+Write\+Long}}
+\item 
+typedef struct \mbox{\hyperlink{struct___i_call___gatt_reliable_write__}{\+\_\+\+I\+Call\+\_\+\+Gatt\+Reliable\+Write\+\_\+}} \mbox{\hyperlink{icall__apimsg_8h_a89b233e63829ad9ecb04cf8516d79a35}{I\+Call\+\_\+\+Gatt\+Reliable\+Write}}
+\item 
+typedef struct \mbox{\hyperlink{struct___i_call___gatt_ind__}{\+\_\+\+I\+Call\+\_\+\+Gatt\+Ind\+\_\+}} \mbox{\hyperlink{icall__apimsg_8h_aa1d42d7c71adb169d12445a65bacbd07}{I\+Call\+\_\+\+Gatt\+Ind}}
+\item 
+typedef struct \mbox{\hyperlink{struct___i_call___gatt_init_client__}{\+\_\+\+I\+Call\+\_\+\+Gatt\+Init\+Client\+\_\+}} \mbox{\hyperlink{icall__apimsg_8h_ad4ad6e745955f287b121632f88cd2689}{I\+Call\+\_\+\+Gatt\+Init\+Client}}
+\item 
+typedef struct \mbox{\hyperlink{struct___i_call___gatt_get_next_handle__}{\+\_\+\+I\+Call\+\_\+\+Gatt\+Get\+Next\+Handle\+\_\+}} \mbox{\hyperlink{icall__apimsg_8h_a50a94cf53c0bab37b0cc66c580a9919c}{I\+Call\+\_\+\+Gatt\+Get\+Next\+Handle}}
+\item 
+typedef struct \mbox{\hyperlink{struct___i_call___gatt_register_for_ind__}{\+\_\+\+I\+Call\+\_\+\+Gatt\+Register\+For\+Ind\+\_\+}} \mbox{\hyperlink{icall__apimsg_8h_a1234213ff3a84e8f520c319ecfcb34a1}{I\+Call\+\_\+\+Gatt\+Register\+For\+Ind}}
+\item 
+typedef struct \mbox{\hyperlink{struct___i_call___gatt_hta_flow_ctrl__}{\+\_\+\+I\+Call\+\_\+\+Gatt\+Hta\+Flow\+Ctrl\+\_\+}} \mbox{\hyperlink{icall__apimsg_8h_ababc05d29ba06de6dce87f1e47370c0f}{I\+Call\+\_\+\+Gatt\+Hta\+Flow\+Ctrl}}
+\item 
+typedef struct \mbox{\hyperlink{struct___i_call___gatt_app_compl_msg__}{\+\_\+\+I\+Call\+\_\+\+Gatt\+App\+Compl\+Msg\+\_\+}} \mbox{\hyperlink{icall__apimsg_8h_a2694336f0c3430871bdbf5871423e7a1}{I\+Call\+\_\+\+Gatt\+App\+Compl\+Msg}}
+\item 
+typedef struct \mbox{\hyperlink{struct___i_call___gatt_send_rsp__}{\+\_\+\+I\+Call\+\_\+\+Gatt\+Send\+Rsp\+\_\+}} \mbox{\hyperlink{icall__apimsg_8h_ae28d7d60182f47eb7afa20ef35466432}{I\+Call\+\_\+\+Gatt\+Send\+Rsp}}
+\item 
+typedef struct \mbox{\hyperlink{struct___i_call___att_param_and_ptr__}{\+\_\+\+I\+Call\+\_\+\+Att\+Param\+And\+Ptr\+\_\+}} \mbox{\hyperlink{icall__apimsg_8h_a1c3c7bb4dafedcad49dcddab03a23a48}{I\+Call\+\_\+\+Att\+Param\+And\+Ptr}}
+\item 
+typedef struct \mbox{\hyperlink{struct___i_call__ccc_update_msg__}{\+\_\+\+I\+Call\+\_\+ccc\+Update\+Msg\+\_\+}} \mbox{\hyperlink{icall__apimsg_8h_a9a00566c447101ff10a6223ffc54a357}{I\+Call\+\_\+ccc\+Update\+Msg}}
+\item 
+typedef struct \mbox{\hyperlink{struct___i_call___l2cap_param_update_req__}{\+\_\+\+I\+Call\+\_\+\+L2cap\+Param\+Update\+Req\+\_\+}} \mbox{\hyperlink{icall__apimsg_8h_ab9a1fc1883cf025771772a788cdedf54}{I\+Call\+\_\+\+L2cap\+Param\+Update\+Req}}
+\item 
+typedef struct \mbox{\hyperlink{struct___i_call___l2cap_send_s_d_u__}{\+\_\+\+I\+Call\+\_\+\+L2cap\+Send\+S\+D\+U\+\_\+}} \mbox{\hyperlink{icall__apimsg_8h_aa443c79012ad06685c03a2dabf733c86}{I\+Call\+\_\+\+L2cap\+Send\+S\+DU}}
+\item 
+typedef struct \mbox{\hyperlink{struct___i_call___l2cap_register_psm__}{\+\_\+\+I\+Call\+\_\+\+L2cap\+Register\+Psm\+\_\+}} \mbox{\hyperlink{icall__apimsg_8h_a9809b498edabd2e1c38fed3624af38b5}{I\+Call\+\_\+\+L2cap\+Register\+Psm}}
+\item 
+typedef struct \mbox{\hyperlink{struct___i_call___l2cap_deregister_psm__}{\+\_\+\+I\+Call\+\_\+\+L2cap\+Deregister\+Psm\+\_\+}} \mbox{\hyperlink{icall__apimsg_8h_a232cb578c2d9388dd8e09f9c81f6f383}{I\+Call\+\_\+\+L2cap\+Deregister\+Psm}}
+\item 
+typedef struct \mbox{\hyperlink{struct___i_call___l2cap_psm_info__}{\+\_\+\+I\+Call\+\_\+\+L2cap\+Psm\+Info\+\_\+}} \mbox{\hyperlink{icall__apimsg_8h_a1088a974862582a98212376e508bd523}{I\+Call\+\_\+\+L2cap\+Psm\+Info}}
+\item 
+typedef struct \mbox{\hyperlink{struct___i_call___l2cap_psm_channels__}{\+\_\+\+I\+Call\+\_\+\+L2cap\+Psm\+Channels\+\_\+}} \mbox{\hyperlink{icall__apimsg_8h_af4c550a2cac69c98dc5fa545e61702bd}{I\+Call\+\_\+\+L2cap\+Psm\+Channels}}
+\item 
+typedef struct \mbox{\hyperlink{struct___i_call___l2cap_channel_info__}{\+\_\+\+I\+Call\+\_\+\+L2cap\+Channel\+Info\+\_\+}} \mbox{\hyperlink{icall__apimsg_8h_aff981d6a559387eec437ef88cbf9ef4c}{I\+Call\+\_\+\+L2cap\+Channel\+Info}}
+\item 
+typedef struct \mbox{\hyperlink{struct___i_call___l2cap_connect_req__}{\+\_\+\+I\+Call\+\_\+\+L2cap\+Connect\+Req\+\_\+}} \mbox{\hyperlink{icall__apimsg_8h_ab224f1011d92858d1a818e56bdc0b9eb}{I\+Call\+\_\+\+L2cap\+Connect\+Req}}
+\item 
+typedef struct \mbox{\hyperlink{struct___i_call___ll2cap_connect_rsp__}{\+\_\+\+I\+Call\+\_\+\+Ll2cap\+Connect\+Rsp\+\_\+}} \mbox{\hyperlink{icall__apimsg_8h_a89d3c12a0d8d8e79db7b3dace98434f2}{I\+Call\+\_\+\+Ll2cap\+Connect\+Rsp}}
+\item 
+typedef struct \mbox{\hyperlink{struct___i_call___l2cap_disconnect_req__}{\+\_\+\+I\+Call\+\_\+\+L2cap\+Disconnect\+Req\+\_\+}} \mbox{\hyperlink{icall__apimsg_8h_ac8753223c7975a2b0a8c097692dafc14}{I\+Call\+\_\+\+L2cap\+Disconnect\+Req}}
+\item 
+typedef struct \mbox{\hyperlink{struct___i_call___l2cap_flow_ctrl_credit__}{\+\_\+\+I\+Call\+\_\+\+L2cap\+Flow\+Ctrl\+Credit\+\_\+}} \mbox{\hyperlink{icall__apimsg_8h_a1d66cdefe74c107a28c85ad4514ae1ec}{I\+Call\+\_\+\+L2cap\+Flow\+Ctrl\+Credit}}
+\item 
+typedef struct \mbox{\hyperlink{struct___i_call___g_s_a___reg_service__}{\+\_\+\+I\+Call\+\_\+\+G\+S\+A\+\_\+\+Reg\+Service\+\_\+}} \mbox{\hyperlink{icall__apimsg_8h_a54cf2848da5a4e274c0b45b65bc921c1}{I\+Call\+\_\+\+G\+S\+A\+\_\+\+Reg\+Service}}
+\item 
+typedef struct \mbox{\hyperlink{struct___i_call___g_s_a___dereg_service__}{\+\_\+\+I\+Call\+\_\+\+G\+S\+A\+\_\+\+Dereg\+Service\+\_\+}} \mbox{\hyperlink{icall__apimsg_8h_a88e436c618f1bd1227114c1ade00378c}{I\+Call\+\_\+\+G\+S\+A\+\_\+\+Dereg\+Service}}
+\item 
+typedef struct \mbox{\hyperlink{struct___i_call___g_s_a___service_change_ind__}{\+\_\+\+I\+Call\+\_\+\+G\+S\+A\+\_\+\+Service\+Change\+Ind\+\_\+}} \mbox{\hyperlink{icall__apimsg_8h_aede840daa7879fc118af6aaf7a7a4978}{I\+Call\+\_\+\+G\+S\+A\+\_\+\+Service\+Change\+Ind}}
+\item 
+typedef struct \mbox{\hyperlink{struct___i_call___g_s_a___read_rsp__}{\+\_\+\+I\+Call\+\_\+\+G\+S\+A\+\_\+\+Read\+Rsp\+\_\+}} \mbox{\hyperlink{icall__apimsg_8h_a129f6611e91d14222c8765bcb9d543b6}{I\+Call\+\_\+\+G\+S\+A\+\_\+\+Read\+Rsp}}
+\item 
+typedef struct \mbox{\hyperlink{struct___i_call___hci___params__}{\+\_\+\+I\+Call\+\_\+\+Hci\+\_\+\+Params\+\_\+}} \mbox{\hyperlink{icall__apimsg_8h_a985d303066b463fe2c83b223e0bf37cf}{I\+Call\+\_\+\+Hci\+\_\+\+Params}}
+\item 
+typedef struct \mbox{\hyperlink{struct___i_call___hci___ptr_params__}{\+\_\+\+I\+Call\+\_\+\+Hci\+\_\+\+Ptr\+Params\+\_\+}} \mbox{\hyperlink{icall__apimsg_8h_aff7c2dc552909f629872a00acb7f6f19}{I\+Call\+\_\+\+Hci\+\_\+\+Ptr\+Params}}
+\item 
+typedef struct \mbox{\hyperlink{struct___i_call___hci___param_and_ptr__}{\+\_\+\+I\+Call\+\_\+\+Hci\+\_\+\+Param\+And\+Ptr\+\_\+}} \mbox{\hyperlink{icall__apimsg_8h_a5749ff4a7b8d6e57a8e829e701a40d0e}{I\+Call\+\_\+\+Hci\+\_\+\+Param\+And\+Ptr}}
+\item 
+typedef struct \mbox{\hyperlink{struct___i_call___hci_le___tx_test__}{\+\_\+\+I\+Call\+\_\+\+Hci\+Le\+\_\+\+Tx\+Test\+\_\+}} \mbox{\hyperlink{icall__apimsg_8h_ab3070da777b9df68827925408c7435cc}{I\+Call\+\_\+\+Hci\+Le\+\_\+\+Tx\+Test}}
+\item 
+typedef struct \mbox{\hyperlink{struct___i_call___util_nv_read__}{\+\_\+\+I\+Call\+\_\+\+Util\+Nv\+Read\+\_\+}} \mbox{\hyperlink{icall__apimsg_8h_a015087f04dcdb5950745f29d1de22ec6}{I\+Call\+\_\+\+Util\+Nv\+Read}}
+\item 
+typedef struct \mbox{\hyperlink{struct___i_call___util_nv_write__}{\+\_\+\+I\+Call\+\_\+\+Util\+Nv\+Write\+\_\+}} \mbox{\hyperlink{icall__apimsg_8h_ae9537e4f11b911b5dacc24865ca50622}{I\+Call\+\_\+\+Util\+Nv\+Write}}
+\item 
+typedef struct \mbox{\hyperlink{struct___i_call___build_revision__}{\+\_\+\+I\+Call\+\_\+\+Build\+Revision\+\_\+}} \mbox{\hyperlink{icall__apimsg_8h_a65ee593b8bd7efb678328b6f87838d44}{I\+Call\+\_\+\+Build\+Revision}}
+\item 
+typedef struct \mbox{\hyperlink{struct___i_call___util_build_rev__}{\+\_\+\+I\+Call\+\_\+\+Util\+Build\+Rev\+\_\+}} \mbox{\hyperlink{icall__apimsg_8h_ae68a4e1a23cac85813d7ff5c2b137786}{I\+Call\+\_\+\+Util\+Build\+Rev}}
+\item 
+typedef struct \mbox{\hyperlink{struct___i_call___util_get_t_r_n_g__}{\+\_\+\+I\+Call\+\_\+\+Util\+Get\+T\+R\+N\+G\+\_\+}} \mbox{\hyperlink{icall__apimsg_8h_a12ac24df1002548431f0968b7be1ff8f}{I\+Call\+\_\+\+Util\+Get\+T\+R\+NG}}
+\item 
+typedef struct \mbox{\hyperlink{struct___i_call___register_task_msg__}{\+\_\+\+I\+Call\+\_\+\+Register\+Task\+Msg\+\_\+}} \mbox{\hyperlink{icall__apimsg_8h_ab323c53353aa15be53d3bf4c0832635e}{I\+Call\+\_\+\+Register\+Task\+Msg}}
+\item 
+typedef union \mbox{\hyperlink{union___i_call___cmd_msg__}{\+\_\+\+I\+Call\+\_\+\+Cmd\+Msg\+\_\+}} \mbox{\hyperlink{icall__apimsg_8h_a559819281d2ad84ae3950858e572cac8}{I\+Call\+\_\+\+Cmd\+Msg}}
+\item 
+typedef struct \mbox{\hyperlink{struct___i_call___hci_ext_evt__}{\+\_\+\+I\+Call\+\_\+\+Hci\+Ext\+Evt\+\_\+}} \mbox{\hyperlink{icall__apimsg_8h_a8431813ff38e83dcecdf8b9181ff89b6}{I\+Call\+\_\+\+Hci\+Ext\+Evt}}
+\item 
+typedef struct \mbox{\hyperlink{struct___i_call___gap_cmd_status__}{\+\_\+\+I\+Call\+\_\+\+Gap\+Cmd\+Status\+\_\+}} \mbox{\hyperlink{icall__apimsg_8h_a1a491a06df782b6c52f3a1e2468e979c}{I\+Call\+\_\+\+Gap\+Cmd\+Status}}
+\item 
+typedef struct \mbox{\hyperlink{struct___i_call___n_p_i_uart_msg__}{\+\_\+\+I\+Call\+\_\+\+N\+P\+I\+Uart\+Msg\+\_\+}} \mbox{\hyperlink{icall__apimsg_8h_a348a64338930af0f88ece54cd715e626}{I\+Call\+\_\+\+N\+P\+I\+Uart\+Msg}}
+\item 
+typedef union \mbox{\hyperlink{union___i_call___evt_msg__}{\+\_\+\+I\+Call\+\_\+\+Evt\+Msg\+\_\+}} \mbox{\hyperlink{icall__apimsg_8h_a6440344e7d69995c2ceee7ffd5257a02}{I\+Call\+\_\+\+Evt\+Msg}}
+\item 
+typedef struct \mbox{\hyperlink{struct_i_call___hci_cmd_complete_evt_msg}{I\+Call\+\_\+\+Hci\+Cmd\+Complete\+Evt\+Msg}} \mbox{\hyperlink{icall__apimsg_8h_a092c67f42d0bbfc604deaf4224e4ece1}{I\+Call\+\_\+\+Hci\+Cmd\+Complete\+Evt\+Msg}}
+\item 
+typedef struct \mbox{\hyperlink{struct_i_call___hci_read_bdaddr_evt_msg}{I\+Call\+\_\+\+Hci\+Read\+Bdaddr\+Evt\+Msg}} \mbox{\hyperlink{icall__apimsg_8h_af8a97140132a06c89d53dd3a620ba3f6}{I\+Call\+\_\+\+Hci\+Read\+Bdaddr\+Evt\+Msg}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+b\+Status\+\_\+t \mbox{\hyperlink{icall__apimsg_8h_ad9cf5e8a9556ac33d32131e5bae15d43}{Util\+\_\+build\+Revision}} (\mbox{\hyperlink{icall__apimsg_8h_a65ee593b8bd7efb678328b6f87838d44}{I\+Call\+\_\+\+Build\+Revision}} $\ast$p\+Build\+Rev)
+\item 
+uint32\+\_\+t \mbox{\hyperlink{icall__apimsg_8h_a169dc1ac175efe8d9fac0c63d725b241}{Util\+\_\+\+Get\+T\+R\+NG}} (void)
+\item 
+void \mbox{\hyperlink{icall__apimsg_8h_afb34690bb276bbb0a1b507611ae3b74c}{B\+M\+\_\+free}} (void $\ast$payload\+\_\+ptr)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+uint16 \mbox{\hyperlink{icall__apimsg_8h_a3416c65d751a9d8f82b6cbd42bd9d223}{last\+App\+Opcode\+Sent}}
+\item 
+P\+A\+C\+K\+E\+D\+\_\+\+T\+Y\+P\+E\+D\+E\+F\+\_\+\+S\+T\+R\+U\+CT \mbox{\hyperlink{icall__apimsg_8h_aa7f4f10fbdc655dfe2ea40c24924e513}{I\+Call\+\_\+\+Hci\+Set\+Bdaddr\+Evt\+Msg}}
+\item 
+uint8 \mbox{\hyperlink{icall__apimsg_8h_a27c91d6e252800c2f87561917f7567dc}{evt\+Code}}
+\item 
+uint8 \mbox{\hyperlink{icall__apimsg_8h_a8ccac76f35f79d74917e1c5dd6f69fea}{len}}
+\item 
+uint16 \mbox{\hyperlink{icall__apimsg_8h_a9cb326940b48393401fd4c43d6cbbddc}{event\+Opcode}}
+\item 
+uint8 \mbox{\hyperlink{icall__apimsg_8h_ad94584ed274ed1d5b06d52f5bb3a178d}{status}}
+\item 
+uint16 \mbox{\hyperlink{icall__apimsg_8h_a2f91dfde180796f5efbaf6db19ac9c09}{opcode}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{icall__apimsg_8h_a1c3c7bb4dafedcad49dcddab03a23a48}\label{icall__apimsg_8h_a1c3c7bb4dafedcad49dcddab03a23a48}} 
+\index{icall\_apimsg.h@{icall\_apimsg.h}!ICall\_AttParamAndPtr@{ICall\_AttParamAndPtr}}
+\index{ICall\_AttParamAndPtr@{ICall\_AttParamAndPtr}!icall\_apimsg.h@{icall\_apimsg.h}}
+\doxysubsubsection{\texorpdfstring{ICall\_AttParamAndPtr}{ICall\_AttParamAndPtr}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct___i_call___att_param_and_ptr__}{\+\_\+\+I\+Call\+\_\+\+Att\+Param\+And\+Ptr\+\_\+}} \mbox{\hyperlink{icall__apimsg_8h_a1c3c7bb4dafedcad49dcddab03a23a48}{I\+Call\+\_\+\+Att\+Param\+And\+Ptr}}}
+
+I\+Call message containing Hci\+Ext\+Cmd hdr, connection handle and A\+TT message
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{icall__api_8c_ad81ac287724f2622fe15462e6cae6438}{A\+T\+T\+\_\+\+Handle\+Value\+Cfm}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{icall__apimsg_8h_a28da44224be3cc139d760aa970e9abeb}\label{icall__apimsg_8h_a28da44224be3cc139d760aa970e9abeb}} 
+\index{icall\_apimsg.h@{icall\_apimsg.h}!ICall\_BondMgrLinkEst@{ICall\_BondMgrLinkEst}}
+\index{ICall\_BondMgrLinkEst@{ICall\_BondMgrLinkEst}!icall\_apimsg.h@{icall\_apimsg.h}}
+\doxysubsubsection{\texorpdfstring{ICall\_BondMgrLinkEst}{ICall\_BondMgrLinkEst}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct___i_call___bond_mgr_link_est__}{\+\_\+\+I\+Call\+\_\+\+Bond\+Mgr\+Link\+Est\+\_\+}} \mbox{\hyperlink{icall__apimsg_8h_a28da44224be3cc139d760aa970e9abeb}{I\+Call\+\_\+\+Bond\+Mgr\+Link\+Est}}}
+
+I\+Call message containing Hci\+Ext\+Cmd hdr, device address, connection handle and role
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{group___g_a_p_r_o_l_e_s___b_o_n_d_m_g_r___a_p_i_ga41a1bd772c4156fd1c787c698296cd0b}{G\+A\+P\+Bond\+Mgr\+\_\+\+Link\+Est}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{icall__apimsg_8h_a714eb4a9e3329a1cbbcaf7e3762e063c}\label{icall__apimsg_8h_a714eb4a9e3329a1cbbcaf7e3762e063c}} 
+\index{icall\_apimsg.h@{icall\_apimsg.h}!ICall\_BondMgrLinkTerm@{ICall\_BondMgrLinkTerm}}
+\index{ICall\_BondMgrLinkTerm@{ICall\_BondMgrLinkTerm}!icall\_apimsg.h@{icall\_apimsg.h}}
+\doxysubsubsection{\texorpdfstring{ICall\_BondMgrLinkTerm}{ICall\_BondMgrLinkTerm}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct___i_call___bond_mgr_link_term__}{\+\_\+\+I\+Call\+\_\+\+Bond\+Mgr\+Link\+Term\+\_\+}} \mbox{\hyperlink{icall__apimsg_8h_a714eb4a9e3329a1cbbcaf7e3762e063c}{I\+Call\+\_\+\+Bond\+Mgr\+Link\+Term}}}
+
+I\+Call message containing Hci\+Ext\+Cmd hdr and connection handle
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{group___g_a_p_r_o_l_e_s___b_o_n_d_m_g_r___a_p_i_ga5bd00991eeab759b26ebd98f570f91b9}{G\+A\+P\+Bond\+Mgr\+\_\+\+Link\+Term}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{icall__apimsg_8h_ae2b424042f889a954e1ddc9d2b7773bd}\label{icall__apimsg_8h_ae2b424042f889a954e1ddc9d2b7773bd}} 
+\index{icall\_apimsg.h@{icall\_apimsg.h}!ICall\_BondMgrPasscodeRsp@{ICall\_BondMgrPasscodeRsp}}
+\index{ICall\_BondMgrPasscodeRsp@{ICall\_BondMgrPasscodeRsp}!icall\_apimsg.h@{icall\_apimsg.h}}
+\doxysubsubsection{\texorpdfstring{ICall\_BondMgrPasscodeRsp}{ICall\_BondMgrPasscodeRsp}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct___i_call___bond_mgr_passcode_rsp__}{\+\_\+\+I\+Call\+\_\+\+Bond\+Mgr\+Passcode\+Rsp\+\_\+}} \mbox{\hyperlink{icall__apimsg_8h_ae2b424042f889a954e1ddc9d2b7773bd}{I\+Call\+\_\+\+Bond\+Mgr\+Passcode\+Rsp}}}
+
+I\+Call message containing Hci\+Ext\+Cmd hdr, connection handle and passcode
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{group___g_a_p_r_o_l_e_s___b_o_n_d_m_g_r___a_p_i_ga3fed7c7c4af15a9f59b89374cdac5447}{G\+A\+P\+Bond\+Mgr\+\_\+\+Passcode\+Rsp}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{icall__apimsg_8h_ab77532c9678485231d5530a0cce1f547}\label{icall__apimsg_8h_ab77532c9678485231d5530a0cce1f547}} 
+\index{icall\_apimsg.h@{icall\_apimsg.h}!ICall\_BondMgrRegister@{ICall\_BondMgrRegister}}
+\index{ICall\_BondMgrRegister@{ICall\_BondMgrRegister}!icall\_apimsg.h@{icall\_apimsg.h}}
+\doxysubsubsection{\texorpdfstring{ICall\_BondMgrRegister}{ICall\_BondMgrRegister}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct___i_call___bond_mgr_register__}{\+\_\+\+I\+Call\+\_\+\+Bond\+Mgr\+Register\+\_\+}} \mbox{\hyperlink{icall__apimsg_8h_ab77532c9678485231d5530a0cce1f547}{I\+Call\+\_\+\+Bond\+Mgr\+Register}}}
+
+I\+Call message containing Hci\+Ext\+Cmd hdr and pointer to callback for bond manager register
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{group___g_a_p_r_o_l_e_s___b_o_n_d_m_g_r___a_p_i_ga6f8ee9b4906eeb74ae8f10d511229eda}{G\+A\+P\+Bond\+Mgr\+\_\+\+Register}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{icall__apimsg_8h_ad0915403045afd2dfdcf3d3c273561b2}\label{icall__apimsg_8h_ad0915403045afd2dfdcf3d3c273561b2}} 
+\index{icall\_apimsg.h@{icall\_apimsg.h}!ICall\_BondMgrResolveAddr@{ICall\_BondMgrResolveAddr}}
+\index{ICall\_BondMgrResolveAddr@{ICall\_BondMgrResolveAddr}!icall\_apimsg.h@{icall\_apimsg.h}}
+\doxysubsubsection{\texorpdfstring{ICall\_BondMgrResolveAddr}{ICall\_BondMgrResolveAddr}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct___i_call___bond_mgr_resolve_addr__}{\+\_\+\+I\+Call\+\_\+\+Bond\+Mgr\+Resolve\+Addr\+\_\+}} \mbox{\hyperlink{icall__apimsg_8h_ad0915403045afd2dfdcf3d3c273561b2}{I\+Call\+\_\+\+Bond\+Mgr\+Resolve\+Addr}}}
+
+I\+Call message containing Hci\+Ext\+Cmd hdr and connection handle
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{group___g_a_p_r_o_l_e_s___b_o_n_d_m_g_r___a_p_i_ga914829de70ba2b068ae387e364757a08}{G\+A\+P\+Bond\+Mgr\+\_\+\+Resolve\+Addr}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{icall__apimsg_8h_a65c172b5b211e0193637be2269203a48}\label{icall__apimsg_8h_a65c172b5b211e0193637be2269203a48}} 
+\index{icall\_apimsg.h@{icall\_apimsg.h}!ICall\_BondMgrSlaveReqSec@{ICall\_BondMgrSlaveReqSec}}
+\index{ICall\_BondMgrSlaveReqSec@{ICall\_BondMgrSlaveReqSec}!icall\_apimsg.h@{icall\_apimsg.h}}
+\doxysubsubsection{\texorpdfstring{ICall\_BondMgrSlaveReqSec}{ICall\_BondMgrSlaveReqSec}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct___i_call___bond_mgr_slave_req_sec__}{\+\_\+\+I\+Call\+\_\+\+Bond\+Mgr\+Slave\+Req\+Sec\+\_\+}} \mbox{\hyperlink{icall__apimsg_8h_a65c172b5b211e0193637be2269203a48}{I\+Call\+\_\+\+Bond\+Mgr\+Slave\+Req\+Sec}}}
+
+I\+Call message containing Hci\+Ext\+Cmd hdr and connection handle
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{group___g_a_p_r_o_l_e_s___b_o_n_d_m_g_r___a_p_i_ga0a0b8304f626abd88fe1145b79c85ffd}{G\+A\+P\+Bond\+Mgr\+\_\+\+Slave\+Req\+Security}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{icall__apimsg_8h_a65ee593b8bd7efb678328b6f87838d44}\label{icall__apimsg_8h_a65ee593b8bd7efb678328b6f87838d44}} 
+\index{icall\_apimsg.h@{icall\_apimsg.h}!ICall\_BuildRevision@{ICall\_BuildRevision}}
+\index{ICall\_BuildRevision@{ICall\_BuildRevision}!icall\_apimsg.h@{icall\_apimsg.h}}
+\doxysubsubsection{\texorpdfstring{ICall\_BuildRevision}{ICall\_BuildRevision}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct___i_call___build_revision__}{\+\_\+\+I\+Call\+\_\+\+Build\+Revision\+\_\+}} \mbox{\hyperlink{icall__apimsg_8h_a65ee593b8bd7efb678328b6f87838d44}{I\+Call\+\_\+\+Build\+Revision}}}
+
+I\+Call structure containing Build Revision parameters
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{icall__apimsg_8h_ad9cf5e8a9556ac33d32131e5bae15d43}{Util\+\_\+build\+Revision}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{icall__apimsg_8h_a9a00566c447101ff10a6223ffc54a357}\label{icall__apimsg_8h_a9a00566c447101ff10a6223ffc54a357}} 
+\index{icall\_apimsg.h@{icall\_apimsg.h}!ICall\_cccUpdateMsg@{ICall\_cccUpdateMsg}}
+\index{ICall\_cccUpdateMsg@{ICall\_cccUpdateMsg}!icall\_apimsg.h@{icall\_apimsg.h}}
+\doxysubsubsection{\texorpdfstring{ICall\_cccUpdateMsg}{ICall\_cccUpdateMsg}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct___i_call__ccc_update_msg__}{\+\_\+\+I\+Call\+\_\+ccc\+Update\+Msg\+\_\+}} \mbox{\hyperlink{icall__apimsg_8h_a9a00566c447101ff10a6223ffc54a357}{I\+Call\+\_\+ccc\+Update\+Msg}}}
+
+I\+Call message containing Hci\+Ext\+Cmd hdr, connection handle and A\+TT message
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{icall__api_8c_ad81ac287724f2622fe15462e6cae6438}{A\+T\+T\+\_\+\+Handle\+Value\+Cfm}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{icall__apimsg_8h_a559819281d2ad84ae3950858e572cac8}\label{icall__apimsg_8h_a559819281d2ad84ae3950858e572cac8}} 
+\index{icall\_apimsg.h@{icall\_apimsg.h}!ICall\_CmdMsg@{ICall\_CmdMsg}}
+\index{ICall\_CmdMsg@{ICall\_CmdMsg}!icall\_apimsg.h@{icall\_apimsg.h}}
+\doxysubsubsection{\texorpdfstring{ICall\_CmdMsg}{ICall\_CmdMsg}}
+{\footnotesize\ttfamily typedef union \mbox{\hyperlink{union___i_call___cmd_msg__}{\+\_\+\+I\+Call\+\_\+\+Cmd\+Msg\+\_\+}} \mbox{\hyperlink{icall__apimsg_8h_a559819281d2ad84ae3950858e572cac8}{I\+Call\+\_\+\+Cmd\+Msg}}}
+
+A union for application to be able to access a received B\+LE stack command message through, in order not to violate strict aliasing rule. \mbox{\Hypertarget{icall__apimsg_8h_a6440344e7d69995c2ceee7ffd5257a02}\label{icall__apimsg_8h_a6440344e7d69995c2ceee7ffd5257a02}} 
+\index{icall\_apimsg.h@{icall\_apimsg.h}!ICall\_EvtMsg@{ICall\_EvtMsg}}
+\index{ICall\_EvtMsg@{ICall\_EvtMsg}!icall\_apimsg.h@{icall\_apimsg.h}}
+\doxysubsubsection{\texorpdfstring{ICall\_EvtMsg}{ICall\_EvtMsg}}
+{\footnotesize\ttfamily typedef union \mbox{\hyperlink{union___i_call___evt_msg__}{\+\_\+\+I\+Call\+\_\+\+Evt\+Msg\+\_\+}} \mbox{\hyperlink{icall__apimsg_8h_a6440344e7d69995c2ceee7ffd5257a02}{I\+Call\+\_\+\+Evt\+Msg}}}
+
+A union for application to be able to access a received B\+LE stack event message through, in order not to violate strict aliasing rule. \mbox{\Hypertarget{icall__apimsg_8h_a06c98fe5c67735cd8c3f692676a116c8}\label{icall__apimsg_8h_a06c98fe5c67735cd8c3f692676a116c8}} 
+\index{icall\_apimsg.h@{icall\_apimsg.h}!ICall\_GapBond@{ICall\_GapBond}}
+\index{ICall\_GapBond@{ICall\_GapBond}!icall\_apimsg.h@{icall\_apimsg.h}}
+\doxysubsubsection{\texorpdfstring{ICall\_GapBond}{ICall\_GapBond}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct___i_call___gap_bond__}{\+\_\+\+I\+Call\+\_\+\+Gap\+Bond\+\_\+}} \mbox{\hyperlink{icall__apimsg_8h_a06c98fe5c67735cd8c3f692676a116c8}{I\+Call\+\_\+\+Gap\+Bond}}}
+
+I\+Call message containing Hci\+Ext\+Cmd hdr, connection handle and other security parameters
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{group___g_a_p___a_p_i_ga54c684222fd69ffdfed61ed57cb5e64e}{G\+A\+P\+\_\+\+Bond}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{icall__apimsg_8h_a1a491a06df782b6c52f3a1e2468e979c}\label{icall__apimsg_8h_a1a491a06df782b6c52f3a1e2468e979c}} 
+\index{icall\_apimsg.h@{icall\_apimsg.h}!ICall\_GapCmdStatus@{ICall\_GapCmdStatus}}
+\index{ICall\_GapCmdStatus@{ICall\_GapCmdStatus}!icall\_apimsg.h@{icall\_apimsg.h}}
+\doxysubsubsection{\texorpdfstring{ICall\_GapCmdStatus}{ICall\_GapCmdStatus}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct___i_call___gap_cmd_status__}{\+\_\+\+I\+Call\+\_\+\+Gap\+Cmd\+Status\+\_\+}} \mbox{\hyperlink{icall__apimsg_8h_a1a491a06df782b6c52f3a1e2468e979c}{I\+Call\+\_\+\+Gap\+Cmd\+Status}}}
+
+G\+AP Command status message \mbox{\Hypertarget{icall__apimsg_8h_a859eef0baa76f09f1e604dfe10cc4bdb}\label{icall__apimsg_8h_a859eef0baa76f09f1e604dfe10cc4bdb}} 
+\index{icall\_apimsg.h@{icall\_apimsg.h}!ICall\_GapConfigDevAddr@{ICall\_GapConfigDevAddr}}
+\index{ICall\_GapConfigDevAddr@{ICall\_GapConfigDevAddr}!icall\_apimsg.h@{icall\_apimsg.h}}
+\doxysubsubsection{\texorpdfstring{ICall\_GapConfigDevAddr}{ICall\_GapConfigDevAddr}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct___i_call___gap_config_dev_addr__}{\+\_\+\+I\+Call\+\_\+\+Gap\+Config\+Dev\+Addr\+\_\+}} \mbox{\hyperlink{icall__apimsg_8h_a859eef0baa76f09f1e604dfe10cc4bdb}{I\+Call\+\_\+\+Gap\+Config\+Dev\+Addr}}}
+
+I\+Call message containing Hci\+Ext\+Cmd hdr, address type and device address
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{group___g_a_p___a_p_i_gaaffa833dc484847afd019d087eefb2c6}{G\+A\+P\+\_\+\+Config\+Device\+Addr}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{icall__apimsg_8h_a34b0607fd298991b3a219456c711733f}\label{icall__apimsg_8h_a34b0607fd298991b3a219456c711733f}} 
+\index{icall\_apimsg.h@{icall\_apimsg.h}!ICall\_GapDeviceInit@{ICall\_GapDeviceInit}}
+\index{ICall\_GapDeviceInit@{ICall\_GapDeviceInit}!icall\_apimsg.h@{icall\_apimsg.h}}
+\doxysubsubsection{\texorpdfstring{ICall\_GapDeviceInit}{ICall\_GapDeviceInit}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct___i_call___gap_device_init__}{\+\_\+\+I\+Call\+\_\+\+Gap\+Device\+Init\+\_\+}} \mbox{\hyperlink{icall__apimsg_8h_a34b0607fd298991b3a219456c711733f}{I\+Call\+\_\+\+Gap\+Device\+Init}}}
+
+B\+LE G\+AP D\+E\+V\+I\+CE I\+N\+IT message header and body. This is an example of how legacy C function A\+PI is translated into a messaging interface. \begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{group___g_a_p___a_p_i_ga729bcdb44b9ea7717cbfd55d25ba5194}{G\+A\+P\+\_\+\+Device\+Init()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{icall__apimsg_8h_aa6aa32ecc960504924d97e8d4f288e68}\label{icall__apimsg_8h_aa6aa32ecc960504924d97e8d4f288e68}} 
+\index{icall\_apimsg.h@{icall\_apimsg.h}!ICall\_GapGetParam@{ICall\_GapGetParam}}
+\index{ICall\_GapGetParam@{ICall\_GapGetParam}!icall\_apimsg.h@{icall\_apimsg.h}}
+\doxysubsubsection{\texorpdfstring{ICall\_GapGetParam}{ICall\_GapGetParam}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct___i_call___gap_get_param__}{\+\_\+\+I\+Call\+\_\+\+Gap\+Get\+Param\+\_\+}} \mbox{\hyperlink{icall__apimsg_8h_aa6aa32ecc960504924d97e8d4f288e68}{I\+Call\+\_\+\+Gap\+Get\+Param}}}
+
+I\+Call message containing parameter ID for G\+AP Get Param \begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{group___g_a_p___a_p_i_ga357fe8676645fcc9b09b1d1317a6f193}{G\+A\+P\+\_\+\+Get\+Param\+Value()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{icall__apimsg_8h_a3ed1c8945eaa34a9903e35a7903636a7}\label{icall__apimsg_8h_a3ed1c8945eaa34a9903e35a7903636a7}} 
+\index{icall\_apimsg.h@{icall\_apimsg.h}!ICall\_GapParamAndPtr@{ICall\_GapParamAndPtr}}
+\index{ICall\_GapParamAndPtr@{ICall\_GapParamAndPtr}!icall\_apimsg.h@{icall\_apimsg.h}}
+\doxysubsubsection{\texorpdfstring{ICall\_GapParamAndPtr}{ICall\_GapParamAndPtr}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct___i_call___gap_param_and_ptr__}{\+\_\+\+I\+Call\+\_\+\+Gap\+Param\+And\+Ptr\+\_\+}} \mbox{\hyperlink{icall__apimsg_8h_a3ed1c8945eaa34a9903e35a7903636a7}{I\+Call\+\_\+\+Gap\+Param\+And\+Ptr}}}
+
+I\+Call message containing Hci\+Ext\+Cmd hdr and G\+AP parameter/pointer to parameter \mbox{\Hypertarget{icall__apimsg_8h_a67dda012c819659c2d19ac59c94983be}\label{icall__apimsg_8h_a67dda012c819659c2d19ac59c94983be}} 
+\index{icall\_apimsg.h@{icall\_apimsg.h}!ICall\_GapParams@{ICall\_GapParams}}
+\index{ICall\_GapParams@{ICall\_GapParams}!icall\_apimsg.h@{icall\_apimsg.h}}
+\doxysubsubsection{\texorpdfstring{ICall\_GapParams}{ICall\_GapParams}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct___i_call___gap_params__}{\+\_\+\+I\+Call\+\_\+\+Gap\+Params\+\_\+}} \mbox{\hyperlink{icall__apimsg_8h_a67dda012c819659c2d19ac59c94983be}{I\+Call\+\_\+\+Gap\+Params}}}
+
+I\+Call message containing Hci\+Ext\+Cmd hdr and G\+AP parameters \mbox{\Hypertarget{icall__apimsg_8h_a93a8030864cc18f72524aa5e274c545f}\label{icall__apimsg_8h_a93a8030864cc18f72524aa5e274c545f}} 
+\index{icall\_apimsg.h@{icall\_apimsg.h}!ICall\_GapPassKeyUpdateParam@{ICall\_GapPassKeyUpdateParam}}
+\index{ICall\_GapPassKeyUpdateParam@{ICall\_GapPassKeyUpdateParam}!icall\_apimsg.h@{icall\_apimsg.h}}
+\doxysubsubsection{\texorpdfstring{ICall\_GapPassKeyUpdateParam}{ICall\_GapPassKeyUpdateParam}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct___i_call___gap_pass_key_update_param__}{\+\_\+\+I\+Call\+\_\+\+Gap\+Pass\+Key\+Update\+Param\+\_\+}} \mbox{\hyperlink{icall__apimsg_8h_a93a8030864cc18f72524aa5e274c545f}{I\+Call\+\_\+\+Gap\+Pass\+Key\+Update\+Param}}}
+
+I\+Call message containing Hci\+Ext\+Cmd hdr, connection handle and passkey
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{group___g_a_p___a_p_i_ga95006a6e09ec3bbe5d29dadb30e2f464}{G\+A\+P\+\_\+\+Passkey\+Update}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{icall__apimsg_8h_a839b6387bab28aea69b4384743f006ef}\label{icall__apimsg_8h_a839b6387bab28aea69b4384743f006ef}} 
+\index{icall\_apimsg.h@{icall\_apimsg.h}!ICall\_GapPtrParams@{ICall\_GapPtrParams}}
+\index{ICall\_GapPtrParams@{ICall\_GapPtrParams}!icall\_apimsg.h@{icall\_apimsg.h}}
+\doxysubsubsection{\texorpdfstring{ICall\_GapPtrParams}{ICall\_GapPtrParams}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct___i_call___gap_ptr_params__}{\+\_\+\+I\+Call\+\_\+\+Gap\+Ptr\+Params\+\_\+}} \mbox{\hyperlink{icall__apimsg_8h_a839b6387bab28aea69b4384743f006ef}{I\+Call\+\_\+\+Gap\+Ptr\+Params}}}
+
+I\+Call message containing Hci\+Ext\+Cmd hdr and pointer to G\+AP parameters \mbox{\Hypertarget{icall__apimsg_8h_aaac8fbe3af787ca011a43dd6d4c6fa16}\label{icall__apimsg_8h_aaac8fbe3af787ca011a43dd6d4c6fa16}} 
+\index{icall\_apimsg.h@{icall\_apimsg.h}!ICall\_GapRemoveAdvToken@{ICall\_GapRemoveAdvToken}}
+\index{ICall\_GapRemoveAdvToken@{ICall\_GapRemoveAdvToken}!icall\_apimsg.h@{icall\_apimsg.h}}
+\doxysubsubsection{\texorpdfstring{ICall\_GapRemoveAdvToken}{ICall\_GapRemoveAdvToken}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct___i_call___gap_remove_adv_token__}{\+\_\+\+I\+Call\+\_\+\+Gap\+Remove\+Adv\+Token\+\_\+}} \mbox{\hyperlink{icall__apimsg_8h_aaac8fbe3af787ca011a43dd6d4c6fa16}{I\+Call\+\_\+\+Gap\+Remove\+Adv\+Token}}}
+
+I\+Call message containing Hci\+Ext\+Cmd hdr and G\+AP Advertisement type
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{group___g_a_p___a_p_i_gae98a99bcf9423126a2896bcf794cce76}{G\+A\+P\+\_\+\+Remove\+Adv\+Token}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{icall__apimsg_8h_aa3c8a3423c1224b313adb8c4ab6c2061}\label{icall__apimsg_8h_aa3c8a3423c1224b313adb8c4ab6c2061}} 
+\index{icall\_apimsg.h@{icall\_apimsg.h}!ICall\_GapSetParam@{ICall\_GapSetParam}}
+\index{ICall\_GapSetParam@{ICall\_GapSetParam}!icall\_apimsg.h@{icall\_apimsg.h}}
+\doxysubsubsection{\texorpdfstring{ICall\_GapSetParam}{ICall\_GapSetParam}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct___i_call___gap_set_param__}{\+\_\+\+I\+Call\+\_\+\+Gap\+Set\+Param\+\_\+}} \mbox{\hyperlink{icall__apimsg_8h_aa3c8a3423c1224b313adb8c4ab6c2061}{I\+Call\+\_\+\+Gap\+Set\+Param}}}
+
+I\+Call message containing parameter ID and value for G\+AP Set Param \begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{group___g_a_p___a_p_i_ga45fab6682fc253681d7abe697a4fc0b5}{G\+A\+P\+\_\+\+Set\+Param\+Value()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{icall__apimsg_8h_a30848c95f9ac371712a670951b8a776a}\label{icall__apimsg_8h_a30848c95f9ac371712a670951b8a776a}} 
+\index{icall\_apimsg.h@{icall\_apimsg.h}!ICall\_GapSignable@{ICall\_GapSignable}}
+\index{ICall\_GapSignable@{ICall\_GapSignable}!icall\_apimsg.h@{icall\_apimsg.h}}
+\doxysubsubsection{\texorpdfstring{ICall\_GapSignable}{ICall\_GapSignable}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct___i_call___gap_signable__}{\+\_\+\+I\+Call\+\_\+\+Gap\+Signable\+\_\+}} \mbox{\hyperlink{icall__apimsg_8h_a30848c95f9ac371712a670951b8a776a}{I\+Call\+\_\+\+Gap\+Signable}}}
+
+I\+Call message containing Hci\+Ext\+Cmd hdr, connection handle and other signing parameters
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{group___g_a_p___a_p_i_ga6a978b3a5b0441b2538a5da87ee9c409}{G\+A\+P\+\_\+\+Signable}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{icall__apimsg_8h_ae7f4b60b7234b061f45be037597dbb27}\label{icall__apimsg_8h_ae7f4b60b7234b061f45be037597dbb27}} 
+\index{icall\_apimsg.h@{icall\_apimsg.h}!ICall\_GapTerminateLink@{ICall\_GapTerminateLink}}
+\index{ICall\_GapTerminateLink@{ICall\_GapTerminateLink}!icall\_apimsg.h@{icall\_apimsg.h}}
+\doxysubsubsection{\texorpdfstring{ICall\_GapTerminateLink}{ICall\_GapTerminateLink}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct___i_call___gap_terminate_link__}{\+\_\+\+I\+Call\+\_\+\+Gap\+Terminate\+Link\+\_\+}} \mbox{\hyperlink{icall__apimsg_8h_ae7f4b60b7234b061f45be037597dbb27}{I\+Call\+\_\+\+Gap\+Terminate\+Link}}}
+
+I\+Call message containing Hci\+Ext\+Cmd hdr, connection handle and reason parameters for G\+AP Terminate Link request
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{group___g_a_p___a_p_i_ga45287a9df199ff8fd90b5fe1bfdc249a}{G\+A\+P\+\_\+\+Terminate\+Link\+Req}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{icall__apimsg_8h_a96c210e05e657f09a21e4ca21161f619}\label{icall__apimsg_8h_a96c210e05e657f09a21e4ca21161f619}} 
+\index{icall\_apimsg.h@{icall\_apimsg.h}!ICall\_GapUpdateAdvParams@{ICall\_GapUpdateAdvParams}}
+\index{ICall\_GapUpdateAdvParams@{ICall\_GapUpdateAdvParams}!icall\_apimsg.h@{icall\_apimsg.h}}
+\doxysubsubsection{\texorpdfstring{ICall\_GapUpdateAdvParams}{ICall\_GapUpdateAdvParams}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct___i_call___gap_update_adv_params__}{\+\_\+\+I\+Call\+\_\+\+Gap\+Update\+Adv\+Params\+\_\+}} \mbox{\hyperlink{icall__apimsg_8h_a96c210e05e657f09a21e4ca21161f619}{I\+Call\+\_\+\+Gap\+Update\+Adv\+Params}}}
+
+I\+Call message containing Hci\+Ext\+Cmd hdr, task ID, advertising data type, length and value
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{group___g_a_p___a_p_i_gaded667b28065286cf5851b8672112c23}{G\+A\+P\+\_\+\+Update\+Advertising\+Data}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{icall__apimsg_8h_a9b584f536edafbd093befe2ea26feaf0}\label{icall__apimsg_8h_a9b584f536edafbd093befe2ea26feaf0}} 
+\index{icall\_apimsg.h@{icall\_apimsg.h}!ICall\_GapUpdateAdvToken@{ICall\_GapUpdateAdvToken}}
+\index{ICall\_GapUpdateAdvToken@{ICall\_GapUpdateAdvToken}!icall\_apimsg.h@{icall\_apimsg.h}}
+\doxysubsubsection{\texorpdfstring{ICall\_GapUpdateAdvToken}{ICall\_GapUpdateAdvToken}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct___i_call___gap_update_adv_token__}{\+\_\+\+I\+Call\+\_\+\+Gap\+Update\+Adv\+Token\+\_\+}} \mbox{\hyperlink{icall__apimsg_8h_a9b584f536edafbd093befe2ea26feaf0}{I\+Call\+\_\+\+Gap\+Update\+Adv\+Token}}}
+
+I\+Call message containing Hci\+Ext\+Cmd hdr and G\+AP Advertisement type
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{icall__api_8c_a8680d82e797280a42846ae8932b87a1b}{G\+A\+P\+\_\+\+Update\+Adv\+Token}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{icall__apimsg_8h_a2694336f0c3430871bdbf5871423e7a1}\label{icall__apimsg_8h_a2694336f0c3430871bdbf5871423e7a1}} 
+\index{icall\_apimsg.h@{icall\_apimsg.h}!ICall\_GattAppComplMsg@{ICall\_GattAppComplMsg}}
+\index{ICall\_GattAppComplMsg@{ICall\_GattAppComplMsg}!icall\_apimsg.h@{icall\_apimsg.h}}
+\doxysubsubsection{\texorpdfstring{ICall\_GattAppComplMsg}{ICall\_GattAppComplMsg}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct___i_call___gatt_app_compl_msg__}{\+\_\+\+I\+Call\+\_\+\+Gatt\+App\+Compl\+Msg\+\_\+}} \mbox{\hyperlink{icall__apimsg_8h_a2694336f0c3430871bdbf5871423e7a1}{I\+Call\+\_\+\+Gatt\+App\+Compl\+Msg}}}
+
+I\+Call message containing Hci\+Ext\+Cmd hdr and processed G\+A\+TT message
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{group___g_a_t_t___f_l_o_w___c_t_r_l___a_p_i_gaf879443ffb9fa104d6905246a2337828}{G\+A\+T\+T\+\_\+\+App\+Completed\+Msg}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{icall__apimsg_8h_a46519816b29cd48af6a53e5d82a4b08c}\label{icall__apimsg_8h_a46519816b29cd48af6a53e5d82a4b08c}} 
+\index{icall\_apimsg.h@{icall\_apimsg.h}!ICall\_GattDiscAllChars@{ICall\_GattDiscAllChars}}
+\index{ICall\_GattDiscAllChars@{ICall\_GattDiscAllChars}!icall\_apimsg.h@{icall\_apimsg.h}}
+\doxysubsubsection{\texorpdfstring{ICall\_GattDiscAllChars}{ICall\_GattDiscAllChars}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct___i_call___gatt_disc_all_chars__}{\+\_\+\+I\+Call\+\_\+\+Gatt\+Disc\+All\+Chars\+\_\+}} \mbox{\hyperlink{icall__apimsg_8h_a46519816b29cd48af6a53e5d82a4b08c}{I\+Call\+\_\+\+Gatt\+Disc\+All\+Chars}}}
+
+I\+Call message containing Hci\+Ext\+Cmd hdr, connection handle, start Handle and end Handle \begin{DoxySeeAlso}{See also}
+G\+A\+T\+T\+\_\+\+Find\+Included\+Services/ \mbox{\hyperlink{group___g_a_t_t___c_l_i_e_n_t___s_u_b___p_r_o_c_e_d_u_r_e___a_p_i_gac824af509fbd28c84ae6a1d1d4a1ba11}{G\+A\+T\+T\+\_\+\+Disc\+All\+Chars}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{icall__apimsg_8h_ae515431a9d3596cd6314bbb2ab0ee56a}\label{icall__apimsg_8h_ae515431a9d3596cd6314bbb2ab0ee56a}} 
+\index{icall\_apimsg.h@{icall\_apimsg.h}!ICall\_GattDiscAllPrimaryServ@{ICall\_GattDiscAllPrimaryServ}}
+\index{ICall\_GattDiscAllPrimaryServ@{ICall\_GattDiscAllPrimaryServ}!icall\_apimsg.h@{icall\_apimsg.h}}
+\doxysubsubsection{\texorpdfstring{ICall\_GattDiscAllPrimaryServ}{ICall\_GattDiscAllPrimaryServ}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct___i_call___gatt_disc_all_primary_serv__}{\+\_\+\+I\+Call\+\_\+\+Gatt\+Disc\+All\+Primary\+Serv\+\_\+}} \mbox{\hyperlink{icall__apimsg_8h_ae515431a9d3596cd6314bbb2ab0ee56a}{I\+Call\+\_\+\+Gatt\+Disc\+All\+Primary\+Serv}}}
+
+I\+Call message containing Hci\+Ext\+Cmd hdr, connection handle
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{group___g_a_t_t___c_l_i_e_n_t___s_u_b___p_r_o_c_e_d_u_r_e___a_p_i_gaa9323c71f318bcf8a1cddad9ac4458ac}{G\+A\+T\+T\+\_\+\+Disc\+All\+Primary\+Services}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{icall__apimsg_8h_a1549a1274b081cf3abb503662d848292}\label{icall__apimsg_8h_a1549a1274b081cf3abb503662d848292}} 
+\index{icall\_apimsg.h@{icall\_apimsg.h}!ICall\_GattDiscPrimServByUUID@{ICall\_GattDiscPrimServByUUID}}
+\index{ICall\_GattDiscPrimServByUUID@{ICall\_GattDiscPrimServByUUID}!icall\_apimsg.h@{icall\_apimsg.h}}
+\doxysubsubsection{\texorpdfstring{ICall\_GattDiscPrimServByUUID}{ICall\_GattDiscPrimServByUUID}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct___i_call___gatt_disc_prim_serv_by_u_u_i_d__}{\+\_\+\+I\+Call\+\_\+\+Gatt\+Disc\+Prim\+Serv\+By\+U\+U\+I\+D\+\_\+}} \mbox{\hyperlink{icall__apimsg_8h_a1549a1274b081cf3abb503662d848292}{I\+Call\+\_\+\+Gatt\+Disc\+Prim\+Serv\+By\+U\+U\+ID}}}
+
+I\+Call message containing Hci\+Ext\+Cmd hdr, connection handle, U\+U\+ID length and value \begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{group___g_a_t_t___c_l_i_e_n_t___s_u_b___p_r_o_c_e_d_u_r_e___a_p_i_gab3f4fbcaa18ec38accf7ac22eff3365e}{G\+A\+T\+T\+\_\+\+Disc\+Primary\+Service\+By\+U\+U\+ID}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{icall__apimsg_8h_a50a94cf53c0bab37b0cc66c580a9919c}\label{icall__apimsg_8h_a50a94cf53c0bab37b0cc66c580a9919c}} 
+\index{icall\_apimsg.h@{icall\_apimsg.h}!ICall\_GattGetNextHandle@{ICall\_GattGetNextHandle}}
+\index{ICall\_GattGetNextHandle@{ICall\_GattGetNextHandle}!icall\_apimsg.h@{icall\_apimsg.h}}
+\doxysubsubsection{\texorpdfstring{ICall\_GattGetNextHandle}{ICall\_GattGetNextHandle}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct___i_call___gatt_get_next_handle__}{\+\_\+\+I\+Call\+\_\+\+Gatt\+Get\+Next\+Handle\+\_\+}} \mbox{\hyperlink{icall__apimsg_8h_a50a94cf53c0bab37b0cc66c580a9919c}{I\+Call\+\_\+\+Gatt\+Get\+Next\+Handle}}}
+
+\mbox{\Hypertarget{icall__apimsg_8h_ababc05d29ba06de6dce87f1e47370c0f}\label{icall__apimsg_8h_ababc05d29ba06de6dce87f1e47370c0f}} 
+\index{icall\_apimsg.h@{icall\_apimsg.h}!ICall\_GattHtaFlowCtrl@{ICall\_GattHtaFlowCtrl}}
+\index{ICall\_GattHtaFlowCtrl@{ICall\_GattHtaFlowCtrl}!icall\_apimsg.h@{icall\_apimsg.h}}
+\doxysubsubsection{\texorpdfstring{ICall\_GattHtaFlowCtrl}{ICall\_GattHtaFlowCtrl}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct___i_call___gatt_hta_flow_ctrl__}{\+\_\+\+I\+Call\+\_\+\+Gatt\+Hta\+Flow\+Ctrl\+\_\+}} \mbox{\hyperlink{icall__apimsg_8h_ababc05d29ba06de6dce87f1e47370c0f}{I\+Call\+\_\+\+Gatt\+Hta\+Flow\+Ctrl}}}
+
+I\+Call message containing Hci\+Ext\+Cmd hdr, heap size and flow control mode
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{group___g_a_t_t___f_l_o_w___c_t_r_l___a_p_i_ga186d864b6591723505b3f0ff6d94ecb0}{G\+A\+T\+T\+\_\+\+Set\+Host\+To\+App\+Flow\+Ctrl}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{icall__apimsg_8h_aa1d42d7c71adb169d12445a65bacbd07}\label{icall__apimsg_8h_aa1d42d7c71adb169d12445a65bacbd07}} 
+\index{icall\_apimsg.h@{icall\_apimsg.h}!ICall\_GattInd@{ICall\_GattInd}}
+\index{ICall\_GattInd@{ICall\_GattInd}!icall\_apimsg.h@{icall\_apimsg.h}}
+\doxysubsubsection{\texorpdfstring{ICall\_GattInd}{ICall\_GattInd}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct___i_call___gatt_ind__}{\+\_\+\+I\+Call\+\_\+\+Gatt\+Ind\+\_\+}} \mbox{\hyperlink{icall__apimsg_8h_aa1d42d7c71adb169d12445a65bacbd07}{I\+Call\+\_\+\+Gatt\+Ind}}}
+
+I\+Call message containing Hci\+Ext\+Cmd hdr, connection handle, att\+Msg request and field to indicate authenticated/not
+
+\begin{DoxySeeAlso}{See also}
+gatt\+Ind\+Noti 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{icall__apimsg_8h_ad4ad6e745955f287b121632f88cd2689}\label{icall__apimsg_8h_ad4ad6e745955f287b121632f88cd2689}} 
+\index{icall\_apimsg.h@{icall\_apimsg.h}!ICall\_GattInitClient@{ICall\_GattInitClient}}
+\index{ICall\_GattInitClient@{ICall\_GattInitClient}!icall\_apimsg.h@{icall\_apimsg.h}}
+\doxysubsubsection{\texorpdfstring{ICall\_GattInitClient}{ICall\_GattInitClient}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct___i_call___gatt_init_client__}{\+\_\+\+I\+Call\+\_\+\+Gatt\+Init\+Client\+\_\+}} \mbox{\hyperlink{icall__apimsg_8h_ad4ad6e745955f287b121632f88cd2689}{I\+Call\+\_\+\+Gatt\+Init\+Client}}}
+
+I\+Call message containing Hci\+Ext\+Cmd hdr
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{icall__apimsg_8h_ad4ad6e745955f287b121632f88cd2689}{I\+Call\+\_\+\+Gatt\+Init\+Client}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{icall__apimsg_8h_a1234213ff3a84e8f520c319ecfcb34a1}\label{icall__apimsg_8h_a1234213ff3a84e8f520c319ecfcb34a1}} 
+\index{icall\_apimsg.h@{icall\_apimsg.h}!ICall\_GattRegisterForInd@{ICall\_GattRegisterForInd}}
+\index{ICall\_GattRegisterForInd@{ICall\_GattRegisterForInd}!icall\_apimsg.h@{icall\_apimsg.h}}
+\doxysubsubsection{\texorpdfstring{ICall\_GattRegisterForInd}{ICall\_GattRegisterForInd}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct___i_call___gatt_register_for_ind__}{\+\_\+\+I\+Call\+\_\+\+Gatt\+Register\+For\+Ind\+\_\+}} \mbox{\hyperlink{icall__apimsg_8h_a1234213ff3a84e8f520c319ecfcb34a1}{I\+Call\+\_\+\+Gatt\+Register\+For\+Ind}}}
+
+I\+Call message containing Hci\+Ext\+Cmd hdr
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{group___g_a_t_t___c_l_i_e_n_t___a_p_i_gad9bb8f53a66a74842adec59a23505635}{G\+A\+T\+T\+\_\+\+Register\+For\+Ind}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{icall__apimsg_8h_a89b233e63829ad9ecb04cf8516d79a35}\label{icall__apimsg_8h_a89b233e63829ad9ecb04cf8516d79a35}} 
+\index{icall\_apimsg.h@{icall\_apimsg.h}!ICall\_GattReliableWrite@{ICall\_GattReliableWrite}}
+\index{ICall\_GattReliableWrite@{ICall\_GattReliableWrite}!icall\_apimsg.h@{icall\_apimsg.h}}
+\doxysubsubsection{\texorpdfstring{ICall\_GattReliableWrite}{ICall\_GattReliableWrite}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct___i_call___gatt_reliable_write__}{\+\_\+\+I\+Call\+\_\+\+Gatt\+Reliable\+Write\+\_\+}} \mbox{\hyperlink{icall__apimsg_8h_a89b233e63829ad9ecb04cf8516d79a35}{I\+Call\+\_\+\+Gatt\+Reliable\+Write}}}
+
+I\+Call message containing Hci\+Ext\+Cmd hdr, connection handle, flags and att\+Prepare\+Write\+Requests. The num\+Reqs refers to number of requests
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{group___g_a_t_t___c_l_i_e_n_t___s_u_b___p_r_o_c_e_d_u_r_e___a_p_i_gac67b8a29558fe754676f808c174cc11c}{G\+A\+T\+T\+\_\+\+Reliable\+Writes}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{icall__apimsg_8h_a69903a87fc14f7e29808779563e54372}\label{icall__apimsg_8h_a69903a87fc14f7e29808779563e54372}} 
+\index{icall\_apimsg.h@{icall\_apimsg.h}!ICall\_GattReq@{ICall\_GattReq}}
+\index{ICall\_GattReq@{ICall\_GattReq}!icall\_apimsg.h@{icall\_apimsg.h}}
+\doxysubsubsection{\texorpdfstring{ICall\_GattReq}{ICall\_GattReq}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct___i_call___gatt_req__}{\+\_\+\+I\+Call\+\_\+\+Gatt\+Req\+\_\+}} \mbox{\hyperlink{icall__apimsg_8h_a69903a87fc14f7e29808779563e54372}{I\+Call\+\_\+\+Gatt\+Req}}}
+
+I\+Call message containing Hci\+Ext\+Cmd hdr, connection handle and A\+TT message request \begin{DoxySeeAlso}{See also}
+gatt\+Request 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{icall__apimsg_8h_ae28d7d60182f47eb7afa20ef35466432}\label{icall__apimsg_8h_ae28d7d60182f47eb7afa20ef35466432}} 
+\index{icall\_apimsg.h@{icall\_apimsg.h}!ICall\_GattSendRsp@{ICall\_GattSendRsp}}
+\index{ICall\_GattSendRsp@{ICall\_GattSendRsp}!icall\_apimsg.h@{icall\_apimsg.h}}
+\doxysubsubsection{\texorpdfstring{ICall\_GattSendRsp}{ICall\_GattSendRsp}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct___i_call___gatt_send_rsp__}{\+\_\+\+I\+Call\+\_\+\+Gatt\+Send\+Rsp\+\_\+}} \mbox{\hyperlink{icall__apimsg_8h_ae28d7d60182f47eb7afa20ef35466432}{I\+Call\+\_\+\+Gatt\+Send\+Rsp}}}
+
+I\+Call message containing Hci\+Ext\+Cmd hdr, connection handle, method and A\+TT response
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{group___g_a_t_t___s_e_r_v_e_r___a_p_i_ga86fbb6053b23d4eb562109d9241ec335}{G\+A\+T\+T\+\_\+\+Send\+Rsp}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{icall__apimsg_8h_a15b450e1dc5e01d639754bd823d7c19a}\label{icall__apimsg_8h_a15b450e1dc5e01d639754bd823d7c19a}} 
+\index{icall\_apimsg.h@{icall\_apimsg.h}!ICall\_GattWriteLong@{ICall\_GattWriteLong}}
+\index{ICall\_GattWriteLong@{ICall\_GattWriteLong}!icall\_apimsg.h@{icall\_apimsg.h}}
+\doxysubsubsection{\texorpdfstring{ICall\_GattWriteLong}{ICall\_GattWriteLong}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct___i_call___gatt_write_long__}{\+\_\+\+I\+Call\+\_\+\+Gatt\+Write\+Long\+\_\+}} \mbox{\hyperlink{icall__apimsg_8h_a15b450e1dc5e01d639754bd823d7c19a}{I\+Call\+\_\+\+Gatt\+Write\+Long}}}
+
+I\+Call message containing Hci\+Ext\+Cmd hdr, connection handle and gatt\+Prepare\+Write\+Req
+
+\begin{DoxySeeAlso}{See also}
+gatt\+Write\+Long 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{icall__apimsg_8h_ab23f301181d445349682abe192d948f8}\label{icall__apimsg_8h_ab23f301181d445349682abe192d948f8}} 
+\index{icall\_apimsg.h@{icall\_apimsg.h}!ICall\_GGSRegisterAppCBs@{ICall\_GGSRegisterAppCBs}}
+\index{ICall\_GGSRegisterAppCBs@{ICall\_GGSRegisterAppCBs}!icall\_apimsg.h@{icall\_apimsg.h}}
+\doxysubsubsection{\texorpdfstring{ICall\_GGSRegisterAppCBs}{ICall\_GGSRegisterAppCBs}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct___i_call___g_g_s_register_app_c_bs__}{\+\_\+\+I\+Call\+\_\+\+G\+G\+S\+Register\+App\+C\+Bs\+\_\+}} \mbox{\hyperlink{icall__apimsg_8h_ab23f301181d445349682abe192d948f8}{I\+Call\+\_\+\+G\+G\+S\+Register\+App\+C\+Bs}}}
+
+I\+Call message containing Hci\+Ext\+Cmd hdr and pointer to callback for gap gatt server register
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{gapgattserver_8h_a10a83d35cf8405bd4e4b5f34c72fa66e}{G\+G\+S\+\_\+\+Register\+App\+C\+Bs}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{icall__apimsg_8h_a88e436c618f1bd1227114c1ade00378c}\label{icall__apimsg_8h_a88e436c618f1bd1227114c1ade00378c}} 
+\index{icall\_apimsg.h@{icall\_apimsg.h}!ICall\_GSA\_DeregService@{ICall\_GSA\_DeregService}}
+\index{ICall\_GSA\_DeregService@{ICall\_GSA\_DeregService}!icall\_apimsg.h@{icall\_apimsg.h}}
+\doxysubsubsection{\texorpdfstring{ICall\_GSA\_DeregService}{ICall\_GSA\_DeregService}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct___i_call___g_s_a___dereg_service__}{\+\_\+\+I\+Call\+\_\+\+G\+S\+A\+\_\+\+Dereg\+Service\+\_\+}} \mbox{\hyperlink{icall__apimsg_8h_a88e436c618f1bd1227114c1ade00378c}{I\+Call\+\_\+\+G\+S\+A\+\_\+\+Dereg\+Service}}}
+
+I\+Call message containing Hci\+Ext\+Cmd hdr, attribute table, number of atributes in the table, and service C\+Bs
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{icall__api_8c_ac0b963de3de2af3d0a4d378f0a7a225c}{G\+A\+T\+T\+Serv\+App\+\_\+\+Deregister\+Service}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{icall__apimsg_8h_a129f6611e91d14222c8765bcb9d543b6}\label{icall__apimsg_8h_a129f6611e91d14222c8765bcb9d543b6}} 
+\index{icall\_apimsg.h@{icall\_apimsg.h}!ICall\_GSA\_ReadRsp@{ICall\_GSA\_ReadRsp}}
+\index{ICall\_GSA\_ReadRsp@{ICall\_GSA\_ReadRsp}!icall\_apimsg.h@{icall\_apimsg.h}}
+\doxysubsubsection{\texorpdfstring{ICall\_GSA\_ReadRsp}{ICall\_GSA\_ReadRsp}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct___i_call___g_s_a___read_rsp__}{\+\_\+\+I\+Call\+\_\+\+G\+S\+A\+\_\+\+Read\+Rsp\+\_\+}} \mbox{\hyperlink{icall__apimsg_8h_a129f6611e91d14222c8765bcb9d543b6}{I\+Call\+\_\+\+G\+S\+A\+\_\+\+Read\+Rsp}}}
+
+I\+Call message containing Hci\+Ext\+Cmd hdr, conn\+Handle, attribute value pointer, attribute length, and attribute handle
+
+\begin{DoxySeeAlso}{See also}
+G\+A\+T\+T\+Serv\+App\+\_\+\+G\+A\+T\+T\+Serv\+App\+\_\+\+Read\+Rsp() 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{icall__apimsg_8h_a54cf2848da5a4e274c0b45b65bc921c1}\label{icall__apimsg_8h_a54cf2848da5a4e274c0b45b65bc921c1}} 
+\index{icall\_apimsg.h@{icall\_apimsg.h}!ICall\_GSA\_RegService@{ICall\_GSA\_RegService}}
+\index{ICall\_GSA\_RegService@{ICall\_GSA\_RegService}!icall\_apimsg.h@{icall\_apimsg.h}}
+\doxysubsubsection{\texorpdfstring{ICall\_GSA\_RegService}{ICall\_GSA\_RegService}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct___i_call___g_s_a___reg_service__}{\+\_\+\+I\+Call\+\_\+\+G\+S\+A\+\_\+\+Reg\+Service\+\_\+}} \mbox{\hyperlink{icall__apimsg_8h_a54cf2848da5a4e274c0b45b65bc921c1}{I\+Call\+\_\+\+G\+S\+A\+\_\+\+Reg\+Service}}}
+
+I\+Call message containing Hci\+Ext\+Cmd hdr, attribute table, number of atributes in the table, and service C\+Bs
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{icall__api_8c_ab03b16f9f82020807d82ee44d2479acf}{G\+A\+T\+T\+Serv\+App\+\_\+\+Register\+Service}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{icall__apimsg_8h_aede840daa7879fc118af6aaf7a7a4978}\label{icall__apimsg_8h_aede840daa7879fc118af6aaf7a7a4978}} 
+\index{icall\_apimsg.h@{icall\_apimsg.h}!ICall\_GSA\_ServiceChangeInd@{ICall\_GSA\_ServiceChangeInd}}
+\index{ICall\_GSA\_ServiceChangeInd@{ICall\_GSA\_ServiceChangeInd}!icall\_apimsg.h@{icall\_apimsg.h}}
+\doxysubsubsection{\texorpdfstring{ICall\_GSA\_ServiceChangeInd}{ICall\_GSA\_ServiceChangeInd}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct___i_call___g_s_a___service_change_ind__}{\+\_\+\+I\+Call\+\_\+\+G\+S\+A\+\_\+\+Service\+Change\+Ind\+\_\+}} \mbox{\hyperlink{icall__apimsg_8h_aede840daa7879fc118af6aaf7a7a4978}{I\+Call\+\_\+\+G\+S\+A\+\_\+\+Service\+Change\+Ind}}}
+
+I\+Call message containing Hci\+Ext\+Cmd hdr, connection handle and task id
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{icall__api_8c_a731f6d7cbb40a4517fa865c98d1e5f66}{G\+A\+T\+T\+Serv\+App\+\_\+\+Send\+Service\+Changed\+Ind}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{icall__apimsg_8h_a5749ff4a7b8d6e57a8e829e701a40d0e}\label{icall__apimsg_8h_a5749ff4a7b8d6e57a8e829e701a40d0e}} 
+\index{icall\_apimsg.h@{icall\_apimsg.h}!ICall\_Hci\_ParamAndPtr@{ICall\_Hci\_ParamAndPtr}}
+\index{ICall\_Hci\_ParamAndPtr@{ICall\_Hci\_ParamAndPtr}!icall\_apimsg.h@{icall\_apimsg.h}}
+\doxysubsubsection{\texorpdfstring{ICall\_Hci\_ParamAndPtr}{ICall\_Hci\_ParamAndPtr}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct___i_call___hci___param_and_ptr__}{\+\_\+\+I\+Call\+\_\+\+Hci\+\_\+\+Param\+And\+Ptr\+\_\+}} \mbox{\hyperlink{icall__apimsg_8h_a5749ff4a7b8d6e57a8e829e701a40d0e}{I\+Call\+\_\+\+Hci\+\_\+\+Param\+And\+Ptr}}}
+
+I\+Call message containing Hci\+Ext\+Cmd hdr, parameter and pointer \mbox{\Hypertarget{icall__apimsg_8h_a985d303066b463fe2c83b223e0bf37cf}\label{icall__apimsg_8h_a985d303066b463fe2c83b223e0bf37cf}} 
+\index{icall\_apimsg.h@{icall\_apimsg.h}!ICall\_Hci\_Params@{ICall\_Hci\_Params}}
+\index{ICall\_Hci\_Params@{ICall\_Hci\_Params}!icall\_apimsg.h@{icall\_apimsg.h}}
+\doxysubsubsection{\texorpdfstring{ICall\_Hci\_Params}{ICall\_Hci\_Params}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct___i_call___hci___params__}{\+\_\+\+I\+Call\+\_\+\+Hci\+\_\+\+Params\+\_\+}} \mbox{\hyperlink{icall__apimsg_8h_a985d303066b463fe2c83b223e0bf37cf}{I\+Call\+\_\+\+Hci\+\_\+\+Params}}}
+
+I\+Call message containing Hci\+Ext\+Cmd hdr and parameters \mbox{\Hypertarget{icall__apimsg_8h_aff7c2dc552909f629872a00acb7f6f19}\label{icall__apimsg_8h_aff7c2dc552909f629872a00acb7f6f19}} 
+\index{icall\_apimsg.h@{icall\_apimsg.h}!ICall\_Hci\_PtrParams@{ICall\_Hci\_PtrParams}}
+\index{ICall\_Hci\_PtrParams@{ICall\_Hci\_PtrParams}!icall\_apimsg.h@{icall\_apimsg.h}}
+\doxysubsubsection{\texorpdfstring{ICall\_Hci\_PtrParams}{ICall\_Hci\_PtrParams}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct___i_call___hci___ptr_params__}{\+\_\+\+I\+Call\+\_\+\+Hci\+\_\+\+Ptr\+Params\+\_\+}} \mbox{\hyperlink{icall__apimsg_8h_aff7c2dc552909f629872a00acb7f6f19}{I\+Call\+\_\+\+Hci\+\_\+\+Ptr\+Params}}}
+
+I\+Call message containing Hci\+Ext\+Cmd hdr and pointer to parameters \mbox{\Hypertarget{icall__apimsg_8h_a092c67f42d0bbfc604deaf4224e4ece1}\label{icall__apimsg_8h_a092c67f42d0bbfc604deaf4224e4ece1}} 
+\index{icall\_apimsg.h@{icall\_apimsg.h}!ICall\_HciCmdCompleteEvtMsg@{ICall\_HciCmdCompleteEvtMsg}}
+\index{ICall\_HciCmdCompleteEvtMsg@{ICall\_HciCmdCompleteEvtMsg}!icall\_apimsg.h@{icall\_apimsg.h}}
+\doxysubsubsection{\texorpdfstring{ICall\_HciCmdCompleteEvtMsg}{ICall\_HciCmdCompleteEvtMsg}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_i_call___hci_cmd_complete_evt_msg}{I\+Call\+\_\+\+Hci\+Cmd\+Complete\+Evt\+Msg}} \mbox{\hyperlink{struct_i_call___hci_cmd_complete_evt_msg}{I\+Call\+\_\+\+Hci\+Cmd\+Complete\+Evt\+Msg}}}
+
+H\+CI Generic Command Complete event \mbox{\Hypertarget{icall__apimsg_8h_afa62f50d802fab57d759c527cead246e}\label{icall__apimsg_8h_afa62f50d802fab57d759c527cead246e}} 
+\index{icall\_apimsg.h@{icall\_apimsg.h}!ICall\_HciExtCmd@{ICall\_HciExtCmd}}
+\index{ICall\_HciExtCmd@{ICall\_HciExtCmd}!icall\_apimsg.h@{icall\_apimsg.h}}
+\doxysubsubsection{\texorpdfstring{ICall\_HciExtCmd}{ICall\_HciExtCmd}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct___i_call___hci_ext_cmd__}{\+\_\+\+I\+Call\+\_\+\+Hci\+Ext\+Cmd\+\_\+}} \mbox{\hyperlink{icall__apimsg_8h_afa62f50d802fab57d759c527cead246e}{I\+Call\+\_\+\+Hci\+Ext\+Cmd}}}
+
+B\+LE H\+C\+I\+\_\+\+E\+X\+T\+\_\+\+C\+M\+D\+\_\+\+E\+V\+E\+NT event message common header. This is how it is defined in legacy B\+LE H\+C\+I\+\_\+\+E\+X\+T\+\_\+\+C\+M\+D\+\_\+\+E\+V\+E\+NT interface. It\textquotesingle{}s replicated here to provide a sample without actual B\+LE code. \mbox{\Hypertarget{icall__apimsg_8h_a8431813ff38e83dcecdf8b9181ff89b6}\label{icall__apimsg_8h_a8431813ff38e83dcecdf8b9181ff89b6}} 
+\index{icall\_apimsg.h@{icall\_apimsg.h}!ICall\_HciExtEvt@{ICall\_HciExtEvt}}
+\index{ICall\_HciExtEvt@{ICall\_HciExtEvt}!icall\_apimsg.h@{icall\_apimsg.h}}
+\doxysubsubsection{\texorpdfstring{ICall\_HciExtEvt}{ICall\_HciExtEvt}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct___i_call___hci_ext_evt__}{\+\_\+\+I\+Call\+\_\+\+Hci\+Ext\+Evt\+\_\+}} \mbox{\hyperlink{icall__apimsg_8h_a8431813ff38e83dcecdf8b9181ff89b6}{I\+Call\+\_\+\+Hci\+Ext\+Evt}}}
+
+B\+LE I\+C\+A\+L\+L\+\_\+\+E\+V\+E\+N\+T\+\_\+\+E\+V\+E\+NT event message common header \mbox{\Hypertarget{icall__apimsg_8h_ab3070da777b9df68827925408c7435cc}\label{icall__apimsg_8h_ab3070da777b9df68827925408c7435cc}} 
+\index{icall\_apimsg.h@{icall\_apimsg.h}!ICall\_HciLe\_TxTest@{ICall\_HciLe\_TxTest}}
+\index{ICall\_HciLe\_TxTest@{ICall\_HciLe\_TxTest}!icall\_apimsg.h@{icall\_apimsg.h}}
+\doxysubsubsection{\texorpdfstring{ICall\_HciLe\_TxTest}{ICall\_HciLe\_TxTest}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct___i_call___hci_le___tx_test__}{\+\_\+\+I\+Call\+\_\+\+Hci\+Le\+\_\+\+Tx\+Test\+\_\+}} \mbox{\hyperlink{icall__apimsg_8h_ab3070da777b9df68827925408c7435cc}{I\+Call\+\_\+\+Hci\+Le\+\_\+\+Tx\+Test}}}
+
+I\+Call message containing Hci\+Ext\+Cmd hdr and the transmit D\+TM info
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{hci_8h_a831514ba1822374284112993a8d7a111}{H\+C\+I\+\_\+\+L\+E\+\_\+\+Transmitter\+Test\+Cmd}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{icall__apimsg_8h_af8a97140132a06c89d53dd3a620ba3f6}\label{icall__apimsg_8h_af8a97140132a06c89d53dd3a620ba3f6}} 
+\index{icall\_apimsg.h@{icall\_apimsg.h}!ICall\_HciReadBdaddrEvtMsg@{ICall\_HciReadBdaddrEvtMsg}}
+\index{ICall\_HciReadBdaddrEvtMsg@{ICall\_HciReadBdaddrEvtMsg}!icall\_apimsg.h@{icall\_apimsg.h}}
+\doxysubsubsection{\texorpdfstring{ICall\_HciReadBdaddrEvtMsg}{ICall\_HciReadBdaddrEvtMsg}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_i_call___hci_read_bdaddr_evt_msg}{I\+Call\+\_\+\+Hci\+Read\+Bdaddr\+Evt\+Msg}} \mbox{\hyperlink{struct_i_call___hci_read_bdaddr_evt_msg}{I\+Call\+\_\+\+Hci\+Read\+Bdaddr\+Evt\+Msg}}}
+
+H\+CI Read B\+D\+A\+D\+DR Command Complete event \mbox{\Hypertarget{icall__apimsg_8h_a92c1ce232a1d64cf89259e48fa114f9a}\label{icall__apimsg_8h_a92c1ce232a1d64cf89259e48fa114f9a}} 
+\index{icall\_apimsg.h@{icall\_apimsg.h}!ICall\_Hdr@{ICall\_Hdr}}
+\index{ICall\_Hdr@{ICall\_Hdr}!icall\_apimsg.h@{icall\_apimsg.h}}
+\doxysubsubsection{\texorpdfstring{ICall\_Hdr}{ICall\_Hdr}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct___i_call___hdr__}{\+\_\+\+I\+Call\+\_\+\+Hdr\+\_\+}} \mbox{\hyperlink{icall__apimsg_8h_a92c1ce232a1d64cf89259e48fa114f9a}{I\+Call\+\_\+\+Hdr}}}
+
+Event message header. This is how it is defined in legacy B\+LE H\+C\+I\+\_\+\+E\+X\+T\+\_\+\+C\+M\+D\+\_\+\+E\+V\+E\+NT interface. It\textquotesingle{}s replicated here to provide a sample without actual B\+LE code. \mbox{\Hypertarget{icall__apimsg_8h_aff981d6a559387eec437ef88cbf9ef4c}\label{icall__apimsg_8h_aff981d6a559387eec437ef88cbf9ef4c}} 
+\index{icall\_apimsg.h@{icall\_apimsg.h}!ICall\_L2capChannelInfo@{ICall\_L2capChannelInfo}}
+\index{ICall\_L2capChannelInfo@{ICall\_L2capChannelInfo}!icall\_apimsg.h@{icall\_apimsg.h}}
+\doxysubsubsection{\texorpdfstring{ICall\_L2capChannelInfo}{ICall\_L2capChannelInfo}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct___i_call___l2cap_channel_info__}{\+\_\+\+I\+Call\+\_\+\+L2cap\+Channel\+Info\+\_\+}} \mbox{\hyperlink{icall__apimsg_8h_aff981d6a559387eec437ef88cbf9ef4c}{I\+Call\+\_\+\+L2cap\+Channel\+Info}}}
+
+I\+Call message containing Hci\+Ext\+Cmd hdr, C\+ID and structure to copy channel info into
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{icall__api_8c_aa31b0cee961a10f4be7b1e3afafd1de8}{L2\+C\+A\+P\+\_\+\+Channel\+Info}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{icall__apimsg_8h_ab224f1011d92858d1a818e56bdc0b9eb}\label{icall__apimsg_8h_ab224f1011d92858d1a818e56bdc0b9eb}} 
+\index{icall\_apimsg.h@{icall\_apimsg.h}!ICall\_L2capConnectReq@{ICall\_L2capConnectReq}}
+\index{ICall\_L2capConnectReq@{ICall\_L2capConnectReq}!icall\_apimsg.h@{icall\_apimsg.h}}
+\doxysubsubsection{\texorpdfstring{ICall\_L2capConnectReq}{ICall\_L2capConnectReq}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct___i_call___l2cap_connect_req__}{\+\_\+\+I\+Call\+\_\+\+L2cap\+Connect\+Req\+\_\+}} \mbox{\hyperlink{icall__apimsg_8h_ab224f1011d92858d1a818e56bdc0b9eb}{I\+Call\+\_\+\+L2cap\+Connect\+Req}}}
+
+I\+Call message containing Hci\+Ext\+Cmd hdr, connection handle, local P\+SM and peer P\+SM
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{icall__api_8c_aa3f9f6f441fade45a6791fffdbf245f4}{L2\+C\+A\+P\+\_\+\+Connect\+Req}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{icall__apimsg_8h_a232cb578c2d9388dd8e09f9c81f6f383}\label{icall__apimsg_8h_a232cb578c2d9388dd8e09f9c81f6f383}} 
+\index{icall\_apimsg.h@{icall\_apimsg.h}!ICall\_L2capDeregisterPsm@{ICall\_L2capDeregisterPsm}}
+\index{ICall\_L2capDeregisterPsm@{ICall\_L2capDeregisterPsm}!icall\_apimsg.h@{icall\_apimsg.h}}
+\doxysubsubsection{\texorpdfstring{ICall\_L2capDeregisterPsm}{ICall\_L2capDeregisterPsm}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct___i_call___l2cap_deregister_psm__}{\+\_\+\+I\+Call\+\_\+\+L2cap\+Deregister\+Psm\+\_\+}} \mbox{\hyperlink{icall__apimsg_8h_a232cb578c2d9388dd8e09f9c81f6f383}{I\+Call\+\_\+\+L2cap\+Deregister\+Psm}}}
+
+I\+Call message containing Hci\+Ext\+Cmd hdr, task id and local P\+SM
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{icall__api_8c_aeced1e1f9c0d0935bc7743b684071a62}{L2\+C\+A\+P\+\_\+\+Deregister\+Psm}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{icall__apimsg_8h_ac8753223c7975a2b0a8c097692dafc14}\label{icall__apimsg_8h_ac8753223c7975a2b0a8c097692dafc14}} 
+\index{icall\_apimsg.h@{icall\_apimsg.h}!ICall\_L2capDisconnectReq@{ICall\_L2capDisconnectReq}}
+\index{ICall\_L2capDisconnectReq@{ICall\_L2capDisconnectReq}!icall\_apimsg.h@{icall\_apimsg.h}}
+\doxysubsubsection{\texorpdfstring{ICall\_L2capDisconnectReq}{ICall\_L2capDisconnectReq}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct___i_call___l2cap_disconnect_req__}{\+\_\+\+I\+Call\+\_\+\+L2cap\+Disconnect\+Req\+\_\+}} \mbox{\hyperlink{icall__apimsg_8h_ac8753223c7975a2b0a8c097692dafc14}{I\+Call\+\_\+\+L2cap\+Disconnect\+Req}}}
+
+I\+Call message containing Hci\+Ext\+Cmd hdr and C\+ID
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{icall__api_8c_a3ca1bc8d6ee49d81104f62b440311dd8}{L2\+C\+A\+P\+\_\+\+Disconnect\+Req}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{icall__apimsg_8h_a1d66cdefe74c107a28c85ad4514ae1ec}\label{icall__apimsg_8h_a1d66cdefe74c107a28c85ad4514ae1ec}} 
+\index{icall\_apimsg.h@{icall\_apimsg.h}!ICall\_L2capFlowCtrlCredit@{ICall\_L2capFlowCtrlCredit}}
+\index{ICall\_L2capFlowCtrlCredit@{ICall\_L2capFlowCtrlCredit}!icall\_apimsg.h@{icall\_apimsg.h}}
+\doxysubsubsection{\texorpdfstring{ICall\_L2capFlowCtrlCredit}{ICall\_L2capFlowCtrlCredit}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct___i_call___l2cap_flow_ctrl_credit__}{\+\_\+\+I\+Call\+\_\+\+L2cap\+Flow\+Ctrl\+Credit\+\_\+}} \mbox{\hyperlink{icall__apimsg_8h_a1d66cdefe74c107a28c85ad4514ae1ec}{I\+Call\+\_\+\+L2cap\+Flow\+Ctrl\+Credit}}}
+
+I\+Call message containing Hci\+Ext\+Cmd hdr, C\+ID and peer credits
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{icall__api_8c_a28ccf583adbf302cf95db9aef19d3b6e}{L2\+C\+A\+P\+\_\+\+Flow\+Ctrl\+Credit}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{icall__apimsg_8h_ab9a1fc1883cf025771772a788cdedf54}\label{icall__apimsg_8h_ab9a1fc1883cf025771772a788cdedf54}} 
+\index{icall\_apimsg.h@{icall\_apimsg.h}!ICall\_L2capParamUpdateReq@{ICall\_L2capParamUpdateReq}}
+\index{ICall\_L2capParamUpdateReq@{ICall\_L2capParamUpdateReq}!icall\_apimsg.h@{icall\_apimsg.h}}
+\doxysubsubsection{\texorpdfstring{ICall\_L2capParamUpdateReq}{ICall\_L2capParamUpdateReq}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct___i_call___l2cap_param_update_req__}{\+\_\+\+I\+Call\+\_\+\+L2cap\+Param\+Update\+Req\+\_\+}} \mbox{\hyperlink{icall__apimsg_8h_ab9a1fc1883cf025771772a788cdedf54}{I\+Call\+\_\+\+L2cap\+Param\+Update\+Req}}}
+
+I\+Call message containing Hci\+Ext\+Cmd hdr, connection handle and L2\+C\+AP Parameter update request
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{icall__api_8c_af9cc2df9bb0b4c9000d8c3e21adcf1d2}{L2\+C\+A\+P\+\_\+\+Conn\+Param\+Update\+Req}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{icall__apimsg_8h_af4c550a2cac69c98dc5fa545e61702bd}\label{icall__apimsg_8h_af4c550a2cac69c98dc5fa545e61702bd}} 
+\index{icall\_apimsg.h@{icall\_apimsg.h}!ICall\_L2capPsmChannels@{ICall\_L2capPsmChannels}}
+\index{ICall\_L2capPsmChannels@{ICall\_L2capPsmChannels}!icall\_apimsg.h@{icall\_apimsg.h}}
+\doxysubsubsection{\texorpdfstring{ICall\_L2capPsmChannels}{ICall\_L2capPsmChannels}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct___i_call___l2cap_psm_channels__}{\+\_\+\+I\+Call\+\_\+\+L2cap\+Psm\+Channels\+\_\+}} \mbox{\hyperlink{icall__apimsg_8h_af4c550a2cac69c98dc5fa545e61702bd}{I\+Call\+\_\+\+L2cap\+Psm\+Channels}}}
+
+I\+Call message containing Hci\+Ext\+Cmd hdr, local P\+SM, number of channels and pointer to structure to copy C\+I\+Ds into
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{icall__api_8c_a3fb8aaca8154b07d65f84d78346add5f}{L2\+C\+A\+P\+\_\+\+Psm\+Channels}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{icall__apimsg_8h_a1088a974862582a98212376e508bd523}\label{icall__apimsg_8h_a1088a974862582a98212376e508bd523}} 
+\index{icall\_apimsg.h@{icall\_apimsg.h}!ICall\_L2capPsmInfo@{ICall\_L2capPsmInfo}}
+\index{ICall\_L2capPsmInfo@{ICall\_L2capPsmInfo}!icall\_apimsg.h@{icall\_apimsg.h}}
+\doxysubsubsection{\texorpdfstring{ICall\_L2capPsmInfo}{ICall\_L2capPsmInfo}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct___i_call___l2cap_psm_info__}{\+\_\+\+I\+Call\+\_\+\+L2cap\+Psm\+Info\+\_\+}} \mbox{\hyperlink{icall__apimsg_8h_a1088a974862582a98212376e508bd523}{I\+Call\+\_\+\+L2cap\+Psm\+Info}}}
+
+I\+Call message containing Hci\+Ext\+Cmd hdr, local P\+SM and pointer to structure to copy P\+SM info into
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{icall__api_8c_afe4d689eabdbe7c83bf4e0fca2ee8921}{L2\+C\+A\+P\+\_\+\+Psm\+Info}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{icall__apimsg_8h_a9809b498edabd2e1c38fed3624af38b5}\label{icall__apimsg_8h_a9809b498edabd2e1c38fed3624af38b5}} 
+\index{icall\_apimsg.h@{icall\_apimsg.h}!ICall\_L2capRegisterPsm@{ICall\_L2capRegisterPsm}}
+\index{ICall\_L2capRegisterPsm@{ICall\_L2capRegisterPsm}!icall\_apimsg.h@{icall\_apimsg.h}}
+\doxysubsubsection{\texorpdfstring{ICall\_L2capRegisterPsm}{ICall\_L2capRegisterPsm}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct___i_call___l2cap_register_psm__}{\+\_\+\+I\+Call\+\_\+\+L2cap\+Register\+Psm\+\_\+}} \mbox{\hyperlink{icall__apimsg_8h_a9809b498edabd2e1c38fed3624af38b5}{I\+Call\+\_\+\+L2cap\+Register\+Psm}}}
+
+I\+Call message containing Hci\+Ext\+Cmd hdr and pointer to P\+SM structure
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{icall__api_8c_a4973f6690e33d30089ae323c6ddc2ee8}{L2\+C\+A\+P\+\_\+\+Register\+Psm}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{icall__apimsg_8h_aa443c79012ad06685c03a2dabf733c86}\label{icall__apimsg_8h_aa443c79012ad06685c03a2dabf733c86}} 
+\index{icall\_apimsg.h@{icall\_apimsg.h}!ICall\_L2capSendSDU@{ICall\_L2capSendSDU}}
+\index{ICall\_L2capSendSDU@{ICall\_L2capSendSDU}!icall\_apimsg.h@{icall\_apimsg.h}}
+\doxysubsubsection{\texorpdfstring{ICall\_L2capSendSDU}{ICall\_L2capSendSDU}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct___i_call___l2cap_send_s_d_u__}{\+\_\+\+I\+Call\+\_\+\+L2cap\+Send\+S\+D\+U\+\_\+}} \mbox{\hyperlink{icall__apimsg_8h_aa443c79012ad06685c03a2dabf733c86}{I\+Call\+\_\+\+L2cap\+Send\+S\+DU}}}
+
+I\+Call message containing Hci\+Ext\+Cmd hdr, C\+ID, S\+DU and S\+UD length
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{icall__api_8c_a4756c83b98db5cf43ff8d4e82b84e2db}{L2\+C\+A\+P\+\_\+\+Send\+S\+DU}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{icall__apimsg_8h_aadf0e8acc077620e72cf77dd06351fe0}\label{icall__apimsg_8h_aadf0e8acc077620e72cf77dd06351fe0}} 
+\index{icall\_apimsg.h@{icall\_apimsg.h}!ICall\_LinkDBGetInfo@{ICall\_LinkDBGetInfo}}
+\index{ICall\_LinkDBGetInfo@{ICall\_LinkDBGetInfo}!icall\_apimsg.h@{icall\_apimsg.h}}
+\doxysubsubsection{\texorpdfstring{ICall\_LinkDBGetInfo}{ICall\_LinkDBGetInfo}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct___i_call___link_d_b_get_info__}{\+\_\+\+I\+Call\+\_\+\+Link\+D\+B\+Get\+Info\+\_\+}} \mbox{\hyperlink{icall__apimsg_8h_aadf0e8acc077620e72cf77dd06351fe0}{I\+Call\+\_\+\+Link\+D\+B\+Get\+Info}}}
+
+I\+Call message containing header for Link DB Find \begin{DoxySeeAlso}{See also}
+link\+D\+B\+\_\+\+Find() 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{icall__apimsg_8h_adb7c2c3a0486a31a03b97aa2e57e41f0}\label{icall__apimsg_8h_adb7c2c3a0486a31a03b97aa2e57e41f0}} 
+\index{icall\_apimsg.h@{icall\_apimsg.h}!ICall\_LinkDBNumActive@{ICall\_LinkDBNumActive}}
+\index{ICall\_LinkDBNumActive@{ICall\_LinkDBNumActive}!icall\_apimsg.h@{icall\_apimsg.h}}
+\doxysubsubsection{\texorpdfstring{ICall\_LinkDBNumActive}{ICall\_LinkDBNumActive}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct___i_call___link_d_b_num_active__}{\+\_\+\+I\+Call\+\_\+\+Link\+D\+B\+Num\+Active\+\_\+}} \mbox{\hyperlink{icall__apimsg_8h_adb7c2c3a0486a31a03b97aa2e57e41f0}{I\+Call\+\_\+\+Link\+D\+B\+Num\+Active}}}
+
+I\+Call message containing header for Link DB Number of Connections \begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{icall__api_8c_a2dfebc6681d478ceb2514f79b4dec330}{link\+D\+B\+\_\+\+Num\+Active()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{icall__apimsg_8h_ac515628f80bd617ed18ea42f5f2caaf3}\label{icall__apimsg_8h_ac515628f80bd617ed18ea42f5f2caaf3}} 
+\index{icall\_apimsg.h@{icall\_apimsg.h}!ICall\_LinkDBNumConns@{ICall\_LinkDBNumConns}}
+\index{ICall\_LinkDBNumConns@{ICall\_LinkDBNumConns}!icall\_apimsg.h@{icall\_apimsg.h}}
+\doxysubsubsection{\texorpdfstring{ICall\_LinkDBNumConns}{ICall\_LinkDBNumConns}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct___i_call___link_d_b_num_conns__}{\+\_\+\+I\+Call\+\_\+\+Link\+D\+B\+Num\+Conns\+\_\+}} \mbox{\hyperlink{icall__apimsg_8h_ac515628f80bd617ed18ea42f5f2caaf3}{I\+Call\+\_\+\+Link\+D\+B\+Num\+Conns}}}
+
+I\+Call message containing header for Link DB Number of Connections \begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{icall__api_8c_a50a8d90705d15c1d80eba31831eab276}{link\+D\+B\+\_\+\+Num\+Conns()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{icall__apimsg_8h_aa80063db4ddcca671abfee6a1a1361ba}\label{icall__apimsg_8h_aa80063db4ddcca671abfee6a1a1361ba}} 
+\index{icall\_apimsg.h@{icall\_apimsg.h}!ICall\_LinkDBState@{ICall\_LinkDBState}}
+\index{ICall\_LinkDBState@{ICall\_LinkDBState}!icall\_apimsg.h@{icall\_apimsg.h}}
+\doxysubsubsection{\texorpdfstring{ICall\_LinkDBState}{ICall\_LinkDBState}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct___i_call___link_d_b_state__}{\+\_\+\+I\+Call\+\_\+\+Link\+D\+B\+State\+\_\+}} \mbox{\hyperlink{icall__apimsg_8h_aa80063db4ddcca671abfee6a1a1361ba}{I\+Call\+\_\+\+Link\+D\+B\+State}}}
+
+I\+Call message containing connection handle and state for Link DB State \begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{icall__api_8c_a73e393852ed170c0e5d03f20fb16d4c1}{link\+D\+B\+\_\+\+State()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{icall__apimsg_8h_a89d3c12a0d8d8e79db7b3dace98434f2}\label{icall__apimsg_8h_a89d3c12a0d8d8e79db7b3dace98434f2}} 
+\index{icall\_apimsg.h@{icall\_apimsg.h}!ICall\_Ll2capConnectRsp@{ICall\_Ll2capConnectRsp}}
+\index{ICall\_Ll2capConnectRsp@{ICall\_Ll2capConnectRsp}!icall\_apimsg.h@{icall\_apimsg.h}}
+\doxysubsubsection{\texorpdfstring{ICall\_Ll2capConnectRsp}{ICall\_Ll2capConnectRsp}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct___i_call___ll2cap_connect_rsp__}{\+\_\+\+I\+Call\+\_\+\+Ll2cap\+Connect\+Rsp\+\_\+}} \mbox{\hyperlink{icall__apimsg_8h_a89d3c12a0d8d8e79db7b3dace98434f2}{I\+Call\+\_\+\+Ll2cap\+Connect\+Rsp}}}
+
+I\+Call message containing Hci\+Ext\+Cmd hdr, connection handle, id and result
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{icall__api_8c_a8d48a4fa576a2f9d540345628ae6c557}{L2\+C\+A\+P\+\_\+\+Connect\+Rsp}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{icall__apimsg_8h_a348a64338930af0f88ece54cd715e626}\label{icall__apimsg_8h_a348a64338930af0f88ece54cd715e626}} 
+\index{icall\_apimsg.h@{icall\_apimsg.h}!ICall\_NPIUartMsg@{ICall\_NPIUartMsg}}
+\index{ICall\_NPIUartMsg@{ICall\_NPIUartMsg}!icall\_apimsg.h@{icall\_apimsg.h}}
+\doxysubsubsection{\texorpdfstring{ICall\_NPIUartMsg}{ICall\_NPIUartMsg}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct___i_call___n_p_i_uart_msg__}{\+\_\+\+I\+Call\+\_\+\+N\+P\+I\+Uart\+Msg\+\_\+}} \mbox{\hyperlink{icall__apimsg_8h_a348a64338930af0f88ece54cd715e626}{I\+Call\+\_\+\+N\+P\+I\+Uart\+Msg}}}
+
+N\+PI U\+A\+RT buffer message \mbox{\Hypertarget{icall__apimsg_8h_aad72fcb451761a706a3af7d0d43761fe}\label{icall__apimsg_8h_aad72fcb451761a706a3af7d0d43761fe}} 
+\index{icall\_apimsg.h@{icall\_apimsg.h}!ICall\_paramIdLenVal@{ICall\_paramIdLenVal}}
+\index{ICall\_paramIdLenVal@{ICall\_paramIdLenVal}!icall\_apimsg.h@{icall\_apimsg.h}}
+\doxysubsubsection{\texorpdfstring{ICall\_paramIdLenVal}{ICall\_paramIdLenVal}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct___i_call__param_id_len_val__}{\+\_\+\+I\+Call\+\_\+param\+Id\+Len\+Val\+\_\+}} \mbox{\hyperlink{icall__apimsg_8h_aad72fcb451761a706a3af7d0d43761fe}{I\+Call\+\_\+param\+Id\+Len\+Val}}}
+
+I\+Call message containing parameter type, length and value \mbox{\Hypertarget{icall__apimsg_8h_ab681614c82cfdd0e9f9aed1323fe34a3}\label{icall__apimsg_8h_ab681614c82cfdd0e9f9aed1323fe34a3}} 
+\index{icall\_apimsg.h@{icall\_apimsg.h}!ICall\_paramIdVal@{ICall\_paramIdVal}}
+\index{ICall\_paramIdVal@{ICall\_paramIdVal}!icall\_apimsg.h@{icall\_apimsg.h}}
+\doxysubsubsection{\texorpdfstring{ICall\_paramIdVal}{ICall\_paramIdVal}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct___i_call__param_id_val__}{\+\_\+\+I\+Call\+\_\+param\+Id\+Val\+\_\+}} \mbox{\hyperlink{icall__apimsg_8h_ab681614c82cfdd0e9f9aed1323fe34a3}{I\+Call\+\_\+param\+Id\+Val}}}
+
+I\+Call message containing parameter type and value \mbox{\Hypertarget{icall__apimsg_8h_a778af320f8deafd7c59a293746f83c69}\label{icall__apimsg_8h_a778af320f8deafd7c59a293746f83c69}} 
+\index{icall\_apimsg.h@{icall\_apimsg.h}!ICall\_ProfileAddService@{ICall\_ProfileAddService}}
+\index{ICall\_ProfileAddService@{ICall\_ProfileAddService}!icall\_apimsg.h@{icall\_apimsg.h}}
+\doxysubsubsection{\texorpdfstring{ICall\_ProfileAddService}{ICall\_ProfileAddService}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct___i_call___profile_add_service__}{\+\_\+\+I\+Call\+\_\+\+Profile\+Add\+Service\+\_\+}} \mbox{\hyperlink{icall__apimsg_8h_a778af320f8deafd7c59a293746f83c69}{I\+Call\+\_\+\+Profile\+Add\+Service}}}
+
+I\+Call message containing Hci\+Ext\+Cmd hdr and services to be added to profile
+
+\begin{DoxySeeAlso}{See also}
+profile\+Add\+Service 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{icall__apimsg_8h_aa4afb4ea39bffac3af60f9691805a6ac}\label{icall__apimsg_8h_aa4afb4ea39bffac3af60f9691805a6ac}} 
+\index{icall\_apimsg.h@{icall\_apimsg.h}!ICall\_ProfileGetParam@{ICall\_ProfileGetParam}}
+\index{ICall\_ProfileGetParam@{ICall\_ProfileGetParam}!icall\_apimsg.h@{icall\_apimsg.h}}
+\doxysubsubsection{\texorpdfstring{ICall\_ProfileGetParam}{ICall\_ProfileGetParam}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct___i_call___profile_get_param__}{\+\_\+\+I\+Call\+\_\+\+Profile\+Get\+Param\+\_\+}} \mbox{\hyperlink{icall__apimsg_8h_aa4afb4ea39bffac3af60f9691805a6ac}{I\+Call\+\_\+\+Profile\+Get\+Param}}}
+
+I\+Call message containing Hci\+Ext\+Cmd hdr and parameter -\/ type and value to get profile parameter -\/ used for G\+A\+P\+Role, G\+GS, simple\+Profile etc. \mbox{\Hypertarget{icall__apimsg_8h_a28e85272e49fbbe748697d25f49a84e0}\label{icall__apimsg_8h_a28e85272e49fbbe748697d25f49a84e0}} 
+\index{icall\_apimsg.h@{icall\_apimsg.h}!ICall\_ProfileSetParam@{ICall\_ProfileSetParam}}
+\index{ICall\_ProfileSetParam@{ICall\_ProfileSetParam}!icall\_apimsg.h@{icall\_apimsg.h}}
+\doxysubsubsection{\texorpdfstring{ICall\_ProfileSetParam}{ICall\_ProfileSetParam}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct___i_call___profile_set_param__}{\+\_\+\+I\+Call\+\_\+\+Profile\+Set\+Param\+\_\+}} \mbox{\hyperlink{icall__apimsg_8h_a28e85272e49fbbe748697d25f49a84e0}{I\+Call\+\_\+\+Profile\+Set\+Param}}}
+
+I\+Call message containing Hci\+Ext\+Cmd hdr and parameter -\/ type,length and value to set profile parameter -\/ used for G\+A\+P\+Role, G\+GS, simple\+Profile etc. \mbox{\Hypertarget{icall__apimsg_8h_ab323c53353aa15be53d3bf4c0832635e}\label{icall__apimsg_8h_ab323c53353aa15be53d3bf4c0832635e}} 
+\index{icall\_apimsg.h@{icall\_apimsg.h}!ICall\_RegisterTaskMsg@{ICall\_RegisterTaskMsg}}
+\index{ICall\_RegisterTaskMsg@{ICall\_RegisterTaskMsg}!icall\_apimsg.h@{icall\_apimsg.h}}
+\doxysubsubsection{\texorpdfstring{ICall\_RegisterTaskMsg}{ICall\_RegisterTaskMsg}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct___i_call___register_task_msg__}{\+\_\+\+I\+Call\+\_\+\+Register\+Task\+Msg\+\_\+}} \mbox{\hyperlink{icall__apimsg_8h_ab323c53353aa15be53d3bf4c0832635e}{I\+Call\+\_\+\+Register\+Task\+Msg}}}
+
+I\+Call message containing Hci\+Ext\+Cmd hdr and task ID
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{group___g_a_p___a_p_i_ga29744ff36f2789227405780eea015a24}{G\+A\+P\+\_\+\+Register\+For\+Msgs}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{icall__apimsg_8h_a819a13f1b3d9cac26b061d8ef5d685d2}\label{icall__apimsg_8h_a819a13f1b3d9cac26b061d8ef5d685d2}} 
+\index{icall\_apimsg.h@{icall\_apimsg.h}!ICall\_SMGetDHKey@{ICall\_SMGetDHKey}}
+\index{ICall\_SMGetDHKey@{ICall\_SMGetDHKey}!icall\_apimsg.h@{icall\_apimsg.h}}
+\doxysubsubsection{\texorpdfstring{ICall\_SMGetDHKey}{ICall\_SMGetDHKey}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct___i_call___s_m_get_d_h_key__}{\+\_\+\+I\+Call\+\_\+\+S\+M\+Get\+D\+H\+Key\+\_\+}} \mbox{\hyperlink{icall__apimsg_8h_a819a13f1b3d9cac26b061d8ef5d685d2}{I\+Call\+\_\+\+S\+M\+Get\+D\+H\+Key}}}
+
+I\+Call message containing Hci\+Ext\+Cmd hdr and pointer to arguements for E\+C\+DH key.
+
+\begin{DoxySeeAlso}{See also}
+S\+M\+\_\+\+Get\+D\+H\+Key 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{icall__apimsg_8h_a1681472ecea38f7615bf7bf6748741ed}\label{icall__apimsg_8h_a1681472ecea38f7615bf7bf6748741ed}} 
+\index{icall\_apimsg.h@{icall\_apimsg.h}!ICall\_SMGetEccKeys@{ICall\_SMGetEccKeys}}
+\index{ICall\_SMGetEccKeys@{ICall\_SMGetEccKeys}!icall\_apimsg.h@{icall\_apimsg.h}}
+\doxysubsubsection{\texorpdfstring{ICall\_SMGetEccKeys}{ICall\_SMGetEccKeys}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct___i_call___s_m_get_ecc_keys__}{\+\_\+\+I\+Call\+\_\+\+S\+M\+Get\+Ecc\+Keys\+\_\+}} \mbox{\hyperlink{icall__apimsg_8h_a1681472ecea38f7615bf7bf6748741ed}{I\+Call\+\_\+\+S\+M\+Get\+Ecc\+Keys}}}
+
+I\+Call message containing Hci\+Ext\+Cmd hdr
+
+\begin{DoxySeeAlso}{See also}
+S\+M\+\_\+\+Get\+Ecc\+Keys 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{icall__apimsg_8h_a16caf2cecccb599f428e134207da3c60}\label{icall__apimsg_8h_a16caf2cecccb599f428e134207da3c60}} 
+\index{icall\_apimsg.h@{icall\_apimsg.h}!ICall\_SMGetScConfirmOob@{ICall\_SMGetScConfirmOob}}
+\index{ICall\_SMGetScConfirmOob@{ICall\_SMGetScConfirmOob}!icall\_apimsg.h@{icall\_apimsg.h}}
+\doxysubsubsection{\texorpdfstring{ICall\_SMGetScConfirmOob}{ICall\_SMGetScConfirmOob}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct___i_call___s_m_get_sc_confirm_oob__}{\+\_\+\+I\+Call\+\_\+\+S\+M\+Get\+Sc\+Confirm\+Oob\+\_\+}} \mbox{\hyperlink{icall__apimsg_8h_a16caf2cecccb599f428e134207da3c60}{I\+Call\+\_\+\+S\+M\+Get\+Sc\+Confirm\+Oob}}}
+
+I\+Call message containing Hci\+Ext\+Cmd hdr and pointer to arguements for Secure Connections f4 confirmation value generation (O\+OB only).
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{icall__api_8c_a5fdcdfe623843b10e919648e3cc8f11c}{S\+M\+\_\+\+Get\+Sc\+Confirm\+Oob}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{icall__apimsg_8h_a1a6356de1bd19d9e298ae66f27d73275}\label{icall__apimsg_8h_a1a6356de1bd19d9e298ae66f27d73275}} 
+\index{icall\_apimsg.h@{icall\_apimsg.h}!ICall\_SMRegisterTask@{ICall\_SMRegisterTask}}
+\index{ICall\_SMRegisterTask@{ICall\_SMRegisterTask}!icall\_apimsg.h@{icall\_apimsg.h}}
+\doxysubsubsection{\texorpdfstring{ICall\_SMRegisterTask}{ICall\_SMRegisterTask}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct___i_call___s_m_register_task__}{\+\_\+\+I\+Call\+\_\+\+S\+M\+Register\+Task\+\_\+}} \mbox{\hyperlink{icall__apimsg_8h_a1a6356de1bd19d9e298ae66f27d73275}{I\+Call\+\_\+\+S\+M\+Register\+Task}}}
+
+I\+Call message containing Hci\+Ext\+Cmd hdr and pointer to callback for Security Manager callback register
+
+\begin{DoxySeeAlso}{See also}
+S\+M\+\_\+\+Register\+Cb 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{icall__apimsg_8h_ac104ba4c8bd349d99e466aa975510bb0}\label{icall__apimsg_8h_ac104ba4c8bd349d99e466aa975510bb0}} 
+\index{icall\_apimsg.h@{icall\_apimsg.h}!ICall\_Stack\_Event@{ICall\_Stack\_Event}}
+\index{ICall\_Stack\_Event@{ICall\_Stack\_Event}!icall\_apimsg.h@{icall\_apimsg.h}}
+\doxysubsubsection{\texorpdfstring{ICall\_Stack\_Event}{ICall\_Stack\_Event}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct___i_call___stack___event__}{\+\_\+\+I\+Call\+\_\+\+Stack\+\_\+\+Event\+\_\+}} \mbox{\hyperlink{icall__apimsg_8h_ac104ba4c8bd349d99e466aa975510bb0}{I\+Call\+\_\+\+Stack\+\_\+\+Event}}}
+
+Event message. This is the structure used by B\+LE stack to set event flags for a task. \mbox{\Hypertarget{icall__apimsg_8h_ae68a4e1a23cac85813d7ff5c2b137786}\label{icall__apimsg_8h_ae68a4e1a23cac85813d7ff5c2b137786}} 
+\index{icall\_apimsg.h@{icall\_apimsg.h}!ICall\_UtilBuildRev@{ICall\_UtilBuildRev}}
+\index{ICall\_UtilBuildRev@{ICall\_UtilBuildRev}!icall\_apimsg.h@{icall\_apimsg.h}}
+\doxysubsubsection{\texorpdfstring{ICall\_UtilBuildRev}{ICall\_UtilBuildRev}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct___i_call___util_build_rev__}{\+\_\+\+I\+Call\+\_\+\+Util\+Build\+Rev\+\_\+}} \mbox{\hyperlink{icall__apimsg_8h_ae68a4e1a23cac85813d7ff5c2b137786}{I\+Call\+\_\+\+Util\+Build\+Rev}}}
+
+I\+Call message containing Hci\+Ext\+Cmd hdr and Util Build Revision parameter
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{icall__apimsg_8h_a65ee593b8bd7efb678328b6f87838d44}{I\+Call\+\_\+\+Build\+Revision}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{icall__apimsg_8h_a12ac24df1002548431f0968b7be1ff8f}\label{icall__apimsg_8h_a12ac24df1002548431f0968b7be1ff8f}} 
+\index{icall\_apimsg.h@{icall\_apimsg.h}!ICall\_UtilGetTRNG@{ICall\_UtilGetTRNG}}
+\index{ICall\_UtilGetTRNG@{ICall\_UtilGetTRNG}!icall\_apimsg.h@{icall\_apimsg.h}}
+\doxysubsubsection{\texorpdfstring{ICall\_UtilGetTRNG}{ICall\_UtilGetTRNG}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct___i_call___util_get_t_r_n_g__}{\+\_\+\+I\+Call\+\_\+\+Util\+Get\+T\+R\+N\+G\+\_\+}} \mbox{\hyperlink{icall__apimsg_8h_a12ac24df1002548431f0968b7be1ff8f}{I\+Call\+\_\+\+Util\+Get\+T\+R\+NG}}}
+
+I\+Call message containing header for Get T\+R\+NG Number \begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{icall__api_8c_a169dc1ac175efe8d9fac0c63d725b241}{Util\+\_\+\+Get\+T\+R\+N\+G()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{icall__apimsg_8h_a015087f04dcdb5950745f29d1de22ec6}\label{icall__apimsg_8h_a015087f04dcdb5950745f29d1de22ec6}} 
+\index{icall\_apimsg.h@{icall\_apimsg.h}!ICall\_UtilNvRead@{ICall\_UtilNvRead}}
+\index{ICall\_UtilNvRead@{ICall\_UtilNvRead}!icall\_apimsg.h@{icall\_apimsg.h}}
+\doxysubsubsection{\texorpdfstring{ICall\_UtilNvRead}{ICall\_UtilNvRead}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct___i_call___util_nv_read__}{\+\_\+\+I\+Call\+\_\+\+Util\+Nv\+Read\+\_\+}} \mbox{\hyperlink{icall__apimsg_8h_a015087f04dcdb5950745f29d1de22ec6}{I\+Call\+\_\+\+Util\+Nv\+Read}}}
+
+I\+Call message containing Hci\+Ext\+Cmd hdr and Util NV Read parameters
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{osal__snv_8h_a035bb602a38bcd18450be7ad8075ba11}{osal\+\_\+snv\+\_\+read}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{icall__apimsg_8h_ae9537e4f11b911b5dacc24865ca50622}\label{icall__apimsg_8h_ae9537e4f11b911b5dacc24865ca50622}} 
+\index{icall\_apimsg.h@{icall\_apimsg.h}!ICall\_UtilNvWrite@{ICall\_UtilNvWrite}}
+\index{ICall\_UtilNvWrite@{ICall\_UtilNvWrite}!icall\_apimsg.h@{icall\_apimsg.h}}
+\doxysubsubsection{\texorpdfstring{ICall\_UtilNvWrite}{ICall\_UtilNvWrite}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct___i_call___util_nv_write__}{\+\_\+\+I\+Call\+\_\+\+Util\+Nv\+Write\+\_\+}} \mbox{\hyperlink{icall__apimsg_8h_ae9537e4f11b911b5dacc24865ca50622}{I\+Call\+\_\+\+Util\+Nv\+Write}}}
+
+I\+Call message containing Hci\+Ext\+Cmd hdr and Util NV Write parameters
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{osal__snv_8h_a029016762d0746f51511c90692db5e49}{osal\+\_\+snv\+\_\+write}} 
+\end{DoxySeeAlso}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{icall__apimsg_8h_afb34690bb276bbb0a1b507611ae3b74c}\label{icall__apimsg_8h_afb34690bb276bbb0a1b507611ae3b74c}} 
+\index{icall\_apimsg.h@{icall\_apimsg.h}!BM\_free@{BM\_free}}
+\index{BM\_free@{BM\_free}!icall\_apimsg.h@{icall\_apimsg.h}}
+\doxysubsubsection{\texorpdfstring{BM\_free()}{BM\_free()}}
+{\footnotesize\ttfamily void B\+M\+\_\+free (\begin{DoxyParamCaption}\item[{void $\ast$}]{payload\+\_\+ptr }\end{DoxyParamCaption})}
+
+
+
+Definition at line 3308 of file icall\+\_\+api.\+c.
+
+\mbox{\Hypertarget{icall__apimsg_8h_ad9cf5e8a9556ac33d32131e5bae15d43}\label{icall__apimsg_8h_ad9cf5e8a9556ac33d32131e5bae15d43}} 
+\index{icall\_apimsg.h@{icall\_apimsg.h}!Util\_buildRevision@{Util\_buildRevision}}
+\index{Util\_buildRevision@{Util\_buildRevision}!icall\_apimsg.h@{icall\_apimsg.h}}
+\doxysubsubsection{\texorpdfstring{Util\_buildRevision()}{Util\_buildRevision()}}
+{\footnotesize\ttfamily b\+Status\+\_\+t Util\+\_\+build\+Revision (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{icall__apimsg_8h_a65ee593b8bd7efb678328b6f87838d44}{I\+Call\+\_\+\+Build\+Revision}} $\ast$}]{p\+Build\+Rev }\end{DoxyParamCaption})}
+
+
+
+Definition at line 6529 of file icall\+\_\+api.\+c.
+
+\mbox{\Hypertarget{icall__apimsg_8h_a169dc1ac175efe8d9fac0c63d725b241}\label{icall__apimsg_8h_a169dc1ac175efe8d9fac0c63d725b241}} 
+\index{icall\_apimsg.h@{icall\_apimsg.h}!Util\_GetTRNG@{Util\_GetTRNG}}
+\index{Util\_GetTRNG@{Util\_GetTRNG}!icall\_apimsg.h@{icall\_apimsg.h}}
+\doxysubsubsection{\texorpdfstring{Util\_GetTRNG()}{Util\_GetTRNG()}}
+{\footnotesize\ttfamily uint32\+\_\+t Util\+\_\+\+Get\+T\+R\+NG (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 6557 of file icall\+\_\+api.\+c.
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{icall__apimsg_8h_a9cb326940b48393401fd4c43d6cbbddc}\label{icall__apimsg_8h_a9cb326940b48393401fd4c43d6cbbddc}} 
+\index{icall\_apimsg.h@{icall\_apimsg.h}!eventOpcode@{eventOpcode}}
+\index{eventOpcode@{eventOpcode}!icall\_apimsg.h@{icall\_apimsg.h}}
+\doxysubsubsection{\texorpdfstring{eventOpcode}{eventOpcode}}
+{\footnotesize\ttfamily uint16 event\+Opcode}
+
+
+
+Definition at line 1176 of file icall\+\_\+apimsg.\+h.
+
+\mbox{\Hypertarget{icall__apimsg_8h_a27c91d6e252800c2f87561917f7567dc}\label{icall__apimsg_8h_a27c91d6e252800c2f87561917f7567dc}} 
+\index{icall\_apimsg.h@{icall\_apimsg.h}!evtCode@{evtCode}}
+\index{evtCode@{evtCode}!icall\_apimsg.h@{icall\_apimsg.h}}
+\doxysubsubsection{\texorpdfstring{evtCode}{evtCode}}
+{\footnotesize\ttfamily uint8 evt\+Code}
+
+
+
+Definition at line 1174 of file icall\+\_\+apimsg.\+h.
+
+\mbox{\Hypertarget{icall__apimsg_8h_aa7f4f10fbdc655dfe2ea40c24924e513}\label{icall__apimsg_8h_aa7f4f10fbdc655dfe2ea40c24924e513}} 
+\index{icall\_apimsg.h@{icall\_apimsg.h}!ICall\_HciSetBdaddrEvtMsg@{ICall\_HciSetBdaddrEvtMsg}}
+\index{ICall\_HciSetBdaddrEvtMsg@{ICall\_HciSetBdaddrEvtMsg}!icall\_apimsg.h@{icall\_apimsg.h}}
+\doxysubsubsection{\texorpdfstring{ICall\_HciSetBdaddrEvtMsg}{ICall\_HciSetBdaddrEvtMsg}}
+{\footnotesize\ttfamily I\+Call\+\_\+\+Hci\+Set\+Bdaddr\+Evt\+Msg}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{  uint8  pktType}
+
+\end{DoxyCode}
+H\+CI Set B\+D\+A\+D\+DR Vendor Specific Complete event 
+
+Definition at line 1171 of file icall\+\_\+apimsg.\+h.
+
+\mbox{\Hypertarget{icall__apimsg_8h_a3416c65d751a9d8f82b6cbd42bd9d223}\label{icall__apimsg_8h_a3416c65d751a9d8f82b6cbd42bd9d223}} 
+\index{icall\_apimsg.h@{icall\_apimsg.h}!lastAppOpcodeSent@{lastAppOpcodeSent}}
+\index{lastAppOpcodeSent@{lastAppOpcodeSent}!icall\_apimsg.h@{icall\_apimsg.h}}
+\doxysubsubsection{\texorpdfstring{lastAppOpcodeSent}{lastAppOpcodeSent}}
+{\footnotesize\ttfamily uint16 last\+App\+Opcode\+Sent}
+
+
+
+Definition at line 77 of file icall\+\_\+api.\+c.
+
+\mbox{\Hypertarget{icall__apimsg_8h_a8ccac76f35f79d74917e1c5dd6f69fea}\label{icall__apimsg_8h_a8ccac76f35f79d74917e1c5dd6f69fea}} 
+\index{icall\_apimsg.h@{icall\_apimsg.h}!len@{len}}
+\index{len@{len}!icall\_apimsg.h@{icall\_apimsg.h}}
+\doxysubsubsection{\texorpdfstring{len}{len}}
+{\footnotesize\ttfamily uint8 len}
+
+
+
+Definition at line 1175 of file icall\+\_\+apimsg.\+h.
+
+\mbox{\Hypertarget{icall__apimsg_8h_a2f91dfde180796f5efbaf6db19ac9c09}\label{icall__apimsg_8h_a2f91dfde180796f5efbaf6db19ac9c09}} 
+\index{icall\_apimsg.h@{icall\_apimsg.h}!opcode@{opcode}}
+\index{opcode@{opcode}!icall\_apimsg.h@{icall\_apimsg.h}}
+\doxysubsubsection{\texorpdfstring{opcode}{opcode}}
+{\footnotesize\ttfamily uint16 opcode}
+
+
+
+Definition at line 1178 of file icall\+\_\+apimsg.\+h.
+
+\mbox{\Hypertarget{icall__apimsg_8h_ad94584ed274ed1d5b06d52f5bb3a178d}\label{icall__apimsg_8h_ad94584ed274ed1d5b06d52f5bb3a178d}} 
+\index{icall\_apimsg.h@{icall\_apimsg.h}!status@{status}}
+\index{status@{status}!icall\_apimsg.h@{icall\_apimsg.h}}
+\doxysubsubsection{\texorpdfstring{status}{status}}
+{\footnotesize\ttfamily uint8 status}
+
+
+
+Definition at line 1177 of file icall\+\_\+apimsg.\+h.
+

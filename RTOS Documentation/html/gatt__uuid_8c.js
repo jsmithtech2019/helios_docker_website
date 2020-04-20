@@ -1,0 +1,26 @@
+var gatt__uuid_8c =
+[
+    [ "GATT_FindUUIDRec", "gatt__uuid_8c.html#a9b29ae6838a6bcc899d8883d15de7a62", null ],
+    [ "appearanceUUID", "gatt__uuid_8c.html#abaef79053a518eb0ecd40f693cf628a3", null ],
+    [ "centAddrResUUID", "gatt__uuid_8c.html#a0d0f1598907920a133fffe640ab86221", null ],
+    [ "characterUUID", "gatt__uuid_8c.html#aefb4a0049aee50803ea3da9dc81ba528", null ],
+    [ "charAggFormatUUID", "gatt__uuid_8c.html#ac88bea0b6eec421949155b1d7d2c70bd", null ],
+    [ "charExtPropsUUID", "gatt__uuid_8c.html#ac1f49a306a77cab3736289f856791e83", null ],
+    [ "charFormatUUID", "gatt__uuid_8c.html#a47b3a430c5541da93fcfad1c800875f9", null ],
+    [ "charUserDescUUID", "gatt__uuid_8c.html#aa7e60a7d34d91242ed3492d6caafe412", null ],
+    [ "clientCharCfgUUID", "gatt__uuid_8c.html#a17b56ffd8d4da371a858e2cfd48308b1", null ],
+    [ "deviceNameUUID", "gatt__uuid_8c.html#ad0b708a449844fc22213c8abb1657774", null ],
+    [ "extReportRefUUID", "gatt__uuid_8c.html#a6a1561028c8737631c0acb788e806fc3", null ],
+    [ "gapServiceUUID", "gatt__uuid_8c.html#a29a3edd82be16cb051c4d92c7580e780", null ],
+    [ "gattServiceUUID", "gatt__uuid_8c.html#a5b8e89c797e074cac5bd86a02fd62876", null ],
+    [ "includeUUID", "gatt__uuid_8c.html#aebb4bf77bc5aaae2cd2ab863139c2ec8", null ],
+    [ "periConnParamUUID", "gatt__uuid_8c.html#a009e4936456962e606bab89227a59e78", null ],
+    [ "periPrivacyFlagUUID", "gatt__uuid_8c.html#a62b796898c7feb84bdae716c4ce3e3f6", null ],
+    [ "primaryServiceUUID", "gatt__uuid_8c.html#a577e51fe790a676d4a3bd9c019a56033", null ],
+    [ "reconnectAddrUUID", "gatt__uuid_8c.html#ad226e01d5733226bbf40a49902c5668d", null ],
+    [ "reportRefUUID", "gatt__uuid_8c.html#ab7503e5db2d13bc72cefe4664edc62e9", null ],
+    [ "secondaryServiceUUID", "gatt__uuid_8c.html#a42a6cbad212991a58648bf5387ca9954", null ],
+    [ "servCharCfgUUID", "gatt__uuid_8c.html#a8b695f231d0fb58eb2a98353c342ee07", null ],
+    [ "serviceChangedUUID", "gatt__uuid_8c.html#a7e63b3a9e93eab79f2c7f2da8f2a9935", null ],
+    [ "validRangeUUID", "gatt__uuid_8c.html#ab54cc3c837949a25f71e3d52a0501f37", null ]
+];

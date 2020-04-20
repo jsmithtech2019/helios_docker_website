@@ -1,0 +1,411 @@
+\hypertarget{group___r_f___core___events}{}\doxysection{R\+F\+\_\+\+Core\+\_\+\+Events}
+\label{group___r_f___core___events}\index{RF\_Core\_Events@{RF\_Core\_Events}}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group___r_f___core___events_gaa1534b443f03187f07f55b0198306a27}{R\+F\+\_\+\+Event\+Cmd\+Done}}~(1$<$$<$0)
+\begin{DoxyCompactList}\small\item\em Radio operation command finished. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___r_f___core___events_ga2d60db886271cf8e08c7b6b2f5e534f1}{R\+F\+\_\+\+Event\+Last\+Cmd\+Done}}~(1$<$$<$1)
+\begin{DoxyCompactList}\small\item\em Last radio operation command in a chain finished. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___r_f___core___events_ga4e8f8b70a9cd745561251d61940880f6}{R\+F\+\_\+\+Event\+Tx\+Done}}~(1$<$$<$4)
+\begin{DoxyCompactList}\small\item\em Packet transmitted. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___r_f___core___events_gab1ab01acc148654e8b3dfe42d64785b1}{R\+F\+\_\+\+Event\+T\+X\+Ack}}~(1$<$$<$5)
+\begin{DoxyCompactList}\small\item\em A\+CK packet transmitted. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___r_f___core___events_ga8421bd3a69743f088ac534f85b099a8d}{R\+F\+\_\+\+Event\+Tx\+Ctrl}}~(1$<$$<$6)
+\begin{DoxyCompactList}\small\item\em Control packet transmitted. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___r_f___core___events_gaf15e72a260f7c2d3d659ad76cb876f9a}{R\+F\+\_\+\+Event\+Tx\+Ctrl\+Ack}}~(1$<$$<$7)
+\begin{DoxyCompactList}\small\item\em Acknowledgement received on a transmitted control packet. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___r_f___core___events_ga00c6a2c502c6b73310d7168d65134728}{R\+F\+\_\+\+Event\+Tx\+Ctrl\+Ack\+Ack}}~(1$<$$<$8)
+\begin{DoxyCompactList}\small\item\em Acknowledgement received on a transmitted control packet, and acknowledgement transmitted for that packet. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___r_f___core___events_ga2c71299952c2e6f95973f15cd1910012}{R\+F\+\_\+\+Event\+Tx\+Retrans}}~(1$<$$<$9)
+\begin{DoxyCompactList}\small\item\em Packet retransmitted. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___r_f___core___events_ga2fe4925d81a1b1cf0f081801ccdea5c5}{R\+F\+\_\+\+Event\+Tx\+Entry\+Done}}~(1$<$$<$10)
+\begin{DoxyCompactList}\small\item\em Tx queue data entry state changed to Finished. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___r_f___core___events_ga595798fcb9995769a5887839567c8ca7}{R\+F\+\_\+\+Event\+Tx\+Buffer\+Change}}~(1$<$$<$11)
+\begin{DoxyCompactList}\small\item\em A buffer change is complete. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___r_f___core___events_ga8096e854b7ba95ee45054acf8c5d36e4}{R\+F\+\_\+\+Event\+Rx\+Ok}}~(1$<$$<$16)
+\begin{DoxyCompactList}\small\item\em Packet received with C\+RC OK, payload, and not to be ignored. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___r_f___core___events_ga0c295aa9a2851efa0ec6309ebab52dc8}{R\+F\+\_\+\+Event\+Rx\+N\+Ok}}~(1$<$$<$17)
+\begin{DoxyCompactList}\small\item\em Packet received with C\+RC error. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___r_f___core___events_ga2dbeb507eec591b320a4b06f36ce8814}{R\+F\+\_\+\+Event\+Rx\+Ignored}}~(1$<$$<$18)
+\begin{DoxyCompactList}\small\item\em Packet received with C\+RC OK, but to be ignored. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___r_f___core___events_ga4df2d5bf213600e1bce1c03a1ea950dd}{R\+F\+\_\+\+Event\+Rx\+Empty}}~(1$<$$<$19)
+\begin{DoxyCompactList}\small\item\em Packet received with C\+RC OK, not to be ignored, no payload. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___r_f___core___events_gafee6f48a825ba7e030ece03eb242e6c2}{R\+F\+\_\+\+Event\+Rx\+Ctrl}}~(1$<$$<$20)
+\begin{DoxyCompactList}\small\item\em Control packet received with C\+RC OK, not to be ignored. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___r_f___core___events_ga3c29608b6caa9e380407ee0b3df371b8}{R\+F\+\_\+\+Event\+Rx\+Ctrl\+Ack}}~(1$<$$<$21)
+\begin{DoxyCompactList}\small\item\em Control packet received with C\+RC OK, not to be ignored, then A\+CK sent. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___r_f___core___events_ga8ddaa54ac8e8721e7e1cee7f0c07c3c1}{R\+F\+\_\+\+Event\+Rx\+Buf\+Full}}~(1$<$$<$22)
+\begin{DoxyCompactList}\small\item\em Packet received that did not fit in the Rx queue. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___r_f___core___events_ga7051110a4a1fdd459866195be774a2b0}{R\+F\+\_\+\+Event\+Rx\+Entry\+Done}}~(1$<$$<$23)
+\begin{DoxyCompactList}\small\item\em Rx queue data entry changing state to Finished. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___r_f___core___events_ga8ac187c129b68b4311898a5464aa87e5}{R\+F\+\_\+\+Event\+Data\+Written}}~(1$<$$<$24)
+\begin{DoxyCompactList}\small\item\em Data written to partial read Rx buffer. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___r_f___core___events_gaa9c1eb19ce791f4f9c4b917e10fbabdd}{R\+F\+\_\+\+Event\+N\+Data\+Written}}~(1$<$$<$25)
+\begin{DoxyCompactList}\small\item\em Specified number of bytes written to partial read Rx buffer. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___r_f___core___events_gaf2db331d93e28cdafc4367497a2f6f89}{R\+F\+\_\+\+Event\+Rx\+Aborted}}~(1$<$$<$26)
+\begin{DoxyCompactList}\small\item\em Packet reception stopped before packet was done. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___r_f___core___events_gaaba4e22e27b9ac26244b02c7cfd657d0}{R\+F\+\_\+\+Event\+Rx\+Collision\+Detected}}~(1$<$$<$27)
+\begin{DoxyCompactList}\small\item\em A collision was indicated during packet reception. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___r_f___core___events_gae5cb277f5a7a23bf1d7e6405f3e2253e}{R\+F\+\_\+\+Event\+Modules\+Unlocked}}~(1$<$$<$29)
+\begin{DoxyCompactList}\small\item\em As part of the boot process, the C\+M0 has opened access to RF core modules and memories. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___r_f___core___events_gaf872a5a1a47d7401499d7826eea8da98}{R\+F\+\_\+\+Event\+Internal\+Error}}~(uint32\+\_\+t)(1$<$$<$31)
+\begin{DoxyCompactList}\small\item\em Internal error observed. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___r_f___core___events_ga83edee28803f1b2addc0f8458d0cc657}{R\+F\+\_\+\+Event\+Mdm\+Soft}}~0x0000002000000000
+\begin{DoxyCompactList}\small\item\em Modem Sync detected (M\+D\+M\+S\+O\+FT I\+FG) \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+RF Events reported to callback functions, and used in \mbox{\hyperlink{_r_f_8h_a248bebdd1d0bd6e0812cf18116987e54}{R\+F\+\_\+run\+Cmd()}}, \mbox{\hyperlink{_r_f_8h_a91c1cb2508311f822acbc08ace568a83}{R\+F\+\_\+pend\+Cmd()}} 
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{group___r_f___core___events_gaa1534b443f03187f07f55b0198306a27}\label{group___r_f___core___events_gaa1534b443f03187f07f55b0198306a27}} 
+\index{RF\_Core\_Events@{RF\_Core\_Events}!RF\_EventCmdDone@{RF\_EventCmdDone}}
+\index{RF\_EventCmdDone@{RF\_EventCmdDone}!RF\_Core\_Events@{RF\_Core\_Events}}
+\doxysubsubsection{\texorpdfstring{RF\_EventCmdDone}{RF\_EventCmdDone}}
+{\footnotesize\ttfamily \#define R\+F\+\_\+\+Event\+Cmd\+Done~(1$<$$<$0)}
+
+
+
+Radio operation command finished. 
+
+
+
+Definition at line 238 of file R\+F.\+h.
+
+\mbox{\Hypertarget{group___r_f___core___events_ga8ac187c129b68b4311898a5464aa87e5}\label{group___r_f___core___events_ga8ac187c129b68b4311898a5464aa87e5}} 
+\index{RF\_Core\_Events@{RF\_Core\_Events}!RF\_EventDataWritten@{RF\_EventDataWritten}}
+\index{RF\_EventDataWritten@{RF\_EventDataWritten}!RF\_Core\_Events@{RF\_Core\_Events}}
+\doxysubsubsection{\texorpdfstring{RF\_EventDataWritten}{RF\_EventDataWritten}}
+{\footnotesize\ttfamily \#define R\+F\+\_\+\+Event\+Data\+Written~(1$<$$<$24)}
+
+
+
+Data written to partial read Rx buffer. 
+
+
+
+Definition at line 256 of file R\+F.\+h.
+
+\mbox{\Hypertarget{group___r_f___core___events_gaf872a5a1a47d7401499d7826eea8da98}\label{group___r_f___core___events_gaf872a5a1a47d7401499d7826eea8da98}} 
+\index{RF\_Core\_Events@{RF\_Core\_Events}!RF\_EventInternalError@{RF\_EventInternalError}}
+\index{RF\_EventInternalError@{RF\_EventInternalError}!RF\_Core\_Events@{RF\_Core\_Events}}
+\doxysubsubsection{\texorpdfstring{RF\_EventInternalError}{RF\_EventInternalError}}
+{\footnotesize\ttfamily \#define R\+F\+\_\+\+Event\+Internal\+Error~(uint32\+\_\+t)(1$<$$<$31)}
+
+
+
+Internal error observed. 
+
+
+
+Definition at line 261 of file R\+F.\+h.
+
+\mbox{\Hypertarget{group___r_f___core___events_ga2d60db886271cf8e08c7b6b2f5e534f1}\label{group___r_f___core___events_ga2d60db886271cf8e08c7b6b2f5e534f1}} 
+\index{RF\_Core\_Events@{RF\_Core\_Events}!RF\_EventLastCmdDone@{RF\_EventLastCmdDone}}
+\index{RF\_EventLastCmdDone@{RF\_EventLastCmdDone}!RF\_Core\_Events@{RF\_Core\_Events}}
+\doxysubsubsection{\texorpdfstring{RF\_EventLastCmdDone}{RF\_EventLastCmdDone}}
+{\footnotesize\ttfamily \#define R\+F\+\_\+\+Event\+Last\+Cmd\+Done~(1$<$$<$1)}
+
+
+
+Last radio operation command in a chain finished. 
+
+
+
+Definition at line 239 of file R\+F.\+h.
+
+\mbox{\Hypertarget{group___r_f___core___events_ga83edee28803f1b2addc0f8458d0cc657}\label{group___r_f___core___events_ga83edee28803f1b2addc0f8458d0cc657}} 
+\index{RF\_Core\_Events@{RF\_Core\_Events}!RF\_EventMdmSoft@{RF\_EventMdmSoft}}
+\index{RF\_EventMdmSoft@{RF\_EventMdmSoft}!RF\_Core\_Events@{RF\_Core\_Events}}
+\doxysubsubsection{\texorpdfstring{RF\_EventMdmSoft}{RF\_EventMdmSoft}}
+{\footnotesize\ttfamily \#define R\+F\+\_\+\+Event\+Mdm\+Soft~0x0000002000000000}
+
+
+
+Modem Sync detected (M\+D\+M\+S\+O\+FT I\+FG) 
+
+
+
+Definition at line 262 of file R\+F.\+h.
+
+\mbox{\Hypertarget{group___r_f___core___events_gae5cb277f5a7a23bf1d7e6405f3e2253e}\label{group___r_f___core___events_gae5cb277f5a7a23bf1d7e6405f3e2253e}} 
+\index{RF\_Core\_Events@{RF\_Core\_Events}!RF\_EventModulesUnlocked@{RF\_EventModulesUnlocked}}
+\index{RF\_EventModulesUnlocked@{RF\_EventModulesUnlocked}!RF\_Core\_Events@{RF\_Core\_Events}}
+\doxysubsubsection{\texorpdfstring{RF\_EventModulesUnlocked}{RF\_EventModulesUnlocked}}
+{\footnotesize\ttfamily \#define R\+F\+\_\+\+Event\+Modules\+Unlocked~(1$<$$<$29)}
+
+
+
+As part of the boot process, the C\+M0 has opened access to RF core modules and memories. 
+
+
+
+Definition at line 260 of file R\+F.\+h.
+
+\mbox{\Hypertarget{group___r_f___core___events_gaa9c1eb19ce791f4f9c4b917e10fbabdd}\label{group___r_f___core___events_gaa9c1eb19ce791f4f9c4b917e10fbabdd}} 
+\index{RF\_Core\_Events@{RF\_Core\_Events}!RF\_EventNDataWritten@{RF\_EventNDataWritten}}
+\index{RF\_EventNDataWritten@{RF\_EventNDataWritten}!RF\_Core\_Events@{RF\_Core\_Events}}
+\doxysubsubsection{\texorpdfstring{RF\_EventNDataWritten}{RF\_EventNDataWritten}}
+{\footnotesize\ttfamily \#define R\+F\+\_\+\+Event\+N\+Data\+Written~(1$<$$<$25)}
+
+
+
+Specified number of bytes written to partial read Rx buffer. 
+
+
+
+Definition at line 257 of file R\+F.\+h.
+
+\mbox{\Hypertarget{group___r_f___core___events_gaf2db331d93e28cdafc4367497a2f6f89}\label{group___r_f___core___events_gaf2db331d93e28cdafc4367497a2f6f89}} 
+\index{RF\_Core\_Events@{RF\_Core\_Events}!RF\_EventRxAborted@{RF\_EventRxAborted}}
+\index{RF\_EventRxAborted@{RF\_EventRxAborted}!RF\_Core\_Events@{RF\_Core\_Events}}
+\doxysubsubsection{\texorpdfstring{RF\_EventRxAborted}{RF\_EventRxAborted}}
+{\footnotesize\ttfamily \#define R\+F\+\_\+\+Event\+Rx\+Aborted~(1$<$$<$26)}
+
+
+
+Packet reception stopped before packet was done. 
+
+
+
+Definition at line 258 of file R\+F.\+h.
+
+\mbox{\Hypertarget{group___r_f___core___events_ga8ddaa54ac8e8721e7e1cee7f0c07c3c1}\label{group___r_f___core___events_ga8ddaa54ac8e8721e7e1cee7f0c07c3c1}} 
+\index{RF\_Core\_Events@{RF\_Core\_Events}!RF\_EventRxBufFull@{RF\_EventRxBufFull}}
+\index{RF\_EventRxBufFull@{RF\_EventRxBufFull}!RF\_Core\_Events@{RF\_Core\_Events}}
+\doxysubsubsection{\texorpdfstring{RF\_EventRxBufFull}{RF\_EventRxBufFull}}
+{\footnotesize\ttfamily \#define R\+F\+\_\+\+Event\+Rx\+Buf\+Full~(1$<$$<$22)}
+
+
+
+Packet received that did not fit in the Rx queue. 
+
+
+
+Definition at line 254 of file R\+F.\+h.
+
+\mbox{\Hypertarget{group___r_f___core___events_gaaba4e22e27b9ac26244b02c7cfd657d0}\label{group___r_f___core___events_gaaba4e22e27b9ac26244b02c7cfd657d0}} 
+\index{RF\_Core\_Events@{RF\_Core\_Events}!RF\_EventRxCollisionDetected@{RF\_EventRxCollisionDetected}}
+\index{RF\_EventRxCollisionDetected@{RF\_EventRxCollisionDetected}!RF\_Core\_Events@{RF\_Core\_Events}}
+\doxysubsubsection{\texorpdfstring{RF\_EventRxCollisionDetected}{RF\_EventRxCollisionDetected}}
+{\footnotesize\ttfamily \#define R\+F\+\_\+\+Event\+Rx\+Collision\+Detected~(1$<$$<$27)}
+
+
+
+A collision was indicated during packet reception. 
+
+
+
+Definition at line 259 of file R\+F.\+h.
+
+\mbox{\Hypertarget{group___r_f___core___events_gafee6f48a825ba7e030ece03eb242e6c2}\label{group___r_f___core___events_gafee6f48a825ba7e030ece03eb242e6c2}} 
+\index{RF\_Core\_Events@{RF\_Core\_Events}!RF\_EventRxCtrl@{RF\_EventRxCtrl}}
+\index{RF\_EventRxCtrl@{RF\_EventRxCtrl}!RF\_Core\_Events@{RF\_Core\_Events}}
+\doxysubsubsection{\texorpdfstring{RF\_EventRxCtrl}{RF\_EventRxCtrl}}
+{\footnotesize\ttfamily \#define R\+F\+\_\+\+Event\+Rx\+Ctrl~(1$<$$<$20)}
+
+
+
+Control packet received with C\+RC OK, not to be ignored. 
+
+
+
+Definition at line 252 of file R\+F.\+h.
+
+\mbox{\Hypertarget{group___r_f___core___events_ga3c29608b6caa9e380407ee0b3df371b8}\label{group___r_f___core___events_ga3c29608b6caa9e380407ee0b3df371b8}} 
+\index{RF\_Core\_Events@{RF\_Core\_Events}!RF\_EventRxCtrlAck@{RF\_EventRxCtrlAck}}
+\index{RF\_EventRxCtrlAck@{RF\_EventRxCtrlAck}!RF\_Core\_Events@{RF\_Core\_Events}}
+\doxysubsubsection{\texorpdfstring{RF\_EventRxCtrlAck}{RF\_EventRxCtrlAck}}
+{\footnotesize\ttfamily \#define R\+F\+\_\+\+Event\+Rx\+Ctrl\+Ack~(1$<$$<$21)}
+
+
+
+Control packet received with C\+RC OK, not to be ignored, then A\+CK sent. 
+
+
+
+Definition at line 253 of file R\+F.\+h.
+
+\mbox{\Hypertarget{group___r_f___core___events_ga4df2d5bf213600e1bce1c03a1ea950dd}\label{group___r_f___core___events_ga4df2d5bf213600e1bce1c03a1ea950dd}} 
+\index{RF\_Core\_Events@{RF\_Core\_Events}!RF\_EventRxEmpty@{RF\_EventRxEmpty}}
+\index{RF\_EventRxEmpty@{RF\_EventRxEmpty}!RF\_Core\_Events@{RF\_Core\_Events}}
+\doxysubsubsection{\texorpdfstring{RF\_EventRxEmpty}{RF\_EventRxEmpty}}
+{\footnotesize\ttfamily \#define R\+F\+\_\+\+Event\+Rx\+Empty~(1$<$$<$19)}
+
+
+
+Packet received with C\+RC OK, not to be ignored, no payload. 
+
+
+
+Definition at line 251 of file R\+F.\+h.
+
+\mbox{\Hypertarget{group___r_f___core___events_ga7051110a4a1fdd459866195be774a2b0}\label{group___r_f___core___events_ga7051110a4a1fdd459866195be774a2b0}} 
+\index{RF\_Core\_Events@{RF\_Core\_Events}!RF\_EventRxEntryDone@{RF\_EventRxEntryDone}}
+\index{RF\_EventRxEntryDone@{RF\_EventRxEntryDone}!RF\_Core\_Events@{RF\_Core\_Events}}
+\doxysubsubsection{\texorpdfstring{RF\_EventRxEntryDone}{RF\_EventRxEntryDone}}
+{\footnotesize\ttfamily \#define R\+F\+\_\+\+Event\+Rx\+Entry\+Done~(1$<$$<$23)}
+
+
+
+Rx queue data entry changing state to Finished. 
+
+
+
+Definition at line 255 of file R\+F.\+h.
+
+\mbox{\Hypertarget{group___r_f___core___events_ga2dbeb507eec591b320a4b06f36ce8814}\label{group___r_f___core___events_ga2dbeb507eec591b320a4b06f36ce8814}} 
+\index{RF\_Core\_Events@{RF\_Core\_Events}!RF\_EventRxIgnored@{RF\_EventRxIgnored}}
+\index{RF\_EventRxIgnored@{RF\_EventRxIgnored}!RF\_Core\_Events@{RF\_Core\_Events}}
+\doxysubsubsection{\texorpdfstring{RF\_EventRxIgnored}{RF\_EventRxIgnored}}
+{\footnotesize\ttfamily \#define R\+F\+\_\+\+Event\+Rx\+Ignored~(1$<$$<$18)}
+
+
+
+Packet received with C\+RC OK, but to be ignored. 
+
+
+
+Definition at line 250 of file R\+F.\+h.
+
+\mbox{\Hypertarget{group___r_f___core___events_ga0c295aa9a2851efa0ec6309ebab52dc8}\label{group___r_f___core___events_ga0c295aa9a2851efa0ec6309ebab52dc8}} 
+\index{RF\_Core\_Events@{RF\_Core\_Events}!RF\_EventRxNOk@{RF\_EventRxNOk}}
+\index{RF\_EventRxNOk@{RF\_EventRxNOk}!RF\_Core\_Events@{RF\_Core\_Events}}
+\doxysubsubsection{\texorpdfstring{RF\_EventRxNOk}{RF\_EventRxNOk}}
+{\footnotesize\ttfamily \#define R\+F\+\_\+\+Event\+Rx\+N\+Ok~(1$<$$<$17)}
+
+
+
+Packet received with C\+RC error. 
+
+
+
+Definition at line 249 of file R\+F.\+h.
+
+\mbox{\Hypertarget{group___r_f___core___events_ga8096e854b7ba95ee45054acf8c5d36e4}\label{group___r_f___core___events_ga8096e854b7ba95ee45054acf8c5d36e4}} 
+\index{RF\_Core\_Events@{RF\_Core\_Events}!RF\_EventRxOk@{RF\_EventRxOk}}
+\index{RF\_EventRxOk@{RF\_EventRxOk}!RF\_Core\_Events@{RF\_Core\_Events}}
+\doxysubsubsection{\texorpdfstring{RF\_EventRxOk}{RF\_EventRxOk}}
+{\footnotesize\ttfamily \#define R\+F\+\_\+\+Event\+Rx\+Ok~(1$<$$<$16)}
+
+
+
+Packet received with C\+RC OK, payload, and not to be ignored. 
+
+
+
+Definition at line 248 of file R\+F.\+h.
+
+\mbox{\Hypertarget{group___r_f___core___events_gab1ab01acc148654e8b3dfe42d64785b1}\label{group___r_f___core___events_gab1ab01acc148654e8b3dfe42d64785b1}} 
+\index{RF\_Core\_Events@{RF\_Core\_Events}!RF\_EventTXAck@{RF\_EventTXAck}}
+\index{RF\_EventTXAck@{RF\_EventTXAck}!RF\_Core\_Events@{RF\_Core\_Events}}
+\doxysubsubsection{\texorpdfstring{RF\_EventTXAck}{RF\_EventTXAck}}
+{\footnotesize\ttfamily \#define R\+F\+\_\+\+Event\+T\+X\+Ack~(1$<$$<$5)}
+
+
+
+A\+CK packet transmitted. 
+
+
+
+Definition at line 241 of file R\+F.\+h.
+
+\mbox{\Hypertarget{group___r_f___core___events_ga595798fcb9995769a5887839567c8ca7}\label{group___r_f___core___events_ga595798fcb9995769a5887839567c8ca7}} 
+\index{RF\_Core\_Events@{RF\_Core\_Events}!RF\_EventTxBufferChange@{RF\_EventTxBufferChange}}
+\index{RF\_EventTxBufferChange@{RF\_EventTxBufferChange}!RF\_Core\_Events@{RF\_Core\_Events}}
+\doxysubsubsection{\texorpdfstring{RF\_EventTxBufferChange}{RF\_EventTxBufferChange}}
+{\footnotesize\ttfamily \#define R\+F\+\_\+\+Event\+Tx\+Buffer\+Change~(1$<$$<$11)}
+
+
+
+A buffer change is complete. 
+
+
+
+Definition at line 247 of file R\+F.\+h.
+
+\mbox{\Hypertarget{group___r_f___core___events_ga8421bd3a69743f088ac534f85b099a8d}\label{group___r_f___core___events_ga8421bd3a69743f088ac534f85b099a8d}} 
+\index{RF\_Core\_Events@{RF\_Core\_Events}!RF\_EventTxCtrl@{RF\_EventTxCtrl}}
+\index{RF\_EventTxCtrl@{RF\_EventTxCtrl}!RF\_Core\_Events@{RF\_Core\_Events}}
+\doxysubsubsection{\texorpdfstring{RF\_EventTxCtrl}{RF\_EventTxCtrl}}
+{\footnotesize\ttfamily \#define R\+F\+\_\+\+Event\+Tx\+Ctrl~(1$<$$<$6)}
+
+
+
+Control packet transmitted. 
+
+
+
+Definition at line 242 of file R\+F.\+h.
+
+\mbox{\Hypertarget{group___r_f___core___events_gaf15e72a260f7c2d3d659ad76cb876f9a}\label{group___r_f___core___events_gaf15e72a260f7c2d3d659ad76cb876f9a}} 
+\index{RF\_Core\_Events@{RF\_Core\_Events}!RF\_EventTxCtrlAck@{RF\_EventTxCtrlAck}}
+\index{RF\_EventTxCtrlAck@{RF\_EventTxCtrlAck}!RF\_Core\_Events@{RF\_Core\_Events}}
+\doxysubsubsection{\texorpdfstring{RF\_EventTxCtrlAck}{RF\_EventTxCtrlAck}}
+{\footnotesize\ttfamily \#define R\+F\+\_\+\+Event\+Tx\+Ctrl\+Ack~(1$<$$<$7)}
+
+
+
+Acknowledgement received on a transmitted control packet. 
+
+
+
+Definition at line 243 of file R\+F.\+h.
+
+\mbox{\Hypertarget{group___r_f___core___events_ga00c6a2c502c6b73310d7168d65134728}\label{group___r_f___core___events_ga00c6a2c502c6b73310d7168d65134728}} 
+\index{RF\_Core\_Events@{RF\_Core\_Events}!RF\_EventTxCtrlAckAck@{RF\_EventTxCtrlAckAck}}
+\index{RF\_EventTxCtrlAckAck@{RF\_EventTxCtrlAckAck}!RF\_Core\_Events@{RF\_Core\_Events}}
+\doxysubsubsection{\texorpdfstring{RF\_EventTxCtrlAckAck}{RF\_EventTxCtrlAckAck}}
+{\footnotesize\ttfamily \#define R\+F\+\_\+\+Event\+Tx\+Ctrl\+Ack\+Ack~(1$<$$<$8)}
+
+
+
+Acknowledgement received on a transmitted control packet, and acknowledgement transmitted for that packet. 
+
+
+
+Definition at line 244 of file R\+F.\+h.
+
+\mbox{\Hypertarget{group___r_f___core___events_ga4e8f8b70a9cd745561251d61940880f6}\label{group___r_f___core___events_ga4e8f8b70a9cd745561251d61940880f6}} 
+\index{RF\_Core\_Events@{RF\_Core\_Events}!RF\_EventTxDone@{RF\_EventTxDone}}
+\index{RF\_EventTxDone@{RF\_EventTxDone}!RF\_Core\_Events@{RF\_Core\_Events}}
+\doxysubsubsection{\texorpdfstring{RF\_EventTxDone}{RF\_EventTxDone}}
+{\footnotesize\ttfamily \#define R\+F\+\_\+\+Event\+Tx\+Done~(1$<$$<$4)}
+
+
+
+Packet transmitted. 
+
+
+
+Definition at line 240 of file R\+F.\+h.
+
+\mbox{\Hypertarget{group___r_f___core___events_ga2fe4925d81a1b1cf0f081801ccdea5c5}\label{group___r_f___core___events_ga2fe4925d81a1b1cf0f081801ccdea5c5}} 
+\index{RF\_Core\_Events@{RF\_Core\_Events}!RF\_EventTxEntryDone@{RF\_EventTxEntryDone}}
+\index{RF\_EventTxEntryDone@{RF\_EventTxEntryDone}!RF\_Core\_Events@{RF\_Core\_Events}}
+\doxysubsubsection{\texorpdfstring{RF\_EventTxEntryDone}{RF\_EventTxEntryDone}}
+{\footnotesize\ttfamily \#define R\+F\+\_\+\+Event\+Tx\+Entry\+Done~(1$<$$<$10)}
+
+
+
+Tx queue data entry state changed to Finished. 
+
+
+
+Definition at line 246 of file R\+F.\+h.
+
+\mbox{\Hypertarget{group___r_f___core___events_ga2c71299952c2e6f95973f15cd1910012}\label{group___r_f___core___events_ga2c71299952c2e6f95973f15cd1910012}} 
+\index{RF\_Core\_Events@{RF\_Core\_Events}!RF\_EventTxRetrans@{RF\_EventTxRetrans}}
+\index{RF\_EventTxRetrans@{RF\_EventTxRetrans}!RF\_Core\_Events@{RF\_Core\_Events}}
+\doxysubsubsection{\texorpdfstring{RF\_EventTxRetrans}{RF\_EventTxRetrans}}
+{\footnotesize\ttfamily \#define R\+F\+\_\+\+Event\+Tx\+Retrans~(1$<$$<$9)}
+
+
+
+Packet retransmitted. 
+
+
+
+Definition at line 245 of file R\+F.\+h.
+

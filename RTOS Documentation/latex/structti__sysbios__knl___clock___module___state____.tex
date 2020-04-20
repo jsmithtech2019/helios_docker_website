@@ -1,0 +1,152 @@
+\hypertarget{structti__sysbios__knl___clock___module___state____}{}\doxysection{ti\+\_\+sysbios\+\_\+knl\+\_\+\+Clock\+\_\+\+Module\+\_\+\+State\+\_\+\+\_\+ Struct Reference}
+\label{structti__sysbios__knl___clock___module___state____}\index{ti\_sysbios\_knl\_Clock\_Module\_State\_\_@{ti\_sysbios\_knl\_Clock\_Module\_State\_\_}}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+volatile xdc\+\_\+\+U\+Int32 \mbox{\hyperlink{structti__sysbios__knl___clock___module___state_____ad0777bc1dbfe2a404e220d90ad05f252}{ticks}}
+\item 
+xdc\+\_\+\+U\+Int \mbox{\hyperlink{structti__sysbios__knl___clock___module___state_____abc51c0f7cf4b606da47a75e498f72433}{swi\+Count}}
+\item 
+ti\+\_\+sysbios\+\_\+knl\+\_\+\+Clock\+\_\+\+Timer\+Proxy\+\_\+\+Handle \mbox{\hyperlink{structti__sysbios__knl___clock___module___state_____aa02e6bb3b4cf77576d5afbda2f7e4e05}{timer}}
+\item 
+ti\+\_\+sysbios\+\_\+knl\+\_\+\+Swi\+\_\+\+Handle \mbox{\hyperlink{structti__sysbios__knl___clock___module___state_____aee2597c0f2c0e657178e35c9ec49f223}{swi}}
+\item 
+volatile xdc\+\_\+\+U\+Int \mbox{\hyperlink{structti__sysbios__knl___clock___module___state_____a132738b1c4466c5f8e28c3b78bea3273}{num\+Tick\+Skip}}
+\item 
+xdc\+\_\+\+U\+Int32 \mbox{\hyperlink{structti__sysbios__knl___clock___module___state_____a8a3eeee6559ed5d084c708d719ecac80}{next\+Scheduled\+Tick}}
+\item 
+xdc\+\_\+\+U\+Int32 \mbox{\hyperlink{structti__sysbios__knl___clock___module___state_____a5cda25c718be8e97d1408da28e5b99fa}{max\+Skippable}}
+\item 
+xdc\+\_\+\+Bool \mbox{\hyperlink{structti__sysbios__knl___clock___module___state_____af370cd7f3100c3df0244b0f9cb52615a}{in\+Work\+Func}}
+\item 
+xdc\+\_\+\+Bool \mbox{\hyperlink{structti__sysbios__knl___clock___module___state_____adde34bc95544cb8342cc2906b8ab9764}{start\+During\+Work\+Func}}
+\item 
+xdc\+\_\+\+Bool \mbox{\hyperlink{structti__sysbios__knl___clock___module___state_____a8a6e994618c86097546c46e145888172}{ticking}}
+\item 
+\mbox{\hyperlink{structti__sysbios__knl___queue___object____}{ti\+\_\+sysbios\+\_\+knl\+\_\+\+Queue\+\_\+\+Object\+\_\+\+\_\+}} \mbox{\hyperlink{structti__sysbios__knl___clock___module___state_____ae80bab07dc687f132154332f1df03556}{Object\+\_\+field\+\_\+clockQ}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line 1272 of file app\+\_\+ble\+\_\+pem3.\+c.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{structti__sysbios__knl___clock___module___state_____af370cd7f3100c3df0244b0f9cb52615a}\label{structti__sysbios__knl___clock___module___state_____af370cd7f3100c3df0244b0f9cb52615a}} 
+\index{ti\_sysbios\_knl\_Clock\_Module\_State\_\_@{ti\_sysbios\_knl\_Clock\_Module\_State\_\_}!inWorkFunc@{inWorkFunc}}
+\index{inWorkFunc@{inWorkFunc}!ti\_sysbios\_knl\_Clock\_Module\_State\_\_@{ti\_sysbios\_knl\_Clock\_Module\_State\_\_}}
+\doxysubsubsection{\texorpdfstring{inWorkFunc}{inWorkFunc}}
+{\footnotesize\ttfamily xdc\+\_\+\+Bool ti\+\_\+sysbios\+\_\+knl\+\_\+\+Clock\+\_\+\+Module\+\_\+\+State\+\_\+\+\_\+\+::in\+Work\+Func}
+
+
+
+Definition at line 1280 of file app\+\_\+ble\+\_\+pem3.\+c.
+
+\mbox{\Hypertarget{structti__sysbios__knl___clock___module___state_____a5cda25c718be8e97d1408da28e5b99fa}\label{structti__sysbios__knl___clock___module___state_____a5cda25c718be8e97d1408da28e5b99fa}} 
+\index{ti\_sysbios\_knl\_Clock\_Module\_State\_\_@{ti\_sysbios\_knl\_Clock\_Module\_State\_\_}!maxSkippable@{maxSkippable}}
+\index{maxSkippable@{maxSkippable}!ti\_sysbios\_knl\_Clock\_Module\_State\_\_@{ti\_sysbios\_knl\_Clock\_Module\_State\_\_}}
+\doxysubsubsection{\texorpdfstring{maxSkippable}{maxSkippable}}
+{\footnotesize\ttfamily xdc\+\_\+\+U\+Int32 ti\+\_\+sysbios\+\_\+knl\+\_\+\+Clock\+\_\+\+Module\+\_\+\+State\+\_\+\+\_\+\+::max\+Skippable}
+
+
+
+Definition at line 1279 of file app\+\_\+ble\+\_\+pem3.\+c.
+
+\mbox{\Hypertarget{structti__sysbios__knl___clock___module___state_____a8a3eeee6559ed5d084c708d719ecac80}\label{structti__sysbios__knl___clock___module___state_____a8a3eeee6559ed5d084c708d719ecac80}} 
+\index{ti\_sysbios\_knl\_Clock\_Module\_State\_\_@{ti\_sysbios\_knl\_Clock\_Module\_State\_\_}!nextScheduledTick@{nextScheduledTick}}
+\index{nextScheduledTick@{nextScheduledTick}!ti\_sysbios\_knl\_Clock\_Module\_State\_\_@{ti\_sysbios\_knl\_Clock\_Module\_State\_\_}}
+\doxysubsubsection{\texorpdfstring{nextScheduledTick}{nextScheduledTick}}
+{\footnotesize\ttfamily xdc\+\_\+\+U\+Int32 ti\+\_\+sysbios\+\_\+knl\+\_\+\+Clock\+\_\+\+Module\+\_\+\+State\+\_\+\+\_\+\+::next\+Scheduled\+Tick}
+
+
+
+Definition at line 1278 of file app\+\_\+ble\+\_\+pem3.\+c.
+
+\mbox{\Hypertarget{structti__sysbios__knl___clock___module___state_____a132738b1c4466c5f8e28c3b78bea3273}\label{structti__sysbios__knl___clock___module___state_____a132738b1c4466c5f8e28c3b78bea3273}} 
+\index{ti\_sysbios\_knl\_Clock\_Module\_State\_\_@{ti\_sysbios\_knl\_Clock\_Module\_State\_\_}!numTickSkip@{numTickSkip}}
+\index{numTickSkip@{numTickSkip}!ti\_sysbios\_knl\_Clock\_Module\_State\_\_@{ti\_sysbios\_knl\_Clock\_Module\_State\_\_}}
+\doxysubsubsection{\texorpdfstring{numTickSkip}{numTickSkip}}
+{\footnotesize\ttfamily volatile xdc\+\_\+\+U\+Int ti\+\_\+sysbios\+\_\+knl\+\_\+\+Clock\+\_\+\+Module\+\_\+\+State\+\_\+\+\_\+\+::num\+Tick\+Skip}
+
+
+
+Definition at line 1277 of file app\+\_\+ble\+\_\+pem3.\+c.
+
+\mbox{\Hypertarget{structti__sysbios__knl___clock___module___state_____ae80bab07dc687f132154332f1df03556}\label{structti__sysbios__knl___clock___module___state_____ae80bab07dc687f132154332f1df03556}} 
+\index{ti\_sysbios\_knl\_Clock\_Module\_State\_\_@{ti\_sysbios\_knl\_Clock\_Module\_State\_\_}!Object\_field\_clockQ@{Object\_field\_clockQ}}
+\index{Object\_field\_clockQ@{Object\_field\_clockQ}!ti\_sysbios\_knl\_Clock\_Module\_State\_\_@{ti\_sysbios\_knl\_Clock\_Module\_State\_\_}}
+\doxysubsubsection{\texorpdfstring{Object\_field\_clockQ}{Object\_field\_clockQ}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structti__sysbios__knl___queue___object____}{ti\+\_\+sysbios\+\_\+knl\+\_\+\+Queue\+\_\+\+Object\+\_\+\+\_\+}} ti\+\_\+sysbios\+\_\+knl\+\_\+\+Clock\+\_\+\+Module\+\_\+\+State\+\_\+\+\_\+\+::\+Object\+\_\+field\+\_\+clockQ}
+
+
+
+Definition at line 1283 of file app\+\_\+ble\+\_\+pem3.\+c.
+
+\mbox{\Hypertarget{structti__sysbios__knl___clock___module___state_____adde34bc95544cb8342cc2906b8ab9764}\label{structti__sysbios__knl___clock___module___state_____adde34bc95544cb8342cc2906b8ab9764}} 
+\index{ti\_sysbios\_knl\_Clock\_Module\_State\_\_@{ti\_sysbios\_knl\_Clock\_Module\_State\_\_}!startDuringWorkFunc@{startDuringWorkFunc}}
+\index{startDuringWorkFunc@{startDuringWorkFunc}!ti\_sysbios\_knl\_Clock\_Module\_State\_\_@{ti\_sysbios\_knl\_Clock\_Module\_State\_\_}}
+\doxysubsubsection{\texorpdfstring{startDuringWorkFunc}{startDuringWorkFunc}}
+{\footnotesize\ttfamily xdc\+\_\+\+Bool ti\+\_\+sysbios\+\_\+knl\+\_\+\+Clock\+\_\+\+Module\+\_\+\+State\+\_\+\+\_\+\+::start\+During\+Work\+Func}
+
+
+
+Definition at line 1281 of file app\+\_\+ble\+\_\+pem3.\+c.
+
+\mbox{\Hypertarget{structti__sysbios__knl___clock___module___state_____aee2597c0f2c0e657178e35c9ec49f223}\label{structti__sysbios__knl___clock___module___state_____aee2597c0f2c0e657178e35c9ec49f223}} 
+\index{ti\_sysbios\_knl\_Clock\_Module\_State\_\_@{ti\_sysbios\_knl\_Clock\_Module\_State\_\_}!swi@{swi}}
+\index{swi@{swi}!ti\_sysbios\_knl\_Clock\_Module\_State\_\_@{ti\_sysbios\_knl\_Clock\_Module\_State\_\_}}
+\doxysubsubsection{\texorpdfstring{swi}{swi}}
+{\footnotesize\ttfamily ti\+\_\+sysbios\+\_\+knl\+\_\+\+Swi\+\_\+\+Handle ti\+\_\+sysbios\+\_\+knl\+\_\+\+Clock\+\_\+\+Module\+\_\+\+State\+\_\+\+\_\+\+::swi}
+
+
+
+Definition at line 1276 of file app\+\_\+ble\+\_\+pem3.\+c.
+
+\mbox{\Hypertarget{structti__sysbios__knl___clock___module___state_____abc51c0f7cf4b606da47a75e498f72433}\label{structti__sysbios__knl___clock___module___state_____abc51c0f7cf4b606da47a75e498f72433}} 
+\index{ti\_sysbios\_knl\_Clock\_Module\_State\_\_@{ti\_sysbios\_knl\_Clock\_Module\_State\_\_}!swiCount@{swiCount}}
+\index{swiCount@{swiCount}!ti\_sysbios\_knl\_Clock\_Module\_State\_\_@{ti\_sysbios\_knl\_Clock\_Module\_State\_\_}}
+\doxysubsubsection{\texorpdfstring{swiCount}{swiCount}}
+{\footnotesize\ttfamily xdc\+\_\+\+U\+Int ti\+\_\+sysbios\+\_\+knl\+\_\+\+Clock\+\_\+\+Module\+\_\+\+State\+\_\+\+\_\+\+::swi\+Count}
+
+
+
+Definition at line 1274 of file app\+\_\+ble\+\_\+pem3.\+c.
+
+\mbox{\Hypertarget{structti__sysbios__knl___clock___module___state_____a8a6e994618c86097546c46e145888172}\label{structti__sysbios__knl___clock___module___state_____a8a6e994618c86097546c46e145888172}} 
+\index{ti\_sysbios\_knl\_Clock\_Module\_State\_\_@{ti\_sysbios\_knl\_Clock\_Module\_State\_\_}!ticking@{ticking}}
+\index{ticking@{ticking}!ti\_sysbios\_knl\_Clock\_Module\_State\_\_@{ti\_sysbios\_knl\_Clock\_Module\_State\_\_}}
+\doxysubsubsection{\texorpdfstring{ticking}{ticking}}
+{\footnotesize\ttfamily xdc\+\_\+\+Bool ti\+\_\+sysbios\+\_\+knl\+\_\+\+Clock\+\_\+\+Module\+\_\+\+State\+\_\+\+\_\+\+::ticking}
+
+
+
+Definition at line 1282 of file app\+\_\+ble\+\_\+pem3.\+c.
+
+\mbox{\Hypertarget{structti__sysbios__knl___clock___module___state_____ad0777bc1dbfe2a404e220d90ad05f252}\label{structti__sysbios__knl___clock___module___state_____ad0777bc1dbfe2a404e220d90ad05f252}} 
+\index{ti\_sysbios\_knl\_Clock\_Module\_State\_\_@{ti\_sysbios\_knl\_Clock\_Module\_State\_\_}!ticks@{ticks}}
+\index{ticks@{ticks}!ti\_sysbios\_knl\_Clock\_Module\_State\_\_@{ti\_sysbios\_knl\_Clock\_Module\_State\_\_}}
+\doxysubsubsection{\texorpdfstring{ticks}{ticks}}
+{\footnotesize\ttfamily volatile xdc\+\_\+\+U\+Int32 ti\+\_\+sysbios\+\_\+knl\+\_\+\+Clock\+\_\+\+Module\+\_\+\+State\+\_\+\+\_\+\+::ticks}
+
+
+
+Definition at line 1273 of file app\+\_\+ble\+\_\+pem3.\+c.
+
+\mbox{\Hypertarget{structti__sysbios__knl___clock___module___state_____aa02e6bb3b4cf77576d5afbda2f7e4e05}\label{structti__sysbios__knl___clock___module___state_____aa02e6bb3b4cf77576d5afbda2f7e4e05}} 
+\index{ti\_sysbios\_knl\_Clock\_Module\_State\_\_@{ti\_sysbios\_knl\_Clock\_Module\_State\_\_}!timer@{timer}}
+\index{timer@{timer}!ti\_sysbios\_knl\_Clock\_Module\_State\_\_@{ti\_sysbios\_knl\_Clock\_Module\_State\_\_}}
+\doxysubsubsection{\texorpdfstring{timer}{timer}}
+{\footnotesize\ttfamily ti\+\_\+sysbios\+\_\+knl\+\_\+\+Clock\+\_\+\+Timer\+Proxy\+\_\+\+Handle ti\+\_\+sysbios\+\_\+knl\+\_\+\+Clock\+\_\+\+Module\+\_\+\+State\+\_\+\+\_\+\+::timer}
+
+
+
+Definition at line 1275 of file app\+\_\+ble\+\_\+pem3.\+c.
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Flash\+R\+O\+M/config\+Pkg/package/cfg/\mbox{\hyperlink{app__ble__pem3_8c}{app\+\_\+ble\+\_\+pem3.\+c}}\end{DoxyCompactItemize}

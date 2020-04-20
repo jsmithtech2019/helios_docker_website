@@ -1,0 +1,141 @@
+\hypertarget{util_8h}{}\doxysection{Application/util.h File Reference}
+\label{util_8h}\index{Application/util.h@{Application/util.h}}
+{\ttfamily \#include $<$ti/sysbios/knl/\+Clock.\+h$>$}\newline
+{\ttfamily \#include $<$ti/sysbios/knl/\+Queue.\+h$>$}\newline
+{\ttfamily \#include $<$ti/sysbios/knl/\+Semaphore.\+h$>$}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structapp_evt_hdr__t}{app\+Evt\+Hdr\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em I\+C\+A\+L\+L\+\_\+\+E\+V\+E\+N\+TS. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+Clock\+\_\+\+Handle \mbox{\hyperlink{util_8h_a761dca11dc0c6199168011949db793c5}{Util\+\_\+construct\+Clock}} (Clock\+\_\+\+Struct $\ast$p\+Clock, Clock\+\_\+\+Func\+Ptr clock\+CB, uint32\+\_\+t clock\+Duration, uint32\+\_\+t clock\+Period, uint8\+\_\+t start\+Flag, U\+Arg arg)
+\item 
+void \mbox{\hyperlink{util_8h_a1c499454cba90c216ab2514b54f7ce88}{Util\+\_\+start\+Clock}} (Clock\+\_\+\+Struct $\ast$p\+Clock)
+\item 
+void \mbox{\hyperlink{util_8h_a3d36870c30686d68d7096fd333090c3f}{Util\+\_\+restart\+Clock}} (Clock\+\_\+\+Struct $\ast$p\+Clock, uint32\+\_\+t clock\+Timeout)
+\item 
+bool \mbox{\hyperlink{util_8h_a077436ed5f5a43a39f8c96cba253160e}{Util\+\_\+is\+Active}} (Clock\+\_\+\+Struct $\ast$p\+Clock)
+\item 
+void \mbox{\hyperlink{util_8h_ae0a8cd00a21d57e55a96283336ceab17}{Util\+\_\+stop\+Clock}} (Clock\+\_\+\+Struct $\ast$p\+Clock)
+\item 
+void \mbox{\hyperlink{util_8h_a59503ce945c3762bb32e8a1e2cb9c8f9}{Util\+\_\+reschedule\+Clock}} (Clock\+\_\+\+Struct $\ast$p\+Clock, uint32\+\_\+t clock\+Period)
+\item 
+Queue\+\_\+\+Handle \mbox{\hyperlink{util_8h_a1a402aa73798e67c21ea960bb67ed516}{Util\+\_\+construct\+Queue}} (Queue\+\_\+\+Struct $\ast$p\+Queue)
+\item 
+uint8\+\_\+t \mbox{\hyperlink{util_8h_a118aec25cc2e498e9b2601743637eba0}{Util\+\_\+enqueue\+Msg}} (Queue\+\_\+\+Handle msg\+Queue, Semaphore\+\_\+\+Handle sem, uint8\+\_\+t $\ast$p\+Msg)
+\item 
+uint8\+\_\+t $\ast$ \mbox{\hyperlink{util_8h_a2119072ce502da984eed8a9dd614da07}{Util\+\_\+dequeue\+Msg}} (Queue\+\_\+\+Handle msg\+Queue)
+\item 
+char $\ast$ \mbox{\hyperlink{util_8h_a75205c175bc391da5e9a304454e75dfb}{Util\+\_\+convert\+Bd\+Addr2\+Str}} (uint8\+\_\+t $\ast$p\+Addr)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{util_8h_a761dca11dc0c6199168011949db793c5}\label{util_8h_a761dca11dc0c6199168011949db793c5}} 
+\index{util.h@{util.h}!Util\_constructClock@{Util\_constructClock}}
+\index{Util\_constructClock@{Util\_constructClock}!util.h@{util.h}}
+\doxysubsubsection{\texorpdfstring{Util\_constructClock()}{Util\_constructClock()}}
+{\footnotesize\ttfamily Clock\+\_\+\+Handle Util\+\_\+construct\+Clock (\begin{DoxyParamCaption}\item[{Clock\+\_\+\+Struct $\ast$}]{p\+Clock,  }\item[{Clock\+\_\+\+Func\+Ptr}]{clock\+CB,  }\item[{uint32\+\_\+t}]{clock\+Duration,  }\item[{uint32\+\_\+t}]{clock\+Period,  }\item[{uint8\+\_\+t}]{start\+Flag,  }\item[{U\+Arg}]{arg }\end{DoxyParamCaption})}
+
+
+
+Definition at line 114 of file util.\+c.
+
+\mbox{\Hypertarget{util_8h_a1a402aa73798e67c21ea960bb67ed516}\label{util_8h_a1a402aa73798e67c21ea960bb67ed516}} 
+\index{util.h@{util.h}!Util\_constructQueue@{Util\_constructQueue}}
+\index{Util\_constructQueue@{Util\_constructQueue}!util.h@{util.h}}
+\doxysubsubsection{\texorpdfstring{Util\_constructQueue()}{Util\_constructQueue()}}
+{\footnotesize\ttfamily Queue\+\_\+\+Handle Util\+\_\+construct\+Queue (\begin{DoxyParamCaption}\item[{Queue\+\_\+\+Struct $\ast$}]{p\+Queue }\end{DoxyParamCaption})}
+
+
+
+Definition at line 274 of file util.\+c.
+
+\mbox{\Hypertarget{util_8h_a75205c175bc391da5e9a304454e75dfb}\label{util_8h_a75205c175bc391da5e9a304454e75dfb}} 
+\index{util.h@{util.h}!Util\_convertBdAddr2Str@{Util\_convertBdAddr2Str}}
+\index{Util\_convertBdAddr2Str@{Util\_convertBdAddr2Str}!util.h@{util.h}}
+\doxysubsubsection{\texorpdfstring{Util\_convertBdAddr2Str()}{Util\_convertBdAddr2Str()}}
+{\footnotesize\ttfamily char$\ast$ Util\+\_\+convert\+Bd\+Addr2\+Str (\begin{DoxyParamCaption}\item[{uint8\+\_\+t $\ast$}]{p\+Addr }\end{DoxyParamCaption})}
+
+
+
+Definition at line 383 of file util.\+c.
+
+\mbox{\Hypertarget{util_8h_a2119072ce502da984eed8a9dd614da07}\label{util_8h_a2119072ce502da984eed8a9dd614da07}} 
+\index{util.h@{util.h}!Util\_dequeueMsg@{Util\_dequeueMsg}}
+\index{Util\_dequeueMsg@{Util\_dequeueMsg}!util.h@{util.h}}
+\doxysubsubsection{\texorpdfstring{Util\_dequeueMsg()}{Util\_dequeueMsg()}}
+{\footnotesize\ttfamily uint8\+\_\+t$\ast$ Util\+\_\+dequeue\+Msg (\begin{DoxyParamCaption}\item[{Queue\+\_\+\+Handle}]{msg\+Queue }\end{DoxyParamCaption})}
+
+
+
+Definition at line 351 of file util.\+c.
+
+\mbox{\Hypertarget{util_8h_a118aec25cc2e498e9b2601743637eba0}\label{util_8h_a118aec25cc2e498e9b2601743637eba0}} 
+\index{util.h@{util.h}!Util\_enqueueMsg@{Util\_enqueueMsg}}
+\index{Util\_enqueueMsg@{Util\_enqueueMsg}!util.h@{util.h}}
+\doxysubsubsection{\texorpdfstring{Util\_enqueueMsg()}{Util\_enqueueMsg()}}
+{\footnotesize\ttfamily uint8\+\_\+t Util\+\_\+enqueue\+Msg (\begin{DoxyParamCaption}\item[{Queue\+\_\+\+Handle}]{msg\+Queue,  }\item[{Semaphore\+\_\+\+Handle}]{sem,  }\item[{uint8\+\_\+t $\ast$}]{p\+Msg }\end{DoxyParamCaption})}
+
+I\+C\+A\+L\+L\+\_\+\+E\+V\+E\+N\+TS
+\begin{DoxyParams}{Parameters}
+{\em sem} & I\+C\+A\+L\+L\+\_\+\+E\+V\+E\+N\+TS \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 294 of file util.\+c.
+
+\mbox{\Hypertarget{util_8h_a077436ed5f5a43a39f8c96cba253160e}\label{util_8h_a077436ed5f5a43a39f8c96cba253160e}} 
+\index{util.h@{util.h}!Util\_isActive@{Util\_isActive}}
+\index{Util\_isActive@{Util\_isActive}!util.h@{util.h}}
+\doxysubsubsection{\texorpdfstring{Util\_isActive()}{Util\_isActive()}}
+{\footnotesize\ttfamily bool Util\+\_\+is\+Active (\begin{DoxyParamCaption}\item[{Clock\+\_\+\+Struct $\ast$}]{p\+Clock }\end{DoxyParamCaption})}
+
+
+
+Definition at line 205 of file util.\+c.
+
+\mbox{\Hypertarget{util_8h_a59503ce945c3762bb32e8a1e2cb9c8f9}\label{util_8h_a59503ce945c3762bb32e8a1e2cb9c8f9}} 
+\index{util.h@{util.h}!Util\_rescheduleClock@{Util\_rescheduleClock}}
+\index{Util\_rescheduleClock@{Util\_rescheduleClock}!util.h@{util.h}}
+\doxysubsubsection{\texorpdfstring{Util\_rescheduleClock()}{Util\_rescheduleClock()}}
+{\footnotesize\ttfamily void Util\+\_\+reschedule\+Clock (\begin{DoxyParamCaption}\item[{Clock\+\_\+\+Struct $\ast$}]{p\+Clock,  }\item[{uint32\+\_\+t}]{clock\+Period }\end{DoxyParamCaption})}
+
+
+
+Definition at line 239 of file util.\+c.
+
+\mbox{\Hypertarget{util_8h_a3d36870c30686d68d7096fd333090c3f}\label{util_8h_a3d36870c30686d68d7096fd333090c3f}} 
+\index{util.h@{util.h}!Util\_restartClock@{Util\_restartClock}}
+\index{Util\_restartClock@{Util\_restartClock}!util.h@{util.h}}
+\doxysubsubsection{\texorpdfstring{Util\_restartClock()}{Util\_restartClock()}}
+{\footnotesize\ttfamily void Util\+\_\+restart\+Clock (\begin{DoxyParamCaption}\item[{Clock\+\_\+\+Struct $\ast$}]{p\+Clock,  }\item[{uint32\+\_\+t}]{clock\+Timeout }\end{DoxyParamCaption})}
+
+
+
+Definition at line 172 of file util.\+c.
+
+\mbox{\Hypertarget{util_8h_a1c499454cba90c216ab2514b54f7ce88}\label{util_8h_a1c499454cba90c216ab2514b54f7ce88}} 
+\index{util.h@{util.h}!Util\_startClock@{Util\_startClock}}
+\index{Util\_startClock@{Util\_startClock}!util.h@{util.h}}
+\doxysubsubsection{\texorpdfstring{Util\_startClock()}{Util\_startClock()}}
+{\footnotesize\ttfamily void Util\+\_\+start\+Clock (\begin{DoxyParamCaption}\item[{Clock\+\_\+\+Struct $\ast$}]{p\+Clock }\end{DoxyParamCaption})}
+
+
+
+Definition at line 154 of file util.\+c.
+
+\mbox{\Hypertarget{util_8h_ae0a8cd00a21d57e55a96283336ceab17}\label{util_8h_ae0a8cd00a21d57e55a96283336ceab17}} 
+\index{util.h@{util.h}!Util\_stopClock@{Util\_stopClock}}
+\index{Util\_stopClock@{Util\_stopClock}!util.h@{util.h}}
+\doxysubsubsection{\texorpdfstring{Util\_stopClock()}{Util\_stopClock()}}
+{\footnotesize\ttfamily void Util\+\_\+stop\+Clock (\begin{DoxyParamCaption}\item[{Clock\+\_\+\+Struct $\ast$}]{p\+Clock }\end{DoxyParamCaption})}
+
+
+
+Definition at line 222 of file util.\+c.
+

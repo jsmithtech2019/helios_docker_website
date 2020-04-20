@@ -1,0 +1,166 @@
+\hypertarget{group___g_a_p_r_o_l_e_s___p_e_r_i_p_h_e_r_a_l___a_p_i}{}\doxysection{G\+AP Peripheral Role A\+PI Functions}
+\label{group___g_a_p_r_o_l_e_s___p_e_r_i_p_h_e_r_a_l___a_p_i}\index{GAP Peripheral Role API Functions@{GAP Peripheral Role API Functions}}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+b\+Status\+\_\+t \mbox{\hyperlink{group___g_a_p_r_o_l_e_s___p_e_r_i_p_h_e_r_a_l___a_p_i_ga84806b59c0e36ef53ded1ff1a0d7712f}{G\+A\+P\+Role\+\_\+\+Set\+Parameter}} (uint16\+\_\+t param, uint8\+\_\+t \mbox{\hyperlink{icall__apimsg_8h_a8ccac76f35f79d74917e1c5dd6f69fea}{len}}, void $\ast$p\+Value)
+\begin{DoxyCompactList}\small\item\em Set a G\+AP Role parameter. \end{DoxyCompactList}\item 
+b\+Status\+\_\+t \mbox{\hyperlink{group___g_a_p_r_o_l_e_s___p_e_r_i_p_h_e_r_a_l___a_p_i_ga15e8c7eb90a2bd4dc13eb6a967287031}{G\+A\+P\+Role\+\_\+\+Get\+Parameter}} (uint16\+\_\+t param, void $\ast$p\+Value)
+\begin{DoxyCompactList}\small\item\em Get a G\+AP Role parameter. \end{DoxyCompactList}\item 
+b\+Status\+\_\+t \mbox{\hyperlink{group___g_a_p_r_o_l_e_s___p_e_r_i_p_h_e_r_a_l___a_p_i_ga835a1ca8b91828b4092f471cd510724d}{G\+A\+P\+Role\+\_\+\+Start\+Device}} (\mbox{\hyperlink{structgap_roles_c_bs__t}{gap\+Roles\+C\+Bs\+\_\+t}} $\ast$p\+App\+Callbacks)
+\begin{DoxyCompactList}\small\item\em Does the device initialization. Only call this function once. \end{DoxyCompactList}\item 
+b\+Status\+\_\+t \mbox{\hyperlink{group___g_a_p_r_o_l_e_s___p_e_r_i_p_h_e_r_a_l___a_p_i_ga1e1ad911e721a59bf4746dba194fbb7d}{G\+A\+P\+Role\+\_\+\+Terminate\+Connection}} (void)
+\begin{DoxyCompactList}\small\item\em Terminates the existing connection. \end{DoxyCompactList}\item 
+b\+Status\+\_\+t \mbox{\hyperlink{group___g_a_p_r_o_l_e_s___p_e_r_i_p_h_e_r_a_l___a_p_i_gacfeeaa2854f216e75fb92130ae6a6a7e}{G\+A\+P\+Role\+\_\+\+Send\+Update\+Param}} (uint16\+\_\+t min\+Conn\+Interval, uint16\+\_\+t max\+Conn\+Interval, uint16\+\_\+t latency, uint16\+\_\+t conn\+Timeout, uint8\+\_\+t handle\+Failure)
+\begin{DoxyCompactList}\small\item\em Update the parameters of an existing connection. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___g_a_p_r_o_l_e_s___p_e_r_i_p_h_e_r_a_l___a_p_i_gaa0ac8e3133226713e2d1800998351e34}{G\+A\+P\+Role\+\_\+\+Register\+App\+C\+Bs}} (\mbox{\hyperlink{peripheral_8h_aafb88c41cf885e406afe006dc29228bf}{gap\+Roles\+Param\+Update\+C\+B\+\_\+t}} $\ast$p\+Param\+Update\+CB)
+\begin{DoxyCompactList}\small\item\em Register application\textquotesingle{}s callbacks. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{group___g_a_p_r_o_l_e_s___p_e_r_i_p_h_e_r_a_l___a_p_i_ga15e8c7eb90a2bd4dc13eb6a967287031}\label{group___g_a_p_r_o_l_e_s___p_e_r_i_p_h_e_r_a_l___a_p_i_ga15e8c7eb90a2bd4dc13eb6a967287031}} 
+\index{GAP Peripheral Role API Functions@{GAP Peripheral Role API Functions}!GAPRole\_GetParameter@{GAPRole\_GetParameter}}
+\index{GAPRole\_GetParameter@{GAPRole\_GetParameter}!GAP Peripheral Role API Functions@{GAP Peripheral Role API Functions}}
+\doxysubsubsection{\texorpdfstring{GAPRole\_GetParameter()}{GAPRole\_GetParameter()}}
+{\footnotesize\ttfamily b\+Status\+\_\+t G\+A\+P\+Role\+\_\+\+Get\+Parameter (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{param,  }\item[{void $\ast$}]{p\+Value }\end{DoxyParamCaption})}
+
+
+
+Get a G\+AP Role parameter. 
+
+N\+O\+TE\+: You can call this function with a G\+AP Parameter ID and it will get a G\+AP Parameter. G\+AP Parameters are defined in (\mbox{\hyperlink{gap_8h}{gap.\+h}}). Also, the \char`\"{}p\+Value\char`\"{} field must point to a \char`\"{}uint16\+\_\+t\char`\"{}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em param} & -\/ Profile parameter ID\+: \mbox{\hyperlink{group___g_a_p_r_o_l_e___p_r_o_f_i_l_e___p_a_r_a_m_e_t_e_r_s}{G\+AP Role Parameters}} \\
+\hline
+{\em p\+Value} & -\/ pointer to location to get the value. This is dependent on the parameter ID and W\+I\+LL be cast to the appropriate data type (example\+: data type of uint16\+\_\+t will be cast to uint16\+\_\+t pointer).\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+S\+U\+C\+C\+E\+SS or I\+N\+V\+A\+L\+I\+D\+P\+A\+R\+A\+M\+E\+T\+ER (invalid param\+ID) 
+\end{DoxyReturn}
+
+
+Definition at line 625 of file peripheral.\+c.
+
+\mbox{\Hypertarget{group___g_a_p_r_o_l_e_s___p_e_r_i_p_h_e_r_a_l___a_p_i_gaa0ac8e3133226713e2d1800998351e34}\label{group___g_a_p_r_o_l_e_s___p_e_r_i_p_h_e_r_a_l___a_p_i_gaa0ac8e3133226713e2d1800998351e34}} 
+\index{GAP Peripheral Role API Functions@{GAP Peripheral Role API Functions}!GAPRole\_RegisterAppCBs@{GAPRole\_RegisterAppCBs}}
+\index{GAPRole\_RegisterAppCBs@{GAPRole\_RegisterAppCBs}!GAP Peripheral Role API Functions@{GAP Peripheral Role API Functions}}
+\doxysubsubsection{\texorpdfstring{GAPRole\_RegisterAppCBs()}{GAPRole\_RegisterAppCBs()}}
+{\footnotesize\ttfamily void G\+A\+P\+Role\+\_\+\+Register\+App\+C\+Bs (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{peripheral_8h_aafb88c41cf885e406afe006dc29228bf}{gap\+Roles\+Param\+Update\+C\+B\+\_\+t}} $\ast$}]{p\+Param\+Update\+CB }\end{DoxyParamCaption})}
+
+
+
+Register application\textquotesingle{}s callbacks. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Param\+Update\+CB} & -\/ pointer to param update callback.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+
+
+Definition at line 789 of file peripheral.\+c.
+
+\mbox{\Hypertarget{group___g_a_p_r_o_l_e_s___p_e_r_i_p_h_e_r_a_l___a_p_i_gacfeeaa2854f216e75fb92130ae6a6a7e}\label{group___g_a_p_r_o_l_e_s___p_e_r_i_p_h_e_r_a_l___a_p_i_gacfeeaa2854f216e75fb92130ae6a6a7e}} 
+\index{GAP Peripheral Role API Functions@{GAP Peripheral Role API Functions}!GAPRole\_SendUpdateParam@{GAPRole\_SendUpdateParam}}
+\index{GAPRole\_SendUpdateParam@{GAPRole\_SendUpdateParam}!GAP Peripheral Role API Functions@{GAP Peripheral Role API Functions}}
+\doxysubsubsection{\texorpdfstring{GAPRole\_SendUpdateParam()}{GAPRole\_SendUpdateParam()}}
+{\footnotesize\ttfamily b\+Status\+\_\+t G\+A\+P\+Role\+\_\+\+Send\+Update\+Param (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{min\+Conn\+Interval,  }\item[{uint16\+\_\+t}]{max\+Conn\+Interval,  }\item[{uint16\+\_\+t}]{latency,  }\item[{uint16\+\_\+t}]{conn\+Timeout,  }\item[{uint8\+\_\+t}]{handle\+Failure }\end{DoxyParamCaption})}
+
+
+
+Update the parameters of an existing connection. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em conn\+Interval} & -\/ the new connection interval \\
+\hline
+{\em latency} & -\/ the new slave latency \\
+\hline
+{\em conn\+Timeout} & -\/ the new timeout value \\
+\hline
+{\em handle\+Failure} & -\/ what to do if the update does not occur. Method may choose to terminate connection, try again, or take no action\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+S\+U\+C\+C\+E\+SS\+: operation was successful. I\+N\+V\+A\+L\+I\+D\+P\+A\+R\+A\+M\+E\+T\+ER\+: Data can not fit into one packet. M\+S\+G\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+N\+O\+T\+\_\+\+A\+V\+A\+IL\+: No H\+CI buffer is available. ble\+Invalid\+Range\+: ble\+Incorrect\+Mode\+: invalid profile role. ble\+Already\+In\+Requested\+Mode\+: already updating link parameters. ble\+Not\+Connected\+: Connection is down ble\+Mem\+Alloc\+Error\+: Memory allocation error occurred. ble\+No\+Resources\+: No available resource 
+\end{DoxyReturn}
+
+
+Definition at line 1605 of file peripheral.\+c.
+
+\mbox{\Hypertarget{group___g_a_p_r_o_l_e_s___p_e_r_i_p_h_e_r_a_l___a_p_i_ga84806b59c0e36ef53ded1ff1a0d7712f}\label{group___g_a_p_r_o_l_e_s___p_e_r_i_p_h_e_r_a_l___a_p_i_ga84806b59c0e36ef53ded1ff1a0d7712f}} 
+\index{GAP Peripheral Role API Functions@{GAP Peripheral Role API Functions}!GAPRole\_SetParameter@{GAPRole\_SetParameter}}
+\index{GAPRole\_SetParameter@{GAPRole\_SetParameter}!GAP Peripheral Role API Functions@{GAP Peripheral Role API Functions}}
+\doxysubsubsection{\texorpdfstring{GAPRole\_SetParameter()}{GAPRole\_SetParameter()}}
+{\footnotesize\ttfamily b\+Status\+\_\+t G\+A\+P\+Role\+\_\+\+Set\+Parameter (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{param,  }\item[{uint8\+\_\+t}]{len,  }\item[{void $\ast$}]{p\+Value }\end{DoxyParamCaption})}
+
+
+
+Set a G\+AP Role parameter. 
+
+N\+O\+TE\+: You can call this function with a G\+AP Parameter ID and it will set the G\+AP Parameter. G\+AP Parameters are defined in (\mbox{\hyperlink{gap_8h}{gap.\+h}}). Also, the \char`\"{}len\char`\"{} field must be set to the size of a \char`\"{}uint16\+\_\+t\char`\"{} and the \char`\"{}p\+Value\char`\"{} field must point to a \char`\"{}uint16\+\_\+t\char`\"{}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em param} & -\/ Profile parameter ID\+: \mbox{\hyperlink{group___g_a_p_r_o_l_e___p_r_o_f_i_l_e___p_a_r_a_m_e_t_e_r_s}{G\+AP Role Parameters}} \\
+\hline
+{\em len} & -\/ length of data to write \\
+\hline
+{\em p\+Value} & -\/ pointer to data to write. This is dependent on the parameter ID and W\+I\+LL be cast to the appropriate data type (example\+: data type of uint16\+\_\+t will be cast to uint16\+\_\+t pointer).\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+S\+U\+C\+C\+E\+SS or I\+N\+V\+A\+L\+I\+D\+P\+A\+R\+A\+M\+E\+T\+ER (invalid param\+ID) 
+\end{DoxyReturn}
+
+
+Definition at line 282 of file peripheral.\+c.
+
+\mbox{\Hypertarget{group___g_a_p_r_o_l_e_s___p_e_r_i_p_h_e_r_a_l___a_p_i_ga835a1ca8b91828b4092f471cd510724d}\label{group___g_a_p_r_o_l_e_s___p_e_r_i_p_h_e_r_a_l___a_p_i_ga835a1ca8b91828b4092f471cd510724d}} 
+\index{GAP Peripheral Role API Functions@{GAP Peripheral Role API Functions}!GAPRole\_StartDevice@{GAPRole\_StartDevice}}
+\index{GAPRole\_StartDevice@{GAPRole\_StartDevice}!GAP Peripheral Role API Functions@{GAP Peripheral Role API Functions}}
+\doxysubsubsection{\texorpdfstring{GAPRole\_StartDevice()}{GAPRole\_StartDevice()}}
+{\footnotesize\ttfamily b\+Status\+\_\+t G\+A\+P\+Role\+\_\+\+Start\+Device (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structgap_roles_c_bs__t}{gap\+Roles\+C\+Bs\+\_\+t}} $\ast$}]{p\+App\+Callbacks }\end{DoxyParamCaption})}
+
+
+
+Does the device initialization. Only call this function once. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+App\+Callbacks} & -\/ pointer to application callbacks.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+S\+U\+C\+C\+E\+SS or ble\+Already\+In\+Requested\+Mode 
+\end{DoxyReturn}
+
+
+Definition at line 763 of file peripheral.\+c.
+
+\mbox{\Hypertarget{group___g_a_p_r_o_l_e_s___p_e_r_i_p_h_e_r_a_l___a_p_i_ga1e1ad911e721a59bf4746dba194fbb7d}\label{group___g_a_p_r_o_l_e_s___p_e_r_i_p_h_e_r_a_l___a_p_i_ga1e1ad911e721a59bf4746dba194fbb7d}} 
+\index{GAP Peripheral Role API Functions@{GAP Peripheral Role API Functions}!GAPRole\_TerminateConnection@{GAPRole\_TerminateConnection}}
+\index{GAPRole\_TerminateConnection@{GAPRole\_TerminateConnection}!GAP Peripheral Role API Functions@{GAP Peripheral Role API Functions}}
+\doxysubsubsection{\texorpdfstring{GAPRole\_TerminateConnection()}{GAPRole\_TerminateConnection()}}
+{\footnotesize\ttfamily b\+Status\+\_\+t G\+A\+P\+Role\+\_\+\+Terminate\+Connection (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Terminates the existing connection. 
+
+\begin{DoxyReturn}{Returns}
+S\+U\+C\+C\+E\+SS or ble\+Incorrect\+Mode 
+\end{DoxyReturn}
+
+
+Definition at line 802 of file peripheral.\+c.
+

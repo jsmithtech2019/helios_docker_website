@@ -1,0 +1,109 @@
+\hypertarget{struct___i_call___g_s_a___reg_service__}{}\doxysection{\+\_\+\+I\+Call\+\_\+\+G\+S\+A\+\_\+\+Reg\+Service\+\_\+ Struct Reference}
+\label{struct___i_call___g_s_a___reg_service__}\index{\_ICall\_GSA\_RegService\_@{\_ICall\_GSA\_RegService\_}}
+
+
+{\ttfamily \#include $<$icall\+\_\+apimsg.\+h$>$}
+
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{icall__apimsg_8h_afa62f50d802fab57d759c527cead246e}{I\+Call\+\_\+\+Hci\+Ext\+Cmd}} \mbox{\hyperlink{struct___i_call___g_s_a___reg_service___aade72bba04bdc2f4c8fd6eddd06c83c9}{hdr}}
+\begin{DoxyCompactList}\small\item\em hdr event field must be set as I\+C\+A\+L\+L\+\_\+\+C\+M\+D\+\_\+\+E\+V\+E\+NT \end{DoxyCompactList}\item 
+\mbox{\hyperlink{gatt_8h_a8dca0d941f79cbc3bca13ab038e2e963}{gatt\+Attribute\+\_\+t}} $\ast$ \mbox{\hyperlink{struct___i_call___g_s_a___reg_service___ade266fe4e03bdb3bae16dabed76ec610}{p\+Attrs}}
+\begin{DoxyCompactList}\small\item\em Array of attribute records to be registered. \end{DoxyCompactList}\item 
+uint16\+\_\+t \mbox{\hyperlink{struct___i_call___g_s_a___reg_service___aa03b23efb0a0dee21e0003a6e3ede2c2}{num\+Attrs}}
+\begin{DoxyCompactList}\small\item\em Number of attributes in array. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{struct___i_call___g_s_a___reg_service___aad7d89bf47dc8d08fdbeb9911386493b}{enc\+Key\+Size}}
+\begin{DoxyCompactList}\small\item\em Minimum encryption key size required by service. \end{DoxyCompactList}\item 
+C\+O\+N\+ST gatt\+Service\+C\+Bs\+\_\+t $\ast$ \mbox{\hyperlink{struct___i_call___g_s_a___reg_service___a54698e55f8588a70bb9cd54eb09471ff}{p\+Service\+C\+Bs}}
+\begin{DoxyCompactList}\small\item\em Service callback function pointers. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+I\+Call message containing Hci\+Ext\+Cmd hdr, attribute table, number of atributes in the table, and service C\+Bs
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{icall__api_8c_ab03b16f9f82020807d82ee44d2479acf}{G\+A\+T\+T\+Serv\+App\+\_\+\+Register\+Service}} 
+\end{DoxySeeAlso}
+
+
+Definition at line 849 of file icall\+\_\+apimsg.\+h.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{struct___i_call___g_s_a___reg_service___aad7d89bf47dc8d08fdbeb9911386493b}\label{struct___i_call___g_s_a___reg_service___aad7d89bf47dc8d08fdbeb9911386493b}} 
+\index{\_ICall\_GSA\_RegService\_@{\_ICall\_GSA\_RegService\_}!encKeySize@{encKeySize}}
+\index{encKeySize@{encKeySize}!\_ICall\_GSA\_RegService\_@{\_ICall\_GSA\_RegService\_}}
+\doxysubsubsection{\texorpdfstring{encKeySize}{encKeySize}}
+{\footnotesize\ttfamily uint8\+\_\+t \+\_\+\+I\+Call\+\_\+\+G\+S\+A\+\_\+\+Reg\+Service\+\_\+\+::enc\+Key\+Size}
+
+
+
+Minimum encryption key size required by service. 
+
+
+
+Definition at line 854 of file icall\+\_\+apimsg.\+h.
+
+\mbox{\Hypertarget{struct___i_call___g_s_a___reg_service___aade72bba04bdc2f4c8fd6eddd06c83c9}\label{struct___i_call___g_s_a___reg_service___aade72bba04bdc2f4c8fd6eddd06c83c9}} 
+\index{\_ICall\_GSA\_RegService\_@{\_ICall\_GSA\_RegService\_}!hdr@{hdr}}
+\index{hdr@{hdr}!\_ICall\_GSA\_RegService\_@{\_ICall\_GSA\_RegService\_}}
+\doxysubsubsection{\texorpdfstring{hdr}{hdr}}
+{\footnotesize\ttfamily \mbox{\hyperlink{icall__apimsg_8h_afa62f50d802fab57d759c527cead246e}{I\+Call\+\_\+\+Hci\+Ext\+Cmd}} \+\_\+\+I\+Call\+\_\+\+G\+S\+A\+\_\+\+Reg\+Service\+\_\+\+::hdr}
+
+
+
+hdr event field must be set as I\+C\+A\+L\+L\+\_\+\+C\+M\+D\+\_\+\+E\+V\+E\+NT 
+
+
+
+Definition at line 851 of file icall\+\_\+apimsg.\+h.
+
+\mbox{\Hypertarget{struct___i_call___g_s_a___reg_service___aa03b23efb0a0dee21e0003a6e3ede2c2}\label{struct___i_call___g_s_a___reg_service___aa03b23efb0a0dee21e0003a6e3ede2c2}} 
+\index{\_ICall\_GSA\_RegService\_@{\_ICall\_GSA\_RegService\_}!numAttrs@{numAttrs}}
+\index{numAttrs@{numAttrs}!\_ICall\_GSA\_RegService\_@{\_ICall\_GSA\_RegService\_}}
+\doxysubsubsection{\texorpdfstring{numAttrs}{numAttrs}}
+{\footnotesize\ttfamily uint16\+\_\+t \+\_\+\+I\+Call\+\_\+\+G\+S\+A\+\_\+\+Reg\+Service\+\_\+\+::num\+Attrs}
+
+
+
+Number of attributes in array. 
+
+
+
+Definition at line 853 of file icall\+\_\+apimsg.\+h.
+
+\mbox{\Hypertarget{struct___i_call___g_s_a___reg_service___ade266fe4e03bdb3bae16dabed76ec610}\label{struct___i_call___g_s_a___reg_service___ade266fe4e03bdb3bae16dabed76ec610}} 
+\index{\_ICall\_GSA\_RegService\_@{\_ICall\_GSA\_RegService\_}!pAttrs@{pAttrs}}
+\index{pAttrs@{pAttrs}!\_ICall\_GSA\_RegService\_@{\_ICall\_GSA\_RegService\_}}
+\doxysubsubsection{\texorpdfstring{pAttrs}{pAttrs}}
+{\footnotesize\ttfamily \mbox{\hyperlink{gatt_8h_a8dca0d941f79cbc3bca13ab038e2e963}{gatt\+Attribute\+\_\+t}}$\ast$ \+\_\+\+I\+Call\+\_\+\+G\+S\+A\+\_\+\+Reg\+Service\+\_\+\+::p\+Attrs}
+
+
+
+Array of attribute records to be registered. 
+
+
+
+Definition at line 852 of file icall\+\_\+apimsg.\+h.
+
+\mbox{\Hypertarget{struct___i_call___g_s_a___reg_service___a54698e55f8588a70bb9cd54eb09471ff}\label{struct___i_call___g_s_a___reg_service___a54698e55f8588a70bb9cd54eb09471ff}} 
+\index{\_ICall\_GSA\_RegService\_@{\_ICall\_GSA\_RegService\_}!pServiceCBs@{pServiceCBs}}
+\index{pServiceCBs@{pServiceCBs}!\_ICall\_GSA\_RegService\_@{\_ICall\_GSA\_RegService\_}}
+\doxysubsubsection{\texorpdfstring{pServiceCBs}{pServiceCBs}}
+{\footnotesize\ttfamily C\+O\+N\+ST gatt\+Service\+C\+Bs\+\_\+t$\ast$ \+\_\+\+I\+Call\+\_\+\+G\+S\+A\+\_\+\+Reg\+Service\+\_\+\+::p\+Service\+C\+Bs}
+
+
+
+Service callback function pointers. 
+
+
+
+Definition at line 855 of file icall\+\_\+apimsg.\+h.
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+I\+Call\+B\+L\+E/\mbox{\hyperlink{icall__apimsg_8h}{icall\+\_\+apimsg.\+h}}\end{DoxyCompactItemize}

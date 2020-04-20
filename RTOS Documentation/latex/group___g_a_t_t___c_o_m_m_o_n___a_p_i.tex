@@ -1,0 +1,87 @@
+\hypertarget{group___g_a_t_t___c_o_m_m_o_n___a_p_i}{}\doxysection{Client and Server Common A\+PI Functions}
+\label{group___g_a_t_t___c_o_m_m_o_n___a_p_i}\index{Client and Server Common API Functions@{Client and Server Common API Functions}}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{group___g_a_t_t___c_o_m_m_o_n___a_p_i_ga8866d184372ade2b19bc4f4684dc95b0}{G\+A\+T\+T\+\_\+\+Register\+For\+Msgs}} (uint8 task\+ID)
+\begin{DoxyCompactList}\small\item\em Register your task ID to receive G\+A\+TT local events and A\+TT Response messages pending for transmission. When the G\+A\+TT Server fails to respond to an incoming A\+TT Request due to lack of H\+CI Tx buffers, the response will be forwarded the app for retransmission. \end{DoxyCompactList}\item 
+b\+Status\+\_\+t \mbox{\hyperlink{group___g_a_t_t___c_o_m_m_o_n___a_p_i_ga375d586c8944efae8f693ea01ddfc963}{G\+A\+T\+T\+\_\+\+Notify\+Event}} (uint16 conn\+Handle, uint8 \mbox{\hyperlink{icall__apimsg_8h_ad94584ed274ed1d5b06d52f5bb3a178d}{status}}, uint8 method, \mbox{\hyperlink{uniongatt_msg__t}{gatt\+Msg\+\_\+t}} $\ast$p\+Msg)
+\begin{DoxyCompactList}\small\item\em Send an event to upper layer application/protocol. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___g_a_t_t___c_o_m_m_o_n___a_p_i_ga7594a0381985b415bdadc0c8246f9639}{G\+A\+T\+T\+\_\+\+Update\+M\+TU}} (uint16 conn\+Handle, uint16 mtu\+Size)
+\begin{DoxyCompactList}\small\item\em Update A\+T\+T\+\_\+\+M\+TU size for a given connection. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{group___g_a_t_t___c_o_m_m_o_n___a_p_i_ga375d586c8944efae8f693ea01ddfc963}\label{group___g_a_t_t___c_o_m_m_o_n___a_p_i_ga375d586c8944efae8f693ea01ddfc963}} 
+\index{Client and Server Common API Functions@{Client and Server Common API Functions}!GATT\_NotifyEvent@{GATT\_NotifyEvent}}
+\index{GATT\_NotifyEvent@{GATT\_NotifyEvent}!Client and Server Common API Functions@{Client and Server Common API Functions}}
+\doxysubsubsection{\texorpdfstring{GATT\_NotifyEvent()}{GATT\_NotifyEvent()}}
+{\footnotesize\ttfamily b\+Status\+\_\+t G\+A\+T\+T\+\_\+\+Notify\+Event (\begin{DoxyParamCaption}\item[{uint16}]{conn\+Handle,  }\item[{uint8}]{status,  }\item[{uint8}]{method,  }\item[{\mbox{\hyperlink{uniongatt_msg__t}{gatt\+Msg\+\_\+t}} $\ast$}]{p\+Msg }\end{DoxyParamCaption})}
+
+
+
+Send an event to upper layer application/protocol. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em conn\+Handle} & -\/ connection event belongs to \\
+\hline
+{\em status} & -\/ status \\
+\hline
+{\em method} & -\/ type of message \\
+\hline
+{\em p\+Msg} & -\/ pointer to message to be sent\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+S\+U\+C\+C\+E\+SS, I\+N\+V\+A\+L\+I\+D\+P\+A\+R\+A\+M\+E\+T\+ER or ble\+Mem\+Alloc\+Error 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group___g_a_t_t___c_o_m_m_o_n___a_p_i_ga8866d184372ade2b19bc4f4684dc95b0}\label{group___g_a_t_t___c_o_m_m_o_n___a_p_i_ga8866d184372ade2b19bc4f4684dc95b0}} 
+\index{Client and Server Common API Functions@{Client and Server Common API Functions}!GATT\_RegisterForMsgs@{GATT\_RegisterForMsgs}}
+\index{GATT\_RegisterForMsgs@{GATT\_RegisterForMsgs}!Client and Server Common API Functions@{Client and Server Common API Functions}}
+\doxysubsubsection{\texorpdfstring{GATT\_RegisterForMsgs()}{GATT\_RegisterForMsgs()}}
+{\footnotesize\ttfamily void G\+A\+T\+T\+\_\+\+Register\+For\+Msgs (\begin{DoxyParamCaption}\item[{uint8}]{task\+ID }\end{DoxyParamCaption})}
+
+
+
+Register your task ID to receive G\+A\+TT local events and A\+TT Response messages pending for transmission. When the G\+A\+TT Server fails to respond to an incoming A\+TT Request due to lack of H\+CI Tx buffers, the response will be forwarded the app for retransmission. 
+
+Note\+: A pending A\+TT Response message forwarded to the app should be transmitted using \mbox{\hyperlink{group___g_a_t_t___s_e_r_v_e_r___a_p_i_ga86fbb6053b23d4eb562109d9241ec335}{G\+A\+T\+T\+\_\+\+Send\+Rsp()}}, or its payload freed using \mbox{\hyperlink{group___g_a_t_t___b_m___a_p_i_ga2aa77ddaedaf91c5bea41697716586eb}{G\+A\+T\+T\+\_\+bm\+\_\+free()}} if not transmitted.
+
+
+\begin{DoxyParams}{Parameters}
+{\em task\+ID} & -\/ Default task ID to send G\+A\+TT events/pending A\+TT responses.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+
+
+Definition at line 1085 of file icall\+\_\+api.\+c.
+
+\mbox{\Hypertarget{group___g_a_t_t___c_o_m_m_o_n___a_p_i_ga7594a0381985b415bdadc0c8246f9639}\label{group___g_a_t_t___c_o_m_m_o_n___a_p_i_ga7594a0381985b415bdadc0c8246f9639}} 
+\index{Client and Server Common API Functions@{Client and Server Common API Functions}!GATT\_UpdateMTU@{GATT\_UpdateMTU}}
+\index{GATT\_UpdateMTU@{GATT\_UpdateMTU}!Client and Server Common API Functions@{Client and Server Common API Functions}}
+\doxysubsubsection{\texorpdfstring{GATT\_UpdateMTU()}{GATT\_UpdateMTU()}}
+{\footnotesize\ttfamily void G\+A\+T\+T\+\_\+\+Update\+M\+TU (\begin{DoxyParamCaption}\item[{uint16}]{conn\+Handle,  }\item[{uint16}]{mtu\+Size }\end{DoxyParamCaption})}
+
+
+
+Update A\+T\+T\+\_\+\+M\+TU size for a given connection. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em conn\+Handle} & -\/ connection handle.~\newline
+ \\
+\hline
+{\em mtu\+Size} & -\/ new M\+TU size.~\newline
+\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none. 
+\end{DoxyReturn}

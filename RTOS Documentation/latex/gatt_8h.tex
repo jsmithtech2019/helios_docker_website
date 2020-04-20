@@ -1,0 +1,476 @@
+\hypertarget{gatt_8h}{}\doxysection{Include/gatt.h File Reference}
+\label{gatt_8h}\index{Include/gatt.h@{Include/gatt.h}}
+{\ttfamily \#include \char`\"{}bcomdef.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}osal.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}att.\+h\char`\"{}}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structgatt_find_by_type_value_req__t}{gatt\+Find\+By\+Type\+Value\+Req\+\_\+t}}
+\item 
+struct \mbox{\hyperlink{structgatt_read_by_type_req__t}{gatt\+Read\+By\+Type\+Req\+\_\+t}}
+\item 
+struct \mbox{\hyperlink{structgatt_write_long_req__t}{gatt\+Write\+Long\+Req\+\_\+t}}
+\item 
+struct \mbox{\hyperlink{structgatt_reliable_writes_req__t}{gatt\+Reliable\+Writes\+Req\+\_\+t}}
+\item 
+union \mbox{\hyperlink{uniongatt_msg__t}{gatt\+Msg\+\_\+t}}
+\item 
+struct \mbox{\hyperlink{structgatt_msg_event__t}{gatt\+Msg\+Event\+\_\+t}}
+\item 
+struct \mbox{\hyperlink{structgatt_attr_type__t}{gatt\+Attr\+Type\+\_\+t}}
+\item 
+struct \mbox{\hyperlink{structatt_attribute__t}{att\+Attribute\+\_\+t}}
+\item 
+struct \mbox{\hyperlink{structgatt_service__t}{gatt\+Service\+\_\+t}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group___g_a_t_t___p_e_r_m_i_t___b_i_t_m_a_p_s___d_e_f_i_n_e_s_ga9d7703744ff5dccd61359a0cf03ba296}{G\+A\+T\+T\+\_\+\+P\+E\+R\+M\+I\+T\+\_\+\+R\+E\+AD}}~0x01
+\begin{DoxyCompactList}\small\item\em Attribute is Readable. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_t_t___p_e_r_m_i_t___b_i_t_m_a_p_s___d_e_f_i_n_e_s_gadefabc5a273d86efd52439dc7e539eb3}{G\+A\+T\+T\+\_\+\+P\+E\+R\+M\+I\+T\+\_\+\+W\+R\+I\+TE}}~0x02
+\begin{DoxyCompactList}\small\item\em Attribute is Writable. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_t_t___p_e_r_m_i_t___b_i_t_m_a_p_s___d_e_f_i_n_e_s_ga99eeb87ae0bbd0a054a03f76b9ccab65}{G\+A\+T\+T\+\_\+\+P\+E\+R\+M\+I\+T\+\_\+\+A\+U\+T\+H\+E\+N\+\_\+\+R\+E\+AD}}~0x04
+\begin{DoxyCompactList}\small\item\em Read requires Authentication. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_t_t___p_e_r_m_i_t___b_i_t_m_a_p_s___d_e_f_i_n_e_s_ga2622a74d0d83dfc2c1fefbcda837b599}{G\+A\+T\+T\+\_\+\+P\+E\+R\+M\+I\+T\+\_\+\+A\+U\+T\+H\+E\+N\+\_\+\+W\+R\+I\+TE}}~0x08
+\begin{DoxyCompactList}\small\item\em Write requires Authentication. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_t_t___p_e_r_m_i_t___b_i_t_m_a_p_s___d_e_f_i_n_e_s_ga6c055fd8191a3943e723b0818246bfa0}{G\+A\+T\+T\+\_\+\+P\+E\+R\+M\+I\+T\+\_\+\+A\+U\+T\+H\+O\+R\+\_\+\+R\+E\+AD}}~0x10
+\begin{DoxyCompactList}\small\item\em Read requires Authorization. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_t_t___p_e_r_m_i_t___b_i_t_m_a_p_s___d_e_f_i_n_e_s_ga6384af3ec189d910d2ea339577d0fc82}{G\+A\+T\+T\+\_\+\+P\+E\+R\+M\+I\+T\+\_\+\+A\+U\+T\+H\+O\+R\+\_\+\+W\+R\+I\+TE}}~0x20
+\begin{DoxyCompactList}\small\item\em Write requires Authorization. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_t_t___p_e_r_m_i_t___b_i_t_m_a_p_s___d_e_f_i_n_e_s_gabea41ab791d6c35319c7b8ab14081219}{G\+A\+T\+T\+\_\+\+P\+E\+R\+M\+I\+T\+\_\+\+E\+N\+C\+R\+Y\+P\+T\+\_\+\+R\+E\+AD}}~0x40
+\begin{DoxyCompactList}\small\item\em Read requires Encryption. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_t_t___p_e_r_m_i_t___b_i_t_m_a_p_s___d_e_f_i_n_e_s_ga0074bc845bcf84df08ee6739b1167bc2}{G\+A\+T\+T\+\_\+\+P\+E\+R\+M\+I\+T\+\_\+\+E\+N\+C\+R\+Y\+P\+T\+\_\+\+W\+R\+I\+TE}}~0x80
+\begin{DoxyCompactList}\small\item\em Write requires Encryption. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_t_t___n_u_m___p_r_e_p_a_r_e___w_r_i_t_e_s___d_e_f_i_n_e_s_ga62177a4bcc66eee6d9d7b224fbbd607b}{G\+A\+T\+T\+\_\+\+M\+A\+X\+\_\+\+N\+U\+M\+\_\+\+P\+R\+E\+P\+A\+R\+E\+\_\+\+W\+R\+I\+T\+ES}}~5
+\begin{DoxyCompactList}\small\item\em G\+A\+TT Maximum number of attributes that Attribute Server can prepare for writing per Attribute Client. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_t_t___e_n_c_r_y_p_t___k_e_y___s_i_z_e___d_e_f_i_n_e_s_gac6b3fa055b9b38ac3b38df0a0340514f}{G\+A\+T\+T\+\_\+\+M\+I\+N\+\_\+\+E\+N\+C\+R\+Y\+P\+T\+\_\+\+K\+E\+Y\+\_\+\+S\+I\+ZE}}~7
+\begin{DoxyCompactList}\small\item\em G\+A\+TT Minimum Encryption Key Size. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_t_t___e_n_c_r_y_p_t___k_e_y___s_i_z_e___d_e_f_i_n_e_s_ga0e0c80b6b87c13a81b6737cdb6d88840}{G\+A\+T\+T\+\_\+\+M\+A\+X\+\_\+\+E\+N\+C\+R\+Y\+P\+T\+\_\+\+K\+E\+Y\+\_\+\+S\+I\+ZE}}~16
+\begin{DoxyCompactList}\small\item\em G\+A\+TT Maximum Encryption Key Size. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_t_t___m_a_x___a_t_t_r___s_i_z_e___d_e_f_i_n_e_s_gaa15c8263a5fc58650a61198a0a0e2c13}{G\+A\+T\+T\+\_\+\+M\+A\+X\+\_\+\+A\+T\+T\+R\+\_\+\+S\+I\+ZE}}~512
+\begin{DoxyCompactList}\small\item\em G\+A\+TT Maximum length of an attribute value. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{gatt_8h_a1e37ee0420e77b5111081a6798f22f39}{G\+A\+T\+T\+\_\+\+B\+A\+S\+E\+\_\+\+M\+E\+T\+H\+OD}}~0x40
+\item 
+\#define \mbox{\hyperlink{gatt_8h_adca2e17cf10070afb7e63d3eb3ad13c6}{G\+A\+T\+T\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+H\+A\+N\+D\+LE}}~0x0000
+\item 
+\#define \mbox{\hyperlink{gatt_8h_ad4ffb4790a54644d91b39e63d7c9b7f0}{G\+A\+T\+T\+\_\+\+M\+I\+N\+\_\+\+H\+A\+N\+D\+LE}}~0x0001
+\item 
+\#define \mbox{\hyperlink{gatt_8h_a53d05eb228eebd7dcd9b53b33f852315}{G\+A\+T\+T\+\_\+\+M\+A\+X\+\_\+\+H\+A\+N\+D\+LE}}~0x\+F\+F\+FF
+\item 
+\#define \mbox{\hyperlink{gatt_8h_a1721d716407445e48d4d67b66b723a73}{G\+A\+T\+T\+\_\+\+A\+T\+T\+R\+\_\+\+H\+A\+N\+D\+L\+E\+\_\+\+S\+I\+ZE}}~0x02
+\item 
+\#define \mbox{\hyperlink{gatt_8h_a06782169164472c6f2f5e3a97a0341e9}{G\+A\+T\+T\+\_\+\+M\+A\+X\+\_\+\+M\+TU}}~0x\+F\+F\+FF
+\item 
+\#define \mbox{\hyperlink{gatt_8h_aa25d292a8f455dea7f8c03410fee0ed7}{gatt\+Permit\+Read}}(a)~( (a) \& \mbox{\hyperlink{group___g_a_t_t___p_e_r_m_i_t___b_i_t_m_a_p_s___d_e_f_i_n_e_s_ga9d7703744ff5dccd61359a0cf03ba296}{G\+A\+T\+T\+\_\+\+P\+E\+R\+M\+I\+T\+\_\+\+R\+E\+AD}} )
+\item 
+\#define \mbox{\hyperlink{gatt_8h_a4e1b10d3b16277d8681e2dcc2bdc3e05}{gatt\+Permit\+Write}}(a)~( (a) \& \mbox{\hyperlink{group___g_a_t_t___p_e_r_m_i_t___b_i_t_m_a_p_s___d_e_f_i_n_e_s_gadefabc5a273d86efd52439dc7e539eb3}{G\+A\+T\+T\+\_\+\+P\+E\+R\+M\+I\+T\+\_\+\+W\+R\+I\+TE}} )
+\item 
+\#define \mbox{\hyperlink{gatt_8h_a7fd6b3ed2404d026605cde07ba294295}{gatt\+Permit\+Encrypt\+Read}}(a)~( (a) \& \mbox{\hyperlink{group___g_a_t_t___p_e_r_m_i_t___b_i_t_m_a_p_s___d_e_f_i_n_e_s_gabea41ab791d6c35319c7b8ab14081219}{G\+A\+T\+T\+\_\+\+P\+E\+R\+M\+I\+T\+\_\+\+E\+N\+C\+R\+Y\+P\+T\+\_\+\+R\+E\+AD}} )
+\item 
+\#define \mbox{\hyperlink{gatt_8h_a3d3fe6d37aeaad7f79af6b229ef0e394}{gatt\+Permit\+Encrypt\+Write}}(a)~( (a) \& \mbox{\hyperlink{group___g_a_t_t___p_e_r_m_i_t___b_i_t_m_a_p_s___d_e_f_i_n_e_s_ga0074bc845bcf84df08ee6739b1167bc2}{G\+A\+T\+T\+\_\+\+P\+E\+R\+M\+I\+T\+\_\+\+E\+N\+C\+R\+Y\+P\+T\+\_\+\+W\+R\+I\+TE}} )
+\item 
+\#define \mbox{\hyperlink{gatt_8h_aa5409469f90b0e9fecca0db62cd74972}{gatt\+Permit\+Author\+Read}}(a)~( (a) \& \mbox{\hyperlink{group___g_a_t_t___p_e_r_m_i_t___b_i_t_m_a_p_s___d_e_f_i_n_e_s_ga6c055fd8191a3943e723b0818246bfa0}{G\+A\+T\+T\+\_\+\+P\+E\+R\+M\+I\+T\+\_\+\+A\+U\+T\+H\+O\+R\+\_\+\+R\+E\+AD}} )
+\item 
+\#define \mbox{\hyperlink{gatt_8h_ae393954949124c88d8cab34be7b5f1d2}{gatt\+Permit\+Author\+Write}}(a)~( (a) \& \mbox{\hyperlink{group___g_a_t_t___p_e_r_m_i_t___b_i_t_m_a_p_s___d_e_f_i_n_e_s_ga6384af3ec189d910d2ea339577d0fc82}{G\+A\+T\+T\+\_\+\+P\+E\+R\+M\+I\+T\+\_\+\+A\+U\+T\+H\+O\+R\+\_\+\+W\+R\+I\+TE}} )
+\item 
+\#define \mbox{\hyperlink{gatt_8h_a4c910b376fbaae56354d0fcdbff1c46d}{gatt\+Permit\+Authen\+Read}}(a)~( (a) \& \mbox{\hyperlink{group___g_a_t_t___p_e_r_m_i_t___b_i_t_m_a_p_s___d_e_f_i_n_e_s_ga99eeb87ae0bbd0a054a03f76b9ccab65}{G\+A\+T\+T\+\_\+\+P\+E\+R\+M\+I\+T\+\_\+\+A\+U\+T\+H\+E\+N\+\_\+\+R\+E\+AD}} )
+\item 
+\#define \mbox{\hyperlink{gatt_8h_aee7f67f1b80c8bd9126fef9c705e51b7}{gatt\+Permit\+Authen\+Write}}(a)~( (a) \& \mbox{\hyperlink{group___g_a_t_t___p_e_r_m_i_t___b_i_t_m_a_p_s___d_e_f_i_n_e_s_ga2622a74d0d83dfc2c1fefbcda837b599}{G\+A\+T\+T\+\_\+\+P\+E\+R\+M\+I\+T\+\_\+\+A\+U\+T\+H\+E\+N\+\_\+\+W\+R\+I\+TE}} )
+\item 
+\#define \mbox{\hyperlink{gatt_8h_a982b08f876590079d9542b0ec84fc8e1}{gatt\+Primary\+Service\+Type}}(t)
+\item 
+\#define \mbox{\hyperlink{gatt_8h_ac2a0670c0e310fa817851335ca0195ff}{gatt\+Secondary\+Service\+Type}}(t)
+\item 
+\#define \mbox{\hyperlink{gatt_8h_a293f5fdd0cff8aeaa1c41f129f876bd0}{gatt\+Character\+Type}}(t)
+\item 
+\#define \mbox{\hyperlink{gatt_8h_a59bc0f56c75942aa8412df3a0a91cc1b}{gatt\+Include\+Type}}(t)
+\item 
+\#define \mbox{\hyperlink{gatt_8h_ad8135fa0567ffd48e5ab924cf65983c3}{gatt\+Service\+Type}}(t)
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \mbox{\hyperlink{structatt_attribute__t}{att\+Attribute\+\_\+t}} \mbox{\hyperlink{gatt_8h_a8dca0d941f79cbc3bca13ab038e2e963}{gatt\+Attribute\+\_\+t}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+b\+Status\+\_\+t \mbox{\hyperlink{group___g_a_t_t___c_l_i_e_n_t___a_p_i_ga79026e24ddadeb7bb7e3c3109cbf1d17}{G\+A\+T\+T\+\_\+\+Init\+Client}} (void)
+\begin{DoxyCompactList}\small\item\em Initialize the Generic Attribute Profile Client. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___g_a_t_t___c_l_i_e_n_t___a_p_i_gad9bb8f53a66a74842adec59a23505635}{G\+A\+T\+T\+\_\+\+Register\+For\+Ind}} (uint8 task\+Id)
+\begin{DoxyCompactList}\small\item\em Register to receive incoming A\+TT Indications or Notifications of attribute values. \end{DoxyCompactList}\item 
+b\+Status\+\_\+t \mbox{\hyperlink{group___g_a_t_t___c_l_i_e_n_t___a_p_i_ga420ca3930ed74ea2f0b464d01ecec572}{G\+A\+T\+T\+\_\+\+Prepare\+Write\+Req}} (uint16 conn\+Handle, att\+Prepare\+Write\+Req\+\_\+t $\ast$p\+Req, uint8 task\+Id)
+\begin{DoxyCompactList}\small\item\em The Prepare Write Request is used to request the server to prepare to write the value of an attribute. \end{DoxyCompactList}\item 
+b\+Status\+\_\+t \mbox{\hyperlink{group___g_a_t_t___c_l_i_e_n_t___a_p_i_gac60dbe390176685a4df9f4dfa5e149d7}{G\+A\+T\+T\+\_\+\+Execute\+Write\+Req}} (uint16 conn\+Handle, att\+Execute\+Write\+Req\+\_\+t $\ast$p\+Req, uint8 task\+Id)
+\begin{DoxyCompactList}\small\item\em The Execute Write Request is used to request the server to write or cancel the write of all the prepared values currently held in the prepare queue from this client. \end{DoxyCompactList}\item 
+b\+Status\+\_\+t \mbox{\hyperlink{group___g_a_t_t___s_e_r_v_e_r___a_p_i_ga9ca810167792408f4031a365620ab728}{G\+A\+T\+T\+\_\+\+Init\+Server}} (void)
+\begin{DoxyCompactList}\small\item\em Initialize the Generic Attribute Profile Server. \end{DoxyCompactList}\item 
+b\+Status\+\_\+t \mbox{\hyperlink{group___g_a_t_t___s_e_r_v_e_r___a_p_i_gaeba4228830d1fc449203a5a7cfeba5ec}{G\+A\+T\+T\+\_\+\+Register\+Service}} (\mbox{\hyperlink{structgatt_service__t}{gatt\+Service\+\_\+t}} $\ast$p\+Service)
+\begin{DoxyCompactList}\small\item\em Register a service attribute list with the G\+A\+TT Server. A service is composed of characteristics or references to other services. Each characteristic contains a value and may contain optional information about the value. There are two types of services\+: primary service and secondary service. \end{DoxyCompactList}\item 
+b\+Status\+\_\+t \mbox{\hyperlink{group___g_a_t_t___s_e_r_v_e_r___a_p_i_gab28df99ed1c4ee2f5ea1d661f68af588}{G\+A\+T\+T\+\_\+\+Deregister\+Service}} (uint16 handle, \mbox{\hyperlink{structgatt_service__t}{gatt\+Service\+\_\+t}} $\ast$p\+Service)
+\begin{DoxyCompactList}\small\item\em Deregister a service attribute list with the G\+A\+TT Server. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___g_a_t_t___s_e_r_v_e_r___a_p_i_ga355aa7260b9b562e9be14f9b82c0775a}{G\+A\+T\+T\+\_\+\+Register\+For\+Req}} (uint8 task\+Id)
+\begin{DoxyCompactList}\small\item\em Register to receive incoming A\+TT Requests. \end{DoxyCompactList}\item 
+b\+Status\+\_\+t \mbox{\hyperlink{group___g_a_t_t___s_e_r_v_e_r___a_p_i_ga0f47d29997f5d3bcdb4dfca443072b75}{G\+A\+T\+T\+\_\+\+Verify\+Read\+Permissions}} (uint16 conn\+Handle, \mbox{\hyperlink{gatt_8h_a8dca0d941f79cbc3bca13ab038e2e963}{gatt\+Attribute\+\_\+t}} $\ast$p\+Attr, uint16 service)
+\begin{DoxyCompactList}\small\item\em Verify the permissions of an attribute for reading. \end{DoxyCompactList}\item 
+b\+Status\+\_\+t \mbox{\hyperlink{group___g_a_t_t___s_e_r_v_e_r___a_p_i_ga3161911d885d4fa08f0ae38e0740e938}{G\+A\+T\+T\+\_\+\+Verify\+Write\+Permissions}} (uint16 conn\+Handle, \mbox{\hyperlink{gatt_8h_a8dca0d941f79cbc3bca13ab038e2e963}{gatt\+Attribute\+\_\+t}} $\ast$p\+Attr, uint16 service, att\+Write\+Req\+\_\+t $\ast$p\+Req)
+\begin{DoxyCompactList}\small\item\em Verify the permissions of an attribute for writing. \end{DoxyCompactList}\item 
+uint8 \mbox{\hyperlink{group___g_a_t_t___s_e_r_v_e_r___a_p_i_ga5d3b326374bd8a5424d6171d36980d98}{G\+A\+T\+T\+\_\+\+Service\+Changed\+Ind}} (uint16 conn\+Handle, uint8 task\+Id)
+\begin{DoxyCompactList}\small\item\em Send out a Service Changed Indication. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{gatt_8h_a8dca0d941f79cbc3bca13ab038e2e963}{gatt\+Attribute\+\_\+t}} $\ast$ \mbox{\hyperlink{group___g_a_t_t___s_e_r_v_e_r___a_p_i_gad8fa1f55bcffcd098cff1b11546391b9}{G\+A\+T\+T\+\_\+\+Find\+Handle\+U\+U\+ID}} (uint16 start\+Handle, uint16 end\+Handle, const uint8 $\ast$p\+U\+U\+ID, uint16 \mbox{\hyperlink{icall__apimsg_8h_a8ccac76f35f79d74917e1c5dd6f69fea}{len}}, uint16 $\ast$p\+Handle)
+\begin{DoxyCompactList}\small\item\em Find the attribute record for a given handle and U\+U\+ID. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{gatt_8h_a8dca0d941f79cbc3bca13ab038e2e963}{gatt\+Attribute\+\_\+t}} $\ast$ \mbox{\hyperlink{group___g_a_t_t___s_e_r_v_e_r___a_p_i_ga6d28d4a14b56b428c2f5f30d526c12c2}{G\+A\+T\+T\+\_\+\+Find\+Handle}} (uint16 handle, uint16 $\ast$p\+Handle)
+\begin{DoxyCompactList}\small\item\em Find the attribute record for a given handle. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{gatt_8h_a8dca0d941f79cbc3bca13ab038e2e963}{gatt\+Attribute\+\_\+t}} $\ast$ \mbox{\hyperlink{group___g_a_t_t___s_e_r_v_e_r___a_p_i_ga0ebec213ece7fb3979de6490894f7c4a}{G\+A\+T\+T\+\_\+\+Find\+Next\+Attr}} (\mbox{\hyperlink{gatt_8h_a8dca0d941f79cbc3bca13ab038e2e963}{gatt\+Attribute\+\_\+t}} $\ast$p\+Attr, uint16 end\+Handle, uint16 service, uint16 $\ast$p\+Last\+Handle)
+\begin{DoxyCompactList}\small\item\em Find the next attribute of the same type for a given attribute. \end{DoxyCompactList}\item 
+uint16 \mbox{\hyperlink{group___g_a_t_t___s_e_r_v_e_r___a_p_i_ga9497be8a28dcf7275441db9e81e265d2}{G\+A\+T\+T\+\_\+\+Service\+Num\+Attrs}} (uint16 handle)
+\begin{DoxyCompactList}\small\item\em Get the number of attributes for a given service. \end{DoxyCompactList}\item 
+uint8 \mbox{\hyperlink{group___g_a_t_t___s_e_r_v_e_r___a_p_i_ga393d8e2bd51764e5336282953f644ee7}{G\+A\+T\+T\+\_\+\+Service\+Enc\+Key\+Size}} (uint16 handle)
+\begin{DoxyCompactList}\small\item\em Get the minimum encryption key size required by a given service. \end{DoxyCompactList}\item 
+b\+Status\+\_\+t \mbox{\hyperlink{group___g_a_t_t___s_e_r_v_e_r___a_p_i_ga86fbb6053b23d4eb562109d9241ec335}{G\+A\+T\+T\+\_\+\+Send\+Rsp}} (uint16 conn\+Handle, uint8 method, \mbox{\hyperlink{uniongatt_msg__t}{gatt\+Msg\+\_\+t}} $\ast$p\+Rsp)
+\begin{DoxyCompactList}\small\item\em Send an A\+TT Response message out. \end{DoxyCompactList}\item 
+b\+Status\+\_\+t \mbox{\hyperlink{group___g_a_t_t___s_e_r_v_e_r___s_u_b___p_r_o_c_e_d_u_r_e___a_p_i_gadaadba59a7d29ede06abc3b30bec89ad}{G\+A\+T\+T\+\_\+\+Indication}} (uint16 conn\+Handle, att\+Handle\+Value\+Ind\+\_\+t $\ast$p\+Ind, uint8 authenticated, uint8 task\+Id)
+\begin{DoxyCompactList}\small\item\em This sub-\/procedure is used when a server is configured to indicate a characteristic value to a client and expects an attribute protocol layer acknowledgement that the indication was successfully received. \end{DoxyCompactList}\item 
+b\+Status\+\_\+t \mbox{\hyperlink{group___g_a_t_t___s_e_r_v_e_r___s_u_b___p_r_o_c_e_d_u_r_e___a_p_i_gac61599736be6b39a5b18d3ef6eb7a45a}{G\+A\+T\+T\+\_\+\+Notification}} (uint16 conn\+Handle, att\+Handle\+Value\+Noti\+\_\+t $\ast$p\+Noti, uint8 authenticated)
+\begin{DoxyCompactList}\small\item\em This sub-\/procedure is used when a server is configured to notify a characteristic value to a client without expecting any attribute protocol layer acknowledgement that the notification was successfully received. \end{DoxyCompactList}\item 
+b\+Status\+\_\+t \mbox{\hyperlink{group___g_a_t_t___c_l_i_e_n_t___s_u_b___p_r_o_c_e_d_u_r_e___a_p_i_ga58a47b344f83a98c94fbf551e6ae7355}{G\+A\+T\+T\+\_\+\+Exchange\+M\+TU}} (uint16 conn\+Handle, att\+Exchange\+M\+T\+U\+Req\+\_\+t $\ast$p\+Req, uint8 task\+Id)
+\begin{DoxyCompactList}\small\item\em This sub-\/procedure is used by the client to set the A\+T\+T\+\_\+\+M\+TU to the maximum possible value that can be supported by both devices when the client supports a value greater than the default A\+T\+T\+\_\+\+M\+TU for the Attribute Protocol. This sub-\/procedure shall only be initiated once during a connection. \end{DoxyCompactList}\item 
+b\+Status\+\_\+t \mbox{\hyperlink{group___g_a_t_t___c_l_i_e_n_t___s_u_b___p_r_o_c_e_d_u_r_e___a_p_i_gaa9323c71f318bcf8a1cddad9ac4458ac}{G\+A\+T\+T\+\_\+\+Disc\+All\+Primary\+Services}} (uint16 conn\+Handle, uint8 task\+Id)
+\begin{DoxyCompactList}\small\item\em This sub-\/procedure is used by a client to discover all the primary services on a server. \end{DoxyCompactList}\item 
+b\+Status\+\_\+t \mbox{\hyperlink{group___g_a_t_t___c_l_i_e_n_t___s_u_b___p_r_o_c_e_d_u_r_e___a_p_i_gab3f4fbcaa18ec38accf7ac22eff3365e}{G\+A\+T\+T\+\_\+\+Disc\+Primary\+Service\+By\+U\+U\+ID}} (uint16 conn\+Handle, uint8 $\ast$p\+U\+U\+ID, uint8 \mbox{\hyperlink{icall__apimsg_8h_a8ccac76f35f79d74917e1c5dd6f69fea}{len}}, uint8 task\+Id)
+\begin{DoxyCompactList}\small\item\em This sub-\/procedure is used by a client to discover a specific primary service on a server when only the Service U\+U\+ID is known. The primary specific service may exist multiple times on a server. The primary service being discovered is identified by the service U\+U\+ID. \end{DoxyCompactList}\item 
+b\+Status\+\_\+t \mbox{\hyperlink{group___g_a_t_t___c_l_i_e_n_t___s_u_b___p_r_o_c_e_d_u_r_e___a_p_i_ga4877d9e791c2083e8637cb744d259d5f}{G\+A\+T\+T\+\_\+\+Find\+Included\+Services}} (uint16 conn\+Handle, uint16 start\+Handle, uint16 end\+Handle, uint8 task\+Id)
+\begin{DoxyCompactList}\small\item\em This sub-\/procedure is used by a client to find include service declarations within a service definition on a server. The service specified is identified by the service handle range. \end{DoxyCompactList}\item 
+b\+Status\+\_\+t \mbox{\hyperlink{group___g_a_t_t___c_l_i_e_n_t___s_u_b___p_r_o_c_e_d_u_r_e___a_p_i_gac824af509fbd28c84ae6a1d1d4a1ba11}{G\+A\+T\+T\+\_\+\+Disc\+All\+Chars}} (uint16 conn\+Handle, uint16 start\+Handle, uint16 end\+Handle, uint8 task\+Id)
+\begin{DoxyCompactList}\small\item\em This sub-\/procedure is used by a client to find all the characteristic declarations within a service definition on a server when only the service handle range is known. The service specified is identified by the service handle range. \end{DoxyCompactList}\item 
+b\+Status\+\_\+t \mbox{\hyperlink{group___g_a_t_t___c_l_i_e_n_t___s_u_b___p_r_o_c_e_d_u_r_e___a_p_i_ga747eaf3fb0358c4e05171b40d09c1906}{G\+A\+T\+T\+\_\+\+Disc\+Chars\+By\+U\+U\+ID}} (uint16 conn\+Handle, att\+Read\+By\+Type\+Req\+\_\+t $\ast$p\+Req, uint8 task\+Id)
+\begin{DoxyCompactList}\small\item\em This sub-\/procedure is used by a client to discover service characteristics on a server when only the service handle ranges are known and the characteristic U\+U\+ID is known. The specific service may exist multiple times on a server. The characteristic being discovered is identified by the characteristic U\+U\+ID. \end{DoxyCompactList}\item 
+b\+Status\+\_\+t \mbox{\hyperlink{group___g_a_t_t___c_l_i_e_n_t___s_u_b___p_r_o_c_e_d_u_r_e___a_p_i_ga6d111c5d5b479a10ef92b900481b3027}{G\+A\+T\+T\+\_\+\+Disc\+All\+Char\+Descs}} (uint16 conn\+Handle, uint16 start\+Handle, uint16 end\+Handle, uint8 task\+Id)
+\begin{DoxyCompactList}\small\item\em This sub-\/procedure is used by a client to find all the characteristic descriptor\textquotesingle{}s Attribute Handles and Attribute Types within a characteristic definition when only the characteristic handle range is known. The characteristic specified is identified by the characteristic handle range. \end{DoxyCompactList}\item 
+b\+Status\+\_\+t \mbox{\hyperlink{group___g_a_t_t___c_l_i_e_n_t___s_u_b___p_r_o_c_e_d_u_r_e___a_p_i_gab1628c683ea6ba34a41af178c8b88bb3}{G\+A\+T\+T\+\_\+\+Read\+Char\+Value}} (uint16 conn\+Handle, att\+Read\+Req\+\_\+t $\ast$p\+Req, uint8 task\+Id)
+\begin{DoxyCompactList}\small\item\em This sub-\/procedure is used to read a Characteristic Value from a server when the client knows the Characteristic Value Handle. The A\+TT Read Request is used with the Attribute Handle parameter set to the Characteristic Value Handle. The Read Response returns the Characteristic Value in the Attribute Value parameter. \end{DoxyCompactList}\item 
+b\+Status\+\_\+t \mbox{\hyperlink{group___g_a_t_t___c_l_i_e_n_t___s_u_b___p_r_o_c_e_d_u_r_e___a_p_i_gae945c86f97b691117321bf9711f73a91}{G\+A\+T\+T\+\_\+\+Read\+Using\+Char\+U\+U\+ID}} (uint16 conn\+Handle, att\+Read\+By\+Type\+Req\+\_\+t $\ast$p\+Req, uint8 task\+Id)
+\begin{DoxyCompactList}\small\item\em This sub-\/procedure is used to read a Characteristic Value from a server when the client only knows the characteristic U\+U\+ID and does not know the handle of the characteristic. \end{DoxyCompactList}\item 
+b\+Status\+\_\+t \mbox{\hyperlink{group___g_a_t_t___c_l_i_e_n_t___s_u_b___p_r_o_c_e_d_u_r_e___a_p_i_ga744166541693717d82614ef58a4d9422}{G\+A\+T\+T\+\_\+\+Read\+Long\+Char\+Value}} (uint16 conn\+Handle, att\+Read\+Blob\+Req\+\_\+t $\ast$p\+Req, uint8 task\+Id)
+\begin{DoxyCompactList}\small\item\em This sub-\/procedure is used to read a Characteristic Value from a server when the client knows the Characteristic Value Handle and the length of the Characteristic Value is longer than can be sent in a single Read Response Attribute Protocol message. \end{DoxyCompactList}\item 
+b\+Status\+\_\+t \mbox{\hyperlink{group___g_a_t_t___c_l_i_e_n_t___s_u_b___p_r_o_c_e_d_u_r_e___a_p_i_ga3fdec76101411585cc6e0ec3c40933cc}{G\+A\+T\+T\+\_\+\+Read\+Multi\+Char\+Values}} (uint16 conn\+Handle, att\+Read\+Multi\+Req\+\_\+t $\ast$p\+Req, uint8 task\+Id)
+\begin{DoxyCompactList}\small\item\em This sub-\/procedure is used to read multiple Characteristic Values from a server when the client knows the Characteristic Value Handles. The Attribute Protocol Read Multiple Requests is used with the Set Of Handles parameter set to the Characteristic Value Handles. The Read Multiple Response returns the Characteristic Values in the Set Of Values parameter. \end{DoxyCompactList}\item 
+b\+Status\+\_\+t \mbox{\hyperlink{group___g_a_t_t___c_l_i_e_n_t___s_u_b___p_r_o_c_e_d_u_r_e___a_p_i_ga3bd8c1e5f6a00cc9c2206f2c8bd8444a}{G\+A\+T\+T\+\_\+\+Write\+No\+Rsp}} (uint16 conn\+Handle, att\+Write\+Req\+\_\+t $\ast$p\+Req)
+\begin{DoxyCompactList}\small\item\em This sub-\/procedure is used to write a Characteristic Value to a server when the client knows the Characteristic Value Handle and the client does not need an acknowledgement that the write was successfully performed. This sub-\/procedure only writes the first (A\+T\+T\+\_\+\+M\+TU -\/ 3) octets of a Characteristic Value. This sub-\/procedure can not be used to write a long characteristic; instead the Write Long Characteristic Values sub-\/procedure should be used. \end{DoxyCompactList}\item 
+b\+Status\+\_\+t \mbox{\hyperlink{group___g_a_t_t___c_l_i_e_n_t___s_u_b___p_r_o_c_e_d_u_r_e___a_p_i_ga44c2843c50e3ea43a77be4a19b326961}{G\+A\+T\+T\+\_\+\+Signed\+Write\+No\+Rsp}} (uint16 conn\+Handle, att\+Write\+Req\+\_\+t $\ast$p\+Req)
+\begin{DoxyCompactList}\small\item\em This sub-\/procedure is used to write a Characteristic Value to a server when the client knows the Characteristic Value Handle and the A\+TT Bearer is not encrypted. This sub-\/procedure shall only be used if the Characteristic Properties authenticated bit is enabled and the client and server device share a bond as defined in the G\+AP. \end{DoxyCompactList}\item 
+b\+Status\+\_\+t \mbox{\hyperlink{group___g_a_t_t___c_l_i_e_n_t___s_u_b___p_r_o_c_e_d_u_r_e___a_p_i_ga6e54905495daa3e3dfa5d5b7b40d8afb}{G\+A\+T\+T\+\_\+\+Write\+Char\+Value}} (uint16 conn\+Handle, att\+Write\+Req\+\_\+t $\ast$p\+Req, uint8 task\+Id)
+\begin{DoxyCompactList}\small\item\em This sub-\/procedure is used to write a characteristic value to a server when the client knows the characteristic value handle. This sub-\/procedure only writes the first (A\+T\+T\+\_\+\+M\+T\+U-\/3) octets of a characteristic value. This sub-\/procedure can not be used to write a long attribute; instead the Write Long Characteristic Values sub-\/procedure should be used. \end{DoxyCompactList}\item 
+b\+Status\+\_\+t \mbox{\hyperlink{group___g_a_t_t___c_l_i_e_n_t___s_u_b___p_r_o_c_e_d_u_r_e___a_p_i_gadae7477ab0c50a97545bb2fb5100de98}{G\+A\+T\+T\+\_\+\+Write\+Long\+Char\+Value}} (uint16 conn\+Handle, att\+Prepare\+Write\+Req\+\_\+t $\ast$p\+Req, uint8 task\+Id)
+\begin{DoxyCompactList}\small\item\em This sub-\/procedure is used to write a Characteristic Value to a server when the client knows the Characteristic Value Handle but the length of the Characteristic Value is longer than can be sent in a single Write Request Attribute Protocol message. \end{DoxyCompactList}\item 
+b\+Status\+\_\+t \mbox{\hyperlink{group___g_a_t_t___c_l_i_e_n_t___s_u_b___p_r_o_c_e_d_u_r_e___a_p_i_gac67b8a29558fe754676f808c174cc11c}{G\+A\+T\+T\+\_\+\+Reliable\+Writes}} (uint16 conn\+Handle, att\+Prepare\+Write\+Req\+\_\+t $\ast$p\+Reqs, uint8 num\+Reqs, uint8 flags, uint8 task\+Id)
+\begin{DoxyCompactList}\small\item\em This sub-\/procedure is used to write a Characteristic Value to a server when the client knows the Characteristic Value Handle, and assurance is required that the correct Characteristic Value is going to be written by transferring the Characteristic Value to be written in both directions before the write is performed. This sub-\/procedure can also be used when multiple values must be written, in order, in a single operation. \end{DoxyCompactList}\item 
+b\+Status\+\_\+t \mbox{\hyperlink{group___g_a_t_t___c_l_i_e_n_t___s_u_b___p_r_o_c_e_d_u_r_e___a_p_i_ga9122c4c743a85d61240a068db4007a4f}{G\+A\+T\+T\+\_\+\+Read\+Char\+Desc}} (uint16 conn\+Handle, att\+Read\+Req\+\_\+t $\ast$p\+Req, uint8 task\+Id)
+\begin{DoxyCompactList}\small\item\em This sub-\/procedure is used to read a characteristic descriptor from a server when the client knows the characteristic descriptor declaration\textquotesingle{}s Attribute handle. \end{DoxyCompactList}\item 
+b\+Status\+\_\+t \mbox{\hyperlink{group___g_a_t_t___c_l_i_e_n_t___s_u_b___p_r_o_c_e_d_u_r_e___a_p_i_ga2a0db35f92a234f277c04d2ce46f49e4}{G\+A\+T\+T\+\_\+\+Read\+Long\+Char\+Desc}} (uint16 conn\+Handle, att\+Read\+Blob\+Req\+\_\+t $\ast$p\+Req, uint8 task\+Id)
+\begin{DoxyCompactList}\small\item\em This sub-\/procedure is used to read a characteristic descriptor from a server when the client knows the characteristic descriptor declaration\textquotesingle{}s Attribute handle and the length of the characteristic descriptor declaration is longer than can be sent in a single Read Response attribute protocol message. \end{DoxyCompactList}\item 
+b\+Status\+\_\+t \mbox{\hyperlink{group___g_a_t_t___c_l_i_e_n_t___s_u_b___p_r_o_c_e_d_u_r_e___a_p_i_ga28b10e627cb735bd5de5b58212e5443e}{G\+A\+T\+T\+\_\+\+Write\+Char\+Desc}} (uint16 conn\+Handle, att\+Write\+Req\+\_\+t $\ast$p\+Req, uint8 task\+Id)
+\begin{DoxyCompactList}\small\item\em This sub-\/procedure is used to write a characteristic descriptor value to a server when the client knows the characteristic descriptor handle. \end{DoxyCompactList}\item 
+b\+Status\+\_\+t \mbox{\hyperlink{group___g_a_t_t___c_l_i_e_n_t___s_u_b___p_r_o_c_e_d_u_r_e___a_p_i_gab0299a1f320972b558eeb461714264dc}{G\+A\+T\+T\+\_\+\+Write\+Long\+Char\+Desc}} (uint16 conn\+Handle, att\+Prepare\+Write\+Req\+\_\+t $\ast$p\+Req, uint8 task\+Id)
+\begin{DoxyCompactList}\small\item\em This sub-\/procedure is used to write a Characteristic Value to a server when the client knows the Characteristic Value Handle but the length of the Characteristic Value is longer than can be sent in a single Write Request Attribute Protocol message. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___g_a_t_t___c_o_m_m_o_n___a_p_i_ga8866d184372ade2b19bc4f4684dc95b0}{G\+A\+T\+T\+\_\+\+Register\+For\+Msgs}} (uint8 task\+ID)
+\begin{DoxyCompactList}\small\item\em Register your task ID to receive G\+A\+TT local events and A\+TT Response messages pending for transmission. When the G\+A\+TT Server fails to respond to an incoming A\+TT Request due to lack of H\+CI Tx buffers, the response will be forwarded the app for retransmission. \end{DoxyCompactList}\item 
+b\+Status\+\_\+t \mbox{\hyperlink{group___g_a_t_t___c_o_m_m_o_n___a_p_i_ga375d586c8944efae8f693ea01ddfc963}{G\+A\+T\+T\+\_\+\+Notify\+Event}} (uint16 conn\+Handle, uint8 \mbox{\hyperlink{icall__apimsg_8h_ad94584ed274ed1d5b06d52f5bb3a178d}{status}}, uint8 method, \mbox{\hyperlink{uniongatt_msg__t}{gatt\+Msg\+\_\+t}} $\ast$p\+Msg)
+\begin{DoxyCompactList}\small\item\em Send an event to upper layer application/protocol. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___g_a_t_t___c_o_m_m_o_n___a_p_i_ga7594a0381985b415bdadc0c8246f9639}{G\+A\+T\+T\+\_\+\+Update\+M\+TU}} (uint16 conn\+Handle, uint16 mtu\+Size)
+\begin{DoxyCompactList}\small\item\em Update A\+T\+T\+\_\+\+M\+TU size for a given connection. \end{DoxyCompactList}\item 
+void $\ast$ \mbox{\hyperlink{group___g_a_t_t___b_m___a_p_i_gaaf21b84a128832b1f4b5ef0638580d9b}{G\+A\+T\+T\+\_\+bm\+\_\+alloc}} (uint16 conn\+Handle, uint8 \mbox{\hyperlink{icall__apimsg_8h_a2f91dfde180796f5efbaf6db19ac9c09}{opcode}}, uint16 size, uint16 $\ast$p\+Size\+Alloc)
+\begin{DoxyCompactList}\small\item\em G\+A\+TT implementation of the allocator functionality. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___g_a_t_t___b_m___a_p_i_ga2aa77ddaedaf91c5bea41697716586eb}{G\+A\+T\+T\+\_\+bm\+\_\+free}} (\mbox{\hyperlink{uniongatt_msg__t}{gatt\+Msg\+\_\+t}} $\ast$p\+Msg, uint8 \mbox{\hyperlink{icall__apimsg_8h_a2f91dfde180796f5efbaf6db19ac9c09}{opcode}})
+\begin{DoxyCompactList}\small\item\em G\+A\+TT implementation of the de-\/allocator functionality. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___g_a_t_t___f_l_o_w___c_t_r_l___a_p_i_ga186d864b6591723505b3f0ff6d94ecb0}{G\+A\+T\+T\+\_\+\+Set\+Host\+To\+App\+Flow\+Ctrl}} (uint16 heap\+Size, uint8 flow\+Ctrl\+Mode)
+\begin{DoxyCompactList}\small\item\em This A\+PI is used by the Application to turn flow control on or off for G\+A\+TT messages sent from the Host to the Application. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___g_a_t_t___f_l_o_w___c_t_r_l___a_p_i_gaf879443ffb9fa104d6905246a2337828}{G\+A\+T\+T\+\_\+\+App\+Completed\+Msg}} (\mbox{\hyperlink{structgatt_msg_event__t}{gatt\+Msg\+Event\+\_\+t}} $\ast$p\+Msg)
+\begin{DoxyCompactList}\small\item\em This A\+PI is used by the Application to notify G\+A\+TT that the processing of a message has been completed. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{gatt_8h_accc0a35fd448c15a45bc60c5098022a3}{G\+A\+T\+T\+\_\+\+Set\+Next\+Handle}} (uint16 handle)
+\item 
+uint16 \mbox{\hyperlink{gatt_8h_acf3100768f439704c72352e567c39f84}{G\+A\+T\+T\+\_\+\+Get\+Next\+Handle}} (void)
+\item 
+void \mbox{\hyperlink{gatt_8h_af5204bbdc809eca6c0e4730017b1a7aa}{G\+A\+T\+T\+\_\+\+Init}} (uint8 task\+Id)
+\item 
+uint16 \mbox{\hyperlink{gatt_8h_a44371e2316d468d3c62bfd2fe6f1e015}{G\+A\+T\+T\+\_\+\+Process\+Event}} (uint8 task\+Id, uint16 events)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+uint8 \mbox{\hyperlink{gatt_8h_a10071989e73effa373c551a0a4d56932}{gatt\+Num\+Conns}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{gatt_8h_a1721d716407445e48d4d67b66b723a73}\label{gatt_8h_a1721d716407445e48d4d67b66b723a73}} 
+\index{gatt.h@{gatt.h}!GATT\_ATTR\_HANDLE\_SIZE@{GATT\_ATTR\_HANDLE\_SIZE}}
+\index{GATT\_ATTR\_HANDLE\_SIZE@{GATT\_ATTR\_HANDLE\_SIZE}!gatt.h@{gatt.h}}
+\doxysubsubsection{\texorpdfstring{GATT\_ATTR\_HANDLE\_SIZE}{GATT\_ATTR\_HANDLE\_SIZE}}
+{\footnotesize\ttfamily \#define G\+A\+T\+T\+\_\+\+A\+T\+T\+R\+\_\+\+H\+A\+N\+D\+L\+E\+\_\+\+S\+I\+ZE~0x02}
+
+
+
+Definition at line 127 of file gatt.\+h.
+
+\mbox{\Hypertarget{gatt_8h_a1e37ee0420e77b5111081a6798f22f39}\label{gatt_8h_a1e37ee0420e77b5111081a6798f22f39}} 
+\index{gatt.h@{gatt.h}!GATT\_BASE\_METHOD@{GATT\_BASE\_METHOD}}
+\index{GATT\_BASE\_METHOD@{GATT\_BASE\_METHOD}!gatt.h@{gatt.h}}
+\doxysubsubsection{\texorpdfstring{GATT\_BASE\_METHOD}{GATT\_BASE\_METHOD}}
+{\footnotesize\ttfamily \#define G\+A\+T\+T\+\_\+\+B\+A\+S\+E\+\_\+\+M\+E\+T\+H\+OD~0x40}
+
+
+
+Definition at line 120 of file gatt.\+h.
+
+\mbox{\Hypertarget{gatt_8h_adca2e17cf10070afb7e63d3eb3ad13c6}\label{gatt_8h_adca2e17cf10070afb7e63d3eb3ad13c6}} 
+\index{gatt.h@{gatt.h}!GATT\_INVALID\_HANDLE@{GATT\_INVALID\_HANDLE}}
+\index{GATT\_INVALID\_HANDLE@{GATT\_INVALID\_HANDLE}!gatt.h@{gatt.h}}
+\doxysubsubsection{\texorpdfstring{GATT\_INVALID\_HANDLE}{GATT\_INVALID\_HANDLE}}
+{\footnotesize\ttfamily \#define G\+A\+T\+T\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+H\+A\+N\+D\+LE~0x0000}
+
+
+
+Definition at line 123 of file gatt.\+h.
+
+\mbox{\Hypertarget{gatt_8h_a53d05eb228eebd7dcd9b53b33f852315}\label{gatt_8h_a53d05eb228eebd7dcd9b53b33f852315}} 
+\index{gatt.h@{gatt.h}!GATT\_MAX\_HANDLE@{GATT\_MAX\_HANDLE}}
+\index{GATT\_MAX\_HANDLE@{GATT\_MAX\_HANDLE}!gatt.h@{gatt.h}}
+\doxysubsubsection{\texorpdfstring{GATT\_MAX\_HANDLE}{GATT\_MAX\_HANDLE}}
+{\footnotesize\ttfamily \#define G\+A\+T\+T\+\_\+\+M\+A\+X\+\_\+\+H\+A\+N\+D\+LE~0x\+F\+F\+FF}
+
+
+
+Definition at line 125 of file gatt.\+h.
+
+\mbox{\Hypertarget{gatt_8h_a06782169164472c6f2f5e3a97a0341e9}\label{gatt_8h_a06782169164472c6f2f5e3a97a0341e9}} 
+\index{gatt.h@{gatt.h}!GATT\_MAX\_MTU@{GATT\_MAX\_MTU}}
+\index{GATT\_MAX\_MTU@{GATT\_MAX\_MTU}!gatt.h@{gatt.h}}
+\doxysubsubsection{\texorpdfstring{GATT\_MAX\_MTU}{GATT\_MAX\_MTU}}
+{\footnotesize\ttfamily \#define G\+A\+T\+T\+\_\+\+M\+A\+X\+\_\+\+M\+TU~0x\+F\+F\+FF}
+
+
+
+Definition at line 129 of file gatt.\+h.
+
+\mbox{\Hypertarget{gatt_8h_ad4ffb4790a54644d91b39e63d7c9b7f0}\label{gatt_8h_ad4ffb4790a54644d91b39e63d7c9b7f0}} 
+\index{gatt.h@{gatt.h}!GATT\_MIN\_HANDLE@{GATT\_MIN\_HANDLE}}
+\index{GATT\_MIN\_HANDLE@{GATT\_MIN\_HANDLE}!gatt.h@{gatt.h}}
+\doxysubsubsection{\texorpdfstring{GATT\_MIN\_HANDLE}{GATT\_MIN\_HANDLE}}
+{\footnotesize\ttfamily \#define G\+A\+T\+T\+\_\+\+M\+I\+N\+\_\+\+H\+A\+N\+D\+LE~0x0001}
+
+
+
+Definition at line 124 of file gatt.\+h.
+
+\mbox{\Hypertarget{gatt_8h_a293f5fdd0cff8aeaa1c41f129f876bd0}\label{gatt_8h_a293f5fdd0cff8aeaa1c41f129f876bd0}} 
+\index{gatt.h@{gatt.h}!gattCharacterType@{gattCharacterType}}
+\index{gattCharacterType@{gattCharacterType}!gatt.h@{gatt.h}}
+\doxysubsubsection{\texorpdfstring{gattCharacterType}{gattCharacterType}}
+{\footnotesize\ttfamily \#define gatt\+Character\+Type(\begin{DoxyParamCaption}\item[{}]{t }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{                                                                ( MAP\_ATT\_CompareUUID( \mbox{\hyperlink{gatt__uuid_8c_aefb4a0049aee50803ea3da9dc81ba528}{characterUUID}}, ATT\_BT\_UUID\_SIZE, \(\backslash\)}
+\DoxyCodeLine{                                                                (t).uuid, (t).\mbox{\hyperlink{icall__apimsg_8h_a8ccac76f35f79d74917e1c5dd6f69fea}{len}} ) )}
+
+\end{DoxyCode}
+
+
+Definition at line 154 of file gatt.\+h.
+
+\mbox{\Hypertarget{gatt_8h_a59bc0f56c75942aa8412df3a0a91cc1b}\label{gatt_8h_a59bc0f56c75942aa8412df3a0a91cc1b}} 
+\index{gatt.h@{gatt.h}!gattIncludeType@{gattIncludeType}}
+\index{gattIncludeType@{gattIncludeType}!gatt.h@{gatt.h}}
+\doxysubsubsection{\texorpdfstring{gattIncludeType}{gattIncludeType}}
+{\footnotesize\ttfamily \#define gatt\+Include\+Type(\begin{DoxyParamCaption}\item[{}]{t }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{                                                                ( MAP\_ATT\_CompareUUID( \mbox{\hyperlink{gatt__uuid_8c_aebb4bf77bc5aaae2cd2ab863139c2ec8}{includeUUID}}, ATT\_BT\_UUID\_SIZE, \(\backslash\)}
+\DoxyCodeLine{                                                                (t).uuid, (t).\mbox{\hyperlink{icall__apimsg_8h_a8ccac76f35f79d74917e1c5dd6f69fea}{len}} ) )}
+
+\end{DoxyCode}
+
+
+Definition at line 156 of file gatt.\+h.
+
+\mbox{\Hypertarget{gatt_8h_a4c910b376fbaae56354d0fcdbff1c46d}\label{gatt_8h_a4c910b376fbaae56354d0fcdbff1c46d}} 
+\index{gatt.h@{gatt.h}!gattPermitAuthenRead@{gattPermitAuthenRead}}
+\index{gattPermitAuthenRead@{gattPermitAuthenRead}!gatt.h@{gatt.h}}
+\doxysubsubsection{\texorpdfstring{gattPermitAuthenRead}{gattPermitAuthenRead}}
+{\footnotesize\ttfamily \#define gatt\+Permit\+Authen\+Read(\begin{DoxyParamCaption}\item[{}]{a }\end{DoxyParamCaption})~( (a) \& \mbox{\hyperlink{group___g_a_t_t___p_e_r_m_i_t___b_i_t_m_a_p_s___d_e_f_i_n_e_s_ga99eeb87ae0bbd0a054a03f76b9ccab65}{G\+A\+T\+T\+\_\+\+P\+E\+R\+M\+I\+T\+\_\+\+A\+U\+T\+H\+E\+N\+\_\+\+R\+E\+AD}} )}
+
+
+
+Definition at line 146 of file gatt.\+h.
+
+\mbox{\Hypertarget{gatt_8h_aee7f67f1b80c8bd9126fef9c705e51b7}\label{gatt_8h_aee7f67f1b80c8bd9126fef9c705e51b7}} 
+\index{gatt.h@{gatt.h}!gattPermitAuthenWrite@{gattPermitAuthenWrite}}
+\index{gattPermitAuthenWrite@{gattPermitAuthenWrite}!gatt.h@{gatt.h}}
+\doxysubsubsection{\texorpdfstring{gattPermitAuthenWrite}{gattPermitAuthenWrite}}
+{\footnotesize\ttfamily \#define gatt\+Permit\+Authen\+Write(\begin{DoxyParamCaption}\item[{}]{a }\end{DoxyParamCaption})~( (a) \& \mbox{\hyperlink{group___g_a_t_t___p_e_r_m_i_t___b_i_t_m_a_p_s___d_e_f_i_n_e_s_ga2622a74d0d83dfc2c1fefbcda837b599}{G\+A\+T\+T\+\_\+\+P\+E\+R\+M\+I\+T\+\_\+\+A\+U\+T\+H\+E\+N\+\_\+\+W\+R\+I\+TE}} )}
+
+
+
+Definition at line 147 of file gatt.\+h.
+
+\mbox{\Hypertarget{gatt_8h_aa5409469f90b0e9fecca0db62cd74972}\label{gatt_8h_aa5409469f90b0e9fecca0db62cd74972}} 
+\index{gatt.h@{gatt.h}!gattPermitAuthorRead@{gattPermitAuthorRead}}
+\index{gattPermitAuthorRead@{gattPermitAuthorRead}!gatt.h@{gatt.h}}
+\doxysubsubsection{\texorpdfstring{gattPermitAuthorRead}{gattPermitAuthorRead}}
+{\footnotesize\ttfamily \#define gatt\+Permit\+Author\+Read(\begin{DoxyParamCaption}\item[{}]{a }\end{DoxyParamCaption})~( (a) \& \mbox{\hyperlink{group___g_a_t_t___p_e_r_m_i_t___b_i_t_m_a_p_s___d_e_f_i_n_e_s_ga6c055fd8191a3943e723b0818246bfa0}{G\+A\+T\+T\+\_\+\+P\+E\+R\+M\+I\+T\+\_\+\+A\+U\+T\+H\+O\+R\+\_\+\+R\+E\+AD}} )}
+
+
+
+Definition at line 144 of file gatt.\+h.
+
+\mbox{\Hypertarget{gatt_8h_ae393954949124c88d8cab34be7b5f1d2}\label{gatt_8h_ae393954949124c88d8cab34be7b5f1d2}} 
+\index{gatt.h@{gatt.h}!gattPermitAuthorWrite@{gattPermitAuthorWrite}}
+\index{gattPermitAuthorWrite@{gattPermitAuthorWrite}!gatt.h@{gatt.h}}
+\doxysubsubsection{\texorpdfstring{gattPermitAuthorWrite}{gattPermitAuthorWrite}}
+{\footnotesize\ttfamily \#define gatt\+Permit\+Author\+Write(\begin{DoxyParamCaption}\item[{}]{a }\end{DoxyParamCaption})~( (a) \& \mbox{\hyperlink{group___g_a_t_t___p_e_r_m_i_t___b_i_t_m_a_p_s___d_e_f_i_n_e_s_ga6384af3ec189d910d2ea339577d0fc82}{G\+A\+T\+T\+\_\+\+P\+E\+R\+M\+I\+T\+\_\+\+A\+U\+T\+H\+O\+R\+\_\+\+W\+R\+I\+TE}} )}
+
+
+
+Definition at line 145 of file gatt.\+h.
+
+\mbox{\Hypertarget{gatt_8h_a7fd6b3ed2404d026605cde07ba294295}\label{gatt_8h_a7fd6b3ed2404d026605cde07ba294295}} 
+\index{gatt.h@{gatt.h}!gattPermitEncryptRead@{gattPermitEncryptRead}}
+\index{gattPermitEncryptRead@{gattPermitEncryptRead}!gatt.h@{gatt.h}}
+\doxysubsubsection{\texorpdfstring{gattPermitEncryptRead}{gattPermitEncryptRead}}
+{\footnotesize\ttfamily \#define gatt\+Permit\+Encrypt\+Read(\begin{DoxyParamCaption}\item[{}]{a }\end{DoxyParamCaption})~( (a) \& \mbox{\hyperlink{group___g_a_t_t___p_e_r_m_i_t___b_i_t_m_a_p_s___d_e_f_i_n_e_s_gabea41ab791d6c35319c7b8ab14081219}{G\+A\+T\+T\+\_\+\+P\+E\+R\+M\+I\+T\+\_\+\+E\+N\+C\+R\+Y\+P\+T\+\_\+\+R\+E\+AD}} )}
+
+
+
+Definition at line 142 of file gatt.\+h.
+
+\mbox{\Hypertarget{gatt_8h_a3d3fe6d37aeaad7f79af6b229ef0e394}\label{gatt_8h_a3d3fe6d37aeaad7f79af6b229ef0e394}} 
+\index{gatt.h@{gatt.h}!gattPermitEncryptWrite@{gattPermitEncryptWrite}}
+\index{gattPermitEncryptWrite@{gattPermitEncryptWrite}!gatt.h@{gatt.h}}
+\doxysubsubsection{\texorpdfstring{gattPermitEncryptWrite}{gattPermitEncryptWrite}}
+{\footnotesize\ttfamily \#define gatt\+Permit\+Encrypt\+Write(\begin{DoxyParamCaption}\item[{}]{a }\end{DoxyParamCaption})~( (a) \& \mbox{\hyperlink{group___g_a_t_t___p_e_r_m_i_t___b_i_t_m_a_p_s___d_e_f_i_n_e_s_ga0074bc845bcf84df08ee6739b1167bc2}{G\+A\+T\+T\+\_\+\+P\+E\+R\+M\+I\+T\+\_\+\+E\+N\+C\+R\+Y\+P\+T\+\_\+\+W\+R\+I\+TE}} )}
+
+
+
+Definition at line 143 of file gatt.\+h.
+
+\mbox{\Hypertarget{gatt_8h_aa25d292a8f455dea7f8c03410fee0ed7}\label{gatt_8h_aa25d292a8f455dea7f8c03410fee0ed7}} 
+\index{gatt.h@{gatt.h}!gattPermitRead@{gattPermitRead}}
+\index{gattPermitRead@{gattPermitRead}!gatt.h@{gatt.h}}
+\doxysubsubsection{\texorpdfstring{gattPermitRead}{gattPermitRead}}
+{\footnotesize\ttfamily \#define gatt\+Permit\+Read(\begin{DoxyParamCaption}\item[{}]{a }\end{DoxyParamCaption})~( (a) \& \mbox{\hyperlink{group___g_a_t_t___p_e_r_m_i_t___b_i_t_m_a_p_s___d_e_f_i_n_e_s_ga9d7703744ff5dccd61359a0cf03ba296}{G\+A\+T\+T\+\_\+\+P\+E\+R\+M\+I\+T\+\_\+\+R\+E\+AD}} )}
+
+
+
+Definition at line 140 of file gatt.\+h.
+
+\mbox{\Hypertarget{gatt_8h_a4e1b10d3b16277d8681e2dcc2bdc3e05}\label{gatt_8h_a4e1b10d3b16277d8681e2dcc2bdc3e05}} 
+\index{gatt.h@{gatt.h}!gattPermitWrite@{gattPermitWrite}}
+\index{gattPermitWrite@{gattPermitWrite}!gatt.h@{gatt.h}}
+\doxysubsubsection{\texorpdfstring{gattPermitWrite}{gattPermitWrite}}
+{\footnotesize\ttfamily \#define gatt\+Permit\+Write(\begin{DoxyParamCaption}\item[{}]{a }\end{DoxyParamCaption})~( (a) \& \mbox{\hyperlink{group___g_a_t_t___p_e_r_m_i_t___b_i_t_m_a_p_s___d_e_f_i_n_e_s_gadefabc5a273d86efd52439dc7e539eb3}{G\+A\+T\+T\+\_\+\+P\+E\+R\+M\+I\+T\+\_\+\+W\+R\+I\+TE}} )}
+
+
+
+Definition at line 141 of file gatt.\+h.
+
+\mbox{\Hypertarget{gatt_8h_a982b08f876590079d9542b0ec84fc8e1}\label{gatt_8h_a982b08f876590079d9542b0ec84fc8e1}} 
+\index{gatt.h@{gatt.h}!gattPrimaryServiceType@{gattPrimaryServiceType}}
+\index{gattPrimaryServiceType@{gattPrimaryServiceType}!gatt.h@{gatt.h}}
+\doxysubsubsection{\texorpdfstring{gattPrimaryServiceType}{gattPrimaryServiceType}}
+{\footnotesize\ttfamily \#define gatt\+Primary\+Service\+Type(\begin{DoxyParamCaption}\item[{}]{t }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{                                                                ( MAP\_ATT\_CompareUUID( \mbox{\hyperlink{gatt__uuid_8c_a577e51fe790a676d4a3bd9c019a56033}{primaryServiceUUID}}, ATT\_BT\_UUID\_SIZE, \(\backslash\)}
+\DoxyCodeLine{                                                                (t).uuid, (t).\mbox{\hyperlink{icall__apimsg_8h_a8ccac76f35f79d74917e1c5dd6f69fea}{len}} ) )}
+
+\end{DoxyCode}
+
+
+Definition at line 150 of file gatt.\+h.
+
+\mbox{\Hypertarget{gatt_8h_ac2a0670c0e310fa817851335ca0195ff}\label{gatt_8h_ac2a0670c0e310fa817851335ca0195ff}} 
+\index{gatt.h@{gatt.h}!gattSecondaryServiceType@{gattSecondaryServiceType}}
+\index{gattSecondaryServiceType@{gattSecondaryServiceType}!gatt.h@{gatt.h}}
+\doxysubsubsection{\texorpdfstring{gattSecondaryServiceType}{gattSecondaryServiceType}}
+{\footnotesize\ttfamily \#define gatt\+Secondary\+Service\+Type(\begin{DoxyParamCaption}\item[{}]{t }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{                                                                ( MAP\_ATT\_CompareUUID( \mbox{\hyperlink{gatt__uuid_8c_a42a6cbad212991a58648bf5387ca9954}{secondaryServiceUUID}}, ATT\_BT\_UUID\_SIZE, \(\backslash\)}
+\DoxyCodeLine{                                                                (t).uuid, (t).\mbox{\hyperlink{icall__apimsg_8h_a8ccac76f35f79d74917e1c5dd6f69fea}{len}} ) )}
+
+\end{DoxyCode}
+
+
+Definition at line 152 of file gatt.\+h.
+
+\mbox{\Hypertarget{gatt_8h_ad8135fa0567ffd48e5ab924cf65983c3}\label{gatt_8h_ad8135fa0567ffd48e5ab924cf65983c3}} 
+\index{gatt.h@{gatt.h}!gattServiceType@{gattServiceType}}
+\index{gattServiceType@{gattServiceType}!gatt.h@{gatt.h}}
+\doxysubsubsection{\texorpdfstring{gattServiceType}{gattServiceType}}
+{\footnotesize\ttfamily \#define gatt\+Service\+Type(\begin{DoxyParamCaption}\item[{}]{t }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{                                           ( \mbox{\hyperlink{gatt_8h_a982b08f876590079d9542b0ec84fc8e1}{gattPrimaryServiceType}}( (t) ) || \(\backslash\)}
+\DoxyCodeLine{                                           gattSecondaryServiceType( (t) ) )}
+
+\end{DoxyCode}
+
+
+Definition at line 158 of file gatt.\+h.
+
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{gatt_8h_a8dca0d941f79cbc3bca13ab038e2e963}\label{gatt_8h_a8dca0d941f79cbc3bca13ab038e2e963}} 
+\index{gatt.h@{gatt.h}!gattAttribute\_t@{gattAttribute\_t}}
+\index{gattAttribute\_t@{gattAttribute\_t}!gatt.h@{gatt.h}}
+\doxysubsubsection{\texorpdfstring{gattAttribute\_t}{gattAttribute\_t}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structatt_attribute__t}{att\+Attribute\+\_\+t}} \mbox{\hyperlink{gatt_8h_a8dca0d941f79cbc3bca13ab038e2e963}{gatt\+Attribute\+\_\+t}}}
+
+G\+A\+TT Attribute format. 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{gatt_8h_acf3100768f439704c72352e567c39f84}\label{gatt_8h_acf3100768f439704c72352e567c39f84}} 
+\index{gatt.h@{gatt.h}!GATT\_GetNextHandle@{GATT\_GetNextHandle}}
+\index{GATT\_GetNextHandle@{GATT\_GetNextHandle}!gatt.h@{gatt.h}}
+\doxysubsubsection{\texorpdfstring{GATT\_GetNextHandle()}{GATT\_GetNextHandle()}}
+{\footnotesize\ttfamily uint16 G\+A\+T\+T\+\_\+\+Get\+Next\+Handle (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 1953 of file icall\+\_\+api.\+c.
+
+\mbox{\Hypertarget{gatt_8h_af5204bbdc809eca6c0e4730017b1a7aa}\label{gatt_8h_af5204bbdc809eca6c0e4730017b1a7aa}} 
+\index{gatt.h@{gatt.h}!GATT\_Init@{GATT\_Init}}
+\index{GATT\_Init@{GATT\_Init}!gatt.h@{gatt.h}}
+\doxysubsubsection{\texorpdfstring{GATT\_Init()}{GATT\_Init()}}
+{\footnotesize\ttfamily void G\+A\+T\+T\+\_\+\+Init (\begin{DoxyParamCaption}\item[{uint8}]{task\+Id }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{gatt_8h_a44371e2316d468d3c62bfd2fe6f1e015}\label{gatt_8h_a44371e2316d468d3c62bfd2fe6f1e015}} 
+\index{gatt.h@{gatt.h}!GATT\_ProcessEvent@{GATT\_ProcessEvent}}
+\index{GATT\_ProcessEvent@{GATT\_ProcessEvent}!gatt.h@{gatt.h}}
+\doxysubsubsection{\texorpdfstring{GATT\_ProcessEvent()}{GATT\_ProcessEvent()}}
+{\footnotesize\ttfamily uint16 G\+A\+T\+T\+\_\+\+Process\+Event (\begin{DoxyParamCaption}\item[{uint8}]{task\+Id,  }\item[{uint16}]{events }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{gatt_8h_accc0a35fd448c15a45bc60c5098022a3}\label{gatt_8h_accc0a35fd448c15a45bc60c5098022a3}} 
+\index{gatt.h@{gatt.h}!GATT\_SetNextHandle@{GATT\_SetNextHandle}}
+\index{GATT\_SetNextHandle@{GATT\_SetNextHandle}!gatt.h@{gatt.h}}
+\doxysubsubsection{\texorpdfstring{GATT\_SetNextHandle()}{GATT\_SetNextHandle()}}
+{\footnotesize\ttfamily void G\+A\+T\+T\+\_\+\+Set\+Next\+Handle (\begin{DoxyParamCaption}\item[{uint16}]{handle }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{gatt_8h_a10071989e73effa373c551a0a4d56932}\label{gatt_8h_a10071989e73effa373c551a0a4d56932}} 
+\index{gatt.h@{gatt.h}!gattNumConns@{gattNumConns}}
+\index{gattNumConns@{gattNumConns}!gatt.h@{gatt.h}}
+\doxysubsubsection{\texorpdfstring{gattNumConns}{gattNumConns}}
+{\footnotesize\ttfamily uint8 gatt\+Num\+Conns}
+

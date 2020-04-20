@@ -1,0 +1,132 @@
+\hypertarget{main_8c}{}\doxysection{Startup/main.c File Reference}
+\label{main_8c}\index{Startup/main.c@{Startup/main.c}}
+{\ttfamily \#include $<$xdc/runtime/\+Error.\+h$>$}\newline
+{\ttfamily \#include $<$ti/drivers/\+Power.\+h$>$}\newline
+{\ttfamily \#include $<$ti/drivers/power/\+Power\+C\+C26\+X\+X.\+h$>$}\newline
+{\ttfamily \#include $<$ti/sysbios/\+B\+I\+O\+S.\+h$>$}\newline
+{\ttfamily \#include $<$ti/sysbios/knl/\+Task.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}icall.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}hal\+\_\+assert.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}bcomdef.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}peripheral.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}simple\+\_\+peripheral.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}monolith.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$ti/drivers/\+G\+P\+I\+O.\+h$>$}\newline
+{\ttfamily \#include $<$inc/hw\+\_\+memmap.\+h$>$}\newline
+{\ttfamily \#include $<$driverlib/vims.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}ble\+\_\+user\+\_\+config.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$ti/mw/display/\+Display.\+h$>$}\newline
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{main_8c_a8babe8b37acd7b4b8c9b4aef99f767ef}{T\+A\+S\+K\+S\+T\+A\+C\+K\+S\+I\+ZE}}~2048
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{main_8c_a19b35a66f16d6f3c6129792f691417cb}{Assert\+Handler}} (uint8 assert\+Cause, uint8 assert\+Subcause)
+\item 
+int \mbox{\hyperlink{main_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\item 
+void \mbox{\hyperlink{main_8c_aee7bf13c25235ff6fc0666e6b89efb6f}{small\+Error\+Hook}} (Error\+\_\+\+Block $\ast$eb)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structble_user_cfg__t}{ble\+User\+Cfg\+\_\+t}} \mbox{\hyperlink{main_8c_a14bb28c3a1fcd6a0d9c0bfb74f06b9a5}{user0\+Cfg}} = B\+L\+E\+\_\+\+U\+S\+E\+R\+\_\+\+C\+FG
+\item 
+Task\+\_\+\+Struct \mbox{\hyperlink{main_8c_a4909a4cc2795a1f550e8993578ec6da3}{monolith\+Task\+Struct}}
+\item 
+char \mbox{\hyperlink{main_8c_a4841c1e273d4d41d424182439ef09f78}{monolith\+Stack}} \mbox{[}\mbox{\hyperlink{main_8c_a8babe8b37acd7b4b8c9b4aef99f767ef}{T\+A\+S\+K\+S\+T\+A\+C\+K\+S\+I\+ZE}}\mbox{]}
+\item 
+\mbox{\hyperlink{_display_8h_a045a26811755aabf1886d982c49e54ab}{Display\+\_\+\+Handle}} \mbox{\hyperlink{main_8c_aceb5c6a20985ea616af965124a2d5785}{disp\+Handle}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{main_8c_a8babe8b37acd7b4b8c9b4aef99f767ef}\label{main_8c_a8babe8b37acd7b4b8c9b4aef99f767ef}} 
+\index{main.c@{main.c}!TASKSTACKSIZE@{TASKSTACKSIZE}}
+\index{TASKSTACKSIZE@{TASKSTACKSIZE}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{TASKSTACKSIZE}{TASKSTACKSIZE}}
+{\footnotesize\ttfamily \#define T\+A\+S\+K\+S\+T\+A\+C\+K\+S\+I\+ZE~2048}
+
+
+
+Definition at line 45 of file main.\+c.
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{main_8c_a19b35a66f16d6f3c6129792f691417cb}\label{main_8c_a19b35a66f16d6f3c6129792f691417cb}} 
+\index{main.c@{main.c}!AssertHandler@{AssertHandler}}
+\index{AssertHandler@{AssertHandler}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{AssertHandler()}{AssertHandler()}}
+{\footnotesize\ttfamily void Assert\+Handler (\begin{DoxyParamCaption}\item[{uint8}]{assert\+Cause,  }\item[{uint8}]{assert\+Subcause }\end{DoxyParamCaption})}
+
+
+
+Definition at line 153 of file main.\+c.
+
+\mbox{\Hypertarget{main_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{main_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}} 
+\index{main.c@{main.c}!main@{main}}
+\index{main@{main}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 67 of file main.\+c.
+
+\mbox{\Hypertarget{main_8c_aee7bf13c25235ff6fc0666e6b89efb6f}\label{main_8c_aee7bf13c25235ff6fc0666e6b89efb6f}} 
+\index{main.c@{main.c}!smallErrorHook@{smallErrorHook}}
+\index{smallErrorHook@{smallErrorHook}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{smallErrorHook()}{smallErrorHook()}}
+{\footnotesize\ttfamily void small\+Error\+Hook (\begin{DoxyParamCaption}\item[{Error\+\_\+\+Block $\ast$}]{eb }\end{DoxyParamCaption})}
+
+
+
+Definition at line 216 of file main.\+c.
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{main_8c_aceb5c6a20985ea616af965124a2d5785}\label{main_8c_aceb5c6a20985ea616af965124a2d5785}} 
+\index{main.c@{main.c}!dispHandle@{dispHandle}}
+\index{dispHandle@{dispHandle}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{dispHandle}{dispHandle}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_display_8h_a045a26811755aabf1886d982c49e54ab}{Display\+\_\+\+Handle}} disp\+Handle}
+
+
+
+Definition at line 174 of file simple\+\_\+peripheral.\+c.
+
+\mbox{\Hypertarget{main_8c_a4841c1e273d4d41d424182439ef09f78}\label{main_8c_a4841c1e273d4d41d424182439ef09f78}} 
+\index{main.c@{main.c}!monolithStack@{monolithStack}}
+\index{monolithStack@{monolithStack}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{monolithStack}{monolithStack}}
+{\footnotesize\ttfamily char monolith\+Stack\mbox{[}\mbox{\hyperlink{main_8c_a8babe8b37acd7b4b8c9b4aef99f767ef}{T\+A\+S\+K\+S\+T\+A\+C\+K\+S\+I\+ZE}}\mbox{]}}
+
+
+
+Definition at line 46 of file main.\+c.
+
+\mbox{\Hypertarget{main_8c_a4909a4cc2795a1f550e8993578ec6da3}\label{main_8c_a4909a4cc2795a1f550e8993578ec6da3}} 
+\index{main.c@{main.c}!monolithTaskStruct@{monolithTaskStruct}}
+\index{monolithTaskStruct@{monolithTaskStruct}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{monolithTaskStruct}{monolithTaskStruct}}
+{\footnotesize\ttfamily Task\+\_\+\+Struct monolith\+Task\+Struct}
+
+
+
+Definition at line 45 of file main.\+c.
+
+\mbox{\Hypertarget{main_8c_a14bb28c3a1fcd6a0d9c0bfb74f06b9a5}\label{main_8c_a14bb28c3a1fcd6a0d9c0bfb74f06b9a5}} 
+\index{main.c@{main.c}!user0Cfg@{user0Cfg}}
+\index{user0Cfg@{user0Cfg}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{user0Cfg}{user0Cfg}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structble_user_cfg__t}{ble\+User\+Cfg\+\_\+t}} user0\+Cfg = B\+L\+E\+\_\+\+U\+S\+E\+R\+\_\+\+C\+FG}
+
+
+
+Definition at line 38 of file main.\+c.
+

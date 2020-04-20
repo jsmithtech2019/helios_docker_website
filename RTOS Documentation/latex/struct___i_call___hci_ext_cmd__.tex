@@ -1,0 +1,104 @@
+\hypertarget{struct___i_call___hci_ext_cmd__}{}\doxysection{\+\_\+\+I\+Call\+\_\+\+Hci\+Ext\+Cmd\+\_\+ Struct Reference}
+\label{struct___i_call___hci_ext_cmd__}\index{\_ICall\_HciExtCmd\_@{\_ICall\_HciExtCmd\_}}
+
+
+{\ttfamily \#include $<$icall\+\_\+apimsg.\+h$>$}
+
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{icall__apimsg_8h_a92c1ce232a1d64cf89259e48fa114f9a}{I\+Call\+\_\+\+Hdr}} \mbox{\hyperlink{struct___i_call___hci_ext_cmd___a8d823589445e76235ae9073e6601b3b6}{hdr}}
+\begin{DoxyCompactList}\small\item\em header event field must be set as I\+C\+A\+L\+L\+\_\+\+C\+M\+D\+\_\+\+E\+V\+E\+NT \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{struct___i_call___hci_ext_cmd___a6b9ee1f331604c8dbcabb05a528c2b85}{srctaskid}}
+\begin{DoxyCompactList}\small\item\em Source task ID internally used by stack. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{struct___i_call___hci_ext_cmd___ada0726bf0af8c9c072221be1bfb0ee52}{pkt\+Type}}
+\begin{DoxyCompactList}\small\item\em Currently not used. \end{DoxyCompactList}\item 
+uint16\+\_\+t \mbox{\hyperlink{struct___i_call___hci_ext_cmd___ab3981373e0e8f5cb90970a3659505fed}{op\+Code}}
+\begin{DoxyCompactList}\small\item\em Opcode -\/ subgroup id and command id/profile id. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{struct___i_call___hci_ext_cmd___a8af5db8c10061c44b4e06f215f5539ec}{cmd\+Id}}
+\begin{DoxyCompactList}\small\item\em command id (applicable only to User Profile subgroup) \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+B\+LE H\+C\+I\+\_\+\+E\+X\+T\+\_\+\+C\+M\+D\+\_\+\+E\+V\+E\+NT event message common header. This is how it is defined in legacy B\+LE H\+C\+I\+\_\+\+E\+X\+T\+\_\+\+C\+M\+D\+\_\+\+E\+V\+E\+NT interface. It\textquotesingle{}s replicated here to provide a sample without actual B\+LE code. 
+
+Definition at line 85 of file icall\+\_\+apimsg.\+h.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{struct___i_call___hci_ext_cmd___a8af5db8c10061c44b4e06f215f5539ec}\label{struct___i_call___hci_ext_cmd___a8af5db8c10061c44b4e06f215f5539ec}} 
+\index{\_ICall\_HciExtCmd\_@{\_ICall\_HciExtCmd\_}!cmdId@{cmdId}}
+\index{cmdId@{cmdId}!\_ICall\_HciExtCmd\_@{\_ICall\_HciExtCmd\_}}
+\doxysubsubsection{\texorpdfstring{cmdId}{cmdId}}
+{\footnotesize\ttfamily uint8\+\_\+t \+\_\+\+I\+Call\+\_\+\+Hci\+Ext\+Cmd\+\_\+\+::cmd\+Id}
+
+
+
+command id (applicable only to User Profile subgroup) 
+
+
+
+Definition at line 91 of file icall\+\_\+apimsg.\+h.
+
+\mbox{\Hypertarget{struct___i_call___hci_ext_cmd___a8d823589445e76235ae9073e6601b3b6}\label{struct___i_call___hci_ext_cmd___a8d823589445e76235ae9073e6601b3b6}} 
+\index{\_ICall\_HciExtCmd\_@{\_ICall\_HciExtCmd\_}!hdr@{hdr}}
+\index{hdr@{hdr}!\_ICall\_HciExtCmd\_@{\_ICall\_HciExtCmd\_}}
+\doxysubsubsection{\texorpdfstring{hdr}{hdr}}
+{\footnotesize\ttfamily \mbox{\hyperlink{icall__apimsg_8h_a92c1ce232a1d64cf89259e48fa114f9a}{I\+Call\+\_\+\+Hdr}} \+\_\+\+I\+Call\+\_\+\+Hci\+Ext\+Cmd\+\_\+\+::hdr}
+
+
+
+header event field must be set as I\+C\+A\+L\+L\+\_\+\+C\+M\+D\+\_\+\+E\+V\+E\+NT 
+
+
+
+Definition at line 87 of file icall\+\_\+apimsg.\+h.
+
+\mbox{\Hypertarget{struct___i_call___hci_ext_cmd___ab3981373e0e8f5cb90970a3659505fed}\label{struct___i_call___hci_ext_cmd___ab3981373e0e8f5cb90970a3659505fed}} 
+\index{\_ICall\_HciExtCmd\_@{\_ICall\_HciExtCmd\_}!opCode@{opCode}}
+\index{opCode@{opCode}!\_ICall\_HciExtCmd\_@{\_ICall\_HciExtCmd\_}}
+\doxysubsubsection{\texorpdfstring{opCode}{opCode}}
+{\footnotesize\ttfamily uint16\+\_\+t \+\_\+\+I\+Call\+\_\+\+Hci\+Ext\+Cmd\+\_\+\+::op\+Code}
+
+
+
+Opcode -\/ subgroup id and command id/profile id. 
+
+
+
+Definition at line 90 of file icall\+\_\+apimsg.\+h.
+
+\mbox{\Hypertarget{struct___i_call___hci_ext_cmd___ada0726bf0af8c9c072221be1bfb0ee52}\label{struct___i_call___hci_ext_cmd___ada0726bf0af8c9c072221be1bfb0ee52}} 
+\index{\_ICall\_HciExtCmd\_@{\_ICall\_HciExtCmd\_}!pktType@{pktType}}
+\index{pktType@{pktType}!\_ICall\_HciExtCmd\_@{\_ICall\_HciExtCmd\_}}
+\doxysubsubsection{\texorpdfstring{pktType}{pktType}}
+{\footnotesize\ttfamily uint8\+\_\+t \+\_\+\+I\+Call\+\_\+\+Hci\+Ext\+Cmd\+\_\+\+::pkt\+Type}
+
+
+
+Currently not used. 
+
+
+
+Definition at line 89 of file icall\+\_\+apimsg.\+h.
+
+\mbox{\Hypertarget{struct___i_call___hci_ext_cmd___a6b9ee1f331604c8dbcabb05a528c2b85}\label{struct___i_call___hci_ext_cmd___a6b9ee1f331604c8dbcabb05a528c2b85}} 
+\index{\_ICall\_HciExtCmd\_@{\_ICall\_HciExtCmd\_}!srctaskid@{srctaskid}}
+\index{srctaskid@{srctaskid}!\_ICall\_HciExtCmd\_@{\_ICall\_HciExtCmd\_}}
+\doxysubsubsection{\texorpdfstring{srctaskid}{srctaskid}}
+{\footnotesize\ttfamily uint8\+\_\+t \+\_\+\+I\+Call\+\_\+\+Hci\+Ext\+Cmd\+\_\+\+::srctaskid}
+
+
+
+Source task ID internally used by stack. 
+
+
+
+Definition at line 88 of file icall\+\_\+apimsg.\+h.
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+I\+Call\+B\+L\+E/\mbox{\hyperlink{icall__apimsg_8h}{icall\+\_\+apimsg.\+h}}\end{DoxyCompactItemize}

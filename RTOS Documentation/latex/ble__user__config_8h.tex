@@ -1,0 +1,324 @@
+\hypertarget{ble__user__config_8h}{}\doxysection{I\+Call\+B\+L\+E/ble\+\_\+user\+\_\+config.h File Reference}
+\label{ble__user__config_8h}\index{ICallBLE/ble\_user\_config.h@{ICallBLE/ble\_user\_config.h}}
+{\ttfamily \#include \char`\"{}ble\+\_\+dispatch.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}hal\+\_\+assert.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}rf\+\_\+hal.\+h\char`\"{}}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structble_user_cfg__t}{ble\+User\+Cfg\+\_\+t}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{ble__user__config_8h_ac17d76b2f8bc76adad3322dccc28f6d9}{G\+E\+N\+\_\+\+T\+X\+\_\+\+P\+O\+W\+E\+R\+\_\+\+V\+AL}}(ib,  gc,  tc)~(uint16)(((ib) \& 0x3F) $\vert$ (((gc) \& 0x03) $<$$<$ 6) $\vert$ (((tc)\&0x\+FF) $<$$<$ 8))
+\item 
+\#define \mbox{\hyperlink{ble__user__config_8h_ae2488178e09e842dee1044f237230d43}{ecc\+Driver\+Table}}~N\+U\+LL
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef const uint32 \mbox{\hyperlink{ble__user__config_8h_a63bcf03c90e3517badf6db1f80b5b938}{rf\+Drv\+Tbl\+Ptr\+\_\+t}}
+\item 
+typedef const uint32 \mbox{\hyperlink{ble__user__config_8h_a34adc806d5595ad47f1301efc0f12de6}{ecc\+Drv\+Tbl\+Ptr\+\_\+t}}
+\item 
+typedef const uint32 \mbox{\hyperlink{ble__user__config_8h_a867daa520132f7294a9713f1cd115aaa}{crypto\+Drv\+Tbl\+Ptr\+\_\+t}}
+\item 
+typedef const uint32 \mbox{\hyperlink{ble__user__config_8h_af07f1b4614e5549cf4289e26e5a2fd53}{rtos\+Api\+Ptr\+\_\+t}}
+\item 
+typedef const uint32 \mbox{\hyperlink{ble__user__config_8h_ac772574570d8f2839b1558c11e6356fd}{trng\+Drv\+Tbl\+Ptr\+\_\+t}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{ble__user__config_8h_afa4b10d7a031ec57698c88c7f5d1ff86}{set\+Ble\+User\+Config}} (\mbox{\hyperlink{structble_user_cfg__t}{ble\+User\+Cfg\+\_\+t}} $\ast$user\+Cfg)
+\item 
+void \mbox{\hyperlink{ble__user__config_8h_adc89f60ca14ee411b088d76174097c28}{Register\+Assert\+Cback}} (assert\+Cback\+\_\+t app\+Assert\+Handler)
+\item 
+void \mbox{\hyperlink{ble__user__config_8h_adb5335b6bc8f91b691c0c9bb65f559c2}{Default\+Assert\+Cback}} (uint8 assert\+Cause, uint8 assert\+Subcause)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{ble__user__config_8h_aa6f1989a6ddcd0392ca93ca2d3b8d5a1}{P\+A\+C\+K\+E\+D\+\_\+\+T\+Y\+P\+E\+D\+E\+F\+\_\+\+C\+O\+N\+S\+T\+\_\+\+S\+T\+R\+U\+CT}}
+\item 
+uint16 \mbox{\hyperlink{ble__user__config_8h_a88a6d55428e0d0fc37e0b3f51a339b06}{tx\+Pwr\+Val}}
+\item 
+\mbox{\hyperlink{ble__user__config_8h_af58c560da1f7c4de0cb1bf709ef93b5e}{tx\+Pwr\+Val\+\_\+t}}
+\item 
+uint8 \mbox{\hyperlink{ble__user__config_8h_a1841b2a05a5369f1da58e8a2055ccb39}{num\+Tx\+Pwr\+Vals}}
+\item 
+int8 \mbox{\hyperlink{ble__user__config_8h_a0560321f08aab14bef0d70db18bb1718}{default\+Tx\+Pwr\+Val}}
+\item 
+\mbox{\hyperlink{ble__user__config_8h_a4250ba649455e78bffa7da10b31913fe}{tx\+Pwr\+Tbl\+\_\+t}}
+\item 
+reg\+Override\+\_\+t \mbox{\hyperlink{ble__user__config_8h_adce09b8c78eb98b551081af2cb016387}{rf\+Reg\+Tbl}} \mbox{[}$\,$\mbox{]}
+\item 
+\mbox{\hyperlink{ble__user__config_8h_a4250ba649455e78bffa7da10b31913fe}{tx\+Pwr\+Tbl\+\_\+t}} \mbox{\hyperlink{ble__user__config_8h_aeb58f393be403e35f625676507df5e23}{tx\+Pwr\+Tbl}}
+\item 
+\mbox{\hyperlink{ble__user__config_8h_a63bcf03c90e3517badf6db1f80b5b938}{rf\+Drv\+Tbl\+Ptr\+\_\+t}} \mbox{\hyperlink{ble__user__config_8h_ac8b370e7a0f1530616f8eadbca19d009}{rf\+Driver\+Table}} \mbox{[}$\,$\mbox{]}
+\item 
+\mbox{\hyperlink{ble__user__config_8h_a867daa520132f7294a9713f1cd115aaa}{crypto\+Drv\+Tbl\+Ptr\+\_\+t}} \mbox{\hyperlink{ble__user__config_8h_af476a8258c99e33b995f3accfbe62338}{crypto\+Driver\+Table}} \mbox{[}$\,$\mbox{]}
+\item 
+\mbox{\hyperlink{ble__user__config_8h_ac772574570d8f2839b1558c11e6356fd}{trng\+Drv\+Tbl\+Ptr\+\_\+t}} \mbox{\hyperlink{ble__user__config_8h_af109cebce17851927103ef7b1a6db8a6}{trng\+Driver\+Table}} \mbox{[}$\,$\mbox{]}
+\item 
+pfn\+B\+M\+Alloc\+\_\+t \mbox{\hyperlink{ble__user__config_8h_a8b253e34752c76f85e00e41682955b00}{pfn\+B\+M\+Alloc}}
+\item 
+pfn\+B\+M\+Free\+\_\+t \mbox{\hyperlink{ble__user__config_8h_a60bc5555f431090573cda634d6977232}{pfn\+B\+M\+Free}}
+\item 
+assert\+Cback\+\_\+t \mbox{\hyperlink{ble__user__config_8h_a9d1959e8540b3326b4e3060b734566fa}{app\+Assert\+Cback}}
+\item 
+assert\+Cback\+\_\+t \mbox{\hyperlink{ble__user__config_8h_ad42668cce507f3ee9cc0fbc7bcfdeff4}{hal\+Assert\+Cback}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{ble__user__config_8h_ae2488178e09e842dee1044f237230d43}\label{ble__user__config_8h_ae2488178e09e842dee1044f237230d43}} 
+\index{ble\_user\_config.h@{ble\_user\_config.h}!eccDriverTable@{eccDriverTable}}
+\index{eccDriverTable@{eccDriverTable}!ble\_user\_config.h@{ble\_user\_config.h}}
+\doxysubsubsection{\texorpdfstring{eccDriverTable}{eccDriverTable}}
+{\footnotesize\ttfamily \#define ecc\+Driver\+Table~N\+U\+LL}
+
+
+
+Definition at line 448 of file ble\+\_\+user\+\_\+config.\+h.
+
+\mbox{\Hypertarget{ble__user__config_8h_ac17d76b2f8bc76adad3322dccc28f6d9}\label{ble__user__config_8h_ac17d76b2f8bc76adad3322dccc28f6d9}} 
+\index{ble\_user\_config.h@{ble\_user\_config.h}!GEN\_TX\_POWER\_VAL@{GEN\_TX\_POWER\_VAL}}
+\index{GEN\_TX\_POWER\_VAL@{GEN\_TX\_POWER\_VAL}!ble\_user\_config.h@{ble\_user\_config.h}}
+\doxysubsubsection{\texorpdfstring{GEN\_TX\_POWER\_VAL}{GEN\_TX\_POWER\_VAL}}
+{\footnotesize\ttfamily \#define G\+E\+N\+\_\+\+T\+X\+\_\+\+P\+O\+W\+E\+R\+\_\+\+V\+AL(\begin{DoxyParamCaption}\item[{}]{ib,  }\item[{}]{gc,  }\item[{}]{tc }\end{DoxyParamCaption})~(uint16)(((ib) \& 0x3F) $\vert$ (((gc) \& 0x03) $<$$<$ 6) $\vert$ (((tc)\&0x\+FF) $<$$<$ 8))}
+
+
+
+Definition at line 136 of file ble\+\_\+user\+\_\+config.\+h.
+
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{ble__user__config_8h_a867daa520132f7294a9713f1cd115aaa}\label{ble__user__config_8h_a867daa520132f7294a9713f1cd115aaa}} 
+\index{ble\_user\_config.h@{ble\_user\_config.h}!cryptoDrvTblPtr\_t@{cryptoDrvTblPtr\_t}}
+\index{cryptoDrvTblPtr\_t@{cryptoDrvTblPtr\_t}!ble\_user\_config.h@{ble\_user\_config.h}}
+\doxysubsubsection{\texorpdfstring{cryptoDrvTblPtr\_t}{cryptoDrvTblPtr\_t}}
+{\footnotesize\ttfamily typedef const uint32 \mbox{\hyperlink{ble__user__config_8h_a867daa520132f7294a9713f1cd115aaa}{crypto\+Drv\+Tbl\+Ptr\+\_\+t}}}
+
+
+
+Definition at line 406 of file ble\+\_\+user\+\_\+config.\+h.
+
+\mbox{\Hypertarget{ble__user__config_8h_a34adc806d5595ad47f1301efc0f12de6}\label{ble__user__config_8h_a34adc806d5595ad47f1301efc0f12de6}} 
+\index{ble\_user\_config.h@{ble\_user\_config.h}!eccDrvTblPtr\_t@{eccDrvTblPtr\_t}}
+\index{eccDrvTblPtr\_t@{eccDrvTblPtr\_t}!ble\_user\_config.h@{ble\_user\_config.h}}
+\doxysubsubsection{\texorpdfstring{eccDrvTblPtr\_t}{eccDrvTblPtr\_t}}
+{\footnotesize\ttfamily typedef const uint32 \mbox{\hyperlink{ble__user__config_8h_a34adc806d5595ad47f1301efc0f12de6}{ecc\+Drv\+Tbl\+Ptr\+\_\+t}}}
+
+
+
+Definition at line 404 of file ble\+\_\+user\+\_\+config.\+h.
+
+\mbox{\Hypertarget{ble__user__config_8h_a63bcf03c90e3517badf6db1f80b5b938}\label{ble__user__config_8h_a63bcf03c90e3517badf6db1f80b5b938}} 
+\index{ble\_user\_config.h@{ble\_user\_config.h}!rfDrvTblPtr\_t@{rfDrvTblPtr\_t}}
+\index{rfDrvTblPtr\_t@{rfDrvTblPtr\_t}!ble\_user\_config.h@{ble\_user\_config.h}}
+\doxysubsubsection{\texorpdfstring{rfDrvTblPtr\_t}{rfDrvTblPtr\_t}}
+{\footnotesize\ttfamily typedef const uint32 \mbox{\hyperlink{ble__user__config_8h_a63bcf03c90e3517badf6db1f80b5b938}{rf\+Drv\+Tbl\+Ptr\+\_\+t}}}
+
+
+
+Definition at line 402 of file ble\+\_\+user\+\_\+config.\+h.
+
+\mbox{\Hypertarget{ble__user__config_8h_af07f1b4614e5549cf4289e26e5a2fd53}\label{ble__user__config_8h_af07f1b4614e5549cf4289e26e5a2fd53}} 
+\index{ble\_user\_config.h@{ble\_user\_config.h}!rtosApiPtr\_t@{rtosApiPtr\_t}}
+\index{rtosApiPtr\_t@{rtosApiPtr\_t}!ble\_user\_config.h@{ble\_user\_config.h}}
+\doxysubsubsection{\texorpdfstring{rtosApiPtr\_t}{rtosApiPtr\_t}}
+{\footnotesize\ttfamily typedef const uint32 \mbox{\hyperlink{ble__user__config_8h_af07f1b4614e5549cf4289e26e5a2fd53}{rtos\+Api\+Ptr\+\_\+t}}}
+
+
+
+Definition at line 408 of file ble\+\_\+user\+\_\+config.\+h.
+
+\mbox{\Hypertarget{ble__user__config_8h_ac772574570d8f2839b1558c11e6356fd}\label{ble__user__config_8h_ac772574570d8f2839b1558c11e6356fd}} 
+\index{ble\_user\_config.h@{ble\_user\_config.h}!trngDrvTblPtr\_t@{trngDrvTblPtr\_t}}
+\index{trngDrvTblPtr\_t@{trngDrvTblPtr\_t}!ble\_user\_config.h@{ble\_user\_config.h}}
+\doxysubsubsection{\texorpdfstring{trngDrvTblPtr\_t}{trngDrvTblPtr\_t}}
+{\footnotesize\ttfamily typedef const uint32 \mbox{\hyperlink{ble__user__config_8h_ac772574570d8f2839b1558c11e6356fd}{trng\+Drv\+Tbl\+Ptr\+\_\+t}}}
+
+
+
+Definition at line 410 of file ble\+\_\+user\+\_\+config.\+h.
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{ble__user__config_8h_adb5335b6bc8f91b691c0c9bb65f559c2}\label{ble__user__config_8h_adb5335b6bc8f91b691c0c9bb65f559c2}} 
+\index{ble\_user\_config.h@{ble\_user\_config.h}!DefaultAssertCback@{DefaultAssertCback}}
+\index{DefaultAssertCback@{DefaultAssertCback}!ble\_user\_config.h@{ble\_user\_config.h}}
+\doxysubsubsection{\texorpdfstring{DefaultAssertCback()}{DefaultAssertCback()}}
+{\footnotesize\ttfamily void Default\+Assert\+Cback (\begin{DoxyParamCaption}\item[{uint8}]{assert\+Cause,  }\item[{uint8}]{assert\+Subcause }\end{DoxyParamCaption})}
+
+
+
+Definition at line 588 of file ble\+\_\+user\+\_\+config.\+c.
+
+\mbox{\Hypertarget{ble__user__config_8h_adc89f60ca14ee411b088d76174097c28}\label{ble__user__config_8h_adc89f60ca14ee411b088d76174097c28}} 
+\index{ble\_user\_config.h@{ble\_user\_config.h}!RegisterAssertCback@{RegisterAssertCback}}
+\index{RegisterAssertCback@{RegisterAssertCback}!ble\_user\_config.h@{ble\_user\_config.h}}
+\doxysubsubsection{\texorpdfstring{RegisterAssertCback()}{RegisterAssertCback()}}
+{\footnotesize\ttfamily void Register\+Assert\+Cback (\begin{DoxyParamCaption}\item[{assert\+Cback\+\_\+t}]{app\+Assert\+Handler }\end{DoxyParamCaption})}
+
+
+
+Definition at line 533 of file ble\+\_\+user\+\_\+config.\+c.
+
+\mbox{\Hypertarget{ble__user__config_8h_afa4b10d7a031ec57698c88c7f5d1ff86}\label{ble__user__config_8h_afa4b10d7a031ec57698c88c7f5d1ff86}} 
+\index{ble\_user\_config.h@{ble\_user\_config.h}!setBleUserConfig@{setBleUserConfig}}
+\index{setBleUserConfig@{setBleUserConfig}!ble\_user\_config.h@{ble\_user\_config.h}}
+\doxysubsubsection{\texorpdfstring{setBleUserConfig()}{setBleUserConfig()}}
+{\footnotesize\ttfamily void set\+Ble\+User\+Config (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structble_user_cfg__t}{ble\+User\+Cfg\+\_\+t}} $\ast$}]{user\+Cfg }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{ble__user__config_8h_a9d1959e8540b3326b4e3060b734566fa}\label{ble__user__config_8h_a9d1959e8540b3326b4e3060b734566fa}} 
+\index{ble\_user\_config.h@{ble\_user\_config.h}!appAssertCback@{appAssertCback}}
+\index{appAssertCback@{appAssertCback}!ble\_user\_config.h@{ble\_user\_config.h}}
+\doxysubsubsection{\texorpdfstring{appAssertCback}{appAssertCback}}
+{\footnotesize\ttfamily assert\+Cback\+\_\+t app\+Assert\+Cback}
+
+
+
+Definition at line 598 of file ble\+\_\+user\+\_\+config.\+c.
+
+\mbox{\Hypertarget{ble__user__config_8h_af476a8258c99e33b995f3accfbe62338}\label{ble__user__config_8h_af476a8258c99e33b995f3accfbe62338}} 
+\index{ble\_user\_config.h@{ble\_user\_config.h}!cryptoDriverTable@{cryptoDriverTable}}
+\index{cryptoDriverTable@{cryptoDriverTable}!ble\_user\_config.h@{ble\_user\_config.h}}
+\doxysubsubsection{\texorpdfstring{cryptoDriverTable}{cryptoDriverTable}}
+{\footnotesize\ttfamily \mbox{\hyperlink{ble__user__config_8h_a867daa520132f7294a9713f1cd115aaa}{crypto\+Drv\+Tbl\+Ptr\+\_\+t}} crypto\+Driver\+Table\mbox{[}$\,$\mbox{]}}
+
+\mbox{\Hypertarget{ble__user__config_8h_a0560321f08aab14bef0d70db18bb1718}\label{ble__user__config_8h_a0560321f08aab14bef0d70db18bb1718}} 
+\index{ble\_user\_config.h@{ble\_user\_config.h}!defaultTxPwrVal@{defaultTxPwrVal}}
+\index{defaultTxPwrVal@{defaultTxPwrVal}!ble\_user\_config.h@{ble\_user\_config.h}}
+\doxysubsubsection{\texorpdfstring{defaultTxPwrVal}{defaultTxPwrVal}}
+{\footnotesize\ttfamily int8 default\+Tx\+Pwr\+Val}
+
+
+
+Definition at line 397 of file ble\+\_\+user\+\_\+config.\+h.
+
+\mbox{\Hypertarget{ble__user__config_8h_ad42668cce507f3ee9cc0fbc7bcfdeff4}\label{ble__user__config_8h_ad42668cce507f3ee9cc0fbc7bcfdeff4}} 
+\index{ble\_user\_config.h@{ble\_user\_config.h}!halAssertCback@{halAssertCback}}
+\index{halAssertCback@{halAssertCback}!ble\_user\_config.h@{ble\_user\_config.h}}
+\doxysubsubsection{\texorpdfstring{halAssertCback}{halAssertCback}}
+{\footnotesize\ttfamily assert\+Cback\+\_\+t hal\+Assert\+Cback}
+
+\mbox{\Hypertarget{ble__user__config_8h_a1841b2a05a5369f1da58e8a2055ccb39}\label{ble__user__config_8h_a1841b2a05a5369f1da58e8a2055ccb39}} 
+\index{ble\_user\_config.h@{ble\_user\_config.h}!numTxPwrVals@{numTxPwrVals}}
+\index{numTxPwrVals@{numTxPwrVals}!ble\_user\_config.h@{ble\_user\_config.h}}
+\doxysubsubsection{\texorpdfstring{numTxPwrVals}{numTxPwrVals}}
+{\footnotesize\ttfamily uint8 num\+Tx\+Pwr\+Vals}
+
+
+
+Definition at line 396 of file ble\+\_\+user\+\_\+config.\+h.
+
+\mbox{\Hypertarget{ble__user__config_8h_aa6f1989a6ddcd0392ca93ca2d3b8d5a1}\label{ble__user__config_8h_aa6f1989a6ddcd0392ca93ca2d3b8d5a1}} 
+\index{ble\_user\_config.h@{ble\_user\_config.h}!PACKED\_TYPEDEF\_CONST\_STRUCT@{PACKED\_TYPEDEF\_CONST\_STRUCT}}
+\index{PACKED\_TYPEDEF\_CONST\_STRUCT@{PACKED\_TYPEDEF\_CONST\_STRUCT}!ble\_user\_config.h@{ble\_user\_config.h}}
+\doxysubsubsection{\texorpdfstring{PACKED\_TYPEDEF\_CONST\_STRUCT}{PACKED\_TYPEDEF\_CONST\_STRUCT}}
+{\footnotesize\ttfamily P\+A\+C\+K\+E\+D\+\_\+\+T\+Y\+P\+E\+D\+E\+F\+\_\+\+C\+O\+N\+S\+T\+\_\+\+S\+T\+R\+U\+CT}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{  int8   Pout}
+
+\end{DoxyCode}
+
+
+Definition at line 387 of file ble\+\_\+user\+\_\+config.\+h.
+
+\mbox{\Hypertarget{ble__user__config_8h_a8b253e34752c76f85e00e41682955b00}\label{ble__user__config_8h_a8b253e34752c76f85e00e41682955b00}} 
+\index{ble\_user\_config.h@{ble\_user\_config.h}!pfnBMAlloc@{pfnBMAlloc}}
+\index{pfnBMAlloc@{pfnBMAlloc}!ble\_user\_config.h@{ble\_user\_config.h}}
+\doxysubsubsection{\texorpdfstring{pfnBMAlloc}{pfnBMAlloc}}
+{\footnotesize\ttfamily pfn\+B\+M\+Alloc\+\_\+t pfn\+B\+M\+Alloc}
+
+
+
+Definition at line 80 of file icall\+\_\+api.\+c.
+
+\mbox{\Hypertarget{ble__user__config_8h_a60bc5555f431090573cda634d6977232}\label{ble__user__config_8h_a60bc5555f431090573cda634d6977232}} 
+\index{ble\_user\_config.h@{ble\_user\_config.h}!pfnBMFree@{pfnBMFree}}
+\index{pfnBMFree@{pfnBMFree}!ble\_user\_config.h@{ble\_user\_config.h}}
+\doxysubsubsection{\texorpdfstring{pfnBMFree}{pfnBMFree}}
+{\footnotesize\ttfamily pfn\+B\+M\+Free\+\_\+t pfn\+B\+M\+Free}
+
+
+
+Definition at line 81 of file icall\+\_\+api.\+c.
+
+\mbox{\Hypertarget{ble__user__config_8h_ac8b370e7a0f1530616f8eadbca19d009}\label{ble__user__config_8h_ac8b370e7a0f1530616f8eadbca19d009}} 
+\index{ble\_user\_config.h@{ble\_user\_config.h}!rfDriverTable@{rfDriverTable}}
+\index{rfDriverTable@{rfDriverTable}!ble\_user\_config.h@{ble\_user\_config.h}}
+\doxysubsubsection{\texorpdfstring{rfDriverTable}{rfDriverTable}}
+{\footnotesize\ttfamily \mbox{\hyperlink{ble__user__config_8h_a63bcf03c90e3517badf6db1f80b5b938}{rf\+Drv\+Tbl\+Ptr\+\_\+t}} rf\+Driver\+Table\mbox{[}$\,$\mbox{]}}
+
+
+
+Definition at line 460 of file ble\+\_\+user\+\_\+config.\+c.
+
+\mbox{\Hypertarget{ble__user__config_8h_adce09b8c78eb98b551081af2cb016387}\label{ble__user__config_8h_adce09b8c78eb98b551081af2cb016387}} 
+\index{ble\_user\_config.h@{ble\_user\_config.h}!rfRegTbl@{rfRegTbl}}
+\index{rfRegTbl@{rfRegTbl}!ble\_user\_config.h@{ble\_user\_config.h}}
+\doxysubsubsection{\texorpdfstring{rfRegTbl}{rfRegTbl}}
+{\footnotesize\ttfamily reg\+Override\+\_\+t rf\+Reg\+Tbl\mbox{[}$\,$\mbox{]}}
+
+\mbox{\Hypertarget{ble__user__config_8h_af109cebce17851927103ef7b1a6db8a6}\label{ble__user__config_8h_af109cebce17851927103ef7b1a6db8a6}} 
+\index{ble\_user\_config.h@{ble\_user\_config.h}!trngDriverTable@{trngDriverTable}}
+\index{trngDriverTable@{trngDriverTable}!ble\_user\_config.h@{ble\_user\_config.h}}
+\doxysubsubsection{\texorpdfstring{trngDriverTable}{trngDriverTable}}
+{\footnotesize\ttfamily \mbox{\hyperlink{ble__user__config_8h_ac772574570d8f2839b1558c11e6356fd}{trng\+Drv\+Tbl\+Ptr\+\_\+t}} trng\+Driver\+Table\mbox{[}$\,$\mbox{]}}
+
+
+
+Definition at line 510 of file ble\+\_\+user\+\_\+config.\+c.
+
+\mbox{\Hypertarget{ble__user__config_8h_aeb58f393be403e35f625676507df5e23}\label{ble__user__config_8h_aeb58f393be403e35f625676507df5e23}} 
+\index{ble\_user\_config.h@{ble\_user\_config.h}!txPwrTbl@{txPwrTbl}}
+\index{txPwrTbl@{txPwrTbl}!ble\_user\_config.h@{ble\_user\_config.h}}
+\doxysubsubsection{\texorpdfstring{txPwrTbl}{txPwrTbl}}
+{\footnotesize\ttfamily \mbox{\hyperlink{ble__user__config_8h_a4250ba649455e78bffa7da10b31913fe}{tx\+Pwr\+Tbl\+\_\+t}} tx\+Pwr\+Tbl}
+
+
+
+Definition at line 454 of file ble\+\_\+user\+\_\+config.\+c.
+
+\mbox{\Hypertarget{ble__user__config_8h_a4250ba649455e78bffa7da10b31913fe}\label{ble__user__config_8h_a4250ba649455e78bffa7da10b31913fe}} 
+\index{ble\_user\_config.h@{ble\_user\_config.h}!txPwrTbl\_t@{txPwrTbl\_t}}
+\index{txPwrTbl\_t@{txPwrTbl\_t}!ble\_user\_config.h@{ble\_user\_config.h}}
+\doxysubsubsection{\texorpdfstring{txPwrTbl\_t}{txPwrTbl\_t}}
+{\footnotesize\ttfamily tx\+Pwr\+Tbl\+\_\+t}
+
+
+
+Definition at line 398 of file ble\+\_\+user\+\_\+config.\+h.
+
+\mbox{\Hypertarget{ble__user__config_8h_a88a6d55428e0d0fc37e0b3f51a339b06}\label{ble__user__config_8h_a88a6d55428e0d0fc37e0b3f51a339b06}} 
+\index{ble\_user\_config.h@{ble\_user\_config.h}!txPwrVal@{txPwrVal}}
+\index{txPwrVal@{txPwrVal}!ble\_user\_config.h@{ble\_user\_config.h}}
+\doxysubsubsection{\texorpdfstring{txPwrVal}{txPwrVal}}
+{\footnotesize\ttfamily uint16 tx\+Pwr\+Val}
+
+
+
+Definition at line 390 of file ble\+\_\+user\+\_\+config.\+h.
+
+\mbox{\Hypertarget{ble__user__config_8h_af58c560da1f7c4de0cb1bf709ef93b5e}\label{ble__user__config_8h_af58c560da1f7c4de0cb1bf709ef93b5e}} 
+\index{ble\_user\_config.h@{ble\_user\_config.h}!txPwrVal\_t@{txPwrVal\_t}}
+\index{txPwrVal\_t@{txPwrVal\_t}!ble\_user\_config.h@{ble\_user\_config.h}}
+\doxysubsubsection{\texorpdfstring{txPwrVal\_t}{txPwrVal\_t}}
+{\footnotesize\ttfamily tx\+Pwr\+Val\+\_\+t}
+
+
+
+Definition at line 391 of file ble\+\_\+user\+\_\+config.\+h.
+

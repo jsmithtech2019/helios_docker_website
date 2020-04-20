@@ -1,0 +1,158 @@
+\hypertarget{_display_dogm1286_8c}{}\doxysection{Drivers/\+Display/\+Display\+Dogm1286.c File Reference}
+\label{_display_dogm1286_8c}\index{Drivers/Display/DisplayDogm1286.c@{Drivers/Display/DisplayDogm1286.c}}
+{\ttfamily \#include $<$ti/sysbios/\+B\+I\+O\+S.\+h$>$}\newline
+{\ttfamily \#include $<$ti/sysbios/knl/\+Task.\+h$>$}\newline
+{\ttfamily \#include $<$ti/sysbios/knl/\+Semaphore.\+h$>$}\newline
+{\ttfamily \#include $<$ti/drivers/\+P\+I\+N.\+h$>$}\newline
+{\ttfamily \#include $<$ti/drivers/\+S\+P\+I.\+h$>$}\newline
+{\ttfamily \#include $<$xdc/runtime/\+Log.\+h$>$}\newline
+{\ttfamily \#include $<$xdc/runtime/\+System.\+h$>$}\newline
+{\ttfamily \#include $<$ti/mw/display/\+Display.\+h$>$}\newline
+{\ttfamily \#include $<$ti/mw/display/\+Display\+Dogm1286.\+h$>$}\newline
+{\ttfamily \#include $<$ti/mw/lcd/\+L\+C\+D\+Dogm1286.\+h$>$}\newline
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{_display_dogm1286_8c_a7991fa7ef5771ae926db1792db5e9810}{A\+C\+C\+E\+S\+S\+\_\+\+T\+I\+M\+E\+O\+UT}}~50000
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_display_8h_a045a26811755aabf1886d982c49e54ab}{Display\+\_\+\+Handle}} \mbox{\hyperlink{_display_dogm1286_8c_a89ac56f67ab128522e1ac8b9a57d6bad}{Display\+Dogm1286\+\_\+open}} (\mbox{\hyperlink{_display_8h_a045a26811755aabf1886d982c49e54ab}{Display\+\_\+\+Handle}} h\+Display, \mbox{\hyperlink{struct_display___params}{Display\+\_\+\+Params}} $\ast$params)
+\item 
+void \mbox{\hyperlink{_display_dogm1286_8c_a06929d0b3a491c1d140ebd9c184072c9}{Display\+Dogm1286\+\_\+clear}} (\mbox{\hyperlink{_display_8h_a045a26811755aabf1886d982c49e54ab}{Display\+\_\+\+Handle}} h\+Display)
+\item 
+void \mbox{\hyperlink{_display_dogm1286_8c_a335313f32105d42ed788f2c5bd3fe0be}{Display\+Dogm1286\+\_\+clear\+Lines}} (\mbox{\hyperlink{_display_8h_a045a26811755aabf1886d982c49e54ab}{Display\+\_\+\+Handle}} h\+Display, uint8\+\_\+t line\+From, uint8\+\_\+t line\+To)
+\item 
+void \mbox{\hyperlink{_display_dogm1286_8c_ae9d8393bc3f789e359a08d11b605a824}{Display\+Dogm1286\+\_\+put5}} (\mbox{\hyperlink{_display_8h_a045a26811755aabf1886d982c49e54ab}{Display\+\_\+\+Handle}} h\+Display, uint8\+\_\+t line, uint8\+\_\+t column, uintptr\+\_\+t fmt, uintptr\+\_\+t a0, uintptr\+\_\+t a1, uintptr\+\_\+t a2, uintptr\+\_\+t a3, uintptr\+\_\+t a4)
+\item 
+void \mbox{\hyperlink{_display_dogm1286_8c_a0c3ae84d191271e70da03ab9d2e3de14}{Display\+Dogm1286\+\_\+close}} (\mbox{\hyperlink{_display_8h_a045a26811755aabf1886d982c49e54ab}{Display\+\_\+\+Handle}} h\+Display)
+\item 
+int \mbox{\hyperlink{_display_dogm1286_8c_a39ef449adc9aa5322f24bd5750311bcd}{Display\+Dogm1286\+\_\+control}} (\mbox{\hyperlink{_display_8h_a045a26811755aabf1886d982c49e54ab}{Display\+\_\+\+Handle}} handle, unsigned int cmd, void $\ast$arg)
+\item 
+unsigned int \mbox{\hyperlink{_display_dogm1286_8c_addc00cb7b3d4b1cdb3c45c92cd3304da}{Display\+Dogm1286\+\_\+get\+Type}} (void)
+\begin{DoxyCompactList}\small\item\em Returns type of transport. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const \mbox{\hyperlink{struct_display___fxn_table}{Display\+\_\+\+Fxn\+Table}} \mbox{\hyperlink{_display_dogm1286_8c_a0fe13f03cd4fc79e290221fd2b86d4cf}{Display\+Dogm1286\+\_\+fxn\+Table}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{_display_dogm1286_8c_a7991fa7ef5771ae926db1792db5e9810}\label{_display_dogm1286_8c_a7991fa7ef5771ae926db1792db5e9810}} 
+\index{DisplayDogm1286.c@{DisplayDogm1286.c}!ACCESS\_TIMEOUT@{ACCESS\_TIMEOUT}}
+\index{ACCESS\_TIMEOUT@{ACCESS\_TIMEOUT}!DisplayDogm1286.c@{DisplayDogm1286.c}}
+\doxysubsubsection{\texorpdfstring{ACCESS\_TIMEOUT}{ACCESS\_TIMEOUT}}
+{\footnotesize\ttfamily \#define A\+C\+C\+E\+S\+S\+\_\+\+T\+I\+M\+E\+O\+UT~50000}
+
+
+
+Definition at line 57 of file Display\+Dogm1286.\+c.
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{_display_dogm1286_8c_a06929d0b3a491c1d140ebd9c184072c9}\label{_display_dogm1286_8c_a06929d0b3a491c1d140ebd9c184072c9}} 
+\index{DisplayDogm1286.c@{DisplayDogm1286.c}!DisplayDogm1286\_clear@{DisplayDogm1286\_clear}}
+\index{DisplayDogm1286\_clear@{DisplayDogm1286\_clear}!DisplayDogm1286.c@{DisplayDogm1286.c}}
+\doxysubsubsection{\texorpdfstring{DisplayDogm1286\_clear()}{DisplayDogm1286\_clear()}}
+{\footnotesize\ttfamily void Display\+Dogm1286\+\_\+clear (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_display_8h_a045a26811755aabf1886d982c49e54ab}{Display\+\_\+\+Handle}}}]{h\+Display }\end{DoxyParamCaption})}
+
+
+
+Definition at line 153 of file Display\+Dogm1286.\+c.
+
+\mbox{\Hypertarget{_display_dogm1286_8c_a335313f32105d42ed788f2c5bd3fe0be}\label{_display_dogm1286_8c_a335313f32105d42ed788f2c5bd3fe0be}} 
+\index{DisplayDogm1286.c@{DisplayDogm1286.c}!DisplayDogm1286\_clearLines@{DisplayDogm1286\_clearLines}}
+\index{DisplayDogm1286\_clearLines@{DisplayDogm1286\_clearLines}!DisplayDogm1286.c@{DisplayDogm1286.c}}
+\doxysubsubsection{\texorpdfstring{DisplayDogm1286\_clearLines()}{DisplayDogm1286\_clearLines()}}
+{\footnotesize\ttfamily void Display\+Dogm1286\+\_\+clear\+Lines (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_display_8h_a045a26811755aabf1886d982c49e54ab}{Display\+\_\+\+Handle}}}]{h\+Display,  }\item[{uint8\+\_\+t}]{line\+From,  }\item[{uint8\+\_\+t}]{line\+To }\end{DoxyParamCaption})}
+
+
+
+Definition at line 176 of file Display\+Dogm1286.\+c.
+
+\mbox{\Hypertarget{_display_dogm1286_8c_a0c3ae84d191271e70da03ab9d2e3de14}\label{_display_dogm1286_8c_a0c3ae84d191271e70da03ab9d2e3de14}} 
+\index{DisplayDogm1286.c@{DisplayDogm1286.c}!DisplayDogm1286\_close@{DisplayDogm1286\_close}}
+\index{DisplayDogm1286\_close@{DisplayDogm1286\_close}!DisplayDogm1286.c@{DisplayDogm1286.c}}
+\doxysubsubsection{\texorpdfstring{DisplayDogm1286\_close()}{DisplayDogm1286\_close()}}
+{\footnotesize\ttfamily void Display\+Dogm1286\+\_\+close (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_display_8h_a045a26811755aabf1886d982c49e54ab}{Display\+\_\+\+Handle}}}]{h\+Display }\end{DoxyParamCaption})}
+
+
+
+Definition at line 263 of file Display\+Dogm1286.\+c.
+
+\mbox{\Hypertarget{_display_dogm1286_8c_a39ef449adc9aa5322f24bd5750311bcd}\label{_display_dogm1286_8c_a39ef449adc9aa5322f24bd5750311bcd}} 
+\index{DisplayDogm1286.c@{DisplayDogm1286.c}!DisplayDogm1286\_control@{DisplayDogm1286\_control}}
+\index{DisplayDogm1286\_control@{DisplayDogm1286\_control}!DisplayDogm1286.c@{DisplayDogm1286.c}}
+\doxysubsubsection{\texorpdfstring{DisplayDogm1286\_control()}{DisplayDogm1286\_control()}}
+{\footnotesize\ttfamily int Display\+Dogm1286\+\_\+control (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_display_8h_a045a26811755aabf1886d982c49e54ab}{Display\+\_\+\+Handle}}}]{handle,  }\item[{unsigned int}]{cmd,  }\item[{void $\ast$}]{arg }\end{DoxyParamCaption})}
+
+
+
+Definition at line 292 of file Display\+Dogm1286.\+c.
+
+\mbox{\Hypertarget{_display_dogm1286_8c_addc00cb7b3d4b1cdb3c45c92cd3304da}\label{_display_dogm1286_8c_addc00cb7b3d4b1cdb3c45c92cd3304da}} 
+\index{DisplayDogm1286.c@{DisplayDogm1286.c}!DisplayDogm1286\_getType@{DisplayDogm1286\_getType}}
+\index{DisplayDogm1286\_getType@{DisplayDogm1286\_getType}!DisplayDogm1286.c@{DisplayDogm1286.c}}
+\doxysubsubsection{\texorpdfstring{DisplayDogm1286\_getType()}{DisplayDogm1286\_getType()}}
+{\footnotesize\ttfamily Display\+Dogm1286\+\_\+get\+Type (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Returns type of transport. 
+
+\begin{DoxyReturn}{Returns}
+Display type define L\+CD 
+\end{DoxyReturn}
+
+
+Definition at line 304 of file Display\+Dogm1286.\+c.
+
+\mbox{\Hypertarget{_display_dogm1286_8c_a89ac56f67ab128522e1ac8b9a57d6bad}\label{_display_dogm1286_8c_a89ac56f67ab128522e1ac8b9a57d6bad}} 
+\index{DisplayDogm1286.c@{DisplayDogm1286.c}!DisplayDogm1286\_open@{DisplayDogm1286\_open}}
+\index{DisplayDogm1286\_open@{DisplayDogm1286\_open}!DisplayDogm1286.c@{DisplayDogm1286.c}}
+\doxysubsubsection{\texorpdfstring{DisplayDogm1286\_open()}{DisplayDogm1286\_open()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_display_8h_a045a26811755aabf1886d982c49e54ab}{Display\+\_\+\+Handle}} Display\+Dogm1286\+\_\+open (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_display_8h_a045a26811755aabf1886d982c49e54ab}{Display\+\_\+\+Handle}}}]{h\+Display,  }\item[{\mbox{\hyperlink{struct_display___params}{Display\+\_\+\+Params}} $\ast$}]{params }\end{DoxyParamCaption})}
+
+
+
+Definition at line 98 of file Display\+Dogm1286.\+c.
+
+\mbox{\Hypertarget{_display_dogm1286_8c_ae9d8393bc3f789e359a08d11b605a824}\label{_display_dogm1286_8c_ae9d8393bc3f789e359a08d11b605a824}} 
+\index{DisplayDogm1286.c@{DisplayDogm1286.c}!DisplayDogm1286\_put5@{DisplayDogm1286\_put5}}
+\index{DisplayDogm1286\_put5@{DisplayDogm1286\_put5}!DisplayDogm1286.c@{DisplayDogm1286.c}}
+\doxysubsubsection{\texorpdfstring{DisplayDogm1286\_put5()}{DisplayDogm1286\_put5()}}
+{\footnotesize\ttfamily void Display\+Dogm1286\+\_\+put5 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_display_8h_a045a26811755aabf1886d982c49e54ab}{Display\+\_\+\+Handle}}}]{h\+Display,  }\item[{uint8\+\_\+t}]{line,  }\item[{uint8\+\_\+t}]{column,  }\item[{uintptr\+\_\+t}]{fmt,  }\item[{uintptr\+\_\+t}]{a0,  }\item[{uintptr\+\_\+t}]{a1,  }\item[{uintptr\+\_\+t}]{a2,  }\item[{uintptr\+\_\+t}]{a3,  }\item[{uintptr\+\_\+t}]{a4 }\end{DoxyParamCaption})}
+
+
+
+Definition at line 211 of file Display\+Dogm1286.\+c.
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{_display_dogm1286_8c_a0fe13f03cd4fc79e290221fd2b86d4cf}\label{_display_dogm1286_8c_a0fe13f03cd4fc79e290221fd2b86d4cf}} 
+\index{DisplayDogm1286.c@{DisplayDogm1286.c}!DisplayDogm1286\_fxnTable@{DisplayDogm1286\_fxnTable}}
+\index{DisplayDogm1286\_fxnTable@{DisplayDogm1286\_fxnTable}!DisplayDogm1286.c@{DisplayDogm1286.c}}
+\doxysubsubsection{\texorpdfstring{DisplayDogm1286\_fxnTable}{DisplayDogm1286\_fxnTable}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{struct_display___fxn_table}{Display\+\_\+\+Fxn\+Table}} Display\+Dogm1286\+\_\+fxn\+Table}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{= \{}
+\DoxyCodeLine{    \mbox{\hyperlink{_display_dogm1286_8c_a89ac56f67ab128522e1ac8b9a57d6bad}{DisplayDogm1286\_open}},}
+\DoxyCodeLine{    \mbox{\hyperlink{_display_dogm1286_8c_a06929d0b3a491c1d140ebd9c184072c9}{DisplayDogm1286\_clear}},}
+\DoxyCodeLine{    \mbox{\hyperlink{_display_dogm1286_8c_a335313f32105d42ed788f2c5bd3fe0be}{DisplayDogm1286\_clearLines}},}
+\DoxyCodeLine{    \mbox{\hyperlink{_display_dogm1286_8c_ae9d8393bc3f789e359a08d11b605a824}{DisplayDogm1286\_put5}},}
+\DoxyCodeLine{    \mbox{\hyperlink{_display_dogm1286_8c_a0c3ae84d191271e70da03ab9d2e3de14}{DisplayDogm1286\_close}},}
+\DoxyCodeLine{    \mbox{\hyperlink{_display_dogm1286_8c_a39ef449adc9aa5322f24bd5750311bcd}{DisplayDogm1286\_control}},}
+\DoxyCodeLine{    \mbox{\hyperlink{_display_dogm1286_8c_addc00cb7b3d4b1cdb3c45c92cd3304da}{DisplayDogm1286\_getType}},}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+Definition at line 69 of file Display\+Dogm1286.\+c.
+

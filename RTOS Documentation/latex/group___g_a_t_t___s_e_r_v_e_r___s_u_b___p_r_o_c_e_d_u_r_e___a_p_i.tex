@@ -1,0 +1,94 @@
+\hypertarget{group___g_a_t_t___s_e_r_v_e_r___s_u_b___p_r_o_c_e_d_u_r_e___a_p_i}{}\doxysection{G\+A\+TT Server Sub-\/\+Procedure A\+PI Functions}
+\label{group___g_a_t_t___s_e_r_v_e_r___s_u_b___p_r_o_c_e_d_u_r_e___a_p_i}\index{GATT Server Sub-\/Procedure API Functions@{GATT Server Sub-\/Procedure API Functions}}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+b\+Status\+\_\+t \mbox{\hyperlink{group___g_a_t_t___s_e_r_v_e_r___s_u_b___p_r_o_c_e_d_u_r_e___a_p_i_gadaadba59a7d29ede06abc3b30bec89ad}{G\+A\+T\+T\+\_\+\+Indication}} (uint16 conn\+Handle, att\+Handle\+Value\+Ind\+\_\+t $\ast$p\+Ind, uint8 authenticated, uint8 task\+Id)
+\begin{DoxyCompactList}\small\item\em This sub-\/procedure is used when a server is configured to indicate a characteristic value to a client and expects an attribute protocol layer acknowledgement that the indication was successfully received. \end{DoxyCompactList}\item 
+b\+Status\+\_\+t \mbox{\hyperlink{group___g_a_t_t___s_e_r_v_e_r___s_u_b___p_r_o_c_e_d_u_r_e___a_p_i_gac61599736be6b39a5b18d3ef6eb7a45a}{G\+A\+T\+T\+\_\+\+Notification}} (uint16 conn\+Handle, att\+Handle\+Value\+Noti\+\_\+t $\ast$p\+Noti, uint8 authenticated)
+\begin{DoxyCompactList}\small\item\em This sub-\/procedure is used when a server is configured to notify a characteristic value to a client without expecting any attribute protocol layer acknowledgement that the notification was successfully received. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{group___g_a_t_t___s_e_r_v_e_r___s_u_b___p_r_o_c_e_d_u_r_e___a_p_i_gadaadba59a7d29ede06abc3b30bec89ad}\label{group___g_a_t_t___s_e_r_v_e_r___s_u_b___p_r_o_c_e_d_u_r_e___a_p_i_gadaadba59a7d29ede06abc3b30bec89ad}} 
+\index{GATT Server Sub-\/Procedure API Functions@{GATT Server Sub-\/Procedure API Functions}!GATT\_Indication@{GATT\_Indication}}
+\index{GATT\_Indication@{GATT\_Indication}!GATT Server Sub-\/Procedure API Functions@{GATT Server Sub-\/Procedure API Functions}}
+\doxysubsubsection{\texorpdfstring{GATT\_Indication()}{GATT\_Indication()}}
+{\footnotesize\ttfamily b\+Status\+\_\+t G\+A\+T\+T\+\_\+\+Indication (\begin{DoxyParamCaption}\item[{uint16}]{conn\+Handle,  }\item[{att\+Handle\+Value\+Ind\+\_\+t $\ast$}]{p\+Ind,  }\item[{uint8}]{authenticated,  }\item[{uint8}]{task\+Id }\end{DoxyParamCaption})}
+
+
+
+This sub-\/procedure is used when a server is configured to indicate a characteristic value to a client and expects an attribute protocol layer acknowledgement that the indication was successfully received. 
+
+The A\+TT Handle Value Indication is used in this sub-\/procedure.
+
+If the return status from this function is S\+U\+C\+C\+E\+SS, the calling application task will receive an O\+S\+AL G\+A\+T\+T\+\_\+\+M\+S\+G\+\_\+\+E\+V\+E\+NT message. The type of the message will be A\+T\+T\+\_\+\+H\+A\+N\+D\+L\+E\+\_\+\+V\+A\+L\+U\+E\+\_\+\+C\+FM.
+
+Note\+: This sub-\/procedure is complete when A\+T\+T\+\_\+\+H\+A\+N\+D\+L\+E\+\_\+\+V\+A\+L\+U\+E\+\_\+\+C\+FM (with S\+U\+C\+C\+E\+SS or ble\+Timeout status) is received by the calling application task.
+
+
+\begin{DoxyParams}{Parameters}
+{\em conn\+Handle} & -\/ connection to use \\
+\hline
+{\em p\+Ind} & -\/ pointer to indication to be sent \\
+\hline
+{\em authenticated} & -\/ whether an authenticated link is required 0x01\+: LE Legacy authenticated 0x02\+: Secure Connections authenticated \\
+\hline
+{\em task\+Id} & -\/ task to be notified of response\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+S\+U\+C\+C\+E\+SS\+: Indication was sent successfully.~\newline
+ I\+N\+V\+A\+L\+I\+D\+P\+A\+R\+A\+M\+E\+T\+ER\+: Invalid connection handle or request field.~\newline
+ M\+S\+G\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+N\+O\+T\+\_\+\+A\+V\+A\+IL\+: No H\+CI buffer is available.~\newline
+ ble\+Not\+Connected\+: Connection is down.~\newline
+ ble\+Pending\+: A confirmation is pending with this client.~\newline
+ ble\+Mem\+Alloc\+Error\+: Memory allocation error occurred.~\newline
+ ble\+Timeout\+: Previous transaction timed out.~\newline
+ 
+\end{DoxyReturn}
+
+
+Definition at line 1980 of file icall\+\_\+api.\+c.
+
+\mbox{\Hypertarget{group___g_a_t_t___s_e_r_v_e_r___s_u_b___p_r_o_c_e_d_u_r_e___a_p_i_gac61599736be6b39a5b18d3ef6eb7a45a}\label{group___g_a_t_t___s_e_r_v_e_r___s_u_b___p_r_o_c_e_d_u_r_e___a_p_i_gac61599736be6b39a5b18d3ef6eb7a45a}} 
+\index{GATT Server Sub-\/Procedure API Functions@{GATT Server Sub-\/Procedure API Functions}!GATT\_Notification@{GATT\_Notification}}
+\index{GATT\_Notification@{GATT\_Notification}!GATT Server Sub-\/Procedure API Functions@{GATT Server Sub-\/Procedure API Functions}}
+\doxysubsubsection{\texorpdfstring{GATT\_Notification()}{GATT\_Notification()}}
+{\footnotesize\ttfamily b\+Status\+\_\+t G\+A\+T\+T\+\_\+\+Notification (\begin{DoxyParamCaption}\item[{uint16}]{conn\+Handle,  }\item[{att\+Handle\+Value\+Noti\+\_\+t $\ast$}]{p\+Noti,  }\item[{uint8}]{authenticated }\end{DoxyParamCaption})}
+
+
+
+This sub-\/procedure is used when a server is configured to notify a characteristic value to a client without expecting any attribute protocol layer acknowledgement that the notification was successfully received. 
+
+The A\+TT Handle Value Notification is used in this sub-\/procedure.
+
+Note\+: A notification may be sent at any time and does not invoke a confirmation.
+
+No confirmation will be sent to the calling application task for this sub-\/procedure.
+
+
+\begin{DoxyParams}{Parameters}
+{\em conn\+Handle} & -\/ connection to use \\
+\hline
+{\em p\+Noti} & -\/ pointer to notification to be sent \\
+\hline
+{\em authenticated} & -\/ whether an authenticated link is required 0x01\+: LE Legacy authenticated 0x02\+: Secure Connections authenticated\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+S\+U\+C\+C\+E\+SS\+: Notification was sent successfully.~\newline
+ I\+N\+V\+A\+L\+I\+D\+P\+A\+R\+A\+M\+E\+T\+ER\+: Invalid connection handle or request field.~\newline
+ M\+S\+G\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+N\+O\+T\+\_\+\+A\+V\+A\+IL\+: No H\+CI buffer is available.~\newline
+ ble\+Not\+Connected\+: Connection is down.~\newline
+ ble\+Mem\+Alloc\+Error\+: Memory allocation error occurred.~\newline
+ ble\+Timeout\+: Previous transaction timed out.~\newline
+ 
+\end{DoxyReturn}
+
+
+Definition at line 1939 of file icall\+\_\+api.\+c.
+

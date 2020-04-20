@@ -1,0 +1,136 @@
+\hypertarget{structgap_link_update_event__t}{}\doxysection{gap\+Link\+Update\+Event\+\_\+t Struct Reference}
+\label{structgap_link_update_event__t}\index{gapLinkUpdateEvent\_t@{gapLinkUpdateEvent\_t}}
+
+
+{\ttfamily \#include $<$gap.\+h$>$}
+
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+osal\+\_\+event\+\_\+hdr\+\_\+t \mbox{\hyperlink{structgap_link_update_event__t_a87a22ef2ee8ba94511b425ac5caa9404}{hdr}}
+\begin{DoxyCompactList}\small\item\em G\+A\+P\+\_\+\+M\+S\+G\+\_\+\+E\+V\+E\+NT and status. \end{DoxyCompactList}\item 
+uint8 \mbox{\hyperlink{structgap_link_update_event__t_af9ddb9ad96b223a64912422825f07d54}{opcode}}
+\begin{DoxyCompactList}\small\item\em G\+A\+P\+\_\+\+L\+I\+N\+K\+\_\+\+P\+A\+R\+A\+M\+\_\+\+U\+P\+D\+A\+T\+E\+\_\+\+E\+V\+E\+NT. \end{DoxyCompactList}\item 
+uint8 \mbox{\hyperlink{structgap_link_update_event__t_ae42946d37b5ab122d4d10682a498150a}{status}}
+\begin{DoxyCompactList}\small\item\em b\+Status\+\_\+t \end{DoxyCompactList}\item 
+uint16 \mbox{\hyperlink{structgap_link_update_event__t_adf10c23b14afd03bec458030ec37eb07}{connection\+Handle}}
+\begin{DoxyCompactList}\small\item\em Connection handle of the update. \end{DoxyCompactList}\item 
+uint16 \mbox{\hyperlink{structgap_link_update_event__t_a06f2d01fd27c220d8b8b050d069a0a5e}{conn\+Interval}}
+\begin{DoxyCompactList}\small\item\em Requested connection interval. \end{DoxyCompactList}\item 
+uint16 \mbox{\hyperlink{structgap_link_update_event__t_a12e15e768aa76a7dd9e4ebc7112101dc}{conn\+Latency}}
+\begin{DoxyCompactList}\small\item\em Requested connection latency. \end{DoxyCompactList}\item 
+uint16 \mbox{\hyperlink{structgap_link_update_event__t_a764c5d71075a82a4208d6dcf0b7148bd}{conn\+Timeout}}
+\begin{DoxyCompactList}\small\item\em Requested connection timeout. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+G\+A\+P\+\_\+\+L\+I\+N\+K\+\_\+\+P\+A\+R\+A\+M\+\_\+\+U\+P\+D\+A\+T\+E\+\_\+\+E\+V\+E\+NT message format. This message is sent to the app when the connection parameters update request is complete. 
+
+Definition at line 677 of file gap.\+h.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{structgap_link_update_event__t_adf10c23b14afd03bec458030ec37eb07}\label{structgap_link_update_event__t_adf10c23b14afd03bec458030ec37eb07}} 
+\index{gapLinkUpdateEvent\_t@{gapLinkUpdateEvent\_t}!connectionHandle@{connectionHandle}}
+\index{connectionHandle@{connectionHandle}!gapLinkUpdateEvent\_t@{gapLinkUpdateEvent\_t}}
+\doxysubsubsection{\texorpdfstring{connectionHandle}{connectionHandle}}
+{\footnotesize\ttfamily uint16 gap\+Link\+Update\+Event\+\_\+t\+::connection\+Handle}
+
+
+
+Connection handle of the update. 
+
+
+
+Definition at line 682 of file gap.\+h.
+
+\mbox{\Hypertarget{structgap_link_update_event__t_a06f2d01fd27c220d8b8b050d069a0a5e}\label{structgap_link_update_event__t_a06f2d01fd27c220d8b8b050d069a0a5e}} 
+\index{gapLinkUpdateEvent\_t@{gapLinkUpdateEvent\_t}!connInterval@{connInterval}}
+\index{connInterval@{connInterval}!gapLinkUpdateEvent\_t@{gapLinkUpdateEvent\_t}}
+\doxysubsubsection{\texorpdfstring{connInterval}{connInterval}}
+{\footnotesize\ttfamily uint16 gap\+Link\+Update\+Event\+\_\+t\+::conn\+Interval}
+
+
+
+Requested connection interval. 
+
+
+
+Definition at line 683 of file gap.\+h.
+
+\mbox{\Hypertarget{structgap_link_update_event__t_a12e15e768aa76a7dd9e4ebc7112101dc}\label{structgap_link_update_event__t_a12e15e768aa76a7dd9e4ebc7112101dc}} 
+\index{gapLinkUpdateEvent\_t@{gapLinkUpdateEvent\_t}!connLatency@{connLatency}}
+\index{connLatency@{connLatency}!gapLinkUpdateEvent\_t@{gapLinkUpdateEvent\_t}}
+\doxysubsubsection{\texorpdfstring{connLatency}{connLatency}}
+{\footnotesize\ttfamily uint16 gap\+Link\+Update\+Event\+\_\+t\+::conn\+Latency}
+
+
+
+Requested connection latency. 
+
+
+
+Definition at line 684 of file gap.\+h.
+
+\mbox{\Hypertarget{structgap_link_update_event__t_a764c5d71075a82a4208d6dcf0b7148bd}\label{structgap_link_update_event__t_a764c5d71075a82a4208d6dcf0b7148bd}} 
+\index{gapLinkUpdateEvent\_t@{gapLinkUpdateEvent\_t}!connTimeout@{connTimeout}}
+\index{connTimeout@{connTimeout}!gapLinkUpdateEvent\_t@{gapLinkUpdateEvent\_t}}
+\doxysubsubsection{\texorpdfstring{connTimeout}{connTimeout}}
+{\footnotesize\ttfamily uint16 gap\+Link\+Update\+Event\+\_\+t\+::conn\+Timeout}
+
+
+
+Requested connection timeout. 
+
+
+
+Definition at line 685 of file gap.\+h.
+
+\mbox{\Hypertarget{structgap_link_update_event__t_a87a22ef2ee8ba94511b425ac5caa9404}\label{structgap_link_update_event__t_a87a22ef2ee8ba94511b425ac5caa9404}} 
+\index{gapLinkUpdateEvent\_t@{gapLinkUpdateEvent\_t}!hdr@{hdr}}
+\index{hdr@{hdr}!gapLinkUpdateEvent\_t@{gapLinkUpdateEvent\_t}}
+\doxysubsubsection{\texorpdfstring{hdr}{hdr}}
+{\footnotesize\ttfamily osal\+\_\+event\+\_\+hdr\+\_\+t gap\+Link\+Update\+Event\+\_\+t\+::hdr}
+
+
+
+G\+A\+P\+\_\+\+M\+S\+G\+\_\+\+E\+V\+E\+NT and status. 
+
+
+
+Definition at line 679 of file gap.\+h.
+
+\mbox{\Hypertarget{structgap_link_update_event__t_af9ddb9ad96b223a64912422825f07d54}\label{structgap_link_update_event__t_af9ddb9ad96b223a64912422825f07d54}} 
+\index{gapLinkUpdateEvent\_t@{gapLinkUpdateEvent\_t}!opcode@{opcode}}
+\index{opcode@{opcode}!gapLinkUpdateEvent\_t@{gapLinkUpdateEvent\_t}}
+\doxysubsubsection{\texorpdfstring{opcode}{opcode}}
+{\footnotesize\ttfamily uint8 gap\+Link\+Update\+Event\+\_\+t\+::opcode}
+
+
+
+G\+A\+P\+\_\+\+L\+I\+N\+K\+\_\+\+P\+A\+R\+A\+M\+\_\+\+U\+P\+D\+A\+T\+E\+\_\+\+E\+V\+E\+NT. 
+
+
+
+Definition at line 680 of file gap.\+h.
+
+\mbox{\Hypertarget{structgap_link_update_event__t_ae42946d37b5ab122d4d10682a498150a}\label{structgap_link_update_event__t_ae42946d37b5ab122d4d10682a498150a}} 
+\index{gapLinkUpdateEvent\_t@{gapLinkUpdateEvent\_t}!status@{status}}
+\index{status@{status}!gapLinkUpdateEvent\_t@{gapLinkUpdateEvent\_t}}
+\doxysubsubsection{\texorpdfstring{status}{status}}
+{\footnotesize\ttfamily uint8 gap\+Link\+Update\+Event\+\_\+t\+::status}
+
+
+
+b\+Status\+\_\+t 
+
+
+
+Definition at line 681 of file gap.\+h.
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Include/\mbox{\hyperlink{gap_8h}{gap.\+h}}\end{DoxyCompactItemize}

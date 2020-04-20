@@ -1,0 +1,526 @@
+\hypertarget{icall_8c}{}\doxysection{I\+Call/icall.c File Reference}
+\label{icall_8c}\index{ICall/icall.c@{ICall/icall.c}}
+{\ttfamily \#include $<$ti/sysbios/hal/\+Hwi.\+h$>$}\newline
+{\ttfamily \#include $<$ti/sysbios/gates/\+Gate\+Hwi.\+h$>$}\newline
+{\ttfamily \#include $<$ti/sysbios/knl/\+Clock.\+h$>$}\newline
+{\ttfamily \#include $<$ti/sysbios/knl/\+Task.\+h$>$}\newline
+{\ttfamily \#include $<$ti/sysbios/knl/\+Semaphore.\+h$>$}\newline
+{\ttfamily \#include $<$ti/sysbios/knl/\+Event.\+h$>$}\newline
+{\ttfamily \#include $<$ti/sysbios/\+B\+I\+O\+S.\+h$>$}\newline
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}icall.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}icall\+\_\+platform.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$icall\+\_\+addrs.\+h$>$}\newline
+{\ttfamily \#include $<$heapmgr.\+h$>$}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+union \mbox{\hyperlink{union__icall__cs__state__union__t}{\+\_\+icall\+\_\+cs\+\_\+state\+\_\+union\+\_\+t}}
+\item 
+struct \mbox{\hyperlink{struct__icall__cs__state__union__t_1_1__icall__cs__state__aggr__t}{\+\_\+icall\+\_\+cs\+\_\+state\+\_\+union\+\_\+t\+::\+\_\+icall\+\_\+cs\+\_\+state\+\_\+aggr\+\_\+t}}
+\item 
+struct \mbox{\hyperlink{struct__icall__task__entry__t}{\+\_\+icall\+\_\+task\+\_\+entry\+\_\+t}}
+\item 
+struct \mbox{\hyperlink{struct__icall__entity__entry__t}{\+\_\+icall\+\_\+entity\+\_\+entry\+\_\+t}}
+\item 
+struct \mbox{\hyperlink{struct__icall__schedule__t}{\+\_\+icall\+\_\+schedule\+\_\+t}}
+\item 
+struct {\bfseries \+\_\+icall\+\_\+primsvcfunc\+\_\+map\+\_\+entry\+\_\+t}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{icall_8c_a1a23bbdac33a082d1e913a18d0899c0d}{I\+C\+A\+L\+L\+\_\+\+M\+A\+X\+\_\+\+N\+U\+M\+\_\+\+E\+N\+T\+I\+T\+I\+ES}}~6
+\item 
+\#define \mbox{\hyperlink{icall_8c_af6fdc9a6149df14aa270ea8775c76032}{I\+C\+A\+L\+L\+\_\+\+M\+A\+X\+\_\+\+N\+U\+M\+\_\+\+T\+A\+S\+KS}}~2
+\item 
+\#define \mbox{\hyperlink{icall_8c_afd86929fb54bb932c3e0e8bdb853163e}{I\+C\+A\+L\+L\+\_\+\+S\+E\+R\+V\+I\+C\+E\+\_\+\+C\+L\+A\+S\+S\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+E\+N\+T\+RY}}~0x0000
+\item 
+\#define \mbox{\hyperlink{icall_8c_ae0c01a450c32f89951e6adba35962623}{I\+C\+A\+L\+L\+\_\+\+S\+E\+R\+V\+I\+C\+E\+\_\+\+C\+L\+A\+S\+S\+\_\+\+A\+P\+P\+L\+I\+C\+A\+T\+I\+ON}}~\mbox{\hyperlink{icall_8h_ae991842221ce364e4b1b0d4fbd9a7eb6}{I\+C\+A\+L\+L\+\_\+\+S\+E\+R\+V\+I\+C\+E\+\_\+\+C\+L\+A\+S\+S\+\_\+\+M\+A\+SK}}
+\item 
+\#define \mbox{\hyperlink{icall_8c_a2fd29c1a4f143d0eda9375bf2af64079}{I\+C\+A\+L\+L\+\_\+\+P\+R\+I\+M\+I\+T\+I\+V\+E\+\_\+\+E\+N\+T\+I\+T\+Y\+\_\+\+ID}}~0
+\item 
+\#define \mbox{\hyperlink{icall_8c_a6e6536acf920e142994cef9881f7c3af}{I\+C\+A\+L\+L\+\_\+\+M\+S\+G\+\_\+\+N\+E\+XT}}(\+\_\+p)~(((\mbox{\hyperlink{icall_8h_abf187056ae88cf3435d76f43746f87ac}{I\+Call\+\_\+\+Msg\+Hdr}} $\ast$)(\+\_\+p) -\/ 1)-\/$>$next)
+\item 
+\#define \mbox{\hyperlink{icall_8c_af2c42f9b91834cb6ded677d20698ac41}{I\+C\+A\+L\+L\+\_\+\+M\+S\+G\+\_\+\+D\+E\+S\+T\+\_\+\+ID}}(\+\_\+p)~(((\mbox{\hyperlink{icall_8h_abf187056ae88cf3435d76f43746f87ac}{I\+Call\+\_\+\+Msg\+Hdr}} $\ast$)(\+\_\+p) -\/ 1)-\/$>$dest\+\_\+id)
+\item 
+\#define \mbox{\hyperlink{icall_8c_aeb56078cc09819334f38c559b30995fb}{I\+C\+A\+L\+L\+\_\+\+S\+Y\+N\+C\+\_\+\+H\+A\+N\+D\+L\+E\+\_\+\+C\+R\+E\+A\+TE}}()~(Semaphore\+\_\+create(0, N\+U\+LL, N\+U\+LL))
+\item 
+\#define \mbox{\hyperlink{icall_8c_aca8fcfd4a4529f1a8eedd67c9b8c7ec9}{I\+C\+A\+L\+L\+\_\+\+S\+Y\+N\+C\+\_\+\+H\+A\+N\+D\+L\+E\+\_\+\+P\+O\+ST}}(x)~(Semaphore\+\_\+post(x))
+\item 
+\#define \mbox{\hyperlink{icall_8c_a6e9ef3e15c703e36b400f139ed18d0ec}{I\+C\+A\+L\+L\+\_\+\+S\+Y\+N\+C\+\_\+\+H\+A\+N\+D\+L\+E\+\_\+\+P\+E\+ND}}(x,  t)~(Semaphore\+\_\+pend(x, t))
+\item 
+\#define \mbox{\hyperlink{icall_8c_a5ae5556e2ab95f69589a096b86153edf}{I\+C\+A\+L\+L\+\_\+\+R\+E\+M\+O\+T\+E\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+C\+O\+U\+NT}}~(sizeof(icall\+\_\+thread\+Entries)/sizeof(icall\+\_\+thread\+Entries\mbox{[}0\mbox{]}))
+\item 
+\#define \mbox{\hyperlink{icall_8c_a70dcc7f3d042133be4b2636090140a6e}{I\+Call\+\_\+get\+Init\+Params}}(\+\_\+i)~N\+U\+LL
+\item 
+\#define \mbox{\hyperlink{icall_8c_a3ff0f61461b1ca3868618dcf45285cf7}{H\+E\+A\+P\+M\+G\+R\+\_\+\+I\+N\+IT}}~I\+Call\+\_\+heap\+Init
+\item 
+\#define \mbox{\hyperlink{icall_8c_abffd4d9357faedc1b2a3b1381632bd59}{H\+E\+A\+P\+M\+G\+R\+\_\+\+M\+A\+L\+L\+OC}}~\mbox{\hyperlink{icall_8c_a84165c101c9905d029c5e6889377536f}{I\+Call\+\_\+heap\+Malloc}}
+\item 
+\#define \mbox{\hyperlink{icall_8c_accf8271f89d3edbdc849f4ee549f2c17}{H\+E\+A\+P\+M\+G\+R\+\_\+\+F\+R\+EE}}~\mbox{\hyperlink{icall_8c_a4d04623209a587b9c722c53570c62384}{I\+Call\+\_\+heap\+Free}}
+\item 
+\#define \mbox{\hyperlink{icall_8c_a847c65f677d3413875c8f281a358f7a2}{H\+E\+A\+P\+M\+G\+R\+\_\+\+R\+E\+A\+L\+L\+OC}}~\mbox{\hyperlink{icall_8c_a299b853408cd9f8c36c9498ad81eeb98}{I\+Call\+\_\+heap\+Realloc}}
+\item 
+\#define \mbox{\hyperlink{icall_8c_a50f3147f2e5f1b11a3fcff7811105a45}{H\+E\+A\+P\+M\+G\+R\+\_\+\+G\+E\+T\+M\+E\+T\+R\+I\+CS}}~I\+Call\+\_\+heap\+Get\+Metrics
+\item 
+\#define \mbox{\hyperlink{icall_8c_a3a4e5bb55e43e9b7fcfd593f330a1548}{H\+E\+A\+P\+M\+G\+R\+\_\+\+L\+O\+CK}}()~do \{ I\+Call\+\_\+heap\+C\+S\+State = \mbox{\hyperlink{icall__platform_8h_a52e2fdd0d0de1818edb14085eac3e302}{I\+Call\+\_\+enter\+C\+S\+Impl}}(); \} while (0)
+\item 
+\#define \mbox{\hyperlink{icall_8c_a7fbc189b7d07bdffae5a4c7f28150428}{H\+E\+A\+P\+M\+G\+R\+\_\+\+U\+N\+L\+O\+CK}}()~do \{ \mbox{\hyperlink{icall__platform_8h_a74cc973fcd59668a4927f06a586585b8}{I\+Call\+\_\+leave\+C\+S\+Impl}}(I\+Call\+\_\+heap\+C\+S\+State); \} while (0)
+\item 
+\#define \mbox{\hyperlink{icall_8c_a8f06c3762acfd7a6e517630e7e35b421}{H\+E\+A\+P\+M\+G\+R\+\_\+\+I\+M\+P\+L\+\_\+\+I\+N\+IT}}()
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef union \mbox{\hyperlink{union__icall__cs__state__union__t}{\+\_\+icall\+\_\+cs\+\_\+state\+\_\+union\+\_\+t}} \mbox{\hyperlink{icall_8c_a7f99dbb6269e984838a79740c196ceb2}{I\+Call\+\_\+\+C\+S\+State\+Union}}
+\item 
+typedef \mbox{\hyperlink{icall_8h_aa1e75d643f27bb9a660eaa51171b4ebb}{I\+Call\+\_\+\+Errno}}($\ast$ \mbox{\hyperlink{icall_8c_a74c8488f1553ed19f153ea540cd31d67}{I\+Call\+\_\+\+Prim\+Svc\+Func}}) (\mbox{\hyperlink{icall_8h_a1fefe5653d98fdef5c119ec70ae661b1}{I\+Call\+\_\+\+Func\+Args\+Hdr}} $\ast$)
+\item 
+typedef void $\ast$ \mbox{\hyperlink{icall_8c_aa7cb90d3988dedd7e535556494a9d5b8}{I\+Call\+\_\+\+Msg\+Queue}}
+\item 
+typedef struct \mbox{\hyperlink{struct__icall__task__entry__t}{\+\_\+icall\+\_\+task\+\_\+entry\+\_\+t}} \mbox{\hyperlink{icall_8c_aa1f106abb21a7b24aa6f5865eb7f3256}{I\+Call\+\_\+\+Task\+Entry}}
+\item 
+typedef struct \mbox{\hyperlink{struct__icall__entity__entry__t}{\+\_\+icall\+\_\+entity\+\_\+entry\+\_\+t}} \mbox{\hyperlink{icall_8c_a7d15e7c3898fa1f6d39527bda3468a67}{I\+Call\+\_\+entity\+Entry}}
+\item 
+typedef struct \mbox{\hyperlink{struct__icall__schedule__t}{\+\_\+icall\+\_\+schedule\+\_\+t}} \mbox{\hyperlink{icall_8c_a01aab3eed008e76af922eee0e763e738}{I\+Call\+\_\+\+Schedule\+Entry}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{icall_8h_a6455f0016e4d5714c6756aa76b608368}{I\+Call\+\_\+\+C\+S\+State}} \mbox{\hyperlink{icall_8c_a52e2fdd0d0de1818edb14085eac3e302}{I\+Call\+\_\+enter\+C\+S\+Impl}} (void)
+\item 
+void \mbox{\hyperlink{icall_8c_a74cc973fcd59668a4927f06a586585b8}{I\+Call\+\_\+leave\+C\+S\+Impl}} (\mbox{\hyperlink{icall_8h_a6455f0016e4d5714c6756aa76b608368}{I\+Call\+\_\+\+C\+S\+State}} key)
+\item 
+void $\ast$ \mbox{\hyperlink{icall_8c_a84165c101c9905d029c5e6889377536f}{I\+Call\+\_\+heap\+Malloc}} (uint16\+\_\+t size)
+\item 
+void $\ast$ \mbox{\hyperlink{icall_8c_a299b853408cd9f8c36c9498ad81eeb98}{I\+Call\+\_\+heap\+Realloc}} (void $\ast$blk, uint16\+\_\+t size)
+\item 
+void \mbox{\hyperlink{icall_8c_a4d04623209a587b9c722c53570c62384}{I\+Call\+\_\+heap\+Free}} (void $\ast$blk)
+\item 
+\mbox{\hyperlink{icall_8h_ae7cf4733f97b1b4f7585df652a2a7022}{I\+Call\+\_\+\+Entity\+ID}} \mbox{\hyperlink{icall_8c_a01838620d147e77b714d75a60dd1f245}{I\+Call\+\_\+search\+Service\+Entity}} (\mbox{\hyperlink{icall_8h_a5e21e3e8618ecbd15ba23d22c1e3c7c1}{I\+Call\+\_\+\+Service\+Enum}} service)
+\item 
+void \mbox{\hyperlink{icall_8c_a7ff723a346156b189a6700cb2cc297c8}{I\+Call\+\_\+init}} (void)
+\item 
+void \mbox{\hyperlink{icall_8c_a9c6d55cb8b177a15796006d20f8634d6}{I\+Call\+\_\+create\+Remote\+Tasks}} (void)
+\item 
+void $\ast$ \mbox{\hyperlink{icall_8c_a2065d41680f06340d2744aea9e4cafb4}{I\+Call\+\_\+malloc\+Impl}} (uint\+\_\+fast16\+\_\+t size)
+\item 
+void \mbox{\hyperlink{icall_8c_a8b53dcb2261b31d84adf216d031fe62f}{I\+Call\+\_\+free\+Impl}} (void $\ast$ptr)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{icall_8h_a95a765aeda5b30442433b13806fc2500}{I\+Call\+\_\+\+Enter\+CS}} \mbox{\hyperlink{icall_8c_a46e4a86f40d4605b3113763da25d738f}{I\+Call\+\_\+enter\+Critical\+Section}} = \mbox{\hyperlink{icall__platform_8h_a52e2fdd0d0de1818edb14085eac3e302}{I\+Call\+\_\+enter\+C\+S\+Impl}}
+\item 
+\mbox{\hyperlink{icall_8h_a7cecaa62c192907e9dfb75ff1a80290e}{I\+Call\+\_\+\+Leave\+CS}} \mbox{\hyperlink{icall_8c_aac0bd02b286674b3e5f7533411455c26}{I\+Call\+\_\+leave\+Critical\+Section}} = \mbox{\hyperlink{icall__platform_8h_a74cc973fcd59668a4927f06a586585b8}{I\+Call\+\_\+leave\+C\+S\+Impl}}
+\item 
+\mbox{\hyperlink{icall_8h_ab0cf783ecd9da656900f52afd8b32c10}{I\+Call\+\_\+\+Dispatcher}} \mbox{\hyperlink{icall_8c_aadcd4c46339d9f9a4a9fd172834a0d3a}{I\+Call\+\_\+dispatcher}} = I\+Call\+\_\+dispatch
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{icall_8c_accf8271f89d3edbdc849f4ee549f2c17}\label{icall_8c_accf8271f89d3edbdc849f4ee549f2c17}} 
+\index{icall.c@{icall.c}!HEAPMGR\_FREE@{HEAPMGR\_FREE}}
+\index{HEAPMGR\_FREE@{HEAPMGR\_FREE}!icall.c@{icall.c}}
+\doxysubsubsection{\texorpdfstring{HEAPMGR\_FREE}{HEAPMGR\_FREE}}
+{\footnotesize\ttfamily \#define H\+E\+A\+P\+M\+G\+R\+\_\+\+F\+R\+EE~\mbox{\hyperlink{icall_8c_a4d04623209a587b9c722c53570c62384}{I\+Call\+\_\+heap\+Free}}}
+
+
+
+Definition at line 321 of file icall.\+c.
+
+\mbox{\Hypertarget{icall_8c_a50f3147f2e5f1b11a3fcff7811105a45}\label{icall_8c_a50f3147f2e5f1b11a3fcff7811105a45}} 
+\index{icall.c@{icall.c}!HEAPMGR\_GETMETRICS@{HEAPMGR\_GETMETRICS}}
+\index{HEAPMGR\_GETMETRICS@{HEAPMGR\_GETMETRICS}!icall.c@{icall.c}}
+\doxysubsubsection{\texorpdfstring{HEAPMGR\_GETMETRICS}{HEAPMGR\_GETMETRICS}}
+{\footnotesize\ttfamily \#define H\+E\+A\+P\+M\+G\+R\+\_\+\+G\+E\+T\+M\+E\+T\+R\+I\+CS~I\+Call\+\_\+heap\+Get\+Metrics}
+
+
+
+Definition at line 323 of file icall.\+c.
+
+\mbox{\Hypertarget{icall_8c_a8f06c3762acfd7a6e517630e7e35b421}\label{icall_8c_a8f06c3762acfd7a6e517630e7e35b421}} 
+\index{icall.c@{icall.c}!HEAPMGR\_IMPL\_INIT@{HEAPMGR\_IMPL\_INIT}}
+\index{HEAPMGR\_IMPL\_INIT@{HEAPMGR\_IMPL\_INIT}!icall.c@{icall.c}}
+\doxysubsubsection{\texorpdfstring{HEAPMGR\_IMPL\_INIT}{HEAPMGR\_IMPL\_INIT}}
+{\footnotesize\ttfamily \#define H\+E\+A\+P\+M\+G\+R\+\_\+\+I\+M\+P\+L\+\_\+\+I\+N\+IT(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 328 of file icall.\+c.
+
+\mbox{\Hypertarget{icall_8c_a3ff0f61461b1ca3868618dcf45285cf7}\label{icall_8c_a3ff0f61461b1ca3868618dcf45285cf7}} 
+\index{icall.c@{icall.c}!HEAPMGR\_INIT@{HEAPMGR\_INIT}}
+\index{HEAPMGR\_INIT@{HEAPMGR\_INIT}!icall.c@{icall.c}}
+\doxysubsubsection{\texorpdfstring{HEAPMGR\_INIT}{HEAPMGR\_INIT}}
+{\footnotesize\ttfamily \#define H\+E\+A\+P\+M\+G\+R\+\_\+\+I\+N\+IT~I\+Call\+\_\+heap\+Init}
+
+
+
+Definition at line 319 of file icall.\+c.
+
+\mbox{\Hypertarget{icall_8c_a3a4e5bb55e43e9b7fcfd593f330a1548}\label{icall_8c_a3a4e5bb55e43e9b7fcfd593f330a1548}} 
+\index{icall.c@{icall.c}!HEAPMGR\_LOCK@{HEAPMGR\_LOCK}}
+\index{HEAPMGR\_LOCK@{HEAPMGR\_LOCK}!icall.c@{icall.c}}
+\doxysubsubsection{\texorpdfstring{HEAPMGR\_LOCK}{HEAPMGR\_LOCK}}
+{\footnotesize\ttfamily \#define H\+E\+A\+P\+M\+G\+R\+\_\+\+L\+O\+CK(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~do \{ I\+Call\+\_\+heap\+C\+S\+State = \mbox{\hyperlink{icall__platform_8h_a52e2fdd0d0de1818edb14085eac3e302}{I\+Call\+\_\+enter\+C\+S\+Impl}}(); \} while (0)}
+
+
+
+Definition at line 324 of file icall.\+c.
+
+\mbox{\Hypertarget{icall_8c_abffd4d9357faedc1b2a3b1381632bd59}\label{icall_8c_abffd4d9357faedc1b2a3b1381632bd59}} 
+\index{icall.c@{icall.c}!HEAPMGR\_MALLOC@{HEAPMGR\_MALLOC}}
+\index{HEAPMGR\_MALLOC@{HEAPMGR\_MALLOC}!icall.c@{icall.c}}
+\doxysubsubsection{\texorpdfstring{HEAPMGR\_MALLOC}{HEAPMGR\_MALLOC}}
+{\footnotesize\ttfamily \#define H\+E\+A\+P\+M\+G\+R\+\_\+\+M\+A\+L\+L\+OC~\mbox{\hyperlink{icall_8c_a84165c101c9905d029c5e6889377536f}{I\+Call\+\_\+heap\+Malloc}}}
+
+
+
+Definition at line 320 of file icall.\+c.
+
+\mbox{\Hypertarget{icall_8c_a847c65f677d3413875c8f281a358f7a2}\label{icall_8c_a847c65f677d3413875c8f281a358f7a2}} 
+\index{icall.c@{icall.c}!HEAPMGR\_REALLOC@{HEAPMGR\_REALLOC}}
+\index{HEAPMGR\_REALLOC@{HEAPMGR\_REALLOC}!icall.c@{icall.c}}
+\doxysubsubsection{\texorpdfstring{HEAPMGR\_REALLOC}{HEAPMGR\_REALLOC}}
+{\footnotesize\ttfamily \#define H\+E\+A\+P\+M\+G\+R\+\_\+\+R\+E\+A\+L\+L\+OC~\mbox{\hyperlink{icall_8c_a299b853408cd9f8c36c9498ad81eeb98}{I\+Call\+\_\+heap\+Realloc}}}
+
+
+
+Definition at line 322 of file icall.\+c.
+
+\mbox{\Hypertarget{icall_8c_a7fbc189b7d07bdffae5a4c7f28150428}\label{icall_8c_a7fbc189b7d07bdffae5a4c7f28150428}} 
+\index{icall.c@{icall.c}!HEAPMGR\_UNLOCK@{HEAPMGR\_UNLOCK}}
+\index{HEAPMGR\_UNLOCK@{HEAPMGR\_UNLOCK}!icall.c@{icall.c}}
+\doxysubsubsection{\texorpdfstring{HEAPMGR\_UNLOCK}{HEAPMGR\_UNLOCK}}
+{\footnotesize\ttfamily \#define H\+E\+A\+P\+M\+G\+R\+\_\+\+U\+N\+L\+O\+CK(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~do \{ \mbox{\hyperlink{icall__platform_8h_a74cc973fcd59668a4927f06a586585b8}{I\+Call\+\_\+leave\+C\+S\+Impl}}(I\+Call\+\_\+heap\+C\+S\+State); \} while (0)}
+
+
+
+Definition at line 326 of file icall.\+c.
+
+\mbox{\Hypertarget{icall_8c_a70dcc7f3d042133be4b2636090140a6e}\label{icall_8c_a70dcc7f3d042133be4b2636090140a6e}} 
+\index{icall.c@{icall.c}!ICall\_getInitParams@{ICall\_getInitParams}}
+\index{ICall\_getInitParams@{ICall\_getInitParams}!icall.c@{icall.c}}
+\doxysubsubsection{\texorpdfstring{ICall\_getInitParams}{ICall\_getInitParams}}
+{\footnotesize\ttfamily \#define I\+Call\+\_\+get\+Init\+Params(\begin{DoxyParamCaption}\item[{}]{\+\_\+i }\end{DoxyParamCaption})~N\+U\+LL}
+
+
+
+Definition at line 244 of file icall.\+c.
+
+\mbox{\Hypertarget{icall_8c_a1a23bbdac33a082d1e913a18d0899c0d}\label{icall_8c_a1a23bbdac33a082d1e913a18d0899c0d}} 
+\index{icall.c@{icall.c}!ICALL\_MAX\_NUM\_ENTITIES@{ICALL\_MAX\_NUM\_ENTITIES}}
+\index{ICALL\_MAX\_NUM\_ENTITIES@{ICALL\_MAX\_NUM\_ENTITIES}!icall.c@{icall.c}}
+\doxysubsubsection{\texorpdfstring{ICALL\_MAX\_NUM\_ENTITIES}{ICALL\_MAX\_NUM\_ENTITIES}}
+{\footnotesize\ttfamily \#define I\+C\+A\+L\+L\+\_\+\+M\+A\+X\+\_\+\+N\+U\+M\+\_\+\+E\+N\+T\+I\+T\+I\+ES~6}
+
+Maximum number of entities that use I\+Call, including service entities and application entities. The value may be overridden by a compile option. Note that there are at least, Primitive service, Stack services along with potentially generic framework service for the stack thread. 
+
+Definition at line 78 of file icall.\+c.
+
+\mbox{\Hypertarget{icall_8c_af6fdc9a6149df14aa270ea8775c76032}\label{icall_8c_af6fdc9a6149df14aa270ea8775c76032}} 
+\index{icall.c@{icall.c}!ICALL\_MAX\_NUM\_TASKS@{ICALL\_MAX\_NUM\_TASKS}}
+\index{ICALL\_MAX\_NUM\_TASKS@{ICALL\_MAX\_NUM\_TASKS}!icall.c@{icall.c}}
+\doxysubsubsection{\texorpdfstring{ICALL\_MAX\_NUM\_TASKS}{ICALL\_MAX\_NUM\_TASKS}}
+{\footnotesize\ttfamily \#define I\+C\+A\+L\+L\+\_\+\+M\+A\+X\+\_\+\+N\+U\+M\+\_\+\+T\+A\+S\+KS~2}
+
+Maximum number of threads which include entities. The value may be overridden by a compile option. 
+
+Definition at line 86 of file icall.\+c.
+
+\mbox{\Hypertarget{icall_8c_af2c42f9b91834cb6ded677d20698ac41}\label{icall_8c_af2c42f9b91834cb6ded677d20698ac41}} 
+\index{icall.c@{icall.c}!ICALL\_MSG\_DEST\_ID@{ICALL\_MSG\_DEST\_ID}}
+\index{ICALL\_MSG\_DEST\_ID@{ICALL\_MSG\_DEST\_ID}!icall.c@{icall.c}}
+\doxysubsubsection{\texorpdfstring{ICALL\_MSG\_DEST\_ID}{ICALL\_MSG\_DEST\_ID}}
+{\footnotesize\ttfamily \#define I\+C\+A\+L\+L\+\_\+\+M\+S\+G\+\_\+\+D\+E\+S\+T\+\_\+\+ID(\begin{DoxyParamCaption}\item[{}]{\+\_\+p }\end{DoxyParamCaption})~(((\mbox{\hyperlink{icall_8h_abf187056ae88cf3435d76f43746f87ac}{I\+Call\+\_\+\+Msg\+Hdr}} $\ast$)(\+\_\+p) -\/ 1)-\/$>$dest\+\_\+id)}
+
+
+
+Definition at line 117 of file icall.\+c.
+
+\mbox{\Hypertarget{icall_8c_a6e6536acf920e142994cef9881f7c3af}\label{icall_8c_a6e6536acf920e142994cef9881f7c3af}} 
+\index{icall.c@{icall.c}!ICALL\_MSG\_NEXT@{ICALL\_MSG\_NEXT}}
+\index{ICALL\_MSG\_NEXT@{ICALL\_MSG\_NEXT}!icall.c@{icall.c}}
+\doxysubsubsection{\texorpdfstring{ICALL\_MSG\_NEXT}{ICALL\_MSG\_NEXT}}
+{\footnotesize\ttfamily \#define I\+C\+A\+L\+L\+\_\+\+M\+S\+G\+\_\+\+N\+E\+XT(\begin{DoxyParamCaption}\item[{}]{\+\_\+p }\end{DoxyParamCaption})~(((\mbox{\hyperlink{icall_8h_abf187056ae88cf3435d76f43746f87ac}{I\+Call\+\_\+\+Msg\+Hdr}} $\ast$)(\+\_\+p) -\/ 1)-\/$>$next)}
+
+
+
+Definition at line 111 of file icall.\+c.
+
+\mbox{\Hypertarget{icall_8c_a2fd29c1a4f143d0eda9375bf2af64079}\label{icall_8c_a2fd29c1a4f143d0eda9375bf2af64079}} 
+\index{icall.c@{icall.c}!ICALL\_PRIMITIVE\_ENTITY\_ID@{ICALL\_PRIMITIVE\_ENTITY\_ID}}
+\index{ICALL\_PRIMITIVE\_ENTITY\_ID@{ICALL\_PRIMITIVE\_ENTITY\_ID}!icall.c@{icall.c}}
+\doxysubsubsection{\texorpdfstring{ICALL\_PRIMITIVE\_ENTITY\_ID}{ICALL\_PRIMITIVE\_ENTITY\_ID}}
+{\footnotesize\ttfamily \#define I\+C\+A\+L\+L\+\_\+\+P\+R\+I\+M\+I\+T\+I\+V\+E\+\_\+\+E\+N\+T\+I\+T\+Y\+\_\+\+ID~0}
+
+
+
+Definition at line 105 of file icall.\+c.
+
+\mbox{\Hypertarget{icall_8c_a5ae5556e2ab95f69589a096b86153edf}\label{icall_8c_a5ae5556e2ab95f69589a096b86153edf}} 
+\index{icall.c@{icall.c}!ICALL\_REMOTE\_THREAD\_COUNT@{ICALL\_REMOTE\_THREAD\_COUNT}}
+\index{ICALL\_REMOTE\_THREAD\_COUNT@{ICALL\_REMOTE\_THREAD\_COUNT}!icall.c@{icall.c}}
+\doxysubsubsection{\texorpdfstring{ICALL\_REMOTE\_THREAD\_COUNT}{ICALL\_REMOTE\_THREAD\_COUNT}}
+{\footnotesize\ttfamily \#define I\+C\+A\+L\+L\+\_\+\+R\+E\+M\+O\+T\+E\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+C\+O\+U\+NT~(sizeof(icall\+\_\+thread\+Entries)/sizeof(icall\+\_\+thread\+Entries\mbox{[}0\mbox{]}))}
+
+
+
+Definition at line 230 of file icall.\+c.
+
+\mbox{\Hypertarget{icall_8c_ae0c01a450c32f89951e6adba35962623}\label{icall_8c_ae0c01a450c32f89951e6adba35962623}} 
+\index{icall.c@{icall.c}!ICALL\_SERVICE\_CLASS\_APPLICATION@{ICALL\_SERVICE\_CLASS\_APPLICATION}}
+\index{ICALL\_SERVICE\_CLASS\_APPLICATION@{ICALL\_SERVICE\_CLASS\_APPLICATION}!icall.c@{icall.c}}
+\doxysubsubsection{\texorpdfstring{ICALL\_SERVICE\_CLASS\_APPLICATION}{ICALL\_SERVICE\_CLASS\_APPLICATION}}
+{\footnotesize\ttfamily \#define I\+C\+A\+L\+L\+\_\+\+S\+E\+R\+V\+I\+C\+E\+\_\+\+C\+L\+A\+S\+S\+\_\+\+A\+P\+P\+L\+I\+C\+A\+T\+I\+ON~\mbox{\hyperlink{icall_8h_ae991842221ce364e4b1b0d4fbd9a7eb6}{I\+C\+A\+L\+L\+\_\+\+S\+E\+R\+V\+I\+C\+E\+\_\+\+C\+L\+A\+S\+S\+\_\+\+M\+A\+SK}}}
+
+
+
+Definition at line 99 of file icall.\+c.
+
+\mbox{\Hypertarget{icall_8c_afd86929fb54bb932c3e0e8bdb853163e}\label{icall_8c_afd86929fb54bb932c3e0e8bdb853163e}} 
+\index{icall.c@{icall.c}!ICALL\_SERVICE\_CLASS\_INVALID\_ENTRY@{ICALL\_SERVICE\_CLASS\_INVALID\_ENTRY}}
+\index{ICALL\_SERVICE\_CLASS\_INVALID\_ENTRY@{ICALL\_SERVICE\_CLASS\_INVALID\_ENTRY}!icall.c@{icall.c}}
+\doxysubsubsection{\texorpdfstring{ICALL\_SERVICE\_CLASS\_INVALID\_ENTRY}{ICALL\_SERVICE\_CLASS\_INVALID\_ENTRY}}
+{\footnotesize\ttfamily \#define I\+C\+A\+L\+L\+\_\+\+S\+E\+R\+V\+I\+C\+E\+\_\+\+C\+L\+A\+S\+S\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+E\+N\+T\+RY~0x0000}
+
+
+
+Definition at line 93 of file icall.\+c.
+
+\mbox{\Hypertarget{icall_8c_aeb56078cc09819334f38c559b30995fb}\label{icall_8c_aeb56078cc09819334f38c559b30995fb}} 
+\index{icall.c@{icall.c}!ICALL\_SYNC\_HANDLE\_CREATE@{ICALL\_SYNC\_HANDLE\_CREATE}}
+\index{ICALL\_SYNC\_HANDLE\_CREATE@{ICALL\_SYNC\_HANDLE\_CREATE}!icall.c@{icall.c}}
+\doxysubsubsection{\texorpdfstring{ICALL\_SYNC\_HANDLE\_CREATE}{ICALL\_SYNC\_HANDLE\_CREATE}}
+{\footnotesize\ttfamily \#define I\+C\+A\+L\+L\+\_\+\+S\+Y\+N\+C\+\_\+\+H\+A\+N\+D\+L\+E\+\_\+\+C\+R\+E\+A\+TE(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~(Semaphore\+\_\+create(0, N\+U\+LL, N\+U\+LL))}
+
+
+
+Definition at line 126 of file icall.\+c.
+
+\mbox{\Hypertarget{icall_8c_a6e9ef3e15c703e36b400f139ed18d0ec}\label{icall_8c_a6e9ef3e15c703e36b400f139ed18d0ec}} 
+\index{icall.c@{icall.c}!ICALL\_SYNC\_HANDLE\_PEND@{ICALL\_SYNC\_HANDLE\_PEND}}
+\index{ICALL\_SYNC\_HANDLE\_PEND@{ICALL\_SYNC\_HANDLE\_PEND}!icall.c@{icall.c}}
+\doxysubsubsection{\texorpdfstring{ICALL\_SYNC\_HANDLE\_PEND}{ICALL\_SYNC\_HANDLE\_PEND}}
+{\footnotesize\ttfamily \#define I\+C\+A\+L\+L\+\_\+\+S\+Y\+N\+C\+\_\+\+H\+A\+N\+D\+L\+E\+\_\+\+P\+E\+ND(\begin{DoxyParamCaption}\item[{}]{x,  }\item[{}]{t }\end{DoxyParamCaption})~(Semaphore\+\_\+pend(x, t))}
+
+
+
+Definition at line 146 of file icall.\+c.
+
+\mbox{\Hypertarget{icall_8c_aca8fcfd4a4529f1a8eedd67c9b8c7ec9}\label{icall_8c_aca8fcfd4a4529f1a8eedd67c9b8c7ec9}} 
+\index{icall.c@{icall.c}!ICALL\_SYNC\_HANDLE\_POST@{ICALL\_SYNC\_HANDLE\_POST}}
+\index{ICALL\_SYNC\_HANDLE\_POST@{ICALL\_SYNC\_HANDLE\_POST}!icall.c@{icall.c}}
+\doxysubsubsection{\texorpdfstring{ICALL\_SYNC\_HANDLE\_POST}{ICALL\_SYNC\_HANDLE\_POST}}
+{\footnotesize\ttfamily \#define I\+C\+A\+L\+L\+\_\+\+S\+Y\+N\+C\+\_\+\+H\+A\+N\+D\+L\+E\+\_\+\+P\+O\+ST(\begin{DoxyParamCaption}\item[{}]{x }\end{DoxyParamCaption})~(Semaphore\+\_\+post(x))}
+
+
+
+Definition at line 136 of file icall.\+c.
+
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{icall_8c_a7f99dbb6269e984838a79740c196ceb2}\label{icall_8c_a7f99dbb6269e984838a79740c196ceb2}} 
+\index{icall.c@{icall.c}!ICall\_CSStateUnion@{ICall\_CSStateUnion}}
+\index{ICall\_CSStateUnion@{ICall\_CSStateUnion}!icall.c@{icall.c}}
+\doxysubsubsection{\texorpdfstring{ICall\_CSStateUnion}{ICall\_CSStateUnion}}
+{\footnotesize\ttfamily typedef union \mbox{\hyperlink{union__icall__cs__state__union__t}{\+\_\+icall\+\_\+cs\+\_\+state\+\_\+union\+\_\+t}} \mbox{\hyperlink{icall_8c_a7f99dbb6269e984838a79740c196ceb2}{I\+Call\+\_\+\+C\+S\+State\+Union}}}
+
+\mbox{\Hypertarget{icall_8c_a7d15e7c3898fa1f6d39527bda3468a67}\label{icall_8c_a7d15e7c3898fa1f6d39527bda3468a67}} 
+\index{icall.c@{icall.c}!ICall\_entityEntry@{ICall\_entityEntry}}
+\index{ICall\_entityEntry@{ICall\_entityEntry}!icall.c@{icall.c}}
+\doxysubsubsection{\texorpdfstring{ICall\_entityEntry}{ICall\_entityEntry}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct__icall__entity__entry__t}{\+\_\+icall\+\_\+entity\+\_\+entry\+\_\+t}} \mbox{\hyperlink{icall_8c_a7d15e7c3898fa1f6d39527bda3468a67}{I\+Call\+\_\+entity\+Entry}}}
+
+\mbox{\Hypertarget{icall_8c_aa7cb90d3988dedd7e535556494a9d5b8}\label{icall_8c_aa7cb90d3988dedd7e535556494a9d5b8}} 
+\index{icall.c@{icall.c}!ICall\_MsgQueue@{ICall\_MsgQueue}}
+\index{ICall\_MsgQueue@{ICall\_MsgQueue}!icall.c@{icall.c}}
+\doxysubsubsection{\texorpdfstring{ICall\_MsgQueue}{ICall\_MsgQueue}}
+{\footnotesize\ttfamily typedef void$\ast$ \mbox{\hyperlink{icall_8c_aa7cb90d3988dedd7e535556494a9d5b8}{I\+Call\+\_\+\+Msg\+Queue}}}
+
+
+
+Definition at line 249 of file icall.\+c.
+
+\mbox{\Hypertarget{icall_8c_a74c8488f1553ed19f153ea540cd31d67}\label{icall_8c_a74c8488f1553ed19f153ea540cd31d67}} 
+\index{icall.c@{icall.c}!ICall\_PrimSvcFunc@{ICall\_PrimSvcFunc}}
+\index{ICall\_PrimSvcFunc@{ICall\_PrimSvcFunc}!icall.c@{icall.c}}
+\doxysubsubsection{\texorpdfstring{ICall\_PrimSvcFunc}{ICall\_PrimSvcFunc}}
+{\footnotesize\ttfamily typedef \mbox{\hyperlink{icall_8h_aa1e75d643f27bb9a660eaa51171b4ebb}{I\+Call\+\_\+\+Errno}}($\ast$ I\+Call\+\_\+\+Prim\+Svc\+Func) (\mbox{\hyperlink{icall_8h_a1fefe5653d98fdef5c119ec70ae661b1}{I\+Call\+\_\+\+Func\+Args\+Hdr}} $\ast$)}
+
+
+
+Definition at line 177 of file icall.\+c.
+
+\mbox{\Hypertarget{icall_8c_a01aab3eed008e76af922eee0e763e738}\label{icall_8c_a01aab3eed008e76af922eee0e763e738}} 
+\index{icall.c@{icall.c}!ICall\_ScheduleEntry@{ICall\_ScheduleEntry}}
+\index{ICall\_ScheduleEntry@{ICall\_ScheduleEntry}!icall.c@{icall.c}}
+\doxysubsubsection{\texorpdfstring{ICall\_ScheduleEntry}{ICall\_ScheduleEntry}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct__icall__schedule__t}{\+\_\+icall\+\_\+schedule\+\_\+t}} \mbox{\hyperlink{icall_8c_a01aab3eed008e76af922eee0e763e738}{I\+Call\+\_\+\+Schedule\+Entry}}}
+
+\mbox{\Hypertarget{icall_8c_aa1f106abb21a7b24aa6f5865eb7f3256}\label{icall_8c_aa1f106abb21a7b24aa6f5865eb7f3256}} 
+\index{icall.c@{icall.c}!ICall\_TaskEntry@{ICall\_TaskEntry}}
+\index{ICall\_TaskEntry@{ICall\_TaskEntry}!icall.c@{icall.c}}
+\doxysubsubsection{\texorpdfstring{ICall\_TaskEntry}{ICall\_TaskEntry}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct__icall__task__entry__t}{\+\_\+icall\+\_\+task\+\_\+entry\+\_\+t}} \mbox{\hyperlink{icall_8c_aa1f106abb21a7b24aa6f5865eb7f3256}{I\+Call\+\_\+\+Task\+Entry}}}
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{icall_8c_a9c6d55cb8b177a15796006d20f8634d6}\label{icall_8c_a9c6d55cb8b177a15796006d20f8634d6}} 
+\index{icall.c@{icall.c}!ICall\_createRemoteTasks@{ICall\_createRemoteTasks}}
+\index{ICall\_createRemoteTasks@{ICall\_createRemoteTasks}!icall.c@{icall.c}}
+\doxysubsubsection{\texorpdfstring{ICall\_createRemoteTasks()}{ICall\_createRemoteTasks()}}
+{\footnotesize\ttfamily void I\+Call\+\_\+create\+Remote\+Tasks (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Creates remote tasks. One remote task shall be created per external image. Note that this function must be called after calling \mbox{\hyperlink{icall_8h_a7ff723a346156b189a6700cb2cc297c8}{I\+Call\+\_\+init()}}.
+
+The external image information must be stored either in a custom I\+Call\+Addrs.\+h header file in an include path when I\+C\+A\+L\+L\+\_\+\+F\+E\+A\+T\+U\+R\+E\+\_\+\+S\+E\+P\+A\+R\+A\+T\+E\+\_\+\+I\+M\+G\+I\+N\+FO compile flag is not defined, or as a set of external constants.
+
+If I\+C\+A\+L\+L\+\_\+\+F\+E\+A\+T\+U\+R\+E\+\_\+\+S\+E\+P\+A\+R\+A\+T\+E\+\_\+\+I\+M\+G\+I\+N\+FO compile flag is not defined, the following macros must be defined in the I\+Call\+Addrs.\+h file\+: \mbox{\hyperlink{icall__addrs_8h_a3aa0ac43eb702f30a85ebd2f9f1acaed}{I\+C\+A\+L\+L\+\_\+\+S\+T\+A\+C\+K0\+\_\+\+A\+D\+DR}}, \mbox{\hyperlink{icall__addrs_8h_acb3eb97c0bc1b7135207fe6956baac04}{I\+C\+A\+L\+L\+\_\+\+A\+D\+D\+R\+\_\+\+M\+A\+PS}}, \mbox{\hyperlink{icall__addrs_8h_a1ff2f82e55437db74abe475acc1d3819}{I\+C\+A\+L\+L\+\_\+\+T\+A\+S\+K\+\_\+\+P\+R\+I\+O\+R\+I\+T\+I\+ES}} and \mbox{\hyperlink{icall__addrs_8h_a3b566bb13fa877129dcb5d937cf3ec50}{I\+C\+A\+L\+L\+\_\+\+T\+A\+S\+K\+\_\+\+S\+T\+A\+C\+K\+\_\+\+S\+I\+Z\+ES}}.
+
+If I\+C\+A\+L\+L\+\_\+\+F\+E\+A\+T\+U\+R\+E\+\_\+\+S\+E\+P\+A\+R\+A\+T\+E\+\_\+\+I\+M\+G\+I\+N\+FO compile flag is defined, the following constants have to be linked into an image that include I\+Call module\+: I\+Call\+\_\+img\+Entries, I\+Call\+\_\+img\+Task\+Priorities, I\+Call\+\_\+img\+Task\+Stack\+Sizes and I\+Call\+\_\+num\+Images. 
+
+Definition at line 517 of file icall.\+c.
+
+\mbox{\Hypertarget{icall_8c_a52e2fdd0d0de1818edb14085eac3e302}\label{icall_8c_a52e2fdd0d0de1818edb14085eac3e302}} 
+\index{icall.c@{icall.c}!ICall\_enterCSImpl@{ICall\_enterCSImpl}}
+\index{ICall\_enterCSImpl@{ICall\_enterCSImpl}!icall.c@{icall.c}}
+\doxysubsubsection{\texorpdfstring{ICall\_enterCSImpl()}{ICall\_enterCSImpl()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{icall_8h_a6455f0016e4d5714c6756aa76b608368}{I\+Call\+\_\+\+C\+S\+State}} I\+Call\+\_\+enter\+C\+S\+Impl (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 290 of file icall.\+c.
+
+\mbox{\Hypertarget{icall_8c_a8b53dcb2261b31d84adf216d031fe62f}\label{icall_8c_a8b53dcb2261b31d84adf216d031fe62f}} 
+\index{icall.c@{icall.c}!ICall\_freeImpl@{ICall\_freeImpl}}
+\index{ICall\_freeImpl@{ICall\_freeImpl}!icall.c@{icall.c}}
+\doxysubsubsection{\texorpdfstring{ICall\_freeImpl()}{ICall\_freeImpl()}}
+{\footnotesize\ttfamily void I\+Call\+\_\+free\+Impl (\begin{DoxyParamCaption}\item[{void $\ast$}]{ptr }\end{DoxyParamCaption})}
+
+Frees a memory block. Note that this function is for use by I\+Call implementation.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ptr} & pointer to the memory block \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 702 of file icall.\+c.
+
+\mbox{\Hypertarget{icall_8c_a4d04623209a587b9c722c53570c62384}\label{icall_8c_a4d04623209a587b9c722c53570c62384}} 
+\index{icall.c@{icall.c}!ICall\_heapFree@{ICall\_heapFree}}
+\index{ICall\_heapFree@{ICall\_heapFree}!icall.c@{icall.c}}
+\doxysubsubsection{\texorpdfstring{ICall\_heapFree()}{ICall\_heapFree()}}
+{\footnotesize\ttfamily void I\+Call\+\_\+heap\+Free (\begin{DoxyParamCaption}\item[{void $\ast$}]{blk }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{icall_8c_a84165c101c9905d029c5e6889377536f}\label{icall_8c_a84165c101c9905d029c5e6889377536f}} 
+\index{icall.c@{icall.c}!ICall\_heapMalloc@{ICall\_heapMalloc}}
+\index{ICall\_heapMalloc@{ICall\_heapMalloc}!icall.c@{icall.c}}
+\doxysubsubsection{\texorpdfstring{ICall\_heapMalloc()}{ICall\_heapMalloc()}}
+{\footnotesize\ttfamily void$\ast$ I\+Call\+\_\+heap\+Malloc (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{size }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{icall_8c_a299b853408cd9f8c36c9498ad81eeb98}\label{icall_8c_a299b853408cd9f8c36c9498ad81eeb98}} 
+\index{icall.c@{icall.c}!ICall\_heapRealloc@{ICall\_heapRealloc}}
+\index{ICall\_heapRealloc@{ICall\_heapRealloc}!icall.c@{icall.c}}
+\doxysubsubsection{\texorpdfstring{ICall\_heapRealloc()}{ICall\_heapRealloc()}}
+{\footnotesize\ttfamily void$\ast$ I\+Call\+\_\+heap\+Realloc (\begin{DoxyParamCaption}\item[{void $\ast$}]{blk,  }\item[{uint16\+\_\+t}]{size }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{icall_8c_a7ff723a346156b189a6700cb2cc297c8}\label{icall_8c_a7ff723a346156b189a6700cb2cc297c8}} 
+\index{icall.c@{icall.c}!ICall\_init@{ICall\_init}}
+\index{ICall\_init@{ICall\_init}!icall.c@{icall.c}}
+\doxysubsubsection{\texorpdfstring{ICall\_init()}{ICall\_init()}}
+{\footnotesize\ttfamily void I\+Call\+\_\+init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Initializes the dispatcher implementation. Note that this shall be only called from an image which included dispatcher implementation. 
+
+Definition at line 493 of file icall.\+c.
+
+\mbox{\Hypertarget{icall_8c_a74cc973fcd59668a4927f06a586585b8}\label{icall_8c_a74cc973fcd59668a4927f06a586585b8}} 
+\index{icall.c@{icall.c}!ICall\_leaveCSImpl@{ICall\_leaveCSImpl}}
+\index{ICall\_leaveCSImpl@{ICall\_leaveCSImpl}!icall.c@{icall.c}}
+\doxysubsubsection{\texorpdfstring{ICall\_leaveCSImpl()}{ICall\_leaveCSImpl()}}
+{\footnotesize\ttfamily void I\+Call\+\_\+leave\+C\+S\+Impl (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{icall_8h_a6455f0016e4d5714c6756aa76b608368}{I\+Call\+\_\+\+C\+S\+State}}}]{key }\end{DoxyParamCaption})}
+
+
+
+Definition at line 302 of file icall.\+c.
+
+\mbox{\Hypertarget{icall_8c_a2065d41680f06340d2744aea9e4cafb4}\label{icall_8c_a2065d41680f06340d2744aea9e4cafb4}} 
+\index{icall.c@{icall.c}!ICall\_mallocImpl@{ICall\_mallocImpl}}
+\index{ICall\_mallocImpl@{ICall\_mallocImpl}!icall.c@{icall.c}}
+\doxysubsubsection{\texorpdfstring{ICall\_mallocImpl()}{ICall\_mallocImpl()}}
+{\footnotesize\ttfamily void$\ast$ I\+Call\+\_\+malloc\+Impl (\begin{DoxyParamCaption}\item[{uint\+\_\+fast16\+\_\+t}]{size }\end{DoxyParamCaption})}
+
+Allocates a memory block. Note that this function is for use by I\+Call implementation.
+
+
+\begin{DoxyParams}{Parameters}
+{\em size} & size in bytes \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+pointer to the allocated memory block or N\+U\+LL 
+\end{DoxyReturn}
+
+
+Definition at line 691 of file icall.\+c.
+
+\mbox{\Hypertarget{icall_8c_a01838620d147e77b714d75a60dd1f245}\label{icall_8c_a01838620d147e77b714d75a60dd1f245}} 
+\index{icall.c@{icall.c}!ICall\_searchServiceEntity@{ICall\_searchServiceEntity}}
+\index{ICall\_searchServiceEntity@{ICall\_searchServiceEntity}!icall.c@{icall.c}}
+\doxysubsubsection{\texorpdfstring{ICall\_searchServiceEntity()}{ICall\_searchServiceEntity()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{icall_8h_ae7cf4733f97b1b4f7585df652a2a7022}{I\+Call\+\_\+\+Entity\+ID}} I\+Call\+\_\+search\+Service\+Entity (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{icall_8h_a5e21e3e8618ecbd15ba23d22c1e3c7c1}{I\+Call\+\_\+\+Service\+Enum}}}]{service }\end{DoxyParamCaption})}
+
+Searches for a service entity entry.
+
+
+\begin{DoxyParams}{Parameters}
+{\em service} & service id \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+entity id of the service or \mbox{\hyperlink{icall_8h_ab6ad9ee386d4f0579c9ad8081da9f9ba}{I\+C\+A\+L\+L\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+E\+N\+T\+I\+T\+Y\+\_\+\+ID}} when none found. 
+\end{DoxyReturn}
+
+
+Definition at line 402 of file icall.\+c.
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{icall_8c_aadcd4c46339d9f9a4a9fd172834a0d3a}\label{icall_8c_aadcd4c46339d9f9a4a9fd172834a0d3a}} 
+\index{icall.c@{icall.c}!ICall\_dispatcher@{ICall\_dispatcher}}
+\index{ICall\_dispatcher@{ICall\_dispatcher}!icall.c@{icall.c}}
+\doxysubsubsection{\texorpdfstring{ICall\_dispatcher}{ICall\_dispatcher}}
+{\footnotesize\ttfamily \mbox{\hyperlink{icall_8h_ab0cf783ecd9da656900f52afd8b32c10}{I\+Call\+\_\+\+Dispatcher}} I\+Call\+\_\+dispatcher = I\+Call\+\_\+dispatch}
+
+Call dispatcher pointer of the current image 
+
+Definition at line 462 of file icall.\+c.
+
+\mbox{\Hypertarget{icall_8c_a46e4a86f40d4605b3113763da25d738f}\label{icall_8c_a46e4a86f40d4605b3113763da25d738f}} 
+\index{icall.c@{icall.c}!ICall\_enterCriticalSection@{ICall\_enterCriticalSection}}
+\index{ICall\_enterCriticalSection@{ICall\_enterCriticalSection}!icall.c@{icall.c}}
+\doxysubsubsection{\texorpdfstring{ICall\_enterCriticalSection}{ICall\_enterCriticalSection}}
+{\footnotesize\ttfamily \mbox{\hyperlink{icall_8h_a95a765aeda5b30442433b13806fc2500}{I\+Call\+\_\+\+Enter\+CS}} I\+Call\+\_\+enter\+Critical\+Section = \mbox{\hyperlink{icall__platform_8h_a52e2fdd0d0de1818edb14085eac3e302}{I\+Call\+\_\+enter\+C\+S\+Impl}}}
+
+Enter critical section function pointer of the current image 
+
+Definition at line 299 of file icall.\+c.
+
+\mbox{\Hypertarget{icall_8c_aac0bd02b286674b3e5f7533411455c26}\label{icall_8c_aac0bd02b286674b3e5f7533411455c26}} 
+\index{icall.c@{icall.c}!ICall\_leaveCriticalSection@{ICall\_leaveCriticalSection}}
+\index{ICall\_leaveCriticalSection@{ICall\_leaveCriticalSection}!icall.c@{icall.c}}
+\doxysubsubsection{\texorpdfstring{ICall\_leaveCriticalSection}{ICall\_leaveCriticalSection}}
+{\footnotesize\ttfamily \mbox{\hyperlink{icall_8h_a7cecaa62c192907e9dfb75ff1a80290e}{I\+Call\+\_\+\+Leave\+CS}} I\+Call\+\_\+leave\+Critical\+Section = \mbox{\hyperlink{icall__platform_8h_a74cc973fcd59668a4927f06a586585b8}{I\+Call\+\_\+leave\+C\+S\+Impl}}}
+
+Leave critical section function pointer of the current image 
+
+Definition at line 310 of file icall.\+c.
+

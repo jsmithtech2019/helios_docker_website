@@ -1,0 +1,104 @@
+\hypertarget{structgap_sign_update_event__t}{}\doxysection{gap\+Sign\+Update\+Event\+\_\+t Struct Reference}
+\label{structgap_sign_update_event__t}\index{gapSignUpdateEvent\_t@{gapSignUpdateEvent\_t}}
+
+
+{\ttfamily \#include $<$gap.\+h$>$}
+
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+osal\+\_\+event\+\_\+hdr\+\_\+t \mbox{\hyperlink{structgap_sign_update_event__t_af2d649fcff8ce640f812eb524f201143}{hdr}}
+\begin{DoxyCompactList}\small\item\em G\+A\+P\+\_\+\+M\+S\+G\+\_\+\+E\+V\+E\+NT and status. \end{DoxyCompactList}\item 
+uint8 \mbox{\hyperlink{structgap_sign_update_event__t_a74e40a1107e48da670d2bedb2ba4b0a1}{opcode}}
+\begin{DoxyCompactList}\small\item\em G\+A\+P\+\_\+\+S\+I\+G\+N\+A\+T\+U\+R\+E\+\_\+\+U\+P\+D\+A\+T\+E\+D\+\_\+\+E\+V\+E\+NT. \end{DoxyCompactList}\item 
+uint8 \mbox{\hyperlink{structgap_sign_update_event__t_a242e59beb2afa4fb4d77419ae14f8a10}{addr\+Type}}
+\begin{DoxyCompactList}\small\item\em Device\textquotesingle{}s address type for dev\+Addr. \end{DoxyCompactList}\item 
+uint8 \mbox{\hyperlink{structgap_sign_update_event__t_a22ae621b56cbbb90d04b1f49549cb7be}{dev\+Addr}} \mbox{[}B\+\_\+\+A\+D\+D\+R\+\_\+\+L\+EN\mbox{]}
+\begin{DoxyCompactList}\small\item\em Device\textquotesingle{}s B\+D\+\_\+\+A\+D\+DR, could be own address. \end{DoxyCompactList}\item 
+uint32 \mbox{\hyperlink{structgap_sign_update_event__t_a765910e466db3a2a9543b54bdc2bc599}{sign\+Counter}}
+\begin{DoxyCompactList}\small\item\em new Signed Counter \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+G\+A\+P\+\_\+\+S\+I\+G\+N\+A\+T\+U\+R\+E\+\_\+\+U\+P\+D\+A\+T\+E\+D\+\_\+\+E\+V\+E\+NT message format. This message is sent to the app when the signature counter has changed. This message is to inform the application in case it wants to save it to be restored on reboot or reconnect. This message is sent to update a connection\textquotesingle{}s signature counter and to update this device\textquotesingle{}s signature counter. If dev\+Addr == B\+D\+\_\+\+A\+D\+DR, then this message pertains to this device. 
+
+Definition at line 493 of file gap.\+h.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{structgap_sign_update_event__t_a242e59beb2afa4fb4d77419ae14f8a10}\label{structgap_sign_update_event__t_a242e59beb2afa4fb4d77419ae14f8a10}} 
+\index{gapSignUpdateEvent\_t@{gapSignUpdateEvent\_t}!addrType@{addrType}}
+\index{addrType@{addrType}!gapSignUpdateEvent\_t@{gapSignUpdateEvent\_t}}
+\doxysubsubsection{\texorpdfstring{addrType}{addrType}}
+{\footnotesize\ttfamily uint8 gap\+Sign\+Update\+Event\+\_\+t\+::addr\+Type}
+
+
+
+Device\textquotesingle{}s address type for dev\+Addr. 
+
+
+
+Definition at line 497 of file gap.\+h.
+
+\mbox{\Hypertarget{structgap_sign_update_event__t_a22ae621b56cbbb90d04b1f49549cb7be}\label{structgap_sign_update_event__t_a22ae621b56cbbb90d04b1f49549cb7be}} 
+\index{gapSignUpdateEvent\_t@{gapSignUpdateEvent\_t}!devAddr@{devAddr}}
+\index{devAddr@{devAddr}!gapSignUpdateEvent\_t@{gapSignUpdateEvent\_t}}
+\doxysubsubsection{\texorpdfstring{devAddr}{devAddr}}
+{\footnotesize\ttfamily uint8 gap\+Sign\+Update\+Event\+\_\+t\+::dev\+Addr\mbox{[}B\+\_\+\+A\+D\+D\+R\+\_\+\+L\+EN\mbox{]}}
+
+
+
+Device\textquotesingle{}s B\+D\+\_\+\+A\+D\+DR, could be own address. 
+
+
+
+Definition at line 498 of file gap.\+h.
+
+\mbox{\Hypertarget{structgap_sign_update_event__t_af2d649fcff8ce640f812eb524f201143}\label{structgap_sign_update_event__t_af2d649fcff8ce640f812eb524f201143}} 
+\index{gapSignUpdateEvent\_t@{gapSignUpdateEvent\_t}!hdr@{hdr}}
+\index{hdr@{hdr}!gapSignUpdateEvent\_t@{gapSignUpdateEvent\_t}}
+\doxysubsubsection{\texorpdfstring{hdr}{hdr}}
+{\footnotesize\ttfamily osal\+\_\+event\+\_\+hdr\+\_\+t gap\+Sign\+Update\+Event\+\_\+t\+::hdr}
+
+
+
+G\+A\+P\+\_\+\+M\+S\+G\+\_\+\+E\+V\+E\+NT and status. 
+
+
+
+Definition at line 495 of file gap.\+h.
+
+\mbox{\Hypertarget{structgap_sign_update_event__t_a74e40a1107e48da670d2bedb2ba4b0a1}\label{structgap_sign_update_event__t_a74e40a1107e48da670d2bedb2ba4b0a1}} 
+\index{gapSignUpdateEvent\_t@{gapSignUpdateEvent\_t}!opcode@{opcode}}
+\index{opcode@{opcode}!gapSignUpdateEvent\_t@{gapSignUpdateEvent\_t}}
+\doxysubsubsection{\texorpdfstring{opcode}{opcode}}
+{\footnotesize\ttfamily uint8 gap\+Sign\+Update\+Event\+\_\+t\+::opcode}
+
+
+
+G\+A\+P\+\_\+\+S\+I\+G\+N\+A\+T\+U\+R\+E\+\_\+\+U\+P\+D\+A\+T\+E\+D\+\_\+\+E\+V\+E\+NT. 
+
+
+
+Definition at line 496 of file gap.\+h.
+
+\mbox{\Hypertarget{structgap_sign_update_event__t_a765910e466db3a2a9543b54bdc2bc599}\label{structgap_sign_update_event__t_a765910e466db3a2a9543b54bdc2bc599}} 
+\index{gapSignUpdateEvent\_t@{gapSignUpdateEvent\_t}!signCounter@{signCounter}}
+\index{signCounter@{signCounter}!gapSignUpdateEvent\_t@{gapSignUpdateEvent\_t}}
+\doxysubsubsection{\texorpdfstring{signCounter}{signCounter}}
+{\footnotesize\ttfamily uint32 gap\+Sign\+Update\+Event\+\_\+t\+::sign\+Counter}
+
+
+
+new Signed Counter 
+
+
+
+Definition at line 499 of file gap.\+h.
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Include/\mbox{\hyperlink{gap_8h}{gap.\+h}}\end{DoxyCompactItemize}

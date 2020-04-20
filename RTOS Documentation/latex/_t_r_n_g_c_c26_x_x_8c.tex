@@ -1,0 +1,166 @@
+\hypertarget{_t_r_n_g_c_c26_x_x_8c}{}\doxysection{Drivers/\+T\+R\+N\+G/\+T\+R\+N\+G\+C\+C26\+XX.c File Reference}
+\label{_t_r_n_g_c_c26_x_x_8c}\index{Drivers/TRNG/TRNGCC26XX.c@{Drivers/TRNG/TRNGCC26XX.c}}
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include $<$ti/sysbios/family/arm/m3/\+Hwi.\+h$>$}\newline
+{\ttfamily \#include $<$ti/drivers/\+Power.\+h$>$}\newline
+{\ttfamily \#include $<$ti/drivers/power/\+Power\+C\+C26\+X\+X.\+h$>$}\newline
+{\ttfamily \#include $<$driverlib/trng.\+h$>$}\newline
+{\ttfamily \#include $<$T\+R\+N\+G\+C\+C26\+X\+X.\+h$>$}\newline
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{_t_r_n_g_c_c26_x_x_8c_a78c53bf85bb4502a61d611c32bbab225}{T\+R\+N\+G\+C\+C26\+X\+X\+\_\+\+M\+I\+N\+\_\+\+S\+A\+M\+P\+L\+E\+S\+\_\+\+D\+E\+F\+A\+U\+LT}}~256
+\item 
+\#define \mbox{\hyperlink{_t_r_n_g_c_c26_x_x_8c_a1174dedd32e0c818070fbdc08a2c2a46}{T\+R\+N\+G\+C\+C26\+X\+X\+\_\+\+M\+A\+X\+\_\+\+S\+A\+M\+P\+L\+E\+S\+\_\+\+D\+E\+F\+A\+U\+LT}}~256
+\item 
+\#define \mbox{\hyperlink{_t_r_n_g_c_c26_x_x_8c_a996bf4be27c1ef63a1769539a18f5ffe}{T\+R\+N\+G\+C\+C26\+X\+X\+\_\+\+S\+A\+M\+P\+L\+E\+\_\+\+R\+A\+T\+E\+\_\+\+D\+E\+F\+A\+U\+LT}}~1
+\item 
+\#define \mbox{\hyperlink{_t_r_n_g_c_c26_x_x_8c_a808161fd3aa101e4331b26433ade4d6d}{T\+R\+N\+G\+C\+C26\+X\+X\+X\+\_\+\+P\+E\+R\+I\+P\+H\+E\+R\+A\+L\+\_\+0\+\_\+\+I\+N\+D\+EX}}~0
+\item 
+\#define \mbox{\hyperlink{_t_r_n_g_c_c26_x_x_8c_ae003da965f44ad660ee6f17e41bba97d}{T\+R\+N\+G\+C\+C26\+X\+X\+\_\+\+C\+L\+O\+S\+ED}}~0
+\item 
+\#define \mbox{\hyperlink{_t_r_n_g_c_c26_x_x_8c_a2774bc73f0b7d8e29b8381608c510523}{T\+R\+N\+G\+C\+C26\+X\+X\+\_\+\+O\+P\+EN}}~1
+\item 
+\#define \mbox{\hyperlink{_t_r_n_g_c_c26_x_x_8c_a0ab575b4b3c7d80ec5e6b75b0c630bb8}{T\+R\+N\+G\+C\+C26\+X\+X\+\_\+\+I\+S\+\_\+\+N\+O\+T\+\_\+\+I\+N\+I\+T\+I\+A\+L\+I\+Z\+ED}}~0
+\item 
+\#define \mbox{\hyperlink{_t_r_n_g_c_c26_x_x_8c_adac108073d9467cc94387023b4c453bb}{T\+R\+N\+G\+C\+C26\+X\+X\+\_\+\+I\+S\+\_\+\+I\+N\+I\+T\+I\+A\+L\+I\+Z\+ED}}~1
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{_t_r_n_g_c_c26_x_x_8c_aee2efca6a2e714dc25e50e8cbe594de2}{close\+T\+R\+NG}} (\mbox{\hyperlink{group___t_r_n_g___s_t_a_t_u_s_ga3625ee61c7d4ba59d1ea188be55115af}{T\+R\+N\+G\+C\+C26\+X\+X\+\_\+\+Handle}} handle)
+\item 
+void \mbox{\hyperlink{_t_r_n_g_c_c26_x_x_8c_ad3802ea522f4f014b86f89ac0f6ff2c3}{open\+T\+R\+NG}} (\mbox{\hyperlink{group___t_r_n_g___s_t_a_t_u_s_ga3625ee61c7d4ba59d1ea188be55115af}{T\+R\+N\+G\+C\+C26\+X\+X\+\_\+\+Handle}} handle)
+\item 
+void \mbox{\hyperlink{group___t_r_n_g___s_t_a_t_u_s_ga8c0fad6d75cbcafb3e29f23ef4e9ee50}{T\+R\+N\+G\+C\+C26\+X\+X\+\_\+init}} (void)
+\begin{DoxyCompactList}\small\item\em T\+R\+NG Driver initialization. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group___t_r_n_g___s_t_a_t_u_s_ga3625ee61c7d4ba59d1ea188be55115af}{T\+R\+N\+G\+C\+C26\+X\+X\+\_\+\+Handle}} \mbox{\hyperlink{group___t_r_n_g___s_t_a_t_u_s_ga1cac985e2568c3a35322bd978c32c149}{T\+R\+N\+G\+C\+C26\+X\+X\+\_\+open}} (uint8\+\_\+t index)
+\begin{DoxyCompactList}\small\item\em Open the T\+R\+N\+G\+C\+C26\+XX peripheral specified by the index value. This peripheral will be configured as specified by p\+Params. Alternatively, if p\+Params is N\+U\+LL, default values will be used. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___t_r_n_g___s_t_a_t_u_s_ga3df37e55dae4dc57abfed49b2607a2c6}{T\+R\+N\+G\+C\+C26\+X\+X\+\_\+close}} (\mbox{\hyperlink{group___t_r_n_g___s_t_a_t_u_s_ga3625ee61c7d4ba59d1ea188be55115af}{T\+R\+N\+G\+C\+C26\+X\+X\+\_\+\+Handle}} handle)
+\begin{DoxyCompactList}\small\item\em Close the T\+R\+NG driver. \end{DoxyCompactList}\item 
+int8\+\_\+t \mbox{\hyperlink{group___t_r_n_g___s_t_a_t_u_s_ga71e12002e2dec081459ef9fd328e1890}{T\+R\+N\+G\+C\+C26\+X\+X\+\_\+\+Params\+\_\+init}} (\mbox{\hyperlink{struct_t_r_n_g_c_c26_x_x___params}{T\+R\+N\+G\+C\+C26\+X\+X\+\_\+\+Params}} $\ast$params)
+\begin{DoxyCompactList}\small\item\em Initialize T\+R\+NG configuration parameters to their defaults. \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{group___t_r_n_g___s_t_a_t_u_s_gaf231d1c7694130553631db62de51f1b3}{T\+R\+N\+G\+C\+C26\+X\+X\+\_\+get\+Number}} (\mbox{\hyperlink{group___t_r_n_g___s_t_a_t_u_s_ga3625ee61c7d4ba59d1ea188be55115af}{T\+R\+N\+G\+C\+C26\+X\+X\+\_\+\+Handle}} handle, \mbox{\hyperlink{struct_t_r_n_g_c_c26_x_x___params}{T\+R\+N\+G\+C\+C26\+X\+X\+\_\+\+Params}} $\ast$params, int8\+\_\+t $\ast$\mbox{\hyperlink{icall__apimsg_8h_ad94584ed274ed1d5b06d52f5bb3a178d}{status}})
+\begin{DoxyCompactList}\small\item\em This routine returns a 32 bit T\+R\+NG number. \end{DoxyCompactList}\item 
+int8\+\_\+t \mbox{\hyperlink{group___t_r_n_g___s_t_a_t_u_s_ga5f40df328322d2b964e659495afeb575}{T\+R\+N\+G\+C\+C26\+X\+X\+\_\+is\+Param\+Valid}} (\mbox{\hyperlink{struct_t_r_n_g_c_c26_x_x___params}{T\+R\+N\+G\+C\+C26\+X\+X\+\_\+\+Params}} $\ast$params)
+\begin{DoxyCompactList}\small\item\em Check that the parameters used are valid configurations. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const \mbox{\hyperlink{struct_t_r_n_g_c_c26_x_x___config}{T\+R\+N\+G\+C\+C26\+X\+X\+\_\+\+Config}} \mbox{\hyperlink{_t_r_n_g_c_c26_x_x_8c_a26e5ca38a4ffc9a36e9a299d3adbef5b}{T\+R\+N\+G\+C\+C26\+X\+X\+\_\+config}} \mbox{[}$\,$\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{_t_r_n_g_c_c26_x_x_8c_ae003da965f44ad660ee6f17e41bba97d}\label{_t_r_n_g_c_c26_x_x_8c_ae003da965f44ad660ee6f17e41bba97d}} 
+\index{TRNGCC26XX.c@{TRNGCC26XX.c}!TRNGCC26XX\_CLOSED@{TRNGCC26XX\_CLOSED}}
+\index{TRNGCC26XX\_CLOSED@{TRNGCC26XX\_CLOSED}!TRNGCC26XX.c@{TRNGCC26XX.c}}
+\doxysubsubsection{\texorpdfstring{TRNGCC26XX\_CLOSED}{TRNGCC26XX\_CLOSED}}
+{\footnotesize\ttfamily \#define T\+R\+N\+G\+C\+C26\+X\+X\+\_\+\+C\+L\+O\+S\+ED~0}
+
+
+
+Definition at line 75 of file T\+R\+N\+G\+C\+C26\+X\+X.\+c.
+
+\mbox{\Hypertarget{_t_r_n_g_c_c26_x_x_8c_adac108073d9467cc94387023b4c453bb}\label{_t_r_n_g_c_c26_x_x_8c_adac108073d9467cc94387023b4c453bb}} 
+\index{TRNGCC26XX.c@{TRNGCC26XX.c}!TRNGCC26XX\_IS\_INITIALIZED@{TRNGCC26XX\_IS\_INITIALIZED}}
+\index{TRNGCC26XX\_IS\_INITIALIZED@{TRNGCC26XX\_IS\_INITIALIZED}!TRNGCC26XX.c@{TRNGCC26XX.c}}
+\doxysubsubsection{\texorpdfstring{TRNGCC26XX\_IS\_INITIALIZED}{TRNGCC26XX\_IS\_INITIALIZED}}
+{\footnotesize\ttfamily \#define T\+R\+N\+G\+C\+C26\+X\+X\+\_\+\+I\+S\+\_\+\+I\+N\+I\+T\+I\+A\+L\+I\+Z\+ED~1}
+
+
+
+Definition at line 80 of file T\+R\+N\+G\+C\+C26\+X\+X.\+c.
+
+\mbox{\Hypertarget{_t_r_n_g_c_c26_x_x_8c_a0ab575b4b3c7d80ec5e6b75b0c630bb8}\label{_t_r_n_g_c_c26_x_x_8c_a0ab575b4b3c7d80ec5e6b75b0c630bb8}} 
+\index{TRNGCC26XX.c@{TRNGCC26XX.c}!TRNGCC26XX\_IS\_NOT\_INITIALIZED@{TRNGCC26XX\_IS\_NOT\_INITIALIZED}}
+\index{TRNGCC26XX\_IS\_NOT\_INITIALIZED@{TRNGCC26XX\_IS\_NOT\_INITIALIZED}!TRNGCC26XX.c@{TRNGCC26XX.c}}
+\doxysubsubsection{\texorpdfstring{TRNGCC26XX\_IS\_NOT\_INITIALIZED}{TRNGCC26XX\_IS\_NOT\_INITIALIZED}}
+{\footnotesize\ttfamily \#define T\+R\+N\+G\+C\+C26\+X\+X\+\_\+\+I\+S\+\_\+\+N\+O\+T\+\_\+\+I\+N\+I\+T\+I\+A\+L\+I\+Z\+ED~0}
+
+
+
+Definition at line 79 of file T\+R\+N\+G\+C\+C26\+X\+X.\+c.
+
+\mbox{\Hypertarget{_t_r_n_g_c_c26_x_x_8c_a1174dedd32e0c818070fbdc08a2c2a46}\label{_t_r_n_g_c_c26_x_x_8c_a1174dedd32e0c818070fbdc08a2c2a46}} 
+\index{TRNGCC26XX.c@{TRNGCC26XX.c}!TRNGCC26XX\_MAX\_SAMPLES\_DEFAULT@{TRNGCC26XX\_MAX\_SAMPLES\_DEFAULT}}
+\index{TRNGCC26XX\_MAX\_SAMPLES\_DEFAULT@{TRNGCC26XX\_MAX\_SAMPLES\_DEFAULT}!TRNGCC26XX.c@{TRNGCC26XX.c}}
+\doxysubsubsection{\texorpdfstring{TRNGCC26XX\_MAX\_SAMPLES\_DEFAULT}{TRNGCC26XX\_MAX\_SAMPLES\_DEFAULT}}
+{\footnotesize\ttfamily \#define T\+R\+N\+G\+C\+C26\+X\+X\+\_\+\+M\+A\+X\+\_\+\+S\+A\+M\+P\+L\+E\+S\+\_\+\+D\+E\+F\+A\+U\+LT~256}
+
+
+
+Definition at line 69 of file T\+R\+N\+G\+C\+C26\+X\+X.\+c.
+
+\mbox{\Hypertarget{_t_r_n_g_c_c26_x_x_8c_a78c53bf85bb4502a61d611c32bbab225}\label{_t_r_n_g_c_c26_x_x_8c_a78c53bf85bb4502a61d611c32bbab225}} 
+\index{TRNGCC26XX.c@{TRNGCC26XX.c}!TRNGCC26XX\_MIN\_SAMPLES\_DEFAULT@{TRNGCC26XX\_MIN\_SAMPLES\_DEFAULT}}
+\index{TRNGCC26XX\_MIN\_SAMPLES\_DEFAULT@{TRNGCC26XX\_MIN\_SAMPLES\_DEFAULT}!TRNGCC26XX.c@{TRNGCC26XX.c}}
+\doxysubsubsection{\texorpdfstring{TRNGCC26XX\_MIN\_SAMPLES\_DEFAULT}{TRNGCC26XX\_MIN\_SAMPLES\_DEFAULT}}
+{\footnotesize\ttfamily \#define T\+R\+N\+G\+C\+C26\+X\+X\+\_\+\+M\+I\+N\+\_\+\+S\+A\+M\+P\+L\+E\+S\+\_\+\+D\+E\+F\+A\+U\+LT~256}
+
+
+
+Definition at line 68 of file T\+R\+N\+G\+C\+C26\+X\+X.\+c.
+
+\mbox{\Hypertarget{_t_r_n_g_c_c26_x_x_8c_a2774bc73f0b7d8e29b8381608c510523}\label{_t_r_n_g_c_c26_x_x_8c_a2774bc73f0b7d8e29b8381608c510523}} 
+\index{TRNGCC26XX.c@{TRNGCC26XX.c}!TRNGCC26XX\_OPEN@{TRNGCC26XX\_OPEN}}
+\index{TRNGCC26XX\_OPEN@{TRNGCC26XX\_OPEN}!TRNGCC26XX.c@{TRNGCC26XX.c}}
+\doxysubsubsection{\texorpdfstring{TRNGCC26XX\_OPEN}{TRNGCC26XX\_OPEN}}
+{\footnotesize\ttfamily \#define T\+R\+N\+G\+C\+C26\+X\+X\+\_\+\+O\+P\+EN~1}
+
+
+
+Definition at line 76 of file T\+R\+N\+G\+C\+C26\+X\+X.\+c.
+
+\mbox{\Hypertarget{_t_r_n_g_c_c26_x_x_8c_a996bf4be27c1ef63a1769539a18f5ffe}\label{_t_r_n_g_c_c26_x_x_8c_a996bf4be27c1ef63a1769539a18f5ffe}} 
+\index{TRNGCC26XX.c@{TRNGCC26XX.c}!TRNGCC26XX\_SAMPLE\_RATE\_DEFAULT@{TRNGCC26XX\_SAMPLE\_RATE\_DEFAULT}}
+\index{TRNGCC26XX\_SAMPLE\_RATE\_DEFAULT@{TRNGCC26XX\_SAMPLE\_RATE\_DEFAULT}!TRNGCC26XX.c@{TRNGCC26XX.c}}
+\doxysubsubsection{\texorpdfstring{TRNGCC26XX\_SAMPLE\_RATE\_DEFAULT}{TRNGCC26XX\_SAMPLE\_RATE\_DEFAULT}}
+{\footnotesize\ttfamily \#define T\+R\+N\+G\+C\+C26\+X\+X\+\_\+\+S\+A\+M\+P\+L\+E\+\_\+\+R\+A\+T\+E\+\_\+\+D\+E\+F\+A\+U\+LT~1}
+
+
+
+Definition at line 70 of file T\+R\+N\+G\+C\+C26\+X\+X.\+c.
+
+\mbox{\Hypertarget{_t_r_n_g_c_c26_x_x_8c_a808161fd3aa101e4331b26433ade4d6d}\label{_t_r_n_g_c_c26_x_x_8c_a808161fd3aa101e4331b26433ade4d6d}} 
+\index{TRNGCC26XX.c@{TRNGCC26XX.c}!TRNGCC26XXX\_PERIPHERAL\_0\_INDEX@{TRNGCC26XXX\_PERIPHERAL\_0\_INDEX}}
+\index{TRNGCC26XXX\_PERIPHERAL\_0\_INDEX@{TRNGCC26XXX\_PERIPHERAL\_0\_INDEX}!TRNGCC26XX.c@{TRNGCC26XX.c}}
+\doxysubsubsection{\texorpdfstring{TRNGCC26XXX\_PERIPHERAL\_0\_INDEX}{TRNGCC26XXX\_PERIPHERAL\_0\_INDEX}}
+{\footnotesize\ttfamily \#define T\+R\+N\+G\+C\+C26\+X\+X\+X\+\_\+\+P\+E\+R\+I\+P\+H\+E\+R\+A\+L\+\_\+0\+\_\+\+I\+N\+D\+EX~0}
+
+
+
+Definition at line 72 of file T\+R\+N\+G\+C\+C26\+X\+X.\+c.
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{_t_r_n_g_c_c26_x_x_8c_aee2efca6a2e714dc25e50e8cbe594de2}\label{_t_r_n_g_c_c26_x_x_8c_aee2efca6a2e714dc25e50e8cbe594de2}} 
+\index{TRNGCC26XX.c@{TRNGCC26XX.c}!closeTRNG@{closeTRNG}}
+\index{closeTRNG@{closeTRNG}!TRNGCC26XX.c@{TRNGCC26XX.c}}
+\doxysubsubsection{\texorpdfstring{closeTRNG()}{closeTRNG()}}
+{\footnotesize\ttfamily void close\+T\+R\+NG (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group___t_r_n_g___s_t_a_t_u_s_ga3625ee61c7d4ba59d1ea188be55115af}{T\+R\+N\+G\+C\+C26\+X\+X\+\_\+\+Handle}}}]{handle }\end{DoxyParamCaption})}
+
+
+
+Definition at line 300 of file T\+R\+N\+G\+C\+C26\+X\+X.\+c.
+
+\mbox{\Hypertarget{_t_r_n_g_c_c26_x_x_8c_ad3802ea522f4f014b86f89ac0f6ff2c3}\label{_t_r_n_g_c_c26_x_x_8c_ad3802ea522f4f014b86f89ac0f6ff2c3}} 
+\index{TRNGCC26XX.c@{TRNGCC26XX.c}!openTRNG@{openTRNG}}
+\index{openTRNG@{openTRNG}!TRNGCC26XX.c@{TRNGCC26XX.c}}
+\doxysubsubsection{\texorpdfstring{openTRNG()}{openTRNG()}}
+{\footnotesize\ttfamily void open\+T\+R\+NG (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group___t_r_n_g___s_t_a_t_u_s_ga3625ee61c7d4ba59d1ea188be55115af}{T\+R\+N\+G\+C\+C26\+X\+X\+\_\+\+Handle}}}]{handle }\end{DoxyParamCaption})}
+
+
+
+Definition at line 286 of file T\+R\+N\+G\+C\+C26\+X\+X.\+c.
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{_t_r_n_g_c_c26_x_x_8c_a26e5ca38a4ffc9a36e9a299d3adbef5b}\label{_t_r_n_g_c_c26_x_x_8c_a26e5ca38a4ffc9a36e9a299d3adbef5b}} 
+\index{TRNGCC26XX.c@{TRNGCC26XX.c}!TRNGCC26XX\_config@{TRNGCC26XX\_config}}
+\index{TRNGCC26XX\_config@{TRNGCC26XX\_config}!TRNGCC26XX.c@{TRNGCC26XX.c}}
+\doxysubsubsection{\texorpdfstring{TRNGCC26XX\_config}{TRNGCC26XX\_config}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{struct_t_r_n_g_c_c26_x_x___config}{T\+R\+N\+G\+C\+C26\+X\+X\+\_\+\+Config}} T\+R\+N\+G\+C\+C26\+X\+X\+\_\+config\mbox{[}$\,$\mbox{]}}
+

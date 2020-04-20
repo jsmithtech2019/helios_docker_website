@@ -1,0 +1,70 @@
+\hypertarget{group___u_a_r_t___s_t_a_t_u_s}{}\doxysection{Status Codes}
+\label{group___u_a_r_t___s_t_a_t_u_s}\index{Status Codes@{Status Codes}}
+
+
+U\+A\+R\+T\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+$\ast$ macros are general status codes returned by \mbox{\hyperlink{_u_a_r_t_8h_a9de3c26cfe4ce6b7f350a6ea6e16801d}{U\+A\+R\+T\+\_\+control()}}  
+
+
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group___u_a_r_t___s_t_a_t_u_s_ga101b7761f89b3ec49f0c6726669acfed}{U\+A\+R\+T\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+S\+U\+C\+C\+E\+SS}}~0
+\begin{DoxyCompactList}\small\item\em Successful status code returned by \mbox{\hyperlink{_u_a_r_t_8h_a9de3c26cfe4ce6b7f350a6ea6e16801d}{U\+A\+R\+T\+\_\+control()}}. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___u_a_r_t___s_t_a_t_u_s_ga2ae076f4aae13ca8e2aea674207df0ad}{U\+A\+R\+T\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+E\+R\+R\+OR}}~-\/1
+\begin{DoxyCompactList}\small\item\em Generic error status code returned by \mbox{\hyperlink{_u_a_r_t_8h_a9de3c26cfe4ce6b7f350a6ea6e16801d}{U\+A\+R\+T\+\_\+control()}}. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___u_a_r_t___s_t_a_t_u_s_ga61125a2eb8059fd8b96ad95edc68ac2b}{U\+A\+R\+T\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+U\+N\+D\+E\+F\+I\+N\+E\+D\+C\+MD}}~-\/2
+\begin{DoxyCompactList}\small\item\em An error status code returned by \mbox{\hyperlink{_u_a_r_t_8h_a9de3c26cfe4ce6b7f350a6ea6e16801d}{U\+A\+R\+T\+\_\+control()}} for undefined command codes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+U\+A\+R\+T\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+$\ast$ macros are general status codes returned by \mbox{\hyperlink{_u_a_r_t_8h_a9de3c26cfe4ce6b7f350a6ea6e16801d}{U\+A\+R\+T\+\_\+control()}} 
+
+U\+A\+R\+T\+C\+C26\+X\+X\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+$\ast$ macros are command codes only defined in the \mbox{\hyperlink{_u_a_r_t_c_c26_x_x_8h}{U\+A\+R\+T\+C\+C26\+X\+X.\+h}} driver implementation and need to\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include <ti/drivers/uart/UARTCC26XX.h>}}
+\end{DoxyCode}
+ 
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{group___u_a_r_t___s_t_a_t_u_s_ga2ae076f4aae13ca8e2aea674207df0ad}\label{group___u_a_r_t___s_t_a_t_u_s_ga2ae076f4aae13ca8e2aea674207df0ad}} 
+\index{Status Codes@{Status Codes}!UART\_STATUS\_ERROR@{UART\_STATUS\_ERROR}}
+\index{UART\_STATUS\_ERROR@{UART\_STATUS\_ERROR}!Status Codes@{Status Codes}}
+\doxysubsubsection{\texorpdfstring{UART\_STATUS\_ERROR}{UART\_STATUS\_ERROR}}
+{\footnotesize\ttfamily \#define U\+A\+R\+T\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+E\+R\+R\+OR~-\/1}
+
+
+
+Generic error status code returned by \mbox{\hyperlink{_u_a_r_t_8h_a9de3c26cfe4ce6b7f350a6ea6e16801d}{U\+A\+R\+T\+\_\+control()}}. 
+
+\mbox{\hyperlink{_u_a_r_t_8h_a9de3c26cfe4ce6b7f350a6ea6e16801d}{U\+A\+R\+T\+\_\+control()}} returns U\+A\+R\+T\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+E\+R\+R\+OR if the control code was not executed successfully. 
+
+Definition at line 207 of file U\+A\+R\+T.\+h.
+
+\mbox{\Hypertarget{group___u_a_r_t___s_t_a_t_u_s_ga101b7761f89b3ec49f0c6726669acfed}\label{group___u_a_r_t___s_t_a_t_u_s_ga101b7761f89b3ec49f0c6726669acfed}} 
+\index{Status Codes@{Status Codes}!UART\_STATUS\_SUCCESS@{UART\_STATUS\_SUCCESS}}
+\index{UART\_STATUS\_SUCCESS@{UART\_STATUS\_SUCCESS}!Status Codes@{Status Codes}}
+\doxysubsubsection{\texorpdfstring{UART\_STATUS\_SUCCESS}{UART\_STATUS\_SUCCESS}}
+{\footnotesize\ttfamily \#define U\+A\+R\+T\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+S\+U\+C\+C\+E\+SS~0}
+
+
+
+Successful status code returned by \mbox{\hyperlink{_u_a_r_t_8h_a9de3c26cfe4ce6b7f350a6ea6e16801d}{U\+A\+R\+T\+\_\+control()}}. 
+
+\mbox{\hyperlink{_u_a_r_t_8h_a9de3c26cfe4ce6b7f350a6ea6e16801d}{U\+A\+R\+T\+\_\+control()}} returns U\+A\+R\+T\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+S\+U\+C\+C\+E\+SS if the control code was executed successfully. 
+
+Definition at line 199 of file U\+A\+R\+T.\+h.
+
+\mbox{\Hypertarget{group___u_a_r_t___s_t_a_t_u_s_ga61125a2eb8059fd8b96ad95edc68ac2b}\label{group___u_a_r_t___s_t_a_t_u_s_ga61125a2eb8059fd8b96ad95edc68ac2b}} 
+\index{Status Codes@{Status Codes}!UART\_STATUS\_UNDEFINEDCMD@{UART\_STATUS\_UNDEFINEDCMD}}
+\index{UART\_STATUS\_UNDEFINEDCMD@{UART\_STATUS\_UNDEFINEDCMD}!Status Codes@{Status Codes}}
+\doxysubsubsection{\texorpdfstring{UART\_STATUS\_UNDEFINEDCMD}{UART\_STATUS\_UNDEFINEDCMD}}
+{\footnotesize\ttfamily \#define U\+A\+R\+T\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+U\+N\+D\+E\+F\+I\+N\+E\+D\+C\+MD~-\/2}
+
+
+
+An error status code returned by \mbox{\hyperlink{_u_a_r_t_8h_a9de3c26cfe4ce6b7f350a6ea6e16801d}{U\+A\+R\+T\+\_\+control()}} for undefined command codes. 
+
+\mbox{\hyperlink{_u_a_r_t_8h_a9de3c26cfe4ce6b7f350a6ea6e16801d}{U\+A\+R\+T\+\_\+control()}} returns U\+A\+R\+T\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+U\+N\+D\+E\+F\+I\+N\+E\+D\+C\+MD if the control code is not recognized by the driver implementation. 
+
+Definition at line 216 of file U\+A\+R\+T.\+h.
+

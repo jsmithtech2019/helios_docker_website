@@ -1,0 +1,513 @@
+\hypertarget{_e_c_c_r_o_m_c_c26_x_x_8h}{}\doxysection{Drivers/\+E\+C\+C/\+E\+C\+C\+R\+O\+M\+C\+C26\+XX.h File Reference}
+\label{_e_c_c_r_o_m_c_c26_x_x_8h}\index{Drivers/ECC/ECCROMCC26XX.h@{Drivers/ECC/ECCROMCC26XX.h}}
+
+
+E\+CC R\+OM driver implementation for a C\+C26\+XX device.  
+
+
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_e_c_c_r_o_m_c_c26_x_x___curve_params}{E\+C\+C\+R\+O\+M\+C\+C26\+X\+X\+\_\+\+Curve\+Params}}
+\begin{DoxyCompactList}\small\item\em E\+C\+C\+R\+O\+M\+C\+C26\+XX Curve Parameters. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_e_c_c_r_o_m_c_c26_x_x___params}{E\+C\+C\+R\+O\+M\+C\+C26\+X\+X\+\_\+\+Params}}
+\begin{DoxyCompactList}\small\item\em E\+C\+C\+R\+O\+M\+C\+C26\+XX Parameters. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group___e_c_c___s_t_a_t_u_s_gaa215d32395c68c9aa8e62bdf7e6d46da}{E\+C\+C\+R\+O\+M\+C\+C26\+X\+X\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+S\+U\+C\+C\+E\+SS}}~0
+\item 
+\#define \mbox{\hyperlink{group___e_c_c___s_t_a_t_u_s_gaac9b123e8faf8c7e8f243d793b0b7e1b}{E\+C\+C\+R\+O\+M\+C\+C26\+X\+X\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+M\+A\+L\+L\+O\+C\+\_\+\+F\+A\+IL}}~-\/1
+\item 
+\#define \mbox{\hyperlink{group___e_c_c___s_t_a_t_u_s_ga0fe393429caa06ee4e42071b566119dd}{E\+C\+C\+R\+O\+M\+C\+C26\+X\+X\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+I\+L\+L\+E\+G\+A\+L\+\_\+\+P\+A\+R\+AM}}~-\/2
+\item 
+\#define \mbox{\hyperlink{group___e_c_c___s_t_a_t_u_s_ga5b074ba744c746d8f3c98c6bdfd05eea}{E\+C\+C\+R\+O\+M\+C\+C26\+X\+X\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+T\+I\+M\+E\+O\+UT}}~-\/3
+\item 
+\#define \mbox{\hyperlink{group___e_c_c___s_t_a_t_u_s_ga70f0bda784bcf1ec7e812a08e50229da}{E\+C\+C\+R\+O\+M\+C\+C26\+X\+X\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+M\+O\+D\+U\+L\+U\+S\+\_\+\+E\+V\+EN}}~0x\+DC
+\item 
+\#define \mbox{\hyperlink{group___e_c_c___s_t_a_t_u_s_ga558ef328d750f5bc40249c133c00b2a6}{E\+C\+C\+R\+O\+M\+C\+C26\+X\+X\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+M\+O\+D\+U\+L\+U\+S\+\_\+\+L\+A\+R\+G\+E\+R\+\_\+\+T\+H\+A\+N\+\_\+255\+\_\+\+W\+O\+R\+DS}}~0x\+D2
+\item 
+\#define \mbox{\hyperlink{group___e_c_c___s_t_a_t_u_s_gae3b69c639e6e05b0eb7f73ef3ba9e22a}{E\+C\+C\+R\+O\+M\+C\+C26\+X\+X\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+M\+O\+D\+U\+L\+U\+S\+\_\+\+L\+E\+N\+G\+T\+H\+\_\+\+Z\+E\+RO}}~0x08
+\item 
+\#define \mbox{\hyperlink{group___e_c_c___s_t_a_t_u_s_ga0de250a2d84721724a809b7a28b4419c}{E\+C\+C\+R\+O\+M\+C\+C26\+X\+X\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+M\+O\+D\+U\+L\+U\+S\+\_\+\+M\+S\+W\+\_\+\+I\+S\+\_\+\+Z\+E\+RO}}~0x30
+\item 
+\#define \mbox{\hyperlink{group___e_c_c___s_t_a_t_u_s_ga42eaaae7c9f04c322838e904bbdefbbc}{E\+C\+C\+R\+O\+M\+C\+C26\+X\+X\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+S\+C\+A\+L\+A\+R\+\_\+\+T\+O\+O\+\_\+\+L\+O\+NG}}~0x35
+\item 
+\#define \mbox{\hyperlink{group___e_c_c___s_t_a_t_u_s_gab9676688be7cbf9da84511fe4d3938a1}{E\+C\+C\+R\+O\+M\+C\+C26\+X\+X\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+S\+C\+A\+L\+A\+R\+\_\+\+L\+E\+N\+G\+T\+H\+\_\+\+Z\+E\+RO}}~0x53
+\item 
+\#define \mbox{\hyperlink{group___e_c_c___s_t_a_t_u_s_gadf34477fae4c914c6a0cec2fd3b1c68e}{E\+C\+C\+R\+O\+M\+C\+C26\+X\+X\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+O\+R\+D\+E\+R\+\_\+\+T\+O\+O\+\_\+\+L\+O\+NG}}~0x\+C6
+\item 
+\#define \mbox{\hyperlink{group___e_c_c___s_t_a_t_u_s_gabe767ec69f73b877c97c68df8aa973b4}{E\+C\+C\+R\+O\+M\+C\+C26\+X\+X\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+O\+R\+D\+E\+R\+\_\+\+L\+E\+N\+G\+T\+H\+\_\+\+Z\+E\+RO}}~0x6C
+\item 
+\#define \mbox{\hyperlink{group___e_c_c___s_t_a_t_u_s_gaa9a1bad0bfbd007fa94c0607340fe292}{E\+C\+C\+R\+O\+M\+C\+C26\+X\+X\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+X\+\_\+\+C\+O\+O\+R\+D\+\_\+\+T\+O\+O\+\_\+\+L\+O\+NG}}~0x3C
+\item 
+\#define \mbox{\hyperlink{group___e_c_c___s_t_a_t_u_s_ga4259f9986986ae998944f760a671efe2}{E\+C\+C\+R\+O\+M\+C\+C26\+X\+X\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+X\+\_\+\+C\+O\+O\+R\+D\+\_\+\+L\+E\+N\+G\+T\+H\+\_\+\+Z\+E\+RO}}~0x\+C3
+\item 
+\#define \mbox{\hyperlink{group___e_c_c___s_t_a_t_u_s_ga79d97430db992a9fe423bda4c8c23b67}{E\+C\+C\+R\+O\+M\+C\+C26\+X\+X\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+Y\+\_\+\+C\+O\+O\+R\+D\+\_\+\+T\+O\+O\+\_\+\+L\+O\+NG}}~0x65
+\item 
+\#define \mbox{\hyperlink{group___e_c_c___s_t_a_t_u_s_ga318fdde125a48fcb9542fadffbb61e52}{E\+C\+C\+R\+O\+M\+C\+C26\+X\+X\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+Y\+\_\+\+C\+O\+O\+R\+D\+\_\+\+L\+E\+N\+G\+T\+H\+\_\+\+Z\+E\+RO}}~0x56
+\item 
+\#define \mbox{\hyperlink{group___e_c_c___s_t_a_t_u_s_ga38c699a084591b1479737227a9700405}{E\+C\+C\+R\+O\+M\+C\+C26\+X\+X\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+A\+\_\+\+C\+O\+E\+F\+\_\+\+T\+O\+O\+\_\+\+L\+O\+NG}}~0x5C
+\item 
+\#define \mbox{\hyperlink{group___e_c_c___s_t_a_t_u_s_gaf80fba67d8387ee798083b740748ba60}{E\+C\+C\+R\+O\+M\+C\+C26\+X\+X\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+A\+\_\+\+C\+O\+E\+F\+\_\+\+L\+E\+N\+G\+T\+H\+\_\+\+Z\+E\+RO}}~0x\+C5
+\item 
+\#define \mbox{\hyperlink{group___e_c_c___s_t_a_t_u_s_gae080c46ed41a0daf11aa4783c7d5b8ac}{E\+C\+C\+R\+O\+M\+C\+C26\+X\+X\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+B\+A\+D\+\_\+\+W\+I\+N\+D\+O\+W\+\_\+\+S\+I\+ZE}}~0x66
+\item 
+\#define \mbox{\hyperlink{group___e_c_c___s_t_a_t_u_s_gae37541a5069c668459b2cb3c8be07d4e}{E\+C\+C\+R\+O\+M\+C\+C26\+X\+X\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+S\+C\+A\+L\+A\+R\+\_\+\+M\+U\+L\+\_\+\+OK}}~0x99
+\item 
+\#define \mbox{\hyperlink{group___e_c_c___s_t_a_t_u_s_ga3d0228e832ce93aade44e1c60f0c2262}{E\+C\+C\+R\+O\+M\+C\+C26\+X\+X\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+O\+R\+D\+E\+R\+\_\+\+L\+A\+R\+G\+E\+R\+\_\+\+T\+H\+A\+N\+\_\+255\+\_\+\+W\+O\+R\+DS}}~0x28
+\item 
+\#define \mbox{\hyperlink{group___e_c_c___s_t_a_t_u_s_ga71ff2fae40b9383bcc15c15d449b62ee}{E\+C\+C\+R\+O\+M\+C\+C26\+X\+X\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+O\+R\+D\+E\+R\+\_\+\+E\+V\+EN}}~0x82
+\item 
+\#define \mbox{\hyperlink{group___e_c_c___s_t_a_t_u_s_ga82b3d0199cec74a011f6ab0444a8f446}{E\+C\+C\+R\+O\+M\+C\+C26\+X\+X\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+O\+R\+D\+E\+R\+\_\+\+M\+S\+W\+\_\+\+I\+S\+\_\+\+Z\+E\+RO}}~0x23
+\item 
+\#define \mbox{\hyperlink{group___e_c_c___s_t_a_t_u_s_ga56184062602ddac9b454c32db208bf7e}{E\+C\+C\+R\+O\+M\+C\+C26\+X\+X\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+E\+C\+C\+R\+O\+M\+C\+C26\+X\+X\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+K\+E\+Y\+\_\+\+T\+O\+O\+\_\+\+L\+O\+NG}}~0x25
+\item 
+\#define \mbox{\hyperlink{group___e_c_c___s_t_a_t_u_s_gac22abc4c4ce043623da5ab594d88de7b}{E\+C\+C\+R\+O\+M\+C\+C26\+X\+X\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+E\+C\+C\+R\+O\+M\+C\+C26\+X\+X\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+K\+E\+Y\+\_\+\+L\+E\+N\+G\+T\+H\+\_\+\+Z\+E\+RO}}~0x52
+\item 
+\#define \mbox{\hyperlink{group___e_c_c___s_t_a_t_u_s_ga75f11925a2e7a966a6a4e1c15d55d0c9}{E\+C\+C\+R\+O\+M\+C\+C26\+X\+X\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+D\+I\+G\+E\+S\+T\+\_\+\+T\+O\+O\+\_\+\+L\+O\+NG}}~0x27
+\item 
+\#define \mbox{\hyperlink{group___e_c_c___s_t_a_t_u_s_ga4d1a2034cbafc6250d1cd51dfd9410e2}{E\+C\+C\+R\+O\+M\+C\+C26\+X\+X\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+D\+I\+G\+E\+S\+T\+\_\+\+L\+E\+N\+G\+T\+H\+\_\+\+Z\+E\+RO}}~0x72
+\item 
+\#define \mbox{\hyperlink{group___e_c_c___s_t_a_t_u_s_gaf4acd1f14f31685e1e036364141c51b6}{E\+C\+C\+R\+O\+M\+C\+C26\+X\+X\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+E\+C\+D\+S\+A\+\_\+\+S\+I\+G\+N\+\_\+\+OK}}~0x32
+\item 
+\#define \mbox{\hyperlink{group___e_c_c___s_t_a_t_u_s_ga2ee10d3deaba75b851340d3dbfe68fc4}{E\+C\+C\+R\+O\+M\+C\+C26\+X\+X\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+E\+C\+D\+S\+A\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+S\+I\+G\+N\+A\+T\+U\+RE}}~0x5A
+\item 
+\#define \mbox{\hyperlink{group___e_c_c___s_t_a_t_u_s_ga215f5b1f2839d52b2f9e293f0d887ae6}{E\+C\+C\+R\+O\+M\+C\+C26\+X\+X\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+E\+C\+D\+S\+A\+\_\+\+V\+A\+L\+I\+D\+\_\+\+S\+I\+G\+N\+A\+T\+U\+RE}}~0x\+A5
+\item 
+\#define \mbox{\hyperlink{group___e_c_c___s_t_a_t_u_s_gab26ec1d1dab86c0abf8205622350d7db}{E\+C\+C\+R\+O\+M\+C\+C26\+X\+X\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+S\+I\+G\+\_\+\+P1\+\_\+\+T\+O\+O\+\_\+\+L\+O\+NG}}~0x11
+\item 
+\#define \mbox{\hyperlink{group___e_c_c___s_t_a_t_u_s_ga06577b43fe39190d5a86e98d0560c805}{E\+C\+C\+R\+O\+M\+C\+C26\+X\+X\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+S\+I\+G\+\_\+\+P1\+\_\+\+L\+E\+N\+G\+T\+H\+\_\+\+Z\+E\+RO}}~0x12
+\item 
+\#define \mbox{\hyperlink{group___e_c_c___s_t_a_t_u_s_gadb6ae4137f5cce21f489ab20980bdfcd}{E\+C\+C\+R\+O\+M\+C\+C26\+X\+X\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+S\+I\+G\+\_\+\+P2\+\_\+\+T\+O\+O\+\_\+\+L\+O\+NG}}~0x22
+\item 
+\#define \mbox{\hyperlink{group___e_c_c___s_t_a_t_u_s_ga7e1abab9d257d4e586d97d85eac19c8c}{E\+C\+C\+R\+O\+M\+C\+C26\+X\+X\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+S\+I\+G\+\_\+\+P2\+\_\+\+L\+E\+N\+G\+T\+H\+\_\+\+Z\+E\+RO}}~0x21
+\item 
+\#define \mbox{\hyperlink{group___e_c_c___s_t_a_t_u_s_ga3dcc7d362d4ca045404fd3f6e97b5e34}{E\+C\+C\+R\+O\+M\+C\+C26\+X\+X\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+E\+C\+D\+H\+\_\+\+K\+E\+Y\+G\+E\+N\+\_\+\+OK}}~\mbox{\hyperlink{group___e_c_c___s_t_a_t_u_s_gae37541a5069c668459b2cb3c8be07d4e}{E\+C\+C\+R\+O\+M\+C\+C26\+X\+X\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+S\+C\+A\+L\+A\+R\+\_\+\+M\+U\+L\+\_\+\+OK}}
+\item 
+\#define \mbox{\hyperlink{group___e_c_c___s_t_a_t_u_s_ga9fc2c4983d1dc6ec07d82bebd41ceddc}{E\+C\+C\+R\+O\+M\+C\+C26\+X\+X\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+E\+C\+D\+H\+\_\+\+C\+O\+M\+M\+O\+N\+\_\+\+K\+E\+Y\+\_\+\+OK}}~\mbox{\hyperlink{group___e_c_c___s_t_a_t_u_s_gae37541a5069c668459b2cb3c8be07d4e}{E\+C\+C\+R\+O\+M\+C\+C26\+X\+X\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+S\+C\+A\+L\+A\+R\+\_\+\+M\+U\+L\+\_\+\+OK}}
+\item 
+\#define \mbox{\hyperlink{group___e_c_c___s_t_a_t_u_s_gaa35045bbf93c0c93d1cc1ab54187f191}{E\+C\+C\+R\+O\+M\+C\+C26\+X\+X\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+E\+C\+D\+H\+\_\+\+X\+\_\+\+Z\+E\+RO}}~0x1
+\item 
+\#define \mbox{\hyperlink{group___e_c_c___s_t_a_t_u_s_gaa79e72aa9029b7800af40a1520da7452}{E\+C\+C\+R\+O\+M\+C\+C26\+X\+X\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+E\+C\+D\+H\+\_\+\+Y\+\_\+\+Z\+E\+RO}}~0x2
+\item 
+\#define \mbox{\hyperlink{group___e_c_c___s_t_a_t_u_s_ga1329fd4f9cd3801728eb78cba8d40d53}{E\+C\+C\+R\+O\+M\+C\+C26\+X\+X\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+E\+C\+D\+H\+\_\+\+X\+\_\+\+L\+A\+R\+G\+E\+R\+\_\+\+T\+H\+A\+N\+\_\+\+P\+R\+I\+ME}}~0x3
+\item 
+\#define \mbox{\hyperlink{group___e_c_c___s_t_a_t_u_s_ga409a5686349bf53ca29cdaf78c9690d8}{E\+C\+C\+R\+O\+M\+C\+C26\+X\+X\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+E\+C\+D\+H\+\_\+\+Y\+\_\+\+L\+A\+R\+G\+E\+R\+\_\+\+T\+H\+A\+N\+\_\+\+P\+R\+I\+ME}}~0x4
+\item 
+\#define \mbox{\hyperlink{group___e_c_c___s_t_a_t_u_s_gae484ce4e2fc07b1eca46f60e7ee18c01}{E\+C\+C\+R\+O\+M\+C\+C26\+X\+X\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+E\+C\+D\+H\+\_\+\+P\+T\+\_\+\+C\+H\+E\+C\+K\+\_\+\+F\+A\+IL}}~0x5
+\item 
+\#define \mbox{\hyperlink{_e_c_c_r_o_m_c_c26_x_x_8h_a5dfd588fa27d404b03b91530a86896e5}{E\+C\+C\+R\+O\+M\+C\+C26\+X\+X\+\_\+\+N\+I\+S\+T\+\_\+\+P256\+\_\+\+W\+O\+R\+K\+Z\+O\+N\+E\+\_\+\+L\+E\+N\+\_\+\+I\+N\+\_\+\+B\+Y\+T\+ES}}~684
+\item 
+\#define \mbox{\hyperlink{_e_c_c_r_o_m_c_c26_x_x_8h_aeccc0f3dcead42358240278e47250618}{E\+C\+C\+R\+O\+M\+C\+C26\+X\+X\+\_\+\+N\+I\+S\+T\+\_\+\+P256\+\_\+\+K\+E\+Y\+\_\+\+L\+E\+N\+\_\+\+I\+N\+\_\+\+B\+Y\+T\+ES}}~32
+\item 
+\#define \mbox{\hyperlink{_e_c_c_r_o_m_c_c26_x_x_8h_abafac2fa1a8c010d3e66a8d4e9cf97d0}{E\+C\+C\+R\+O\+M\+C\+C26\+X\+X\+\_\+\+W\+O\+R\+K\+Z\+O\+N\+E\+\_\+\+L\+E\+N\+\_\+\+I\+N\+\_\+\+B\+Y\+T\+ES}}(\mbox{\hyperlink{icall__apimsg_8h_a8ccac76f35f79d74917e1c5dd6f69fea}{len}},  win)~(4 $\ast$ ((13 $\ast$ (\mbox{\hyperlink{icall__apimsg_8h_a8ccac76f35f79d74917e1c5dd6f69fea}{len}})) + 13 + (3 $\ast$ (\mbox{\hyperlink{icall__apimsg_8h_a8ccac76f35f79d74917e1c5dd6f69fea}{len}}) $\ast$ (1 $<$$<$ ((win) -\/ 2)))))
+\begin{DoxyCompactList}\small\item\em Compute E\+CC workzone length in bytes for a generic key length and window size. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \mbox{\hyperlink{struct_e_c_c_r_o_m_c_c26_x_x___curve_params}{E\+C\+C\+R\+O\+M\+C\+C26\+X\+X\+\_\+\+Curve\+Params}} \mbox{\hyperlink{_e_c_c_r_o_m_c_c26_x_x_8h_a8330390ac829ae4bf421ec13c055778a}{E\+C\+C\+R\+O\+M\+C\+C26\+X\+X\+\_\+\+Curve\+Params}}
+\begin{DoxyCompactList}\small\item\em E\+C\+C\+R\+O\+M\+C\+C26\+XX Curve Parameters. \end{DoxyCompactList}\item 
+typedef uint8\+\_\+t $\ast$($\ast$ \mbox{\hyperlink{_e_c_c_r_o_m_c_c26_x_x_8h_a8f27309f75abea9c1f018295aad2a32b}{E\+C\+C\+R\+O\+M\+C\+C26\+X\+X\+\_\+\+Malloc\+CB}}) (uint16\+\_\+t \mbox{\hyperlink{icall__apimsg_8h_a8ccac76f35f79d74917e1c5dd6f69fea}{len}})
+\begin{DoxyCompactList}\small\item\em E\+C\+C\+R\+O\+M\+C\+C26\+XX Malloc Callback. \end{DoxyCompactList}\item 
+typedef void($\ast$ \mbox{\hyperlink{_e_c_c_r_o_m_c_c26_x_x_8h_aa50cee1ebb718a064595777a7fa7ea7d}{E\+C\+C\+R\+O\+M\+C\+C26\+X\+X\+\_\+\+Free\+CB}}) (uint8\+\_\+t $\ast$p\+Buf)
+\begin{DoxyCompactList}\small\item\em E\+C\+C\+R\+O\+M\+C\+C26\+XX Free Callback. \end{DoxyCompactList}\item 
+typedef struct \mbox{\hyperlink{struct_e_c_c_r_o_m_c_c26_x_x___params}{E\+C\+C\+R\+O\+M\+C\+C26\+X\+X\+\_\+\+Params}} \mbox{\hyperlink{_e_c_c_r_o_m_c_c26_x_x_8h_a292f9ba9137ef50645f0abbfdbb1cb2d}{E\+C\+C\+R\+O\+M\+C\+C26\+X\+X\+\_\+\+Params}}
+\begin{DoxyCompactList}\small\item\em E\+C\+C\+R\+O\+M\+C\+C26\+XX Parameters. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{_e_c_c_r_o_m_c_c26_x_x_8h_adbed30899def3597c9f91d9d6cceff8f}{E\+C\+C\+R\+O\+M\+C\+C26\+X\+X\+\_\+init}} (void)
+\begin{DoxyCompactList}\small\item\em Initializes module\textquotesingle{}s synchronization resources. Only needs to be called once, but safe to call multiple times. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_e_c_c_r_o_m_c_c26_x_x_8h_ab4b43f73cb42748bf9261a43953f8709}{E\+C\+C\+R\+O\+M\+C\+C26\+X\+X\+\_\+\+Params\+\_\+init}} (\mbox{\hyperlink{struct_e_c_c_r_o_m_c_c26_x_x___params}{E\+C\+C\+R\+O\+M\+C\+C26\+X\+X\+\_\+\+Params}} $\ast$params)
+\begin{DoxyCompactList}\small\item\em Function to initialize the \mbox{\hyperlink{struct_e_c_c_r_o_m_c_c26_x_x___params}{E\+C\+C\+R\+O\+M\+C\+C26\+X\+X\+\_\+\+Params}} struct to its defaults. params should not be modified until after this function is called. Default parameters use the N\+I\+ST P-\/256 curve, timeout is set to wait indefinitely, malloc and free are N\+U\+LL and status is set to E\+C\+C\+R\+O\+M\+C\+C26\+X\+X\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+S\+U\+C\+C\+E\+SS. A client may call this function with the same params instance any number of times. \end{DoxyCompactList}\item 
+int8\+\_\+t \mbox{\hyperlink{_e_c_c_r_o_m_c_c26_x_x_8h_a97cdc759b911e36c7ccc18cfc45fede5}{E\+C\+C\+R\+O\+M\+C\+C26\+X\+X\+\_\+gen\+Keys}} (uint8\+\_\+t $\ast$private\+Key, uint8\+\_\+t $\ast$public\+KeyX, uint8\+\_\+t $\ast$public\+KeyY, \mbox{\hyperlink{struct_e_c_c_r_o_m_c_c26_x_x___params}{E\+C\+C\+R\+O\+M\+C\+C26\+X\+X\+\_\+\+Params}} $\ast$params)
+\begin{DoxyCompactList}\small\item\em Generate Public Key X and Y Coordinates. \end{DoxyCompactList}\item 
+int8\+\_\+t \mbox{\hyperlink{_e_c_c_r_o_m_c_c26_x_x_8h_a64032ff4d46e71fcc876eb0f0491f13c}{E\+C\+C\+R\+O\+M\+C\+C26\+X\+X\+\_\+gen\+D\+H\+Key}} (uint8\+\_\+t $\ast$private\+Key, uint8\+\_\+t $\ast$public\+KeyX, uint8\+\_\+t $\ast$public\+KeyY, uint8\+\_\+t $\ast$d\+H\+KeyX, uint8\+\_\+t $\ast$d\+H\+KeyY, \mbox{\hyperlink{struct_e_c_c_r_o_m_c_c26_x_x___params}{E\+C\+C\+R\+O\+M\+C\+C26\+X\+X\+\_\+\+Params}} $\ast$params)
+\begin{DoxyCompactList}\small\item\em Generate Diffie-\/\+Hellman Shared Secret Key X and Y Coordinates. \end{DoxyCompactList}\item 
+int8\+\_\+t \mbox{\hyperlink{_e_c_c_r_o_m_c_c26_x_x_8h_a6a19b850742ee2c7a981e826243580fd}{E\+C\+C\+\_\+\+Verify\+Public\+Key\+Weierstrass}} (\mbox{\hyperlink{struct_e_c_c_r_o_m_c_c26_x_x___params}{E\+C\+C\+R\+O\+M\+C\+C26\+X\+X\+\_\+\+Params}} $\ast$params, const uint8\+\_\+t $\ast$curve\+PointX, const uint8\+\_\+t $\ast$curve\+PointY, uint32\+\_\+t length)
+\begin{DoxyCompactList}\small\item\em Verify if the X an Y coordinates are on the right E\+CC curve. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+E\+CC R\+OM driver implementation for a C\+C26\+XX device. 
+
+============================================================================\hypertarget{_e_c_c_r_o_m_c_c26_x_x_8h_autotoc_md8}{}\doxysubsection{Driver Include}\label{_e_c_c_r_o_m_c_c26_x_x_8h_autotoc_md8}
+The E\+CC R\+OM header file should be included in an application as follows\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include <ti/drivers/ecc/ECCROMCC26XX.h>}}
+\end{DoxyCode}
+\hypertarget{_e_c_c_r_o_m_c_c26_x_x_8h_autotoc_md9}{}\doxysubsection{Overview}\label{_e_c_c_r_o_m_c_c26_x_x_8h_autotoc_md9}
+The E\+C\+C\+R\+O\+M\+C\+C26\+XX driver provides reentrant access to the R\+OM based E\+CC module. Access is given first come, first serve and subsequent calls block until all preceding callers have returned or the caller times out in which case execution returns to the caller but the operation is not performed.\hypertarget{_e_c_c_r_o_m_c_c26_x_x_8h_autotoc_md10}{}\doxysubsubsection{General Behavior}\label{_e_c_c_r_o_m_c_c26_x_x_8h_autotoc_md10}
+For code examples, see Use Cases below.\hypertarget{_e_c_c_r_o_m_c_c26_x_x_8h_autotoc_md11}{}\doxyparagraph{Initialzing the driver}\label{_e_c_c_r_o_m_c_c26_x_x_8h_autotoc_md11}
+
+\begin{DoxyItemize}
+\item The application initializes the E\+C\+C\+R\+O\+M\+C\+C26\+XX driver by calling \mbox{\hyperlink{_e_c_c_r_o_m_c_c26_x_x_8h_adbed30899def3597c9f91d9d6cceff8f}{E\+C\+C\+R\+O\+M\+C\+C26\+X\+X\+\_\+init()}}.
+\item This function may be called more than once, but it only needs to be called once per system reset.
+\end{DoxyItemize}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{comment}{// Initialize ECC ROM driver}}
+\DoxyCodeLine{\mbox{\hyperlink{_e_c_c_r_o_m_c_c26_x_x_8c_adbed30899def3597c9f91d9d6cceff8f}{ECCROMCC26XX\_init}}();}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{// Generate Public Keys}}
+\DoxyCodeLine{\mbox{\hyperlink{icall__apimsg_8h_ad94584ed274ed1d5b06d52f5bb3a178d}{status}} = \mbox{\hyperlink{_e_c_c_r_o_m_c_c26_x_x_8c_a97cdc759b911e36c7ccc18cfc45fede5}{ECCROMCC26XX\_genKeys}}(privKey, pubKeyX, pubKeyY, \&params);}
+\DoxyCodeLine{\textcolor{keywordflow}{if} (!\mbox{\hyperlink{icall__apimsg_8h_ad94584ed274ed1d5b06d52f5bb3a178d}{status}}) \{}
+\DoxyCodeLine{    System\_printf(\textcolor{stringliteral}{"ECCROMCC26XX did not complete successfully"});}
+\DoxyCodeLine{\}}
+\end{DoxyCode}
+ \hypertarget{_e_c_c_r_o_m_c_c26_x_x_8h_autotoc_md12}{}\doxyparagraph{Initializing client parameters}\label{_e_c_c_r_o_m_c_c26_x_x_8h_autotoc_md12}
+
+\begin{DoxyItemize}
+\item Prior to calling either \mbox{\hyperlink{_e_c_c_r_o_m_c_c26_x_x_8h_a97cdc759b911e36c7ccc18cfc45fede5}{E\+C\+C\+R\+O\+M\+C\+C26\+X\+X\+\_\+gen\+Keys()}} or \mbox{\hyperlink{_e_c_c_r_o_m_c_c26_x_x_8h_a64032ff4d46e71fcc876eb0f0491f13c}{E\+C\+C\+R\+O\+M\+C\+C26\+X\+X\+\_\+gen\+D\+H\+Key()}}, parameters must be initialized with a call to \mbox{\hyperlink{_e_c_c_r_o_m_c_c26_x_x_8h_ab4b43f73cb42748bf9261a43953f8709}{E\+C\+C\+R\+O\+M\+C\+C26\+X\+X\+\_\+\+Params\+\_\+init()}} and initialize an instance of \mbox{\hyperlink{struct_e_c_c_r_o_m_c_c26_x_x___params}{E\+C\+C\+R\+O\+M\+C\+C26\+X\+X\+\_\+\+Params}}. Generally, it is expected that each client will initialize its own instance of \mbox{\hyperlink{struct_e_c_c_r_o_m_c_c26_x_x___params}{E\+C\+C\+R\+O\+M\+C\+C26\+X\+X\+\_\+\+Params}}, but in some cases this is not necessary. Multiple clients may share the same \mbox{\hyperlink{struct_e_c_c_r_o_m_c_c26_x_x___params}{E\+C\+C\+R\+O\+M\+C\+C26\+X\+X\+\_\+\+Params}} instance as long as they do not rely on the status field. This field could be overwritten by any of the clients whom share the instance. The clients should then rely on the return value of the A\+PI function which was called.
+\item \mbox{\hyperlink{struct_e_c_c_r_o_m_c_c26_x_x___params}{E\+C\+C\+R\+O\+M\+C\+C26\+X\+X\+\_\+\+Params}} initialize their curves to N\+I\+ST P-\/256 defaults, set their malloc and free functions to N\+U\+LL and block indefinitely when waiting for the resource.
+\item Currently only N\+I\+ST P-\/256 parameters are included in R\+OM. If a client wishes to use a different curve, that client must provide it. Curve parameters are uint32\+\_\+t buffers where the first uint32\+\_\+t block is a length header which specified the length of the buffer in uint32\+\_\+t blocks, not including the header itself. the maximum curve length supported in 1020 bytes or 255 uint32\+\_\+t blocks. For example, the N\+I\+ST P-\/256 length header would be 8.
+\item key\+Len should be the same as the length header of Curve parameters but in in bytes. For example, the N\+I\+ST P-\/256 key length would be 32.
+\item workzone length is determined by the operation, curve length in uint32\+\_\+t blocks and windowsize. the default value for N\+I\+ST P-\/256 curves is only valid for those curves performing key and shared secret generation. The workzone length for any curve using the supported operation can be calculated with the E\+C\+C\+R\+O\+M\+C\+C26\+X\+X\+\_\+\+W\+O\+R\+K\+Z\+O\+N\+E\+\_\+\+L\+EN macro.
+\item window\+Size determines the speed and memory trade-\/off of each operation. Valid window\+Size values are 2 through 5, and 3 is recommended as the best trade-\/off.
+\end{DoxyItemize}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{comment}{// Declaration of this client's ECCROMCC26XX parameters.}}
+\DoxyCodeLine{\mbox{\hyperlink{struct_e_c_c_r_o_m_c_c26_x_x___params}{ECCROMCC26XX\_Params}}      params;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{// Initialize this client's ECCROMCC26XX parameters.}}
+\DoxyCodeLine{\mbox{\hyperlink{_e_c_c_r_o_m_c_c26_x_x_8c_ab4b43f73cb42748bf9261a43953f8709}{ECCROMCC26XX\_Params\_init}}(\&params);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{// Set the Malloc and Free functions for internal buffer allocation.}}
+\DoxyCodeLine{params.\mbox{\hyperlink{struct_e_c_c_r_o_m_c_c26_x_x___params_a751e66853c8d206ba5d1337a4321b5b2}{malloc}} = (uint8\_t *(*)(uint16\_t))myMallocFunction;}
+\DoxyCodeLine{params.\mbox{\hyperlink{struct_e_c_c_r_o_m_c_c26_x_x___params_a194bafd364944d49c97f6bcd67a6ab2b}{free}}   = (void (*)(uint8\_t *))myFreeFunction;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{// If an indefinite timeout is undesirable, alter the timeout here.}}
+\DoxyCodeLine{\textcolor{comment}{// the value specified here will be a multiple of Clock.tickPeriod is}}
+\DoxyCodeLine{\textcolor{comment}{// specified as.}}
+\DoxyCodeLine{params.\mbox{\hyperlink{struct_e_c_c_r_o_m_c_c26_x_x___params_a31d301de9cabc4f5675e70e16c2a362e}{timeout}} = 1000; \textcolor{comment}{// wait a maximum of 1000 system time units}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{// If using non NIST P-\/256 curves, supply them here. Otherwise, skip this.}}
+\DoxyCodeLine{params.\mbox{\hyperlink{struct_e_c_c_r_o_m_c_c26_x_x___params_a8aeed969b1abd618b1ee9c248cb7d20f}{curve}}.\mbox{\hyperlink{struct_e_c_c_r_o_m_c_c26_x_x___curve_params_a4420900f1c4817b8620ff5fbfbb30d21}{keyLen}}      = myCurveLength; \textcolor{comment}{// in bytes.}}
+\DoxyCodeLine{params.\mbox{\hyperlink{struct_e_c_c_r_o_m_c_c26_x_x___params_a8aeed969b1abd618b1ee9c248cb7d20f}{curve}}.\mbox{\hyperlink{struct_e_c_c_r_o_m_c_c26_x_x___curve_params_a266cef7f9db405fde9b10463e97d0605}{workzoneLen}} = \mbox{\hyperlink{_e_c_c_r_o_m_c_c26_x_x_8h_abafac2fa1a8c010d3e66a8d4e9cf97d0}{ECCROMCC26XX\_WORKZONE\_LEN\_IN\_BYTES}}(myCurveLength/4, myWindowSize);}
+\DoxyCodeLine{params.\mbox{\hyperlink{struct_e_c_c_r_o_m_c_c26_x_x___params_a8aeed969b1abd618b1ee9c248cb7d20f}{curve}}.\mbox{\hyperlink{struct_e_c_c_r_o_m_c_c26_x_x___curve_params_a3dc6d040b441d4a79c49990d753db77b}{windowSize}}  = myWindowSize;}
+\DoxyCodeLine{params.\mbox{\hyperlink{struct_e_c_c_r_o_m_c_c26_x_x___params_a8aeed969b1abd618b1ee9c248cb7d20f}{curve}}.\mbox{\hyperlink{struct_e_c_c_r_o_m_c_c26_x_x___curve_params_a800e6f78544f05d9aa60f1f151cf1260}{param\_p}}     = myCurveParamP;}
+\DoxyCodeLine{params.\mbox{\hyperlink{struct_e_c_c_r_o_m_c_c26_x_x___params_a8aeed969b1abd618b1ee9c248cb7d20f}{curve}}.\mbox{\hyperlink{struct_e_c_c_r_o_m_c_c26_x_x___curve_params_aafa32a3f3d0f5ee11bc1338498a09e24}{param\_r}}     = myCurveParamR;}
+\DoxyCodeLine{params.\mbox{\hyperlink{struct_e_c_c_r_o_m_c_c26_x_x___params_a8aeed969b1abd618b1ee9c248cb7d20f}{curve}}.\mbox{\hyperlink{struct_e_c_c_r_o_m_c_c26_x_x___curve_params_abddc1c9031ac651764b2196586a6c2e9}{param\_a}}     = myCurveParamA;}
+\DoxyCodeLine{params.\mbox{\hyperlink{struct_e_c_c_r_o_m_c_c26_x_x___params_a8aeed969b1abd618b1ee9c248cb7d20f}{curve}}.\mbox{\hyperlink{struct_e_c_c_r_o_m_c_c26_x_x___curve_params_a1905576593584933cdb7ec940e0b993c}{param\_b}}     = myCurveParamB;}
+\DoxyCodeLine{params.\mbox{\hyperlink{struct_e_c_c_r_o_m_c_c26_x_x___params_a8aeed969b1abd618b1ee9c248cb7d20f}{curve}}.\mbox{\hyperlink{struct_e_c_c_r_o_m_c_c26_x_x___curve_params_a5040a7dcf12285f69f65d1025630c7b2}{param\_gx}}    = myCurveParamGx;}
+\DoxyCodeLine{params.\mbox{\hyperlink{struct_e_c_c_r_o_m_c_c26_x_x___params_a8aeed969b1abd618b1ee9c248cb7d20f}{curve}}.\mbox{\hyperlink{struct_e_c_c_r_o_m_c_c26_x_x___curve_params_ae67ea5091dbf910e04043867262dc4a5}{param\_gy}}    = myCurveParamGy;}
+\end{DoxyCode}
+\hypertarget{_e_c_c_r_o_m_c_c26_x_x_8h_autotoc_md13}{}\doxysubsubsection{Use Cases @anchor E\+C\+C\+\_\+\+U\+S\+E\+\_\+\+C\+A\+S\+ES}\label{_e_c_c_r_o_m_c_c26_x_x_8h_autotoc_md13}
+\hypertarget{_e_c_c_r_o_m_c_c26_x_x_8h_autotoc_md14}{}\doxyparagraph{Performing a key and shared secret generation operation}\label{_e_c_c_r_o_m_c_c26_x_x_8h_autotoc_md14}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{comment}{// Declaration of this client's ECCROMCC26XX parameters.}}
+\DoxyCodeLine{\mbox{\hyperlink{struct_e_c_c_r_o_m_c_c26_x_x___params}{ECCROMCC26XX\_Params}}      params;}
+\DoxyCodeLine{\textcolor{comment}{// Declaration of local public keys}}
+\DoxyCodeLine{uint8\_t localPrivateKey[32]  = \{0\};}
+\DoxyCodeLine{uint8\_t localPublicKeyX[32]  = \{0\};}
+\DoxyCodeLine{uint8\_t localPublicKeyY[32]  = \{0\};}
+\DoxyCodeLine{uint8\_t sharedSecretKeyX[32] = \{0\};}
+\DoxyCodeLine{uint8\_t sharedSecretKeyY[32] = \{0\};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{// Declaration of a remote client's public keys.}}
+\DoxyCodeLine{\textcolor{comment}{// Assume they have already been generated.}}
+\DoxyCodeLine{\textcolor{keyword}{extern} remotePublicKeyX[32];}
+\DoxyCodeLine{\textcolor{keyword}{extern} remotePublicKeyY[32];}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{// Fill localPrivateKey with 256 bits from a random number generator.}}
+\DoxyCodeLine{myRandomNumberGenerator(localPrivateKey, 32);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{// Initialize ECC ROM driver}}
+\DoxyCodeLine{\mbox{\hyperlink{_e_c_c_r_o_m_c_c26_x_x_8c_adbed30899def3597c9f91d9d6cceff8f}{ECCROMCC26XX\_init}}();}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{// Initialize this client's ECCROMCC26XX parameters.}}
+\DoxyCodeLine{\mbox{\hyperlink{_e_c_c_r_o_m_c_c26_x_x_8c_ab4b43f73cb42748bf9261a43953f8709}{ECCROMCC26XX\_Params\_init}}(\&params);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{// Generate public keys}}
+\DoxyCodeLine{\mbox{\hyperlink{_e_c_c_r_o_m_c_c26_x_x_8c_a97cdc759b911e36c7ccc18cfc45fede5}{ECCROMCC26XX\_genKeys}}(localPrivateKey, localPublicKeyX,}
+\DoxyCodeLine{                     localPublicKeyY, \&params);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{// Generate shared secret.}}
+\DoxyCodeLine{\textcolor{comment}{// Note: given your local Public Keys, the remote device can generate the}}
+\DoxyCodeLine{\textcolor{comment}{// same shared secret using its local private key.}}
+\DoxyCodeLine{\mbox{\hyperlink{_e_c_c_r_o_m_c_c26_x_x_8c_a64032ff4d46e71fcc876eb0f0491f13c}{ECCROMCC26XX\_genDHKey}}(localPrivateKey, remotePublicKeyX,}
+\DoxyCodeLine{                      remotePublicKeyY, sharedSecretKeyX,}
+\DoxyCodeLine{                      sharedSecretKeyY, \&params);}
+\end{DoxyCode}
+\hypertarget{_e_c_c_r_o_m_c_c26_x_x_8h_autotoc_md15}{}\doxyparagraph{Supported transaction modes}\label{_e_c_c_r_o_m_c_c26_x_x_8h_autotoc_md15}
+
+\begin{DoxyItemize}
+\item All key generation functions are blocking.
+\end{DoxyItemize}\hypertarget{_e_c_c_r_o_m_c_c26_x_x_8h_autotoc_md16}{}\doxysubsubsection{Error handling}\label{_e_c_c_r_o_m_c_c26_x_x_8h_autotoc_md16}
+If an error occur during key generation, an error status will be returned and stored in the status field of the \mbox{\hyperlink{struct_e_c_c_r_o_m_c_c26_x_x___params}{E\+C\+C\+R\+O\+M\+C\+C26\+X\+X\+\_\+\+Params}} instance passed as an argument.\hypertarget{_e_c_c_r_o_m_c_c26_x_x_8h_autotoc_md17}{}\doxysubsubsection{Supported Functions}\label{_e_c_c_r_o_m_c_c26_x_x_8h_autotoc_md17}
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ A\+PI function }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Description  }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ A\+PI function }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Description  }\\\cline{1-2}
+\endhead
+\mbox{\hyperlink{_e_c_c_r_o_m_c_c26_x_x_8h_adbed30899def3597c9f91d9d6cceff8f}{E\+C\+C\+R\+O\+M\+C\+C26\+X\+X\+\_\+init()}} &Initializes module\textquotesingle{}s synchronization resources  \\\cline{1-2}
+\mbox{\hyperlink{_e_c_c_r_o_m_c_c26_x_x_8h_ab4b43f73cb42748bf9261a43953f8709}{E\+C\+C\+R\+O\+M\+C\+C26\+X\+X\+\_\+\+Params\+\_\+init()}} &Initialize parameters for Key Generation  \\\cline{1-2}
+\mbox{\hyperlink{_e_c_c_r_o_m_c_c26_x_x_8h_a97cdc759b911e36c7ccc18cfc45fede5}{E\+C\+C\+R\+O\+M\+C\+C26\+X\+X\+\_\+gen\+Keys()}} &Generate Public Key X and Y Coordinates  \\\cline{1-2}
+\mbox{\hyperlink{_e_c_c_r_o_m_c_c26_x_x_8h_a64032ff4d46e71fcc876eb0f0491f13c}{E\+C\+C\+R\+O\+M\+C\+C26\+X\+X\+\_\+gen\+D\+H\+Key()}} &Generate Diffie-\/\+Hellman Shared Secret  \\\cline{1-2}
+\end{longtabu}
+\hypertarget{_e_c_c_r_o_m_c_c26_x_x_8h_autotoc_md18}{}\doxysubsubsection{Unsupported functions\+:}\label{_e_c_c_r_o_m_c_c26_x_x_8h_autotoc_md18}
+Functionality that currently not supported\+: \hypertarget{_e_c_c_r_o_m_c_c26_x_x_8h_autotoc_md19}{}\doxysubsection{-\/ E\+C\+D\+S\+A Sign and Verify.}\label{_e_c_c_r_o_m_c_c26_x_x_8h_autotoc_md19}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{_e_c_c_r_o_m_c_c26_x_x_8h_aeccc0f3dcead42358240278e47250618}\label{_e_c_c_r_o_m_c_c26_x_x_8h_aeccc0f3dcead42358240278e47250618}} 
+\index{ECCROMCC26XX.h@{ECCROMCC26XX.h}!ECCROMCC26XX\_NIST\_P256\_KEY\_LEN\_IN\_BYTES@{ECCROMCC26XX\_NIST\_P256\_KEY\_LEN\_IN\_BYTES}}
+\index{ECCROMCC26XX\_NIST\_P256\_KEY\_LEN\_IN\_BYTES@{ECCROMCC26XX\_NIST\_P256\_KEY\_LEN\_IN\_BYTES}!ECCROMCC26XX.h@{ECCROMCC26XX.h}}
+\doxysubsubsection{\texorpdfstring{ECCROMCC26XX\_NIST\_P256\_KEY\_LEN\_IN\_BYTES}{ECCROMCC26XX\_NIST\_P256\_KEY\_LEN\_IN\_BYTES}}
+{\footnotesize\ttfamily \#define E\+C\+C\+R\+O\+M\+C\+C26\+X\+X\+\_\+\+N\+I\+S\+T\+\_\+\+P256\+\_\+\+K\+E\+Y\+\_\+\+L\+E\+N\+\_\+\+I\+N\+\_\+\+B\+Y\+T\+ES~32}
+
+E\+CC key length in bytes for N\+I\+ST P-\/256 keys. 
+
+Definition at line 286 of file E\+C\+C\+R\+O\+M\+C\+C26\+X\+X.\+h.
+
+\mbox{\Hypertarget{_e_c_c_r_o_m_c_c26_x_x_8h_a5dfd588fa27d404b03b91530a86896e5}\label{_e_c_c_r_o_m_c_c26_x_x_8h_a5dfd588fa27d404b03b91530a86896e5}} 
+\index{ECCROMCC26XX.h@{ECCROMCC26XX.h}!ECCROMCC26XX\_NIST\_P256\_WORKZONE\_LEN\_IN\_BYTES@{ECCROMCC26XX\_NIST\_P256\_WORKZONE\_LEN\_IN\_BYTES}}
+\index{ECCROMCC26XX\_NIST\_P256\_WORKZONE\_LEN\_IN\_BYTES@{ECCROMCC26XX\_NIST\_P256\_WORKZONE\_LEN\_IN\_BYTES}!ECCROMCC26XX.h@{ECCROMCC26XX.h}}
+\doxysubsubsection{\texorpdfstring{ECCROMCC26XX\_NIST\_P256\_WORKZONE\_LEN\_IN\_BYTES}{ECCROMCC26XX\_NIST\_P256\_WORKZONE\_LEN\_IN\_BYTES}}
+{\footnotesize\ttfamily \#define E\+C\+C\+R\+O\+M\+C\+C26\+X\+X\+\_\+\+N\+I\+S\+T\+\_\+\+P256\+\_\+\+W\+O\+R\+K\+Z\+O\+N\+E\+\_\+\+L\+E\+N\+\_\+\+I\+N\+\_\+\+B\+Y\+T\+ES~684}
+
+E\+CC Workzone length in bytes for N\+I\+ST P-\/256 key and shared secret generation. For use with E\+CC Window Size 3 only. Used to store intermediary values in E\+CC calculations. 
+
+Definition at line 281 of file E\+C\+C\+R\+O\+M\+C\+C26\+X\+X.\+h.
+
+\mbox{\Hypertarget{_e_c_c_r_o_m_c_c26_x_x_8h_abafac2fa1a8c010d3e66a8d4e9cf97d0}\label{_e_c_c_r_o_m_c_c26_x_x_8h_abafac2fa1a8c010d3e66a8d4e9cf97d0}} 
+\index{ECCROMCC26XX.h@{ECCROMCC26XX.h}!ECCROMCC26XX\_WORKZONE\_LEN\_IN\_BYTES@{ECCROMCC26XX\_WORKZONE\_LEN\_IN\_BYTES}}
+\index{ECCROMCC26XX\_WORKZONE\_LEN\_IN\_BYTES@{ECCROMCC26XX\_WORKZONE\_LEN\_IN\_BYTES}!ECCROMCC26XX.h@{ECCROMCC26XX.h}}
+\doxysubsubsection{\texorpdfstring{ECCROMCC26XX\_WORKZONE\_LEN\_IN\_BYTES}{ECCROMCC26XX\_WORKZONE\_LEN\_IN\_BYTES}}
+{\footnotesize\ttfamily \#define E\+C\+C\+R\+O\+M\+C\+C26\+X\+X\+\_\+\+W\+O\+R\+K\+Z\+O\+N\+E\+\_\+\+L\+E\+N\+\_\+\+I\+N\+\_\+\+B\+Y\+T\+ES(\begin{DoxyParamCaption}\item[{}]{\mbox{\hyperlink{icall__apimsg_8h_a8ccac76f35f79d74917e1c5dd6f69fea}{len}},  }\item[{}]{win }\end{DoxyParamCaption})~(4 $\ast$ ((13 $\ast$ (\mbox{\hyperlink{icall__apimsg_8h_a8ccac76f35f79d74917e1c5dd6f69fea}{len}})) + 13 + (3 $\ast$ (\mbox{\hyperlink{icall__apimsg_8h_a8ccac76f35f79d74917e1c5dd6f69fea}{len}}) $\ast$ (1 $<$$<$ ((win) -\/ 2)))))}
+
+
+
+Compute E\+CC workzone length in bytes for a generic key length and window size. 
+
+len is the length of the key in uint32\+\_\+t blocks. it must not exceed 255 blocks in length. win is the window size, such that 1 $<$ win $<$ 6. Recommended setting is 3.
+
+This workzone length is only valid for key and shared secret and signature generation. A different workzone length would be used for verification. 
+
+Definition at line 297 of file E\+C\+C\+R\+O\+M\+C\+C26\+X\+X.\+h.
+
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{_e_c_c_r_o_m_c_c26_x_x_8h_a8330390ac829ae4bf421ec13c055778a}\label{_e_c_c_r_o_m_c_c26_x_x_8h_a8330390ac829ae4bf421ec13c055778a}} 
+\index{ECCROMCC26XX.h@{ECCROMCC26XX.h}!ECCROMCC26XX\_CurveParams@{ECCROMCC26XX\_CurveParams}}
+\index{ECCROMCC26XX\_CurveParams@{ECCROMCC26XX\_CurveParams}!ECCROMCC26XX.h@{ECCROMCC26XX.h}}
+\doxysubsubsection{\texorpdfstring{ECCROMCC26XX\_CurveParams}{ECCROMCC26XX\_CurveParams}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_e_c_c_r_o_m_c_c26_x_x___curve_params}{E\+C\+C\+R\+O\+M\+C\+C26\+X\+X\+\_\+\+Curve\+Params}} \mbox{\hyperlink{struct_e_c_c_r_o_m_c_c26_x_x___curve_params}{E\+C\+C\+R\+O\+M\+C\+C26\+X\+X\+\_\+\+Curve\+Params}}}
+
+
+
+E\+C\+C\+R\+O\+M\+C\+C26\+XX Curve Parameters. 
+
+This holds the E\+CC Curve information to be used. Offset 0 of each param\+\_\+$\ast$ buffer contains the length of each parameter in uint32\+\_\+t blocks, not including the first offset. \mbox{\Hypertarget{_e_c_c_r_o_m_c_c26_x_x_8h_aa50cee1ebb718a064595777a7fa7ea7d}\label{_e_c_c_r_o_m_c_c26_x_x_8h_aa50cee1ebb718a064595777a7fa7ea7d}} 
+\index{ECCROMCC26XX.h@{ECCROMCC26XX.h}!ECCROMCC26XX\_FreeCB@{ECCROMCC26XX\_FreeCB}}
+\index{ECCROMCC26XX\_FreeCB@{ECCROMCC26XX\_FreeCB}!ECCROMCC26XX.h@{ECCROMCC26XX.h}}
+\doxysubsubsection{\texorpdfstring{ECCROMCC26XX\_FreeCB}{ECCROMCC26XX\_FreeCB}}
+{\footnotesize\ttfamily typedef void($\ast$ E\+C\+C\+R\+O\+M\+C\+C26\+X\+X\+\_\+\+Free\+CB) (uint8\+\_\+t $\ast$p\+Buf)}
+
+
+
+E\+C\+C\+R\+O\+M\+C\+C26\+XX Free Callback. 
+
+\begin{DoxyVerb}        Required to free temporary key buffers during operation.
+\end{DoxyVerb}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Buf} & -\/ pointer to buffer to free.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+
+
+Definition at line 337 of file E\+C\+C\+R\+O\+M\+C\+C26\+X\+X.\+h.
+
+\mbox{\Hypertarget{_e_c_c_r_o_m_c_c26_x_x_8h_a8f27309f75abea9c1f018295aad2a32b}\label{_e_c_c_r_o_m_c_c26_x_x_8h_a8f27309f75abea9c1f018295aad2a32b}} 
+\index{ECCROMCC26XX.h@{ECCROMCC26XX.h}!ECCROMCC26XX\_MallocCB@{ECCROMCC26XX\_MallocCB}}
+\index{ECCROMCC26XX\_MallocCB@{ECCROMCC26XX\_MallocCB}!ECCROMCC26XX.h@{ECCROMCC26XX.h}}
+\doxysubsubsection{\texorpdfstring{ECCROMCC26XX\_MallocCB}{ECCROMCC26XX\_MallocCB}}
+{\footnotesize\ttfamily typedef uint8\+\_\+t$\ast$($\ast$ E\+C\+C\+R\+O\+M\+C\+C26\+X\+X\+\_\+\+Malloc\+CB) (uint16\+\_\+t \mbox{\hyperlink{icall__apimsg_8h_a8ccac76f35f79d74917e1c5dd6f69fea}{len}})}
+
+
+
+E\+C\+C\+R\+O\+M\+C\+C26\+XX Malloc Callback. 
+
+\begin{DoxyVerb}        Required to malloc temporary key buffers during operation.
+\end{DoxyVerb}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em len} & -\/ length in bytes of buffer to malloc.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+pointer to allocated buffer 
+\end{DoxyReturn}
+
+
+Definition at line 326 of file E\+C\+C\+R\+O\+M\+C\+C26\+X\+X.\+h.
+
+\mbox{\Hypertarget{_e_c_c_r_o_m_c_c26_x_x_8h_a292f9ba9137ef50645f0abbfdbb1cb2d}\label{_e_c_c_r_o_m_c_c26_x_x_8h_a292f9ba9137ef50645f0abbfdbb1cb2d}} 
+\index{ECCROMCC26XX.h@{ECCROMCC26XX.h}!ECCROMCC26XX\_Params@{ECCROMCC26XX\_Params}}
+\index{ECCROMCC26XX\_Params@{ECCROMCC26XX\_Params}!ECCROMCC26XX.h@{ECCROMCC26XX.h}}
+\doxysubsubsection{\texorpdfstring{ECCROMCC26XX\_Params}{ECCROMCC26XX\_Params}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_e_c_c_r_o_m_c_c26_x_x___params}{E\+C\+C\+R\+O\+M\+C\+C26\+X\+X\+\_\+\+Params}} \mbox{\hyperlink{struct_e_c_c_r_o_m_c_c26_x_x___params}{E\+C\+C\+R\+O\+M\+C\+C26\+X\+X\+\_\+\+Params}}}
+
+
+
+E\+C\+C\+R\+O\+M\+C\+C26\+XX Parameters. 
+
+Holds a client\textquotesingle{}s parameters for performing an E\+CC operation. 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{_e_c_c_r_o_m_c_c26_x_x_8h_a6a19b850742ee2c7a981e826243580fd}\label{_e_c_c_r_o_m_c_c26_x_x_8h_a6a19b850742ee2c7a981e826243580fd}} 
+\index{ECCROMCC26XX.h@{ECCROMCC26XX.h}!ECC\_VerifyPublicKeyWeierstrass@{ECC\_VerifyPublicKeyWeierstrass}}
+\index{ECC\_VerifyPublicKeyWeierstrass@{ECC\_VerifyPublicKeyWeierstrass}!ECCROMCC26XX.h@{ECCROMCC26XX.h}}
+\doxysubsubsection{\texorpdfstring{ECC\_VerifyPublicKeyWeierstrass()}{ECC\_VerifyPublicKeyWeierstrass()}}
+{\footnotesize\ttfamily int8\+\_\+t E\+C\+C\+\_\+\+Verify\+Public\+Key\+Weierstrass (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_e_c_c_r_o_m_c_c26_x_x___params}{E\+C\+C\+R\+O\+M\+C\+C26\+X\+X\+\_\+\+Params}} $\ast$}]{params,  }\item[{const uint8\+\_\+t $\ast$}]{curve\+PointX,  }\item[{const uint8\+\_\+t $\ast$}]{curve\+PointY,  }\item[{uint32\+\_\+t}]{length }\end{DoxyParamCaption})}
+
+
+
+Verify if the X an Y coordinates are on the right E\+CC curve. 
+
+\begin{DoxyPrecond}{Precondition}
+E\+C\+C\+R\+O\+M\+C\+C26\+X\+X\+\_\+init must be called prior to this and params must be intiliazed with \mbox{\hyperlink{_e_c_c_r_o_m_c_c26_x_x_8h_ab4b43f73cb42748bf9261a43953f8709}{E\+C\+C\+R\+O\+M\+C\+C26\+X\+X\+\_\+\+Params\+\_\+init()}}. Calling context\+: Task. Swi or Hwi should call only when timeout is set to 0.
+\end{DoxyPrecond}
+
+\begin{DoxyParams}{Parameters}
+{\em params} & Pointer to a parameter block, if N\+U\+LL operation will fail\\
+\hline
+{\em curve\+PointX} & 32 byte input buffer containing Public Key X coordinate. It key needs to contain the length (4 bytes) and the X coordinate in a byte-\/wise little endian format.\\
+\hline
+{\em curve\+PointY} & 32 byte input buffer containing Public Key X coordinate. It key needs to contain the length (4 bytes) and the X coordinate in a byte-\/wise little endian format.\\
+\hline
+{\em length} & length of the key\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+status verification status 
+\end{DoxyReturn}
+
+
+Definition at line 522 of file E\+C\+C\+R\+O\+M\+C\+C26\+X\+X.\+c.
+
+\mbox{\Hypertarget{_e_c_c_r_o_m_c_c26_x_x_8h_a64032ff4d46e71fcc876eb0f0491f13c}\label{_e_c_c_r_o_m_c_c26_x_x_8h_a64032ff4d46e71fcc876eb0f0491f13c}} 
+\index{ECCROMCC26XX.h@{ECCROMCC26XX.h}!ECCROMCC26XX\_genDHKey@{ECCROMCC26XX\_genDHKey}}
+\index{ECCROMCC26XX\_genDHKey@{ECCROMCC26XX\_genDHKey}!ECCROMCC26XX.h@{ECCROMCC26XX.h}}
+\doxysubsubsection{\texorpdfstring{ECCROMCC26XX\_genDHKey()}{ECCROMCC26XX\_genDHKey()}}
+{\footnotesize\ttfamily int8\+\_\+t E\+C\+C\+R\+O\+M\+C\+C26\+X\+X\+\_\+gen\+D\+H\+Key (\begin{DoxyParamCaption}\item[{uint8\+\_\+t $\ast$}]{private\+Key,  }\item[{uint8\+\_\+t $\ast$}]{public\+KeyX,  }\item[{uint8\+\_\+t $\ast$}]{public\+KeyY,  }\item[{uint8\+\_\+t $\ast$}]{d\+H\+KeyX,  }\item[{uint8\+\_\+t $\ast$}]{d\+H\+KeyY,  }\item[{\mbox{\hyperlink{struct_e_c_c_r_o_m_c_c26_x_x___params}{E\+C\+C\+R\+O\+M\+C\+C26\+X\+X\+\_\+\+Params}} $\ast$}]{params }\end{DoxyParamCaption})}
+
+
+
+Generate Diffie-\/\+Hellman Shared Secret Key X and Y Coordinates. 
+
+\begin{DoxyPrecond}{Precondition}
+E\+C\+C\+R\+O\+M\+C\+C26\+X\+X\+\_\+init must be called prior to this and params must be intiliazed with \mbox{\hyperlink{_e_c_c_r_o_m_c_c26_x_x_8h_ab4b43f73cb42748bf9261a43953f8709}{E\+C\+C\+R\+O\+M\+C\+C26\+X\+X\+\_\+\+Params\+\_\+init()}}. Calling context\+: Task. Swi or Hwi should call only when timeout is set to 0.
+\end{DoxyPrecond}
+
+\begin{DoxyParams}{Parameters}
+{\em private\+Key} & 32 byte input buffer of randomly generated bits.\\
+\hline
+{\em public\+KeyX} & 32 byte input buffer provided by client to store Public Key X Coordinate.\\
+\hline
+{\em public\+KeyY} & 32 byte input buffer provided by client to store Public Key Y Coordinate.\\
+\hline
+{\em d\+H\+KeyX} & 32 byte output buffer provided by client to store Diffie-\/\+Hellman Key X Coordinate.\\
+\hline
+{\em D\+H\+KeyY} & 32 byte output buffer provided by client to store Diffie-\/\+Hellman Key Y Coordinate.\\
+\hline
+{\em params} & Pointer to a parameter block, if N\+U\+LL operation will fail\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+status 
+\end{DoxyReturn}
+
+
+Definition at line 349 of file E\+C\+C\+R\+O\+M\+C\+C26\+X\+X.\+c.
+
+\mbox{\Hypertarget{_e_c_c_r_o_m_c_c26_x_x_8h_a97cdc759b911e36c7ccc18cfc45fede5}\label{_e_c_c_r_o_m_c_c26_x_x_8h_a97cdc759b911e36c7ccc18cfc45fede5}} 
+\index{ECCROMCC26XX.h@{ECCROMCC26XX.h}!ECCROMCC26XX\_genKeys@{ECCROMCC26XX\_genKeys}}
+\index{ECCROMCC26XX\_genKeys@{ECCROMCC26XX\_genKeys}!ECCROMCC26XX.h@{ECCROMCC26XX.h}}
+\doxysubsubsection{\texorpdfstring{ECCROMCC26XX\_genKeys()}{ECCROMCC26XX\_genKeys()}}
+{\footnotesize\ttfamily int8\+\_\+t E\+C\+C\+R\+O\+M\+C\+C26\+X\+X\+\_\+gen\+Keys (\begin{DoxyParamCaption}\item[{uint8\+\_\+t $\ast$}]{private\+Key,  }\item[{uint8\+\_\+t $\ast$}]{public\+KeyX,  }\item[{uint8\+\_\+t $\ast$}]{public\+KeyY,  }\item[{\mbox{\hyperlink{struct_e_c_c_r_o_m_c_c26_x_x___params}{E\+C\+C\+R\+O\+M\+C\+C26\+X\+X\+\_\+\+Params}} $\ast$}]{params }\end{DoxyParamCaption})}
+
+
+
+Generate Public Key X and Y Coordinates. 
+
+\begin{DoxyPrecond}{Precondition}
+E\+C\+C\+R\+O\+M\+C\+C26\+X\+X\+\_\+init must be called prior to this and params must be intiliazed with \mbox{\hyperlink{_e_c_c_r_o_m_c_c26_x_x_8h_ab4b43f73cb42748bf9261a43953f8709}{E\+C\+C\+R\+O\+M\+C\+C26\+X\+X\+\_\+\+Params\+\_\+init()}}. Calling context\+: Task. Swi or Hwi should call only when timeout is set to 0.
+\end{DoxyPrecond}
+
+\begin{DoxyParams}{Parameters}
+{\em private\+Key} & 32 byte input buffer of randomly generated bits.\\
+\hline
+{\em public\+KeyX} & 32 byte output buffer provided by client to store Public Key X Coordinate.\\
+\hline
+{\em public\+KeyY} & 32 byte output buffer provided by client to store Public Key Y Coordinate.\\
+\hline
+{\em params} & Pointer to a parameter block, if N\+U\+LL operation will fail.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+status 
+\end{DoxyReturn}
+
+
+Definition at line 253 of file E\+C\+C\+R\+O\+M\+C\+C26\+X\+X.\+c.
+
+\mbox{\Hypertarget{_e_c_c_r_o_m_c_c26_x_x_8h_adbed30899def3597c9f91d9d6cceff8f}\label{_e_c_c_r_o_m_c_c26_x_x_8h_adbed30899def3597c9f91d9d6cceff8f}} 
+\index{ECCROMCC26XX.h@{ECCROMCC26XX.h}!ECCROMCC26XX\_init@{ECCROMCC26XX\_init}}
+\index{ECCROMCC26XX\_init@{ECCROMCC26XX\_init}!ECCROMCC26XX.h@{ECCROMCC26XX.h}}
+\doxysubsubsection{\texorpdfstring{ECCROMCC26XX\_init()}{ECCROMCC26XX\_init()}}
+{\footnotesize\ttfamily void E\+C\+C\+R\+O\+M\+C\+C26\+X\+X\+\_\+init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Initializes module\textquotesingle{}s synchronization resources. Only needs to be called once, but safe to call multiple times. 
+
+\begin{DoxyPrecond}{Precondition}
+This function must be called before any other E\+C\+C\+R\+O\+M\+C\+C26\+XX driver A\+P\+Is. Calling context\+: Task. 
+\end{DoxyPrecond}
+
+
+Definition at line 196 of file E\+C\+C\+R\+O\+M\+C\+C26\+X\+X.\+c.
+
+\mbox{\Hypertarget{_e_c_c_r_o_m_c_c26_x_x_8h_ab4b43f73cb42748bf9261a43953f8709}\label{_e_c_c_r_o_m_c_c26_x_x_8h_ab4b43f73cb42748bf9261a43953f8709}} 
+\index{ECCROMCC26XX.h@{ECCROMCC26XX.h}!ECCROMCC26XX\_Params\_init@{ECCROMCC26XX\_Params\_init}}
+\index{ECCROMCC26XX\_Params\_init@{ECCROMCC26XX\_Params\_init}!ECCROMCC26XX.h@{ECCROMCC26XX.h}}
+\doxysubsubsection{\texorpdfstring{ECCROMCC26XX\_Params\_init()}{ECCROMCC26XX\_Params\_init()}}
+{\footnotesize\ttfamily void E\+C\+C\+R\+O\+M\+C\+C26\+X\+X\+\_\+\+Params\+\_\+init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_e_c_c_r_o_m_c_c26_x_x___params}{E\+C\+C\+R\+O\+M\+C\+C26\+X\+X\+\_\+\+Params}} $\ast$}]{params }\end{DoxyParamCaption})}
+
+
+
+Function to initialize the \mbox{\hyperlink{struct_e_c_c_r_o_m_c_c26_x_x___params}{E\+C\+C\+R\+O\+M\+C\+C26\+X\+X\+\_\+\+Params}} struct to its defaults. params should not be modified until after this function is called. Default parameters use the N\+I\+ST P-\/256 curve, timeout is set to wait indefinitely, malloc and free are N\+U\+LL and status is set to E\+C\+C\+R\+O\+M\+C\+C26\+X\+X\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+S\+U\+C\+C\+E\+SS. A client may call this function with the same params instance any number of times. 
+
+\begin{DoxyPrecond}{Precondition}
+Calling context\+: Hwi, Swi and Task.
+\end{DoxyPrecond}
+
+\begin{DoxyParams}{Parameters}
+{\em params} & Parameter structure to initialize. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 224 of file E\+C\+C\+R\+O\+M\+C\+C26\+X\+X.\+c.
+

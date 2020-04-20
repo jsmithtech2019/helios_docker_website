@@ -1,0 +1,716 @@
+\hypertarget{_e_c_c_r_o_m_c_c26_x_x_8c}{}\doxysection{Drivers/\+E\+C\+C/\+E\+C\+C\+R\+O\+M\+C\+C26\+XX.c File Reference}
+\label{_e_c_c_r_o_m_c_c26_x_x_8c}\index{Drivers/ECC/ECCROMCC26XX.c@{Drivers/ECC/ECCROMCC26XX.c}}
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include $<$ti/sysbios/\+B\+I\+O\+S.\+h$>$}\newline
+{\ttfamily \#include $<$ti/sysbios/knl/\+Semaphore.\+h$>$}\newline
+{\ttfamily \#include $<$ti/sysbios/family/arm/m3/\+Hwi.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}ecc/\+E\+C\+C\+R\+O\+M\+C\+C26\+X\+X.\+h\char`\"{}}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+union \mbox{\hyperlink{union_p_k_a___ecc_param256}{P\+K\+A\+\_\+\+Ecc\+Param256}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{_e_c_c_r_o_m_c_c26_x_x_8c_a00a13d1f3d80da09299c7338990c4e7f}{E\+C\+C\+\_\+\+W\+I\+N\+D\+O\+W\+\_\+\+S\+I\+ZE}}~3
+\item 
+\#define \mbox{\hyperlink{_e_c_c_r_o_m_c_c26_x_x_8c_a5eaa2fc702d04d04f35a4475789ae568}{E\+C\+C\+\_\+\+U\+I\+N\+T32\+\_\+\+B\+L\+K\+\_\+\+L\+EN}}(\mbox{\hyperlink{icall__apimsg_8h_a8ccac76f35f79d74917e1c5dd6f69fea}{len}})~(((\mbox{\hyperlink{icall__apimsg_8h_a8ccac76f35f79d74917e1c5dd6f69fea}{len}}) + 3) / 4)
+\item 
+\#define \mbox{\hyperlink{_e_c_c_r_o_m_c_c26_x_x_8c_a474f3e2cfb6764cdc525b96b4e9466fc}{E\+C\+C\+\_\+\+K\+E\+Y\+\_\+\+O\+F\+F\+S\+ET}}~4
+\item 
+\#define \mbox{\hyperlink{_e_c_c_r_o_m_c_c26_x_x_8c_acfb4b5179b3b051ea950c32488626762}{E\+C\+C\+\_\+\+K\+E\+Y\+\_\+\+L\+E\+N\+\_\+\+O\+F\+F\+S\+ET}}~0
+\item 
+\#define \mbox{\hyperlink{_e_c_c_r_o_m_c_c26_x_x_8c_a78956762bec3ee5939ced3418481fce8}{E\+C\+C\+\_\+\+B\+U\+F\+\_\+\+T\+O\+T\+A\+L\+\_\+\+L\+EN}}(\mbox{\hyperlink{icall__apimsg_8h_a8ccac76f35f79d74917e1c5dd6f69fea}{len}})~((\mbox{\hyperlink{icall__apimsg_8h_a8ccac76f35f79d74917e1c5dd6f69fea}{len}}) + \mbox{\hyperlink{_e_c_c_r_o_m_c_c26_x_x_8c_a474f3e2cfb6764cdc525b96b4e9466fc}{E\+C\+C\+\_\+\+K\+E\+Y\+\_\+\+O\+F\+F\+S\+ET}})
+\item 
+\#define \mbox{\hyperlink{_e_c_c_r_o_m_c_c26_x_x_8c_a4e9dcdfe7f75f6f31631594dbaff2416}{I\+M\+P\+O\+R\+T\+D\+A\+T\+A\+\_\+rom}}~0x10015a35
+\item 
+\#define \mbox{\hyperlink{_e_c_c_r_o_m_c_c26_x_x_8c_aec458bc9ccd50e9c792b19191e6e75c2}{E\+X\+P\+O\+R\+T\+O\+P\+E\+R\+A\+N\+D\+\_\+rom}}~0x10015a11
+\item 
+\#define \mbox{\hyperlink{_e_c_c_r_o_m_c_c26_x_x_8c_add3d2fbd3c02cc0d8f364a122cc38528}{z\+S\+U\+B\+\_\+rom}}~0x10015d5d
+\item 
+\#define \mbox{\hyperlink{_e_c_c_r_o_m_c_c26_x_x_8c_a4b9338f179a8ca59ccd2ae37fda5e956}{m\+M\+U\+L\+T\+\_\+rom}}~0x10015f81
+\item 
+\#define \mbox{\hyperlink{_e_c_c_r_o_m_c_c26_x_x_8c_a842610b31bbc2f29d09ab8881f440fdd}{m\+S\+U\+B\+\_\+rom}}~0x1001664d
+\item 
+\#define \mbox{\hyperlink{_e_c_c_r_o_m_c_c26_x_x_8c_aec3427c4a31a59ec64e44ec11d077478}{m\+A\+D\+D\+\_\+rom}}~0x10016551
+\item 
+\#define \mbox{\hyperlink{_e_c_c_r_o_m_c_c26_x_x_8c_afb21de5ac42b13e72346b143ede1624b}{m\+S\+E\+T\+\_\+rom}}~0x10015a9d
+\item 
+\#define \mbox{\hyperlink{_e_c_c_r_o_m_c_c26_x_x_8c_a6bc36a5f11047a2cfe98ca5a09a26ae8}{I\+M\+P\+O\+R\+T\+M\+O\+D\+U\+L\+U\+S\+\_\+rom}}~0x100159ad
+\item 
+\#define \mbox{\hyperlink{_e_c_c_r_o_m_c_c26_x_x_8c_a9c8d5b394a8765d1cb4afe531e0a6fad}{I\+M\+P\+O\+R\+T\+O\+P\+E\+R\+A\+N\+D\+\_\+rom}}~0x100159d1
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef uint32\+\_\+t($\ast$ \mbox{\hyperlink{_e_c_c_r_o_m_c_c26_x_x_8c_a66997485fc734376903ad124b17e2837}{fn\+\_\+\+One\+Operand\+\_\+t}}) (uint32\+\_\+t $\ast$)
+\item 
+typedef uint32\+\_\+t($\ast$ \mbox{\hyperlink{_e_c_c_r_o_m_c_c26_x_x_8c_aeb21d813af8cf9c7db9207aa73a038cc}{fn\+\_\+two\+Operand\+\_\+t}}) (uint32\+\_\+t $\ast$, uint32\+\_\+t $\ast$)
+\item 
+typedef uint32\+\_\+t($\ast$ \mbox{\hyperlink{_e_c_c_r_o_m_c_c26_x_x_8c_a32999e1457f2fd0c8834b83297de7465}{fn\+\_\+three\+Operand\+\_\+t}}) (uint32\+\_\+t $\ast$, uint32\+\_\+t $\ast$, uint32\+\_\+t $\ast$)
+\item 
+typedef void($\ast$ \mbox{\hyperlink{_e_c_c_r_o_m_c_c26_x_x_8c_a77a10aeb7d55af56ae8eb09fe6a7b97d}{fn\+\_\+\+One\+Operand\+V\+\_\+t}}) (uint32\+\_\+t $\ast$)
+\item 
+typedef void($\ast$ \mbox{\hyperlink{_e_c_c_r_o_m_c_c26_x_x_8c_a74348f16452390353b402018d2c210c3}{fn\+\_\+two\+Operand\+V\+\_\+t}}) (uint32\+\_\+t $\ast$, uint32\+\_\+t $\ast$)
+\item 
+typedef void($\ast$ \mbox{\hyperlink{_e_c_c_r_o_m_c_c26_x_x_8c_a0502f33e5ec8f81e68e93d8a51af01f9}{fn\+\_\+three\+Operand\+V\+\_\+t}}) (uint32\+\_\+t $\ast$, uint32\+\_\+t $\ast$, uint32\+\_\+t $\ast$)
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{_e_c_c_r_o_m_c_c26_x_x_8c_ab7627b7a089616fb1182d159c15b31b4}{ecc\+Rom\+\_\+gen\+Keys}} (uint32\+\_\+t $\ast$, uint32\+\_\+t $\ast$, uint32\+\_\+t $\ast$, uint32\+\_\+t $\ast$)
+\item 
+uint8\+\_\+t \mbox{\hyperlink{_e_c_c_r_o_m_c_c26_x_x_8c_ad38fc6f281d3f4adc59c84ea09a7ab01}{ecc\+Rom\+\_\+gen\+Shared\+Secret}} (uint32\+\_\+t $\ast$, uint32\+\_\+t $\ast$, uint32\+\_\+t $\ast$, uint32\+\_\+t $\ast$, uint32\+\_\+t $\ast$)
+\item 
+void \mbox{\hyperlink{_e_c_c_r_o_m_c_c26_x_x_8c_adbed30899def3597c9f91d9d6cceff8f}{E\+C\+C\+R\+O\+M\+C\+C26\+X\+X\+\_\+init}} (void)
+\begin{DoxyCompactList}\small\item\em Initializes module\textquotesingle{}s synchronization resources. Only needs to be called once, but safe to call multiple times. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_e_c_c_r_o_m_c_c26_x_x_8c_ab4b43f73cb42748bf9261a43953f8709}{E\+C\+C\+R\+O\+M\+C\+C26\+X\+X\+\_\+\+Params\+\_\+init}} (\mbox{\hyperlink{struct_e_c_c_r_o_m_c_c26_x_x___params}{E\+C\+C\+R\+O\+M\+C\+C26\+X\+X\+\_\+\+Params}} $\ast$params)
+\begin{DoxyCompactList}\small\item\em Function to initialize the \mbox{\hyperlink{struct_e_c_c_r_o_m_c_c26_x_x___params}{E\+C\+C\+R\+O\+M\+C\+C26\+X\+X\+\_\+\+Params}} struct to its defaults. params should not be modified until after this function is called. Default parameters use the N\+I\+ST P-\/256 curve, timeout is set to wait indefinitely, malloc and free are N\+U\+LL and status is set to E\+C\+C\+R\+O\+M\+C\+C26\+X\+X\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+S\+U\+C\+C\+E\+SS. A client may call this function with the same params instance any number of times. \end{DoxyCompactList}\item 
+int8\+\_\+t \mbox{\hyperlink{_e_c_c_r_o_m_c_c26_x_x_8c_a97cdc759b911e36c7ccc18cfc45fede5}{E\+C\+C\+R\+O\+M\+C\+C26\+X\+X\+\_\+gen\+Keys}} (uint8\+\_\+t $\ast$private\+Key, uint8\+\_\+t $\ast$public\+KeyX, uint8\+\_\+t $\ast$public\+KeyY, \mbox{\hyperlink{struct_e_c_c_r_o_m_c_c26_x_x___params}{E\+C\+C\+R\+O\+M\+C\+C26\+X\+X\+\_\+\+Params}} $\ast$params)
+\begin{DoxyCompactList}\small\item\em Generate Public Key X and Y Coordinates. \end{DoxyCompactList}\item 
+int8\+\_\+t \mbox{\hyperlink{_e_c_c_r_o_m_c_c26_x_x_8c_a64032ff4d46e71fcc876eb0f0491f13c}{E\+C\+C\+R\+O\+M\+C\+C26\+X\+X\+\_\+gen\+D\+H\+Key}} (uint8\+\_\+t $\ast$private\+Key, uint8\+\_\+t $\ast$public\+KeyX, uint8\+\_\+t $\ast$public\+KeyY, uint8\+\_\+t $\ast$d\+H\+KeyX, uint8\+\_\+t $\ast$d\+H\+KeyY, \mbox{\hyperlink{struct_e_c_c_r_o_m_c_c26_x_x___params}{E\+C\+C\+R\+O\+M\+C\+C26\+X\+X\+\_\+\+Params}} $\ast$params)
+\begin{DoxyCompactList}\small\item\em Generate Diffie-\/\+Hellman Shared Secret Key X and Y Coordinates. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{_e_c_c_r_o_m_c_c26_x_x_8c_abbf1965cd2a4879ecf26568890062ed9}{E\+C\+C\+\_\+\+Array\+All\+Zeros}} (const uint8\+\_\+t $\ast$array, uint32\+\_\+t array\+Length)
+\item 
+bool \mbox{\hyperlink{_e_c_c_r_o_m_c_c26_x_x_8c_a5e37952acd9366969a975e04f06e5543}{E\+C\+C\+\_\+cmp\+Bytes}} (uint8\+\_\+t $\ast$in1, uint8\+\_\+t $\ast$in2, uint8\+\_\+t \mbox{\hyperlink{icall__apimsg_8h_a8ccac76f35f79d74917e1c5dd6f69fea}{len}})
+\item 
+int8\+\_\+t \mbox{\hyperlink{_e_c_c_r_o_m_c_c26_x_x_8c_a6a19b850742ee2c7a981e826243580fd}{E\+C\+C\+\_\+\+Verify\+Public\+Key\+Weierstrass}} (\mbox{\hyperlink{struct_e_c_c_r_o_m_c_c26_x_x___params}{E\+C\+C\+R\+O\+M\+C\+C26\+X\+X\+\_\+\+Params}} $\ast$params, const uint8\+\_\+t $\ast$curve\+PointX, const uint8\+\_\+t $\ast$curve\+PointY, uint32\+\_\+t length)
+\begin{DoxyCompactList}\small\item\em Verify if the X an Y coordinates are on the right E\+CC curve. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{union_p_k_a___ecc_param256}{P\+K\+A\+\_\+\+Ecc\+Param256}} \mbox{\hyperlink{_e_c_c_r_o_m_c_c26_x_x_8c_a691b4912708358a49f571feeb652104e}{K\+\_\+mont}}
+\item 
+\mbox{\hyperlink{union_p_k_a___ecc_param256}{P\+K\+A\+\_\+\+Ecc\+Param256}} \mbox{\hyperlink{_e_c_c_r_o_m_c_c26_x_x_8c_a20639e8baefe69d06ad3edeab8d6f7e5}{K2\+\_\+mont}}
+\item 
+const \mbox{\hyperlink{union_p_k_a___ecc_param256}{P\+K\+A\+\_\+\+Ecc\+Param256}} \mbox{\hyperlink{_e_c_c_r_o_m_c_c26_x_x_8c_a892664fa1c2d0478c0da5343b602e1ab}{a\+\_\+mont}}
+\item 
+const \mbox{\hyperlink{union_p_k_a___ecc_param256}{P\+K\+A\+\_\+\+Ecc\+Param256}} \mbox{\hyperlink{_e_c_c_r_o_m_c_c26_x_x_8c_a9f99a459e8ac0e4f2989b56b9b78f967}{b\+\_\+mont}}
+\item 
+const \mbox{\hyperlink{union_p_k_a___ecc_param256}{P\+K\+A\+\_\+\+Ecc\+Param256}} \mbox{\hyperlink{_e_c_c_r_o_m_c_c26_x_x_8c_abcba5246ef1e9a2f7fec7090d5b53c3d}{gx\+\_\+mont}}
+\item 
+const \mbox{\hyperlink{union_p_k_a___ecc_param256}{P\+K\+A\+\_\+\+Ecc\+Param256}} \mbox{\hyperlink{_e_c_c_r_o_m_c_c26_x_x_8c_a945e4e06bbfa14c1627c5f0ccd21e235}{gx}}
+\item 
+const \mbox{\hyperlink{union_p_k_a___ecc_param256}{P\+K\+A\+\_\+\+Ecc\+Param256}} \mbox{\hyperlink{_e_c_c_r_o_m_c_c26_x_x_8c_ab57adda12eb57fdda504abc9af2cf134}{gy}}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{_e_c_c_r_o_m_c_c26_x_x_8c_ab4a60de79bf8593b34a41e888eff2aaf}{ecc\+Rom\+\_\+window\+Size}}
+\item 
+uint32\+\_\+t $\ast$ \mbox{\hyperlink{_e_c_c_r_o_m_c_c26_x_x_8c_a31cecc00660fdf32cd6bc172161e24b6}{ecc\+Rom\+\_\+workzone}}
+\item 
+uint32\+\_\+t $\ast$ \mbox{\hyperlink{_e_c_c_r_o_m_c_c26_x_x_8c_ad92aba5f9cb39cb87d62c52a5b74d518}{ecc\+Rom\+\_\+param\+\_\+p}}
+\item 
+uint32\+\_\+t $\ast$ \mbox{\hyperlink{_e_c_c_r_o_m_c_c26_x_x_8c_a10e385a5f373ec25f6e53d0c2b14aff0}{ecc\+Rom\+\_\+param\+\_\+r}}
+\item 
+uint32\+\_\+t $\ast$ \mbox{\hyperlink{_e_c_c_r_o_m_c_c26_x_x_8c_aef9f57c0384d17f4b090b442ce55d2bd}{ecc\+Rom\+\_\+param\+\_\+a}}
+\item 
+uint32\+\_\+t $\ast$ \mbox{\hyperlink{_e_c_c_r_o_m_c_c26_x_x_8c_a86da2dac4769189f6a54c86b26f49e1a}{ecc\+Rom\+\_\+param\+\_\+b}}
+\item 
+uint32\+\_\+t $\ast$ \mbox{\hyperlink{_e_c_c_r_o_m_c_c26_x_x_8c_ae2bcc09707232295b4cf2058bbfafe92}{ecc\+Rom\+\_\+param\+\_\+\+Gx}}
+\item 
+uint32\+\_\+t $\ast$ \mbox{\hyperlink{_e_c_c_r_o_m_c_c26_x_x_8c_aa66dde0b894cdcda9a3c0c1f0b15ac4e}{ecc\+Rom\+\_\+param\+\_\+\+Gy}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{_e_c_c_r_o_m_c_c26_x_x_8c_ae85086bd17716fb2718fb2726174826d}{N\+I\+S\+T\+\_\+\+Curve\+\_\+\+P256\+\_\+p}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{_e_c_c_r_o_m_c_c26_x_x_8c_a67120fa19a0cf79cb870c73a62d087f2}{N\+I\+S\+T\+\_\+\+Curve\+\_\+\+P256\+\_\+r}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{_e_c_c_r_o_m_c_c26_x_x_8c_a927e8414a73e590980cbcd188d4516f0}{N\+I\+S\+T\+\_\+\+Curve\+\_\+\+P256\+\_\+a}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{_e_c_c_r_o_m_c_c26_x_x_8c_a1da5800ef79feb327539542704d1fc7e}{N\+I\+S\+T\+\_\+\+Curve\+\_\+\+P256\+\_\+b}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{_e_c_c_r_o_m_c_c26_x_x_8c_af790bb33aa495158e8cfa770bfda0b68}{N\+I\+S\+T\+\_\+\+Curve\+\_\+\+P256\+\_\+\+Gx}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{_e_c_c_r_o_m_c_c26_x_x_8c_aa491d3bde0faa718cff18ad9b847e742}{N\+I\+S\+T\+\_\+\+Curve\+\_\+\+P256\+\_\+\+Gy}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{_e_c_c_r_o_m_c_c26_x_x_8c_a78956762bec3ee5939ced3418481fce8}\label{_e_c_c_r_o_m_c_c26_x_x_8c_a78956762bec3ee5939ced3418481fce8}} 
+\index{ECCROMCC26XX.c@{ECCROMCC26XX.c}!ECC\_BUF\_TOTAL\_LEN@{ECC\_BUF\_TOTAL\_LEN}}
+\index{ECC\_BUF\_TOTAL\_LEN@{ECC\_BUF\_TOTAL\_LEN}!ECCROMCC26XX.c@{ECCROMCC26XX.c}}
+\doxysubsubsection{\texorpdfstring{ECC\_BUF\_TOTAL\_LEN}{ECC\_BUF\_TOTAL\_LEN}}
+{\footnotesize\ttfamily \#define E\+C\+C\+\_\+\+B\+U\+F\+\_\+\+T\+O\+T\+A\+L\+\_\+\+L\+EN(\begin{DoxyParamCaption}\item[{}]{\mbox{\hyperlink{icall__apimsg_8h_a8ccac76f35f79d74917e1c5dd6f69fea}{len}} }\end{DoxyParamCaption})~((\mbox{\hyperlink{icall__apimsg_8h_a8ccac76f35f79d74917e1c5dd6f69fea}{len}}) + \mbox{\hyperlink{_e_c_c_r_o_m_c_c26_x_x_8c_a474f3e2cfb6764cdc525b96b4e9466fc}{E\+C\+C\+\_\+\+K\+E\+Y\+\_\+\+O\+F\+F\+S\+ET}})}
+
+
+
+Definition at line 125 of file E\+C\+C\+R\+O\+M\+C\+C26\+X\+X.\+c.
+
+\mbox{\Hypertarget{_e_c_c_r_o_m_c_c26_x_x_8c_acfb4b5179b3b051ea950c32488626762}\label{_e_c_c_r_o_m_c_c26_x_x_8c_acfb4b5179b3b051ea950c32488626762}} 
+\index{ECCROMCC26XX.c@{ECCROMCC26XX.c}!ECC\_KEY\_LEN\_OFFSET@{ECC\_KEY\_LEN\_OFFSET}}
+\index{ECC\_KEY\_LEN\_OFFSET@{ECC\_KEY\_LEN\_OFFSET}!ECCROMCC26XX.c@{ECCROMCC26XX.c}}
+\doxysubsubsection{\texorpdfstring{ECC\_KEY\_LEN\_OFFSET}{ECC\_KEY\_LEN\_OFFSET}}
+{\footnotesize\ttfamily \#define E\+C\+C\+\_\+\+K\+E\+Y\+\_\+\+L\+E\+N\+\_\+\+O\+F\+F\+S\+ET~0}
+
+
+
+Definition at line 122 of file E\+C\+C\+R\+O\+M\+C\+C26\+X\+X.\+c.
+
+\mbox{\Hypertarget{_e_c_c_r_o_m_c_c26_x_x_8c_a474f3e2cfb6764cdc525b96b4e9466fc}\label{_e_c_c_r_o_m_c_c26_x_x_8c_a474f3e2cfb6764cdc525b96b4e9466fc}} 
+\index{ECCROMCC26XX.c@{ECCROMCC26XX.c}!ECC\_KEY\_OFFSET@{ECC\_KEY\_OFFSET}}
+\index{ECC\_KEY\_OFFSET@{ECC\_KEY\_OFFSET}!ECCROMCC26XX.c@{ECCROMCC26XX.c}}
+\doxysubsubsection{\texorpdfstring{ECC\_KEY\_OFFSET}{ECC\_KEY\_OFFSET}}
+{\footnotesize\ttfamily \#define E\+C\+C\+\_\+\+K\+E\+Y\+\_\+\+O\+F\+F\+S\+ET~4}
+
+
+
+Definition at line 119 of file E\+C\+C\+R\+O\+M\+C\+C26\+X\+X.\+c.
+
+\mbox{\Hypertarget{_e_c_c_r_o_m_c_c26_x_x_8c_a5eaa2fc702d04d04f35a4475789ae568}\label{_e_c_c_r_o_m_c_c26_x_x_8c_a5eaa2fc702d04d04f35a4475789ae568}} 
+\index{ECCROMCC26XX.c@{ECCROMCC26XX.c}!ECC\_UINT32\_BLK\_LEN@{ECC\_UINT32\_BLK\_LEN}}
+\index{ECC\_UINT32\_BLK\_LEN@{ECC\_UINT32\_BLK\_LEN}!ECCROMCC26XX.c@{ECCROMCC26XX.c}}
+\doxysubsubsection{\texorpdfstring{ECC\_UINT32\_BLK\_LEN}{ECC\_UINT32\_BLK\_LEN}}
+{\footnotesize\ttfamily \#define E\+C\+C\+\_\+\+U\+I\+N\+T32\+\_\+\+B\+L\+K\+\_\+\+L\+EN(\begin{DoxyParamCaption}\item[{}]{\mbox{\hyperlink{icall__apimsg_8h_a8ccac76f35f79d74917e1c5dd6f69fea}{len}} }\end{DoxyParamCaption})~(((\mbox{\hyperlink{icall__apimsg_8h_a8ccac76f35f79d74917e1c5dd6f69fea}{len}}) + 3) / 4)}
+
+
+
+Definition at line 116 of file E\+C\+C\+R\+O\+M\+C\+C26\+X\+X.\+c.
+
+\mbox{\Hypertarget{_e_c_c_r_o_m_c_c26_x_x_8c_a00a13d1f3d80da09299c7338990c4e7f}\label{_e_c_c_r_o_m_c_c26_x_x_8c_a00a13d1f3d80da09299c7338990c4e7f}} 
+\index{ECCROMCC26XX.c@{ECCROMCC26XX.c}!ECC\_WINDOW\_SIZE@{ECC\_WINDOW\_SIZE}}
+\index{ECC\_WINDOW\_SIZE@{ECC\_WINDOW\_SIZE}!ECCROMCC26XX.c@{ECCROMCC26XX.c}}
+\doxysubsubsection{\texorpdfstring{ECC\_WINDOW\_SIZE}{ECC\_WINDOW\_SIZE}}
+{\footnotesize\ttfamily \#define E\+C\+C\+\_\+\+W\+I\+N\+D\+O\+W\+\_\+\+S\+I\+ZE~3}
+
+
+
+Definition at line 113 of file E\+C\+C\+R\+O\+M\+C\+C26\+X\+X.\+c.
+
+\mbox{\Hypertarget{_e_c_c_r_o_m_c_c26_x_x_8c_aec458bc9ccd50e9c792b19191e6e75c2}\label{_e_c_c_r_o_m_c_c26_x_x_8c_aec458bc9ccd50e9c792b19191e6e75c2}} 
+\index{ECCROMCC26XX.c@{ECCROMCC26XX.c}!EXPORTOPERAND\_rom@{EXPORTOPERAND\_rom}}
+\index{EXPORTOPERAND\_rom@{EXPORTOPERAND\_rom}!ECCROMCC26XX.c@{ECCROMCC26XX.c}}
+\doxysubsubsection{\texorpdfstring{EXPORTOPERAND\_rom}{EXPORTOPERAND\_rom}}
+{\footnotesize\ttfamily \#define E\+X\+P\+O\+R\+T\+O\+P\+E\+R\+A\+N\+D\+\_\+rom~0x10015a11}
+
+
+
+Definition at line 129 of file E\+C\+C\+R\+O\+M\+C\+C26\+X\+X.\+c.
+
+\mbox{\Hypertarget{_e_c_c_r_o_m_c_c26_x_x_8c_a4e9dcdfe7f75f6f31631594dbaff2416}\label{_e_c_c_r_o_m_c_c26_x_x_8c_a4e9dcdfe7f75f6f31631594dbaff2416}} 
+\index{ECCROMCC26XX.c@{ECCROMCC26XX.c}!IMPORTDATA\_rom@{IMPORTDATA\_rom}}
+\index{IMPORTDATA\_rom@{IMPORTDATA\_rom}!ECCROMCC26XX.c@{ECCROMCC26XX.c}}
+\doxysubsubsection{\texorpdfstring{IMPORTDATA\_rom}{IMPORTDATA\_rom}}
+{\footnotesize\ttfamily \#define I\+M\+P\+O\+R\+T\+D\+A\+T\+A\+\_\+rom~0x10015a35}
+
+
+
+Definition at line 128 of file E\+C\+C\+R\+O\+M\+C\+C26\+X\+X.\+c.
+
+\mbox{\Hypertarget{_e_c_c_r_o_m_c_c26_x_x_8c_a6bc36a5f11047a2cfe98ca5a09a26ae8}\label{_e_c_c_r_o_m_c_c26_x_x_8c_a6bc36a5f11047a2cfe98ca5a09a26ae8}} 
+\index{ECCROMCC26XX.c@{ECCROMCC26XX.c}!IMPORTMODULUS\_rom@{IMPORTMODULUS\_rom}}
+\index{IMPORTMODULUS\_rom@{IMPORTMODULUS\_rom}!ECCROMCC26XX.c@{ECCROMCC26XX.c}}
+\doxysubsubsection{\texorpdfstring{IMPORTMODULUS\_rom}{IMPORTMODULUS\_rom}}
+{\footnotesize\ttfamily \#define I\+M\+P\+O\+R\+T\+M\+O\+D\+U\+L\+U\+S\+\_\+rom~0x100159ad}
+
+
+
+Definition at line 135 of file E\+C\+C\+R\+O\+M\+C\+C26\+X\+X.\+c.
+
+\mbox{\Hypertarget{_e_c_c_r_o_m_c_c26_x_x_8c_a9c8d5b394a8765d1cb4afe531e0a6fad}\label{_e_c_c_r_o_m_c_c26_x_x_8c_a9c8d5b394a8765d1cb4afe531e0a6fad}} 
+\index{ECCROMCC26XX.c@{ECCROMCC26XX.c}!IMPORTOPERAND\_rom@{IMPORTOPERAND\_rom}}
+\index{IMPORTOPERAND\_rom@{IMPORTOPERAND\_rom}!ECCROMCC26XX.c@{ECCROMCC26XX.c}}
+\doxysubsubsection{\texorpdfstring{IMPORTOPERAND\_rom}{IMPORTOPERAND\_rom}}
+{\footnotesize\ttfamily \#define I\+M\+P\+O\+R\+T\+O\+P\+E\+R\+A\+N\+D\+\_\+rom~0x100159d1}
+
+
+
+Definition at line 136 of file E\+C\+C\+R\+O\+M\+C\+C26\+X\+X.\+c.
+
+\mbox{\Hypertarget{_e_c_c_r_o_m_c_c26_x_x_8c_aec3427c4a31a59ec64e44ec11d077478}\label{_e_c_c_r_o_m_c_c26_x_x_8c_aec3427c4a31a59ec64e44ec11d077478}} 
+\index{ECCROMCC26XX.c@{ECCROMCC26XX.c}!mADD\_rom@{mADD\_rom}}
+\index{mADD\_rom@{mADD\_rom}!ECCROMCC26XX.c@{ECCROMCC26XX.c}}
+\doxysubsubsection{\texorpdfstring{mADD\_rom}{mADD\_rom}}
+{\footnotesize\ttfamily \#define m\+A\+D\+D\+\_\+rom~0x10016551}
+
+
+
+Definition at line 133 of file E\+C\+C\+R\+O\+M\+C\+C26\+X\+X.\+c.
+
+\mbox{\Hypertarget{_e_c_c_r_o_m_c_c26_x_x_8c_a4b9338f179a8ca59ccd2ae37fda5e956}\label{_e_c_c_r_o_m_c_c26_x_x_8c_a4b9338f179a8ca59ccd2ae37fda5e956}} 
+\index{ECCROMCC26XX.c@{ECCROMCC26XX.c}!mMULT\_rom@{mMULT\_rom}}
+\index{mMULT\_rom@{mMULT\_rom}!ECCROMCC26XX.c@{ECCROMCC26XX.c}}
+\doxysubsubsection{\texorpdfstring{mMULT\_rom}{mMULT\_rom}}
+{\footnotesize\ttfamily \#define m\+M\+U\+L\+T\+\_\+rom~0x10015f81}
+
+
+
+Definition at line 131 of file E\+C\+C\+R\+O\+M\+C\+C26\+X\+X.\+c.
+
+\mbox{\Hypertarget{_e_c_c_r_o_m_c_c26_x_x_8c_afb21de5ac42b13e72346b143ede1624b}\label{_e_c_c_r_o_m_c_c26_x_x_8c_afb21de5ac42b13e72346b143ede1624b}} 
+\index{ECCROMCC26XX.c@{ECCROMCC26XX.c}!mSET\_rom@{mSET\_rom}}
+\index{mSET\_rom@{mSET\_rom}!ECCROMCC26XX.c@{ECCROMCC26XX.c}}
+\doxysubsubsection{\texorpdfstring{mSET\_rom}{mSET\_rom}}
+{\footnotesize\ttfamily \#define m\+S\+E\+T\+\_\+rom~0x10015a9d}
+
+
+
+Definition at line 134 of file E\+C\+C\+R\+O\+M\+C\+C26\+X\+X.\+c.
+
+\mbox{\Hypertarget{_e_c_c_r_o_m_c_c26_x_x_8c_a842610b31bbc2f29d09ab8881f440fdd}\label{_e_c_c_r_o_m_c_c26_x_x_8c_a842610b31bbc2f29d09ab8881f440fdd}} 
+\index{ECCROMCC26XX.c@{ECCROMCC26XX.c}!mSUB\_rom@{mSUB\_rom}}
+\index{mSUB\_rom@{mSUB\_rom}!ECCROMCC26XX.c@{ECCROMCC26XX.c}}
+\doxysubsubsection{\texorpdfstring{mSUB\_rom}{mSUB\_rom}}
+{\footnotesize\ttfamily \#define m\+S\+U\+B\+\_\+rom~0x1001664d}
+
+
+
+Definition at line 132 of file E\+C\+C\+R\+O\+M\+C\+C26\+X\+X.\+c.
+
+\mbox{\Hypertarget{_e_c_c_r_o_m_c_c26_x_x_8c_add3d2fbd3c02cc0d8f364a122cc38528}\label{_e_c_c_r_o_m_c_c26_x_x_8c_add3d2fbd3c02cc0d8f364a122cc38528}} 
+\index{ECCROMCC26XX.c@{ECCROMCC26XX.c}!zSUB\_rom@{zSUB\_rom}}
+\index{zSUB\_rom@{zSUB\_rom}!ECCROMCC26XX.c@{ECCROMCC26XX.c}}
+\doxysubsubsection{\texorpdfstring{zSUB\_rom}{zSUB\_rom}}
+{\footnotesize\ttfamily \#define z\+S\+U\+B\+\_\+rom~0x10015d5d}
+
+
+
+Definition at line 130 of file E\+C\+C\+R\+O\+M\+C\+C26\+X\+X.\+c.
+
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{_e_c_c_r_o_m_c_c26_x_x_8c_a66997485fc734376903ad124b17e2837}\label{_e_c_c_r_o_m_c_c26_x_x_8c_a66997485fc734376903ad124b17e2837}} 
+\index{ECCROMCC26XX.c@{ECCROMCC26XX.c}!fn\_OneOperand\_t@{fn\_OneOperand\_t}}
+\index{fn\_OneOperand\_t@{fn\_OneOperand\_t}!ECCROMCC26XX.c@{ECCROMCC26XX.c}}
+\doxysubsubsection{\texorpdfstring{fn\_OneOperand\_t}{fn\_OneOperand\_t}}
+{\footnotesize\ttfamily typedef uint32\+\_\+t($\ast$ fn\+\_\+\+One\+Operand\+\_\+t) (uint32\+\_\+t $\ast$)}
+
+
+
+Definition at line 185 of file E\+C\+C\+R\+O\+M\+C\+C26\+X\+X.\+c.
+
+\mbox{\Hypertarget{_e_c_c_r_o_m_c_c26_x_x_8c_a77a10aeb7d55af56ae8eb09fe6a7b97d}\label{_e_c_c_r_o_m_c_c26_x_x_8c_a77a10aeb7d55af56ae8eb09fe6a7b97d}} 
+\index{ECCROMCC26XX.c@{ECCROMCC26XX.c}!fn\_OneOperandV\_t@{fn\_OneOperandV\_t}}
+\index{fn\_OneOperandV\_t@{fn\_OneOperandV\_t}!ECCROMCC26XX.c@{ECCROMCC26XX.c}}
+\doxysubsubsection{\texorpdfstring{fn\_OneOperandV\_t}{fn\_OneOperandV\_t}}
+{\footnotesize\ttfamily typedef void($\ast$ fn\+\_\+\+One\+Operand\+V\+\_\+t) (uint32\+\_\+t $\ast$)}
+
+
+
+Definition at line 189 of file E\+C\+C\+R\+O\+M\+C\+C26\+X\+X.\+c.
+
+\mbox{\Hypertarget{_e_c_c_r_o_m_c_c26_x_x_8c_a32999e1457f2fd0c8834b83297de7465}\label{_e_c_c_r_o_m_c_c26_x_x_8c_a32999e1457f2fd0c8834b83297de7465}} 
+\index{ECCROMCC26XX.c@{ECCROMCC26XX.c}!fn\_threeOperand\_t@{fn\_threeOperand\_t}}
+\index{fn\_threeOperand\_t@{fn\_threeOperand\_t}!ECCROMCC26XX.c@{ECCROMCC26XX.c}}
+\doxysubsubsection{\texorpdfstring{fn\_threeOperand\_t}{fn\_threeOperand\_t}}
+{\footnotesize\ttfamily typedef uint32\+\_\+t($\ast$ fn\+\_\+three\+Operand\+\_\+t) (uint32\+\_\+t $\ast$, uint32\+\_\+t $\ast$, uint32\+\_\+t $\ast$)}
+
+
+
+Definition at line 187 of file E\+C\+C\+R\+O\+M\+C\+C26\+X\+X.\+c.
+
+\mbox{\Hypertarget{_e_c_c_r_o_m_c_c26_x_x_8c_a0502f33e5ec8f81e68e93d8a51af01f9}\label{_e_c_c_r_o_m_c_c26_x_x_8c_a0502f33e5ec8f81e68e93d8a51af01f9}} 
+\index{ECCROMCC26XX.c@{ECCROMCC26XX.c}!fn\_threeOperandV\_t@{fn\_threeOperandV\_t}}
+\index{fn\_threeOperandV\_t@{fn\_threeOperandV\_t}!ECCROMCC26XX.c@{ECCROMCC26XX.c}}
+\doxysubsubsection{\texorpdfstring{fn\_threeOperandV\_t}{fn\_threeOperandV\_t}}
+{\footnotesize\ttfamily typedef void($\ast$ fn\+\_\+three\+Operand\+V\+\_\+t) (uint32\+\_\+t $\ast$, uint32\+\_\+t $\ast$, uint32\+\_\+t $\ast$)}
+
+
+
+Definition at line 191 of file E\+C\+C\+R\+O\+M\+C\+C26\+X\+X.\+c.
+
+\mbox{\Hypertarget{_e_c_c_r_o_m_c_c26_x_x_8c_aeb21d813af8cf9c7db9207aa73a038cc}\label{_e_c_c_r_o_m_c_c26_x_x_8c_aeb21d813af8cf9c7db9207aa73a038cc}} 
+\index{ECCROMCC26XX.c@{ECCROMCC26XX.c}!fn\_twoOperand\_t@{fn\_twoOperand\_t}}
+\index{fn\_twoOperand\_t@{fn\_twoOperand\_t}!ECCROMCC26XX.c@{ECCROMCC26XX.c}}
+\doxysubsubsection{\texorpdfstring{fn\_twoOperand\_t}{fn\_twoOperand\_t}}
+{\footnotesize\ttfamily typedef uint32\+\_\+t($\ast$ fn\+\_\+two\+Operand\+\_\+t) (uint32\+\_\+t $\ast$, uint32\+\_\+t $\ast$)}
+
+
+
+Definition at line 186 of file E\+C\+C\+R\+O\+M\+C\+C26\+X\+X.\+c.
+
+\mbox{\Hypertarget{_e_c_c_r_o_m_c_c26_x_x_8c_a74348f16452390353b402018d2c210c3}\label{_e_c_c_r_o_m_c_c26_x_x_8c_a74348f16452390353b402018d2c210c3}} 
+\index{ECCROMCC26XX.c@{ECCROMCC26XX.c}!fn\_twoOperandV\_t@{fn\_twoOperandV\_t}}
+\index{fn\_twoOperandV\_t@{fn\_twoOperandV\_t}!ECCROMCC26XX.c@{ECCROMCC26XX.c}}
+\doxysubsubsection{\texorpdfstring{fn\_twoOperandV\_t}{fn\_twoOperandV\_t}}
+{\footnotesize\ttfamily typedef void($\ast$ fn\+\_\+two\+Operand\+V\+\_\+t) (uint32\+\_\+t $\ast$, uint32\+\_\+t $\ast$)}
+
+
+
+Definition at line 190 of file E\+C\+C\+R\+O\+M\+C\+C26\+X\+X.\+c.
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{_e_c_c_r_o_m_c_c26_x_x_8c_abbf1965cd2a4879ecf26568890062ed9}\label{_e_c_c_r_o_m_c_c26_x_x_8c_abbf1965cd2a4879ecf26568890062ed9}} 
+\index{ECCROMCC26XX.c@{ECCROMCC26XX.c}!ECC\_ArrayAllZeros@{ECC\_ArrayAllZeros}}
+\index{ECC\_ArrayAllZeros@{ECC\_ArrayAllZeros}!ECCROMCC26XX.c@{ECCROMCC26XX.c}}
+\doxysubsubsection{\texorpdfstring{ECC\_ArrayAllZeros()}{ECC\_ArrayAllZeros()}}
+{\footnotesize\ttfamily bool E\+C\+C\+\_\+\+Array\+All\+Zeros (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t $\ast$}]{array,  }\item[{uint32\+\_\+t}]{array\+Length }\end{DoxyParamCaption})}
+
+
+
+Definition at line 479 of file E\+C\+C\+R\+O\+M\+C\+C26\+X\+X.\+c.
+
+\mbox{\Hypertarget{_e_c_c_r_o_m_c_c26_x_x_8c_a5e37952acd9366969a975e04f06e5543}\label{_e_c_c_r_o_m_c_c26_x_x_8c_a5e37952acd9366969a975e04f06e5543}} 
+\index{ECCROMCC26XX.c@{ECCROMCC26XX.c}!ECC\_cmpBytes@{ECC\_cmpBytes}}
+\index{ECC\_cmpBytes@{ECC\_cmpBytes}!ECCROMCC26XX.c@{ECCROMCC26XX.c}}
+\doxysubsubsection{\texorpdfstring{ECC\_cmpBytes()}{ECC\_cmpBytes()}}
+{\footnotesize\ttfamily bool E\+C\+C\+\_\+cmp\+Bytes (\begin{DoxyParamCaption}\item[{uint8\+\_\+t $\ast$}]{in1,  }\item[{uint8\+\_\+t $\ast$}]{in2,  }\item[{uint8\+\_\+t}]{len }\end{DoxyParamCaption})}
+
+
+
+Definition at line 505 of file E\+C\+C\+R\+O\+M\+C\+C26\+X\+X.\+c.
+
+\mbox{\Hypertarget{_e_c_c_r_o_m_c_c26_x_x_8c_a6a19b850742ee2c7a981e826243580fd}\label{_e_c_c_r_o_m_c_c26_x_x_8c_a6a19b850742ee2c7a981e826243580fd}} 
+\index{ECCROMCC26XX.c@{ECCROMCC26XX.c}!ECC\_VerifyPublicKeyWeierstrass@{ECC\_VerifyPublicKeyWeierstrass}}
+\index{ECC\_VerifyPublicKeyWeierstrass@{ECC\_VerifyPublicKeyWeierstrass}!ECCROMCC26XX.c@{ECCROMCC26XX.c}}
+\doxysubsubsection{\texorpdfstring{ECC\_VerifyPublicKeyWeierstrass()}{ECC\_VerifyPublicKeyWeierstrass()}}
+{\footnotesize\ttfamily int8\+\_\+t E\+C\+C\+\_\+\+Verify\+Public\+Key\+Weierstrass (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_e_c_c_r_o_m_c_c26_x_x___params}{E\+C\+C\+R\+O\+M\+C\+C26\+X\+X\+\_\+\+Params}} $\ast$}]{params,  }\item[{const uint8\+\_\+t $\ast$}]{curve\+PointX,  }\item[{const uint8\+\_\+t $\ast$}]{curve\+PointY,  }\item[{uint32\+\_\+t}]{length }\end{DoxyParamCaption})}
+
+
+
+Verify if the X an Y coordinates are on the right E\+CC curve. 
+
+\begin{DoxyPrecond}{Precondition}
+E\+C\+C\+R\+O\+M\+C\+C26\+X\+X\+\_\+init must be called prior to this and params must be intiliazed with \mbox{\hyperlink{_e_c_c_r_o_m_c_c26_x_x_8h_ab4b43f73cb42748bf9261a43953f8709}{E\+C\+C\+R\+O\+M\+C\+C26\+X\+X\+\_\+\+Params\+\_\+init()}}. Calling context\+: Task. Swi or Hwi should call only when timeout is set to 0.
+\end{DoxyPrecond}
+
+\begin{DoxyParams}{Parameters}
+{\em params} & Pointer to a parameter block, if N\+U\+LL operation will fail\\
+\hline
+{\em curve\+PointX} & 32 byte input buffer containing Public Key X coordinate. It key needs to contain the length (4 bytes) and the X coordinate in a byte-\/wise little endian format.\\
+\hline
+{\em curve\+PointY} & 32 byte input buffer containing Public Key X coordinate. It key needs to contain the length (4 bytes) and the X coordinate in a byte-\/wise little endian format.\\
+\hline
+{\em length} & length of the key\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+status verification status 
+\end{DoxyReturn}
+
+
+Definition at line 522 of file E\+C\+C\+R\+O\+M\+C\+C26\+X\+X.\+c.
+
+\mbox{\Hypertarget{_e_c_c_r_o_m_c_c26_x_x_8c_ab7627b7a089616fb1182d159c15b31b4}\label{_e_c_c_r_o_m_c_c26_x_x_8c_ab7627b7a089616fb1182d159c15b31b4}} 
+\index{ECCROMCC26XX.c@{ECCROMCC26XX.c}!eccRom\_genKeys@{eccRom\_genKeys}}
+\index{eccRom\_genKeys@{eccRom\_genKeys}!ECCROMCC26XX.c@{ECCROMCC26XX.c}}
+\doxysubsubsection{\texorpdfstring{eccRom\_genKeys()}{eccRom\_genKeys()}}
+{\footnotesize\ttfamily uint8\+\_\+t ecc\+Rom\+\_\+gen\+Keys (\begin{DoxyParamCaption}\item[{uint32\+\_\+t $\ast$}]{,  }\item[{uint32\+\_\+t $\ast$}]{,  }\item[{uint32\+\_\+t $\ast$}]{,  }\item[{uint32\+\_\+t $\ast$}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{_e_c_c_r_o_m_c_c26_x_x_8c_ad38fc6f281d3f4adc59c84ea09a7ab01}\label{_e_c_c_r_o_m_c_c26_x_x_8c_ad38fc6f281d3f4adc59c84ea09a7ab01}} 
+\index{ECCROMCC26XX.c@{ECCROMCC26XX.c}!eccRom\_genSharedSecret@{eccRom\_genSharedSecret}}
+\index{eccRom\_genSharedSecret@{eccRom\_genSharedSecret}!ECCROMCC26XX.c@{ECCROMCC26XX.c}}
+\doxysubsubsection{\texorpdfstring{eccRom\_genSharedSecret()}{eccRom\_genSharedSecret()}}
+{\footnotesize\ttfamily uint8\+\_\+t ecc\+Rom\+\_\+gen\+Shared\+Secret (\begin{DoxyParamCaption}\item[{uint32\+\_\+t $\ast$}]{,  }\item[{uint32\+\_\+t $\ast$}]{,  }\item[{uint32\+\_\+t $\ast$}]{,  }\item[{uint32\+\_\+t $\ast$}]{,  }\item[{uint32\+\_\+t $\ast$}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{_e_c_c_r_o_m_c_c26_x_x_8c_a64032ff4d46e71fcc876eb0f0491f13c}\label{_e_c_c_r_o_m_c_c26_x_x_8c_a64032ff4d46e71fcc876eb0f0491f13c}} 
+\index{ECCROMCC26XX.c@{ECCROMCC26XX.c}!ECCROMCC26XX\_genDHKey@{ECCROMCC26XX\_genDHKey}}
+\index{ECCROMCC26XX\_genDHKey@{ECCROMCC26XX\_genDHKey}!ECCROMCC26XX.c@{ECCROMCC26XX.c}}
+\doxysubsubsection{\texorpdfstring{ECCROMCC26XX\_genDHKey()}{ECCROMCC26XX\_genDHKey()}}
+{\footnotesize\ttfamily int8\+\_\+t E\+C\+C\+R\+O\+M\+C\+C26\+X\+X\+\_\+gen\+D\+H\+Key (\begin{DoxyParamCaption}\item[{uint8\+\_\+t $\ast$}]{private\+Key,  }\item[{uint8\+\_\+t $\ast$}]{public\+KeyX,  }\item[{uint8\+\_\+t $\ast$}]{public\+KeyY,  }\item[{uint8\+\_\+t $\ast$}]{d\+H\+KeyX,  }\item[{uint8\+\_\+t $\ast$}]{d\+H\+KeyY,  }\item[{\mbox{\hyperlink{struct_e_c_c_r_o_m_c_c26_x_x___params}{E\+C\+C\+R\+O\+M\+C\+C26\+X\+X\+\_\+\+Params}} $\ast$}]{params }\end{DoxyParamCaption})}
+
+
+
+Generate Diffie-\/\+Hellman Shared Secret Key X and Y Coordinates. 
+
+\begin{DoxyPrecond}{Precondition}
+E\+C\+C\+R\+O\+M\+C\+C26\+X\+X\+\_\+init must be called prior to this and params must be intiliazed with \mbox{\hyperlink{_e_c_c_r_o_m_c_c26_x_x_8h_ab4b43f73cb42748bf9261a43953f8709}{E\+C\+C\+R\+O\+M\+C\+C26\+X\+X\+\_\+\+Params\+\_\+init()}}. Calling context\+: Task. Swi or Hwi should call only when timeout is set to 0.
+\end{DoxyPrecond}
+
+\begin{DoxyParams}{Parameters}
+{\em private\+Key} & 32 byte input buffer of randomly generated bits.\\
+\hline
+{\em public\+KeyX} & 32 byte input buffer provided by client to store Public Key X Coordinate.\\
+\hline
+{\em public\+KeyY} & 32 byte input buffer provided by client to store Public Key Y Coordinate.\\
+\hline
+{\em d\+H\+KeyX} & 32 byte output buffer provided by client to store Diffie-\/\+Hellman Key X Coordinate.\\
+\hline
+{\em D\+H\+KeyY} & 32 byte output buffer provided by client to store Diffie-\/\+Hellman Key Y Coordinate.\\
+\hline
+{\em params} & Pointer to a parameter block, if N\+U\+LL operation will fail\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+status 
+\end{DoxyReturn}
+
+
+Definition at line 349 of file E\+C\+C\+R\+O\+M\+C\+C26\+X\+X.\+c.
+
+\mbox{\Hypertarget{_e_c_c_r_o_m_c_c26_x_x_8c_a97cdc759b911e36c7ccc18cfc45fede5}\label{_e_c_c_r_o_m_c_c26_x_x_8c_a97cdc759b911e36c7ccc18cfc45fede5}} 
+\index{ECCROMCC26XX.c@{ECCROMCC26XX.c}!ECCROMCC26XX\_genKeys@{ECCROMCC26XX\_genKeys}}
+\index{ECCROMCC26XX\_genKeys@{ECCROMCC26XX\_genKeys}!ECCROMCC26XX.c@{ECCROMCC26XX.c}}
+\doxysubsubsection{\texorpdfstring{ECCROMCC26XX\_genKeys()}{ECCROMCC26XX\_genKeys()}}
+{\footnotesize\ttfamily int8\+\_\+t E\+C\+C\+R\+O\+M\+C\+C26\+X\+X\+\_\+gen\+Keys (\begin{DoxyParamCaption}\item[{uint8\+\_\+t $\ast$}]{private\+Key,  }\item[{uint8\+\_\+t $\ast$}]{public\+KeyX,  }\item[{uint8\+\_\+t $\ast$}]{public\+KeyY,  }\item[{\mbox{\hyperlink{struct_e_c_c_r_o_m_c_c26_x_x___params}{E\+C\+C\+R\+O\+M\+C\+C26\+X\+X\+\_\+\+Params}} $\ast$}]{params }\end{DoxyParamCaption})}
+
+
+
+Generate Public Key X and Y Coordinates. 
+
+\begin{DoxyPrecond}{Precondition}
+E\+C\+C\+R\+O\+M\+C\+C26\+X\+X\+\_\+init must be called prior to this and params must be intiliazed with \mbox{\hyperlink{_e_c_c_r_o_m_c_c26_x_x_8h_ab4b43f73cb42748bf9261a43953f8709}{E\+C\+C\+R\+O\+M\+C\+C26\+X\+X\+\_\+\+Params\+\_\+init()}}. Calling context\+: Task. Swi or Hwi should call only when timeout is set to 0.
+\end{DoxyPrecond}
+
+\begin{DoxyParams}{Parameters}
+{\em private\+Key} & 32 byte input buffer of randomly generated bits.\\
+\hline
+{\em public\+KeyX} & 32 byte output buffer provided by client to store Public Key X Coordinate.\\
+\hline
+{\em public\+KeyY} & 32 byte output buffer provided by client to store Public Key Y Coordinate.\\
+\hline
+{\em params} & Pointer to a parameter block, if N\+U\+LL operation will fail.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+status 
+\end{DoxyReturn}
+
+
+Definition at line 253 of file E\+C\+C\+R\+O\+M\+C\+C26\+X\+X.\+c.
+
+\mbox{\Hypertarget{_e_c_c_r_o_m_c_c26_x_x_8c_adbed30899def3597c9f91d9d6cceff8f}\label{_e_c_c_r_o_m_c_c26_x_x_8c_adbed30899def3597c9f91d9d6cceff8f}} 
+\index{ECCROMCC26XX.c@{ECCROMCC26XX.c}!ECCROMCC26XX\_init@{ECCROMCC26XX\_init}}
+\index{ECCROMCC26XX\_init@{ECCROMCC26XX\_init}!ECCROMCC26XX.c@{ECCROMCC26XX.c}}
+\doxysubsubsection{\texorpdfstring{ECCROMCC26XX\_init()}{ECCROMCC26XX\_init()}}
+{\footnotesize\ttfamily void E\+C\+C\+R\+O\+M\+C\+C26\+X\+X\+\_\+init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Initializes module\textquotesingle{}s synchronization resources. Only needs to be called once, but safe to call multiple times. 
+
+\begin{DoxyPrecond}{Precondition}
+This function must be called before any other E\+C\+C\+R\+O\+M\+C\+C26\+XX driver A\+P\+Is. Calling context\+: Task. 
+\end{DoxyPrecond}
+
+
+Definition at line 196 of file E\+C\+C\+R\+O\+M\+C\+C26\+X\+X.\+c.
+
+\mbox{\Hypertarget{_e_c_c_r_o_m_c_c26_x_x_8c_ab4b43f73cb42748bf9261a43953f8709}\label{_e_c_c_r_o_m_c_c26_x_x_8c_ab4b43f73cb42748bf9261a43953f8709}} 
+\index{ECCROMCC26XX.c@{ECCROMCC26XX.c}!ECCROMCC26XX\_Params\_init@{ECCROMCC26XX\_Params\_init}}
+\index{ECCROMCC26XX\_Params\_init@{ECCROMCC26XX\_Params\_init}!ECCROMCC26XX.c@{ECCROMCC26XX.c}}
+\doxysubsubsection{\texorpdfstring{ECCROMCC26XX\_Params\_init()}{ECCROMCC26XX\_Params\_init()}}
+{\footnotesize\ttfamily void E\+C\+C\+R\+O\+M\+C\+C26\+X\+X\+\_\+\+Params\+\_\+init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_e_c_c_r_o_m_c_c26_x_x___params}{E\+C\+C\+R\+O\+M\+C\+C26\+X\+X\+\_\+\+Params}} $\ast$}]{params }\end{DoxyParamCaption})}
+
+
+
+Function to initialize the \mbox{\hyperlink{struct_e_c_c_r_o_m_c_c26_x_x___params}{E\+C\+C\+R\+O\+M\+C\+C26\+X\+X\+\_\+\+Params}} struct to its defaults. params should not be modified until after this function is called. Default parameters use the N\+I\+ST P-\/256 curve, timeout is set to wait indefinitely, malloc and free are N\+U\+LL and status is set to E\+C\+C\+R\+O\+M\+C\+C26\+X\+X\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+S\+U\+C\+C\+E\+SS. A client may call this function with the same params instance any number of times. 
+
+\begin{DoxyPrecond}{Precondition}
+Calling context\+: Hwi, Swi and Task.
+\end{DoxyPrecond}
+
+\begin{DoxyParams}{Parameters}
+{\em params} & Parameter structure to initialize. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 224 of file E\+C\+C\+R\+O\+M\+C\+C26\+X\+X.\+c.
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{_e_c_c_r_o_m_c_c26_x_x_8c_a892664fa1c2d0478c0da5343b602e1ab}\label{_e_c_c_r_o_m_c_c26_x_x_8c_a892664fa1c2d0478c0da5343b602e1ab}} 
+\index{ECCROMCC26XX.c@{ECCROMCC26XX.c}!a\_mont@{a\_mont}}
+\index{a\_mont@{a\_mont}!ECCROMCC26XX.c@{ECCROMCC26XX.c}}
+\doxysubsubsection{\texorpdfstring{a\_mont}{a\_mont}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{union_p_k_a___ecc_param256}{P\+K\+A\+\_\+\+Ecc\+Param256}} a\+\_\+mont}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{= \{ .byte  = \{ 0xfc, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff,}
+\DoxyCodeLine{                                             0xff, 0xff, 0xff, 0xff, 0x03, 0x00, 0x00, 0x00,}
+\DoxyCodeLine{                                             0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,}
+\DoxyCodeLine{                                             0x04, 0x00, 0x00, 0x00, 0xfc, 0xff, 0xff, 0xff \}\}}
+
+\end{DoxyCode}
+
+
+Definition at line 85 of file E\+C\+C\+R\+O\+M\+C\+C26\+X\+X.\+c.
+
+\mbox{\Hypertarget{_e_c_c_r_o_m_c_c26_x_x_8c_a9f99a459e8ac0e4f2989b56b9b78f967}\label{_e_c_c_r_o_m_c_c26_x_x_8c_a9f99a459e8ac0e4f2989b56b9b78f967}} 
+\index{ECCROMCC26XX.c@{ECCROMCC26XX.c}!b\_mont@{b\_mont}}
+\index{b\_mont@{b\_mont}!ECCROMCC26XX.c@{ECCROMCC26XX.c}}
+\doxysubsubsection{\texorpdfstring{b\_mont}{b\_mont}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{union_p_k_a___ecc_param256}{P\+K\+A\+\_\+\+Ecc\+Param256}} b\+\_\+mont}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{= \{ .byte  = \{ 0xdf, 0xbd, 0xc4, 0x29, 0x62, 0xdf, 0x9c, 0xd8,}
+\DoxyCodeLine{                                             0x90, 0x30, 0x84, 0x78, 0xcd, 0x05, 0xf0, 0xac,}
+\DoxyCodeLine{                                             0xd6, 0x2e, 0x21, 0xf7, 0xab, 0x20, 0xa2, 0xe5,}
+\DoxyCodeLine{                                             0x34, 0x48, 0x87, 0x04, 0x1d, 0x06, 0x30, 0xdc \}\}}
+
+\end{DoxyCode}
+
+
+Definition at line 90 of file E\+C\+C\+R\+O\+M\+C\+C26\+X\+X.\+c.
+
+\mbox{\Hypertarget{_e_c_c_r_o_m_c_c26_x_x_8c_aef9f57c0384d17f4b090b442ce55d2bd}\label{_e_c_c_r_o_m_c_c26_x_x_8c_aef9f57c0384d17f4b090b442ce55d2bd}} 
+\index{ECCROMCC26XX.c@{ECCROMCC26XX.c}!eccRom\_param\_a@{eccRom\_param\_a}}
+\index{eccRom\_param\_a@{eccRom\_param\_a}!ECCROMCC26XX.c@{ECCROMCC26XX.c}}
+\doxysubsubsection{\texorpdfstring{eccRom\_param\_a}{eccRom\_param\_a}}
+{\footnotesize\ttfamily uint32\+\_\+t$\ast$ ecc\+Rom\+\_\+param\+\_\+a}
+
+\mbox{\Hypertarget{_e_c_c_r_o_m_c_c26_x_x_8c_a86da2dac4769189f6a54c86b26f49e1a}\label{_e_c_c_r_o_m_c_c26_x_x_8c_a86da2dac4769189f6a54c86b26f49e1a}} 
+\index{ECCROMCC26XX.c@{ECCROMCC26XX.c}!eccRom\_param\_b@{eccRom\_param\_b}}
+\index{eccRom\_param\_b@{eccRom\_param\_b}!ECCROMCC26XX.c@{ECCROMCC26XX.c}}
+\doxysubsubsection{\texorpdfstring{eccRom\_param\_b}{eccRom\_param\_b}}
+{\footnotesize\ttfamily uint32\+\_\+t$\ast$ ecc\+Rom\+\_\+param\+\_\+b}
+
+\mbox{\Hypertarget{_e_c_c_r_o_m_c_c26_x_x_8c_ae2bcc09707232295b4cf2058bbfafe92}\label{_e_c_c_r_o_m_c_c26_x_x_8c_ae2bcc09707232295b4cf2058bbfafe92}} 
+\index{ECCROMCC26XX.c@{ECCROMCC26XX.c}!eccRom\_param\_Gx@{eccRom\_param\_Gx}}
+\index{eccRom\_param\_Gx@{eccRom\_param\_Gx}!ECCROMCC26XX.c@{ECCROMCC26XX.c}}
+\doxysubsubsection{\texorpdfstring{eccRom\_param\_Gx}{eccRom\_param\_Gx}}
+{\footnotesize\ttfamily uint32\+\_\+t$\ast$ ecc\+Rom\+\_\+param\+\_\+\+Gx}
+
+\mbox{\Hypertarget{_e_c_c_r_o_m_c_c26_x_x_8c_aa66dde0b894cdcda9a3c0c1f0b15ac4e}\label{_e_c_c_r_o_m_c_c26_x_x_8c_aa66dde0b894cdcda9a3c0c1f0b15ac4e}} 
+\index{ECCROMCC26XX.c@{ECCROMCC26XX.c}!eccRom\_param\_Gy@{eccRom\_param\_Gy}}
+\index{eccRom\_param\_Gy@{eccRom\_param\_Gy}!ECCROMCC26XX.c@{ECCROMCC26XX.c}}
+\doxysubsubsection{\texorpdfstring{eccRom\_param\_Gy}{eccRom\_param\_Gy}}
+{\footnotesize\ttfamily uint32\+\_\+t$\ast$ ecc\+Rom\+\_\+param\+\_\+\+Gy}
+
+\mbox{\Hypertarget{_e_c_c_r_o_m_c_c26_x_x_8c_ad92aba5f9cb39cb87d62c52a5b74d518}\label{_e_c_c_r_o_m_c_c26_x_x_8c_ad92aba5f9cb39cb87d62c52a5b74d518}} 
+\index{ECCROMCC26XX.c@{ECCROMCC26XX.c}!eccRom\_param\_p@{eccRom\_param\_p}}
+\index{eccRom\_param\_p@{eccRom\_param\_p}!ECCROMCC26XX.c@{ECCROMCC26XX.c}}
+\doxysubsubsection{\texorpdfstring{eccRom\_param\_p}{eccRom\_param\_p}}
+{\footnotesize\ttfamily uint32\+\_\+t$\ast$ ecc\+Rom\+\_\+param\+\_\+p}
+
+\mbox{\Hypertarget{_e_c_c_r_o_m_c_c26_x_x_8c_a10e385a5f373ec25f6e53d0c2b14aff0}\label{_e_c_c_r_o_m_c_c26_x_x_8c_a10e385a5f373ec25f6e53d0c2b14aff0}} 
+\index{ECCROMCC26XX.c@{ECCROMCC26XX.c}!eccRom\_param\_r@{eccRom\_param\_r}}
+\index{eccRom\_param\_r@{eccRom\_param\_r}!ECCROMCC26XX.c@{ECCROMCC26XX.c}}
+\doxysubsubsection{\texorpdfstring{eccRom\_param\_r}{eccRom\_param\_r}}
+{\footnotesize\ttfamily uint32\+\_\+t$\ast$ ecc\+Rom\+\_\+param\+\_\+r}
+
+\mbox{\Hypertarget{_e_c_c_r_o_m_c_c26_x_x_8c_ab4a60de79bf8593b34a41e888eff2aaf}\label{_e_c_c_r_o_m_c_c26_x_x_8c_ab4a60de79bf8593b34a41e888eff2aaf}} 
+\index{ECCROMCC26XX.c@{ECCROMCC26XX.c}!eccRom\_windowSize@{eccRom\_windowSize}}
+\index{eccRom\_windowSize@{eccRom\_windowSize}!ECCROMCC26XX.c@{ECCROMCC26XX.c}}
+\doxysubsubsection{\texorpdfstring{eccRom\_windowSize}{eccRom\_windowSize}}
+{\footnotesize\ttfamily uint8\+\_\+t ecc\+Rom\+\_\+window\+Size}
+
+\mbox{\Hypertarget{_e_c_c_r_o_m_c_c26_x_x_8c_a31cecc00660fdf32cd6bc172161e24b6}\label{_e_c_c_r_o_m_c_c26_x_x_8c_a31cecc00660fdf32cd6bc172161e24b6}} 
+\index{ECCROMCC26XX.c@{ECCROMCC26XX.c}!eccRom\_workzone@{eccRom\_workzone}}
+\index{eccRom\_workzone@{eccRom\_workzone}!ECCROMCC26XX.c@{ECCROMCC26XX.c}}
+\doxysubsubsection{\texorpdfstring{eccRom\_workzone}{eccRom\_workzone}}
+{\footnotesize\ttfamily uint32\+\_\+t$\ast$ ecc\+Rom\+\_\+workzone}
+
+\mbox{\Hypertarget{_e_c_c_r_o_m_c_c26_x_x_8c_a945e4e06bbfa14c1627c5f0ccd21e235}\label{_e_c_c_r_o_m_c_c26_x_x_8c_a945e4e06bbfa14c1627c5f0ccd21e235}} 
+\index{ECCROMCC26XX.c@{ECCROMCC26XX.c}!gx@{gx}}
+\index{gx@{gx}!ECCROMCC26XX.c@{ECCROMCC26XX.c}}
+\doxysubsubsection{\texorpdfstring{gx}{gx}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{union_p_k_a___ecc_param256}{P\+K\+A\+\_\+\+Ecc\+Param256}} gx}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{= \{ .byte  = \{ 0x96, 0xC2, 0x98, 0xD8, 0x45, 0x39, 0xA1, 0xF4,}
+\DoxyCodeLine{                                             0xA0, 0x33, 0xeb, 0x2d, 0x81, 0x7d, 0x03, 0x77,}
+\DoxyCodeLine{                                             0xf2, 0x40, 0xa4, 0x63, 0xe5, 0xe6, 0xbc, 0xf8,}
+\DoxyCodeLine{                                             0x47, 0x42, 0x2c, 0xe1, 0xf2, 0xd1, 0x17, 0x6b \}\}}
+
+\end{DoxyCode}
+
+
+Definition at line 100 of file E\+C\+C\+R\+O\+M\+C\+C26\+X\+X.\+c.
+
+\mbox{\Hypertarget{_e_c_c_r_o_m_c_c26_x_x_8c_abcba5246ef1e9a2f7fec7090d5b53c3d}\label{_e_c_c_r_o_m_c_c26_x_x_8c_abcba5246ef1e9a2f7fec7090d5b53c3d}} 
+\index{ECCROMCC26XX.c@{ECCROMCC26XX.c}!gx\_mont@{gx\_mont}}
+\index{gx\_mont@{gx\_mont}!ECCROMCC26XX.c@{ECCROMCC26XX.c}}
+\doxysubsubsection{\texorpdfstring{gx\_mont}{gx\_mont}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{union_p_k_a___ecc_param256}{P\+K\+A\+\_\+\+Ecc\+Param256}} gx\+\_\+mont}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{= \{ .byte  = \{ 0x3c, 0x14, 0xa9, 0x18, 0xd4, 0x30, 0xe7, 0x79,}
+\DoxyCodeLine{                                             0x01, 0xb6, 0xed, 0x5f, 0xfc, 0x95, 0xba, 0x75,}
+\DoxyCodeLine{                                             0x10, 0x25, 0x62, 0x77, 0x2b, 0x73, 0xfb, 0x79,}
+\DoxyCodeLine{                                             0xc6, 0x55, 0x37, 0xa5, 0x76, 0x5f, 0x90, 0x18 \}\}}
+
+\end{DoxyCode}
+
+
+Definition at line 95 of file E\+C\+C\+R\+O\+M\+C\+C26\+X\+X.\+c.
+
+\mbox{\Hypertarget{_e_c_c_r_o_m_c_c26_x_x_8c_ab57adda12eb57fdda504abc9af2cf134}\label{_e_c_c_r_o_m_c_c26_x_x_8c_ab57adda12eb57fdda504abc9af2cf134}} 
+\index{ECCROMCC26XX.c@{ECCROMCC26XX.c}!gy@{gy}}
+\index{gy@{gy}!ECCROMCC26XX.c@{ECCROMCC26XX.c}}
+\doxysubsubsection{\texorpdfstring{gy}{gy}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{union_p_k_a___ecc_param256}{P\+K\+A\+\_\+\+Ecc\+Param256}} gy}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{= \{ .byte  = \{ 0xf5, 0x51, 0xbf, 0x37, 0x68, 0x40, 0xb6, 0xcb,}
+\DoxyCodeLine{                                             0xce, 0x5e, 0x31, 0x6b, 0x57, 0x33, 0xce, 0x2b,}
+\DoxyCodeLine{                                             0x16, 0x9e, 0x0f, 0x7c, 0x4a, 0xeb, 0xe7, 0x8e,}
+\DoxyCodeLine{                                             0x9b, 0x7f, 0x1a, 0xfe, 0xe2, 0x42, 0xe3, 0x4f \}\}}
+
+\end{DoxyCode}
+
+
+Definition at line 105 of file E\+C\+C\+R\+O\+M\+C\+C26\+X\+X.\+c.
+
+\mbox{\Hypertarget{_e_c_c_r_o_m_c_c26_x_x_8c_a20639e8baefe69d06ad3edeab8d6f7e5}\label{_e_c_c_r_o_m_c_c26_x_x_8c_a20639e8baefe69d06ad3edeab8d6f7e5}} 
+\index{ECCROMCC26XX.c@{ECCROMCC26XX.c}!K2\_mont@{K2\_mont}}
+\index{K2\_mont@{K2\_mont}!ECCROMCC26XX.c@{ECCROMCC26XX.c}}
+\doxysubsubsection{\texorpdfstring{K2\_mont}{K2\_mont}}
+{\footnotesize\ttfamily \mbox{\hyperlink{union_p_k_a___ecc_param256}{P\+K\+A\+\_\+\+Ecc\+Param256}} K2\+\_\+mont}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{= \{ .byte = \{ 0x03, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,}
+\DoxyCodeLine{                                            0xff, 0xff, 0xff, 0xff, 0xfb, 0xff, 0xff, 0xff,}
+\DoxyCodeLine{                                            0xfe, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff,}
+\DoxyCodeLine{                                            0xfd, 0xff, 0xff, 0xff, 0x04, 0x00, 0x00, 0x00 \}\}}
+
+\end{DoxyCode}
+
+
+Definition at line 80 of file E\+C\+C\+R\+O\+M\+C\+C26\+X\+X.\+c.
+
+\mbox{\Hypertarget{_e_c_c_r_o_m_c_c26_x_x_8c_a691b4912708358a49f571feeb652104e}\label{_e_c_c_r_o_m_c_c26_x_x_8c_a691b4912708358a49f571feeb652104e}} 
+\index{ECCROMCC26XX.c@{ECCROMCC26XX.c}!K\_mont@{K\_mont}}
+\index{K\_mont@{K\_mont}!ECCROMCC26XX.c@{ECCROMCC26XX.c}}
+\doxysubsubsection{\texorpdfstring{K\_mont}{K\_mont}}
+{\footnotesize\ttfamily \mbox{\hyperlink{union_p_k_a___ecc_param256}{P\+K\+A\+\_\+\+Ecc\+Param256}} K\+\_\+mont}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{= \{ .byte = \{ 0x01, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,}
+\DoxyCodeLine{                                            0x00, 0x00, 0x00, 0x00, 0xff, 0xff, 0xff, 0xff,}
+\DoxyCodeLine{                                            0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff,}
+\DoxyCodeLine{                                            0xfe, 0xff, 0xff, 0xff, 0x00, 0x00, 0x00, 0x00 \}\}}
+
+\end{DoxyCode}
+
+
+Definition at line 75 of file E\+C\+C\+R\+O\+M\+C\+C26\+X\+X.\+c.
+
+\mbox{\Hypertarget{_e_c_c_r_o_m_c_c26_x_x_8c_a927e8414a73e590980cbcd188d4516f0}\label{_e_c_c_r_o_m_c_c26_x_x_8c_a927e8414a73e590980cbcd188d4516f0}} 
+\index{ECCROMCC26XX.c@{ECCROMCC26XX.c}!NIST\_Curve\_P256\_a@{NIST\_Curve\_P256\_a}}
+\index{NIST\_Curve\_P256\_a@{NIST\_Curve\_P256\_a}!ECCROMCC26XX.c@{ECCROMCC26XX.c}}
+\doxysubsubsection{\texorpdfstring{NIST\_Curve\_P256\_a}{NIST\_Curve\_P256\_a}}
+{\footnotesize\ttfamily uint32\+\_\+t N\+I\+S\+T\+\_\+\+Curve\+\_\+\+P256\+\_\+a}
+
+\mbox{\Hypertarget{_e_c_c_r_o_m_c_c26_x_x_8c_a1da5800ef79feb327539542704d1fc7e}\label{_e_c_c_r_o_m_c_c26_x_x_8c_a1da5800ef79feb327539542704d1fc7e}} 
+\index{ECCROMCC26XX.c@{ECCROMCC26XX.c}!NIST\_Curve\_P256\_b@{NIST\_Curve\_P256\_b}}
+\index{NIST\_Curve\_P256\_b@{NIST\_Curve\_P256\_b}!ECCROMCC26XX.c@{ECCROMCC26XX.c}}
+\doxysubsubsection{\texorpdfstring{NIST\_Curve\_P256\_b}{NIST\_Curve\_P256\_b}}
+{\footnotesize\ttfamily uint32\+\_\+t N\+I\+S\+T\+\_\+\+Curve\+\_\+\+P256\+\_\+b}
+
+\mbox{\Hypertarget{_e_c_c_r_o_m_c_c26_x_x_8c_af790bb33aa495158e8cfa770bfda0b68}\label{_e_c_c_r_o_m_c_c26_x_x_8c_af790bb33aa495158e8cfa770bfda0b68}} 
+\index{ECCROMCC26XX.c@{ECCROMCC26XX.c}!NIST\_Curve\_P256\_Gx@{NIST\_Curve\_P256\_Gx}}
+\index{NIST\_Curve\_P256\_Gx@{NIST\_Curve\_P256\_Gx}!ECCROMCC26XX.c@{ECCROMCC26XX.c}}
+\doxysubsubsection{\texorpdfstring{NIST\_Curve\_P256\_Gx}{NIST\_Curve\_P256\_Gx}}
+{\footnotesize\ttfamily uint32\+\_\+t N\+I\+S\+T\+\_\+\+Curve\+\_\+\+P256\+\_\+\+Gx}
+
+\mbox{\Hypertarget{_e_c_c_r_o_m_c_c26_x_x_8c_aa491d3bde0faa718cff18ad9b847e742}\label{_e_c_c_r_o_m_c_c26_x_x_8c_aa491d3bde0faa718cff18ad9b847e742}} 
+\index{ECCROMCC26XX.c@{ECCROMCC26XX.c}!NIST\_Curve\_P256\_Gy@{NIST\_Curve\_P256\_Gy}}
+\index{NIST\_Curve\_P256\_Gy@{NIST\_Curve\_P256\_Gy}!ECCROMCC26XX.c@{ECCROMCC26XX.c}}
+\doxysubsubsection{\texorpdfstring{NIST\_Curve\_P256\_Gy}{NIST\_Curve\_P256\_Gy}}
+{\footnotesize\ttfamily uint32\+\_\+t N\+I\+S\+T\+\_\+\+Curve\+\_\+\+P256\+\_\+\+Gy}
+
+\mbox{\Hypertarget{_e_c_c_r_o_m_c_c26_x_x_8c_ae85086bd17716fb2718fb2726174826d}\label{_e_c_c_r_o_m_c_c26_x_x_8c_ae85086bd17716fb2718fb2726174826d}} 
+\index{ECCROMCC26XX.c@{ECCROMCC26XX.c}!NIST\_Curve\_P256\_p@{NIST\_Curve\_P256\_p}}
+\index{NIST\_Curve\_P256\_p@{NIST\_Curve\_P256\_p}!ECCROMCC26XX.c@{ECCROMCC26XX.c}}
+\doxysubsubsection{\texorpdfstring{NIST\_Curve\_P256\_p}{NIST\_Curve\_P256\_p}}
+{\footnotesize\ttfamily uint32\+\_\+t N\+I\+S\+T\+\_\+\+Curve\+\_\+\+P256\+\_\+p}
+
+\mbox{\Hypertarget{_e_c_c_r_o_m_c_c26_x_x_8c_a67120fa19a0cf79cb870c73a62d087f2}\label{_e_c_c_r_o_m_c_c26_x_x_8c_a67120fa19a0cf79cb870c73a62d087f2}} 
+\index{ECCROMCC26XX.c@{ECCROMCC26XX.c}!NIST\_Curve\_P256\_r@{NIST\_Curve\_P256\_r}}
+\index{NIST\_Curve\_P256\_r@{NIST\_Curve\_P256\_r}!ECCROMCC26XX.c@{ECCROMCC26XX.c}}
+\doxysubsubsection{\texorpdfstring{NIST\_Curve\_P256\_r}{NIST\_Curve\_P256\_r}}
+{\footnotesize\ttfamily uint32\+\_\+t N\+I\+S\+T\+\_\+\+Curve\+\_\+\+P256\+\_\+r}
+

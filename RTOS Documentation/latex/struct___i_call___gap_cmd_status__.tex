@@ -1,0 +1,100 @@
+\hypertarget{struct___i_call___gap_cmd_status__}{}\doxysection{\+\_\+\+I\+Call\+\_\+\+Gap\+Cmd\+Status\+\_\+ Struct Reference}
+\label{struct___i_call___gap_cmd_status__}\index{\_ICall\_GapCmdStatus\_@{\_ICall\_GapCmdStatus\_}}
+
+
+{\ttfamily \#include $<$icall\+\_\+apimsg.\+h$>$}
+
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{icall__apimsg_8h_a8431813ff38e83dcecdf8b9181ff89b6}{I\+Call\+\_\+\+Hci\+Ext\+Evt}} \mbox{\hyperlink{struct___i_call___gap_cmd_status___a3c443c06bf3df739d43e7f5439c4732a}{hdr}}
+\begin{DoxyCompactList}\small\item\em message header, event field must be set to \end{DoxyCompactList}\item 
+uint16\+\_\+t \mbox{\hyperlink{struct___i_call___gap_cmd_status___a2f3b37cab73f4284e72254900f876fd6}{op\+Code}}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{struct___i_call___gap_cmd_status___a0fd8e9aa80da59733b1865aff8114258}{cmd\+Id}}
+\begin{DoxyCompactList}\small\item\em command id (applicable only to User Profile subgrp) \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{struct___i_call___gap_cmd_status___a97f7f72c5bacd819361c21e4a0c7b1ef}{len}}
+\begin{DoxyCompactList}\small\item\em length of value field \end{DoxyCompactList}\item 
+uint8\+\_\+t $\ast$ \mbox{\hyperlink{struct___i_call___gap_cmd_status___ad3383fc0cdac9b4f05510478dd937c0e}{p\+Value}}
+\begin{DoxyCompactList}\small\item\em pointer to value \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+G\+AP Command status message 
+
+Definition at line 1119 of file icall\+\_\+apimsg.\+h.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{struct___i_call___gap_cmd_status___a0fd8e9aa80da59733b1865aff8114258}\label{struct___i_call___gap_cmd_status___a0fd8e9aa80da59733b1865aff8114258}} 
+\index{\_ICall\_GapCmdStatus\_@{\_ICall\_GapCmdStatus\_}!cmdId@{cmdId}}
+\index{cmdId@{cmdId}!\_ICall\_GapCmdStatus\_@{\_ICall\_GapCmdStatus\_}}
+\doxysubsubsection{\texorpdfstring{cmdId}{cmdId}}
+{\footnotesize\ttfamily uint8\+\_\+t \+\_\+\+I\+Call\+\_\+\+Gap\+Cmd\+Status\+\_\+\+::cmd\+Id}
+
+
+
+command id (applicable only to User Profile subgrp) 
+
+
+
+Definition at line 1124 of file icall\+\_\+apimsg.\+h.
+
+\mbox{\Hypertarget{struct___i_call___gap_cmd_status___a3c443c06bf3df739d43e7f5439c4732a}\label{struct___i_call___gap_cmd_status___a3c443c06bf3df739d43e7f5439c4732a}} 
+\index{\_ICall\_GapCmdStatus\_@{\_ICall\_GapCmdStatus\_}!hdr@{hdr}}
+\index{hdr@{hdr}!\_ICall\_GapCmdStatus\_@{\_ICall\_GapCmdStatus\_}}
+\doxysubsubsection{\texorpdfstring{hdr}{hdr}}
+{\footnotesize\ttfamily \mbox{\hyperlink{icall__apimsg_8h_a8431813ff38e83dcecdf8b9181ff89b6}{I\+Call\+\_\+\+Hci\+Ext\+Evt}} \+\_\+\+I\+Call\+\_\+\+Gap\+Cmd\+Status\+\_\+\+::hdr}
+
+
+
+message header, event field must be set to 
+
+
+
+Definition at line 1121 of file icall\+\_\+apimsg.\+h.
+
+\mbox{\Hypertarget{struct___i_call___gap_cmd_status___a97f7f72c5bacd819361c21e4a0c7b1ef}\label{struct___i_call___gap_cmd_status___a97f7f72c5bacd819361c21e4a0c7b1ef}} 
+\index{\_ICall\_GapCmdStatus\_@{\_ICall\_GapCmdStatus\_}!len@{len}}
+\index{len@{len}!\_ICall\_GapCmdStatus\_@{\_ICall\_GapCmdStatus\_}}
+\doxysubsubsection{\texorpdfstring{len}{len}}
+{\footnotesize\ttfamily uint8\+\_\+t \+\_\+\+I\+Call\+\_\+\+Gap\+Cmd\+Status\+\_\+\+::len}
+
+
+
+length of value field 
+
+
+
+Definition at line 1125 of file icall\+\_\+apimsg.\+h.
+
+\mbox{\Hypertarget{struct___i_call___gap_cmd_status___a2f3b37cab73f4284e72254900f876fd6}\label{struct___i_call___gap_cmd_status___a2f3b37cab73f4284e72254900f876fd6}} 
+\index{\_ICall\_GapCmdStatus\_@{\_ICall\_GapCmdStatus\_}!opCode@{opCode}}
+\index{opCode@{opCode}!\_ICall\_GapCmdStatus\_@{\_ICall\_GapCmdStatus\_}}
+\doxysubsubsection{\texorpdfstring{opCode}{opCode}}
+{\footnotesize\ttfamily uint16\+\_\+t \+\_\+\+I\+Call\+\_\+\+Gap\+Cmd\+Status\+\_\+\+::op\+Code}
+
+opcode which comprises of subgroup id and command id (or profile id) 
+
+Definition at line 1122 of file icall\+\_\+apimsg.\+h.
+
+\mbox{\Hypertarget{struct___i_call___gap_cmd_status___ad3383fc0cdac9b4f05510478dd937c0e}\label{struct___i_call___gap_cmd_status___ad3383fc0cdac9b4f05510478dd937c0e}} 
+\index{\_ICall\_GapCmdStatus\_@{\_ICall\_GapCmdStatus\_}!pValue@{pValue}}
+\index{pValue@{pValue}!\_ICall\_GapCmdStatus\_@{\_ICall\_GapCmdStatus\_}}
+\doxysubsubsection{\texorpdfstring{pValue}{pValue}}
+{\footnotesize\ttfamily uint8\+\_\+t$\ast$ \+\_\+\+I\+Call\+\_\+\+Gap\+Cmd\+Status\+\_\+\+::p\+Value}
+
+
+
+pointer to value 
+
+
+
+Definition at line 1126 of file icall\+\_\+apimsg.\+h.
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+I\+Call\+B\+L\+E/\mbox{\hyperlink{icall__apimsg_8h}{icall\+\_\+apimsg.\+h}}\end{DoxyCompactItemize}

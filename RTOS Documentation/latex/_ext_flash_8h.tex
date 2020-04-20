@@ -1,0 +1,155 @@
+\hypertarget{_ext_flash_8h}{}\doxysection{Middleware/extflash/\+Ext\+Flash.h File Reference}
+\label{_ext_flash_8h}\index{Middleware/extflash/ExtFlash.h@{Middleware/extflash/ExtFlash.h}}
+
+
+External flash storage abstraction.  
+
+
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_ext_flash_info__t}{Ext\+Flash\+Info\+\_\+t}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{_ext_flash_8h_a0bc5316ab502ed58a098eef500545d88}{E\+X\+T\+\_\+\+F\+L\+A\+S\+H\+\_\+\+P\+A\+G\+E\+\_\+\+S\+I\+ZE}}~4096
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{_ext_flash_8h_ad4b1bd8b121baef366934a9815871124}{Ext\+Flash\+\_\+open}} (void)
+\item 
+void \mbox{\hyperlink{_ext_flash_8h_ad456be39a9a700212437ff438410a594}{Ext\+Flash\+\_\+close}} (void)
+\item 
+\mbox{\hyperlink{struct_ext_flash_info__t}{Ext\+Flash\+Info\+\_\+t}} $\ast$ \mbox{\hyperlink{_ext_flash_8h_a30939a5a39e9fbfcd23022c23083b66e}{Ext\+Flash\+\_\+info}} (void)
+\item 
+bool \mbox{\hyperlink{_ext_flash_8h_a2d9f04462020d01ac5fdb55418b077b9}{Ext\+Flash\+\_\+read}} (size\+\_\+t offset, size\+\_\+t length, uint8\+\_\+t $\ast$buf)
+\item 
+bool \mbox{\hyperlink{_ext_flash_8h_a3f0495f78fc59522bbd47b3965bfd325}{Ext\+Flash\+\_\+erase}} (size\+\_\+t offset, size\+\_\+t length)
+\item 
+bool \mbox{\hyperlink{_ext_flash_8h_af4e3c0fef71d31bb67c44979abab1feb}{Ext\+Flash\+\_\+write}} (size\+\_\+t offset, size\+\_\+t length, const uint8\+\_\+t $\ast$buf)
+\item 
+bool \mbox{\hyperlink{_ext_flash_8h_a4f1fb7e68cb15dac521126d472edd81b}{Ext\+Flash\+\_\+test}} (void)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+External flash storage abstraction. 
+
+============================================================================
+
+\DoxyHorRuler{0}
+ 
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{_ext_flash_8h_a0bc5316ab502ed58a098eef500545d88}\label{_ext_flash_8h_a0bc5316ab502ed58a098eef500545d88}} 
+\index{ExtFlash.h@{ExtFlash.h}!EXT\_FLASH\_PAGE\_SIZE@{EXT\_FLASH\_PAGE\_SIZE}}
+\index{EXT\_FLASH\_PAGE\_SIZE@{EXT\_FLASH\_PAGE\_SIZE}!ExtFlash.h@{ExtFlash.h}}
+\doxysubsubsection{\texorpdfstring{EXT\_FLASH\_PAGE\_SIZE}{EXT\_FLASH\_PAGE\_SIZE}}
+{\footnotesize\ttfamily \#define E\+X\+T\+\_\+\+F\+L\+A\+S\+H\+\_\+\+P\+A\+G\+E\+\_\+\+S\+I\+ZE~4096}
+
+
+
+Definition at line 47 of file Ext\+Flash.\+h.
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{_ext_flash_8h_ad456be39a9a700212437ff438410a594}\label{_ext_flash_8h_ad456be39a9a700212437ff438410a594}} 
+\index{ExtFlash.h@{ExtFlash.h}!ExtFlash\_close@{ExtFlash\_close}}
+\index{ExtFlash\_close@{ExtFlash\_close}!ExtFlash.h@{ExtFlash.h}}
+\doxysubsubsection{\texorpdfstring{ExtFlash\_close()}{ExtFlash\_close()}}
+{\footnotesize\ttfamily void Ext\+Flash\+\_\+close (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Close the storage driver 
+
+Definition at line 422 of file Ext\+Flash.\+c.
+
+\mbox{\Hypertarget{_ext_flash_8h_a3f0495f78fc59522bbd47b3965bfd325}\label{_ext_flash_8h_a3f0495f78fc59522bbd47b3965bfd325}} 
+\index{ExtFlash.h@{ExtFlash.h}!ExtFlash\_erase@{ExtFlash\_erase}}
+\index{ExtFlash\_erase@{ExtFlash\_erase}!ExtFlash.h@{ExtFlash.h}}
+\doxysubsubsection{\texorpdfstring{ExtFlash\_erase()}{ExtFlash\_erase()}}
+{\footnotesize\ttfamily bool Ext\+Flash\+\_\+erase (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{offset,  }\item[{size\+\_\+t}]{length }\end{DoxyParamCaption})}
+
+Erase storage sectors corresponding to the range.
+
+\begin{DoxyReturn}{Returns}
+True when successful. 
+\end{DoxyReturn}
+
+
+Definition at line 541 of file Ext\+Flash.\+c.
+
+\mbox{\Hypertarget{_ext_flash_8h_a30939a5a39e9fbfcd23022c23083b66e}\label{_ext_flash_8h_a30939a5a39e9fbfcd23022c23083b66e}} 
+\index{ExtFlash.h@{ExtFlash.h}!ExtFlash\_info@{ExtFlash\_info}}
+\index{ExtFlash\_info@{ExtFlash\_info}!ExtFlash.h@{ExtFlash.h}}
+\doxysubsubsection{\texorpdfstring{ExtFlash\_info()}{ExtFlash\_info()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_ext_flash_info__t}{Ext\+Flash\+Info\+\_\+t}}$\ast$ Ext\+Flash\+\_\+info (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Get flash information 
+
+Definition at line 201 of file Ext\+Flash.\+c.
+
+\mbox{\Hypertarget{_ext_flash_8h_ad4b1bd8b121baef366934a9815871124}\label{_ext_flash_8h_ad4b1bd8b121baef366934a9815871124}} 
+\index{ExtFlash.h@{ExtFlash.h}!ExtFlash\_open@{ExtFlash\_open}}
+\index{ExtFlash\_open@{ExtFlash\_open}!ExtFlash.h@{ExtFlash.h}}
+\doxysubsubsection{\texorpdfstring{ExtFlash\_open()}{ExtFlash\_open()}}
+{\footnotesize\ttfamily bool Ext\+Flash\+\_\+open (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Initialize storage driver.
+
+\begin{DoxyReturn}{Returns}
+True when successful. 
+\end{DoxyReturn}
+
+
+Definition at line 387 of file Ext\+Flash.\+c.
+
+\mbox{\Hypertarget{_ext_flash_8h_a2d9f04462020d01ac5fdb55418b077b9}\label{_ext_flash_8h_a2d9f04462020d01ac5fdb55418b077b9}} 
+\index{ExtFlash.h@{ExtFlash.h}!ExtFlash\_read@{ExtFlash\_read}}
+\index{ExtFlash\_read@{ExtFlash\_read}!ExtFlash.h@{ExtFlash.h}}
+\doxysubsubsection{\texorpdfstring{ExtFlash\_read()}{ExtFlash\_read()}}
+{\footnotesize\ttfamily bool Ext\+Flash\+\_\+read (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{offset,  }\item[{size\+\_\+t}]{length,  }\item[{uint8\+\_\+t $\ast$}]{buf }\end{DoxyParamCaption})}
+
+Read storage content
+
+\begin{DoxyReturn}{Returns}
+True when successful. 
+\end{DoxyReturn}
+
+
+Definition at line 442 of file Ext\+Flash.\+c.
+
+\mbox{\Hypertarget{_ext_flash_8h_a4f1fb7e68cb15dac521126d472edd81b}\label{_ext_flash_8h_a4f1fb7e68cb15dac521126d472edd81b}} 
+\index{ExtFlash.h@{ExtFlash.h}!ExtFlash\_test@{ExtFlash\_test}}
+\index{ExtFlash\_test@{ExtFlash\_test}!ExtFlash.h@{ExtFlash.h}}
+\doxysubsubsection{\texorpdfstring{ExtFlash\_test()}{ExtFlash\_test()}}
+{\footnotesize\ttfamily bool Ext\+Flash\+\_\+test (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Test the flash (power on self-\/test)
+
+\begin{DoxyReturn}{Returns}
+True when successful. 
+\end{DoxyReturn}
+
+
+Definition at line 594 of file Ext\+Flash.\+c.
+
+\mbox{\Hypertarget{_ext_flash_8h_af4e3c0fef71d31bb67c44979abab1feb}\label{_ext_flash_8h_af4e3c0fef71d31bb67c44979abab1feb}} 
+\index{ExtFlash.h@{ExtFlash.h}!ExtFlash\_write@{ExtFlash\_write}}
+\index{ExtFlash\_write@{ExtFlash\_write}!ExtFlash.h@{ExtFlash.h}}
+\doxysubsubsection{\texorpdfstring{ExtFlash\_write()}{ExtFlash\_write()}}
+{\footnotesize\ttfamily bool Ext\+Flash\+\_\+write (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{offset,  }\item[{size\+\_\+t}]{length,  }\item[{const uint8\+\_\+t $\ast$}]{buf }\end{DoxyParamCaption})}
+
+Write to storage sectors.
+
+\begin{DoxyReturn}{Returns}
+True when successful. 
+\end{DoxyReturn}
+
+
+Definition at line 478 of file Ext\+Flash.\+c.
+

@@ -1,0 +1,84 @@
+\hypertarget{gattservapp__util_8c}{}\doxysection{P\+R\+O\+F\+I\+L\+E\+S/gattservapp\+\_\+util.c File Reference}
+\label{gattservapp__util_8c}\index{PROFILES/gattservapp\_util.c@{PROFILES/gattservapp\_util.c}}
+{\ttfamily \#include \char`\"{}bcomdef.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}linkdb.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}gatt.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}gattservapp.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{gattservapp__util_8c_aa547859c48b173ca305804106db58a5c}{G\+A\+T\+T\+Serv\+App\+\_\+\+Init\+Char\+Cfg}} (uint16 conn\+Handle, gatt\+Char\+Cfg\+\_\+t $\ast$char\+Cfg\+Tbl)
+\item 
+b\+Status\+\_\+t \mbox{\hyperlink{gattservapp__util_8c_a31c5d5e203f7fabc8d43cad1960edf83}{G\+A\+T\+T\+Serv\+App\+\_\+\+Process\+Char\+Cfg}} (gatt\+Char\+Cfg\+\_\+t $\ast$char\+Cfg\+Tbl, uint8 $\ast$p\+Value, uint8 authenticated, \mbox{\hyperlink{gatt_8h_a8dca0d941f79cbc3bca13ab038e2e963}{gatt\+Attribute\+\_\+t}} $\ast$attr\+Tbl, uint16 num\+Attrs, uint8 task\+Id, pfn\+G\+A\+T\+T\+Read\+Attr\+C\+B\+\_\+t pfn\+Read\+Attr\+CB)
+\item 
+\mbox{\hyperlink{gatt_8h_a8dca0d941f79cbc3bca13ab038e2e963}{gatt\+Attribute\+\_\+t}} $\ast$ \mbox{\hyperlink{gattservapp__util_8c_abe95c4fa2670fb6397a0f2ab6e760f5b}{G\+A\+T\+T\+Serv\+App\+\_\+\+Find\+Attr}} (\mbox{\hyperlink{gatt_8h_a8dca0d941f79cbc3bca13ab038e2e963}{gatt\+Attribute\+\_\+t}} $\ast$p\+Attr\+Tbl, uint16 num\+Attrs, uint8 $\ast$p\+Value)
+\item 
+b\+Status\+\_\+t \mbox{\hyperlink{gattservapp__util_8c_a6a604e1d376512e11da28e1fdcbaa2af}{G\+A\+T\+T\+Serv\+App\+\_\+\+Process\+C\+C\+C\+Write\+Req}} (uint16 conn\+Handle, \mbox{\hyperlink{gatt_8h_a8dca0d941f79cbc3bca13ab038e2e963}{gatt\+Attribute\+\_\+t}} $\ast$p\+Attr, uint8 $\ast$p\+Value, uint16 \mbox{\hyperlink{icall__apimsg_8h_a8ccac76f35f79d74917e1c5dd6f69fea}{len}}, uint16 offset, uint16 valid\+Cfg)
+\item 
+uint16 \mbox{\hyperlink{gattservapp__util_8c_a1926d27a33374be75beeaa29e428ca95}{G\+A\+T\+T\+Serv\+App\+\_\+\+Read\+Char\+Cfg}} (uint16 conn\+Handle, gatt\+Char\+Cfg\+\_\+t $\ast$char\+Cfg\+Tbl)
+\item 
+uint8 \mbox{\hyperlink{gattservapp__util_8c_ac865b36b1cf720bd0f637f7740e5072c}{G\+A\+T\+T\+Serv\+App\+\_\+\+Write\+Char\+Cfg}} (uint16 conn\+Handle, gatt\+Char\+Cfg\+\_\+t $\ast$char\+Cfg\+Tbl, uint16 value)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{gattservapp__util_8c_abe95c4fa2670fb6397a0f2ab6e760f5b}\label{gattservapp__util_8c_abe95c4fa2670fb6397a0f2ab6e760f5b}} 
+\index{gattservapp\_util.c@{gattservapp\_util.c}!GATTServApp\_FindAttr@{GATTServApp\_FindAttr}}
+\index{GATTServApp\_FindAttr@{GATTServApp\_FindAttr}!gattservapp\_util.c@{gattservapp\_util.c}}
+\doxysubsubsection{\texorpdfstring{GATTServApp\_FindAttr()}{GATTServApp\_FindAttr()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{gatt_8h_a8dca0d941f79cbc3bca13ab038e2e963}{gatt\+Attribute\+\_\+t}}$\ast$ G\+A\+T\+T\+Serv\+App\+\_\+\+Find\+Attr (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{gatt_8h_a8dca0d941f79cbc3bca13ab038e2e963}{gatt\+Attribute\+\_\+t}} $\ast$}]{p\+Attr\+Tbl,  }\item[{uint16}]{num\+Attrs,  }\item[{uint8 $\ast$}]{p\+Value }\end{DoxyParamCaption})}
+
+
+
+Definition at line 210 of file gattservapp\+\_\+util.\+c.
+
+\mbox{\Hypertarget{gattservapp__util_8c_aa547859c48b173ca305804106db58a5c}\label{gattservapp__util_8c_aa547859c48b173ca305804106db58a5c}} 
+\index{gattservapp\_util.c@{gattservapp\_util.c}!GATTServApp\_InitCharCfg@{GATTServApp\_InitCharCfg}}
+\index{GATTServApp\_InitCharCfg@{GATTServApp\_InitCharCfg}!gattservapp\_util.c@{gattservapp\_util.c}}
+\doxysubsubsection{\texorpdfstring{GATTServApp\_InitCharCfg()}{GATTServApp\_InitCharCfg()}}
+{\footnotesize\ttfamily void G\+A\+T\+T\+Serv\+App\+\_\+\+Init\+Char\+Cfg (\begin{DoxyParamCaption}\item[{uint16}]{conn\+Handle,  }\item[{gatt\+Char\+Cfg\+\_\+t $\ast$}]{char\+Cfg\+Tbl }\end{DoxyParamCaption})}
+
+
+
+Definition at line 114 of file gattservapp\+\_\+util.\+c.
+
+\mbox{\Hypertarget{gattservapp__util_8c_a6a604e1d376512e11da28e1fdcbaa2af}\label{gattservapp__util_8c_a6a604e1d376512e11da28e1fdcbaa2af}} 
+\index{gattservapp\_util.c@{gattservapp\_util.c}!GATTServApp\_ProcessCCCWriteReq@{GATTServApp\_ProcessCCCWriteReq}}
+\index{GATTServApp\_ProcessCCCWriteReq@{GATTServApp\_ProcessCCCWriteReq}!gattservapp\_util.c@{gattservapp\_util.c}}
+\doxysubsubsection{\texorpdfstring{GATTServApp\_ProcessCCCWriteReq()}{GATTServApp\_ProcessCCCWriteReq()}}
+{\footnotesize\ttfamily b\+Status\+\_\+t G\+A\+T\+T\+Serv\+App\+\_\+\+Process\+C\+C\+C\+Write\+Req (\begin{DoxyParamCaption}\item[{uint16}]{conn\+Handle,  }\item[{\mbox{\hyperlink{gatt_8h_a8dca0d941f79cbc3bca13ab038e2e963}{gatt\+Attribute\+\_\+t}} $\ast$}]{p\+Attr,  }\item[{uint8 $\ast$}]{p\+Value,  }\item[{uint16}]{len,  }\item[{uint16}]{offset,  }\item[{uint16}]{valid\+Cfg }\end{DoxyParamCaption})}
+
+
+
+Definition at line 241 of file gattservapp\+\_\+util.\+c.
+
+\mbox{\Hypertarget{gattservapp__util_8c_a31c5d5e203f7fabc8d43cad1960edf83}\label{gattservapp__util_8c_a31c5d5e203f7fabc8d43cad1960edf83}} 
+\index{gattservapp\_util.c@{gattservapp\_util.c}!GATTServApp\_ProcessCharCfg@{GATTServApp\_ProcessCharCfg}}
+\index{GATTServApp\_ProcessCharCfg@{GATTServApp\_ProcessCharCfg}!gattservapp\_util.c@{gattservapp\_util.c}}
+\doxysubsubsection{\texorpdfstring{GATTServApp\_ProcessCharCfg()}{GATTServApp\_ProcessCharCfg()}}
+{\footnotesize\ttfamily b\+Status\+\_\+t G\+A\+T\+T\+Serv\+App\+\_\+\+Process\+Char\+Cfg (\begin{DoxyParamCaption}\item[{gatt\+Char\+Cfg\+\_\+t $\ast$}]{char\+Cfg\+Tbl,  }\item[{uint8 $\ast$}]{p\+Value,  }\item[{uint8}]{authenticated,  }\item[{\mbox{\hyperlink{gatt_8h_a8dca0d941f79cbc3bca13ab038e2e963}{gatt\+Attribute\+\_\+t}} $\ast$}]{attr\+Tbl,  }\item[{uint16}]{num\+Attrs,  }\item[{uint8}]{task\+Id,  }\item[{pfn\+G\+A\+T\+T\+Read\+Attr\+C\+B\+\_\+t}]{pfn\+Read\+Attr\+CB }\end{DoxyParamCaption})}
+
+
+
+Definition at line 152 of file gattservapp\+\_\+util.\+c.
+
+\mbox{\Hypertarget{gattservapp__util_8c_a1926d27a33374be75beeaa29e428ca95}\label{gattservapp__util_8c_a1926d27a33374be75beeaa29e428ca95}} 
+\index{gattservapp\_util.c@{gattservapp\_util.c}!GATTServApp\_ReadCharCfg@{GATTServApp\_ReadCharCfg}}
+\index{GATTServApp\_ReadCharCfg@{GATTServApp\_ReadCharCfg}!gattservapp\_util.c@{gattservapp\_util.c}}
+\doxysubsubsection{\texorpdfstring{GATTServApp\_ReadCharCfg()}{GATTServApp\_ReadCharCfg()}}
+{\footnotesize\ttfamily uint16 G\+A\+T\+T\+Serv\+App\+\_\+\+Read\+Char\+Cfg (\begin{DoxyParamCaption}\item[{uint16}]{conn\+Handle,  }\item[{gatt\+Char\+Cfg\+\_\+t $\ast$}]{char\+Cfg\+Tbl }\end{DoxyParamCaption})}
+
+
+
+Definition at line 300 of file gattservapp\+\_\+util.\+c.
+
+\mbox{\Hypertarget{gattservapp__util_8c_ac865b36b1cf720bd0f637f7740e5072c}\label{gattservapp__util_8c_ac865b36b1cf720bd0f637f7740e5072c}} 
+\index{gattservapp\_util.c@{gattservapp\_util.c}!GATTServApp\_WriteCharCfg@{GATTServApp\_WriteCharCfg}}
+\index{GATTServApp\_WriteCharCfg@{GATTServApp\_WriteCharCfg}!gattservapp\_util.c@{gattservapp\_util.c}}
+\doxysubsubsection{\texorpdfstring{GATTServApp\_WriteCharCfg()}{GATTServApp\_WriteCharCfg()}}
+{\footnotesize\ttfamily uint8 G\+A\+T\+T\+Serv\+App\+\_\+\+Write\+Char\+Cfg (\begin{DoxyParamCaption}\item[{uint16}]{conn\+Handle,  }\item[{gatt\+Char\+Cfg\+\_\+t $\ast$}]{char\+Cfg\+Tbl,  }\item[{uint16}]{value }\end{DoxyParamCaption})}
+
+
+
+Definition at line 330 of file gattservapp\+\_\+util.\+c.
+

@@ -1,0 +1,187 @@
+\hypertarget{structgap_est_link_req_event__t}{}\doxysection{gap\+Est\+Link\+Req\+Event\+\_\+t Struct Reference}
+\label{structgap_est_link_req_event__t}\index{gapEstLinkReqEvent\_t@{gapEstLinkReqEvent\_t}}
+
+
+{\ttfamily \#include $<$gap.\+h$>$}
+
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+osal\+\_\+event\+\_\+hdr\+\_\+t \mbox{\hyperlink{structgap_est_link_req_event__t_a483f62c1a5bd73b56aba3e129ca8d2f7}{hdr}}
+\begin{DoxyCompactList}\small\item\em G\+A\+P\+\_\+\+M\+S\+G\+\_\+\+E\+V\+E\+NT and status. \end{DoxyCompactList}\item 
+uint8 \mbox{\hyperlink{structgap_est_link_req_event__t_ad85133cb11b2ba73668c5d359876bf6d}{opcode}}
+\begin{DoxyCompactList}\small\item\em G\+A\+P\+\_\+\+L\+I\+N\+K\+\_\+\+E\+S\+T\+A\+B\+L\+I\+S\+H\+E\+D\+\_\+\+E\+V\+E\+NT. \end{DoxyCompactList}\item 
+uint8 \mbox{\hyperlink{structgap_est_link_req_event__t_aa3245170faeda59b15e0a1870e9eec01}{dev\+Addr\+Type}}
+\begin{DoxyCompactList}\small\item\em Device address type\+: \mbox{\hyperlink{group___a_d_d_r_t_y_p_e___d_e_f_i_n_e_s}{Address Types as defined by B\+LE Spec}}. \end{DoxyCompactList}\item 
+uint8 \mbox{\hyperlink{structgap_est_link_req_event__t_ab6fc783c79ab2b5d03ef56d6d619587d}{dev\+Addr}} \mbox{[}B\+\_\+\+A\+D\+D\+R\+\_\+\+L\+EN\mbox{]}
+\begin{DoxyCompactList}\small\item\em Device address of link. \end{DoxyCompactList}\item 
+uint16 \mbox{\hyperlink{structgap_est_link_req_event__t_ae2e6d8617d045827fd86da56bebe1fbd}{connection\+Handle}}
+\begin{DoxyCompactList}\small\item\em Connection Handle from controller used to ref the device. \end{DoxyCompactList}\item 
+uint8 \mbox{\hyperlink{structgap_est_link_req_event__t_ae7228bfd007359ee52a43bac6d36093e}{conn\+Role}}
+\begin{DoxyCompactList}\small\item\em Connection formed as Master or Slave. \end{DoxyCompactList}\item 
+uint16 \mbox{\hyperlink{structgap_est_link_req_event__t_a754df6c819d90d1685d21b51d56a2ebd}{conn\+Interval}}
+\begin{DoxyCompactList}\small\item\em Connection Interval. \end{DoxyCompactList}\item 
+uint16 \mbox{\hyperlink{structgap_est_link_req_event__t_ac36697587839687bd8938b48a7179cb6}{conn\+Latency}}
+\begin{DoxyCompactList}\small\item\em Connection Latency. \end{DoxyCompactList}\item 
+uint16 \mbox{\hyperlink{structgap_est_link_req_event__t_a3b43a8a122570d12960e27b65f30370d}{conn\+Timeout}}
+\begin{DoxyCompactList}\small\item\em Connection Timeout. \end{DoxyCompactList}\item 
+uint8 \mbox{\hyperlink{structgap_est_link_req_event__t_acf6d0bf9087d2e8ca33eb707c35a14e7}{clock\+Accuracy}}
+\begin{DoxyCompactList}\small\item\em Clock Accuracy. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+G\+A\+P\+\_\+\+L\+I\+N\+K\+\_\+\+E\+S\+T\+A\+B\+L\+I\+S\+H\+E\+D\+\_\+\+E\+V\+E\+NT message format. This message is sent to the app when the link request is complete.~\newline
+ ~\newline
+ For an Observer, this message is sent to complete the Establish Link Request.~\newline
+ For a Peripheral, this message is sent to indicate that a link has been created. 
+
+Definition at line 659 of file gap.\+h.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{structgap_est_link_req_event__t_acf6d0bf9087d2e8ca33eb707c35a14e7}\label{structgap_est_link_req_event__t_acf6d0bf9087d2e8ca33eb707c35a14e7}} 
+\index{gapEstLinkReqEvent\_t@{gapEstLinkReqEvent\_t}!clockAccuracy@{clockAccuracy}}
+\index{clockAccuracy@{clockAccuracy}!gapEstLinkReqEvent\_t@{gapEstLinkReqEvent\_t}}
+\doxysubsubsection{\texorpdfstring{clockAccuracy}{clockAccuracy}}
+{\footnotesize\ttfamily uint8 gap\+Est\+Link\+Req\+Event\+\_\+t\+::clock\+Accuracy}
+
+
+
+Clock Accuracy. 
+
+
+
+Definition at line 670 of file gap.\+h.
+
+\mbox{\Hypertarget{structgap_est_link_req_event__t_ae2e6d8617d045827fd86da56bebe1fbd}\label{structgap_est_link_req_event__t_ae2e6d8617d045827fd86da56bebe1fbd}} 
+\index{gapEstLinkReqEvent\_t@{gapEstLinkReqEvent\_t}!connectionHandle@{connectionHandle}}
+\index{connectionHandle@{connectionHandle}!gapEstLinkReqEvent\_t@{gapEstLinkReqEvent\_t}}
+\doxysubsubsection{\texorpdfstring{connectionHandle}{connectionHandle}}
+{\footnotesize\ttfamily uint16 gap\+Est\+Link\+Req\+Event\+\_\+t\+::connection\+Handle}
+
+
+
+Connection Handle from controller used to ref the device. 
+
+
+
+Definition at line 665 of file gap.\+h.
+
+\mbox{\Hypertarget{structgap_est_link_req_event__t_a754df6c819d90d1685d21b51d56a2ebd}\label{structgap_est_link_req_event__t_a754df6c819d90d1685d21b51d56a2ebd}} 
+\index{gapEstLinkReqEvent\_t@{gapEstLinkReqEvent\_t}!connInterval@{connInterval}}
+\index{connInterval@{connInterval}!gapEstLinkReqEvent\_t@{gapEstLinkReqEvent\_t}}
+\doxysubsubsection{\texorpdfstring{connInterval}{connInterval}}
+{\footnotesize\ttfamily uint16 gap\+Est\+Link\+Req\+Event\+\_\+t\+::conn\+Interval}
+
+
+
+Connection Interval. 
+
+
+
+Definition at line 667 of file gap.\+h.
+
+\mbox{\Hypertarget{structgap_est_link_req_event__t_ac36697587839687bd8938b48a7179cb6}\label{structgap_est_link_req_event__t_ac36697587839687bd8938b48a7179cb6}} 
+\index{gapEstLinkReqEvent\_t@{gapEstLinkReqEvent\_t}!connLatency@{connLatency}}
+\index{connLatency@{connLatency}!gapEstLinkReqEvent\_t@{gapEstLinkReqEvent\_t}}
+\doxysubsubsection{\texorpdfstring{connLatency}{connLatency}}
+{\footnotesize\ttfamily uint16 gap\+Est\+Link\+Req\+Event\+\_\+t\+::conn\+Latency}
+
+
+
+Connection Latency. 
+
+
+
+Definition at line 668 of file gap.\+h.
+
+\mbox{\Hypertarget{structgap_est_link_req_event__t_ae7228bfd007359ee52a43bac6d36093e}\label{structgap_est_link_req_event__t_ae7228bfd007359ee52a43bac6d36093e}} 
+\index{gapEstLinkReqEvent\_t@{gapEstLinkReqEvent\_t}!connRole@{connRole}}
+\index{connRole@{connRole}!gapEstLinkReqEvent\_t@{gapEstLinkReqEvent\_t}}
+\doxysubsubsection{\texorpdfstring{connRole}{connRole}}
+{\footnotesize\ttfamily uint8 gap\+Est\+Link\+Req\+Event\+\_\+t\+::conn\+Role}
+
+
+
+Connection formed as Master or Slave. 
+
+
+
+Definition at line 666 of file gap.\+h.
+
+\mbox{\Hypertarget{structgap_est_link_req_event__t_a3b43a8a122570d12960e27b65f30370d}\label{structgap_est_link_req_event__t_a3b43a8a122570d12960e27b65f30370d}} 
+\index{gapEstLinkReqEvent\_t@{gapEstLinkReqEvent\_t}!connTimeout@{connTimeout}}
+\index{connTimeout@{connTimeout}!gapEstLinkReqEvent\_t@{gapEstLinkReqEvent\_t}}
+\doxysubsubsection{\texorpdfstring{connTimeout}{connTimeout}}
+{\footnotesize\ttfamily uint16 gap\+Est\+Link\+Req\+Event\+\_\+t\+::conn\+Timeout}
+
+
+
+Connection Timeout. 
+
+
+
+Definition at line 669 of file gap.\+h.
+
+\mbox{\Hypertarget{structgap_est_link_req_event__t_ab6fc783c79ab2b5d03ef56d6d619587d}\label{structgap_est_link_req_event__t_ab6fc783c79ab2b5d03ef56d6d619587d}} 
+\index{gapEstLinkReqEvent\_t@{gapEstLinkReqEvent\_t}!devAddr@{devAddr}}
+\index{devAddr@{devAddr}!gapEstLinkReqEvent\_t@{gapEstLinkReqEvent\_t}}
+\doxysubsubsection{\texorpdfstring{devAddr}{devAddr}}
+{\footnotesize\ttfamily uint8 gap\+Est\+Link\+Req\+Event\+\_\+t\+::dev\+Addr\mbox{[}B\+\_\+\+A\+D\+D\+R\+\_\+\+L\+EN\mbox{]}}
+
+
+
+Device address of link. 
+
+
+
+Definition at line 664 of file gap.\+h.
+
+\mbox{\Hypertarget{structgap_est_link_req_event__t_aa3245170faeda59b15e0a1870e9eec01}\label{structgap_est_link_req_event__t_aa3245170faeda59b15e0a1870e9eec01}} 
+\index{gapEstLinkReqEvent\_t@{gapEstLinkReqEvent\_t}!devAddrType@{devAddrType}}
+\index{devAddrType@{devAddrType}!gapEstLinkReqEvent\_t@{gapEstLinkReqEvent\_t}}
+\doxysubsubsection{\texorpdfstring{devAddrType}{devAddrType}}
+{\footnotesize\ttfamily uint8 gap\+Est\+Link\+Req\+Event\+\_\+t\+::dev\+Addr\+Type}
+
+
+
+Device address type\+: \mbox{\hyperlink{group___a_d_d_r_t_y_p_e___d_e_f_i_n_e_s}{Address Types as defined by B\+LE Spec}}. 
+
+
+
+Definition at line 663 of file gap.\+h.
+
+\mbox{\Hypertarget{structgap_est_link_req_event__t_a483f62c1a5bd73b56aba3e129ca8d2f7}\label{structgap_est_link_req_event__t_a483f62c1a5bd73b56aba3e129ca8d2f7}} 
+\index{gapEstLinkReqEvent\_t@{gapEstLinkReqEvent\_t}!hdr@{hdr}}
+\index{hdr@{hdr}!gapEstLinkReqEvent\_t@{gapEstLinkReqEvent\_t}}
+\doxysubsubsection{\texorpdfstring{hdr}{hdr}}
+{\footnotesize\ttfamily osal\+\_\+event\+\_\+hdr\+\_\+t gap\+Est\+Link\+Req\+Event\+\_\+t\+::hdr}
+
+
+
+G\+A\+P\+\_\+\+M\+S\+G\+\_\+\+E\+V\+E\+NT and status. 
+
+
+
+Definition at line 661 of file gap.\+h.
+
+\mbox{\Hypertarget{structgap_est_link_req_event__t_ad85133cb11b2ba73668c5d359876bf6d}\label{structgap_est_link_req_event__t_ad85133cb11b2ba73668c5d359876bf6d}} 
+\index{gapEstLinkReqEvent\_t@{gapEstLinkReqEvent\_t}!opcode@{opcode}}
+\index{opcode@{opcode}!gapEstLinkReqEvent\_t@{gapEstLinkReqEvent\_t}}
+\doxysubsubsection{\texorpdfstring{opcode}{opcode}}
+{\footnotesize\ttfamily uint8 gap\+Est\+Link\+Req\+Event\+\_\+t\+::opcode}
+
+
+
+G\+A\+P\+\_\+\+L\+I\+N\+K\+\_\+\+E\+S\+T\+A\+B\+L\+I\+S\+H\+E\+D\+\_\+\+E\+V\+E\+NT. 
+
+
+
+Definition at line 662 of file gap.\+h.
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Include/\mbox{\hyperlink{gap_8h}{gap.\+h}}\end{DoxyCompactItemize}

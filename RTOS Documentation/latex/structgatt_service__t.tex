@@ -1,0 +1,68 @@
+\hypertarget{structgatt_service__t}{}\doxysection{gatt\+Service\+\_\+t Struct Reference}
+\label{structgatt_service__t}\index{gattService\_t@{gattService\_t}}
+
+
+{\ttfamily \#include $<$gatt.\+h$>$}
+
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+uint16 \mbox{\hyperlink{structgatt_service__t_a0d83ca8cb9dce943b590a1b29dcaa001}{num\+Attrs}}
+\begin{DoxyCompactList}\small\item\em Number of attributes in attrs. \end{DoxyCompactList}\item 
+uint8 \mbox{\hyperlink{structgatt_service__t_a5af4c5e9ef7932766ef1df8d741d6e60}{enc\+Key\+Size}}
+\begin{DoxyCompactList}\small\item\em Minimum encryption key size required by service (7-\/16 bytes) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{gatt_8h_a8dca0d941f79cbc3bca13ab038e2e963}{gatt\+Attribute\+\_\+t}} $\ast$ \mbox{\hyperlink{structgatt_service__t_a8859cf9f67b2e746f2068cb61ed84a94}{attrs}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+G\+A\+TT Service format. 
+
+Definition at line 288 of file gatt.\+h.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{structgatt_service__t_a8859cf9f67b2e746f2068cb61ed84a94}\label{structgatt_service__t_a8859cf9f67b2e746f2068cb61ed84a94}} 
+\index{gattService\_t@{gattService\_t}!attrs@{attrs}}
+\index{attrs@{attrs}!gattService\_t@{gattService\_t}}
+\doxysubsubsection{\texorpdfstring{attrs}{attrs}}
+{\footnotesize\ttfamily \mbox{\hyperlink{gatt_8h_a8dca0d941f79cbc3bca13ab038e2e963}{gatt\+Attribute\+\_\+t}}$\ast$ gatt\+Service\+\_\+t\+::attrs}
+
+Array of attribute records. N\+O\+TE\+: The list must start with a Service attribute followed by all attributes associated with this Service attribute. 
+
+Definition at line 297 of file gatt.\+h.
+
+\mbox{\Hypertarget{structgatt_service__t_a5af4c5e9ef7932766ef1df8d741d6e60}\label{structgatt_service__t_a5af4c5e9ef7932766ef1df8d741d6e60}} 
+\index{gattService\_t@{gattService\_t}!encKeySize@{encKeySize}}
+\index{encKeySize@{encKeySize}!gattService\_t@{gattService\_t}}
+\doxysubsubsection{\texorpdfstring{encKeySize}{encKeySize}}
+{\footnotesize\ttfamily uint8 gatt\+Service\+\_\+t\+::enc\+Key\+Size}
+
+
+
+Minimum encryption key size required by service (7-\/16 bytes) 
+
+
+
+Definition at line 291 of file gatt.\+h.
+
+\mbox{\Hypertarget{structgatt_service__t_a0d83ca8cb9dce943b590a1b29dcaa001}\label{structgatt_service__t_a0d83ca8cb9dce943b590a1b29dcaa001}} 
+\index{gattService\_t@{gattService\_t}!numAttrs@{numAttrs}}
+\index{numAttrs@{numAttrs}!gattService\_t@{gattService\_t}}
+\doxysubsubsection{\texorpdfstring{numAttrs}{numAttrs}}
+{\footnotesize\ttfamily uint16 gatt\+Service\+\_\+t\+::num\+Attrs}
+
+
+
+Number of attributes in attrs. 
+
+
+
+Definition at line 290 of file gatt.\+h.
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Include/\mbox{\hyperlink{gatt_8h}{gatt.\+h}}\end{DoxyCompactItemize}

@@ -1,0 +1,229 @@
+\hypertarget{ext__flash__layout_8h}{}\doxysection{P\+R\+O\+F\+I\+L\+E\+S/ext\+\_\+flash\+\_\+layout.h File Reference}
+\label{ext__flash__layout_8h}\index{PROFILES/ext\_flash\_layout.h@{PROFILES/ext\_flash\_layout.h}}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_ext_image_info__t}{Ext\+Image\+Info\+\_\+t}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{ext__flash__layout_8h_a08d699942b307140485a66a6753a6fda}{E\+F\+L\+\_\+\+P\+A\+G\+E\+\_\+\+S\+I\+ZE}}~0x1000
+\item 
+\#define \mbox{\hyperlink{ext__flash__layout_8h_addb0afae7a98ad8a164d3661bedb2d84}{E\+F\+L\+\_\+\+F\+L\+A\+S\+H\+\_\+\+S\+I\+ZE}}~0x80000
+\item 
+\#define \mbox{\hyperlink{ext__flash__layout_8h_ab78a308e1aea6075fed0dfab4d668846}{E\+F\+L\+\_\+\+A\+D\+D\+R\+\_\+\+I\+M\+A\+G\+E\+\_\+\+A\+PP}}~0x00000
+\item 
+\#define \mbox{\hyperlink{ext__flash__layout_8h_a3a7568f2704e9527f7e7f7285d5585c5}{E\+F\+L\+\_\+\+S\+I\+Z\+E\+\_\+\+I\+M\+A\+G\+E\+\_\+\+A\+PP}}~0x20000
+\item 
+\#define \mbox{\hyperlink{ext__flash__layout_8h_a02451ebd09524d84c94c5a9a463ed47b}{E\+F\+L\+\_\+\+A\+D\+D\+R\+\_\+\+I\+M\+A\+G\+E\+\_\+\+B\+LE}}~0x20000
+\item 
+\#define \mbox{\hyperlink{ext__flash__layout_8h_ac336d5032ed3a2c25ff2350421beadf9}{E\+F\+L\+\_\+\+S\+I\+Z\+E\+\_\+\+I\+M\+A\+G\+E\+\_\+\+B\+LE}}~0x20000
+\item 
+\#define \mbox{\hyperlink{ext__flash__layout_8h_a6872295b3ccf9fb3ce40800f0c5aa261}{E\+F\+L\+\_\+\+A\+D\+D\+R\+\_\+\+R\+E\+C\+O\+V\+E\+RY}}~0x40000
+\item 
+\#define \mbox{\hyperlink{ext__flash__layout_8h_a34e6c3072883112e879f1ee3e22dc186}{E\+F\+L\+\_\+\+S\+I\+Z\+E\+\_\+\+R\+E\+C\+O\+V\+E\+RY}}~0x20000
+\item 
+\#define \mbox{\hyperlink{ext__flash__layout_8h_acfc5fbbef481d2ba878f7fb191992d73}{E\+F\+L\+\_\+\+A\+D\+D\+R\+\_\+\+M\+E\+TA}}~0x78000
+\item 
+\#define \mbox{\hyperlink{ext__flash__layout_8h_a8022e0ee5f1759e2f8a72f46e79a2369}{E\+F\+L\+\_\+\+S\+I\+Z\+E\+\_\+\+M\+E\+TA}}~0x08000
+\item 
+\#define \mbox{\hyperlink{ext__flash__layout_8h_a74c0e0f0d041c7778024db9c22afd5a8}{E\+F\+L\+\_\+\+I\+M\+A\+G\+E\+\_\+\+I\+N\+F\+O\+\_\+\+A\+D\+D\+R\+\_\+\+A\+PP}}~( \mbox{\hyperlink{ext__flash__layout_8h_acfc5fbbef481d2ba878f7fb191992d73}{E\+F\+L\+\_\+\+A\+D\+D\+R\+\_\+\+M\+E\+TA}} + 0x0000 )
+\item 
+\#define \mbox{\hyperlink{ext__flash__layout_8h_aad15831f6f4906f6072158f4ddb758f8}{E\+F\+L\+\_\+\+I\+M\+A\+G\+E\+\_\+\+I\+N\+F\+O\+\_\+\+A\+D\+D\+R\+\_\+\+B\+LE}}~( \mbox{\hyperlink{ext__flash__layout_8h_acfc5fbbef481d2ba878f7fb191992d73}{E\+F\+L\+\_\+\+A\+D\+D\+R\+\_\+\+M\+E\+TA}} + \mbox{\hyperlink{ext__flash__layout_8h_a08d699942b307140485a66a6753a6fda}{E\+F\+L\+\_\+\+P\+A\+G\+E\+\_\+\+S\+I\+ZE}} )
+\item 
+\#define \mbox{\hyperlink{ext__flash__layout_8h_aaa0ca7f88c64afff7a9632d9ed582e29}{E\+F\+L\+\_\+\+I\+M\+A\+G\+E\+\_\+\+I\+N\+F\+O\+\_\+\+A\+D\+D\+R\+\_\+\+F\+A\+C\+T\+O\+RY}}~( \mbox{\hyperlink{ext__flash__layout_8h_acfc5fbbef481d2ba878f7fb191992d73}{E\+F\+L\+\_\+\+A\+D\+D\+R\+\_\+\+M\+E\+TA}} + \mbox{\hyperlink{ext__flash__layout_8h_a08d699942b307140485a66a6753a6fda}{E\+F\+L\+\_\+\+P\+A\+G\+E\+\_\+\+S\+I\+ZE}}$\ast$2 )
+\item 
+\#define \mbox{\hyperlink{ext__flash__layout_8h_a28fe759479161769cf84382f40ccf2ce}{E\+F\+L\+\_\+\+O\+A\+D\+\_\+\+I\+M\+G\+\_\+\+T\+Y\+P\+E\+\_\+\+A\+PP}}~1
+\item 
+\#define \mbox{\hyperlink{ext__flash__layout_8h_af5bab9a3822bda51421b9892e3a0fdc5}{E\+F\+L\+\_\+\+O\+A\+D\+\_\+\+I\+M\+G\+\_\+\+T\+Y\+P\+E\+\_\+\+S\+T\+A\+CK}}~2
+\item 
+\#define \mbox{\hyperlink{ext__flash__layout_8h_a568ecc729e8640eb8fdd5b3a15fe409b}{E\+F\+L\+\_\+\+O\+A\+D\+\_\+\+I\+M\+G\+\_\+\+T\+Y\+P\+E\+\_\+\+NP}}~3
+\item 
+\#define \mbox{\hyperlink{ext__flash__layout_8h_a5dc99f67c71c98c549ce811856dcfd6a}{E\+F\+L\+\_\+\+O\+A\+D\+\_\+\+I\+M\+G\+\_\+\+T\+Y\+P\+E\+\_\+\+F\+A\+C\+T\+O\+RY}}~4
+\item 
+\#define \mbox{\hyperlink{ext__flash__layout_8h_a0d1c2c705e37eb3a335b6f41beba1450}{E\+F\+L\+\_\+\+O\+A\+D\+\_\+\+A\+D\+D\+R\+\_\+\+R\+E\+S\+O\+L\+U\+T\+I\+ON}}~4
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{ext__flash__layout_8h_ab78a308e1aea6075fed0dfab4d668846}\label{ext__flash__layout_8h_ab78a308e1aea6075fed0dfab4d668846}} 
+\index{ext\_flash\_layout.h@{ext\_flash\_layout.h}!EFL\_ADDR\_IMAGE\_APP@{EFL\_ADDR\_IMAGE\_APP}}
+\index{EFL\_ADDR\_IMAGE\_APP@{EFL\_ADDR\_IMAGE\_APP}!ext\_flash\_layout.h@{ext\_flash\_layout.h}}
+\doxysubsubsection{\texorpdfstring{EFL\_ADDR\_IMAGE\_APP}{EFL\_ADDR\_IMAGE\_APP}}
+{\footnotesize\ttfamily \#define E\+F\+L\+\_\+\+A\+D\+D\+R\+\_\+\+I\+M\+A\+G\+E\+\_\+\+A\+PP~0x00000}
+
+
+
+Definition at line 56 of file ext\+\_\+flash\+\_\+layout.\+h.
+
+\mbox{\Hypertarget{ext__flash__layout_8h_a02451ebd09524d84c94c5a9a463ed47b}\label{ext__flash__layout_8h_a02451ebd09524d84c94c5a9a463ed47b}} 
+\index{ext\_flash\_layout.h@{ext\_flash\_layout.h}!EFL\_ADDR\_IMAGE\_BLE@{EFL\_ADDR\_IMAGE\_BLE}}
+\index{EFL\_ADDR\_IMAGE\_BLE@{EFL\_ADDR\_IMAGE\_BLE}!ext\_flash\_layout.h@{ext\_flash\_layout.h}}
+\doxysubsubsection{\texorpdfstring{EFL\_ADDR\_IMAGE\_BLE}{EFL\_ADDR\_IMAGE\_BLE}}
+{\footnotesize\ttfamily \#define E\+F\+L\+\_\+\+A\+D\+D\+R\+\_\+\+I\+M\+A\+G\+E\+\_\+\+B\+LE~0x20000}
+
+
+
+Definition at line 60 of file ext\+\_\+flash\+\_\+layout.\+h.
+
+\mbox{\Hypertarget{ext__flash__layout_8h_acfc5fbbef481d2ba878f7fb191992d73}\label{ext__flash__layout_8h_acfc5fbbef481d2ba878f7fb191992d73}} 
+\index{ext\_flash\_layout.h@{ext\_flash\_layout.h}!EFL\_ADDR\_META@{EFL\_ADDR\_META}}
+\index{EFL\_ADDR\_META@{EFL\_ADDR\_META}!ext\_flash\_layout.h@{ext\_flash\_layout.h}}
+\doxysubsubsection{\texorpdfstring{EFL\_ADDR\_META}{EFL\_ADDR\_META}}
+{\footnotesize\ttfamily \#define E\+F\+L\+\_\+\+A\+D\+D\+R\+\_\+\+M\+E\+TA~0x78000}
+
+
+
+Definition at line 68 of file ext\+\_\+flash\+\_\+layout.\+h.
+
+\mbox{\Hypertarget{ext__flash__layout_8h_a6872295b3ccf9fb3ce40800f0c5aa261}\label{ext__flash__layout_8h_a6872295b3ccf9fb3ce40800f0c5aa261}} 
+\index{ext\_flash\_layout.h@{ext\_flash\_layout.h}!EFL\_ADDR\_RECOVERY@{EFL\_ADDR\_RECOVERY}}
+\index{EFL\_ADDR\_RECOVERY@{EFL\_ADDR\_RECOVERY}!ext\_flash\_layout.h@{ext\_flash\_layout.h}}
+\doxysubsubsection{\texorpdfstring{EFL\_ADDR\_RECOVERY}{EFL\_ADDR\_RECOVERY}}
+{\footnotesize\ttfamily \#define E\+F\+L\+\_\+\+A\+D\+D\+R\+\_\+\+R\+E\+C\+O\+V\+E\+RY~0x40000}
+
+
+
+Definition at line 64 of file ext\+\_\+flash\+\_\+layout.\+h.
+
+\mbox{\Hypertarget{ext__flash__layout_8h_addb0afae7a98ad8a164d3661bedb2d84}\label{ext__flash__layout_8h_addb0afae7a98ad8a164d3661bedb2d84}} 
+\index{ext\_flash\_layout.h@{ext\_flash\_layout.h}!EFL\_FLASH\_SIZE@{EFL\_FLASH\_SIZE}}
+\index{EFL\_FLASH\_SIZE@{EFL\_FLASH\_SIZE}!ext\_flash\_layout.h@{ext\_flash\_layout.h}}
+\doxysubsubsection{\texorpdfstring{EFL\_FLASH\_SIZE}{EFL\_FLASH\_SIZE}}
+{\footnotesize\ttfamily \#define E\+F\+L\+\_\+\+F\+L\+A\+S\+H\+\_\+\+S\+I\+ZE~0x80000}
+
+
+
+Definition at line 53 of file ext\+\_\+flash\+\_\+layout.\+h.
+
+\mbox{\Hypertarget{ext__flash__layout_8h_a74c0e0f0d041c7778024db9c22afd5a8}\label{ext__flash__layout_8h_a74c0e0f0d041c7778024db9c22afd5a8}} 
+\index{ext\_flash\_layout.h@{ext\_flash\_layout.h}!EFL\_IMAGE\_INFO\_ADDR\_APP@{EFL\_IMAGE\_INFO\_ADDR\_APP}}
+\index{EFL\_IMAGE\_INFO\_ADDR\_APP@{EFL\_IMAGE\_INFO\_ADDR\_APP}!ext\_flash\_layout.h@{ext\_flash\_layout.h}}
+\doxysubsubsection{\texorpdfstring{EFL\_IMAGE\_INFO\_ADDR\_APP}{EFL\_IMAGE\_INFO\_ADDR\_APP}}
+{\footnotesize\ttfamily \#define E\+F\+L\+\_\+\+I\+M\+A\+G\+E\+\_\+\+I\+N\+F\+O\+\_\+\+A\+D\+D\+R\+\_\+\+A\+PP~( \mbox{\hyperlink{ext__flash__layout_8h_acfc5fbbef481d2ba878f7fb191992d73}{E\+F\+L\+\_\+\+A\+D\+D\+R\+\_\+\+M\+E\+TA}} + 0x0000 )}
+
+
+
+Definition at line 71 of file ext\+\_\+flash\+\_\+layout.\+h.
+
+\mbox{\Hypertarget{ext__flash__layout_8h_aad15831f6f4906f6072158f4ddb758f8}\label{ext__flash__layout_8h_aad15831f6f4906f6072158f4ddb758f8}} 
+\index{ext\_flash\_layout.h@{ext\_flash\_layout.h}!EFL\_IMAGE\_INFO\_ADDR\_BLE@{EFL\_IMAGE\_INFO\_ADDR\_BLE}}
+\index{EFL\_IMAGE\_INFO\_ADDR\_BLE@{EFL\_IMAGE\_INFO\_ADDR\_BLE}!ext\_flash\_layout.h@{ext\_flash\_layout.h}}
+\doxysubsubsection{\texorpdfstring{EFL\_IMAGE\_INFO\_ADDR\_BLE}{EFL\_IMAGE\_INFO\_ADDR\_BLE}}
+{\footnotesize\ttfamily \#define E\+F\+L\+\_\+\+I\+M\+A\+G\+E\+\_\+\+I\+N\+F\+O\+\_\+\+A\+D\+D\+R\+\_\+\+B\+LE~( \mbox{\hyperlink{ext__flash__layout_8h_acfc5fbbef481d2ba878f7fb191992d73}{E\+F\+L\+\_\+\+A\+D\+D\+R\+\_\+\+M\+E\+TA}} + \mbox{\hyperlink{ext__flash__layout_8h_a08d699942b307140485a66a6753a6fda}{E\+F\+L\+\_\+\+P\+A\+G\+E\+\_\+\+S\+I\+ZE}} )}
+
+
+
+Definition at line 72 of file ext\+\_\+flash\+\_\+layout.\+h.
+
+\mbox{\Hypertarget{ext__flash__layout_8h_aaa0ca7f88c64afff7a9632d9ed582e29}\label{ext__flash__layout_8h_aaa0ca7f88c64afff7a9632d9ed582e29}} 
+\index{ext\_flash\_layout.h@{ext\_flash\_layout.h}!EFL\_IMAGE\_INFO\_ADDR\_FACTORY@{EFL\_IMAGE\_INFO\_ADDR\_FACTORY}}
+\index{EFL\_IMAGE\_INFO\_ADDR\_FACTORY@{EFL\_IMAGE\_INFO\_ADDR\_FACTORY}!ext\_flash\_layout.h@{ext\_flash\_layout.h}}
+\doxysubsubsection{\texorpdfstring{EFL\_IMAGE\_INFO\_ADDR\_FACTORY}{EFL\_IMAGE\_INFO\_ADDR\_FACTORY}}
+{\footnotesize\ttfamily \#define E\+F\+L\+\_\+\+I\+M\+A\+G\+E\+\_\+\+I\+N\+F\+O\+\_\+\+A\+D\+D\+R\+\_\+\+F\+A\+C\+T\+O\+RY~( \mbox{\hyperlink{ext__flash__layout_8h_acfc5fbbef481d2ba878f7fb191992d73}{E\+F\+L\+\_\+\+A\+D\+D\+R\+\_\+\+M\+E\+TA}} + \mbox{\hyperlink{ext__flash__layout_8h_a08d699942b307140485a66a6753a6fda}{E\+F\+L\+\_\+\+P\+A\+G\+E\+\_\+\+S\+I\+ZE}}$\ast$2 )}
+
+
+
+Definition at line 73 of file ext\+\_\+flash\+\_\+layout.\+h.
+
+\mbox{\Hypertarget{ext__flash__layout_8h_a0d1c2c705e37eb3a335b6f41beba1450}\label{ext__flash__layout_8h_a0d1c2c705e37eb3a335b6f41beba1450}} 
+\index{ext\_flash\_layout.h@{ext\_flash\_layout.h}!EFL\_OAD\_ADDR\_RESOLUTION@{EFL\_OAD\_ADDR\_RESOLUTION}}
+\index{EFL\_OAD\_ADDR\_RESOLUTION@{EFL\_OAD\_ADDR\_RESOLUTION}!ext\_flash\_layout.h@{ext\_flash\_layout.h}}
+\doxysubsubsection{\texorpdfstring{EFL\_OAD\_ADDR\_RESOLUTION}{EFL\_OAD\_ADDR\_RESOLUTION}}
+{\footnotesize\ttfamily \#define E\+F\+L\+\_\+\+O\+A\+D\+\_\+\+A\+D\+D\+R\+\_\+\+R\+E\+S\+O\+L\+U\+T\+I\+ON~4}
+
+
+
+Definition at line 82 of file ext\+\_\+flash\+\_\+layout.\+h.
+
+\mbox{\Hypertarget{ext__flash__layout_8h_a28fe759479161769cf84382f40ccf2ce}\label{ext__flash__layout_8h_a28fe759479161769cf84382f40ccf2ce}} 
+\index{ext\_flash\_layout.h@{ext\_flash\_layout.h}!EFL\_OAD\_IMG\_TYPE\_APP@{EFL\_OAD\_IMG\_TYPE\_APP}}
+\index{EFL\_OAD\_IMG\_TYPE\_APP@{EFL\_OAD\_IMG\_TYPE\_APP}!ext\_flash\_layout.h@{ext\_flash\_layout.h}}
+\doxysubsubsection{\texorpdfstring{EFL\_OAD\_IMG\_TYPE\_APP}{EFL\_OAD\_IMG\_TYPE\_APP}}
+{\footnotesize\ttfamily \#define E\+F\+L\+\_\+\+O\+A\+D\+\_\+\+I\+M\+G\+\_\+\+T\+Y\+P\+E\+\_\+\+A\+PP~1}
+
+
+
+Definition at line 76 of file ext\+\_\+flash\+\_\+layout.\+h.
+
+\mbox{\Hypertarget{ext__flash__layout_8h_a5dc99f67c71c98c549ce811856dcfd6a}\label{ext__flash__layout_8h_a5dc99f67c71c98c549ce811856dcfd6a}} 
+\index{ext\_flash\_layout.h@{ext\_flash\_layout.h}!EFL\_OAD\_IMG\_TYPE\_FACTORY@{EFL\_OAD\_IMG\_TYPE\_FACTORY}}
+\index{EFL\_OAD\_IMG\_TYPE\_FACTORY@{EFL\_OAD\_IMG\_TYPE\_FACTORY}!ext\_flash\_layout.h@{ext\_flash\_layout.h}}
+\doxysubsubsection{\texorpdfstring{EFL\_OAD\_IMG\_TYPE\_FACTORY}{EFL\_OAD\_IMG\_TYPE\_FACTORY}}
+{\footnotesize\ttfamily \#define E\+F\+L\+\_\+\+O\+A\+D\+\_\+\+I\+M\+G\+\_\+\+T\+Y\+P\+E\+\_\+\+F\+A\+C\+T\+O\+RY~4}
+
+
+
+Definition at line 79 of file ext\+\_\+flash\+\_\+layout.\+h.
+
+\mbox{\Hypertarget{ext__flash__layout_8h_a568ecc729e8640eb8fdd5b3a15fe409b}\label{ext__flash__layout_8h_a568ecc729e8640eb8fdd5b3a15fe409b}} 
+\index{ext\_flash\_layout.h@{ext\_flash\_layout.h}!EFL\_OAD\_IMG\_TYPE\_NP@{EFL\_OAD\_IMG\_TYPE\_NP}}
+\index{EFL\_OAD\_IMG\_TYPE\_NP@{EFL\_OAD\_IMG\_TYPE\_NP}!ext\_flash\_layout.h@{ext\_flash\_layout.h}}
+\doxysubsubsection{\texorpdfstring{EFL\_OAD\_IMG\_TYPE\_NP}{EFL\_OAD\_IMG\_TYPE\_NP}}
+{\footnotesize\ttfamily \#define E\+F\+L\+\_\+\+O\+A\+D\+\_\+\+I\+M\+G\+\_\+\+T\+Y\+P\+E\+\_\+\+NP~3}
+
+
+
+Definition at line 78 of file ext\+\_\+flash\+\_\+layout.\+h.
+
+\mbox{\Hypertarget{ext__flash__layout_8h_af5bab9a3822bda51421b9892e3a0fdc5}\label{ext__flash__layout_8h_af5bab9a3822bda51421b9892e3a0fdc5}} 
+\index{ext\_flash\_layout.h@{ext\_flash\_layout.h}!EFL\_OAD\_IMG\_TYPE\_STACK@{EFL\_OAD\_IMG\_TYPE\_STACK}}
+\index{EFL\_OAD\_IMG\_TYPE\_STACK@{EFL\_OAD\_IMG\_TYPE\_STACK}!ext\_flash\_layout.h@{ext\_flash\_layout.h}}
+\doxysubsubsection{\texorpdfstring{EFL\_OAD\_IMG\_TYPE\_STACK}{EFL\_OAD\_IMG\_TYPE\_STACK}}
+{\footnotesize\ttfamily \#define E\+F\+L\+\_\+\+O\+A\+D\+\_\+\+I\+M\+G\+\_\+\+T\+Y\+P\+E\+\_\+\+S\+T\+A\+CK~2}
+
+
+
+Definition at line 77 of file ext\+\_\+flash\+\_\+layout.\+h.
+
+\mbox{\Hypertarget{ext__flash__layout_8h_a08d699942b307140485a66a6753a6fda}\label{ext__flash__layout_8h_a08d699942b307140485a66a6753a6fda}} 
+\index{ext\_flash\_layout.h@{ext\_flash\_layout.h}!EFL\_PAGE\_SIZE@{EFL\_PAGE\_SIZE}}
+\index{EFL\_PAGE\_SIZE@{EFL\_PAGE\_SIZE}!ext\_flash\_layout.h@{ext\_flash\_layout.h}}
+\doxysubsubsection{\texorpdfstring{EFL\_PAGE\_SIZE}{EFL\_PAGE\_SIZE}}
+{\footnotesize\ttfamily \#define E\+F\+L\+\_\+\+P\+A\+G\+E\+\_\+\+S\+I\+ZE~0x1000}
+
+
+
+Definition at line 52 of file ext\+\_\+flash\+\_\+layout.\+h.
+
+\mbox{\Hypertarget{ext__flash__layout_8h_a3a7568f2704e9527f7e7f7285d5585c5}\label{ext__flash__layout_8h_a3a7568f2704e9527f7e7f7285d5585c5}} 
+\index{ext\_flash\_layout.h@{ext\_flash\_layout.h}!EFL\_SIZE\_IMAGE\_APP@{EFL\_SIZE\_IMAGE\_APP}}
+\index{EFL\_SIZE\_IMAGE\_APP@{EFL\_SIZE\_IMAGE\_APP}!ext\_flash\_layout.h@{ext\_flash\_layout.h}}
+\doxysubsubsection{\texorpdfstring{EFL\_SIZE\_IMAGE\_APP}{EFL\_SIZE\_IMAGE\_APP}}
+{\footnotesize\ttfamily \#define E\+F\+L\+\_\+\+S\+I\+Z\+E\+\_\+\+I\+M\+A\+G\+E\+\_\+\+A\+PP~0x20000}
+
+
+
+Definition at line 57 of file ext\+\_\+flash\+\_\+layout.\+h.
+
+\mbox{\Hypertarget{ext__flash__layout_8h_ac336d5032ed3a2c25ff2350421beadf9}\label{ext__flash__layout_8h_ac336d5032ed3a2c25ff2350421beadf9}} 
+\index{ext\_flash\_layout.h@{ext\_flash\_layout.h}!EFL\_SIZE\_IMAGE\_BLE@{EFL\_SIZE\_IMAGE\_BLE}}
+\index{EFL\_SIZE\_IMAGE\_BLE@{EFL\_SIZE\_IMAGE\_BLE}!ext\_flash\_layout.h@{ext\_flash\_layout.h}}
+\doxysubsubsection{\texorpdfstring{EFL\_SIZE\_IMAGE\_BLE}{EFL\_SIZE\_IMAGE\_BLE}}
+{\footnotesize\ttfamily \#define E\+F\+L\+\_\+\+S\+I\+Z\+E\+\_\+\+I\+M\+A\+G\+E\+\_\+\+B\+LE~0x20000}
+
+
+
+Definition at line 61 of file ext\+\_\+flash\+\_\+layout.\+h.
+
+\mbox{\Hypertarget{ext__flash__layout_8h_a8022e0ee5f1759e2f8a72f46e79a2369}\label{ext__flash__layout_8h_a8022e0ee5f1759e2f8a72f46e79a2369}} 
+\index{ext\_flash\_layout.h@{ext\_flash\_layout.h}!EFL\_SIZE\_META@{EFL\_SIZE\_META}}
+\index{EFL\_SIZE\_META@{EFL\_SIZE\_META}!ext\_flash\_layout.h@{ext\_flash\_layout.h}}
+\doxysubsubsection{\texorpdfstring{EFL\_SIZE\_META}{EFL\_SIZE\_META}}
+{\footnotesize\ttfamily \#define E\+F\+L\+\_\+\+S\+I\+Z\+E\+\_\+\+M\+E\+TA~0x08000}
+
+
+
+Definition at line 69 of file ext\+\_\+flash\+\_\+layout.\+h.
+
+\mbox{\Hypertarget{ext__flash__layout_8h_a34e6c3072883112e879f1ee3e22dc186}\label{ext__flash__layout_8h_a34e6c3072883112e879f1ee3e22dc186}} 
+\index{ext\_flash\_layout.h@{ext\_flash\_layout.h}!EFL\_SIZE\_RECOVERY@{EFL\_SIZE\_RECOVERY}}
+\index{EFL\_SIZE\_RECOVERY@{EFL\_SIZE\_RECOVERY}!ext\_flash\_layout.h@{ext\_flash\_layout.h}}
+\doxysubsubsection{\texorpdfstring{EFL\_SIZE\_RECOVERY}{EFL\_SIZE\_RECOVERY}}
+{\footnotesize\ttfamily \#define E\+F\+L\+\_\+\+S\+I\+Z\+E\+\_\+\+R\+E\+C\+O\+V\+E\+RY~0x20000}
+
+
+
+Definition at line 65 of file ext\+\_\+flash\+\_\+layout.\+h.
+

@@ -1,0 +1,26 @@
+var gapgattserver_8h =
+[
+    [ "ggsAppCBs_t", "structggs_app_c_bs__t.html", "structggs_app_c_bs__t" ],
+    [ "GAP_DEVICE_NAME_LEN", "gapgattserver_8h.html#af61e23036a464a4299b13309cb44b11d", null ],
+    [ "GAP_PRIVACY_DISABLED", "gapgattserver_8h.html#a8028d2a55eabc426e92f04523a25eb92", null ],
+    [ "GAP_PRIVACY_ENABLED", "gapgattserver_8h.html#aaa4a94ecdfaeaf7fd02ef55c2358482f", null ],
+    [ "GAP_SERVICE", "gapgattserver_8h.html#af79db39c6e86afc70e621fe472dc4589", null ],
+    [ "GGS_APPEARANCE_ATT", "gapgattserver_8h.html#a8fc4927311308ffd0ffb76e6596cb7f4", null ],
+    [ "GGS_CENT_ADDR_RES_ATT", "gapgattserver_8h.html#a55d855ee6b0af51e88cfc0851f72e369", null ],
+    [ "GGS_DEVICE_NAME_ATT", "gapgattserver_8h.html#a32f221f846f0feda64490a0151cc17de", null ],
+    [ "GGS_PERI_CONN_PARAM_ATT", "gapgattserver_8h.html#a8310649c81db3fc0ce061d7be733a357", null ],
+    [ "GGS_PERI_PRIVACY_FLAG_ATT", "gapgattserver_8h.html#afedf165f0a795762d8a29c863447c81c", null ],
+    [ "GGS_PERI_PRIVACY_FLAG_PROPS", "gapgattserver_8h.html#a76bbed41340bb01313cd9a40a2d33c4e", null ],
+    [ "GGS_RECONNCT_ADDR_ATT", "gapgattserver_8h.html#a8a471fefacd5f4ba7d786ee8c2bf3eea", null ],
+    [ "GGS_W_PERMIT_APPEARANCE_ATT", "gapgattserver_8h.html#a9d08b760ed58c6c6350fe877a8d4e842", null ],
+    [ "GGS_W_PERMIT_DEVICE_NAME_ATT", "gapgattserver_8h.html#a134112a5f7dc1c9a8499307b6f27a6bb", null ],
+    [ "GGS_W_PERMIT_PRIVACY_FLAG_ATT", "gapgattserver_8h.html#ab1b4858d8da3de9d7b8aae7810412447", null ],
+    [ "ggsAttrValueChange_t", "gapgattserver_8h.html#a2cf35140c0b400918a30a2410272f63d", null ],
+    [ "GGS_AddService", "gapgattserver_8h.html#a378d66bb6f1fc9863df3727a6920c752", null ],
+    [ "GGS_DelService", "gapgattserver_8h.html#adb5d755b466055f8a6d167a4b881c59f", null ],
+    [ "GGS_GetParameter", "gapgattserver_8h.html#a4ae1b24aef90dc8dd36dcfe7592b395c", null ],
+    [ "GGS_GetParamValue", "gapgattserver_8h.html#a89e9d4cef43e2f3e7c397f12b53667c2", null ],
+    [ "GGS_RegisterAppCBs", "gapgattserver_8h.html#a10a83d35cf8405bd4e4b5f34c72fa66e", null ],
+    [ "GGS_SetParameter", "gapgattserver_8h.html#aa199a7c7fe4464c84e4440135d2e91f8", null ],
+    [ "GGS_SetParamValue", "gapgattserver_8h.html#abd1a14b5364121531cf5004e98db002d", null ]
+];

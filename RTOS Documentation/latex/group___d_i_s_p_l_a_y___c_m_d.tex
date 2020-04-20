@@ -1,0 +1,56 @@
+\hypertarget{group___d_i_s_p_l_a_y___c_m_d}{}\doxysection{Command Codes}
+\label{group___d_i_s_p_l_a_y___c_m_d}\index{Command Codes@{Command Codes}}
+
+
+D\+I\+S\+P\+L\+A\+Y\+\_\+\+C\+M\+D$\ast$ macros are general command codes for \mbox{\hyperlink{_display_8h_ad623d21e3c6d821bf6f4bdcfa05ec21f}{Display\+\_\+control()}}. Not all Display driver implementations support these command codes.  
+
+
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group___d_i_s_p_l_a_y___c_m_d_ga5be24ea4a3ddfd94efbb513d649ac88b}{D\+I\+S\+P\+L\+A\+Y\+\_\+\+C\+M\+D\+\_\+\+T\+R\+A\+N\+S\+P\+O\+R\+T\+\_\+\+C\+L\+O\+SE}}~0
+\begin{DoxyCompactList}\small\item\em Command used by Display\+\_\+control to release its transport layer. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___d_i_s_p_l_a_y___c_m_d_gae12206be356c6b2ce885b5ada9b1854d}{D\+I\+S\+P\+L\+A\+Y\+\_\+\+C\+M\+D\+\_\+\+T\+R\+A\+N\+S\+P\+O\+R\+T\+\_\+\+O\+P\+EN}}~1
+\begin{DoxyCompactList}\small\item\em Command used by Display\+\_\+control to resume control of its transport. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+D\+I\+S\+P\+L\+A\+Y\+\_\+\+C\+M\+D$\ast$ macros are general command codes for \mbox{\hyperlink{_display_8h_ad623d21e3c6d821bf6f4bdcfa05ec21f}{Display\+\_\+control()}}. Not all Display driver implementations support these command codes. 
+
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{group___d_i_s_p_l_a_y___c_m_d_ga5be24ea4a3ddfd94efbb513d649ac88b}\label{group___d_i_s_p_l_a_y___c_m_d_ga5be24ea4a3ddfd94efbb513d649ac88b}} 
+\index{Command Codes@{Command Codes}!DISPLAY\_CMD\_TRANSPORT\_CLOSE@{DISPLAY\_CMD\_TRANSPORT\_CLOSE}}
+\index{DISPLAY\_CMD\_TRANSPORT\_CLOSE@{DISPLAY\_CMD\_TRANSPORT\_CLOSE}!Command Codes@{Command Codes}}
+\doxysubsubsection{\texorpdfstring{DISPLAY\_CMD\_TRANSPORT\_CLOSE}{DISPLAY\_CMD\_TRANSPORT\_CLOSE}}
+{\footnotesize\ttfamily \#define D\+I\+S\+P\+L\+A\+Y\+\_\+\+C\+M\+D\+\_\+\+T\+R\+A\+N\+S\+P\+O\+R\+T\+\_\+\+C\+L\+O\+SE~0}
+
+
+
+Command used by Display\+\_\+control to release its transport layer. 
+
+This command will cause Display implementations that are using a potentially shared transport mechanism to close the open handle.
+
+Methods requiring this transport will meanwhile be discarded.
+
+With this command {\bfseries{arg}} is {\itshape don\textquotesingle{}t} {\itshape care}. 
+
+Definition at line 272 of file Display.\+h.
+
+\mbox{\Hypertarget{group___d_i_s_p_l_a_y___c_m_d_gae12206be356c6b2ce885b5ada9b1854d}\label{group___d_i_s_p_l_a_y___c_m_d_gae12206be356c6b2ce885b5ada9b1854d}} 
+\index{Command Codes@{Command Codes}!DISPLAY\_CMD\_TRANSPORT\_OPEN@{DISPLAY\_CMD\_TRANSPORT\_OPEN}}
+\index{DISPLAY\_CMD\_TRANSPORT\_OPEN@{DISPLAY\_CMD\_TRANSPORT\_OPEN}!Command Codes@{Command Codes}}
+\doxysubsubsection{\texorpdfstring{DISPLAY\_CMD\_TRANSPORT\_OPEN}{DISPLAY\_CMD\_TRANSPORT\_OPEN}}
+{\footnotesize\ttfamily \#define D\+I\+S\+P\+L\+A\+Y\+\_\+\+C\+M\+D\+\_\+\+T\+R\+A\+N\+S\+P\+O\+R\+T\+\_\+\+O\+P\+EN~1}
+
+
+
+Command used by Display\+\_\+control to resume control of its transport. 
+
+This command will cause Display implementations that are using a potentially shared transport mechanism to (re-\/)open the closed handle.
+
+With this command {\bfseries{arg}} is {\itshape don\textquotesingle{}t} {\itshape care}. 
+
+Definition at line 282 of file Display.\+h.
+

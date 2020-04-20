@@ -1,0 +1,74 @@
+\hypertarget{struct_s_p_i___config}{}\doxysection{S\+P\+I\+\_\+\+Config Struct Reference}
+\label{struct_s_p_i___config}\index{SPI\_Config@{SPI\_Config}}
+
+
+S\+PI Global configuration.  
+
+
+
+
+{\ttfamily \#include $<$S\+P\+I.\+h$>$}
+
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_s_p_i___fxn_table}{S\+P\+I\+\_\+\+Fxn\+Table}} const  $\ast$ \mbox{\hyperlink{struct_s_p_i___config_a099238ad6e5c2ca2d38f041624362636}{fxn\+Table\+Ptr}}
+\item 
+void $\ast$ \mbox{\hyperlink{struct_s_p_i___config_a35884e199911642a791e9a422dfccba6}{object}}
+\item 
+void const  $\ast$ \mbox{\hyperlink{struct_s_p_i___config_a4c8bfac4e9152b4e1da78f4926ecd4db}{hw\+Attrs}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+S\+PI Global configuration. 
+
+The \mbox{\hyperlink{struct_s_p_i___config}{S\+P\+I\+\_\+\+Config}} structure contains a set of pointers used to characterize the S\+PI driver implementation.
+
+This structure needs to be defined before calling \mbox{\hyperlink{_s_p_i_8c_afd9b09f58917f0e2d14c61b956eba214}{S\+P\+I\+\_\+init()}} and it must not be changed thereafter.
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{_s_p_i_8c_afd9b09f58917f0e2d14c61b956eba214}{S\+P\+I\+\_\+init()}} 
+\end{DoxySeeAlso}
+
+
+Definition at line 436 of file S\+P\+I.\+h.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{struct_s_p_i___config_a099238ad6e5c2ca2d38f041624362636}\label{struct_s_p_i___config_a099238ad6e5c2ca2d38f041624362636}} 
+\index{SPI\_Config@{SPI\_Config}!fxnTablePtr@{fxnTablePtr}}
+\index{fxnTablePtr@{fxnTablePtr}!SPI\_Config@{SPI\_Config}}
+\doxysubsubsection{\texorpdfstring{fxnTablePtr}{fxnTablePtr}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_s_p_i___fxn_table}{S\+P\+I\+\_\+\+Fxn\+Table}} const$\ast$ S\+P\+I\+\_\+\+Config\+::fxn\+Table\+Ptr}
+
+Pointer to a table of driver-\/specific implementations of S\+PI A\+P\+Is 
+
+Definition at line 438 of file S\+P\+I.\+h.
+
+\mbox{\Hypertarget{struct_s_p_i___config_a4c8bfac4e9152b4e1da78f4926ecd4db}\label{struct_s_p_i___config_a4c8bfac4e9152b4e1da78f4926ecd4db}} 
+\index{SPI\_Config@{SPI\_Config}!hwAttrs@{hwAttrs}}
+\index{hwAttrs@{hwAttrs}!SPI\_Config@{SPI\_Config}}
+\doxysubsubsection{\texorpdfstring{hwAttrs}{hwAttrs}}
+{\footnotesize\ttfamily void const$\ast$ S\+P\+I\+\_\+\+Config\+::hw\+Attrs}
+
+Pointer to a driver specific hardware attributes structure 
+
+Definition at line 444 of file S\+P\+I.\+h.
+
+\mbox{\Hypertarget{struct_s_p_i___config_a35884e199911642a791e9a422dfccba6}\label{struct_s_p_i___config_a35884e199911642a791e9a422dfccba6}} 
+\index{SPI\_Config@{SPI\_Config}!object@{object}}
+\index{object@{object}!SPI\_Config@{SPI\_Config}}
+\doxysubsubsection{\texorpdfstring{object}{object}}
+{\footnotesize\ttfamily void$\ast$ S\+P\+I\+\_\+\+Config\+::object}
+
+Pointer to a driver specific data object 
+
+Definition at line 441 of file S\+P\+I.\+h.
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Drivers/\+S\+P\+I/\mbox{\hyperlink{_s_p_i_8h}{S\+P\+I.\+h}}\end{DoxyCompactItemize}

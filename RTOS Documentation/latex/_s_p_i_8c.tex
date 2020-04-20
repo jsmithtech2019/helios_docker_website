@@ -1,0 +1,286 @@
+\hypertarget{_s_p_i_8c}{}\doxysection{Drivers/\+S\+P\+I/\+S\+PI.c File Reference}
+\label{_s_p_i_8c}\index{Drivers/SPI/SPI.c@{Drivers/SPI/SPI.c}}
+{\ttfamily \#include $<$ti/drivers/\+S\+P\+I.\+h$>$}\newline
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{_s_p_i_8c_a0e3448b30b88609fa120915e49560601}{S\+P\+I\+\_\+close}} (\mbox{\hyperlink{_s_p_i_8h_a728806534c3c3e8675cfbfb7d8e36f13}{S\+P\+I\+\_\+\+Handle}} handle)
+\begin{DoxyCompactList}\small\item\em Function to close a S\+PI peripheral specified by the S\+PI handle. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{_s_p_i_8c_ab9d3a23991be2741f382749d3844cc2f}{S\+P\+I\+\_\+control}} (\mbox{\hyperlink{_s_p_i_8h_a728806534c3c3e8675cfbfb7d8e36f13}{S\+P\+I\+\_\+\+Handle}} handle, unsigned int cmd, void $\ast$arg)
+\begin{DoxyCompactList}\small\item\em Function performs implementation specific features on a given S\+P\+I\+\_\+\+Handle. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_s_p_i_8c_afd9b09f58917f0e2d14c61b956eba214}{S\+P\+I\+\_\+init}} (void)
+\begin{DoxyCompactList}\small\item\em This function initializes the S\+PI module. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_s_p_i_8h_a728806534c3c3e8675cfbfb7d8e36f13}{S\+P\+I\+\_\+\+Handle}} \mbox{\hyperlink{_s_p_i_8c_a62cfe494cb1df47cd602e8747e894fd1}{S\+P\+I\+\_\+open}} (unsigned int index, \mbox{\hyperlink{struct_s_p_i___params}{S\+P\+I\+\_\+\+Params}} $\ast$params)
+\begin{DoxyCompactList}\small\item\em This function opens a given S\+PI peripheral. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_s_p_i_8c_a9c3dd1748332fd6e31c79a6538a71642}{S\+P\+I\+\_\+\+Params\+\_\+init}} (\mbox{\hyperlink{struct_s_p_i___params}{S\+P\+I\+\_\+\+Params}} $\ast$params)
+\begin{DoxyCompactList}\small\item\em Function to initialize the \mbox{\hyperlink{struct_s_p_i___params}{S\+P\+I\+\_\+\+Params}} struct to its defaults. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_s_p_i_8c_aa6f1baa732ebbf0aa7cd5c3f7dfd215a}{S\+P\+I\+\_\+service\+I\+SR}} (\mbox{\hyperlink{_s_p_i_8h_a728806534c3c3e8675cfbfb7d8e36f13}{S\+P\+I\+\_\+\+Handle}} handle)
+\begin{DoxyCompactList}\small\item\em Function to service the S\+PI module\textquotesingle{}s interrupt service routine. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{_s_p_i_8c_a989e17f96b54fcc3dc2cac5f8ac6bdb2}{S\+P\+I\+\_\+transfer}} (\mbox{\hyperlink{_s_p_i_8h_a728806534c3c3e8675cfbfb7d8e36f13}{S\+P\+I\+\_\+\+Handle}} handle, \mbox{\hyperlink{struct_s_p_i___transaction}{S\+P\+I\+\_\+\+Transaction}} $\ast$transaction)
+\begin{DoxyCompactList}\small\item\em Function to perform S\+PI transactions. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_s_p_i_8c_a6819f7761fc3505c4f885653ff8121f0}{S\+P\+I\+\_\+transfer\+Cancel}} (\mbox{\hyperlink{_s_p_i_8h_a728806534c3c3e8675cfbfb7d8e36f13}{S\+P\+I\+\_\+\+Handle}} handle)
+\begin{DoxyCompactList}\small\item\em Function to cancel S\+PI transactions. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const \mbox{\hyperlink{struct_s_p_i___config}{S\+P\+I\+\_\+\+Config}} \mbox{\hyperlink{_s_p_i_8c_a5193a07e2fa52eefff60481f677b299d}{S\+P\+I\+\_\+config}} \mbox{[}$\,$\mbox{]}
+\item 
+const \mbox{\hyperlink{struct_s_p_i___params}{S\+P\+I\+\_\+\+Params}} \mbox{\hyperlink{_s_p_i_8c_a68f2c6dbfbf86cabc01ddd6db4673170}{S\+P\+I\+\_\+default\+Params}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{_s_p_i_8c_a0e3448b30b88609fa120915e49560601}\label{_s_p_i_8c_a0e3448b30b88609fa120915e49560601}} 
+\index{SPI.c@{SPI.c}!SPI\_close@{SPI\_close}}
+\index{SPI\_close@{SPI\_close}!SPI.c@{SPI.c}}
+\doxysubsubsection{\texorpdfstring{SPI\_close()}{SPI\_close()}}
+{\footnotesize\ttfamily void S\+P\+I\+\_\+close (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_s_p_i_8h_a728806534c3c3e8675cfbfb7d8e36f13}{S\+P\+I\+\_\+\+Handle}}}]{handle }\end{DoxyParamCaption})}
+
+
+
+Function to close a S\+PI peripheral specified by the S\+PI handle. 
+
+\begin{DoxyPrecond}{Precondition}
+\mbox{\hyperlink{_s_p_i_8h_a62cfe494cb1df47cd602e8747e894fd1}{S\+P\+I\+\_\+open()}} has to be called first.
+\end{DoxyPrecond}
+
+\begin{DoxyParams}{Parameters}
+{\em handle} & A S\+PI handle returned from \mbox{\hyperlink{_s_p_i_8h_a62cfe494cb1df47cd602e8747e894fd1}{S\+P\+I\+\_\+open()}}\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{_s_p_i_8h_a62cfe494cb1df47cd602e8747e894fd1}{S\+P\+I\+\_\+open()}} 
+\end{DoxySeeAlso}
+
+
+Definition at line 62 of file S\+P\+I.\+c.
+
+\mbox{\Hypertarget{_s_p_i_8c_ab9d3a23991be2741f382749d3844cc2f}\label{_s_p_i_8c_ab9d3a23991be2741f382749d3844cc2f}} 
+\index{SPI.c@{SPI.c}!SPI\_control@{SPI\_control}}
+\index{SPI\_control@{SPI\_control}!SPI.c@{SPI.c}}
+\doxysubsubsection{\texorpdfstring{SPI\_control()}{SPI\_control()}}
+{\footnotesize\ttfamily int S\+P\+I\+\_\+control (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_s_p_i_8h_a728806534c3c3e8675cfbfb7d8e36f13}{S\+P\+I\+\_\+\+Handle}}}]{handle,  }\item[{unsigned int}]{cmd,  }\item[{void $\ast$}]{arg }\end{DoxyParamCaption})}
+
+
+
+Function performs implementation specific features on a given S\+P\+I\+\_\+\+Handle. 
+
+Commands for S\+P\+I\+\_\+control can originate from \mbox{\hyperlink{_s_p_i_8h}{S\+P\+I.\+h}} or from implementation specific S\+P\+I$\ast$.h ({\itshape S\+P\+I\+C\+C26\+X\+X.\+h}, {\itshape S\+P\+I\+Tiva.\+h}, etc.. ) files. While commands from \mbox{\hyperlink{_s_p_i_8h}{S\+P\+I.\+h}} are A\+PI portable across driver implementations, not all implementations may support all these commands. Conversely, commands from driver implementation specific S\+P\+I$\ast$.h files add unique driver capabilities but are not A\+PI portable across all S\+PI driver implementations.
+
+Commands supported by \mbox{\hyperlink{_s_p_i_8h}{S\+P\+I.\+h}} follow a S\+P\+I\+\_\+\+C\+M\+D\+\_\+$<$cmd$>$ naming convention.~\newline
+ Commands supported by S\+P\+I$\ast$.h follow a S\+P\+I$\ast$\+\_\+\+C\+M\+D\+\_\+$<$cmd$>$ naming convention.~\newline
+ Each control command defines {\bfseries{arg}} differently. The types of {\bfseries{arg}} are documented with each command.
+
+See \mbox{\hyperlink{group___s_p_i___c_m_d}{S\+P\+I\+\_\+control command codes}} for command codes.
+
+See \mbox{\hyperlink{group___s_p_i___s_t_a_t_u_s}{S\+P\+I\+\_\+control return status codes}} for status codes.
+
+\begin{DoxyPrecond}{Precondition}
+\mbox{\hyperlink{_s_p_i_8h_a62cfe494cb1df47cd602e8747e894fd1}{S\+P\+I\+\_\+open()}} has to be called first.
+\end{DoxyPrecond}
+
+\begin{DoxyParams}{Parameters}
+{\em handle} & A S\+PI handle returned from \mbox{\hyperlink{_s_p_i_8h_a62cfe494cb1df47cd602e8747e894fd1}{S\+P\+I\+\_\+open()}}\\
+\hline
+{\em cmd} & \mbox{\hyperlink{_s_p_i_8h}{S\+P\+I.\+h}} or S\+P\+I$\ast$.h commands.\\
+\hline
+{\em arg} & An optional R/W (read/write) command argument accompanied with cmd\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Implementation specific return codes. Negative values indicate unsuccessful operations.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{_s_p_i_8h_a62cfe494cb1df47cd602e8747e894fd1}{S\+P\+I\+\_\+open()}} 
+\end{DoxySeeAlso}
+
+
+Definition at line 70 of file S\+P\+I.\+c.
+
+\mbox{\Hypertarget{_s_p_i_8c_afd9b09f58917f0e2d14c61b956eba214}\label{_s_p_i_8c_afd9b09f58917f0e2d14c61b956eba214}} 
+\index{SPI.c@{SPI.c}!SPI\_init@{SPI\_init}}
+\index{SPI\_init@{SPI\_init}!SPI.c@{SPI.c}}
+\doxysubsubsection{\texorpdfstring{SPI\_init()}{SPI\_init()}}
+{\footnotesize\ttfamily void S\+P\+I\+\_\+init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+This function initializes the S\+PI module. 
+
+\begin{DoxyPrecond}{Precondition}
+The S\+P\+I\+\_\+config structure must exist and be persistent before this function can be called. This function must also be called before any other S\+PI driver A\+P\+Is. This function call does not modify any peripheral registers. 
+\end{DoxyPrecond}
+
+
+Definition at line 78 of file S\+P\+I.\+c.
+
+\mbox{\Hypertarget{_s_p_i_8c_a62cfe494cb1df47cd602e8747e894fd1}\label{_s_p_i_8c_a62cfe494cb1df47cd602e8747e894fd1}} 
+\index{SPI.c@{SPI.c}!SPI\_open@{SPI\_open}}
+\index{SPI\_open@{SPI\_open}!SPI.c@{SPI.c}}
+\doxysubsubsection{\texorpdfstring{SPI\_open()}{SPI\_open()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_p_i_8h_a728806534c3c3e8675cfbfb7d8e36f13}{S\+P\+I\+\_\+\+Handle}} S\+P\+I\+\_\+open (\begin{DoxyParamCaption}\item[{unsigned int}]{index,  }\item[{\mbox{\hyperlink{struct_s_p_i___params}{S\+P\+I\+\_\+\+Params}} $\ast$}]{params }\end{DoxyParamCaption})}
+
+
+
+This function opens a given S\+PI peripheral. 
+
+\begin{DoxyPrecond}{Precondition}
+S\+PI controller has been initialized using \mbox{\hyperlink{_s_p_i_8h_afd9b09f58917f0e2d14c61b956eba214}{S\+P\+I\+\_\+init()}}
+\end{DoxyPrecond}
+
+\begin{DoxyParams}{Parameters}
+{\em index} & Logical peripheral number for the S\+PI indexed into the S\+P\+I\+\_\+config table\\
+\hline
+{\em params} & Pointer to an parameter block, if N\+U\+LL it will use default values. All the fields in this structure are RO (read-\/only).\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A S\+P\+I\+\_\+\+Handle on success or a N\+U\+LL on an error or if it has been opened already.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{_s_p_i_8h_afd9b09f58917f0e2d14c61b956eba214}{S\+P\+I\+\_\+init()}} 
+
+\mbox{\hyperlink{_s_p_i_8h_a0e3448b30b88609fa120915e49560601}{S\+P\+I\+\_\+close()}} 
+\end{DoxySeeAlso}
+
+
+Definition at line 91 of file S\+P\+I.\+c.
+
+\mbox{\Hypertarget{_s_p_i_8c_a9c3dd1748332fd6e31c79a6538a71642}\label{_s_p_i_8c_a9c3dd1748332fd6e31c79a6538a71642}} 
+\index{SPI.c@{SPI.c}!SPI\_Params\_init@{SPI\_Params\_init}}
+\index{SPI\_Params\_init@{SPI\_Params\_init}!SPI.c@{SPI.c}}
+\doxysubsubsection{\texorpdfstring{SPI\_Params\_init()}{SPI\_Params\_init()}}
+{\footnotesize\ttfamily void S\+P\+I\+\_\+\+Params\+\_\+init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_s_p_i___params}{S\+P\+I\+\_\+\+Params}} $\ast$}]{params }\end{DoxyParamCaption})}
+
+
+
+Function to initialize the \mbox{\hyperlink{struct_s_p_i___params}{S\+P\+I\+\_\+\+Params}} struct to its defaults. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em params} & An pointer to \mbox{\hyperlink{struct_s_p_i___params}{S\+P\+I\+\_\+\+Params}} structure for initialization\\
+\hline
+\end{DoxyParams}
+Defaults values are\+: transfer\+Mode = S\+P\+I\+\_\+\+M\+O\+D\+E\+\_\+\+B\+L\+O\+C\+K\+I\+NG transfer\+Timeout = S\+P\+I\+\_\+\+W\+A\+I\+T\+\_\+\+F\+O\+R\+E\+V\+ER transfer\+Callback\+Fxn = N\+U\+LL mode = S\+P\+I\+\_\+\+M\+A\+S\+T\+ER bit\+Rate = 1000000 (Hz) data\+Size = 8 (bits) frame\+Format = S\+P\+I\+\_\+\+P\+O\+L0\+\_\+\+P\+H\+A0 
+
+Definition at line 113 of file S\+P\+I.\+c.
+
+\mbox{\Hypertarget{_s_p_i_8c_aa6f1baa732ebbf0aa7cd5c3f7dfd215a}\label{_s_p_i_8c_aa6f1baa732ebbf0aa7cd5c3f7dfd215a}} 
+\index{SPI.c@{SPI.c}!SPI\_serviceISR@{SPI\_serviceISR}}
+\index{SPI\_serviceISR@{SPI\_serviceISR}!SPI.c@{SPI.c}}
+\doxysubsubsection{\texorpdfstring{SPI\_serviceISR()}{SPI\_serviceISR()}}
+{\footnotesize\ttfamily void S\+P\+I\+\_\+service\+I\+SR (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_s_p_i_8h_a728806534c3c3e8675cfbfb7d8e36f13}{S\+P\+I\+\_\+\+Handle}}}]{handle }\end{DoxyParamCaption})}
+
+
+
+Function to service the S\+PI module\textquotesingle{}s interrupt service routine. 
+
+This function is not supported on all driver implementations. Refer to implementation specific documentation for details.
+
+
+\begin{DoxyParams}{Parameters}
+{\em handle} & A S\+P\+I\+\_\+\+Handle \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 121 of file S\+P\+I.\+c.
+
+\mbox{\Hypertarget{_s_p_i_8c_a989e17f96b54fcc3dc2cac5f8ac6bdb2}\label{_s_p_i_8c_a989e17f96b54fcc3dc2cac5f8ac6bdb2}} 
+\index{SPI.c@{SPI.c}!SPI\_transfer@{SPI\_transfer}}
+\index{SPI\_transfer@{SPI\_transfer}!SPI.c@{SPI.c}}
+\doxysubsubsection{\texorpdfstring{SPI\_transfer()}{SPI\_transfer()}}
+{\footnotesize\ttfamily bool S\+P\+I\+\_\+transfer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_s_p_i_8h_a728806534c3c3e8675cfbfb7d8e36f13}{S\+P\+I\+\_\+\+Handle}}}]{handle,  }\item[{\mbox{\hyperlink{struct_s_p_i___transaction}{S\+P\+I\+\_\+\+Transaction}} $\ast$}]{transaction }\end{DoxyParamCaption})}
+
+
+
+Function to perform S\+PI transactions. 
+
+If the S\+PI is in \mbox{\hyperlink{_s_p_i_8h_a60a7e3d74577b38aa79ea6983362f942a84379dc90398ca075038c8d5ee465f6a}{S\+P\+I\+\_\+\+M\+A\+S\+T\+ER}} mode, it will immediately start the transaction. If the S\+PI is in \mbox{\hyperlink{_s_p_i_8h_a60a7e3d74577b38aa79ea6983362f942abc98c1546fe12d3fceb1f86cf670faa9}{S\+P\+I\+\_\+\+S\+L\+A\+VE}} mode, it prepares itself for a transaction with a S\+PI master.
+
+In \mbox{\hyperlink{_s_p_i_8h_ab9ea76c6529d6076eee5e1c4a5a92c6fa0dfb2358e008316426895e7237c398e8}{S\+P\+I\+\_\+\+M\+O\+D\+E\+\_\+\+B\+L\+O\+C\+K\+I\+NG}}, S\+P\+I\+\_\+transfer will block task execution until the transaction has completed.
+
+In \mbox{\hyperlink{_s_p_i_8h_ab9ea76c6529d6076eee5e1c4a5a92c6fa5631e69925c47a62a261c78ebbda39fb}{S\+P\+I\+\_\+\+M\+O\+D\+E\+\_\+\+C\+A\+L\+L\+B\+A\+CK}}, \mbox{\hyperlink{_s_p_i_8h_a989e17f96b54fcc3dc2cac5f8ac6bdb2}{S\+P\+I\+\_\+transfer()}} does not block task execution and calls a \mbox{\hyperlink{_s_p_i_8h_a207e2d5a7e7ea5606b6995b6485ca015}{S\+P\+I\+\_\+\+Callback\+Fxn}}. This makes the S\+P\+I\+\_\+tranfer() safe to be used within a Task, Swi, or Hwi context. The \mbox{\hyperlink{struct_s_p_i___transaction}{S\+P\+I\+\_\+\+Transaction}} structure must stay persistent until the S\+P\+I\+\_\+transfer function has completed!
+
+
+\begin{DoxyParams}{Parameters}
+{\em handle} & A S\+P\+I\+\_\+\+Handle\\
+\hline
+{\em transaction} & A pointer to a \mbox{\hyperlink{struct_s_p_i___transaction}{S\+P\+I\+\_\+\+Transaction}}. All of the fields within transaction except \mbox{\hyperlink{struct_s_p_i___transaction_ad049d6a900c4bdb59a5ee8ce3d5bced2}{S\+P\+I\+\_\+\+Transaction.\+count}} and \mbox{\hyperlink{struct_s_p_i___transaction_aa244504b2384411f7de17340be62128a}{S\+P\+I\+\_\+\+Transaction.\+status}} are WO (write-\/only) unless otherwise noted in the driver implementations. If a transaction timeout has occured, \mbox{\hyperlink{struct_s_p_i___transaction_ad049d6a900c4bdb59a5ee8ce3d5bced2}{S\+P\+I\+\_\+\+Transaction.\+count}} will contain the number of frames that were transferred.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if started successfully; else false
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{_s_p_i_8h_a62cfe494cb1df47cd602e8747e894fd1}{S\+P\+I\+\_\+open}} 
+
+\mbox{\hyperlink{_s_p_i_8h_a6819f7761fc3505c4f885653ff8121f0}{S\+P\+I\+\_\+transfer\+Cancel}} 
+\end{DoxySeeAlso}
+
+
+Definition at line 129 of file S\+P\+I.\+c.
+
+\mbox{\Hypertarget{_s_p_i_8c_a6819f7761fc3505c4f885653ff8121f0}\label{_s_p_i_8c_a6819f7761fc3505c4f885653ff8121f0}} 
+\index{SPI.c@{SPI.c}!SPI\_transferCancel@{SPI\_transferCancel}}
+\index{SPI\_transferCancel@{SPI\_transferCancel}!SPI.c@{SPI.c}}
+\doxysubsubsection{\texorpdfstring{SPI\_transferCancel()}{SPI\_transferCancel()}}
+{\footnotesize\ttfamily void S\+P\+I\+\_\+transfer\+Cancel (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_s_p_i_8h_a728806534c3c3e8675cfbfb7d8e36f13}{S\+P\+I\+\_\+\+Handle}}}]{handle }\end{DoxyParamCaption})}
+
+
+
+Function to cancel S\+PI transactions. 
+
+In \mbox{\hyperlink{_s_p_i_8h_ab9ea76c6529d6076eee5e1c4a5a92c6fa0dfb2358e008316426895e7237c398e8}{S\+P\+I\+\_\+\+M\+O\+D\+E\+\_\+\+B\+L\+O\+C\+K\+I\+NG}}, S\+P\+I\+\_\+transfer\+Cancel has no effect.
+
+In \mbox{\hyperlink{_s_p_i_8h_ab9ea76c6529d6076eee5e1c4a5a92c6fa5631e69925c47a62a261c78ebbda39fb}{S\+P\+I\+\_\+\+M\+O\+D\+E\+\_\+\+C\+A\+L\+L\+B\+A\+CK}}, \mbox{\hyperlink{_s_p_i_8h_a6819f7761fc3505c4f885653ff8121f0}{S\+P\+I\+\_\+transfer\+Cancel()}} will stop an S\+PI transfer if if one is in progress. If a transaction was in progress, its callback function will be called in context from which this A\+PI is called from. The \mbox{\hyperlink{_s_p_i_8h_a207e2d5a7e7ea5606b6995b6485ca015}{S\+P\+I\+\_\+\+Callback\+Fxn}} function can determine if the transaction was successful or not by reading the \mbox{\hyperlink{_s_p_i_8h_a913c57c335166de9caa54b7eb9ad95fb}{S\+P\+I\+\_\+\+Status}} status value in the \mbox{\hyperlink{struct_s_p_i___transaction}{S\+P\+I\+\_\+\+Transaction}} structure.
+
+
+\begin{DoxyParams}{Parameters}
+{\em handle} & A S\+P\+I\+\_\+\+Handle\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{_s_p_i_8h_a62cfe494cb1df47cd602e8747e894fd1}{S\+P\+I\+\_\+open}} 
+
+\mbox{\hyperlink{_s_p_i_8h_a989e17f96b54fcc3dc2cac5f8ac6bdb2}{S\+P\+I\+\_\+transfer}} 
+\end{DoxySeeAlso}
+
+
+Definition at line 137 of file S\+P\+I.\+c.
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{_s_p_i_8c_a5193a07e2fa52eefff60481f677b299d}\label{_s_p_i_8c_a5193a07e2fa52eefff60481f677b299d}} 
+\index{SPI.c@{SPI.c}!SPI\_config@{SPI\_config}}
+\index{SPI\_config@{SPI\_config}!SPI.c@{SPI.c}}
+\doxysubsubsection{\texorpdfstring{SPI\_config}{SPI\_config}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{struct_s_p_i___config}{S\+P\+I\+\_\+\+Config}} S\+P\+I\+\_\+config\mbox{[}$\,$\mbox{]}}
+
+\mbox{\Hypertarget{_s_p_i_8c_a68f2c6dbfbf86cabc01ddd6db4673170}\label{_s_p_i_8c_a68f2c6dbfbf86cabc01ddd6db4673170}} 
+\index{SPI.c@{SPI.c}!SPI\_defaultParams@{SPI\_defaultParams}}
+\index{SPI\_defaultParams@{SPI\_defaultParams}!SPI.c@{SPI.c}}
+\doxysubsubsection{\texorpdfstring{SPI\_defaultParams}{SPI\_defaultParams}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{struct_s_p_i___params}{S\+P\+I\+\_\+\+Params}} S\+P\+I\+\_\+default\+Params}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{= \{}
+\DoxyCodeLine{    \mbox{\hyperlink{_s_p_i_8h_ab9ea76c6529d6076eee5e1c4a5a92c6fa0dfb2358e008316426895e7237c398e8}{SPI\_MODE\_BLOCKING}},  }
+\DoxyCodeLine{    \mbox{\hyperlink{_s_p_i_8h_a7cab73b936e6e08392882196df41277e}{SPI\_WAIT\_FOREVER}},   }
+\DoxyCodeLine{    NULL,               }
+\DoxyCodeLine{    \mbox{\hyperlink{_s_p_i_8h_a60a7e3d74577b38aa79ea6983362f942a84379dc90398ca075038c8d5ee465f6a}{SPI\_MASTER}},         }
+\DoxyCodeLine{    1000000,            }
+\DoxyCodeLine{    8,                  }
+\DoxyCodeLine{    \mbox{\hyperlink{_s_p_i_8h_a4e1f33555dfa8147205af5b266f3a489a0396d8c01166ff94e94e0c200261eba3}{SPI\_POL0\_PHA0}},      }
+\DoxyCodeLine{    (uintptr\_t) NULL    }
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+Definition at line 48 of file S\+P\+I.\+c.
+

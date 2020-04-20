@@ -1,0 +1,409 @@
+\hypertarget{heapmgr_8h}{}\doxysection{I\+Call/heapmgr.h File Reference}
+\label{heapmgr_8h}\index{ICall/heapmgr.h@{ICall/heapmgr.h}}
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{heapmgr_8h_ab9879c41a03d35b1ec8583ac5422e16f}{H\+E\+A\+P\+M\+G\+R\+\_\+\+I\+N\+IT}}(void)~heapmgr\+Init
+\begin{DoxyCompactList}\small\item\em Initialize the heap memory management system. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{heapmgr_8h_abffd4d9357faedc1b2a3b1381632bd59}{H\+E\+A\+P\+M\+G\+R\+\_\+\+M\+A\+L\+L\+OC}}~heapmgr\+Malloc
+\item 
+\#define \mbox{\hyperlink{heapmgr_8h_accf8271f89d3edbdc849f4ee549f2c17}{H\+E\+A\+P\+M\+G\+R\+\_\+\+F\+R\+EE}}~heapmgr\+Free
+\item 
+\#define \mbox{\hyperlink{heapmgr_8h_a50f3147f2e5f1b11a3fcff7811105a45}{H\+E\+A\+P\+M\+G\+R\+\_\+\+G\+E\+T\+M\+E\+T\+R\+I\+CS}}~heapmgr\+Get\+Metrics
+\item 
+\#define \mbox{\hyperlink{heapmgr_8h_a640211d4c11099ec4e05c430fbe62877}{H\+E\+A\+P\+M\+G\+R\+\_\+\+S\+A\+N\+I\+T\+Y\+\_\+\+C\+H\+E\+CK}}~heapmgr\+Sanity\+Check
+\item 
+\#define \mbox{\hyperlink{heapmgr_8h_a4fab13240322465b6d37611c9ce6527e}{H\+E\+A\+P\+M\+G\+R\+\_\+\+P\+R\+E\+F\+I\+X\+ED}}(\+\_\+name)~heapmgr \#\# \+\_\+name
+\item 
+\#define \mbox{\hyperlink{heapmgr_8h_a3a4e5bb55e43e9b7fcfd593f330a1548}{H\+E\+A\+P\+M\+G\+R\+\_\+\+L\+O\+CK}}()
+\item 
+\#define \mbox{\hyperlink{heapmgr_8h_a7fbc189b7d07bdffae5a4c7f28150428}{H\+E\+A\+P\+M\+G\+R\+\_\+\+U\+N\+L\+O\+CK}}()
+\item 
+\#define \mbox{\hyperlink{heapmgr_8h_a8f06c3762acfd7a6e517630e7e35b421}{H\+E\+A\+P\+M\+G\+R\+\_\+\+I\+M\+P\+L\+\_\+\+I\+N\+IT}}()
+\item 
+\#define \mbox{\hyperlink{heapmgr_8h_a5072bad6d6086fcc6a563525cc4818e4}{H\+E\+A\+P\+M\+G\+R\+\_\+\+M\+E\+M\+S\+ET}}(\+\_\+d,  \+\_\+v,  \+\_\+c)~memset(\+\_\+d,\+\_\+v,\+\_\+c)
+\item 
+\#define \mbox{\hyperlink{heapmgr_8h_a54e1c9c30c083a41baadf7a9713b7b71}{H\+E\+A\+P\+M\+G\+R\+\_\+\+A\+S\+S\+E\+RT}}(\+\_\+exp)
+\item 
+\#define \mbox{\hyperlink{heapmgr_8h_a8632c6199f64aa116a03f974e4f74c22}{H\+E\+A\+P\+M\+G\+R\+\_\+\+S\+I\+ZE}}~1024
+\item 
+\#define \mbox{\hyperlink{heapmgr_8h_ac716697763b5b14904ec08e570c4686c}{H\+E\+A\+P\+M\+G\+R\+\_\+\+M\+I\+N\+\_\+\+B\+L\+K\+SZ}}~4
+\item 
+\#define \mbox{\hyperlink{heapmgr_8h_a189cbddb93cab40dc91ee7677da0e79b}{H\+E\+A\+P\+M\+G\+R\+\_\+\+S\+M\+A\+L\+L\+\_\+\+B\+L\+K\+SZ}}~16
+\item 
+\#define \mbox{\hyperlink{heapmgr_8h_a0a893f9faad73f21ee27ba827d405d99}{H\+E\+A\+P\+M\+G\+R\+\_\+\+F\+F1}}~\mbox{\hyperlink{heapmgr_8h_a4fab13240322465b6d37611c9ce6527e}{H\+E\+A\+P\+M\+G\+R\+\_\+\+P\+R\+E\+F\+I\+X\+ED}}(Ff1)
+\item 
+\#define \mbox{\hyperlink{heapmgr_8h_aa17b5a9682ead441f6a4fe7f881a3cb7}{H\+E\+A\+P\+M\+G\+R\+\_\+\+F\+F2}}~\mbox{\hyperlink{heapmgr_8h_a4fab13240322465b6d37611c9ce6527e}{H\+E\+A\+P\+M\+G\+R\+\_\+\+P\+R\+E\+F\+I\+X\+ED}}(Ff2)
+\item 
+\#define \mbox{\hyperlink{heapmgr_8h_abae554f91c3821a7e13ebb5fa5ae8fd6}{H\+E\+A\+P\+M\+G\+R\+\_\+\+H\+E\+A\+P\+S\+T\+O\+RE}}~\mbox{\hyperlink{heapmgr_8h_a4fab13240322465b6d37611c9ce6527e}{H\+E\+A\+P\+M\+G\+R\+\_\+\+P\+R\+E\+F\+I\+X\+ED}}(Heap\+Store)
+\item 
+\#define \mbox{\hyperlink{heapmgr_8h_a7c6435b85c6ec6e6d578cb2f89787cc9}{H\+E\+A\+P\+M\+G\+R\+\_\+\+H\+E\+AP}}~\mbox{\hyperlink{heapmgr_8h_a4fab13240322465b6d37611c9ce6527e}{H\+E\+A\+P\+M\+G\+R\+\_\+\+P\+R\+E\+F\+I\+X\+ED}}(Heap)
+\item 
+\#define \mbox{\hyperlink{heapmgr_8h_a7d86ab3060a89b2a9eb4fb2477525091}{H\+E\+A\+P\+M\+G\+R\+\_\+\+I\+N\+\_\+\+U\+SE}}~0x8000u
+\item 
+\#define \mbox{\hyperlink{heapmgr_8h_ac42a05e5dd13571cb1f9c9352b40694c}{S\+M\+A\+L\+L\+B\+L\+K\+H\+E\+AP}}~232
+\item 
+\#define \mbox{\hyperlink{heapmgr_8h_a96d2e9f818d0ce96fb0366553af9791e}{H\+D\+R\+SZ}}~4
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef uint8\+\_\+t \mbox{\hyperlink{heapmgr_8h_ab5fbde684ed5cb6be63fd19f21b78d4c}{hm\+U8\+\_\+t}}
+\item 
+typedef uint16\+\_\+t \mbox{\hyperlink{heapmgr_8h_aaf6f0f6dd1410800cc6bca8cfe9b5881}{hm\+U16\+\_\+t}}
+\item 
+typedef uint32\+\_\+t \mbox{\hyperlink{heapmgr_8h_ac21a4ee58cfddcd25cb373f3851558de}{hm\+U32\+\_\+t}}
+\item 
+typedef \mbox{\hyperlink{heapmgr_8h_aaf6f0f6dd1410800cc6bca8cfe9b5881}{hm\+U16\+\_\+t}} \mbox{\hyperlink{heapmgr_8h_a77e9eaabf623a10636768b0aacea7fd6}{heapmgr\+Hdr\+\_\+t}}
+\item 
+typedef \mbox{\hyperlink{heapmgr_8h_ac21a4ee58cfddcd25cb373f3851558de}{hm\+U32\+\_\+t}} \mbox{\hyperlink{heapmgr_8h_a7b00660a2bc64694c41345fb61aa8426}{heapmgr\+Align\+\_\+t}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void $\ast$ \mbox{\hyperlink{heapmgr_8h_a3dabfc1fb3705d5c11d002c2d06fb0c0}{H\+E\+A\+P\+M\+G\+R\+\_\+\+M\+A\+L\+L\+OC}} (\mbox{\hyperlink{heapmgr_8h_aaf6f0f6dd1410800cc6bca8cfe9b5881}{hm\+U16\+\_\+t}} size)
+\begin{DoxyCompactList}\small\item\em Implementation of the allocator functionality. \end{DoxyCompactList}\item 
+void $\ast$ \mbox{\hyperlink{heapmgr_8h_a30e3d81c28cf01d684fd481dcd4eaa3e}{H\+E\+A\+P\+M\+G\+R\+\_\+\+R\+E\+A\+L\+L\+OC}} (void $\ast$ptr, \mbox{\hyperlink{heapmgr_8h_aaf6f0f6dd1410800cc6bca8cfe9b5881}{hm\+U16\+\_\+t}} size)
+\begin{DoxyCompactList}\small\item\em Re-\/allocates a memory block of the requested size. Note that this function always re-\/allocates even if the requested size is lower than the original. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{heapmgr_8h_ae07cfd6f89c680c99a931df01363407a}{H\+E\+A\+P\+M\+G\+R\+\_\+\+F\+R\+EE}} (void $\ast$ptr)
+\begin{DoxyCompactList}\small\item\em Implementation of the de-\/allocator functionality. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{heapmgr_8h_a96d2e9f818d0ce96fb0366553af9791e}\label{heapmgr_8h_a96d2e9f818d0ce96fb0366553af9791e}} 
+\index{heapmgr.h@{heapmgr.h}!HDRSZ@{HDRSZ}}
+\index{HDRSZ@{HDRSZ}!heapmgr.h@{heapmgr.h}}
+\doxysubsubsection{\texorpdfstring{HDRSZ}{HDRSZ}}
+{\footnotesize\ttfamily \#define H\+D\+R\+SZ~4}
+
+
+
+Definition at line 215 of file heapmgr.\+h.
+
+\mbox{\Hypertarget{heapmgr_8h_a54e1c9c30c083a41baadf7a9713b7b71}\label{heapmgr_8h_a54e1c9c30c083a41baadf7a9713b7b71}} 
+\index{heapmgr.h@{heapmgr.h}!HEAPMGR\_ASSERT@{HEAPMGR\_ASSERT}}
+\index{HEAPMGR\_ASSERT@{HEAPMGR\_ASSERT}!heapmgr.h@{heapmgr.h}}
+\doxysubsubsection{\texorpdfstring{HEAPMGR\_ASSERT}{HEAPMGR\_ASSERT}}
+{\footnotesize\ttfamily \#define H\+E\+A\+P\+M\+G\+R\+\_\+\+A\+S\+S\+E\+RT(\begin{DoxyParamCaption}\item[{}]{\+\_\+exp }\end{DoxyParamCaption})}
+
+
+
+Definition at line 104 of file heapmgr.\+h.
+
+\mbox{\Hypertarget{heapmgr_8h_a0a893f9faad73f21ee27ba827d405d99}\label{heapmgr_8h_a0a893f9faad73f21ee27ba827d405d99}} 
+\index{heapmgr.h@{heapmgr.h}!HEAPMGR\_FF1@{HEAPMGR\_FF1}}
+\index{HEAPMGR\_FF1@{HEAPMGR\_FF1}!heapmgr.h@{heapmgr.h}}
+\doxysubsubsection{\texorpdfstring{HEAPMGR\_FF1}{HEAPMGR\_FF1}}
+{\footnotesize\ttfamily \#define H\+E\+A\+P\+M\+G\+R\+\_\+\+F\+F1~\mbox{\hyperlink{heapmgr_8h_a4fab13240322465b6d37611c9ce6527e}{H\+E\+A\+P\+M\+G\+R\+\_\+\+P\+R\+E\+F\+I\+X\+ED}}(Ff1)}
+
+
+
+Definition at line 138 of file heapmgr.\+h.
+
+\mbox{\Hypertarget{heapmgr_8h_aa17b5a9682ead441f6a4fe7f881a3cb7}\label{heapmgr_8h_aa17b5a9682ead441f6a4fe7f881a3cb7}} 
+\index{heapmgr.h@{heapmgr.h}!HEAPMGR\_FF2@{HEAPMGR\_FF2}}
+\index{HEAPMGR\_FF2@{HEAPMGR\_FF2}!heapmgr.h@{heapmgr.h}}
+\doxysubsubsection{\texorpdfstring{HEAPMGR\_FF2}{HEAPMGR\_FF2}}
+{\footnotesize\ttfamily \#define H\+E\+A\+P\+M\+G\+R\+\_\+\+F\+F2~\mbox{\hyperlink{heapmgr_8h_a4fab13240322465b6d37611c9ce6527e}{H\+E\+A\+P\+M\+G\+R\+\_\+\+P\+R\+E\+F\+I\+X\+ED}}(Ff2)}
+
+
+
+Definition at line 139 of file heapmgr.\+h.
+
+\mbox{\Hypertarget{heapmgr_8h_accf8271f89d3edbdc849f4ee549f2c17}\label{heapmgr_8h_accf8271f89d3edbdc849f4ee549f2c17}} 
+\index{heapmgr.h@{heapmgr.h}!HEAPMGR\_FREE@{HEAPMGR\_FREE}}
+\index{HEAPMGR\_FREE@{HEAPMGR\_FREE}!heapmgr.h@{heapmgr.h}}
+\doxysubsubsection{\texorpdfstring{HEAPMGR\_FREE}{HEAPMGR\_FREE}}
+{\footnotesize\ttfamily \#define H\+E\+A\+P\+M\+G\+R\+\_\+\+F\+R\+EE~heapmgr\+Free}
+
+
+
+Definition at line 68 of file heapmgr.\+h.
+
+\mbox{\Hypertarget{heapmgr_8h_a50f3147f2e5f1b11a3fcff7811105a45}\label{heapmgr_8h_a50f3147f2e5f1b11a3fcff7811105a45}} 
+\index{heapmgr.h@{heapmgr.h}!HEAPMGR\_GETMETRICS@{HEAPMGR\_GETMETRICS}}
+\index{HEAPMGR\_GETMETRICS@{HEAPMGR\_GETMETRICS}!heapmgr.h@{heapmgr.h}}
+\doxysubsubsection{\texorpdfstring{HEAPMGR\_GETMETRICS}{HEAPMGR\_GETMETRICS}}
+{\footnotesize\ttfamily \#define H\+E\+A\+P\+M\+G\+R\+\_\+\+G\+E\+T\+M\+E\+T\+R\+I\+CS~heapmgr\+Get\+Metrics}
+
+
+
+Definition at line 72 of file heapmgr.\+h.
+
+\mbox{\Hypertarget{heapmgr_8h_a7c6435b85c6ec6e6d578cb2f89787cc9}\label{heapmgr_8h_a7c6435b85c6ec6e6d578cb2f89787cc9}} 
+\index{heapmgr.h@{heapmgr.h}!HEAPMGR\_HEAP@{HEAPMGR\_HEAP}}
+\index{HEAPMGR\_HEAP@{HEAPMGR\_HEAP}!heapmgr.h@{heapmgr.h}}
+\doxysubsubsection{\texorpdfstring{HEAPMGR\_HEAP}{HEAPMGR\_HEAP}}
+{\footnotesize\ttfamily \#define H\+E\+A\+P\+M\+G\+R\+\_\+\+H\+E\+AP~\mbox{\hyperlink{heapmgr_8h_a4fab13240322465b6d37611c9ce6527e}{H\+E\+A\+P\+M\+G\+R\+\_\+\+P\+R\+E\+F\+I\+X\+ED}}(Heap)}
+
+
+
+Definition at line 141 of file heapmgr.\+h.
+
+\mbox{\Hypertarget{heapmgr_8h_abae554f91c3821a7e13ebb5fa5ae8fd6}\label{heapmgr_8h_abae554f91c3821a7e13ebb5fa5ae8fd6}} 
+\index{heapmgr.h@{heapmgr.h}!HEAPMGR\_HEAPSTORE@{HEAPMGR\_HEAPSTORE}}
+\index{HEAPMGR\_HEAPSTORE@{HEAPMGR\_HEAPSTORE}!heapmgr.h@{heapmgr.h}}
+\doxysubsubsection{\texorpdfstring{HEAPMGR\_HEAPSTORE}{HEAPMGR\_HEAPSTORE}}
+{\footnotesize\ttfamily \#define H\+E\+A\+P\+M\+G\+R\+\_\+\+H\+E\+A\+P\+S\+T\+O\+RE~\mbox{\hyperlink{heapmgr_8h_a4fab13240322465b6d37611c9ce6527e}{H\+E\+A\+P\+M\+G\+R\+\_\+\+P\+R\+E\+F\+I\+X\+ED}}(Heap\+Store)}
+
+
+
+Definition at line 140 of file heapmgr.\+h.
+
+\mbox{\Hypertarget{heapmgr_8h_a8f06c3762acfd7a6e517630e7e35b421}\label{heapmgr_8h_a8f06c3762acfd7a6e517630e7e35b421}} 
+\index{heapmgr.h@{heapmgr.h}!HEAPMGR\_IMPL\_INIT@{HEAPMGR\_IMPL\_INIT}}
+\index{HEAPMGR\_IMPL\_INIT@{HEAPMGR\_IMPL\_INIT}!heapmgr.h@{heapmgr.h}}
+\doxysubsubsection{\texorpdfstring{HEAPMGR\_IMPL\_INIT}{HEAPMGR\_IMPL\_INIT}}
+{\footnotesize\ttfamily \#define H\+E\+A\+P\+M\+G\+R\+\_\+\+I\+M\+P\+L\+\_\+\+I\+N\+IT(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 94 of file heapmgr.\+h.
+
+\mbox{\Hypertarget{heapmgr_8h_a7d86ab3060a89b2a9eb4fb2477525091}\label{heapmgr_8h_a7d86ab3060a89b2a9eb4fb2477525091}} 
+\index{heapmgr.h@{heapmgr.h}!HEAPMGR\_IN\_USE@{HEAPMGR\_IN\_USE}}
+\index{HEAPMGR\_IN\_USE@{HEAPMGR\_IN\_USE}!heapmgr.h@{heapmgr.h}}
+\doxysubsubsection{\texorpdfstring{HEAPMGR\_IN\_USE}{HEAPMGR\_IN\_USE}}
+{\footnotesize\ttfamily \#define H\+E\+A\+P\+M\+G\+R\+\_\+\+I\+N\+\_\+\+U\+SE~0x8000u}
+
+
+
+Definition at line 172 of file heapmgr.\+h.
+
+\mbox{\Hypertarget{heapmgr_8h_ab9879c41a03d35b1ec8583ac5422e16f}\label{heapmgr_8h_ab9879c41a03d35b1ec8583ac5422e16f}} 
+\index{heapmgr.h@{heapmgr.h}!HEAPMGR\_INIT@{HEAPMGR\_INIT}}
+\index{HEAPMGR\_INIT@{HEAPMGR\_INIT}!heapmgr.h@{heapmgr.h}}
+\doxysubsubsection{\texorpdfstring{HEAPMGR\_INIT}{HEAPMGR\_INIT}}
+{\footnotesize\ttfamily void H\+E\+A\+P\+M\+G\+R\+\_\+\+I\+N\+IT~heapmgr\+Init}
+
+
+
+Initialize the heap memory management system. 
+
+
+
+Definition at line 60 of file heapmgr.\+h.
+
+\mbox{\Hypertarget{heapmgr_8h_a3a4e5bb55e43e9b7fcfd593f330a1548}\label{heapmgr_8h_a3a4e5bb55e43e9b7fcfd593f330a1548}} 
+\index{heapmgr.h@{heapmgr.h}!HEAPMGR\_LOCK@{HEAPMGR\_LOCK}}
+\index{HEAPMGR\_LOCK@{HEAPMGR\_LOCK}!heapmgr.h@{heapmgr.h}}
+\doxysubsubsection{\texorpdfstring{HEAPMGR\_LOCK}{HEAPMGR\_LOCK}}
+{\footnotesize\ttfamily \#define H\+E\+A\+P\+M\+G\+R\+\_\+\+L\+O\+CK(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 85 of file heapmgr.\+h.
+
+\mbox{\Hypertarget{heapmgr_8h_abffd4d9357faedc1b2a3b1381632bd59}\label{heapmgr_8h_abffd4d9357faedc1b2a3b1381632bd59}} 
+\index{heapmgr.h@{heapmgr.h}!HEAPMGR\_MALLOC@{HEAPMGR\_MALLOC}}
+\index{HEAPMGR\_MALLOC@{HEAPMGR\_MALLOC}!heapmgr.h@{heapmgr.h}}
+\doxysubsubsection{\texorpdfstring{HEAPMGR\_MALLOC}{HEAPMGR\_MALLOC}}
+{\footnotesize\ttfamily \#define H\+E\+A\+P\+M\+G\+R\+\_\+\+M\+A\+L\+L\+OC~heapmgr\+Malloc}
+
+
+
+Definition at line 64 of file heapmgr.\+h.
+
+\mbox{\Hypertarget{heapmgr_8h_a5072bad6d6086fcc6a563525cc4818e4}\label{heapmgr_8h_a5072bad6d6086fcc6a563525cc4818e4}} 
+\index{heapmgr.h@{heapmgr.h}!HEAPMGR\_MEMSET@{HEAPMGR\_MEMSET}}
+\index{HEAPMGR\_MEMSET@{HEAPMGR\_MEMSET}!heapmgr.h@{heapmgr.h}}
+\doxysubsubsection{\texorpdfstring{HEAPMGR\_MEMSET}{HEAPMGR\_MEMSET}}
+{\footnotesize\ttfamily \#define H\+E\+A\+P\+M\+G\+R\+\_\+\+M\+E\+M\+S\+ET(\begin{DoxyParamCaption}\item[{}]{\+\_\+d,  }\item[{}]{\+\_\+v,  }\item[{}]{\+\_\+c }\end{DoxyParamCaption})~memset(\+\_\+d,\+\_\+v,\+\_\+c)}
+
+
+
+Definition at line 99 of file heapmgr.\+h.
+
+\mbox{\Hypertarget{heapmgr_8h_ac716697763b5b14904ec08e570c4686c}\label{heapmgr_8h_ac716697763b5b14904ec08e570c4686c}} 
+\index{heapmgr.h@{heapmgr.h}!HEAPMGR\_MIN\_BLKSZ@{HEAPMGR\_MIN\_BLKSZ}}
+\index{HEAPMGR\_MIN\_BLKSZ@{HEAPMGR\_MIN\_BLKSZ}!heapmgr.h@{heapmgr.h}}
+\doxysubsubsection{\texorpdfstring{HEAPMGR\_MIN\_BLKSZ}{HEAPMGR\_MIN\_BLKSZ}}
+{\footnotesize\ttfamily \#define H\+E\+A\+P\+M\+G\+R\+\_\+\+M\+I\+N\+\_\+\+B\+L\+K\+SZ~4}
+
+
+
+Definition at line 118 of file heapmgr.\+h.
+
+\mbox{\Hypertarget{heapmgr_8h_a4fab13240322465b6d37611c9ce6527e}\label{heapmgr_8h_a4fab13240322465b6d37611c9ce6527e}} 
+\index{heapmgr.h@{heapmgr.h}!HEAPMGR\_PREFIXED@{HEAPMGR\_PREFIXED}}
+\index{HEAPMGR\_PREFIXED@{HEAPMGR\_PREFIXED}!heapmgr.h@{heapmgr.h}}
+\doxysubsubsection{\texorpdfstring{HEAPMGR\_PREFIXED}{HEAPMGR\_PREFIXED}}
+{\footnotesize\ttfamily \#define H\+E\+A\+P\+M\+G\+R\+\_\+\+P\+R\+E\+F\+I\+X\+ED(\begin{DoxyParamCaption}\item[{}]{\+\_\+name }\end{DoxyParamCaption})~heapmgr \#\# \+\_\+name}
+
+
+
+Definition at line 80 of file heapmgr.\+h.
+
+\mbox{\Hypertarget{heapmgr_8h_a640211d4c11099ec4e05c430fbe62877}\label{heapmgr_8h_a640211d4c11099ec4e05c430fbe62877}} 
+\index{heapmgr.h@{heapmgr.h}!HEAPMGR\_SANITY\_CHECK@{HEAPMGR\_SANITY\_CHECK}}
+\index{HEAPMGR\_SANITY\_CHECK@{HEAPMGR\_SANITY\_CHECK}!heapmgr.h@{heapmgr.h}}
+\doxysubsubsection{\texorpdfstring{HEAPMGR\_SANITY\_CHECK}{HEAPMGR\_SANITY\_CHECK}}
+{\footnotesize\ttfamily \#define H\+E\+A\+P\+M\+G\+R\+\_\+\+S\+A\+N\+I\+T\+Y\+\_\+\+C\+H\+E\+CK~heapmgr\+Sanity\+Check}
+
+
+
+Definition at line 76 of file heapmgr.\+h.
+
+\mbox{\Hypertarget{heapmgr_8h_a8632c6199f64aa116a03f974e4f74c22}\label{heapmgr_8h_a8632c6199f64aa116a03f974e4f74c22}} 
+\index{heapmgr.h@{heapmgr.h}!HEAPMGR\_SIZE@{HEAPMGR\_SIZE}}
+\index{HEAPMGR\_SIZE@{HEAPMGR\_SIZE}!heapmgr.h@{heapmgr.h}}
+\doxysubsubsection{\texorpdfstring{HEAPMGR\_SIZE}{HEAPMGR\_SIZE}}
+{\footnotesize\ttfamily \#define H\+E\+A\+P\+M\+G\+R\+\_\+\+S\+I\+ZE~1024}
+
+
+
+Definition at line 110 of file heapmgr.\+h.
+
+\mbox{\Hypertarget{heapmgr_8h_a189cbddb93cab40dc91ee7677da0e79b}\label{heapmgr_8h_a189cbddb93cab40dc91ee7677da0e79b}} 
+\index{heapmgr.h@{heapmgr.h}!HEAPMGR\_SMALL\_BLKSZ@{HEAPMGR\_SMALL\_BLKSZ}}
+\index{HEAPMGR\_SMALL\_BLKSZ@{HEAPMGR\_SMALL\_BLKSZ}!heapmgr.h@{heapmgr.h}}
+\doxysubsubsection{\texorpdfstring{HEAPMGR\_SMALL\_BLKSZ}{HEAPMGR\_SMALL\_BLKSZ}}
+{\footnotesize\ttfamily \#define H\+E\+A\+P\+M\+G\+R\+\_\+\+S\+M\+A\+L\+L\+\_\+\+B\+L\+K\+SZ~16}
+
+
+
+Definition at line 125 of file heapmgr.\+h.
+
+\mbox{\Hypertarget{heapmgr_8h_a7fbc189b7d07bdffae5a4c7f28150428}\label{heapmgr_8h_a7fbc189b7d07bdffae5a4c7f28150428}} 
+\index{heapmgr.h@{heapmgr.h}!HEAPMGR\_UNLOCK@{HEAPMGR\_UNLOCK}}
+\index{HEAPMGR\_UNLOCK@{HEAPMGR\_UNLOCK}!heapmgr.h@{heapmgr.h}}
+\doxysubsubsection{\texorpdfstring{HEAPMGR\_UNLOCK}{HEAPMGR\_UNLOCK}}
+{\footnotesize\ttfamily \#define H\+E\+A\+P\+M\+G\+R\+\_\+\+U\+N\+L\+O\+CK(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 89 of file heapmgr.\+h.
+
+\mbox{\Hypertarget{heapmgr_8h_ac42a05e5dd13571cb1f9c9352b40694c}\label{heapmgr_8h_ac42a05e5dd13571cb1f9c9352b40694c}} 
+\index{heapmgr.h@{heapmgr.h}!SMALLBLKHEAP@{SMALLBLKHEAP}}
+\index{SMALLBLKHEAP@{SMALLBLKHEAP}!heapmgr.h@{heapmgr.h}}
+\doxysubsubsection{\texorpdfstring{SMALLBLKHEAP}{SMALLBLKHEAP}}
+{\footnotesize\ttfamily \#define S\+M\+A\+L\+L\+B\+L\+K\+H\+E\+AP~232}
+
+
+
+Definition at line 182 of file heapmgr.\+h.
+
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{heapmgr_8h_a7b00660a2bc64694c41345fb61aa8426}\label{heapmgr_8h_a7b00660a2bc64694c41345fb61aa8426}} 
+\index{heapmgr.h@{heapmgr.h}!heapmgrAlign\_t@{heapmgrAlign\_t}}
+\index{heapmgrAlign\_t@{heapmgrAlign\_t}!heapmgr.h@{heapmgr.h}}
+\doxysubsubsection{\texorpdfstring{heapmgrAlign\_t}{heapmgrAlign\_t}}
+{\footnotesize\ttfamily typedef \mbox{\hyperlink{heapmgr_8h_ac21a4ee58cfddcd25cb373f3851558de}{hm\+U32\+\_\+t}} \mbox{\hyperlink{heapmgr_8h_a7b00660a2bc64694c41345fb61aa8426}{heapmgr\+Align\+\_\+t}}}
+
+
+
+Definition at line 215 of file heapmgr.\+h.
+
+\mbox{\Hypertarget{heapmgr_8h_a77e9eaabf623a10636768b0aacea7fd6}\label{heapmgr_8h_a77e9eaabf623a10636768b0aacea7fd6}} 
+\index{heapmgr.h@{heapmgr.h}!heapmgrHdr\_t@{heapmgrHdr\_t}}
+\index{heapmgrHdr\_t@{heapmgrHdr\_t}!heapmgr.h@{heapmgr.h}}
+\doxysubsubsection{\texorpdfstring{heapmgrHdr\_t}{heapmgrHdr\_t}}
+{\footnotesize\ttfamily typedef \mbox{\hyperlink{heapmgr_8h_aaf6f0f6dd1410800cc6bca8cfe9b5881}{hm\+U16\+\_\+t}} \mbox{\hyperlink{heapmgr_8h_a77e9eaabf623a10636768b0aacea7fd6}{heapmgr\+Hdr\+\_\+t}}}
+
+
+
+Definition at line 160 of file heapmgr.\+h.
+
+\mbox{\Hypertarget{heapmgr_8h_aaf6f0f6dd1410800cc6bca8cfe9b5881}\label{heapmgr_8h_aaf6f0f6dd1410800cc6bca8cfe9b5881}} 
+\index{heapmgr.h@{heapmgr.h}!hmU16\_t@{hmU16\_t}}
+\index{hmU16\_t@{hmU16\_t}!heapmgr.h@{heapmgr.h}}
+\doxysubsubsection{\texorpdfstring{hmU16\_t}{hmU16\_t}}
+{\footnotesize\ttfamily typedef uint16\+\_\+t \mbox{\hyperlink{heapmgr_8h_aaf6f0f6dd1410800cc6bca8cfe9b5881}{hm\+U16\+\_\+t}}}
+
+
+
+Definition at line 152 of file heapmgr.\+h.
+
+\mbox{\Hypertarget{heapmgr_8h_ac21a4ee58cfddcd25cb373f3851558de}\label{heapmgr_8h_ac21a4ee58cfddcd25cb373f3851558de}} 
+\index{heapmgr.h@{heapmgr.h}!hmU32\_t@{hmU32\_t}}
+\index{hmU32\_t@{hmU32\_t}!heapmgr.h@{heapmgr.h}}
+\doxysubsubsection{\texorpdfstring{hmU32\_t}{hmU32\_t}}
+{\footnotesize\ttfamily typedef uint32\+\_\+t \mbox{\hyperlink{heapmgr_8h_ac21a4ee58cfddcd25cb373f3851558de}{hm\+U32\+\_\+t}}}
+
+
+
+Definition at line 153 of file heapmgr.\+h.
+
+\mbox{\Hypertarget{heapmgr_8h_ab5fbde684ed5cb6be63fd19f21b78d4c}\label{heapmgr_8h_ab5fbde684ed5cb6be63fd19f21b78d4c}} 
+\index{heapmgr.h@{heapmgr.h}!hmU8\_t@{hmU8\_t}}
+\index{hmU8\_t@{hmU8\_t}!heapmgr.h@{heapmgr.h}}
+\doxysubsubsection{\texorpdfstring{hmU8\_t}{hmU8\_t}}
+{\footnotesize\ttfamily typedef uint8\+\_\+t \mbox{\hyperlink{heapmgr_8h_ab5fbde684ed5cb6be63fd19f21b78d4c}{hm\+U8\+\_\+t}}}
+
+
+
+Definition at line 151 of file heapmgr.\+h.
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{heapmgr_8h_ae07cfd6f89c680c99a931df01363407a}\label{heapmgr_8h_ae07cfd6f89c680c99a931df01363407a}} 
+\index{heapmgr.h@{heapmgr.h}!HEAPMGR\_FREE@{HEAPMGR\_FREE}}
+\index{HEAPMGR\_FREE@{HEAPMGR\_FREE}!heapmgr.h@{heapmgr.h}}
+\doxysubsubsection{\texorpdfstring{HEAPMGR\_FREE()}{HEAPMGR\_FREE()}}
+{\footnotesize\ttfamily void H\+E\+A\+P\+M\+G\+R\+\_\+\+F\+R\+EE (\begin{DoxyParamCaption}\item[{void $\ast$}]{ptr }\end{DoxyParamCaption})}
+
+
+
+Implementation of the de-\/allocator functionality. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ptr} & -\/ pointer to the memory to free. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 594 of file heapmgr.\+h.
+
+\mbox{\Hypertarget{heapmgr_8h_a3dabfc1fb3705d5c11d002c2d06fb0c0}\label{heapmgr_8h_a3dabfc1fb3705d5c11d002c2d06fb0c0}} 
+\index{heapmgr.h@{heapmgr.h}!HEAPMGR\_MALLOC@{HEAPMGR\_MALLOC}}
+\index{HEAPMGR\_MALLOC@{HEAPMGR\_MALLOC}!heapmgr.h@{heapmgr.h}}
+\doxysubsubsection{\texorpdfstring{HEAPMGR\_MALLOC()}{HEAPMGR\_MALLOC()}}
+{\footnotesize\ttfamily void$\ast$ H\+E\+A\+P\+M\+G\+R\+\_\+\+M\+A\+L\+L\+OC (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{heapmgr_8h_aaf6f0f6dd1410800cc6bca8cfe9b5881}{hm\+U16\+\_\+t}}}]{size }\end{DoxyParamCaption})}
+
+
+
+Implementation of the allocator functionality. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em size} & -\/ number of bytes to allocate from the heap. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void $\ast$ -\/ pointer to the heap allocation; N\+U\+LL if error or failure. 
+\end{DoxyReturn}
+
+
+Definition at line 351 of file heapmgr.\+h.
+
+\mbox{\Hypertarget{heapmgr_8h_a30e3d81c28cf01d684fd481dcd4eaa3e}\label{heapmgr_8h_a30e3d81c28cf01d684fd481dcd4eaa3e}} 
+\index{heapmgr.h@{heapmgr.h}!HEAPMGR\_REALLOC@{HEAPMGR\_REALLOC}}
+\index{HEAPMGR\_REALLOC@{HEAPMGR\_REALLOC}!heapmgr.h@{heapmgr.h}}
+\doxysubsubsection{\texorpdfstring{HEAPMGR\_REALLOC()}{HEAPMGR\_REALLOC()}}
+{\footnotesize\ttfamily void$\ast$ H\+E\+A\+P\+M\+G\+R\+\_\+\+R\+E\+A\+L\+L\+OC (\begin{DoxyParamCaption}\item[{void $\ast$}]{ptr,  }\item[{\mbox{\hyperlink{heapmgr_8h_aaf6f0f6dd1410800cc6bca8cfe9b5881}{hm\+U16\+\_\+t}}}]{size }\end{DoxyParamCaption})}
+
+
+
+Re-\/allocates a memory block of the requested size. Note that this function always re-\/allocates even if the requested size is lower than the original. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ptr} & pointer to the existing memory block. \\
+\hline
+{\em size} & size in bytes of the memory block to re-\/allocate\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void$\ast$ pointer to the memory block of newly re-\/allocation or if reallocation fails returns the pointer to the original memory block. 
+\end{DoxyReturn}
+
+
+Definition at line 559 of file heapmgr.\+h.
+

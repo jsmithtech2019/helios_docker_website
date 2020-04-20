@@ -1,0 +1,152 @@
+\hypertarget{structgap_auth_complete_event__t}{}\doxysection{gap\+Auth\+Complete\+Event\+\_\+t Struct Reference}
+\label{structgap_auth_complete_event__t}\index{gapAuthCompleteEvent\_t@{gapAuthCompleteEvent\_t}}
+
+
+{\ttfamily \#include $<$gap.\+h$>$}
+
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+osal\+\_\+event\+\_\+hdr\+\_\+t \mbox{\hyperlink{structgap_auth_complete_event__t_ae80a1ac1b2fc61fdfaada6e3ccf264ff}{hdr}}
+\begin{DoxyCompactList}\small\item\em G\+A\+P\+\_\+\+M\+S\+G\+\_\+\+E\+V\+E\+NT and status. \end{DoxyCompactList}\item 
+uint8 \mbox{\hyperlink{structgap_auth_complete_event__t_a36ad88877becc54f398d5f36d00153c6}{opcode}}
+\begin{DoxyCompactList}\small\item\em G\+A\+P\+\_\+\+A\+U\+T\+H\+E\+N\+T\+I\+C\+A\+T\+I\+O\+N\+\_\+\+C\+O\+M\+P\+L\+E\+T\+E\+\_\+\+E\+V\+E\+NT. \end{DoxyCompactList}\item 
+uint16 \mbox{\hyperlink{structgap_auth_complete_event__t_ab33b2bff4422de4cd98cd43ade89c0a6}{connection\+Handle}}
+\begin{DoxyCompactList}\small\item\em Connection Handle from controller used to ref the device. \end{DoxyCompactList}\item 
+uint8 \mbox{\hyperlink{structgap_auth_complete_event__t_a72a1336d88ceff2307ed9e8533b02810}{auth\+State}}
+\begin{DoxyCompactList}\small\item\em T\+R\+UE if the pairing was authenticated (M\+I\+TM) \end{DoxyCompactList}\item 
+sm\+Security\+Info\+\_\+t $\ast$ \mbox{\hyperlink{structgap_auth_complete_event__t_a6f93f62933198bde8972d7cc078293fe}{p\+Security\+Info}}
+\begin{DoxyCompactList}\small\item\em B\+O\+U\+ND -\/ security information from this device. \end{DoxyCompactList}\item 
+sm\+Signing\+Info\+\_\+t $\ast$ \mbox{\hyperlink{structgap_auth_complete_event__t_ae49c44401d4aec5bc1af3850edcd6d53}{p\+Signing\+Info}}
+\begin{DoxyCompactList}\small\item\em Signing information. \end{DoxyCompactList}\item 
+sm\+Security\+Info\+\_\+t $\ast$ \mbox{\hyperlink{structgap_auth_complete_event__t_a02e495e94e0e1b3eaf5125fca71c8797}{p\+Dev\+Sec\+Info}}
+\begin{DoxyCompactList}\small\item\em B\+O\+U\+ND -\/ security information from connected device. \end{DoxyCompactList}\item 
+sm\+Identity\+Info\+\_\+t $\ast$ \mbox{\hyperlink{structgap_auth_complete_event__t_aa0c037becedfde0d050047e2ea2d01f8}{p\+Identity\+Info}}
+\begin{DoxyCompactList}\small\item\em B\+O\+U\+ND -\/ identity information. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+G\+A\+P\+\_\+\+A\+U\+T\+H\+E\+N\+T\+I\+C\+A\+T\+I\+O\+N\+\_\+\+C\+O\+M\+P\+L\+E\+T\+E\+\_\+\+E\+V\+E\+NT message format. This message is sent to the app when the authentication request is complete. 
+
+Definition at line 723 of file gap.\+h.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{structgap_auth_complete_event__t_a72a1336d88ceff2307ed9e8533b02810}\label{structgap_auth_complete_event__t_a72a1336d88ceff2307ed9e8533b02810}} 
+\index{gapAuthCompleteEvent\_t@{gapAuthCompleteEvent\_t}!authState@{authState}}
+\index{authState@{authState}!gapAuthCompleteEvent\_t@{gapAuthCompleteEvent\_t}}
+\doxysubsubsection{\texorpdfstring{authState}{authState}}
+{\footnotesize\ttfamily uint8 gap\+Auth\+Complete\+Event\+\_\+t\+::auth\+State}
+
+
+
+T\+R\+UE if the pairing was authenticated (M\+I\+TM) 
+
+
+
+Definition at line 728 of file gap.\+h.
+
+\mbox{\Hypertarget{structgap_auth_complete_event__t_ab33b2bff4422de4cd98cd43ade89c0a6}\label{structgap_auth_complete_event__t_ab33b2bff4422de4cd98cd43ade89c0a6}} 
+\index{gapAuthCompleteEvent\_t@{gapAuthCompleteEvent\_t}!connectionHandle@{connectionHandle}}
+\index{connectionHandle@{connectionHandle}!gapAuthCompleteEvent\_t@{gapAuthCompleteEvent\_t}}
+\doxysubsubsection{\texorpdfstring{connectionHandle}{connectionHandle}}
+{\footnotesize\ttfamily uint16 gap\+Auth\+Complete\+Event\+\_\+t\+::connection\+Handle}
+
+
+
+Connection Handle from controller used to ref the device. 
+
+
+
+Definition at line 727 of file gap.\+h.
+
+\mbox{\Hypertarget{structgap_auth_complete_event__t_ae80a1ac1b2fc61fdfaada6e3ccf264ff}\label{structgap_auth_complete_event__t_ae80a1ac1b2fc61fdfaada6e3ccf264ff}} 
+\index{gapAuthCompleteEvent\_t@{gapAuthCompleteEvent\_t}!hdr@{hdr}}
+\index{hdr@{hdr}!gapAuthCompleteEvent\_t@{gapAuthCompleteEvent\_t}}
+\doxysubsubsection{\texorpdfstring{hdr}{hdr}}
+{\footnotesize\ttfamily osal\+\_\+event\+\_\+hdr\+\_\+t gap\+Auth\+Complete\+Event\+\_\+t\+::hdr}
+
+
+
+G\+A\+P\+\_\+\+M\+S\+G\+\_\+\+E\+V\+E\+NT and status. 
+
+
+
+Definition at line 725 of file gap.\+h.
+
+\mbox{\Hypertarget{structgap_auth_complete_event__t_a36ad88877becc54f398d5f36d00153c6}\label{structgap_auth_complete_event__t_a36ad88877becc54f398d5f36d00153c6}} 
+\index{gapAuthCompleteEvent\_t@{gapAuthCompleteEvent\_t}!opcode@{opcode}}
+\index{opcode@{opcode}!gapAuthCompleteEvent\_t@{gapAuthCompleteEvent\_t}}
+\doxysubsubsection{\texorpdfstring{opcode}{opcode}}
+{\footnotesize\ttfamily uint8 gap\+Auth\+Complete\+Event\+\_\+t\+::opcode}
+
+
+
+G\+A\+P\+\_\+\+A\+U\+T\+H\+E\+N\+T\+I\+C\+A\+T\+I\+O\+N\+\_\+\+C\+O\+M\+P\+L\+E\+T\+E\+\_\+\+E\+V\+E\+NT. 
+
+
+
+Definition at line 726 of file gap.\+h.
+
+\mbox{\Hypertarget{structgap_auth_complete_event__t_a02e495e94e0e1b3eaf5125fca71c8797}\label{structgap_auth_complete_event__t_a02e495e94e0e1b3eaf5125fca71c8797}} 
+\index{gapAuthCompleteEvent\_t@{gapAuthCompleteEvent\_t}!pDevSecInfo@{pDevSecInfo}}
+\index{pDevSecInfo@{pDevSecInfo}!gapAuthCompleteEvent\_t@{gapAuthCompleteEvent\_t}}
+\doxysubsubsection{\texorpdfstring{pDevSecInfo}{pDevSecInfo}}
+{\footnotesize\ttfamily sm\+Security\+Info\+\_\+t$\ast$ gap\+Auth\+Complete\+Event\+\_\+t\+::p\+Dev\+Sec\+Info}
+
+
+
+B\+O\+U\+ND -\/ security information from connected device. 
+
+
+
+Definition at line 731 of file gap.\+h.
+
+\mbox{\Hypertarget{structgap_auth_complete_event__t_aa0c037becedfde0d050047e2ea2d01f8}\label{structgap_auth_complete_event__t_aa0c037becedfde0d050047e2ea2d01f8}} 
+\index{gapAuthCompleteEvent\_t@{gapAuthCompleteEvent\_t}!pIdentityInfo@{pIdentityInfo}}
+\index{pIdentityInfo@{pIdentityInfo}!gapAuthCompleteEvent\_t@{gapAuthCompleteEvent\_t}}
+\doxysubsubsection{\texorpdfstring{pIdentityInfo}{pIdentityInfo}}
+{\footnotesize\ttfamily sm\+Identity\+Info\+\_\+t$\ast$ gap\+Auth\+Complete\+Event\+\_\+t\+::p\+Identity\+Info}
+
+
+
+B\+O\+U\+ND -\/ identity information. 
+
+
+
+Definition at line 732 of file gap.\+h.
+
+\mbox{\Hypertarget{structgap_auth_complete_event__t_a6f93f62933198bde8972d7cc078293fe}\label{structgap_auth_complete_event__t_a6f93f62933198bde8972d7cc078293fe}} 
+\index{gapAuthCompleteEvent\_t@{gapAuthCompleteEvent\_t}!pSecurityInfo@{pSecurityInfo}}
+\index{pSecurityInfo@{pSecurityInfo}!gapAuthCompleteEvent\_t@{gapAuthCompleteEvent\_t}}
+\doxysubsubsection{\texorpdfstring{pSecurityInfo}{pSecurityInfo}}
+{\footnotesize\ttfamily sm\+Security\+Info\+\_\+t$\ast$ gap\+Auth\+Complete\+Event\+\_\+t\+::p\+Security\+Info}
+
+
+
+B\+O\+U\+ND -\/ security information from this device. 
+
+
+
+Definition at line 729 of file gap.\+h.
+
+\mbox{\Hypertarget{structgap_auth_complete_event__t_ae49c44401d4aec5bc1af3850edcd6d53}\label{structgap_auth_complete_event__t_ae49c44401d4aec5bc1af3850edcd6d53}} 
+\index{gapAuthCompleteEvent\_t@{gapAuthCompleteEvent\_t}!pSigningInfo@{pSigningInfo}}
+\index{pSigningInfo@{pSigningInfo}!gapAuthCompleteEvent\_t@{gapAuthCompleteEvent\_t}}
+\doxysubsubsection{\texorpdfstring{pSigningInfo}{pSigningInfo}}
+{\footnotesize\ttfamily sm\+Signing\+Info\+\_\+t$\ast$ gap\+Auth\+Complete\+Event\+\_\+t\+::p\+Signing\+Info}
+
+
+
+Signing information. 
+
+
+
+Definition at line 730 of file gap.\+h.
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Include/\mbox{\hyperlink{gap_8h}{gap.\+h}}\end{DoxyCompactItemize}

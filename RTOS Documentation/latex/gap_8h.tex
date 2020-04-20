@@ -1,0 +1,582 @@
+\hypertarget{gap_8h}{}\doxysection{Include/gap.h File Reference}
+\label{gap_8h}\index{Include/gap.h@{Include/gap.h}}
+{\ttfamily \#include \char`\"{}bcomdef.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}osal.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}sm.\+h\char`\"{}}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structgap_event_hdr__t}{gap\+Event\+Hdr\+\_\+t}}
+\item 
+struct \mbox{\hyperlink{structgap_random_addr_event__t}{gap\+Random\+Addr\+Event\+\_\+t}}
+\item 
+struct \mbox{\hyperlink{structgap_peri_connect_params__t}{gap\+Peri\+Connect\+Params\+\_\+t}}
+\item 
+struct \mbox{\hyperlink{structgap_device_init_done_event__t}{gap\+Device\+Init\+Done\+Event\+\_\+t}}
+\item 
+struct \mbox{\hyperlink{structgap_sign_update_event__t}{gap\+Sign\+Update\+Event\+\_\+t}}
+\item 
+struct \mbox{\hyperlink{structgap_device_info_event__t}{gap\+Device\+Info\+Event\+\_\+t}}
+\item 
+struct \mbox{\hyperlink{structgap_dev_disc_req__t}{gap\+Dev\+Disc\+Req\+\_\+t}}
+\item 
+struct \mbox{\hyperlink{structgap_dev_rec__t}{gap\+Dev\+Rec\+\_\+t}}
+\item 
+struct \mbox{\hyperlink{structgap_dev_disc_event__t}{gap\+Dev\+Disc\+Event\+\_\+t}}
+\item 
+struct \mbox{\hyperlink{structgap_advertising_params__t}{gap\+Advertising\+Params\+\_\+t}}
+\item 
+struct \mbox{\hyperlink{structgap_make_discoverable_rsp_event__t}{gap\+Make\+Discoverable\+Rsp\+Event\+\_\+t}}
+\item 
+struct \mbox{\hyperlink{structgap_end_discoverable_rsp_event__t}{gap\+End\+Discoverable\+Rsp\+Event\+\_\+t}}
+\item 
+struct \mbox{\hyperlink{structgap_adv_data_update_event__t}{gap\+Adv\+Data\+Update\+Event\+\_\+t}}
+\item 
+struct \mbox{\hyperlink{structgap_est_link_req__t}{gap\+Est\+Link\+Req\+\_\+t}}
+\item 
+struct \mbox{\hyperlink{structgap_update_link_param_req__t}{gap\+Update\+Link\+Param\+Req\+\_\+t}}
+\item 
+struct \mbox{\hyperlink{structgap_update_link_param_req_reply__t}{gap\+Update\+Link\+Param\+Req\+Reply\+\_\+t}}
+\item 
+struct \mbox{\hyperlink{structgap_update_link_param_req_event__t}{gap\+Update\+Link\+Param\+Req\+Event\+\_\+t}}
+\item 
+struct \mbox{\hyperlink{structgap_est_link_req_event__t}{gap\+Est\+Link\+Req\+Event\+\_\+t}}
+\item 
+struct \mbox{\hyperlink{structgap_link_update_event__t}{gap\+Link\+Update\+Event\+\_\+t}}
+\item 
+struct \mbox{\hyperlink{structgap_terminate_link_event__t}{gap\+Terminate\+Link\+Event\+\_\+t}}
+\item 
+struct \mbox{\hyperlink{structgap_passkey_needed_event__t}{gap\+Passkey\+Needed\+Event\+\_\+t}}
+\item 
+struct \mbox{\hyperlink{structgap_auth_complete_event__t}{gap\+Auth\+Complete\+Event\+\_\+t}}
+\item 
+struct \mbox{\hyperlink{structgap_auth_params__t}{gap\+Auth\+Params\+\_\+t}}
+\item 
+struct \mbox{\hyperlink{structgap_slave_security_req_event__t}{gap\+Slave\+Security\+Req\+Event\+\_\+t}}
+\item 
+struct \mbox{\hyperlink{structgap_bond_complete_event__t}{gap\+Bond\+Complete\+Event\+\_\+t}}
+\item 
+struct \mbox{\hyperlink{structgap_pairing_req__t}{gap\+Pairing\+Req\+\_\+t}}
+\item 
+struct \mbox{\hyperlink{structgap_pairing_req_event__t}{gap\+Pairing\+Req\+Event\+\_\+t}}
+\item 
+struct \mbox{\hyperlink{structgap_adv_data_token__t}{gap\+Adv\+Data\+Token\+\_\+t}}
+\item 
+struct \mbox{\hyperlink{structgap_bond_mgr_c_bs__t}{gap\+Bond\+Mgr\+C\+Bs\+\_\+t}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group___g_a_p___m_s_g___e_v_e_n_t___d_e_f_i_n_e_s_ga565d5dfa9c10e56bb5b3d768dcb7027c}{G\+A\+P\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+I\+N\+I\+T\+\_\+\+D\+O\+N\+E\+\_\+\+E\+V\+E\+NT}}~0x00
+\begin{DoxyCompactList}\small\item\em Sent when the Device Initialization is complete. This event is sent as an O\+S\+AL message defined as \mbox{\hyperlink{structgap_device_init_done_event__t}{gap\+Device\+Init\+Done\+Event\+\_\+t}}. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p___m_s_g___e_v_e_n_t___d_e_f_i_n_e_s_ga8ba3513558bdf856c7fcf8e3f6989026}{G\+A\+P\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+E\+V\+E\+NT}}~0x01
+\begin{DoxyCompactList}\small\item\em Sent when the Device Discovery Process is complete. This event is sent as an O\+S\+AL message defined as \mbox{\hyperlink{structgap_dev_disc_event__t}{gap\+Dev\+Disc\+Event\+\_\+t}}. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p___m_s_g___e_v_e_n_t___d_e_f_i_n_e_s_ga871ee98917354014563975b6eb22d036}{G\+A\+P\+\_\+\+A\+D\+V\+\_\+\+D\+A\+T\+A\+\_\+\+U\+P\+D\+A\+T\+E\+\_\+\+D\+O\+N\+E\+\_\+\+E\+V\+E\+NT}}~0x02
+\begin{DoxyCompactList}\small\item\em Sent when the Advertising Data or S\+C\+A\+N\+\_\+\+R\+SP Data has been updated. This event is sent as an O\+S\+AL message defined as \mbox{\hyperlink{structgap_adv_data_update_event__t}{gap\+Adv\+Data\+Update\+Event\+\_\+t}}. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p___m_s_g___e_v_e_n_t___d_e_f_i_n_e_s_ga70d6e210658326017d89408d9515d67d}{G\+A\+P\+\_\+\+M\+A\+K\+E\+\_\+\+D\+I\+S\+C\+O\+V\+E\+R\+A\+B\+L\+E\+\_\+\+D\+O\+N\+E\+\_\+\+E\+V\+E\+NT}}~0x03
+\begin{DoxyCompactList}\small\item\em Sent when the Make Discoverable Request is complete. This event is sent as an O\+S\+AL message defined as \mbox{\hyperlink{structgap_make_discoverable_rsp_event__t}{gap\+Make\+Discoverable\+Rsp\+Event\+\_\+t}}. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p___m_s_g___e_v_e_n_t___d_e_f_i_n_e_s_gadd10011b1814f5445562c38cdf75bb21}{G\+A\+P\+\_\+\+E\+N\+D\+\_\+\+D\+I\+S\+C\+O\+V\+E\+R\+A\+B\+L\+E\+\_\+\+D\+O\+N\+E\+\_\+\+E\+V\+E\+NT}}~0x04
+\begin{DoxyCompactList}\small\item\em Sent when the Advertising has ended. This event is sent as an O\+S\+AL message defined as \mbox{\hyperlink{structgap_end_discoverable_rsp_event__t}{gap\+End\+Discoverable\+Rsp\+Event\+\_\+t}}. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p___m_s_g___e_v_e_n_t___d_e_f_i_n_e_s_gaca4a8fae9ea113d4240002a1f9853d15}{G\+A\+P\+\_\+\+L\+I\+N\+K\+\_\+\+E\+S\+T\+A\+B\+L\+I\+S\+H\+E\+D\+\_\+\+E\+V\+E\+NT}}~0x05
+\begin{DoxyCompactList}\small\item\em Sent when the Establish Link Request is complete. This event is sent as an O\+S\+AL message defined as \mbox{\hyperlink{structgap_est_link_req_event__t}{gap\+Est\+Link\+Req\+Event\+\_\+t}}. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p___m_s_g___e_v_e_n_t___d_e_f_i_n_e_s_ga3ad3a9df406eda898df25b6d8a21bbb4}{G\+A\+P\+\_\+\+L\+I\+N\+K\+\_\+\+T\+E\+R\+M\+I\+N\+A\+T\+E\+D\+\_\+\+E\+V\+E\+NT}}~0x06
+\begin{DoxyCompactList}\small\item\em Sent when a connection was terminated. This event is sent as an O\+S\+AL message defined as \mbox{\hyperlink{structgap_terminate_link_event__t}{gap\+Terminate\+Link\+Event\+\_\+t}}. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p___m_s_g___e_v_e_n_t___d_e_f_i_n_e_s_ga87ca9eb86a04715112ef04d5b3009daa}{G\+A\+P\+\_\+\+L\+I\+N\+K\+\_\+\+P\+A\+R\+A\+M\+\_\+\+U\+P\+D\+A\+T\+E\+\_\+\+E\+V\+E\+NT}}~0x07
+\begin{DoxyCompactList}\small\item\em Sent when an Update Parameters Event is received. This event is sent as an O\+S\+AL message defined as \mbox{\hyperlink{structgap_link_update_event__t}{gap\+Link\+Update\+Event\+\_\+t}}. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p___m_s_g___e_v_e_n_t___d_e_f_i_n_e_s_ga3a43080d5e7d3ce6578080620c516ee4}{G\+A\+P\+\_\+\+R\+A\+N\+D\+O\+M\+\_\+\+A\+D\+D\+R\+\_\+\+C\+H\+A\+N\+G\+E\+D\+\_\+\+E\+V\+E\+NT}}~0x08
+\begin{DoxyCompactList}\small\item\em Sent when a random address was changed. This event is sent as an O\+S\+AL message defined as \mbox{\hyperlink{structgap_random_addr_event__t}{gap\+Random\+Addr\+Event\+\_\+t}}. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p___m_s_g___e_v_e_n_t___d_e_f_i_n_e_s_gaf7d4f0349c95d3d9e7b990b1cdaac2f0}{G\+A\+P\+\_\+\+S\+I\+G\+N\+A\+T\+U\+R\+E\+\_\+\+U\+P\+D\+A\+T\+E\+D\+\_\+\+E\+V\+E\+NT}}~0x09
+\begin{DoxyCompactList}\small\item\em Sent when the device\textquotesingle{}s signature counter is updated. This event is sent as an O\+S\+AL message defined as \mbox{\hyperlink{structgap_sign_update_event__t}{gap\+Sign\+Update\+Event\+\_\+t}}. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p___m_s_g___e_v_e_n_t___d_e_f_i_n_e_s_ga2c9ad9a4fd3463bed1f4bafc31a15e17}{G\+A\+P\+\_\+\+A\+U\+T\+H\+E\+N\+T\+I\+C\+A\+T\+I\+O\+N\+\_\+\+C\+O\+M\+P\+L\+E\+T\+E\+\_\+\+E\+V\+E\+NT}}~0x0A
+\begin{DoxyCompactList}\small\item\em Sent when the Authentication (pairing) process is complete. This event is sent as an O\+S\+AL message defined as \mbox{\hyperlink{structgap_auth_complete_event__t}{gap\+Auth\+Complete\+Event\+\_\+t}}. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p___m_s_g___e_v_e_n_t___d_e_f_i_n_e_s_gae82ce61ddc61990a7f8dce892e8111c1}{G\+A\+P\+\_\+\+P\+A\+S\+S\+K\+E\+Y\+\_\+\+N\+E\+E\+D\+E\+D\+\_\+\+E\+V\+E\+NT}}~0x0B
+\begin{DoxyCompactList}\small\item\em Sent when a Passkey is needed. This is part of the pairing process. This event is sent as an O\+S\+AL message defined as \mbox{\hyperlink{structgap_passkey_needed_event__t}{gap\+Passkey\+Needed\+Event\+\_\+t}}. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p___m_s_g___e_v_e_n_t___d_e_f_i_n_e_s_ga1dcc49cd299388a03bf0476f0dc06e2e}{G\+A\+P\+\_\+\+S\+L\+A\+V\+E\+\_\+\+R\+E\+Q\+U\+E\+S\+T\+E\+D\+\_\+\+S\+E\+C\+U\+R\+I\+T\+Y\+\_\+\+E\+V\+E\+NT}}~0x0C
+\begin{DoxyCompactList}\small\item\em Sent when a Slave Security Request is received. This event is sent as an O\+S\+AL message defined as \mbox{\hyperlink{structgap_slave_security_req_event__t}{gap\+Slave\+Security\+Req\+Event\+\_\+t}}. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p___m_s_g___e_v_e_n_t___d_e_f_i_n_e_s_gaa6d799a042e8227f9d08f0365ab0b6eb}{G\+A\+P\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+I\+N\+F\+O\+\_\+\+E\+V\+E\+NT}}~0x0D
+\begin{DoxyCompactList}\small\item\em Sent during the Device Discovery Process when a device is discovered. This event is sent as an O\+S\+AL message defined as \mbox{\hyperlink{structgap_device_info_event__t}{gap\+Device\+Info\+Event\+\_\+t}}. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p___m_s_g___e_v_e_n_t___d_e_f_i_n_e_s_gacb5464139cb2eb4a3665da32f9445bdf}{G\+A\+P\+\_\+\+B\+O\+N\+D\+\_\+\+C\+O\+M\+P\+L\+E\+T\+E\+\_\+\+E\+V\+E\+NT}}~0x0E
+\begin{DoxyCompactList}\small\item\em Sent when the bonding(bound) process is complete. This event is sent as an O\+S\+AL message defined as \mbox{\hyperlink{structgap_bond_complete_event__t}{gap\+Bond\+Complete\+Event\+\_\+t}}. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p___m_s_g___e_v_e_n_t___d_e_f_i_n_e_s_ga6b1f7f4489696fac522a35c0049b8739}{G\+A\+P\+\_\+\+P\+A\+I\+R\+I\+N\+G\+\_\+\+R\+E\+Q\+\_\+\+E\+V\+E\+NT}}~0x0F
+\begin{DoxyCompactList}\small\item\em Sent when an unexpected Pairing Request is received. This event is sent as an O\+S\+AL message defined as \mbox{\hyperlink{structgap_pairing_req_event__t}{gap\+Pairing\+Req\+Event\+\_\+t}}. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p___m_s_g___e_v_e_n_t___d_e_f_i_n_e_s_ga9c157b92919d1b839176f0e8a05a82de}{G\+A\+P\+\_\+\+A\+U\+T\+H\+E\+N\+T\+I\+C\+A\+T\+I\+O\+N\+\_\+\+F\+A\+I\+L\+U\+R\+E\+\_\+\+E\+VT}}~0x10
+\begin{DoxyCompactList}\small\item\em Sent when pairing fails, no G\+A\+P\+\_\+\+A\+U\+T\+H\+E\+N\+T\+I\+C\+A\+T\+I\+O\+N\+\_\+\+C\+O\+M\+P\+L\+E\+T\+E\+\_\+\+E\+V\+E\+NT is sent and G\+B\+M\+\_\+\+Q\+U\+E\+U\+E\+\_\+\+P\+A\+I\+R\+I\+N\+GS. This event is sent as an O\+S\+AL message defined as osal\+\_\+event\+\_\+hdr\+\_\+t. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p___m_s_g___e_v_e_n_t___d_e_f_i_n_e_s_gaede323cf41e04ee0fec404461a47ce17}{G\+A\+P\+\_\+\+U\+P\+D\+A\+T\+E\+\_\+\+L\+I\+N\+K\+\_\+\+P\+A\+R\+A\+M\+\_\+\+R\+E\+Q\+\_\+\+E\+V\+E\+NT}}~0x11
+\begin{DoxyCompactList}\small\item\em Sent when during a Connection Parameter Update Procedure. This event is sent as an O\+S\+AL message defined as gap\+Conn\+Param\+Update\+\_\+t. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p___c_o_n_n___h_a_n_d_l_e___d_e_f_i_n_e_s_ga328294768ca50a35cdb6bc0ca936a0b7}{G\+A\+P\+\_\+\+C\+O\+N\+N\+H\+A\+N\+D\+L\+E\+\_\+\+I\+N\+IT}}~0x\+F\+F\+FE
+\begin{DoxyCompactList}\small\item\em terminates a link create \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p___c_o_n_n___h_a_n_d_l_e___d_e_f_i_n_e_s_gaa1b396170a28e5b5c43351cb01069b0a}{G\+A\+P\+\_\+\+C\+O\+N\+N\+H\+A\+N\+D\+L\+E\+\_\+\+A\+LL}}~0x\+F\+F\+FF
+\begin{DoxyCompactList}\small\item\em terminates all links for the matching task ID. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p___p_r_o_f_i_l_e___r_o_l_e___d_e_f_i_n_e_s_gaa07c8c4b70f12e2b3fecc5b8b73bc73c}{G\+A\+P\+\_\+\+P\+R\+O\+F\+I\+L\+E\+\_\+\+B\+R\+O\+A\+D\+C\+A\+S\+T\+ER}}~0x01
+\begin{DoxyCompactList}\small\item\em A device that sends advertising events only. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p___p_r_o_f_i_l_e___r_o_l_e___d_e_f_i_n_e_s_ga8b17c3ba71f665ab07ec64850fef7e17}{G\+A\+P\+\_\+\+P\+R\+O\+F\+I\+L\+E\+\_\+\+O\+B\+S\+E\+R\+V\+ER}}~0x02
+\begin{DoxyCompactList}\small\item\em A device that receives advertising events only. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p___p_r_o_f_i_l_e___r_o_l_e___d_e_f_i_n_e_s_gabbdb1de088df13187024904084577931}{G\+A\+P\+\_\+\+P\+R\+O\+F\+I\+L\+E\+\_\+\+P\+E\+R\+I\+P\+H\+E\+R\+AL}}~0x04
+\begin{DoxyCompactList}\small\item\em A device that accepts the establishment of an LE physical link using the connection establishment procedure. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p___p_r_o_f_i_l_e___r_o_l_e___d_e_f_i_n_e_s_ga38ae0f5e0f4bf18505951a38692be30e}{G\+A\+P\+\_\+\+P\+R\+O\+F\+I\+L\+E\+\_\+\+C\+E\+N\+T\+R\+AL}}~0x08
+\begin{DoxyCompactList}\small\item\em A device that supports the Central role initiates the establishment of a physical connection. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p___p_a_r_a_m_e_t_e_r___i_d___d_e_f_i_n_e_s_ga874cd076ddb253e85bbd49d5d5edb963}{T\+G\+A\+P\+\_\+\+G\+E\+N\+\_\+\+D\+I\+S\+C\+\_\+\+A\+D\+V\+\_\+\+M\+IN}}~0
+\begin{DoxyCompactList}\small\item\em Minimum time to remain advertising, when in Discoverable mode (m\+Sec). Setting this parameter to 0 turns off the timeout (default). \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p___p_a_r_a_m_e_t_e_r___i_d___d_e_f_i_n_e_s_gad060000deed255ff7a8af4f99f22c001}{T\+G\+A\+P\+\_\+\+L\+I\+M\+\_\+\+A\+D\+V\+\_\+\+T\+I\+M\+E\+O\+UT}}~1
+\begin{DoxyCompactList}\small\item\em Maximum time to remain advertising, when in Limited Discoverable mode. In seconds (default 180 seconds) \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p___p_a_r_a_m_e_t_e_r___i_d___d_e_f_i_n_e_s_gadb36e9ec962c3656c9454c0399901538}{T\+G\+A\+P\+\_\+\+G\+E\+N\+\_\+\+D\+I\+S\+C\+\_\+\+S\+C\+AN}}~2
+\begin{DoxyCompactList}\small\item\em Minimum time to perform scanning, when performing General Discovery proc (m\+Sec) \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p___p_a_r_a_m_e_t_e_r___i_d___d_e_f_i_n_e_s_ga872e73087bbd531846ca2103b7a1a879}{T\+G\+A\+P\+\_\+\+L\+I\+M\+\_\+\+D\+I\+S\+C\+\_\+\+S\+C\+AN}}~3
+\begin{DoxyCompactList}\small\item\em Minimum time to perform scanning, when performing Limited Discovery proc (m\+Sec) \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p___p_a_r_a_m_e_t_e_r___i_d___d_e_f_i_n_e_s_ga4260aecd94f1093ae4170fc2d3891500}{T\+G\+A\+P\+\_\+\+C\+O\+N\+N\+\_\+\+E\+S\+T\+\_\+\+A\+D\+V\+\_\+\+T\+I\+M\+E\+O\+UT}}~4
+\begin{DoxyCompactList}\small\item\em Advertising timeout, when performing Connection Establishment proc (m\+Sec) \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p___p_a_r_a_m_e_t_e_r___i_d___d_e_f_i_n_e_s_gaa95a8a5a7f95bfc25aaf9aa0653311be}{T\+G\+A\+P\+\_\+\+C\+O\+N\+N\+\_\+\+P\+A\+R\+A\+M\+\_\+\+T\+I\+M\+E\+O\+UT}}~5
+\begin{DoxyCompactList}\small\item\em Link Layer connection parameter update notification timer, connection parameter update proc (m\+Sec) \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p___p_a_r_a_m_e_t_e_r___i_d___d_e_f_i_n_e_s_ga89db08ff1f9eb59e56efe0d4ba078d4c}{T\+G\+A\+P\+\_\+\+L\+I\+M\+\_\+\+D\+I\+S\+C\+\_\+\+A\+D\+V\+\_\+\+I\+N\+T\+\_\+\+M\+IN}}~6
+\begin{DoxyCompactList}\small\item\em Minimum advertising interval, when in limited discoverable mode (n $\ast$ 0.\+625 m\+Sec) \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p___p_a_r_a_m_e_t_e_r___i_d___d_e_f_i_n_e_s_ga84cfa2d13e6bd3df20b0e60158a7b0ea}{T\+G\+A\+P\+\_\+\+L\+I\+M\+\_\+\+D\+I\+S\+C\+\_\+\+A\+D\+V\+\_\+\+I\+N\+T\+\_\+\+M\+AX}}~7
+\begin{DoxyCompactList}\small\item\em Maximum advertising interval, when in limited discoverable mode (n $\ast$ 0.\+625 m\+Sec) \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p___p_a_r_a_m_e_t_e_r___i_d___d_e_f_i_n_e_s_gaa751abade3818e67e4ffb48579c408e3}{T\+G\+A\+P\+\_\+\+G\+E\+N\+\_\+\+D\+I\+S\+C\+\_\+\+A\+D\+V\+\_\+\+I\+N\+T\+\_\+\+M\+IN}}~8
+\begin{DoxyCompactList}\small\item\em Minimum advertising interval, when in General discoverable mode (n $\ast$ 0.\+625 m\+Sec) \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p___p_a_r_a_m_e_t_e_r___i_d___d_e_f_i_n_e_s_gae42281513355ab5ff7cdb5d3995fb598}{T\+G\+A\+P\+\_\+\+G\+E\+N\+\_\+\+D\+I\+S\+C\+\_\+\+A\+D\+V\+\_\+\+I\+N\+T\+\_\+\+M\+AX}}~9
+\begin{DoxyCompactList}\small\item\em Maximum advertising interval, when in General discoverable mode (n $\ast$ 0.\+625 m\+Sec) \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p___p_a_r_a_m_e_t_e_r___i_d___d_e_f_i_n_e_s_ga69ff32a13e8a6de7eeccf83035487011}{T\+G\+A\+P\+\_\+\+C\+O\+N\+N\+\_\+\+A\+D\+V\+\_\+\+I\+N\+T\+\_\+\+M\+IN}}~10
+\begin{DoxyCompactList}\small\item\em Minimum advertising interval, when in Connectable mode (n $\ast$ 0.\+625 m\+Sec) \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p___p_a_r_a_m_e_t_e_r___i_d___d_e_f_i_n_e_s_ga09e33eacde001fe874e52e4d7e595863}{T\+G\+A\+P\+\_\+\+C\+O\+N\+N\+\_\+\+A\+D\+V\+\_\+\+I\+N\+T\+\_\+\+M\+AX}}~11
+\begin{DoxyCompactList}\small\item\em Maximum advertising interval, when in Connectable mode (n $\ast$ 0.\+625 m\+Sec) \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p___p_a_r_a_m_e_t_e_r___i_d___d_e_f_i_n_e_s_ga8f4f99f701ed91cf99794ffe194d6747}{T\+G\+A\+P\+\_\+\+C\+O\+N\+N\+\_\+\+S\+C\+A\+N\+\_\+\+I\+NT}}~12
+\begin{DoxyCompactList}\small\item\em Scan interval used during Link Layer Initiating state, when in Connectable mode (n $\ast$ 0.\+625 m\+Sec) \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p___p_a_r_a_m_e_t_e_r___i_d___d_e_f_i_n_e_s_ga6548675fe6799410772d1001c52eb38b}{T\+G\+A\+P\+\_\+\+C\+O\+N\+N\+\_\+\+S\+C\+A\+N\+\_\+\+W\+I\+ND}}~13
+\begin{DoxyCompactList}\small\item\em Scan window used during Link Layer Initiating state, when in Connectable mode (n $\ast$ 0.\+625 m\+Sec) \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p___p_a_r_a_m_e_t_e_r___i_d___d_e_f_i_n_e_s_gaf9c245aaaf09a1a85311dc69e2dc2c48}{T\+G\+A\+P\+\_\+\+C\+O\+N\+N\+\_\+\+H\+I\+G\+H\+\_\+\+S\+C\+A\+N\+\_\+\+I\+NT}}~14
+\begin{DoxyCompactList}\small\item\em Scan interval used during Link Layer Initiating state, when in Connectable mode, high duty scan cycle scan parameters (n $\ast$ 0.\+625 m\+Sec) \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p___p_a_r_a_m_e_t_e_r___i_d___d_e_f_i_n_e_s_ga643d732338da45874cb277e247b8d37f}{T\+G\+A\+P\+\_\+\+C\+O\+N\+N\+\_\+\+H\+I\+G\+H\+\_\+\+S\+C\+A\+N\+\_\+\+W\+I\+ND}}~15
+\begin{DoxyCompactList}\small\item\em Scan window used during Link Layer Initiating state, when in Connectable mode, high duty scan cycle scan parameters (n $\ast$ 0.\+625 m\+Sec) \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p___p_a_r_a_m_e_t_e_r___i_d___d_e_f_i_n_e_s_ga05ed2a0f6592c5758dadef7ba0f5d7a4}{T\+G\+A\+P\+\_\+\+G\+E\+N\+\_\+\+D\+I\+S\+C\+\_\+\+S\+C\+A\+N\+\_\+\+I\+NT}}~16
+\begin{DoxyCompactList}\small\item\em Scan interval used during Link Layer Scanning state, when in General Discovery proc (n $\ast$ 0.\+625 m\+Sec) \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p___p_a_r_a_m_e_t_e_r___i_d___d_e_f_i_n_e_s_ga09e686eed22fcbadc599197ce6943c07}{T\+G\+A\+P\+\_\+\+G\+E\+N\+\_\+\+D\+I\+S\+C\+\_\+\+S\+C\+A\+N\+\_\+\+W\+I\+ND}}~17
+\begin{DoxyCompactList}\small\item\em Scan window used during Link Layer Scanning state, when in General Discovery proc (n $\ast$ 0.\+625 m\+Sec) \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p___p_a_r_a_m_e_t_e_r___i_d___d_e_f_i_n_e_s_ga4349ae354872f8b7f59ad6809a9d0cb2}{T\+G\+A\+P\+\_\+\+L\+I\+M\+\_\+\+D\+I\+S\+C\+\_\+\+S\+C\+A\+N\+\_\+\+I\+NT}}~18
+\begin{DoxyCompactList}\small\item\em Scan interval used during Link Layer Scanning state, when in Limited Discovery proc (n $\ast$ 0.\+625 m\+Sec) \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p___p_a_r_a_m_e_t_e_r___i_d___d_e_f_i_n_e_s_ga46746db3fcb37a5a8a9445ae5642fe31}{T\+G\+A\+P\+\_\+\+L\+I\+M\+\_\+\+D\+I\+S\+C\+\_\+\+S\+C\+A\+N\+\_\+\+W\+I\+ND}}~19
+\begin{DoxyCompactList}\small\item\em Scan window used during Link Layer Scanning state, when in Limited Discovery proc (n $\ast$ 0.\+625 m\+Sec) \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p___p_a_r_a_m_e_t_e_r___i_d___d_e_f_i_n_e_s_ga3511300ccef7c0ea26dbc5877837e51b}{T\+G\+A\+P\+\_\+\+C\+O\+N\+N\+\_\+\+E\+S\+T\+\_\+\+A\+DV}}~20
+\begin{DoxyCompactList}\small\item\em Advertising interval, when using Connection Establishment proc (n $\ast$ 0.\+625 m\+Sec). Obsolete -\/ Do not use. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p___p_a_r_a_m_e_t_e_r___i_d___d_e_f_i_n_e_s_gabfda02f5d5db985140d36108493671ae}{T\+G\+A\+P\+\_\+\+C\+O\+N\+N\+\_\+\+E\+S\+T\+\_\+\+I\+N\+T\+\_\+\+M\+IN}}~21
+\begin{DoxyCompactList}\small\item\em Minimum Link Layer connection interval, when using Connection Establishment proc (n $\ast$ 1.\+25 m\+Sec) \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p___p_a_r_a_m_e_t_e_r___i_d___d_e_f_i_n_e_s_ga3d8b7781c64b359b97f034c3c4d8e7d1}{T\+G\+A\+P\+\_\+\+C\+O\+N\+N\+\_\+\+E\+S\+T\+\_\+\+I\+N\+T\+\_\+\+M\+AX}}~22
+\begin{DoxyCompactList}\small\item\em Maximum Link Layer connection interval, when using Connection Establishment proc (n $\ast$ 1.\+25 m\+Sec) \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p___p_a_r_a_m_e_t_e_r___i_d___d_e_f_i_n_e_s_ga366abeb928a5b92f56267b8144279d65}{T\+G\+A\+P\+\_\+\+C\+O\+N\+N\+\_\+\+E\+S\+T\+\_\+\+S\+C\+A\+N\+\_\+\+I\+NT}}~23
+\begin{DoxyCompactList}\small\item\em Scan interval used during Link Layer Initiating state, when using Connection Establishment proc (n $\ast$ 0.\+625 m\+Sec) \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p___p_a_r_a_m_e_t_e_r___i_d___d_e_f_i_n_e_s_ga53984bd358d63f8428b3828c35b004f6}{T\+G\+A\+P\+\_\+\+C\+O\+N\+N\+\_\+\+E\+S\+T\+\_\+\+S\+C\+A\+N\+\_\+\+W\+I\+ND}}~24
+\begin{DoxyCompactList}\small\item\em Scan window used during Link Layer Initiating state, when using Connection Establishment proc (n $\ast$ 0.\+625 m\+Sec) \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p___p_a_r_a_m_e_t_e_r___i_d___d_e_f_i_n_e_s_ga4a5c55475e3ce98ed862a7ae28b51099}{T\+G\+A\+P\+\_\+\+C\+O\+N\+N\+\_\+\+E\+S\+T\+\_\+\+S\+U\+P\+E\+R\+V\+\_\+\+T\+I\+M\+E\+O\+UT}}~25
+\begin{DoxyCompactList}\small\item\em Link Layer connection supervision timeout, when using Connection Establishment proc (n $\ast$ 10 m\+Sec) \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p___p_a_r_a_m_e_t_e_r___i_d___d_e_f_i_n_e_s_ga2a53ea32ab609242306605729d7805ff}{T\+G\+A\+P\+\_\+\+C\+O\+N\+N\+\_\+\+E\+S\+T\+\_\+\+L\+A\+T\+E\+N\+CY}}~26
+\begin{DoxyCompactList}\small\item\em Link Layer connection slave latency, when using Connection Establishment proc (in number of connection events) \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p___p_a_r_a_m_e_t_e_r___i_d___d_e_f_i_n_e_s_ga9e050348dd2a18e64daf77cec71f068c}{T\+G\+A\+P\+\_\+\+C\+O\+N\+N\+\_\+\+E\+S\+T\+\_\+\+M\+I\+N\+\_\+\+C\+E\+\_\+\+L\+EN}}~27
+\begin{DoxyCompactList}\small\item\em Local informational parameter about min len of connection needed, when using Connection Establishment proc (n $\ast$ 0.\+625 m\+Sec) \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p___p_a_r_a_m_e_t_e_r___i_d___d_e_f_i_n_e_s_ga88bc6cdedb539ba43e24e36a31d41ece}{T\+G\+A\+P\+\_\+\+C\+O\+N\+N\+\_\+\+E\+S\+T\+\_\+\+M\+A\+X\+\_\+\+C\+E\+\_\+\+L\+EN}}~28
+\begin{DoxyCompactList}\small\item\em Local informational parameter about max len of connection needed, when using Connection Establishment proc (n $\ast$ 0.\+625 m\+Sec) \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p___p_a_r_a_m_e_t_e_r___i_d___d_e_f_i_n_e_s_ga17bff9e0109ea7e726de6688f1e2acf8}{T\+G\+A\+P\+\_\+\+P\+R\+I\+V\+A\+T\+E\+\_\+\+A\+D\+D\+R\+\_\+\+I\+NT}}~29
+\begin{DoxyCompactList}\small\item\em Minimum Time Interval between private (resolvable) address changes. In minutes (default 15 minutes) \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p___p_a_r_a_m_e_t_e_r___i_d___d_e_f_i_n_e_s_gae5293d1134224432a518862d1d2237d1}{T\+G\+A\+P\+\_\+\+C\+O\+N\+N\+\_\+\+P\+A\+U\+S\+E\+\_\+\+C\+E\+N\+T\+R\+AL}}~30
+\begin{DoxyCompactList}\small\item\em Central idle timer. In seconds (default 1 second) \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p___p_a_r_a_m_e_t_e_r___i_d___d_e_f_i_n_e_s_gab02abdf9785e2b8d6f3aeb99dee63bc5}{T\+G\+A\+P\+\_\+\+C\+O\+N\+N\+\_\+\+P\+A\+U\+S\+E\+\_\+\+P\+E\+R\+I\+P\+H\+E\+R\+AL}}~31
+\begin{DoxyCompactList}\small\item\em Minimum time upon connection establishment before the peripheral starts a connection update procedure. In seconds (default 5 seconds) \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p___p_a_r_a_m_e_t_e_r___i_d___d_e_f_i_n_e_s_gae1af4b22c7dee9500fdebfbb6fba0608}{T\+G\+A\+P\+\_\+\+S\+M\+\_\+\+T\+I\+M\+E\+O\+UT}}~32
+\begin{DoxyCompactList}\small\item\em SM Message Timeout (milliseconds). Default 30 seconds. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p___p_a_r_a_m_e_t_e_r___i_d___d_e_f_i_n_e_s_ga55affb5e73201f445a75faa311dea950}{T\+G\+A\+P\+\_\+\+S\+M\+\_\+\+M\+I\+N\+\_\+\+K\+E\+Y\+\_\+\+L\+EN}}~33
+\begin{DoxyCompactList}\small\item\em SM Minimum Key Length supported. Default 7. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p___p_a_r_a_m_e_t_e_r___i_d___d_e_f_i_n_e_s_gab40a5be3e53d7f497a0bd33f41281eb3}{T\+G\+A\+P\+\_\+\+S\+M\+\_\+\+M\+A\+X\+\_\+\+K\+E\+Y\+\_\+\+L\+EN}}~34
+\begin{DoxyCompactList}\small\item\em SM Maximum Key Length supported. Default 16. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p___p_a_r_a_m_e_t_e_r___i_d___d_e_f_i_n_e_s_gabe1f01cb2dc8f180dcb98005cd1d5efe}{T\+G\+A\+P\+\_\+\+F\+I\+L\+T\+E\+R\+\_\+\+A\+D\+V\+\_\+\+R\+E\+P\+O\+R\+TS}}~35
+\begin{DoxyCompactList}\small\item\em Filter duplicate advertising reports. Default T\+R\+UE. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p___p_a_r_a_m_e_t_e_r___i_d___d_e_f_i_n_e_s_gafd6b313592fbf4517e264811e7418b8e}{T\+G\+A\+P\+\_\+\+S\+C\+A\+N\+\_\+\+R\+S\+P\+\_\+\+R\+S\+S\+I\+\_\+\+M\+IN}}~36
+\begin{DoxyCompactList}\small\item\em Minimum R\+S\+SI required for scan responses to be reported to the app. Default -\/127. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p___p_a_r_a_m_e_t_e_r___i_d___d_e_f_i_n_e_s_gafe92707c71d14b1cca30a8d02331584a}{T\+G\+A\+P\+\_\+\+R\+E\+J\+E\+C\+T\+\_\+\+C\+O\+N\+N\+\_\+\+P\+A\+R\+A\+MS}}~37
+\begin{DoxyCompactList}\small\item\em Whether or not to reject Connection Parameter Update Request received on Central device. Default F\+A\+L\+SE. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p___p_a_r_a_m_e_t_e_r___i_d___d_e_f_i_n_e_s_ga0ccd49045b77e6d9214088755083f1da}{T\+G\+A\+P\+\_\+\+A\+U\+T\+H\+\_\+\+T\+A\+S\+K\+\_\+\+ID}}~38
+\begin{DoxyCompactList}\small\item\em Task ID override for Task Authentication control (for stack internal use only) \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p___p_a_r_a_m_e_t_e_r___i_d___d_e_f_i_n_e_s_gab037f041ca2d002a20590a1c27fb8b13}{T\+G\+A\+P\+\_\+\+V\+E\+R\+I\+F\+Y\+\_\+\+C\+AR}}~39
+\begin{DoxyCompactList}\small\item\em Verify C\+AR is true before sending A\+DV D\+IR using R\+PA. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p___p_a_r_a_m_e_t_e_r___i_d___d_e_f_i_n_e_s_ga0b4ed75bd19f01c0367692052515c239}{T\+G\+A\+P\+\_\+\+P\+A\+R\+A\+M\+I\+D\+\_\+\+M\+AX}}~40
+\begin{DoxyCompactList}\small\item\em ID M\+A\+X-\/valid Parameter ID. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p___d_e_v_d_i_s_c___m_o_d_e___d_e_f_i_n_e_s_ga8ba03b835529612e713c45ea24832606}{D\+E\+V\+D\+I\+S\+C\+\_\+\+M\+O\+D\+E\+\_\+\+N\+O\+N\+D\+I\+S\+C\+O\+V\+E\+R\+A\+B\+LE}}~0x00
+\begin{DoxyCompactList}\small\item\em No discoverable setting. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p___d_e_v_d_i_s_c___m_o_d_e___d_e_f_i_n_e_s_ga3362aed98e8d51f7032558d2db141104}{D\+E\+V\+D\+I\+S\+C\+\_\+\+M\+O\+D\+E\+\_\+\+G\+E\+N\+E\+R\+AL}}~0x01
+\begin{DoxyCompactList}\small\item\em General Discoverable devices. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p___d_e_v_d_i_s_c___m_o_d_e___d_e_f_i_n_e_s_ga3b4cfc77209b5657a601105c4923365f}{D\+E\+V\+D\+I\+S\+C\+\_\+\+M\+O\+D\+E\+\_\+\+L\+I\+M\+I\+T\+ED}}~0x02
+\begin{DoxyCompactList}\small\item\em Limited Discoverable devices. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p___d_e_v_d_i_s_c___m_o_d_e___d_e_f_i_n_e_s_ga98dd7e6b8ac9974edc552f48cd70750c}{D\+E\+V\+D\+I\+S\+C\+\_\+\+M\+O\+D\+E\+\_\+\+A\+LL}}~0x03
+\begin{DoxyCompactList}\small\item\em Not filtered. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___a_d_d_r_t_y_p_e___d_e_f_i_n_e_s_gad71c126e3bce730d3890767b1b749c3f}{A\+D\+D\+R\+T\+Y\+P\+E\+\_\+\+P\+U\+B\+L\+IC}}~0x00
+\begin{DoxyCompactList}\small\item\em Public Device Address. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___a_d_d_r_t_y_p_e___d_e_f_i_n_e_s_gae00dd7bc671b9644865e15aa878ad452}{A\+D\+D\+R\+T\+Y\+P\+E\+\_\+\+R\+A\+N\+D\+OM}}~0x01
+\begin{DoxyCompactList}\small\item\em Random Device Address. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___a_d_d_r_t_y_p_e___d_e_f_i_n_e_s_ga235e033cea4a8cb343fe0c071d403637}{A\+D\+D\+R\+T\+Y\+P\+E\+\_\+\+P\+U\+B\+L\+I\+C\+\_\+\+ID}}~0x02
+\begin{DoxyCompactList}\small\item\em Public Identity Address (corresponds to peer\textquotesingle{}s R\+PA) \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___a_d_d_r_t_y_p_e___d_e_f_i_n_e_s_gaabef3de922417e86d9506afa00d8f8c7}{A\+D\+D\+R\+T\+Y\+P\+E\+\_\+\+R\+A\+N\+D\+O\+M\+\_\+\+ID}}~0x03
+\begin{DoxyCompactList}\small\item\em Random (static) Identity Address (corresponds to peer\textquotesingle{}s R\+PA) \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___a_d_d_r_t_y_p_e___i_d___m_a_s_k_s_gafe3dd210fcc1e69c747d1442ea0f3b30}{S\+E\+T\+\_\+\+A\+D\+D\+R\+T\+Y\+P\+E\+\_\+\+ID}}~0x02
+\item 
+\#define \mbox{\hyperlink{group___a_d_d_r_t_y_p_e___i_d___m_a_s_k_s_gabc3a6be2d728fa44f61cc4b9567e376a}{M\+A\+S\+K\+\_\+\+A\+D\+D\+R\+T\+Y\+P\+E\+\_\+\+ID}}~0x01
+\item 
+\#define \mbox{\hyperlink{group___r_a_n_d_o_m___a_d_d_r___s_u_b_t_y_p_e___d_e_f_i_n_e_s_gaa6038f15f40dbc5b3b0569582c879a25}{R\+A\+N\+D\+O\+M\+\_\+\+A\+D\+D\+R\+\_\+\+S\+U\+B\+T\+Y\+P\+E\+\_\+\+S\+T\+A\+T\+IC}}~0x00
+\begin{DoxyCompactList}\small\item\em Random Static Address. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___r_a_n_d_o_m___a_d_d_r___s_u_b_t_y_p_e___d_e_f_i_n_e_s_ga17486353f7a12f56ca650bb3eaaa546c}{R\+A\+N\+D\+O\+M\+\_\+\+A\+D\+D\+R\+\_\+\+S\+U\+B\+T\+Y\+P\+E\+\_\+\+R\+PA}}~0x01
+\begin{DoxyCompactList}\small\item\em Resolvable Private Address. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___r_a_n_d_o_m___a_d_d_r___s_u_b_t_y_p_e___d_e_f_i_n_e_s_gaece8edc97a6f02ffb7d4d35282fece79}{R\+A\+N\+D\+O\+M\+\_\+\+A\+D\+D\+R\+\_\+\+S\+U\+B\+T\+Y\+P\+E\+\_\+\+N\+R\+PA}}~0x02
+\begin{DoxyCompactList}\small\item\em Non-\/\+Resolvable Private Address. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___r_a_n_d_o_m___a_d_d_r___b_i_t___f_i_e_l_d_s_ga01aca952700dd96f32c287abdd14e517}{R\+A\+N\+D\+O\+M\+\_\+\+A\+D\+D\+R\+\_\+\+H\+D\+R\+\_\+\+M\+A\+SK}}~0x\+C0
+\item 
+\#define \mbox{\hyperlink{group___r_a_n_d_o_m___a_d_d_r___b_i_t___f_i_e_l_d_s_gac9b08429ab10c15e482f6d6ea8956d15}{S\+T\+A\+T\+I\+C\+\_\+\+A\+D\+D\+R\+\_\+\+H\+DR}}~0x\+C0
+\item 
+\#define \mbox{\hyperlink{group___r_a_n_d_o_m___a_d_d_r___b_i_t___f_i_e_l_d_s_ga0b9774ee01b50b7d0c81b99ac5b07c06}{P\+R\+I\+V\+A\+T\+E\+\_\+\+N\+O\+N\+\_\+\+R\+E\+S\+O\+L\+V\+E\+\_\+\+A\+D\+D\+R\+\_\+\+H\+DR}}~0x80
+\item 
+\#define \mbox{\hyperlink{group___r_a_n_d_o_m___a_d_d_r___b_i_t___f_i_e_l_d_s_ga6f3a1ee4dbd115d679742b8e8bc9425d}{P\+R\+I\+V\+A\+T\+E\+\_\+\+R\+E\+S\+O\+L\+V\+E\+\_\+\+A\+D\+D\+R\+\_\+\+H\+DR}}~0x40
+\item 
+\#define \mbox{\hyperlink{group___g_a_p___a_d_d_r___m_o_d_e___d_e_f_i_n_e_s_ga4d6b3f2a6c2f1c5ab5835e1d7bd7ace7}{A\+D\+D\+R\+M\+O\+D\+E\+\_\+\+P\+U\+B\+L\+IC}}~0x00
+\begin{DoxyCompactList}\small\item\em Use the B\+D\+\_\+\+A\+D\+DR. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p___a_d_d_r___m_o_d_e___d_e_f_i_n_e_s_ga61f34ec6bdcdcb6c59fe56157cb23f0c}{A\+D\+D\+R\+M\+O\+D\+E\+\_\+\+S\+T\+A\+T\+IC}}~0x01
+\begin{DoxyCompactList}\small\item\em Use provided Static Address. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p___a_d_d_r___m_o_d_e___d_e_f_i_n_e_s_gaaa56a0fc05182de7cb2c2db5e1eafe3f}{A\+D\+D\+R\+M\+O\+D\+E\+\_\+\+P\+R\+I\+V\+A\+T\+E\+\_\+\+N\+O\+N\+R\+E\+S\+O\+L\+VE}}~0x02
+\begin{DoxyCompactList}\small\item\em Generate and Use Non-\/\+Resolvable Private Address. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p___a_d_d_r___m_o_d_e___d_e_f_i_n_e_s_gad00b5e40e8cf101a66a11e2b95032348}{A\+D\+D\+R\+M\+O\+D\+E\+\_\+\+P\+R\+I\+V\+A\+T\+E\+\_\+\+R\+E\+S\+O\+L\+VE}}~0x03
+\begin{DoxyCompactList}\small\item\em Generate and Use Resolvable Private Address. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p___a_d_v_e_r_t_i_s_e_m_e_n_t___t_y_p_e___d_e_f_i_n_e_s_gabb821355bab3dc3253bd9d824bcb3759}{G\+A\+P\+\_\+\+A\+D\+T\+Y\+P\+E\+\_\+\+A\+D\+V\+\_\+\+I\+ND}}~0x00
+\begin{DoxyCompactList}\small\item\em Connectable undirected advertisement. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p___a_d_v_e_r_t_i_s_e_m_e_n_t___t_y_p_e___d_e_f_i_n_e_s_ga6900c3a36ad21bfb7400fbe01180be62}{G\+A\+P\+\_\+\+A\+D\+T\+Y\+P\+E\+\_\+\+A\+D\+V\+\_\+\+H\+D\+C\+\_\+\+D\+I\+R\+E\+C\+T\+\_\+\+I\+ND}}~0x01
+\begin{DoxyCompactList}\small\item\em Connectable high duty cycle directed advertisement. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p___a_d_v_e_r_t_i_s_e_m_e_n_t___t_y_p_e___d_e_f_i_n_e_s_gaac9534e19b060c33a131afc043f20452}{G\+A\+P\+\_\+\+A\+D\+T\+Y\+P\+E\+\_\+\+A\+D\+V\+\_\+\+S\+C\+A\+N\+\_\+\+I\+ND}}~0x02
+\begin{DoxyCompactList}\small\item\em Scannable undirected advertisement. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p___a_d_v_e_r_t_i_s_e_m_e_n_t___t_y_p_e___d_e_f_i_n_e_s_ga555e1d5b216bc801044cf92997ad8124}{G\+A\+P\+\_\+\+A\+D\+T\+Y\+P\+E\+\_\+\+A\+D\+V\+\_\+\+N\+O\+N\+C\+O\+N\+N\+\_\+\+I\+ND}}~0x03
+\begin{DoxyCompactList}\small\item\em Non-\/\+Connectable undirected advertisement. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p___a_d_v_e_r_t_i_s_e_m_e_n_t___t_y_p_e___d_e_f_i_n_e_s_ga0cb939f80e2bbbb6759e8b6e52774eaf}{G\+A\+P\+\_\+\+A\+D\+T\+Y\+P\+E\+\_\+\+A\+D\+V\+\_\+\+L\+D\+C\+\_\+\+D\+I\+R\+E\+C\+T\+\_\+\+I\+ND}}~0x04
+\begin{DoxyCompactList}\small\item\em Connectable low duty cycle directed advertisement. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p___a_d_v_e_r_t_i_s_e_m_e_n_t___r_e_p_o_r_t___t_y_p_e___d_e_f_i_n_e_s_ga17669cb4de54109a7ad40ca8758b7376}{G\+A\+P\+\_\+\+A\+D\+R\+P\+T\+\_\+\+A\+D\+V\+\_\+\+I\+ND}}~0x00
+\begin{DoxyCompactList}\small\item\em Connectable undirected advertisement. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p___a_d_v_e_r_t_i_s_e_m_e_n_t___r_e_p_o_r_t___t_y_p_e___d_e_f_i_n_e_s_gab96dfd571f58b433e9138778d83594d7}{G\+A\+P\+\_\+\+A\+D\+R\+P\+T\+\_\+\+A\+D\+V\+\_\+\+D\+I\+R\+E\+C\+T\+\_\+\+I\+ND}}~0x01
+\begin{DoxyCompactList}\small\item\em Connectable directed advertisement. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p___a_d_v_e_r_t_i_s_e_m_e_n_t___r_e_p_o_r_t___t_y_p_e___d_e_f_i_n_e_s_ga6e36524905b794e2e57c5ede0e2c645f}{G\+A\+P\+\_\+\+A\+D\+R\+P\+T\+\_\+\+A\+D\+V\+\_\+\+S\+C\+A\+N\+\_\+\+I\+ND}}~0x02
+\begin{DoxyCompactList}\small\item\em Scannable undirected advertisement. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p___a_d_v_e_r_t_i_s_e_m_e_n_t___r_e_p_o_r_t___t_y_p_e___d_e_f_i_n_e_s_gabe80179abb0e229fd8cabb30edd33050}{G\+A\+P\+\_\+\+A\+D\+R\+P\+T\+\_\+\+A\+D\+V\+\_\+\+N\+O\+N\+C\+O\+N\+N\+\_\+\+I\+ND}}~0x03
+\begin{DoxyCompactList}\small\item\em Non-\/\+Connectable undirected advertisement. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p___a_d_v_e_r_t_i_s_e_m_e_n_t___r_e_p_o_r_t___t_y_p_e___d_e_f_i_n_e_s_ga99755bb980d7b610b4565d5afa97f643}{G\+A\+P\+\_\+\+A\+D\+R\+P\+T\+\_\+\+S\+C\+A\+N\+\_\+\+R\+SP}}~0x04
+\begin{DoxyCompactList}\small\item\em Scan Response. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p___f_i_l_t_e_r___p_o_l_i_c_y___d_e_f_i_n_e_s_gaab209f272b0a2713bde97c3a1fe0a76d}{G\+A\+P\+\_\+\+F\+I\+L\+T\+E\+R\+\_\+\+P\+O\+L\+I\+C\+Y\+\_\+\+A\+LL}}~0x00
+\begin{DoxyCompactList}\small\item\em Allow Scan Request from Any, Allow Connect Request from Any (default). \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p___f_i_l_t_e_r___p_o_l_i_c_y___d_e_f_i_n_e_s_ga1364be439d2bdc399792fdd03b76143b}{G\+A\+P\+\_\+\+F\+I\+L\+T\+E\+R\+\_\+\+P\+O\+L\+I\+C\+Y\+\_\+\+W\+H\+I\+T\+E\+\_\+\+S\+C\+AN}}~0x01
+\begin{DoxyCompactList}\small\item\em Allow Scan Request from White List Only, Allow Connect from Any. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p___f_i_l_t_e_r___p_o_l_i_c_y___d_e_f_i_n_e_s_gaaf99f65b1c4abc344882ebcb585dc59e}{G\+A\+P\+\_\+\+F\+I\+L\+T\+E\+R\+\_\+\+P\+O\+L\+I\+C\+Y\+\_\+\+W\+H\+I\+T\+E\+\_\+\+C\+ON}}~0x02
+\begin{DoxyCompactList}\small\item\em Allow Scan Request from Any, Connect from White List Only. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p___f_i_l_t_e_r___p_o_l_i_c_y___d_e_f_i_n_e_s_ga24d5e7171014b6b401176820c5edca53}{G\+A\+P\+\_\+\+F\+I\+L\+T\+E\+R\+\_\+\+P\+O\+L\+I\+C\+Y\+\_\+\+W\+H\+I\+TE}}~0x03
+\begin{DoxyCompactList}\small\item\em Allow Scan Request and Connect from White List Only. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p___d_i_s_c___f_i_l_t_e_r___p_o_l_i_c_y___d_e_f_i_n_e_s_ga0c99ef9072f46298c50ac24adae0c674}{G\+A\+P\+\_\+\+D\+I\+S\+C\+\_\+\+F\+I\+L\+T\+E\+R\+\_\+\+P\+O\+L\+I\+C\+Y\+\_\+\+A\+LL}}~0x00
+\begin{DoxyCompactList}\small\item\em Accept all Adv Packets except. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p___d_i_s_c___f_i_l_t_e_r___p_o_l_i_c_y___d_e_f_i_n_e_s_ga90a711f021c45bea1c61ae3b132cb0c4}{G\+A\+P\+\_\+\+D\+I\+S\+C\+\_\+\+F\+I\+L\+T\+E\+R\+\_\+\+P\+O\+L\+I\+C\+Y\+\_\+\+W\+H\+I\+TE}}~0x01
+\begin{DoxyCompactList}\small\item\em Accept only undirected Adv Packets from devices where AdvA is in WL. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p___d_i_s_c___f_i_l_t_e_r___p_o_l_i_c_y___d_e_f_i_n_e_s_ga070652cfb925acfab5e961c593737b91}{G\+A\+P\+\_\+\+D\+I\+S\+C\+\_\+\+F\+I\+L\+T\+E\+R\+\_\+\+P\+O\+L\+I\+C\+Y\+\_\+\+A\+L\+L\+\_\+\+D\+I\+R\+E\+CT}}~0x02
+\begin{DoxyCompactList}\small\item\em Accept all Adv Packets and Direct Adv Packets where InitA is an R\+PA. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p___d_i_s_c___f_i_l_t_e_r___p_o_l_i_c_y___d_e_f_i_n_e_s_ga58a3b7d4e8973f8cedee5a7bcfd7b423}{G\+A\+P\+\_\+\+D\+I\+S\+C\+\_\+\+F\+I\+L\+T\+E\+R\+\_\+\+P\+O\+L\+I\+C\+Y\+\_\+\+W\+H\+I\+T\+E\+\_\+\+D\+I\+R\+E\+CT}}~0x03
+\begin{DoxyCompactList}\small\item\em Accept only undirected Adv Packets from devices where AdvA is in WL and Direct Adv Packets where InitA is an R\+PA. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___b_l_e___g_a_p___d_e_f_i_n_e_s_ga6f242dd054c9b5f2e8ace26c628e2a9b}{A\+D\+V\+\_\+\+C\+H\+A\+N\+M\+A\+P\+\_\+\+S\+I\+ZE}}~5
+\begin{DoxyCompactList}\small\item\em Advertiser Channel Map. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___b_l_e___g_a_p___d_e_f_i_n_e_s_gad315eabde5837d929cf41870c9e3f344}{G\+A\+P\+\_\+\+P\+A\+S\+S\+C\+O\+D\+E\+\_\+\+M\+AX}}~999999
+\begin{DoxyCompactList}\small\item\em Maximum Pairing Passcode/\+Passkey value. Range of a passkey can be 0 -\/ 999,999. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___b_l_e___g_a_p___d_e_f_i_n_e_s_ga19a4eaa5f1a850893eac589aa68802b2}{G\+A\+P\+\_\+\+I\+N\+I\+T\+\_\+\+S\+I\+G\+N\+\_\+\+C\+O\+U\+N\+T\+ER}}~0x\+F\+F\+F\+F\+F\+F\+FF
+\item 
+\#define \mbox{\hyperlink{group___g_a_p___a_d_v_c_h_a_n___d_e_f_i_n_e_s_ga96144fa0f7c3456a9435d11ce7d36c0a}{G\+A\+P\+\_\+\+A\+D\+V\+C\+H\+A\+N\+\_\+37}}~0x01
+\begin{DoxyCompactList}\small\item\em Advertisement Channel 37. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p___a_d_v_c_h_a_n___d_e_f_i_n_e_s_ga6f308f4f703271ad1811209c51c4071b}{G\+A\+P\+\_\+\+A\+D\+V\+C\+H\+A\+N\+\_\+38}}~0x02
+\begin{DoxyCompactList}\small\item\em Advertisement Channel 38. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p___a_d_v_c_h_a_n___d_e_f_i_n_e_s_gab327343edfe88903a20fbf60024b4d58}{G\+A\+P\+\_\+\+A\+D\+V\+C\+H\+A\+N\+\_\+39}}~0x04
+\begin{DoxyCompactList}\small\item\em Advertisement Channel 39. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p___a_d_v_c_h_a_n___d_e_f_i_n_e_s_ga957a6ec415a265f5fef7cbd8f240d8c3}{G\+A\+P\+\_\+\+A\+D\+V\+C\+H\+A\+N\+\_\+\+A\+LL}}~(\mbox{\hyperlink{group___g_a_p___a_d_v_c_h_a_n___d_e_f_i_n_e_s_ga96144fa0f7c3456a9435d11ce7d36c0a}{G\+A\+P\+\_\+\+A\+D\+V\+C\+H\+A\+N\+\_\+37}} $\vert$ \mbox{\hyperlink{group___g_a_p___a_d_v_c_h_a_n___d_e_f_i_n_e_s_ga6f308f4f703271ad1811209c51c4071b}{G\+A\+P\+\_\+\+A\+D\+V\+C\+H\+A\+N\+\_\+38}} $\vert$ \mbox{\hyperlink{group___g_a_p___a_d_v_c_h_a_n___d_e_f_i_n_e_s_gab327343edfe88903a20fbf60024b4d58}{G\+A\+P\+\_\+\+A\+D\+V\+C\+H\+A\+N\+\_\+39}})
+\begin{DoxyCompactList}\small\item\em All Advertisement Channels Enabled. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p___w_h_i_t_e_l_i_s_t___d_e_f_i_n_e_s_ga0ef70b472c3279941a60520282e6520f}{W\+L\+\_\+\+N\+O\+T\+U\+S\+ED}}~0x00
+\begin{DoxyCompactList}\small\item\em White list not used but the advertiser\textquotesingle{}s address in this command is used. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p___w_h_i_t_e_l_i_s_t___d_e_f_i_n_e_s_gaf307e2ef1a956f6da38200dffaf0e4c6}{W\+L\+\_\+\+U\+S\+ED}}~0x01
+\begin{DoxyCompactList}\small\item\em White list is used and the advertiser\textquotesingle{}s address in this command is not used. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p___a_d_t_y_p_e___d_e_f_i_n_e_s_gab1bd711d70038fc779c4bf6a2c5166d0}{G\+A\+P\+\_\+\+A\+D\+T\+Y\+P\+E\+\_\+\+F\+L\+A\+GS}}~0x01
+\begin{DoxyCompactList}\small\item\em Discovery Mode\+: \mbox{\hyperlink{group___g_a_p___a_d_t_y_p_e___f_l_a_g_s___m_o_d_e_s}{G\+AP A\+D\+T\+Y\+PE Flags Discovery Modes}}. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p___a_d_t_y_p_e___d_e_f_i_n_e_s_ga4b8f6502debe1760131ee0e5d2d3a2f5}{G\+A\+P\+\_\+\+A\+D\+T\+Y\+P\+E\+\_\+16\+B\+I\+T\+\_\+\+M\+O\+RE}}~0x02
+\begin{DoxyCompactList}\small\item\em Service\+: More 16-\/bit U\+U\+I\+Ds available. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p___a_d_t_y_p_e___d_e_f_i_n_e_s_ga035ae8edc40c2ddc9bc77fb29ee08d75}{G\+A\+P\+\_\+\+A\+D\+T\+Y\+P\+E\+\_\+16\+B\+I\+T\+\_\+\+C\+O\+M\+P\+L\+E\+TE}}~0x03
+\begin{DoxyCompactList}\small\item\em Service\+: Complete list of 16-\/bit U\+U\+I\+Ds. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p___a_d_t_y_p_e___d_e_f_i_n_e_s_ga9e9dd19298a2fce7f2f2ba7b106d0032}{G\+A\+P\+\_\+\+A\+D\+T\+Y\+P\+E\+\_\+32\+B\+I\+T\+\_\+\+M\+O\+RE}}~0x04
+\begin{DoxyCompactList}\small\item\em Service\+: More 32-\/bit U\+U\+I\+Ds available. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p___a_d_t_y_p_e___d_e_f_i_n_e_s_gaa1c66218b55e707ab09aa8e33942db06}{G\+A\+P\+\_\+\+A\+D\+T\+Y\+P\+E\+\_\+32\+B\+I\+T\+\_\+\+C\+O\+M\+P\+L\+E\+TE}}~0x05
+\begin{DoxyCompactList}\small\item\em Service\+: Complete list of 32-\/bit U\+U\+I\+Ds. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p___a_d_t_y_p_e___d_e_f_i_n_e_s_ga4eed7b002abac1b211828922418a6956}{G\+A\+P\+\_\+\+A\+D\+T\+Y\+P\+E\+\_\+128\+B\+I\+T\+\_\+\+M\+O\+RE}}~0x06
+\begin{DoxyCompactList}\small\item\em Service\+: More 128-\/bit U\+U\+I\+Ds available. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p___a_d_t_y_p_e___d_e_f_i_n_e_s_ga7c31a650b5808cbcab679a1d5a820f73}{G\+A\+P\+\_\+\+A\+D\+T\+Y\+P\+E\+\_\+128\+B\+I\+T\+\_\+\+C\+O\+M\+P\+L\+E\+TE}}~0x07
+\begin{DoxyCompactList}\small\item\em Service\+: Complete list of 128-\/bit U\+U\+I\+Ds. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p___a_d_t_y_p_e___d_e_f_i_n_e_s_ga936235e7fde3970fe6c4db8eb96ff14d}{G\+A\+P\+\_\+\+A\+D\+T\+Y\+P\+E\+\_\+\+L\+O\+C\+A\+L\+\_\+\+N\+A\+M\+E\+\_\+\+S\+H\+O\+RT}}~0x08
+\begin{DoxyCompactList}\small\item\em Shortened local name. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p___a_d_t_y_p_e___d_e_f_i_n_e_s_ga73e43d425fe3ddbea114d87b2300c6a1}{G\+A\+P\+\_\+\+A\+D\+T\+Y\+P\+E\+\_\+\+L\+O\+C\+A\+L\+\_\+\+N\+A\+M\+E\+\_\+\+C\+O\+M\+P\+L\+E\+TE}}~0x09
+\begin{DoxyCompactList}\small\item\em Complete local name. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p___a_d_t_y_p_e___d_e_f_i_n_e_s_ga55eda91c788ee1de741c59fe36ee69c6}{G\+A\+P\+\_\+\+A\+D\+T\+Y\+P\+E\+\_\+\+P\+O\+W\+E\+R\+\_\+\+L\+E\+V\+EL}}~0x0A
+\begin{DoxyCompactList}\small\item\em TX Power Level\+: 0x\+XX\+: -\/127 to +127 d\+Bm. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p___a_d_t_y_p_e___d_e_f_i_n_e_s_ga5f168a38e0873452e1f9446cc7525001}{G\+A\+P\+\_\+\+A\+D\+T\+Y\+P\+E\+\_\+\+O\+O\+B\+\_\+\+C\+L\+A\+S\+S\+\_\+\+O\+F\+\_\+\+D\+E\+V\+I\+CE}}~0x0D
+\begin{DoxyCompactList}\small\item\em Simple Pairing O\+OB Tag\+: Class of device (3 octets) \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p___a_d_t_y_p_e___d_e_f_i_n_e_s_gae27044607e7e36d2da9fb9d679467743}{G\+A\+P\+\_\+\+A\+D\+T\+Y\+P\+E\+\_\+\+O\+O\+B\+\_\+\+S\+I\+M\+P\+L\+E\+\_\+\+P\+A\+I\+R\+I\+N\+G\+\_\+\+H\+A\+S\+HC}}~0x0E
+\begin{DoxyCompactList}\small\item\em Simple Pairing O\+OB Tag\+: Simple Pairing Hash C (16 octets) \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p___a_d_t_y_p_e___d_e_f_i_n_e_s_ga8efa0ecb3535d2325296cc4eb9e7d080}{G\+A\+P\+\_\+\+A\+D\+T\+Y\+P\+E\+\_\+\+O\+O\+B\+\_\+\+S\+I\+M\+P\+L\+E\+\_\+\+P\+A\+I\+R\+I\+N\+G\+\_\+\+R\+A\+N\+DR}}~0x0F
+\begin{DoxyCompactList}\small\item\em Simple Pairing O\+OB Tag\+: Simple Pairing Randomizer R (16 octets) \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p___a_d_t_y_p_e___d_e_f_i_n_e_s_gad8cc0432f90f79ca308934ab9cc87cf2}{G\+A\+P\+\_\+\+A\+D\+T\+Y\+P\+E\+\_\+\+S\+M\+\_\+\+TK}}~0x10
+\begin{DoxyCompactList}\small\item\em Security Manager TK Value. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p___a_d_t_y_p_e___d_e_f_i_n_e_s_gacbf847408255b26ab611ae360f9468ab}{G\+A\+P\+\_\+\+A\+D\+T\+Y\+P\+E\+\_\+\+S\+M\+\_\+\+O\+O\+B\+\_\+\+F\+L\+AG}}~0x11
+\begin{DoxyCompactList}\small\item\em Security Manager O\+OB Flags. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p___a_d_t_y_p_e___d_e_f_i_n_e_s_gaaeae6d5a447b67b0b050016cdf8e07a3}{G\+A\+P\+\_\+\+A\+D\+T\+Y\+P\+E\+\_\+\+S\+L\+A\+V\+E\+\_\+\+C\+O\+N\+N\+\_\+\+I\+N\+T\+E\+R\+V\+A\+L\+\_\+\+R\+A\+N\+GE}}~0x12
+\begin{DoxyCompactList}\small\item\em Min and Max values of the connection interval (2 octets Min, 2 octets Max) (0x\+F\+F\+FF indicates no conn interval min or max) \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p___a_d_t_y_p_e___d_e_f_i_n_e_s_ga6982e730ed77ec7166ac4ed8189d6b3b}{G\+A\+P\+\_\+\+A\+D\+T\+Y\+P\+E\+\_\+\+S\+I\+G\+N\+E\+D\+\_\+\+D\+A\+TA}}~0x13
+\begin{DoxyCompactList}\small\item\em Signed Data field. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p___a_d_t_y_p_e___d_e_f_i_n_e_s_ga1c151154bc1122e4c81a5556269b34a8}{G\+A\+P\+\_\+\+A\+D\+T\+Y\+P\+E\+\_\+\+S\+E\+R\+V\+I\+C\+E\+S\+\_\+\+L\+I\+S\+T\+\_\+16\+B\+IT}}~0x14
+\begin{DoxyCompactList}\small\item\em Service Solicitation\+: list of 16-\/bit Service U\+U\+I\+Ds. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p___a_d_t_y_p_e___d_e_f_i_n_e_s_gafc1e8a49cbc2d847552ce9d039513784}{G\+A\+P\+\_\+\+A\+D\+T\+Y\+P\+E\+\_\+\+S\+E\+R\+V\+I\+C\+E\+S\+\_\+\+L\+I\+S\+T\+\_\+128\+B\+IT}}~0x15
+\begin{DoxyCompactList}\small\item\em Service Solicitation\+: list of 128-\/bit Service U\+U\+I\+Ds. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p___a_d_t_y_p_e___d_e_f_i_n_e_s_ga26d15769ff3ce64a0827fe6eeb67974e}{G\+A\+P\+\_\+\+A\+D\+T\+Y\+P\+E\+\_\+\+S\+E\+R\+V\+I\+C\+E\+\_\+\+D\+A\+TA}}~0x16
+\begin{DoxyCompactList}\small\item\em Service Data -\/ 16-\/bit U\+U\+ID. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p___a_d_t_y_p_e___d_e_f_i_n_e_s_ga6365f4d14cb2e2130b035078024215c0}{G\+A\+P\+\_\+\+A\+D\+T\+Y\+P\+E\+\_\+\+P\+U\+B\+L\+I\+C\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+A\+D\+DR}}~0x17
+\begin{DoxyCompactList}\small\item\em Public Target Address. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p___a_d_t_y_p_e___d_e_f_i_n_e_s_ga3b9e4adcefb014562483e8727084cb44}{G\+A\+P\+\_\+\+A\+D\+T\+Y\+P\+E\+\_\+\+R\+A\+N\+D\+O\+M\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+A\+D\+DR}}~0x18
+\begin{DoxyCompactList}\small\item\em Random Target Address. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p___a_d_t_y_p_e___d_e_f_i_n_e_s_ga73192f11d357968c4e9c3f89fa494021}{G\+A\+P\+\_\+\+A\+D\+T\+Y\+P\+E\+\_\+\+A\+P\+P\+E\+A\+R\+A\+N\+CE}}~0x19
+\begin{DoxyCompactList}\small\item\em Appearance. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p___a_d_t_y_p_e___d_e_f_i_n_e_s_gaf92ee4ad8b92f11512dfd084cbb93f1d}{G\+A\+P\+\_\+\+A\+D\+T\+Y\+P\+E\+\_\+\+A\+D\+V\+\_\+\+I\+N\+T\+E\+R\+V\+AL}}~0x1A
+\begin{DoxyCompactList}\small\item\em Advertising Interval. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p___a_d_t_y_p_e___d_e_f_i_n_e_s_ga23445a91750c512da9c9a41f5c501259}{G\+A\+P\+\_\+\+A\+D\+T\+Y\+P\+E\+\_\+\+L\+E\+\_\+\+B\+D\+\_\+\+A\+D\+DR}}~0x1B
+\begin{DoxyCompactList}\small\item\em LE Bluetooth Device Address. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p___a_d_t_y_p_e___d_e_f_i_n_e_s_ga42c3e935f3d9583331a907ff1d4eb67a}{G\+A\+P\+\_\+\+A\+D\+T\+Y\+P\+E\+\_\+\+L\+E\+\_\+\+R\+O\+LE}}~0x1C
+\begin{DoxyCompactList}\small\item\em LE Role. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p___a_d_t_y_p_e___d_e_f_i_n_e_s_gacedd6c88165fe2522b28528cfacf5d92}{G\+A\+P\+\_\+\+A\+D\+T\+Y\+P\+E\+\_\+\+S\+I\+M\+P\+L\+E\+\_\+\+P\+A\+I\+R\+I\+N\+G\+\_\+\+H\+A\+S\+H\+C\+\_\+256}}~0x1D
+\begin{DoxyCompactList}\small\item\em Simple Pairing Hash C-\/256. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p___a_d_t_y_p_e___d_e_f_i_n_e_s_gaa53dfdb6080ba7936fb512819895bbe6}{G\+A\+P\+\_\+\+A\+D\+T\+Y\+P\+E\+\_\+\+S\+I\+M\+P\+L\+E\+\_\+\+P\+A\+I\+R\+I\+N\+G\+\_\+\+R\+A\+N\+D\+R\+\_\+256}}~0x1E
+\begin{DoxyCompactList}\small\item\em Simple Pairing Randomizer R-\/256. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p___a_d_t_y_p_e___d_e_f_i_n_e_s_ga084d319f6c4fe534e623744dc1eda453}{G\+A\+P\+\_\+\+A\+D\+T\+Y\+P\+E\+\_\+\+S\+E\+R\+V\+I\+C\+E\+\_\+\+D\+A\+T\+A\+\_\+32\+B\+IT}}~0x20
+\begin{DoxyCompactList}\small\item\em Service Data -\/ 32-\/bit U\+U\+ID. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p___a_d_t_y_p_e___d_e_f_i_n_e_s_gab19799f55365df4bfd60f037cd87e3c3}{G\+A\+P\+\_\+\+A\+D\+T\+Y\+P\+E\+\_\+\+S\+E\+R\+V\+I\+C\+E\+\_\+\+D\+A\+T\+A\+\_\+128\+B\+IT}}~0x21
+\begin{DoxyCompactList}\small\item\em Service Data -\/ 128-\/bit U\+U\+ID. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p___a_d_t_y_p_e___d_e_f_i_n_e_s_ga317692be33792955cd75767d7168bb8c}{G\+A\+P\+\_\+\+A\+D\+T\+Y\+P\+E\+\_\+3\+D\+\_\+\+I\+N\+F\+O\+\_\+\+D\+A\+TA}}~0x3D
+\begin{DoxyCompactList}\small\item\em 3D Information Data \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p___a_d_t_y_p_e___d_e_f_i_n_e_s_gaf9922633430d1ec97bd973f51b5b73c4}{G\+A\+P\+\_\+\+A\+D\+T\+Y\+P\+E\+\_\+\+M\+A\+N\+U\+F\+A\+C\+T\+U\+R\+E\+R\+\_\+\+S\+P\+E\+C\+I\+F\+IC}}~0x\+FF
+\begin{DoxyCompactList}\small\item\em Manufacturer Specific Data\+: first 2 octets contain the Company Identifier Code followed by the additional manufacturer specific data. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p___a_d_t_y_p_e___f_l_a_g_s___m_o_d_e_s_gacca2aead661f7f7c66ccd4c56abb4fce}{G\+A\+P\+\_\+\+A\+D\+T\+Y\+P\+E\+\_\+\+F\+L\+A\+G\+S\+\_\+\+L\+I\+M\+I\+T\+ED}}~0x01
+\begin{DoxyCompactList}\small\item\em Discovery Mode\+: LE Limited Discoverable Mode. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p___a_d_t_y_p_e___f_l_a_g_s___m_o_d_e_s_ga49e634627b9a74fe4f0824be26dd7dfb}{G\+A\+P\+\_\+\+A\+D\+T\+Y\+P\+E\+\_\+\+F\+L\+A\+G\+S\+\_\+\+G\+E\+N\+E\+R\+AL}}~0x02
+\begin{DoxyCompactList}\small\item\em Discovery Mode\+: LE General Discoverable Mode. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p___a_d_t_y_p_e___f_l_a_g_s___m_o_d_e_s_gabdd659cecc51bfb0f6458c27fda8864d}{G\+A\+P\+\_\+\+A\+D\+T\+Y\+P\+E\+\_\+\+F\+L\+A\+G\+S\+\_\+\+B\+R\+E\+D\+R\+\_\+\+N\+O\+T\+\_\+\+S\+U\+P\+P\+O\+R\+T\+ED}}~0x04
+\begin{DoxyCompactList}\small\item\em Discovery Mode\+: B\+R/\+E\+DR Not Supported. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p___s_t_a_t_e___f_l_a_g_s_ga90d063e3c3542c52601d771322f06e2b}{G\+A\+P\+\_\+\+S\+T\+A\+T\+E\+\_\+\+I\+D\+LE}}~0x00
+\begin{DoxyCompactList}\small\item\em Device is idle. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p___s_t_a_t_e___f_l_a_g_s_gae2a1e66e141b98d6bb4b489cae5cbf92}{G\+A\+P\+\_\+\+S\+T\+A\+T\+E\+\_\+\+A\+DV}}~0x01
+\begin{DoxyCompactList}\small\item\em Device is advertising. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p___s_t_a_t_e___f_l_a_g_s_ga0c235f3e06480255db74bd6365285854}{G\+A\+P\+\_\+\+S\+T\+A\+T\+E\+\_\+\+S\+C\+AN}}~0x02
+\begin{DoxyCompactList}\small\item\em Device is scanning. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p___s_t_a_t_e___f_l_a_g_s_ga887896bb4fae18400ffb85a6a27a1581}{G\+A\+P\+\_\+\+S\+T\+A\+T\+E\+\_\+\+I\+N\+IT}}~0x04
+\begin{DoxyCompactList}\small\item\em Device is establishing a connection. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p___a_p_p_e_a_r_a_n_c_e___v_a_l_u_e_s_gaa29b71ab8a3ec5a483aed34a9b2e9c33}{G\+A\+P\+\_\+\+A\+P\+P\+E\+A\+R\+E\+\_\+\+U\+N\+K\+N\+O\+WN}}~0x0000
+\begin{DoxyCompactList}\small\item\em Unknown. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p___a_p_p_e_a_r_a_n_c_e___v_a_l_u_e_s_ga5a995db217a86d4dfcc7a8dc0985cd01}{G\+A\+P\+\_\+\+A\+P\+P\+E\+A\+R\+E\+\_\+\+G\+E\+N\+E\+R\+I\+C\+\_\+\+P\+H\+O\+NE}}~0x0040
+\begin{DoxyCompactList}\small\item\em Generic Phone. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p___a_p_p_e_a_r_a_n_c_e___v_a_l_u_e_s_ga55d16f9de0e532a8b50f4b07f3ce261b}{G\+A\+P\+\_\+\+A\+P\+P\+E\+A\+R\+E\+\_\+\+G\+E\+N\+E\+R\+I\+C\+\_\+\+C\+O\+M\+P\+U\+T\+ER}}~0x0080
+\begin{DoxyCompactList}\small\item\em Generic Computer. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p___a_p_p_e_a_r_a_n_c_e___v_a_l_u_e_s_gadbaf11e961fe061c79e718a2a4610c0d}{G\+A\+P\+\_\+\+A\+P\+P\+E\+A\+R\+E\+\_\+\+G\+E\+N\+E\+R\+I\+C\+\_\+\+W\+A\+T\+CH}}~0x00\+C0
+\begin{DoxyCompactList}\small\item\em Generic Watch. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p___a_p_p_e_a_r_a_n_c_e___v_a_l_u_e_s_ga86fdee0adbcf65a9be275efb6da78924}{G\+A\+P\+\_\+\+A\+P\+P\+E\+A\+R\+E\+\_\+\+W\+A\+T\+C\+H\+\_\+\+S\+P\+O\+R\+TS}}~0x00\+C1
+\begin{DoxyCompactList}\small\item\em Watch\+: Sports Watch. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p___a_p_p_e_a_r_a_n_c_e___v_a_l_u_e_s_ga6cd925e6fe9bd7474cbad85dbcca50a1}{G\+A\+P\+\_\+\+A\+P\+P\+E\+A\+R\+E\+\_\+\+G\+E\+N\+E\+R\+I\+C\+\_\+\+C\+L\+O\+CK}}~0x0100
+\begin{DoxyCompactList}\small\item\em Generic Clock. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p___a_p_p_e_a_r_a_n_c_e___v_a_l_u_e_s_ga16404c0fb91bcd25e87fa37bf1f24803}{G\+A\+P\+\_\+\+A\+P\+P\+E\+A\+R\+E\+\_\+\+G\+E\+N\+E\+R\+I\+C\+\_\+\+D\+I\+S\+P\+L\+AY}}~0x0140
+\begin{DoxyCompactList}\small\item\em Generic Display. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p___a_p_p_e_a_r_a_n_c_e___v_a_l_u_e_s_ga5d7389a4a2537160e83d351a8024375c}{G\+A\+P\+\_\+\+A\+P\+P\+E\+A\+R\+E\+\_\+\+G\+E\+N\+E\+R\+I\+C\+\_\+\+RC}}~0x0180
+\begin{DoxyCompactList}\small\item\em Generic Remote Control. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p___a_p_p_e_a_r_a_n_c_e___v_a_l_u_e_s_ga9025618d35599ba46ad7295cb1972660}{G\+A\+P\+\_\+\+A\+P\+P\+E\+A\+R\+E\+\_\+\+G\+E\+N\+E\+R\+I\+C\+\_\+\+E\+Y\+E\+\_\+\+G\+A\+L\+S\+S\+ES}}~0x01\+C0
+\begin{DoxyCompactList}\small\item\em Generic Eye-\/glasses. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p___a_p_p_e_a_r_a_n_c_e___v_a_l_u_e_s_gab28db1a10cba63e1d13208129fec073f}{G\+A\+P\+\_\+\+A\+P\+P\+E\+A\+R\+E\+\_\+\+G\+E\+N\+E\+R\+I\+C\+\_\+\+T\+AG}}~0x0200
+\begin{DoxyCompactList}\small\item\em Generic Tag. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p___a_p_p_e_a_r_a_n_c_e___v_a_l_u_e_s_ga4ac5f03f25a00db354b5ff131cf29273}{G\+A\+P\+\_\+\+A\+P\+P\+E\+A\+R\+E\+\_\+\+G\+E\+N\+E\+R\+I\+C\+\_\+\+K\+E\+Y\+R\+I\+NG}}~0x0240
+\begin{DoxyCompactList}\small\item\em Generic Keyring. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p___a_p_p_e_a_r_a_n_c_e___v_a_l_u_e_s_ga7a40efcd7952eef5fc243712280f0097}{G\+A\+P\+\_\+\+A\+P\+P\+E\+A\+R\+E\+\_\+\+G\+E\+N\+E\+R\+I\+C\+\_\+\+M\+E\+D\+I\+A\+\_\+\+P\+L\+A\+Y\+ER}}~0x0280
+\begin{DoxyCompactList}\small\item\em Generic Media Player. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p___a_p_p_e_a_r_a_n_c_e___v_a_l_u_e_s_ga120b1a44a8db2aa5649a6bb9d64c2b7a}{G\+A\+P\+\_\+\+A\+P\+P\+E\+A\+R\+E\+\_\+\+G\+E\+N\+E\+R\+I\+C\+\_\+\+B\+A\+R\+C\+O\+D\+E\+\_\+\+S\+C\+A\+N\+N\+ER}}~0x02\+C0
+\begin{DoxyCompactList}\small\item\em Generic Barcode Scanner. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p___a_p_p_e_a_r_a_n_c_e___v_a_l_u_e_s_gab05c35242451246900ee442d5bc3764d}{G\+A\+P\+\_\+\+A\+P\+P\+E\+A\+R\+E\+\_\+\+G\+E\+N\+E\+R\+I\+C\+\_\+\+T\+H\+E\+R\+M\+O\+M\+E\+T\+ER}}~0x0300
+\begin{DoxyCompactList}\small\item\em Generic Thermometer. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p___a_p_p_e_a_r_a_n_c_e___v_a_l_u_e_s_ga635d741746fea148cf61d7729df54580}{G\+A\+P\+\_\+\+A\+P\+P\+E\+A\+R\+E\+\_\+\+G\+E\+N\+E\+R\+I\+C\+\_\+\+T\+H\+E\+R\+M\+O\+\_\+\+E\+AR}}~0x0301
+\begin{DoxyCompactList}\small\item\em Thermometer\+: Ear. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p___a_p_p_e_a_r_a_n_c_e___v_a_l_u_e_s_gafc2f463732a098c1b42d30a766e90a6e}{G\+A\+P\+\_\+\+A\+P\+P\+E\+A\+R\+E\+\_\+\+G\+E\+N\+E\+R\+I\+C\+\_\+\+H\+R\+\_\+\+S\+E\+N\+S\+OR}}~0x0340
+\begin{DoxyCompactList}\small\item\em Generic Heart rate Sensor. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p___a_p_p_e_a_r_a_n_c_e___v_a_l_u_e_s_gaee9a2afec0f5c8e282f5f67cb6d3ceb4}{G\+A\+P\+\_\+\+A\+P\+P\+E\+A\+R\+E\+\_\+\+G\+E\+N\+E\+R\+I\+C\+\_\+\+H\+R\+S\+\_\+\+B\+E\+LT}}~0x0341
+\begin{DoxyCompactList}\small\item\em Heart Rate Sensor\+: Heart Rate Belt. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p___a_p_p_e_a_r_a_n_c_e___v_a_l_u_e_s_ga89711b3b7d4139dae1239668126da873}{G\+A\+P\+\_\+\+A\+P\+P\+E\+A\+R\+E\+\_\+\+G\+E\+N\+E\+R\+I\+C\+\_\+\+B\+L\+O\+O\+D\+\_\+\+P\+R\+E\+S\+S\+U\+RE}}~0x0380
+\begin{DoxyCompactList}\small\item\em Generic Blood Pressure. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p___a_p_p_e_a_r_a_n_c_e___v_a_l_u_e_s_gac3c3078086f6ab489d44d9a5976c6ee3}{G\+A\+P\+\_\+\+A\+P\+P\+E\+A\+R\+E\+\_\+\+G\+E\+N\+E\+R\+I\+C\+\_\+\+B\+P\+\_\+\+A\+RM}}~0x0381
+\begin{DoxyCompactList}\small\item\em Blood Pressure\+: Arm. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p___a_p_p_e_a_r_a_n_c_e___v_a_l_u_e_s_ga33e1d1337b531b8d94316d38744563f9}{G\+A\+P\+\_\+\+A\+P\+P\+E\+A\+R\+E\+\_\+\+G\+E\+N\+E\+R\+I\+C\+\_\+\+B\+P\+\_\+\+W\+R\+I\+ST}}~0x0382
+\begin{DoxyCompactList}\small\item\em Blood Pressure\+: Wrist. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p___a_p_p_e_a_r_a_n_c_e___v_a_l_u_e_s_gabebf1192df86389b5bacd3a4f0b2b257}{G\+A\+P\+\_\+\+A\+P\+P\+E\+A\+R\+E\+\_\+\+G\+E\+N\+E\+R\+I\+C\+\_\+\+H\+ID}}~0x03\+C0
+\begin{DoxyCompactList}\small\item\em Generic Human Interface Device (H\+ID) \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p___a_p_p_e_a_r_a_n_c_e___v_a_l_u_e_s_ga18ad1bdc99b2027ba5c7e3d2ff3f6a2a}{G\+A\+P\+\_\+\+A\+P\+P\+E\+A\+R\+E\+\_\+\+H\+I\+D\+\_\+\+K\+E\+Y\+B\+O\+A\+RD}}~0x03\+C1
+\begin{DoxyCompactList}\small\item\em H\+ID Keyboard. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p___a_p_p_e_a_r_a_n_c_e___v_a_l_u_e_s_ga9862eb8f4e8bcc471a6deabe5727dc10}{G\+A\+P\+\_\+\+A\+P\+P\+E\+A\+R\+E\+\_\+\+H\+I\+D\+\_\+\+M\+O\+U\+SE}}~0x03\+C2
+\begin{DoxyCompactList}\small\item\em H\+ID Mouse. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p___a_p_p_e_a_r_a_n_c_e___v_a_l_u_e_s_ga6751da13aff8f0dd730fcc1bb0db8bba}{G\+A\+P\+\_\+\+A\+P\+P\+E\+A\+R\+E\+\_\+\+H\+I\+D\+\_\+\+J\+O\+Y\+S\+T\+IC}}~0x03\+C3
+\begin{DoxyCompactList}\small\item\em H\+ID Joystick. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p___a_p_p_e_a_r_a_n_c_e___v_a_l_u_e_s_ga0f65b3527e38703d43bd59fd3f1836b1}{G\+A\+P\+\_\+\+A\+P\+P\+E\+A\+R\+E\+\_\+\+H\+I\+D\+\_\+\+G\+A\+M\+E\+P\+AD}}~0x03\+C4
+\begin{DoxyCompactList}\small\item\em H\+ID Gamepad. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p___a_p_p_e_a_r_a_n_c_e___v_a_l_u_e_s_gaebe9ba555830f0fbd482c4a859570dba}{G\+A\+P\+\_\+\+A\+P\+P\+E\+A\+R\+E\+\_\+\+H\+I\+D\+\_\+\+D\+I\+G\+I\+T\+I\+Z\+E\+R\+\_\+\+T\+Y\+A\+B\+L\+ET}}~0x03\+C5
+\begin{DoxyCompactList}\small\item\em H\+ID Digitizer Tablet. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p___a_p_p_e_a_r_a_n_c_e___v_a_l_u_e_s_ga4b1a3ae1b58084a31c8b784e2f511229}{G\+A\+P\+\_\+\+A\+P\+P\+E\+A\+R\+E\+\_\+\+H\+I\+D\+\_\+\+D\+I\+G\+I\+T\+A\+L\+\_\+\+C\+A\+R\+D\+R\+E\+A\+D\+ER}}~0x03\+C6
+\begin{DoxyCompactList}\small\item\em H\+ID Card Reader. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p___a_p_p_e_a_r_a_n_c_e___v_a_l_u_e_s_ga14540cd64f3b41a673ddf0ce85fb8281}{G\+A\+P\+\_\+\+A\+P\+P\+E\+A\+R\+E\+\_\+\+H\+I\+D\+\_\+\+D\+I\+G\+I\+T\+A\+L\+\_\+\+P\+EN}}~0x03\+C7
+\begin{DoxyCompactList}\small\item\em H\+ID Digital Pen. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p___a_p_p_e_a_r_a_n_c_e___v_a_l_u_e_s_ga7ee6c14a008efb573c15495a8cf51ba3}{G\+A\+P\+\_\+\+A\+P\+P\+E\+A\+R\+E\+\_\+\+H\+I\+D\+\_\+\+B\+A\+R\+C\+O\+D\+E\+\_\+\+S\+C\+A\+N\+N\+ER}}~0x03\+C8
+\begin{DoxyCompactList}\small\item\em H\+ID Barcode Scanner. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef uint16 \mbox{\hyperlink{group___b_l_e___g_a_p___d_e_f_i_n_e_s_ga5ab906d5f305edeefbfc865f7405e6a0}{gap\+Param\+I\+Ds\+\_\+t}}
+\item 
+typedef uint8($\ast$ \mbox{\hyperlink{group___b_l_e___g_a_p___d_e_f_i_n_e_s_ga61d5abc8aaaabc12c07151a2e533234a}{pfn\+Supp\+Enh\+Priv\+C\+B\+\_\+t}}) (uint8 $\ast$device\+Addr)
+\item 
+typedef void($\ast$ \mbox{\hyperlink{group___b_l_e___g_a_p___d_e_f_i_n_e_s_ga75be64566cee208b2056fb99138265bc}{pfn\+Gap\+Idle\+C\+B\+\_\+t}}) ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+b\+Status\+\_\+t \mbox{\hyperlink{group___g_a_p___a_p_i_ga729bcdb44b9ea7717cbfd55d25ba5194}{G\+A\+P\+\_\+\+Device\+Init}} (uint8 task\+ID, uint8 profile\+Role, uint8 max\+Scan\+Responses, uint8 $\ast$p\+I\+RK, uint8 $\ast$p\+S\+RK, uint32 $\ast$p\+Sign\+Counter)
+\begin{DoxyCompactList}\small\item\em Called to setup the device. Call just once on initialization. \end{DoxyCompactList}\item 
+b\+Status\+\_\+t \mbox{\hyperlink{group___g_a_p___a_p_i_ga7a5784b0b07fa89d6896a5c5e6345aef}{G\+A\+P\+\_\+\+Set\+Adv\+Token}} (\mbox{\hyperlink{structgap_adv_data_token__t}{gap\+Adv\+Data\+Token\+\_\+t}} $\ast$p\+Token)
+\begin{DoxyCompactList}\small\item\em Called to setup a G\+AP Advertisement/\+Scan Response data token. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structgap_adv_data_token__t}{gap\+Adv\+Data\+Token\+\_\+t}} $\ast$ \mbox{\hyperlink{group___g_a_p___a_p_i_ga08d79d346dd04df356adcc689b19ebae}{G\+A\+P\+\_\+\+Get\+Adv\+Token}} (uint8 ad\+Type)
+\begin{DoxyCompactList}\small\item\em Called to read a G\+AP Advertisement/\+Scan Response data token. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structgap_adv_data_token__t}{gap\+Adv\+Data\+Token\+\_\+t}} $\ast$ \mbox{\hyperlink{group___g_a_p___a_p_i_gae98a99bcf9423126a2896bcf794cce76}{G\+A\+P\+\_\+\+Remove\+Adv\+Token}} (uint8 ad\+Type)
+\begin{DoxyCompactList}\small\item\em Called to remove a G\+AP Advertisement/\+Scan Response data token. \end{DoxyCompactList}\item 
+b\+Status\+\_\+t \mbox{\hyperlink{group___g_a_p___a_p_i_ga3c63f064944cbe909700e26e042d4cb7}{G\+A\+P\+\_\+\+Update\+Adv\+Tokens}} (void)
+\begin{DoxyCompactList}\small\item\em Called to rebuild and load Advertisement and Scan Response data from existing G\+AP Advertisement Tokens. \end{DoxyCompactList}\item 
+b\+Status\+\_\+t \mbox{\hyperlink{group___g_a_p___a_p_i_ga45fab6682fc253681d7abe697a4fc0b5}{G\+A\+P\+\_\+\+Set\+Param\+Value}} (\mbox{\hyperlink{group___b_l_e___g_a_p___d_e_f_i_n_e_s_ga5ab906d5f305edeefbfc865f7405e6a0}{gap\+Param\+I\+Ds\+\_\+t}} param\+ID, uint16 param\+Value)
+\begin{DoxyCompactList}\small\item\em Set a G\+AP Parameter value. Use this function to change the default G\+AP parameter values. \end{DoxyCompactList}\item 
+uint16 \mbox{\hyperlink{group___g_a_p___a_p_i_ga357fe8676645fcc9b09b1d1317a6f193}{G\+A\+P\+\_\+\+Get\+Param\+Value}} (\mbox{\hyperlink{group___b_l_e___g_a_p___d_e_f_i_n_e_s_ga5ab906d5f305edeefbfc865f7405e6a0}{gap\+Param\+I\+Ds\+\_\+t}} param\+ID)
+\begin{DoxyCompactList}\small\item\em Get a G\+AP Parameter value. \end{DoxyCompactList}\item 
+b\+Status\+\_\+t \mbox{\hyperlink{group___g_a_p___a_p_i_gaaffa833dc484847afd019d087eefb2c6}{G\+A\+P\+\_\+\+Config\+Device\+Addr}} (uint8 addr\+Mode, uint8 $\ast$p\+Static\+Addr)
+\begin{DoxyCompactList}\small\item\em Setup the device\textquotesingle{}s address type. If A\+D\+D\+R\+M\+O\+D\+E\+\_\+\+P\+R\+I\+V\+A\+T\+E\+\_\+\+R\+E\+S\+O\+L\+VE is selected, the address will change periodically. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___g_a_p___a_p_i_ga29744ff36f2789227405780eea015a24}{G\+A\+P\+\_\+\+Register\+For\+Msgs}} (uint8 task\+ID)
+\begin{DoxyCompactList}\small\item\em Register your task ID to receive extra (unprocessed) H\+CI status and complete, and Host events. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___g_a_p___a_p_i_gaf17ced2616f8b7f67b110e8e5ad141bc}{G\+A\+P\+\_\+\+Register\+Bond\+Mgr\+C\+Bs}} (\mbox{\hyperlink{structgap_bond_mgr_c_bs__t}{gap\+Bond\+Mgr\+C\+Bs\+\_\+t}} $\ast$p\+C\+Bs)
+\begin{DoxyCompactList}\small\item\em Register bond manager call backs. \end{DoxyCompactList}\item 
+b\+Status\+\_\+t \mbox{\hyperlink{group___g_a_p___a_p_i_gacd309bbef61eb5f83f369d98ef1b2529}{G\+A\+P\+\_\+\+Device\+Discovery\+Request}} (\mbox{\hyperlink{structgap_dev_disc_req__t}{gap\+Dev\+Disc\+Req\+\_\+t}} $\ast$p\+Params)
+\begin{DoxyCompactList}\small\item\em Start a device discovery scan. \end{DoxyCompactList}\item 
+b\+Status\+\_\+t \mbox{\hyperlink{group___g_a_p___a_p_i_ga1ec38cafcaf928e48ed2b859711fb0df}{G\+A\+P\+\_\+\+Device\+Discovery\+Cancel}} (uint8 task\+ID)
+\begin{DoxyCompactList}\small\item\em Cancel an existing device discovery request. \end{DoxyCompactList}\item 
+b\+Status\+\_\+t \mbox{\hyperlink{group___g_a_p___a_p_i_gae51c3724416b31db3c8fc350e3ceef3e}{G\+A\+P\+\_\+\+Make\+Discoverable}} (uint8 task\+ID, \mbox{\hyperlink{structgap_advertising_params__t}{gap\+Advertising\+Params\+\_\+t}} $\ast$p\+Params)
+\begin{DoxyCompactList}\small\item\em Setup or change advertising. Also starts advertising. \end{DoxyCompactList}\item 
+b\+Status\+\_\+t \mbox{\hyperlink{group___g_a_p___a_p_i_gaded667b28065286cf5851b8672112c23}{G\+A\+P\+\_\+\+Update\+Advertising\+Data}} (uint8 task\+ID, uint8 ad\+Type, uint8 data\+Len, uint8 $\ast$p\+Advert\+Data)
+\begin{DoxyCompactList}\small\item\em Setup or change advertising and scan response data. \end{DoxyCompactList}\item 
+b\+Status\+\_\+t \mbox{\hyperlink{group___g_a_p___a_p_i_gaf766e38b0823c4f9ca015e86ef806778}{G\+A\+P\+\_\+\+End\+Discoverable}} (uint8 task\+ID)
+\begin{DoxyCompactList}\small\item\em Stops advertising. \end{DoxyCompactList}\item 
+b\+Status\+\_\+t \mbox{\hyperlink{group___g_a_p___a_p_i_gaeb699212aa5c8048af8b251165b5c1d5}{G\+A\+P\+\_\+\+Resolve\+Private\+Addr}} (uint8 $\ast$p\+I\+RK, uint8 $\ast$p\+Addr)
+\begin{DoxyCompactList}\small\item\em Resolves a private address against an I\+RK. \end{DoxyCompactList}\item 
+b\+Status\+\_\+t \mbox{\hyperlink{group___g_a_p___a_p_i_gac1850075e9bd9ca2823999c8f2246041}{G\+A\+P\+\_\+\+Establish\+Link\+Req}} (\mbox{\hyperlink{structgap_est_link_req__t}{gap\+Est\+Link\+Req\+\_\+t}} $\ast$p\+Params)
+\begin{DoxyCompactList}\small\item\em Establish a link to a slave device. \end{DoxyCompactList}\item 
+b\+Status\+\_\+t \mbox{\hyperlink{group___g_a_p___a_p_i_ga45287a9df199ff8fd90b5fe1bfdc249a}{G\+A\+P\+\_\+\+Terminate\+Link\+Req}} (uint8 task\+ID, uint16 connection\+Handle, uint8 reason)
+\begin{DoxyCompactList}\small\item\em Terminate a link connection. \end{DoxyCompactList}\item 
+b\+Status\+\_\+t \mbox{\hyperlink{group___g_a_p___a_p_i_gaad99f6598df0ee36c4cd2608afa09618}{G\+A\+P\+\_\+\+Update\+Link\+Param\+Req}} (\mbox{\hyperlink{structgap_update_link_param_req__t}{gap\+Update\+Link\+Param\+Req\+\_\+t}} $\ast$p\+Params)
+\begin{DoxyCompactList}\small\item\em Update the link parameters to a Master or Slave device. \end{DoxyCompactList}\item 
+b\+Status\+\_\+t \mbox{\hyperlink{group___g_a_p___a_p_i_gaed1b6299bfe3b0469e2baf53cba04fe1}{G\+A\+P\+\_\+\+Update\+Link\+Param\+Req\+Reply}} (\mbox{\hyperlink{structgap_update_link_param_req_reply__t}{gap\+Update\+Link\+Param\+Req\+Reply\+\_\+t}} $\ast$p\+Params)
+\begin{DoxyCompactList}\small\item\em Reply to a Connection Parameter Update Request sent from a remote device. \end{DoxyCompactList}\item 
+uint8 \mbox{\hyperlink{group___g_a_p___a_p_i_gafe7f1125452478c395a09f4874c6374a}{G\+A\+P\+\_\+\+Num\+Active\+Connections}} (void)
+\begin{DoxyCompactList}\small\item\em Returns the number of active connections. \end{DoxyCompactList}\item 
+b\+Status\+\_\+t \mbox{\hyperlink{group___g_a_p___a_p_i_ga21cd72be1c8feccc658a7b0faec167a5}{G\+A\+P\+\_\+\+Authenticate}} (\mbox{\hyperlink{structgap_auth_params__t}{gap\+Auth\+Params\+\_\+t}} $\ast$p\+Params, \mbox{\hyperlink{structgap_pairing_req__t}{gap\+Pairing\+Req\+\_\+t}} $\ast$p\+Pair\+Req)
+\begin{DoxyCompactList}\small\item\em Start the Authentication process with the requested device. This function is used to Initiate/\+Allow pairing. Called by both master and slave device (Central and Peripheral). \end{DoxyCompactList}\item 
+b\+Status\+\_\+t \mbox{\hyperlink{group___g_a_p___a_p_i_gac9528b14ce20c351bae25ce6067a5d49}{G\+A\+P\+\_\+\+Terminate\+Auth}} (uint16 connection\+Handle, uint8 reason)
+\begin{DoxyCompactList}\small\item\em Send a Pairing Failed message and end any existing pairing. \end{DoxyCompactList}\item 
+b\+Status\+\_\+t \mbox{\hyperlink{group___g_a_p___a_p_i_ga95006a6e09ec3bbe5d29dadb30e2f464}{G\+A\+P\+\_\+\+Passkey\+Update}} (uint8 $\ast$p\+Passkey, uint16 connection\+Handle)
+\begin{DoxyCompactList}\small\item\em Update the passkey in string format. This function is called by the application/profile in response to receiving the G\+A\+P\+\_\+\+P\+A\+S\+S\+K\+E\+Y\+\_\+\+N\+E\+E\+D\+E\+D\+\_\+\+E\+V\+E\+NT message. \end{DoxyCompactList}\item 
+b\+Status\+\_\+t \mbox{\hyperlink{group___g_a_p___a_p_i_gaa546cf97fa0ba4c0bab58178e052eeb2}{G\+A\+P\+\_\+\+Passcode\+Update}} (uint32 passcode, uint16 connection\+Handle)
+\begin{DoxyCompactList}\small\item\em Update the passkey in a numeric value (not string). This function is called by the application/profile in response to receiving the G\+A\+P\+\_\+\+P\+A\+S\+S\+K\+E\+Y\+\_\+\+N\+E\+E\+D\+E\+D\+\_\+\+E\+V\+E\+NT message. \end{DoxyCompactList}\item 
+b\+Status\+\_\+t \mbox{\hyperlink{group___g_a_p___a_p_i_ga44473883ee83b5c18f956aab5570db3c}{G\+A\+P\+\_\+\+Send\+Slave\+Security\+Request}} (uint16 connection\+Handle, uint8 auth\+Req)
+\begin{DoxyCompactList}\small\item\em Generate a Slave Requested Security message to the master. \end{DoxyCompactList}\item 
+b\+Status\+\_\+t \mbox{\hyperlink{group___g_a_p___a_p_i_ga6a978b3a5b0441b2538a5da87ee9c409}{G\+A\+P\+\_\+\+Signable}} (uint16 connection\+Handle, uint8 authenticated, sm\+Signing\+Info\+\_\+t $\ast$p\+Params)
+\begin{DoxyCompactList}\small\item\em Set up the connection to accept signed data. \end{DoxyCompactList}\item 
+b\+Status\+\_\+t \mbox{\hyperlink{group___g_a_p___a_p_i_ga54c684222fd69ffdfed61ed57cb5e64e}{G\+A\+P\+\_\+\+Bond}} (uint16 connection\+Handle, uint8 authenticated, uint8 secure\+Connections, sm\+Security\+Info\+\_\+t $\ast$p\+Params, uint8 start\+Encryption)
+\begin{DoxyCompactList}\small\item\em Set up the connection\textquotesingle{}s bound paramaters. \end{DoxyCompactList}\item 
+b\+Status\+\_\+t \mbox{\hyperlink{gap_8h_ab96580ab243315da0ec3708579f3ae28}{G\+A\+P\+\_\+\+Params\+Init}} (uint8 task\+ID, uint8 profile\+Role)
+\item 
+void \mbox{\hyperlink{gap_8h_a362e8a0d71a86741e6a76685c0cedd2d}{G\+A\+P\+\_\+\+Privacy\+Init}} (uint8 $\ast$p\+I\+RK)
+\item 
+uint8 $\ast$ \mbox{\hyperlink{gap_8h_a4298ee3b15416f75aa1c7c6ec9965d14}{G\+A\+P\+\_\+\+Get\+I\+RK}} (void)
+\item 
+void \mbox{\hyperlink{gap_8h_a81bb2ea607111a2f49709e2a467a25c0}{G\+A\+P\+\_\+\+Sec\+Params\+Init}} (uint8 $\ast$p\+S\+RK, uint32 $\ast$p\+Sign\+Counter)
+\item 
+b\+Status\+\_\+t \mbox{\hyperlink{gap_8h_a2f198d86bf9c14a3ec5a2de9256315eb}{G\+A\+P\+\_\+\+Peri\+Dev\+Mgr\+Init}} (void)
+\item 
+void \mbox{\hyperlink{gap_8h_aa9a23c66490a9750c84971818cfc5299}{G\+A\+P\+\_\+\+Peri\+Conn\+Register}} (void)
+\item 
+b\+Status\+\_\+t \mbox{\hyperlink{gap_8h_ad1e803531e83f7a3e5fc25f63d852c65}{G\+A\+P\+\_\+\+Cent\+Dev\+Mgr\+Init}} (uint8 max\+Scan\+Responses)
+\item 
+void \mbox{\hyperlink{gap_8h_ac3e44c072a9938c34ab06b1c60b529fd}{G\+A\+P\+\_\+\+Cent\+Conn\+Register}} (void)
+\item 
+void \mbox{\hyperlink{gap_8h_a1ada34c4c42e58cf6519a1217853b95c}{G\+A\+P\+\_\+\+Init}} (uint8 task\+\_\+id)
+\item 
+uint16 \mbox{\hyperlink{gap_8h_a31d556a6e4c37bb31c1f583f0eca0e02}{G\+A\+P\+\_\+\+Process\+Event}} (uint8 task\+\_\+id, uint16 events)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{gap_8h_ac3e44c072a9938c34ab06b1c60b529fd}\label{gap_8h_ac3e44c072a9938c34ab06b1c60b529fd}} 
+\index{gap.h@{gap.h}!GAP\_CentConnRegister@{GAP\_CentConnRegister}}
+\index{GAP\_CentConnRegister@{GAP\_CentConnRegister}!gap.h@{gap.h}}
+\doxysubsubsection{\texorpdfstring{GAP\_CentConnRegister()}{GAP\_CentConnRegister()}}
+{\footnotesize\ttfamily void G\+A\+P\+\_\+\+Cent\+Conn\+Register (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{gap_8h_ad1e803531e83f7a3e5fc25f63d852c65}\label{gap_8h_ad1e803531e83f7a3e5fc25f63d852c65}} 
+\index{gap.h@{gap.h}!GAP\_CentDevMgrInit@{GAP\_CentDevMgrInit}}
+\index{GAP\_CentDevMgrInit@{GAP\_CentDevMgrInit}!gap.h@{gap.h}}
+\doxysubsubsection{\texorpdfstring{GAP\_CentDevMgrInit()}{GAP\_CentDevMgrInit()}}
+{\footnotesize\ttfamily b\+Status\+\_\+t G\+A\+P\+\_\+\+Cent\+Dev\+Mgr\+Init (\begin{DoxyParamCaption}\item[{uint8}]{max\+Scan\+Responses }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{gap_8h_a4298ee3b15416f75aa1c7c6ec9965d14}\label{gap_8h_a4298ee3b15416f75aa1c7c6ec9965d14}} 
+\index{gap.h@{gap.h}!GAP\_GetIRK@{GAP\_GetIRK}}
+\index{GAP\_GetIRK@{GAP\_GetIRK}!gap.h@{gap.h}}
+\doxysubsubsection{\texorpdfstring{GAP\_GetIRK()}{GAP\_GetIRK()}}
+{\footnotesize\ttfamily uint8$\ast$ G\+A\+P\+\_\+\+Get\+I\+RK (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{gap_8h_a1ada34c4c42e58cf6519a1217853b95c}\label{gap_8h_a1ada34c4c42e58cf6519a1217853b95c}} 
+\index{gap.h@{gap.h}!GAP\_Init@{GAP\_Init}}
+\index{GAP\_Init@{GAP\_Init}!gap.h@{gap.h}}
+\doxysubsubsection{\texorpdfstring{GAP\_Init()}{GAP\_Init()}}
+{\footnotesize\ttfamily void G\+A\+P\+\_\+\+Init (\begin{DoxyParamCaption}\item[{uint8}]{task\+\_\+id }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{gap_8h_ab96580ab243315da0ec3708579f3ae28}\label{gap_8h_ab96580ab243315da0ec3708579f3ae28}} 
+\index{gap.h@{gap.h}!GAP\_ParamsInit@{GAP\_ParamsInit}}
+\index{GAP\_ParamsInit@{GAP\_ParamsInit}!gap.h@{gap.h}}
+\doxysubsubsection{\texorpdfstring{GAP\_ParamsInit()}{GAP\_ParamsInit()}}
+{\footnotesize\ttfamily b\+Status\+\_\+t G\+A\+P\+\_\+\+Params\+Init (\begin{DoxyParamCaption}\item[{uint8}]{task\+ID,  }\item[{uint8}]{profile\+Role }\end{DoxyParamCaption})}
+
+End G\+A\+P\+\_\+\+A\+PI \mbox{\Hypertarget{gap_8h_aa9a23c66490a9750c84971818cfc5299}\label{gap_8h_aa9a23c66490a9750c84971818cfc5299}} 
+\index{gap.h@{gap.h}!GAP\_PeriConnRegister@{GAP\_PeriConnRegister}}
+\index{GAP\_PeriConnRegister@{GAP\_PeriConnRegister}!gap.h@{gap.h}}
+\doxysubsubsection{\texorpdfstring{GAP\_PeriConnRegister()}{GAP\_PeriConnRegister()}}
+{\footnotesize\ttfamily void G\+A\+P\+\_\+\+Peri\+Conn\+Register (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{gap_8h_a2f198d86bf9c14a3ec5a2de9256315eb}\label{gap_8h_a2f198d86bf9c14a3ec5a2de9256315eb}} 
+\index{gap.h@{gap.h}!GAP\_PeriDevMgrInit@{GAP\_PeriDevMgrInit}}
+\index{GAP\_PeriDevMgrInit@{GAP\_PeriDevMgrInit}!gap.h@{gap.h}}
+\doxysubsubsection{\texorpdfstring{GAP\_PeriDevMgrInit()}{GAP\_PeriDevMgrInit()}}
+{\footnotesize\ttfamily b\+Status\+\_\+t G\+A\+P\+\_\+\+Peri\+Dev\+Mgr\+Init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{gap_8h_a362e8a0d71a86741e6a76685c0cedd2d}\label{gap_8h_a362e8a0d71a86741e6a76685c0cedd2d}} 
+\index{gap.h@{gap.h}!GAP\_PrivacyInit@{GAP\_PrivacyInit}}
+\index{GAP\_PrivacyInit@{GAP\_PrivacyInit}!gap.h@{gap.h}}
+\doxysubsubsection{\texorpdfstring{GAP\_PrivacyInit()}{GAP\_PrivacyInit()}}
+{\footnotesize\ttfamily void G\+A\+P\+\_\+\+Privacy\+Init (\begin{DoxyParamCaption}\item[{uint8 $\ast$}]{p\+I\+RK }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{gap_8h_a31d556a6e4c37bb31c1f583f0eca0e02}\label{gap_8h_a31d556a6e4c37bb31c1f583f0eca0e02}} 
+\index{gap.h@{gap.h}!GAP\_ProcessEvent@{GAP\_ProcessEvent}}
+\index{GAP\_ProcessEvent@{GAP\_ProcessEvent}!gap.h@{gap.h}}
+\doxysubsubsection{\texorpdfstring{GAP\_ProcessEvent()}{GAP\_ProcessEvent()}}
+{\footnotesize\ttfamily uint16 G\+A\+P\+\_\+\+Process\+Event (\begin{DoxyParamCaption}\item[{uint8}]{task\+\_\+id,  }\item[{uint16}]{events }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{gap_8h_a81bb2ea607111a2f49709e2a467a25c0}\label{gap_8h_a81bb2ea607111a2f49709e2a467a25c0}} 
+\index{gap.h@{gap.h}!GAP\_SecParamsInit@{GAP\_SecParamsInit}}
+\index{GAP\_SecParamsInit@{GAP\_SecParamsInit}!gap.h@{gap.h}}
+\doxysubsubsection{\texorpdfstring{GAP\_SecParamsInit()}{GAP\_SecParamsInit()}}
+{\footnotesize\ttfamily void G\+A\+P\+\_\+\+Sec\+Params\+Init (\begin{DoxyParamCaption}\item[{uint8 $\ast$}]{p\+S\+RK,  }\item[{uint32 $\ast$}]{p\+Sign\+Counter }\end{DoxyParamCaption})}
+

@@ -1,0 +1,152 @@
+\hypertarget{structgap_device_info_event__t}{}\doxysection{gap\+Device\+Info\+Event\+\_\+t Struct Reference}
+\label{structgap_device_info_event__t}\index{gapDeviceInfoEvent\_t@{gapDeviceInfoEvent\_t}}
+
+
+{\ttfamily \#include $<$gap.\+h$>$}
+
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+osal\+\_\+event\+\_\+hdr\+\_\+t \mbox{\hyperlink{structgap_device_info_event__t_acb485a131f3a900bc995ea75a3af463c}{hdr}}
+\begin{DoxyCompactList}\small\item\em G\+A\+P\+\_\+\+M\+S\+G\+\_\+\+E\+V\+E\+NT and status. \end{DoxyCompactList}\item 
+uint8 \mbox{\hyperlink{structgap_device_info_event__t_a4b1bd427d27edb619de07dc9809b8bd1}{opcode}}
+\begin{DoxyCompactList}\small\item\em G\+A\+P\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+I\+N\+F\+O\+\_\+\+E\+V\+E\+NT. \end{DoxyCompactList}\item 
+uint8 \mbox{\hyperlink{structgap_device_info_event__t_ada74f91d375b100c771032eec4d9b048}{event\+Type}}
+\begin{DoxyCompactList}\small\item\em Advertisement Type\+: \mbox{\hyperlink{group___g_a_p___a_d_v_e_r_t_i_s_e_m_e_n_t___r_e_p_o_r_t___t_y_p_e___d_e_f_i_n_e_s}{G\+AP Advertising Report Event Types}}. \end{DoxyCompactList}\item 
+uint8 \mbox{\hyperlink{structgap_device_info_event__t_a40907ca0466c24904b659fbe9e739647}{addr\+Type}}
+\begin{DoxyCompactList}\small\item\em address type\+: \mbox{\hyperlink{group___a_d_d_r_t_y_p_e___d_e_f_i_n_e_s}{Address Types as defined by B\+LE Spec}} \end{DoxyCompactList}\item 
+uint8 \mbox{\hyperlink{structgap_device_info_event__t_ad0dcaef7b31de4d0d89f525a60dfee26}{addr}} \mbox{[}B\+\_\+\+A\+D\+D\+R\+\_\+\+L\+EN\mbox{]}
+\begin{DoxyCompactList}\small\item\em Address of the advertisement or S\+C\+A\+N\+\_\+\+R\+SP. \end{DoxyCompactList}\item 
+int8 \mbox{\hyperlink{structgap_device_info_event__t_a8700fdad0d7650e0cef5efe5de5f69a7}{rssi}}
+\begin{DoxyCompactList}\small\item\em Advertisement or S\+C\+A\+N\+\_\+\+R\+SP R\+S\+SI. \end{DoxyCompactList}\item 
+uint8 \mbox{\hyperlink{structgap_device_info_event__t_a14c90579eaeef092dd772c10c4afa572}{data\+Len}}
+\begin{DoxyCompactList}\small\item\em Length (in bytes) of the data field (evt\+Data) \end{DoxyCompactList}\item 
+uint8 $\ast$ \mbox{\hyperlink{structgap_device_info_event__t_a52ef9a096624c27aced6500c3688c9f7}{p\+Evt\+Data}}
+\begin{DoxyCompactList}\small\item\em Data field of advertisement or S\+C\+A\+N\+\_\+\+R\+SP. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+G\+A\+P\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+I\+N\+F\+O\+\_\+\+E\+V\+E\+NT message format. This message is sent to the app during a Device Discovery Request, when a new advertisement or scan response is received. 
+
+Definition at line 507 of file gap.\+h.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{structgap_device_info_event__t_ad0dcaef7b31de4d0d89f525a60dfee26}\label{structgap_device_info_event__t_ad0dcaef7b31de4d0d89f525a60dfee26}} 
+\index{gapDeviceInfoEvent\_t@{gapDeviceInfoEvent\_t}!addr@{addr}}
+\index{addr@{addr}!gapDeviceInfoEvent\_t@{gapDeviceInfoEvent\_t}}
+\doxysubsubsection{\texorpdfstring{addr}{addr}}
+{\footnotesize\ttfamily uint8 gap\+Device\+Info\+Event\+\_\+t\+::addr\mbox{[}B\+\_\+\+A\+D\+D\+R\+\_\+\+L\+EN\mbox{]}}
+
+
+
+Address of the advertisement or S\+C\+A\+N\+\_\+\+R\+SP. 
+
+
+
+Definition at line 513 of file gap.\+h.
+
+\mbox{\Hypertarget{structgap_device_info_event__t_a40907ca0466c24904b659fbe9e739647}\label{structgap_device_info_event__t_a40907ca0466c24904b659fbe9e739647}} 
+\index{gapDeviceInfoEvent\_t@{gapDeviceInfoEvent\_t}!addrType@{addrType}}
+\index{addrType@{addrType}!gapDeviceInfoEvent\_t@{gapDeviceInfoEvent\_t}}
+\doxysubsubsection{\texorpdfstring{addrType}{addrType}}
+{\footnotesize\ttfamily uint8 gap\+Device\+Info\+Event\+\_\+t\+::addr\+Type}
+
+
+
+address type\+: \mbox{\hyperlink{group___a_d_d_r_t_y_p_e___d_e_f_i_n_e_s}{Address Types as defined by B\+LE Spec}} 
+
+
+
+Definition at line 512 of file gap.\+h.
+
+\mbox{\Hypertarget{structgap_device_info_event__t_a14c90579eaeef092dd772c10c4afa572}\label{structgap_device_info_event__t_a14c90579eaeef092dd772c10c4afa572}} 
+\index{gapDeviceInfoEvent\_t@{gapDeviceInfoEvent\_t}!dataLen@{dataLen}}
+\index{dataLen@{dataLen}!gapDeviceInfoEvent\_t@{gapDeviceInfoEvent\_t}}
+\doxysubsubsection{\texorpdfstring{dataLen}{dataLen}}
+{\footnotesize\ttfamily uint8 gap\+Device\+Info\+Event\+\_\+t\+::data\+Len}
+
+
+
+Length (in bytes) of the data field (evt\+Data) 
+
+
+
+Definition at line 515 of file gap.\+h.
+
+\mbox{\Hypertarget{structgap_device_info_event__t_ada74f91d375b100c771032eec4d9b048}\label{structgap_device_info_event__t_ada74f91d375b100c771032eec4d9b048}} 
+\index{gapDeviceInfoEvent\_t@{gapDeviceInfoEvent\_t}!eventType@{eventType}}
+\index{eventType@{eventType}!gapDeviceInfoEvent\_t@{gapDeviceInfoEvent\_t}}
+\doxysubsubsection{\texorpdfstring{eventType}{eventType}}
+{\footnotesize\ttfamily uint8 gap\+Device\+Info\+Event\+\_\+t\+::event\+Type}
+
+
+
+Advertisement Type\+: \mbox{\hyperlink{group___g_a_p___a_d_v_e_r_t_i_s_e_m_e_n_t___r_e_p_o_r_t___t_y_p_e___d_e_f_i_n_e_s}{G\+AP Advertising Report Event Types}}. 
+
+
+
+Definition at line 511 of file gap.\+h.
+
+\mbox{\Hypertarget{structgap_device_info_event__t_acb485a131f3a900bc995ea75a3af463c}\label{structgap_device_info_event__t_acb485a131f3a900bc995ea75a3af463c}} 
+\index{gapDeviceInfoEvent\_t@{gapDeviceInfoEvent\_t}!hdr@{hdr}}
+\index{hdr@{hdr}!gapDeviceInfoEvent\_t@{gapDeviceInfoEvent\_t}}
+\doxysubsubsection{\texorpdfstring{hdr}{hdr}}
+{\footnotesize\ttfamily osal\+\_\+event\+\_\+hdr\+\_\+t gap\+Device\+Info\+Event\+\_\+t\+::hdr}
+
+
+
+G\+A\+P\+\_\+\+M\+S\+G\+\_\+\+E\+V\+E\+NT and status. 
+
+
+
+Definition at line 509 of file gap.\+h.
+
+\mbox{\Hypertarget{structgap_device_info_event__t_a4b1bd427d27edb619de07dc9809b8bd1}\label{structgap_device_info_event__t_a4b1bd427d27edb619de07dc9809b8bd1}} 
+\index{gapDeviceInfoEvent\_t@{gapDeviceInfoEvent\_t}!opcode@{opcode}}
+\index{opcode@{opcode}!gapDeviceInfoEvent\_t@{gapDeviceInfoEvent\_t}}
+\doxysubsubsection{\texorpdfstring{opcode}{opcode}}
+{\footnotesize\ttfamily uint8 gap\+Device\+Info\+Event\+\_\+t\+::opcode}
+
+
+
+G\+A\+P\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+I\+N\+F\+O\+\_\+\+E\+V\+E\+NT. 
+
+
+
+Definition at line 510 of file gap.\+h.
+
+\mbox{\Hypertarget{structgap_device_info_event__t_a52ef9a096624c27aced6500c3688c9f7}\label{structgap_device_info_event__t_a52ef9a096624c27aced6500c3688c9f7}} 
+\index{gapDeviceInfoEvent\_t@{gapDeviceInfoEvent\_t}!pEvtData@{pEvtData}}
+\index{pEvtData@{pEvtData}!gapDeviceInfoEvent\_t@{gapDeviceInfoEvent\_t}}
+\doxysubsubsection{\texorpdfstring{pEvtData}{pEvtData}}
+{\footnotesize\ttfamily uint8$\ast$ gap\+Device\+Info\+Event\+\_\+t\+::p\+Evt\+Data}
+
+
+
+Data field of advertisement or S\+C\+A\+N\+\_\+\+R\+SP. 
+
+
+
+Definition at line 516 of file gap.\+h.
+
+\mbox{\Hypertarget{structgap_device_info_event__t_a8700fdad0d7650e0cef5efe5de5f69a7}\label{structgap_device_info_event__t_a8700fdad0d7650e0cef5efe5de5f69a7}} 
+\index{gapDeviceInfoEvent\_t@{gapDeviceInfoEvent\_t}!rssi@{rssi}}
+\index{rssi@{rssi}!gapDeviceInfoEvent\_t@{gapDeviceInfoEvent\_t}}
+\doxysubsubsection{\texorpdfstring{rssi}{rssi}}
+{\footnotesize\ttfamily int8 gap\+Device\+Info\+Event\+\_\+t\+::rssi}
+
+
+
+Advertisement or S\+C\+A\+N\+\_\+\+R\+SP R\+S\+SI. 
+
+
+
+Definition at line 514 of file gap.\+h.
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Include/\mbox{\hyperlink{gap_8h}{gap.\+h}}\end{DoxyCompactItemize}

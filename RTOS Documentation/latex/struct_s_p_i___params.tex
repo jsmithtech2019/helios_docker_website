@@ -1,0 +1,132 @@
+\hypertarget{struct_s_p_i___params}{}\doxysection{S\+P\+I\+\_\+\+Params Struct Reference}
+\label{struct_s_p_i___params}\index{SPI\_Params@{SPI\_Params}}
+
+
+S\+PI Parameters.  
+
+
+
+
+{\ttfamily \#include $<$S\+P\+I.\+h$>$}
+
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_s_p_i_8h_ab9ea76c6529d6076eee5e1c4a5a92c6f}{S\+P\+I\+\_\+\+Transfer\+Mode}} \mbox{\hyperlink{struct_s_p_i___params_a16dbcc3768a01fb7deae25b48fc0d69c}{transfer\+Mode}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{struct_s_p_i___params_a600801907cf396a96825eaf69781913a}{transfer\+Timeout}}
+\item 
+\mbox{\hyperlink{_s_p_i_8h_a207e2d5a7e7ea5606b6995b6485ca015}{S\+P\+I\+\_\+\+Callback\+Fxn}} \mbox{\hyperlink{struct_s_p_i___params_a68d1d610da6a6bf299121b939ef2a352}{transfer\+Callback\+Fxn}}
+\item 
+\mbox{\hyperlink{_s_p_i_8h_a60a7e3d74577b38aa79ea6983362f942}{S\+P\+I\+\_\+\+Mode}} \mbox{\hyperlink{struct_s_p_i___params_abe5eca64adf4ca96bed206a271d9b157}{mode}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{struct_s_p_i___params_ab3f035044fdbe75adac8c1d729d8cf20}{bit\+Rate}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{struct_s_p_i___params_a30722b1de5e3b089ecf0c669da42ed2d}{data\+Size}}
+\item 
+\mbox{\hyperlink{_s_p_i_8h_a4e1f33555dfa8147205af5b266f3a489}{S\+P\+I\+\_\+\+Frame\+Format}} \mbox{\hyperlink{struct_s_p_i___params_a67b5ebb8ec72796a0260c427c91cc093}{frame\+Format}}
+\item 
+uintptr\+\_\+t \mbox{\hyperlink{struct_s_p_i___params_a38e4637f2ff1083cc6de3f600632a0da}{custom}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+S\+PI Parameters. 
+
+S\+PI Parameters are used to with the \mbox{\hyperlink{_s_p_i_8c_a62cfe494cb1df47cd602e8747e894fd1}{S\+P\+I\+\_\+open()}} call. Default values for these parameters are set using \mbox{\hyperlink{_s_p_i_8c_a9c3dd1748332fd6e31c79a6538a71642}{S\+P\+I\+\_\+\+Params\+\_\+init()}}.
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{_s_p_i_8c_a9c3dd1748332fd6e31c79a6538a71642}{S\+P\+I\+\_\+\+Params\+\_\+init()}} 
+\end{DoxySeeAlso}
+
+
+Definition at line 337 of file S\+P\+I.\+h.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{struct_s_p_i___params_ab3f035044fdbe75adac8c1d729d8cf20}\label{struct_s_p_i___params_ab3f035044fdbe75adac8c1d729d8cf20}} 
+\index{SPI\_Params@{SPI\_Params}!bitRate@{bitRate}}
+\index{bitRate@{bitRate}!SPI\_Params@{SPI\_Params}}
+\doxysubsubsection{\texorpdfstring{bitRate}{bitRate}}
+{\footnotesize\ttfamily uint32\+\_\+t S\+P\+I\+\_\+\+Params\+::bit\+Rate}
+
+S\+PI bit rate in Hz 
+
+Definition at line 344 of file S\+P\+I.\+h.
+
+\mbox{\Hypertarget{struct_s_p_i___params_a38e4637f2ff1083cc6de3f600632a0da}\label{struct_s_p_i___params_a38e4637f2ff1083cc6de3f600632a0da}} 
+\index{SPI\_Params@{SPI\_Params}!custom@{custom}}
+\index{custom@{custom}!SPI\_Params@{SPI\_Params}}
+\doxysubsubsection{\texorpdfstring{custom}{custom}}
+{\footnotesize\ttfamily uintptr\+\_\+t S\+P\+I\+\_\+\+Params\+::custom}
+
+Custom argument used by driver implementation 
+
+Definition at line 347 of file S\+P\+I.\+h.
+
+\mbox{\Hypertarget{struct_s_p_i___params_a30722b1de5e3b089ecf0c669da42ed2d}\label{struct_s_p_i___params_a30722b1de5e3b089ecf0c669da42ed2d}} 
+\index{SPI\_Params@{SPI\_Params}!dataSize@{dataSize}}
+\index{dataSize@{dataSize}!SPI\_Params@{SPI\_Params}}
+\doxysubsubsection{\texorpdfstring{dataSize}{dataSize}}
+{\footnotesize\ttfamily uint32\+\_\+t S\+P\+I\+\_\+\+Params\+::data\+Size}
+
+S\+PI data frame size in bits 
+
+Definition at line 345 of file S\+P\+I.\+h.
+
+\mbox{\Hypertarget{struct_s_p_i___params_a67b5ebb8ec72796a0260c427c91cc093}\label{struct_s_p_i___params_a67b5ebb8ec72796a0260c427c91cc093}} 
+\index{SPI\_Params@{SPI\_Params}!frameFormat@{frameFormat}}
+\index{frameFormat@{frameFormat}!SPI\_Params@{SPI\_Params}}
+\doxysubsubsection{\texorpdfstring{frameFormat}{frameFormat}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_p_i_8h_a4e1f33555dfa8147205af5b266f3a489}{S\+P\+I\+\_\+\+Frame\+Format}} S\+P\+I\+\_\+\+Params\+::frame\+Format}
+
+S\+PI frame format 
+
+Definition at line 346 of file S\+P\+I.\+h.
+
+\mbox{\Hypertarget{struct_s_p_i___params_abe5eca64adf4ca96bed206a271d9b157}\label{struct_s_p_i___params_abe5eca64adf4ca96bed206a271d9b157}} 
+\index{SPI\_Params@{SPI\_Params}!mode@{mode}}
+\index{mode@{mode}!SPI\_Params@{SPI\_Params}}
+\doxysubsubsection{\texorpdfstring{mode}{mode}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_p_i_8h_a60a7e3d74577b38aa79ea6983362f942}{S\+P\+I\+\_\+\+Mode}} S\+P\+I\+\_\+\+Params\+::mode}
+
+Master or Slave mode 
+
+Definition at line 343 of file S\+P\+I.\+h.
+
+\mbox{\Hypertarget{struct_s_p_i___params_a68d1d610da6a6bf299121b939ef2a352}\label{struct_s_p_i___params_a68d1d610da6a6bf299121b939ef2a352}} 
+\index{SPI\_Params@{SPI\_Params}!transferCallbackFxn@{transferCallbackFxn}}
+\index{transferCallbackFxn@{transferCallbackFxn}!SPI\_Params@{SPI\_Params}}
+\doxysubsubsection{\texorpdfstring{transferCallbackFxn}{transferCallbackFxn}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_p_i_8h_a207e2d5a7e7ea5606b6995b6485ca015}{S\+P\+I\+\_\+\+Callback\+Fxn}} S\+P\+I\+\_\+\+Params\+::transfer\+Callback\+Fxn}
+
+Callback function pointer 
+
+Definition at line 342 of file S\+P\+I.\+h.
+
+\mbox{\Hypertarget{struct_s_p_i___params_a16dbcc3768a01fb7deae25b48fc0d69c}\label{struct_s_p_i___params_a16dbcc3768a01fb7deae25b48fc0d69c}} 
+\index{SPI\_Params@{SPI\_Params}!transferMode@{transferMode}}
+\index{transferMode@{transferMode}!SPI\_Params@{SPI\_Params}}
+\doxysubsubsection{\texorpdfstring{transferMode}{transferMode}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_p_i_8h_ab9ea76c6529d6076eee5e1c4a5a92c6f}{S\+P\+I\+\_\+\+Transfer\+Mode}} S\+P\+I\+\_\+\+Params\+::transfer\+Mode}
+
+Blocking or Callback mode 
+
+Definition at line 338 of file S\+P\+I.\+h.
+
+\mbox{\Hypertarget{struct_s_p_i___params_a600801907cf396a96825eaf69781913a}\label{struct_s_p_i___params_a600801907cf396a96825eaf69781913a}} 
+\index{SPI\_Params@{SPI\_Params}!transferTimeout@{transferTimeout}}
+\index{transferTimeout@{transferTimeout}!SPI\_Params@{SPI\_Params}}
+\doxysubsubsection{\texorpdfstring{transferTimeout}{transferTimeout}}
+{\footnotesize\ttfamily uint32\+\_\+t S\+P\+I\+\_\+\+Params\+::transfer\+Timeout}
+
+Transfer timeout in system ticks (Not supported with all implementations 
+
+Definition at line 339 of file S\+P\+I.\+h.
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Drivers/\+S\+P\+I/\mbox{\hyperlink{_s_p_i_8h}{S\+P\+I.\+h}}\end{DoxyCompactItemize}

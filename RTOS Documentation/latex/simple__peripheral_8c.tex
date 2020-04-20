@@ -1,0 +1,290 @@
+\hypertarget{simple__peripheral_8c}{}\doxysection{Application/simple\+\_\+peripheral.c File Reference}
+\label{simple__peripheral_8c}\index{Application/simple\_peripheral.c@{Application/simple\_peripheral.c}}
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$ti/sysbios/knl/\+Task.\+h$>$}\newline
+{\ttfamily \#include $<$ti/sysbios/knl/\+Clock.\+h$>$}\newline
+{\ttfamily \#include $<$ti/sysbios/knl/\+Semaphore.\+h$>$}\newline
+{\ttfamily \#include $<$ti/sysbios/knl/\+Queue.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}hci\+\_\+tl.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}gatt.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}linkdb.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}gapgattserver.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}gattservapp.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}devinfoservice.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}simple\+\_\+gatt\+\_\+profile.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}peripheral.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}gapbondmgr.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}osal\+\_\+snv.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}icall\+\_\+apimsg.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}util.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$ti/mw/display/\+Display.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}board\+\_\+key.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}board.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}simple\+\_\+peripheral.\+h\char`\"{}}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structsbp_evt__t}{sbp\+Evt\+\_\+t}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{simple__peripheral_8c_acf5f6bcd3fcaeb6148476be7ea0efa67}{D\+E\+F\+A\+U\+L\+T\+\_\+\+A\+D\+V\+E\+R\+T\+I\+S\+I\+N\+G\+\_\+\+I\+N\+T\+E\+R\+V\+AL}}~160
+\item 
+\#define \mbox{\hyperlink{simple__peripheral_8c_a38be789c3aaf3b34fc6a5a0a9b2f96a0}{D\+E\+F\+A\+U\+L\+T\+\_\+\+D\+I\+S\+C\+O\+V\+E\+R\+A\+B\+L\+E\+\_\+\+M\+O\+DE}}~\mbox{\hyperlink{group___g_a_p___a_d_t_y_p_e___f_l_a_g_s___m_o_d_e_s_ga49e634627b9a74fe4f0824be26dd7dfb}{G\+A\+P\+\_\+\+A\+D\+T\+Y\+P\+E\+\_\+\+F\+L\+A\+G\+S\+\_\+\+G\+E\+N\+E\+R\+AL}}
+\item 
+\#define \mbox{\hyperlink{simple__peripheral_8c_a0ac97c4fab20172aa100def2d9dfc60c}{D\+E\+F\+A\+U\+L\+T\+\_\+\+D\+E\+S\+I\+R\+E\+D\+\_\+\+M\+I\+N\+\_\+\+C\+O\+N\+N\+\_\+\+I\+N\+T\+E\+R\+V\+AL}}~80
+\item 
+\#define \mbox{\hyperlink{simple__peripheral_8c_a7a0eb10434e8efae41961611a5ffaafc}{D\+E\+F\+A\+U\+L\+T\+\_\+\+D\+E\+S\+I\+R\+E\+D\+\_\+\+M\+A\+X\+\_\+\+C\+O\+N\+N\+\_\+\+I\+N\+T\+E\+R\+V\+AL}}~800
+\item 
+\#define \mbox{\hyperlink{simple__peripheral_8c_a5f856b86f2244ad972b775a7fefddcb7}{D\+E\+F\+A\+U\+L\+T\+\_\+\+D\+E\+S\+I\+R\+E\+D\+\_\+\+S\+L\+A\+V\+E\+\_\+\+L\+A\+T\+E\+N\+CY}}~0
+\item 
+\#define \mbox{\hyperlink{simple__peripheral_8c_a3f9af1186ac2bef83384b81fb29cda68}{D\+E\+F\+A\+U\+L\+T\+\_\+\+D\+E\+S\+I\+R\+E\+D\+\_\+\+C\+O\+N\+N\+\_\+\+T\+I\+M\+E\+O\+UT}}~1000
+\item 
+\#define \mbox{\hyperlink{simple__peripheral_8c_a5bfdd82c09afe61bba762a24aa7e834b}{D\+E\+F\+A\+U\+L\+T\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+U\+P\+D\+A\+T\+E\+\_\+\+R\+E\+Q\+U\+E\+ST}}~\mbox{\hyperlink{peripheral_8h_a0c46608c868b9ae9a127dcbd80aa1f00}{G\+A\+P\+R\+O\+L\+E\+\_\+\+L\+I\+N\+K\+\_\+\+P\+A\+R\+A\+M\+\_\+\+U\+P\+D\+A\+T\+E\+\_\+\+I\+N\+I\+T\+I\+A\+T\+E\+\_\+\+B\+O\+T\+H\+\_\+\+P\+A\+R\+A\+MS}}
+\item 
+\#define \mbox{\hyperlink{simple__peripheral_8c_a2315bf74792db9d471649b43f8485f7a}{D\+E\+F\+A\+U\+L\+T\+\_\+\+C\+O\+N\+N\+\_\+\+P\+A\+U\+S\+E\+\_\+\+P\+E\+R\+I\+P\+H\+E\+R\+AL}}~6
+\item 
+\#define \mbox{\hyperlink{simple__peripheral_8c_aa3dc16c5b26bd1d177cded511a9c8e0c}{S\+B\+P\+\_\+\+P\+E\+R\+I\+O\+D\+I\+C\+\_\+\+E\+V\+T\+\_\+\+P\+E\+R\+I\+OD}}~5000
+\item 
+\#define \mbox{\hyperlink{simple__peripheral_8c_abc35c1ff94c65e72bf3c9c202d79c7c5}{S\+B\+P\+\_\+\+T\+A\+S\+K\+\_\+\+P\+R\+I\+O\+R\+I\+TY}}~1
+\item 
+\#define \mbox{\hyperlink{simple__peripheral_8c_aea34371275176390cf9c6d98bb5ed981}{S\+B\+P\+\_\+\+T\+A\+S\+K\+\_\+\+S\+T\+A\+C\+K\+\_\+\+S\+I\+ZE}}~644
+\item 
+\#define \mbox{\hyperlink{simple__peripheral_8c_a4437bd50df6089677e3e67e68c06b5c7}{S\+B\+P\+\_\+\+S\+T\+A\+T\+E\+\_\+\+C\+H\+A\+N\+G\+E\+\_\+\+E\+VT}}~0x0001
+\item 
+\#define \mbox{\hyperlink{simple__peripheral_8c_afc4db38a02ddd17a10f362a8922c3705}{S\+B\+P\+\_\+\+C\+H\+A\+R\+\_\+\+C\+H\+A\+N\+G\+E\+\_\+\+E\+VT}}~0x0002
+\item 
+\#define \mbox{\hyperlink{simple__peripheral_8c_ad68db2e8177bedf94c29588416bc1e5d}{S\+B\+P\+\_\+\+P\+E\+R\+I\+O\+D\+I\+C\+\_\+\+E\+VT}}~0x0004
+\item 
+\#define \mbox{\hyperlink{simple__peripheral_8c_a53922671703a52f6f4377546017c94ae}{S\+B\+P\+\_\+\+C\+O\+N\+N\+\_\+\+E\+V\+T\+\_\+\+E\+N\+D\+\_\+\+E\+VT}}~0x0008
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{simple__peripheral_8c_a19b35a66f16d6f3c6129792f691417cb}{Assert\+Handler}} (uint8 assert\+Cause, uint8 assert\+Subcause)
+\item 
+void \mbox{\hyperlink{simple__peripheral_8c_a0c93a5cab168c9aac90b60aff6a1e5be}{Simple\+B\+L\+E\+Peripheral\+\_\+create\+Task}} (void)
+\begin{DoxyCompactList}\small\item\em F\+E\+A\+T\+U\+R\+E\+\_\+\+O\+A\+D\+\_\+\+O\+N\+C\+H\+IP. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_display_8h_a045a26811755aabf1886d982c49e54ab}{Display\+\_\+\+Handle}} \mbox{\hyperlink{simple__peripheral_8c_aceb5c6a20985ea616af965124a2d5785}{disp\+Handle}} = N\+U\+LL
+\item 
+Task\+\_\+\+Struct \mbox{\hyperlink{simple__peripheral_8c_a4e61194e7a64368a8824db6415a545bc}{sbp\+Task}}
+\item 
+Char \mbox{\hyperlink{simple__peripheral_8c_aaadfc066571e27ea8a1765402c0f0ffa}{sbp\+Task\+Stack}} \mbox{[}\mbox{\hyperlink{simple__peripheral_8c_aea34371275176390cf9c6d98bb5ed981}{S\+B\+P\+\_\+\+T\+A\+S\+K\+\_\+\+S\+T\+A\+C\+K\+\_\+\+S\+I\+ZE}}\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{simple__peripheral_8c_acf5f6bcd3fcaeb6148476be7ea0efa67}\label{simple__peripheral_8c_acf5f6bcd3fcaeb6148476be7ea0efa67}} 
+\index{simple\_peripheral.c@{simple\_peripheral.c}!DEFAULT\_ADVERTISING\_INTERVAL@{DEFAULT\_ADVERTISING\_INTERVAL}}
+\index{DEFAULT\_ADVERTISING\_INTERVAL@{DEFAULT\_ADVERTISING\_INTERVAL}!simple\_peripheral.c@{simple\_peripheral.c}}
+\doxysubsubsection{\texorpdfstring{DEFAULT\_ADVERTISING\_INTERVAL}{DEFAULT\_ADVERTISING\_INTERVAL}}
+{\footnotesize\ttfamily \#define D\+E\+F\+A\+U\+L\+T\+\_\+\+A\+D\+V\+E\+R\+T\+I\+S\+I\+N\+G\+\_\+\+I\+N\+T\+E\+R\+V\+AL~160}
+
+
+
+Definition at line 100 of file simple\+\_\+peripheral.\+c.
+
+\mbox{\Hypertarget{simple__peripheral_8c_a2315bf74792db9d471649b43f8485f7a}\label{simple__peripheral_8c_a2315bf74792db9d471649b43f8485f7a}} 
+\index{simple\_peripheral.c@{simple\_peripheral.c}!DEFAULT\_CONN\_PAUSE\_PERIPHERAL@{DEFAULT\_CONN\_PAUSE\_PERIPHERAL}}
+\index{DEFAULT\_CONN\_PAUSE\_PERIPHERAL@{DEFAULT\_CONN\_PAUSE\_PERIPHERAL}!simple\_peripheral.c@{simple\_peripheral.c}}
+\doxysubsubsection{\texorpdfstring{DEFAULT\_CONN\_PAUSE\_PERIPHERAL}{DEFAULT\_CONN\_PAUSE\_PERIPHERAL}}
+{\footnotesize\ttfamily \#define D\+E\+F\+A\+U\+L\+T\+\_\+\+C\+O\+N\+N\+\_\+\+P\+A\+U\+S\+E\+\_\+\+P\+E\+R\+I\+P\+H\+E\+R\+AL~6}
+
+
+
+Definition at line 136 of file simple\+\_\+peripheral.\+c.
+
+\mbox{\Hypertarget{simple__peripheral_8c_a3f9af1186ac2bef83384b81fb29cda68}\label{simple__peripheral_8c_a3f9af1186ac2bef83384b81fb29cda68}} 
+\index{simple\_peripheral.c@{simple\_peripheral.c}!DEFAULT\_DESIRED\_CONN\_TIMEOUT@{DEFAULT\_DESIRED\_CONN\_TIMEOUT}}
+\index{DEFAULT\_DESIRED\_CONN\_TIMEOUT@{DEFAULT\_DESIRED\_CONN\_TIMEOUT}!simple\_peripheral.c@{simple\_peripheral.c}}
+\doxysubsubsection{\texorpdfstring{DEFAULT\_DESIRED\_CONN\_TIMEOUT}{DEFAULT\_DESIRED\_CONN\_TIMEOUT}}
+{\footnotesize\ttfamily \#define D\+E\+F\+A\+U\+L\+T\+\_\+\+D\+E\+S\+I\+R\+E\+D\+\_\+\+C\+O\+N\+N\+\_\+\+T\+I\+M\+E\+O\+UT~1000}
+
+
+
+Definition at line 129 of file simple\+\_\+peripheral.\+c.
+
+\mbox{\Hypertarget{simple__peripheral_8c_a7a0eb10434e8efae41961611a5ffaafc}\label{simple__peripheral_8c_a7a0eb10434e8efae41961611a5ffaafc}} 
+\index{simple\_peripheral.c@{simple\_peripheral.c}!DEFAULT\_DESIRED\_MAX\_CONN\_INTERVAL@{DEFAULT\_DESIRED\_MAX\_CONN\_INTERVAL}}
+\index{DEFAULT\_DESIRED\_MAX\_CONN\_INTERVAL@{DEFAULT\_DESIRED\_MAX\_CONN\_INTERVAL}!simple\_peripheral.c@{simple\_peripheral.c}}
+\doxysubsubsection{\texorpdfstring{DEFAULT\_DESIRED\_MAX\_CONN\_INTERVAL}{DEFAULT\_DESIRED\_MAX\_CONN\_INTERVAL}}
+{\footnotesize\ttfamily \#define D\+E\+F\+A\+U\+L\+T\+\_\+\+D\+E\+S\+I\+R\+E\+D\+\_\+\+M\+A\+X\+\_\+\+C\+O\+N\+N\+\_\+\+I\+N\+T\+E\+R\+V\+AL~800}
+
+
+
+Definition at line 113 of file simple\+\_\+peripheral.\+c.
+
+\mbox{\Hypertarget{simple__peripheral_8c_a0ac97c4fab20172aa100def2d9dfc60c}\label{simple__peripheral_8c_a0ac97c4fab20172aa100def2d9dfc60c}} 
+\index{simple\_peripheral.c@{simple\_peripheral.c}!DEFAULT\_DESIRED\_MIN\_CONN\_INTERVAL@{DEFAULT\_DESIRED\_MIN\_CONN\_INTERVAL}}
+\index{DEFAULT\_DESIRED\_MIN\_CONN\_INTERVAL@{DEFAULT\_DESIRED\_MIN\_CONN\_INTERVAL}!simple\_peripheral.c@{simple\_peripheral.c}}
+\doxysubsubsection{\texorpdfstring{DEFAULT\_DESIRED\_MIN\_CONN\_INTERVAL}{DEFAULT\_DESIRED\_MIN\_CONN\_INTERVAL}}
+{\footnotesize\ttfamily \#define D\+E\+F\+A\+U\+L\+T\+\_\+\+D\+E\+S\+I\+R\+E\+D\+\_\+\+M\+I\+N\+\_\+\+C\+O\+N\+N\+\_\+\+I\+N\+T\+E\+R\+V\+AL~80}
+
+
+
+Definition at line 109 of file simple\+\_\+peripheral.\+c.
+
+\mbox{\Hypertarget{simple__peripheral_8c_a5f856b86f2244ad972b775a7fefddcb7}\label{simple__peripheral_8c_a5f856b86f2244ad972b775a7fefddcb7}} 
+\index{simple\_peripheral.c@{simple\_peripheral.c}!DEFAULT\_DESIRED\_SLAVE\_LATENCY@{DEFAULT\_DESIRED\_SLAVE\_LATENCY}}
+\index{DEFAULT\_DESIRED\_SLAVE\_LATENCY@{DEFAULT\_DESIRED\_SLAVE\_LATENCY}!simple\_peripheral.c@{simple\_peripheral.c}}
+\doxysubsubsection{\texorpdfstring{DEFAULT\_DESIRED\_SLAVE\_LATENCY}{DEFAULT\_DESIRED\_SLAVE\_LATENCY}}
+{\footnotesize\ttfamily \#define D\+E\+F\+A\+U\+L\+T\+\_\+\+D\+E\+S\+I\+R\+E\+D\+\_\+\+S\+L\+A\+V\+E\+\_\+\+L\+A\+T\+E\+N\+CY~0}
+
+
+
+Definition at line 125 of file simple\+\_\+peripheral.\+c.
+
+\mbox{\Hypertarget{simple__peripheral_8c_a38be789c3aaf3b34fc6a5a0a9b2f96a0}\label{simple__peripheral_8c_a38be789c3aaf3b34fc6a5a0a9b2f96a0}} 
+\index{simple\_peripheral.c@{simple\_peripheral.c}!DEFAULT\_DISCOVERABLE\_MODE@{DEFAULT\_DISCOVERABLE\_MODE}}
+\index{DEFAULT\_DISCOVERABLE\_MODE@{DEFAULT\_DISCOVERABLE\_MODE}!simple\_peripheral.c@{simple\_peripheral.c}}
+\doxysubsubsection{\texorpdfstring{DEFAULT\_DISCOVERABLE\_MODE}{DEFAULT\_DISCOVERABLE\_MODE}}
+{\footnotesize\ttfamily \#define D\+E\+F\+A\+U\+L\+T\+\_\+\+D\+I\+S\+C\+O\+V\+E\+R\+A\+B\+L\+E\+\_\+\+M\+O\+DE~\mbox{\hyperlink{group___g_a_p___a_d_t_y_p_e___f_l_a_g_s___m_o_d_e_s_ga49e634627b9a74fe4f0824be26dd7dfb}{G\+A\+P\+\_\+\+A\+D\+T\+Y\+P\+E\+\_\+\+F\+L\+A\+G\+S\+\_\+\+G\+E\+N\+E\+R\+AL}}}
+
+
+
+Definition at line 104 of file simple\+\_\+peripheral.\+c.
+
+\mbox{\Hypertarget{simple__peripheral_8c_a5bfdd82c09afe61bba762a24aa7e834b}\label{simple__peripheral_8c_a5bfdd82c09afe61bba762a24aa7e834b}} 
+\index{simple\_peripheral.c@{simple\_peripheral.c}!DEFAULT\_ENABLE\_UPDATE\_REQUEST@{DEFAULT\_ENABLE\_UPDATE\_REQUEST}}
+\index{DEFAULT\_ENABLE\_UPDATE\_REQUEST@{DEFAULT\_ENABLE\_UPDATE\_REQUEST}!simple\_peripheral.c@{simple\_peripheral.c}}
+\doxysubsubsection{\texorpdfstring{DEFAULT\_ENABLE\_UPDATE\_REQUEST}{DEFAULT\_ENABLE\_UPDATE\_REQUEST}}
+{\footnotesize\ttfamily \#define D\+E\+F\+A\+U\+L\+T\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+U\+P\+D\+A\+T\+E\+\_\+\+R\+E\+Q\+U\+E\+ST~\mbox{\hyperlink{peripheral_8h_a0c46608c868b9ae9a127dcbd80aa1f00}{G\+A\+P\+R\+O\+L\+E\+\_\+\+L\+I\+N\+K\+\_\+\+P\+A\+R\+A\+M\+\_\+\+U\+P\+D\+A\+T\+E\+\_\+\+I\+N\+I\+T\+I\+A\+T\+E\+\_\+\+B\+O\+T\+H\+\_\+\+P\+A\+R\+A\+MS}}}
+
+
+
+Definition at line 133 of file simple\+\_\+peripheral.\+c.
+
+\mbox{\Hypertarget{simple__peripheral_8c_afc4db38a02ddd17a10f362a8922c3705}\label{simple__peripheral_8c_afc4db38a02ddd17a10f362a8922c3705}} 
+\index{simple\_peripheral.c@{simple\_peripheral.c}!SBP\_CHAR\_CHANGE\_EVT@{SBP\_CHAR\_CHANGE\_EVT}}
+\index{SBP\_CHAR\_CHANGE\_EVT@{SBP\_CHAR\_CHANGE\_EVT}!simple\_peripheral.c@{simple\_peripheral.c}}
+\doxysubsubsection{\texorpdfstring{SBP\_CHAR\_CHANGE\_EVT}{SBP\_CHAR\_CHANGE\_EVT}}
+{\footnotesize\ttfamily \#define S\+B\+P\+\_\+\+C\+H\+A\+R\+\_\+\+C\+H\+A\+N\+G\+E\+\_\+\+E\+VT~0x0002}
+
+
+
+Definition at line 156 of file simple\+\_\+peripheral.\+c.
+
+\mbox{\Hypertarget{simple__peripheral_8c_a53922671703a52f6f4377546017c94ae}\label{simple__peripheral_8c_a53922671703a52f6f4377546017c94ae}} 
+\index{simple\_peripheral.c@{simple\_peripheral.c}!SBP\_CONN\_EVT\_END\_EVT@{SBP\_CONN\_EVT\_END\_EVT}}
+\index{SBP\_CONN\_EVT\_END\_EVT@{SBP\_CONN\_EVT\_END\_EVT}!simple\_peripheral.c@{simple\_peripheral.c}}
+\doxysubsubsection{\texorpdfstring{SBP\_CONN\_EVT\_END\_EVT}{SBP\_CONN\_EVT\_END\_EVT}}
+{\footnotesize\ttfamily \#define S\+B\+P\+\_\+\+C\+O\+N\+N\+\_\+\+E\+V\+T\+\_\+\+E\+N\+D\+\_\+\+E\+VT~0x0008}
+
+
+
+Definition at line 158 of file simple\+\_\+peripheral.\+c.
+
+\mbox{\Hypertarget{simple__peripheral_8c_ad68db2e8177bedf94c29588416bc1e5d}\label{simple__peripheral_8c_ad68db2e8177bedf94c29588416bc1e5d}} 
+\index{simple\_peripheral.c@{simple\_peripheral.c}!SBP\_PERIODIC\_EVT@{SBP\_PERIODIC\_EVT}}
+\index{SBP\_PERIODIC\_EVT@{SBP\_PERIODIC\_EVT}!simple\_peripheral.c@{simple\_peripheral.c}}
+\doxysubsubsection{\texorpdfstring{SBP\_PERIODIC\_EVT}{SBP\_PERIODIC\_EVT}}
+{\footnotesize\ttfamily \#define S\+B\+P\+\_\+\+P\+E\+R\+I\+O\+D\+I\+C\+\_\+\+E\+VT~0x0004}
+
+
+
+Definition at line 157 of file simple\+\_\+peripheral.\+c.
+
+\mbox{\Hypertarget{simple__peripheral_8c_aa3dc16c5b26bd1d177cded511a9c8e0c}\label{simple__peripheral_8c_aa3dc16c5b26bd1d177cded511a9c8e0c}} 
+\index{simple\_peripheral.c@{simple\_peripheral.c}!SBP\_PERIODIC\_EVT\_PERIOD@{SBP\_PERIODIC\_EVT\_PERIOD}}
+\index{SBP\_PERIODIC\_EVT\_PERIOD@{SBP\_PERIODIC\_EVT\_PERIOD}!simple\_peripheral.c@{simple\_peripheral.c}}
+\doxysubsubsection{\texorpdfstring{SBP\_PERIODIC\_EVT\_PERIOD}{SBP\_PERIODIC\_EVT\_PERIOD}}
+{\footnotesize\ttfamily \#define S\+B\+P\+\_\+\+P\+E\+R\+I\+O\+D\+I\+C\+\_\+\+E\+V\+T\+\_\+\+P\+E\+R\+I\+OD~5000}
+
+
+
+Definition at line 139 of file simple\+\_\+peripheral.\+c.
+
+\mbox{\Hypertarget{simple__peripheral_8c_a4437bd50df6089677e3e67e68c06b5c7}\label{simple__peripheral_8c_a4437bd50df6089677e3e67e68c06b5c7}} 
+\index{simple\_peripheral.c@{simple\_peripheral.c}!SBP\_STATE\_CHANGE\_EVT@{SBP\_STATE\_CHANGE\_EVT}}
+\index{SBP\_STATE\_CHANGE\_EVT@{SBP\_STATE\_CHANGE\_EVT}!simple\_peripheral.c@{simple\_peripheral.c}}
+\doxysubsubsection{\texorpdfstring{SBP\_STATE\_CHANGE\_EVT}{SBP\_STATE\_CHANGE\_EVT}}
+{\footnotesize\ttfamily \#define S\+B\+P\+\_\+\+S\+T\+A\+T\+E\+\_\+\+C\+H\+A\+N\+G\+E\+\_\+\+E\+VT~0x0001}
+
+
+
+Definition at line 155 of file simple\+\_\+peripheral.\+c.
+
+\mbox{\Hypertarget{simple__peripheral_8c_abc35c1ff94c65e72bf3c9c202d79c7c5}\label{simple__peripheral_8c_abc35c1ff94c65e72bf3c9c202d79c7c5}} 
+\index{simple\_peripheral.c@{simple\_peripheral.c}!SBP\_TASK\_PRIORITY@{SBP\_TASK\_PRIORITY}}
+\index{SBP\_TASK\_PRIORITY@{SBP\_TASK\_PRIORITY}!simple\_peripheral.c@{simple\_peripheral.c}}
+\doxysubsubsection{\texorpdfstring{SBP\_TASK\_PRIORITY}{SBP\_TASK\_PRIORITY}}
+{\footnotesize\ttfamily \#define S\+B\+P\+\_\+\+T\+A\+S\+K\+\_\+\+P\+R\+I\+O\+R\+I\+TY~1}
+
+
+
+Definition at line 147 of file simple\+\_\+peripheral.\+c.
+
+\mbox{\Hypertarget{simple__peripheral_8c_aea34371275176390cf9c6d98bb5ed981}\label{simple__peripheral_8c_aea34371275176390cf9c6d98bb5ed981}} 
+\index{simple\_peripheral.c@{simple\_peripheral.c}!SBP\_TASK\_STACK\_SIZE@{SBP\_TASK\_STACK\_SIZE}}
+\index{SBP\_TASK\_STACK\_SIZE@{SBP\_TASK\_STACK\_SIZE}!simple\_peripheral.c@{simple\_peripheral.c}}
+\doxysubsubsection{\texorpdfstring{SBP\_TASK\_STACK\_SIZE}{SBP\_TASK\_STACK\_SIZE}}
+{\footnotesize\ttfamily \#define S\+B\+P\+\_\+\+T\+A\+S\+K\+\_\+\+S\+T\+A\+C\+K\+\_\+\+S\+I\+ZE~644}
+
+
+
+Definition at line 151 of file simple\+\_\+peripheral.\+c.
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{simple__peripheral_8c_a19b35a66f16d6f3c6129792f691417cb}\label{simple__peripheral_8c_a19b35a66f16d6f3c6129792f691417cb}} 
+\index{simple\_peripheral.c@{simple\_peripheral.c}!AssertHandler@{AssertHandler}}
+\index{AssertHandler@{AssertHandler}!simple\_peripheral.c@{simple\_peripheral.c}}
+\doxysubsubsection{\texorpdfstring{AssertHandler()}{AssertHandler()}}
+{\footnotesize\ttfamily void Assert\+Handler (\begin{DoxyParamCaption}\item[{uint8}]{assert\+Cause,  }\item[{uint8}]{assert\+Subcause }\end{DoxyParamCaption})}
+
+
+
+Definition at line 153 of file main.\+c.
+
+\mbox{\Hypertarget{simple__peripheral_8c_a0c93a5cab168c9aac90b60aff6a1e5be}\label{simple__peripheral_8c_a0c93a5cab168c9aac90b60aff6a1e5be}} 
+\index{simple\_peripheral.c@{simple\_peripheral.c}!SimpleBLEPeripheral\_createTask@{SimpleBLEPeripheral\_createTask}}
+\index{SimpleBLEPeripheral\_createTask@{SimpleBLEPeripheral\_createTask}!simple\_peripheral.c@{simple\_peripheral.c}}
+\doxysubsubsection{\texorpdfstring{SimpleBLEPeripheral\_createTask()}{SimpleBLEPeripheral\_createTask()}}
+{\footnotesize\ttfamily void Simple\+B\+L\+E\+Peripheral\+\_\+create\+Task (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+F\+E\+A\+T\+U\+R\+E\+\_\+\+O\+A\+D\+\_\+\+O\+N\+C\+H\+IP. 
+
+
+
+Definition at line 364 of file simple\+\_\+peripheral.\+c.
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{simple__peripheral_8c_aceb5c6a20985ea616af965124a2d5785}\label{simple__peripheral_8c_aceb5c6a20985ea616af965124a2d5785}} 
+\index{simple\_peripheral.c@{simple\_peripheral.c}!dispHandle@{dispHandle}}
+\index{dispHandle@{dispHandle}!simple\_peripheral.c@{simple\_peripheral.c}}
+\doxysubsubsection{\texorpdfstring{dispHandle}{dispHandle}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_display_8h_a045a26811755aabf1886d982c49e54ab}{Display\+\_\+\+Handle}} disp\+Handle = N\+U\+LL}
+
+
+
+Definition at line 174 of file simple\+\_\+peripheral.\+c.
+
+\mbox{\Hypertarget{simple__peripheral_8c_a4e61194e7a64368a8824db6415a545bc}\label{simple__peripheral_8c_a4e61194e7a64368a8824db6415a545bc}} 
+\index{simple\_peripheral.c@{simple\_peripheral.c}!sbpTask@{sbpTask}}
+\index{sbpTask@{sbpTask}!simple\_peripheral.c@{simple\_peripheral.c}}
+\doxysubsubsection{\texorpdfstring{sbpTask}{sbpTask}}
+{\footnotesize\ttfamily Task\+\_\+\+Struct sbp\+Task}
+
+
+
+Definition at line 203 of file simple\+\_\+peripheral.\+c.
+
+\mbox{\Hypertarget{simple__peripheral_8c_aaadfc066571e27ea8a1765402c0f0ffa}\label{simple__peripheral_8c_aaadfc066571e27ea8a1765402c0f0ffa}} 
+\index{simple\_peripheral.c@{simple\_peripheral.c}!sbpTaskStack@{sbpTaskStack}}
+\index{sbpTaskStack@{sbpTaskStack}!simple\_peripheral.c@{simple\_peripheral.c}}
+\doxysubsubsection{\texorpdfstring{sbpTaskStack}{sbpTaskStack}}
+{\footnotesize\ttfamily Char sbp\+Task\+Stack\mbox{[}\mbox{\hyperlink{simple__peripheral_8c_aea34371275176390cf9c6d98bb5ed981}{S\+B\+P\+\_\+\+T\+A\+S\+K\+\_\+\+S\+T\+A\+C\+K\+\_\+\+S\+I\+ZE}}\mbox{]}}
+
+
+
+Definition at line 204 of file simple\+\_\+peripheral.\+c.
+

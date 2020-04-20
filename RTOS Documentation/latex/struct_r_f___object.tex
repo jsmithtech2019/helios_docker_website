@@ -1,0 +1,369 @@
+\hypertarget{struct_r_f___object}{}\doxysection{R\+F\+\_\+\+Object Struct Reference}
+\label{struct_r_f___object}\index{RF\_Object@{RF\_Object}}
+
+
+Struct used to store RF client state and configuration Pointer to an \mbox{\hyperlink{struct_r_f___object}{R\+F\+\_\+\+Object}} is used as handles (\mbox{\hyperlink{_r_f_8h_a5e8ab7fc87fb818f435d9b6226ee573f}{R\+F\+\_\+\+Handle}}) in interactions with the RF driver.  
+
+
+
+
+{\ttfamily \#include $<$R\+F.\+h$>$}
+
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\begin{tabbing}
+xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=\kill
+struct \{\\
+\>uint32\_t \mbox{\hyperlink{struct_r_f___object_acab4c0d923181e985a2867b51f74edcc}{nInactivityTimeout}}\\
+\>\>{\em Inactivity timeout in us. }\\
+\>\mbox{\hyperlink{struct_r_f___mode}{RF\_Mode}} $\ast$ \mbox{\hyperlink{struct_r_f___object_a54a6ee0cde609ca67902a16f9279ca42}{pRfMode}}\\
+\>\>{\em Mode of operation. }\\
+\>\mbox{\hyperlink{union_r_f___radio_setup}{RF\_RadioSetup}} $\ast$ \mbox{\hyperlink{struct_r_f___object_a1a082f0e3e4d1cc3d42438e9c008731a}{pOpSetup}}\\
+\>\>{\em Radio setup radio operation, only ram right now. }\\
+\>uint32\_t \mbox{\hyperlink{struct_r_f___object_a1c977babafc1c400ee7065d588400d62}{nPowerUpDuration}}\\
+\>\>{\em Measured poweruptime in us or specified startup time (if left default it will measure) }\\
+\>bool \mbox{\hyperlink{struct_r_f___object_a2639ebccaae9e421775673e83d477d93}{bPowerUpXOSC}}\\
+\>\>{\em Allways enable XOSC\_HF at chip wakeup. }\\
+\>bool \mbox{\hyperlink{struct_r_f___object_aca08b9616cfe2b6be9699edea541334d}{bUpdateSetup}}\\
+\>\>{\em Setup command update. }\\
+\>uint16\_t \mbox{\hyperlink{struct_r_f___object_a39f22fc67c1062a68306baee91bf613a}{nPowerUpDurationMargin}}\\
+\>\>{\em Powerup duration margin in us. }\\
+\>void $\ast$ \mbox{\hyperlink{struct_r_f___object_ab93839cd7dc102b3eb1c79a3dceb194d}{pPowerCb}}\\
+\>\>{\em Power up callback. }\\
+\>void $\ast$ \mbox{\hyperlink{struct_r_f___object_adf7c2500d579f201e49a6c87e447991b}{pErrCb}}\\
+\>\>{\em Error callback. }\\
+\} \mbox{\hyperlink{struct_r_f___object_a3bbf2f8c34d2dee875f39c6236a666c8}{clientConfig}}\\
+
+\end{tabbing}\begin{DoxyCompactList}\small\item\em Configuration. \end{DoxyCompactList}\item 
+\begin{tabbing}
+xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=\kill
+struct \{\\
+\>struct \{\\
+\>\>rfc\_CMD\_FS\_t \mbox{\hyperlink{struct_r_f___object_a48d422eefb97146c830e9b21970bc3a6}{cmdFs}}\\
+\>\>\>{\em FS command encapsulating FS state. }\\
+\>\} \mbox{\hyperlink{struct_r_f___object_a1818234463e116462ac0c1cc6b169f3b}{mode\_state}}\\
+\>\>\>{\em (Mode-\/specific) state structure }\\
+\>Semaphore\_Struct \mbox{\hyperlink{struct_r_f___object_a2282dfef5c2e04522edfb61f9152628b}{semSync}}\\
+\>\>\>{\em Semaphore used by runCmd(), pendCmd() and powerdown sequence. }\\
+\>\mbox{\hyperlink{_r_f_8h_a128c46e18dbbaa781abb7abafc35233a}{RF\_EventMask}} volatile \mbox{\hyperlink{struct_r_f___object_a8379964e73b8969eb45fe49773eba235}{eventSync}}\\
+\>\>\>{\em Event mask/value used by runCmd() and waitCmd() }\\
+\>void $\ast$ \mbox{\hyperlink{struct_r_f___object_ae3219bcfb65bacac26d30af83415863b}{pCbSync}}\\
+\>\>\>{\em Internal storage for user callback. }\\
+\>\mbox{\hyperlink{_r_f_8h_a128c46e18dbbaa781abb7abafc35233a}{RF\_EventMask}} \mbox{\hyperlink{struct_r_f___object_a41528750208c1e201b276509396e0a30}{unpendCause}}\\
+\>\>\>{\em Return value for \mbox{\hyperlink{_r_f_8h_a91c1cb2508311f822acbc08ace568a83}{RF\_pendCmd()}} }\\
+\>Clock\_Struct \mbox{\hyperlink{struct_r_f___object_aaa9b100fc07809bd9086ffc44ebd4225}{clkInactivity}}\\
+\>\>\>{\em Clock used for inactivity timeouts. }\\
+\>Clock\_Struct \mbox{\hyperlink{struct_r_f___object_af61760e322c9a76d591bb8b465c9ed37}{clkReqAccess}}\\
+\>\>\>{\em Clock used for request access timeouts. }\\
+\>\mbox{\hyperlink{_r_f_8h_acab1f56c62a9fd1ad0a91a46b6da23f1}{RF\_CmdHandle}} volatile \mbox{\hyperlink{struct_r_f___object_a855d6435f6532e99b2e6d6e1675212ca}{chLastPosted}}\\
+\>\>\>{\em Command handle of most recently posted command. }\\
+\>bool \mbox{\hyperlink{struct_r_f___object_a0b8d281afbb2a67d5b238b30fa1f8849}{bYielded}}\\
+\>\>\>{\em Client has indicated that there are no more commands. }\\
+\} \mbox{\hyperlink{struct_r_f___object_ae5bcfd469a3d7fe9e3cb67d9c956f3e5}{state}}\\
+
+\end{tabbing}\begin{DoxyCompactList}\small\item\em State \& variables. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Struct used to store RF client state and configuration Pointer to an \mbox{\hyperlink{struct_r_f___object}{R\+F\+\_\+\+Object}} is used as handles (\mbox{\hyperlink{_r_f_8h_a5e8ab7fc87fb818f435d9b6226ee573f}{R\+F\+\_\+\+Handle}}) in interactions with the RF driver. 
+
+\begin{DoxyNote}{Note}
+Must reside in persistent memory 
+
+Except configuration fields before call to \mbox{\hyperlink{_r_f_8h_a13a7c6f5a2b797e0aac18fecfaba6f64}{R\+F\+\_\+open()}}, fields must never be modified directly 
+\end{DoxyNote}
+
+
+Definition at line 396 of file R\+F.\+h.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{struct_r_f___object_a2639ebccaae9e421775673e83d477d93}\label{struct_r_f___object_a2639ebccaae9e421775673e83d477d93}} 
+\index{RF\_Object@{RF\_Object}!bPowerUpXOSC@{bPowerUpXOSC}}
+\index{bPowerUpXOSC@{bPowerUpXOSC}!RF\_Object@{RF\_Object}}
+\doxysubsubsection{\texorpdfstring{bPowerUpXOSC}{bPowerUpXOSC}}
+{\footnotesize\ttfamily bool R\+F\+\_\+\+Object\+::b\+Power\+Up\+X\+O\+SC}
+
+
+
+Allways enable X\+O\+S\+C\+\_\+\+HF at chip wakeup. 
+
+
+
+Definition at line 403 of file R\+F.\+h.
+
+\mbox{\Hypertarget{struct_r_f___object_aca08b9616cfe2b6be9699edea541334d}\label{struct_r_f___object_aca08b9616cfe2b6be9699edea541334d}} 
+\index{RF\_Object@{RF\_Object}!bUpdateSetup@{bUpdateSetup}}
+\index{bUpdateSetup@{bUpdateSetup}!RF\_Object@{RF\_Object}}
+\doxysubsubsection{\texorpdfstring{bUpdateSetup}{bUpdateSetup}}
+{\footnotesize\ttfamily bool R\+F\+\_\+\+Object\+::b\+Update\+Setup}
+
+
+
+Setup command update. 
+
+
+
+Definition at line 404 of file R\+F.\+h.
+
+\mbox{\Hypertarget{struct_r_f___object_a0b8d281afbb2a67d5b238b30fa1f8849}\label{struct_r_f___object_a0b8d281afbb2a67d5b238b30fa1f8849}} 
+\index{RF\_Object@{RF\_Object}!bYielded@{bYielded}}
+\index{bYielded@{bYielded}!RF\_Object@{RF\_Object}}
+\doxysubsubsection{\texorpdfstring{bYielded}{bYielded}}
+{\footnotesize\ttfamily bool R\+F\+\_\+\+Object\+::b\+Yielded}
+
+
+
+Client has indicated that there are no more commands. 
+
+
+
+Definition at line 421 of file R\+F.\+h.
+
+\mbox{\Hypertarget{struct_r_f___object_a855d6435f6532e99b2e6d6e1675212ca}\label{struct_r_f___object_a855d6435f6532e99b2e6d6e1675212ca}} 
+\index{RF\_Object@{RF\_Object}!chLastPosted@{chLastPosted}}
+\index{chLastPosted@{chLastPosted}!RF\_Object@{RF\_Object}}
+\doxysubsubsection{\texorpdfstring{chLastPosted}{chLastPosted}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_r_f_8h_acab1f56c62a9fd1ad0a91a46b6da23f1}{R\+F\+\_\+\+Cmd\+Handle}} volatile R\+F\+\_\+\+Object\+::ch\+Last\+Posted}
+
+
+
+Command handle of most recently posted command. 
+
+
+
+Definition at line 420 of file R\+F.\+h.
+
+\mbox{\Hypertarget{struct_r_f___object_a3bbf2f8c34d2dee875f39c6236a666c8}\label{struct_r_f___object_a3bbf2f8c34d2dee875f39c6236a666c8}} 
+\index{RF\_Object@{RF\_Object}!clientConfig@{clientConfig}}
+\index{clientConfig@{clientConfig}!RF\_Object@{RF\_Object}}
+\doxysubsubsection{\texorpdfstring{clientConfig}{clientConfig}}
+{\footnotesize\ttfamily struct \{ ... \}  R\+F\+\_\+\+Object\+::client\+Config}
+
+
+
+Configuration. 
+
+\mbox{\Hypertarget{struct_r_f___object_aaa9b100fc07809bd9086ffc44ebd4225}\label{struct_r_f___object_aaa9b100fc07809bd9086ffc44ebd4225}} 
+\index{RF\_Object@{RF\_Object}!clkInactivity@{clkInactivity}}
+\index{clkInactivity@{clkInactivity}!RF\_Object@{RF\_Object}}
+\doxysubsubsection{\texorpdfstring{clkInactivity}{clkInactivity}}
+{\footnotesize\ttfamily Clock\+\_\+\+Struct R\+F\+\_\+\+Object\+::clk\+Inactivity}
+
+
+
+Clock used for inactivity timeouts. 
+
+
+
+Definition at line 418 of file R\+F.\+h.
+
+\mbox{\Hypertarget{struct_r_f___object_af61760e322c9a76d591bb8b465c9ed37}\label{struct_r_f___object_af61760e322c9a76d591bb8b465c9ed37}} 
+\index{RF\_Object@{RF\_Object}!clkReqAccess@{clkReqAccess}}
+\index{clkReqAccess@{clkReqAccess}!RF\_Object@{RF\_Object}}
+\doxysubsubsection{\texorpdfstring{clkReqAccess}{clkReqAccess}}
+{\footnotesize\ttfamily Clock\+\_\+\+Struct R\+F\+\_\+\+Object\+::clk\+Req\+Access}
+
+
+
+Clock used for request access timeouts. 
+
+
+
+Definition at line 419 of file R\+F.\+h.
+
+\mbox{\Hypertarget{struct_r_f___object_a48d422eefb97146c830e9b21970bc3a6}\label{struct_r_f___object_a48d422eefb97146c830e9b21970bc3a6}} 
+\index{RF\_Object@{RF\_Object}!cmdFs@{cmdFs}}
+\index{cmdFs@{cmdFs}!RF\_Object@{RF\_Object}}
+\doxysubsubsection{\texorpdfstring{cmdFs}{cmdFs}}
+{\footnotesize\ttfamily rfc\+\_\+\+C\+M\+D\+\_\+\+F\+S\+\_\+t R\+F\+\_\+\+Object\+::cmd\+Fs}
+
+
+
+FS command encapsulating FS state. 
+
+
+
+Definition at line 412 of file R\+F.\+h.
+
+\mbox{\Hypertarget{struct_r_f___object_a8379964e73b8969eb45fe49773eba235}\label{struct_r_f___object_a8379964e73b8969eb45fe49773eba235}} 
+\index{RF\_Object@{RF\_Object}!eventSync@{eventSync}}
+\index{eventSync@{eventSync}!RF\_Object@{RF\_Object}}
+\doxysubsubsection{\texorpdfstring{eventSync}{eventSync}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_r_f_8h_a128c46e18dbbaa781abb7abafc35233a}{R\+F\+\_\+\+Event\+Mask}} volatile R\+F\+\_\+\+Object\+::event\+Sync}
+
+
+
+Event mask/value used by run\+Cmd() and wait\+Cmd() 
+
+
+
+Definition at line 415 of file R\+F.\+h.
+
+\mbox{\Hypertarget{struct_r_f___object_a1818234463e116462ac0c1cc6b169f3b}\label{struct_r_f___object_a1818234463e116462ac0c1cc6b169f3b}} 
+\index{RF\_Object@{RF\_Object}!mode\_state@{mode\_state}}
+\index{mode\_state@{mode\_state}!RF\_Object@{RF\_Object}}
+\doxysubsubsection{\texorpdfstring{mode\_state}{mode\_state}}
+{\footnotesize\ttfamily struct \{ ... \}  R\+F\+\_\+\+Object\+::mode\+\_\+state}
+
+
+
+(Mode-\/specific) state structure 
+
+\mbox{\Hypertarget{struct_r_f___object_acab4c0d923181e985a2867b51f74edcc}\label{struct_r_f___object_acab4c0d923181e985a2867b51f74edcc}} 
+\index{RF\_Object@{RF\_Object}!nInactivityTimeout@{nInactivityTimeout}}
+\index{nInactivityTimeout@{nInactivityTimeout}!RF\_Object@{RF\_Object}}
+\doxysubsubsection{\texorpdfstring{nInactivityTimeout}{nInactivityTimeout}}
+{\footnotesize\ttfamily uint32\+\_\+t R\+F\+\_\+\+Object\+::n\+Inactivity\+Timeout}
+
+
+
+Inactivity timeout in us. 
+
+
+
+Definition at line 399 of file R\+F.\+h.
+
+\mbox{\Hypertarget{struct_r_f___object_a1c977babafc1c400ee7065d588400d62}\label{struct_r_f___object_a1c977babafc1c400ee7065d588400d62}} 
+\index{RF\_Object@{RF\_Object}!nPowerUpDuration@{nPowerUpDuration}}
+\index{nPowerUpDuration@{nPowerUpDuration}!RF\_Object@{RF\_Object}}
+\doxysubsubsection{\texorpdfstring{nPowerUpDuration}{nPowerUpDuration}}
+{\footnotesize\ttfamily uint32\+\_\+t R\+F\+\_\+\+Object\+::n\+Power\+Up\+Duration}
+
+
+
+Measured poweruptime in us or specified startup time (if left default it will measure) 
+
+
+
+Definition at line 402 of file R\+F.\+h.
+
+\mbox{\Hypertarget{struct_r_f___object_a39f22fc67c1062a68306baee91bf613a}\label{struct_r_f___object_a39f22fc67c1062a68306baee91bf613a}} 
+\index{RF\_Object@{RF\_Object}!nPowerUpDurationMargin@{nPowerUpDurationMargin}}
+\index{nPowerUpDurationMargin@{nPowerUpDurationMargin}!RF\_Object@{RF\_Object}}
+\doxysubsubsection{\texorpdfstring{nPowerUpDurationMargin}{nPowerUpDurationMargin}}
+{\footnotesize\ttfamily uint16\+\_\+t R\+F\+\_\+\+Object\+::n\+Power\+Up\+Duration\+Margin}
+
+
+
+Powerup duration margin in us. 
+
+
+
+Definition at line 405 of file R\+F.\+h.
+
+\mbox{\Hypertarget{struct_r_f___object_ae3219bcfb65bacac26d30af83415863b}\label{struct_r_f___object_ae3219bcfb65bacac26d30af83415863b}} 
+\index{RF\_Object@{RF\_Object}!pCbSync@{pCbSync}}
+\index{pCbSync@{pCbSync}!RF\_Object@{RF\_Object}}
+\doxysubsubsection{\texorpdfstring{pCbSync}{pCbSync}}
+{\footnotesize\ttfamily void$\ast$ R\+F\+\_\+\+Object\+::p\+Cb\+Sync}
+
+
+
+Internal storage for user callback. 
+
+
+
+Definition at line 416 of file R\+F.\+h.
+
+\mbox{\Hypertarget{struct_r_f___object_adf7c2500d579f201e49a6c87e447991b}\label{struct_r_f___object_adf7c2500d579f201e49a6c87e447991b}} 
+\index{RF\_Object@{RF\_Object}!pErrCb@{pErrCb}}
+\index{pErrCb@{pErrCb}!RF\_Object@{RF\_Object}}
+\doxysubsubsection{\texorpdfstring{pErrCb}{pErrCb}}
+{\footnotesize\ttfamily void$\ast$ R\+F\+\_\+\+Object\+::p\+Err\+Cb}
+
+
+
+Error callback. 
+
+
+
+Definition at line 407 of file R\+F.\+h.
+
+\mbox{\Hypertarget{struct_r_f___object_a1a082f0e3e4d1cc3d42438e9c008731a}\label{struct_r_f___object_a1a082f0e3e4d1cc3d42438e9c008731a}} 
+\index{RF\_Object@{RF\_Object}!pOpSetup@{pOpSetup}}
+\index{pOpSetup@{pOpSetup}!RF\_Object@{RF\_Object}}
+\doxysubsubsection{\texorpdfstring{pOpSetup}{pOpSetup}}
+{\footnotesize\ttfamily \mbox{\hyperlink{union_r_f___radio_setup}{R\+F\+\_\+\+Radio\+Setup}}$\ast$ R\+F\+\_\+\+Object\+::p\+Op\+Setup}
+
+
+
+Radio setup radio operation, only ram right now. 
+
+
+
+Definition at line 401 of file R\+F.\+h.
+
+\mbox{\Hypertarget{struct_r_f___object_ab93839cd7dc102b3eb1c79a3dceb194d}\label{struct_r_f___object_ab93839cd7dc102b3eb1c79a3dceb194d}} 
+\index{RF\_Object@{RF\_Object}!pPowerCb@{pPowerCb}}
+\index{pPowerCb@{pPowerCb}!RF\_Object@{RF\_Object}}
+\doxysubsubsection{\texorpdfstring{pPowerCb}{pPowerCb}}
+{\footnotesize\ttfamily void$\ast$ R\+F\+\_\+\+Object\+::p\+Power\+Cb}
+
+
+
+Power up callback. 
+
+
+
+Definition at line 406 of file R\+F.\+h.
+
+\mbox{\Hypertarget{struct_r_f___object_a54a6ee0cde609ca67902a16f9279ca42}\label{struct_r_f___object_a54a6ee0cde609ca67902a16f9279ca42}} 
+\index{RF\_Object@{RF\_Object}!pRfMode@{pRfMode}}
+\index{pRfMode@{pRfMode}!RF\_Object@{RF\_Object}}
+\doxysubsubsection{\texorpdfstring{pRfMode}{pRfMode}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_r_f___mode}{R\+F\+\_\+\+Mode}}$\ast$ R\+F\+\_\+\+Object\+::p\+Rf\+Mode}
+
+
+
+Mode of operation. 
+
+
+
+Definition at line 400 of file R\+F.\+h.
+
+\mbox{\Hypertarget{struct_r_f___object_a2282dfef5c2e04522edfb61f9152628b}\label{struct_r_f___object_a2282dfef5c2e04522edfb61f9152628b}} 
+\index{RF\_Object@{RF\_Object}!semSync@{semSync}}
+\index{semSync@{semSync}!RF\_Object@{RF\_Object}}
+\doxysubsubsection{\texorpdfstring{semSync}{semSync}}
+{\footnotesize\ttfamily Semaphore\+\_\+\+Struct R\+F\+\_\+\+Object\+::sem\+Sync}
+
+
+
+Semaphore used by run\+Cmd(), pend\+Cmd() and powerdown sequence. 
+
+
+
+Definition at line 414 of file R\+F.\+h.
+
+\mbox{\Hypertarget{struct_r_f___object_ae5bcfd469a3d7fe9e3cb67d9c956f3e5}\label{struct_r_f___object_ae5bcfd469a3d7fe9e3cb67d9c956f3e5}} 
+\index{RF\_Object@{RF\_Object}!state@{state}}
+\index{state@{state}!RF\_Object@{RF\_Object}}
+\doxysubsubsection{\texorpdfstring{state}{state}}
+{\footnotesize\ttfamily struct \{ ... \}  R\+F\+\_\+\+Object\+::state}
+
+
+
+State \& variables. 
+
+\mbox{\Hypertarget{struct_r_f___object_a41528750208c1e201b276509396e0a30}\label{struct_r_f___object_a41528750208c1e201b276509396e0a30}} 
+\index{RF\_Object@{RF\_Object}!unpendCause@{unpendCause}}
+\index{unpendCause@{unpendCause}!RF\_Object@{RF\_Object}}
+\doxysubsubsection{\texorpdfstring{unpendCause}{unpendCause}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_r_f_8h_a128c46e18dbbaa781abb7abafc35233a}{R\+F\+\_\+\+Event\+Mask}} R\+F\+\_\+\+Object\+::unpend\+Cause}
+
+
+
+Return value for \mbox{\hyperlink{_r_f_8h_a91c1cb2508311f822acbc08ace568a83}{R\+F\+\_\+pend\+Cmd()}} 
+
+
+
+Definition at line 417 of file R\+F.\+h.
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Drivers/\+R\+F/\mbox{\hyperlink{_r_f_8h}{R\+F.\+h}}\end{DoxyCompactItemize}

@@ -1,0 +1,93 @@
+\hypertarget{struct___i_call___l2cap_connect_req__}{}\doxysection{\+\_\+\+I\+Call\+\_\+\+L2cap\+Connect\+Req\+\_\+ Struct Reference}
+\label{struct___i_call___l2cap_connect_req__}\index{\_ICall\_L2capConnectReq\_@{\_ICall\_L2capConnectReq\_}}
+
+
+{\ttfamily \#include $<$icall\+\_\+apimsg.\+h$>$}
+
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{icall__apimsg_8h_afa62f50d802fab57d759c527cead246e}{I\+Call\+\_\+\+Hci\+Ext\+Cmd}} \mbox{\hyperlink{struct___i_call___l2cap_connect_req___a83024087e3601aa39296c84da4779b6d}{hdr}}
+\begin{DoxyCompactList}\small\item\em hdr event field must be set as I\+C\+A\+L\+L\+\_\+\+C\+M\+D\+\_\+\+E\+V\+E\+NT \end{DoxyCompactList}\item 
+uint16\+\_\+t \mbox{\hyperlink{struct___i_call___l2cap_connect_req___a9c15889bcca85658be0db431c06b4e46}{conn\+Handle}}
+\begin{DoxyCompactList}\small\item\em connection to create channel on \end{DoxyCompactList}\item 
+uint16\+\_\+t \mbox{\hyperlink{struct___i_call___l2cap_connect_req___ade2342f2d0cc5d449b38a442d2fd8070}{psm}}
+\begin{DoxyCompactList}\small\item\em local P\+SM \end{DoxyCompactList}\item 
+uint16\+\_\+t \mbox{\hyperlink{struct___i_call___l2cap_connect_req___ad91e588759a5ed0401b5c74da0b30679}{peer\+Psm}}
+\begin{DoxyCompactList}\small\item\em peer P\+SM \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+I\+Call message containing Hci\+Ext\+Cmd hdr, connection handle, local P\+SM and peer P\+SM
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{icall__api_8c_aa3f9f6f441fade45a6791fffdbf245f4}{L2\+C\+A\+P\+\_\+\+Connect\+Req}} 
+\end{DoxySeeAlso}
+
+
+Definition at line 799 of file icall\+\_\+apimsg.\+h.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{struct___i_call___l2cap_connect_req___a9c15889bcca85658be0db431c06b4e46}\label{struct___i_call___l2cap_connect_req___a9c15889bcca85658be0db431c06b4e46}} 
+\index{\_ICall\_L2capConnectReq\_@{\_ICall\_L2capConnectReq\_}!connHandle@{connHandle}}
+\index{connHandle@{connHandle}!\_ICall\_L2capConnectReq\_@{\_ICall\_L2capConnectReq\_}}
+\doxysubsubsection{\texorpdfstring{connHandle}{connHandle}}
+{\footnotesize\ttfamily uint16\+\_\+t \+\_\+\+I\+Call\+\_\+\+L2cap\+Connect\+Req\+\_\+\+::conn\+Handle}
+
+
+
+connection to create channel on 
+
+
+
+Definition at line 802 of file icall\+\_\+apimsg.\+h.
+
+\mbox{\Hypertarget{struct___i_call___l2cap_connect_req___a83024087e3601aa39296c84da4779b6d}\label{struct___i_call___l2cap_connect_req___a83024087e3601aa39296c84da4779b6d}} 
+\index{\_ICall\_L2capConnectReq\_@{\_ICall\_L2capConnectReq\_}!hdr@{hdr}}
+\index{hdr@{hdr}!\_ICall\_L2capConnectReq\_@{\_ICall\_L2capConnectReq\_}}
+\doxysubsubsection{\texorpdfstring{hdr}{hdr}}
+{\footnotesize\ttfamily \mbox{\hyperlink{icall__apimsg_8h_afa62f50d802fab57d759c527cead246e}{I\+Call\+\_\+\+Hci\+Ext\+Cmd}} \+\_\+\+I\+Call\+\_\+\+L2cap\+Connect\+Req\+\_\+\+::hdr}
+
+
+
+hdr event field must be set as I\+C\+A\+L\+L\+\_\+\+C\+M\+D\+\_\+\+E\+V\+E\+NT 
+
+
+
+Definition at line 801 of file icall\+\_\+apimsg.\+h.
+
+\mbox{\Hypertarget{struct___i_call___l2cap_connect_req___ad91e588759a5ed0401b5c74da0b30679}\label{struct___i_call___l2cap_connect_req___ad91e588759a5ed0401b5c74da0b30679}} 
+\index{\_ICall\_L2capConnectReq\_@{\_ICall\_L2capConnectReq\_}!peerPsm@{peerPsm}}
+\index{peerPsm@{peerPsm}!\_ICall\_L2capConnectReq\_@{\_ICall\_L2capConnectReq\_}}
+\doxysubsubsection{\texorpdfstring{peerPsm}{peerPsm}}
+{\footnotesize\ttfamily uint16\+\_\+t \+\_\+\+I\+Call\+\_\+\+L2cap\+Connect\+Req\+\_\+\+::peer\+Psm}
+
+
+
+peer P\+SM 
+
+
+
+Definition at line 804 of file icall\+\_\+apimsg.\+h.
+
+\mbox{\Hypertarget{struct___i_call___l2cap_connect_req___ade2342f2d0cc5d449b38a442d2fd8070}\label{struct___i_call___l2cap_connect_req___ade2342f2d0cc5d449b38a442d2fd8070}} 
+\index{\_ICall\_L2capConnectReq\_@{\_ICall\_L2capConnectReq\_}!psm@{psm}}
+\index{psm@{psm}!\_ICall\_L2capConnectReq\_@{\_ICall\_L2capConnectReq\_}}
+\doxysubsubsection{\texorpdfstring{psm}{psm}}
+{\footnotesize\ttfamily uint16\+\_\+t \+\_\+\+I\+Call\+\_\+\+L2cap\+Connect\+Req\+\_\+\+::psm}
+
+
+
+local P\+SM 
+
+
+
+Definition at line 803 of file icall\+\_\+apimsg.\+h.
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+I\+Call\+B\+L\+E/\mbox{\hyperlink{icall__apimsg_8h}{icall\+\_\+apimsg.\+h}}\end{DoxyCompactItemize}

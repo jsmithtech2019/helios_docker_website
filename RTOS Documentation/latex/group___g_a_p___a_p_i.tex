@@ -1,0 +1,796 @@
+\hypertarget{group___g_a_p___a_p_i}{}\doxysection{G\+AP A\+PI Functions}
+\label{group___g_a_p___a_p_i}\index{GAP API Functions@{GAP API Functions}}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+b\+Status\+\_\+t \mbox{\hyperlink{group___g_a_p___a_p_i_ga729bcdb44b9ea7717cbfd55d25ba5194}{G\+A\+P\+\_\+\+Device\+Init}} (uint8 task\+ID, uint8 profile\+Role, uint8 max\+Scan\+Responses, uint8 $\ast$p\+I\+RK, uint8 $\ast$p\+S\+RK, uint32 $\ast$p\+Sign\+Counter)
+\begin{DoxyCompactList}\small\item\em Called to setup the device. Call just once on initialization. \end{DoxyCompactList}\item 
+b\+Status\+\_\+t \mbox{\hyperlink{group___g_a_p___a_p_i_ga7a5784b0b07fa89d6896a5c5e6345aef}{G\+A\+P\+\_\+\+Set\+Adv\+Token}} (\mbox{\hyperlink{structgap_adv_data_token__t}{gap\+Adv\+Data\+Token\+\_\+t}} $\ast$p\+Token)
+\begin{DoxyCompactList}\small\item\em Called to setup a G\+AP Advertisement/\+Scan Response data token. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structgap_adv_data_token__t}{gap\+Adv\+Data\+Token\+\_\+t}} $\ast$ \mbox{\hyperlink{group___g_a_p___a_p_i_ga08d79d346dd04df356adcc689b19ebae}{G\+A\+P\+\_\+\+Get\+Adv\+Token}} (uint8 ad\+Type)
+\begin{DoxyCompactList}\small\item\em Called to read a G\+AP Advertisement/\+Scan Response data token. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structgap_adv_data_token__t}{gap\+Adv\+Data\+Token\+\_\+t}} $\ast$ \mbox{\hyperlink{group___g_a_p___a_p_i_gae98a99bcf9423126a2896bcf794cce76}{G\+A\+P\+\_\+\+Remove\+Adv\+Token}} (uint8 ad\+Type)
+\begin{DoxyCompactList}\small\item\em Called to remove a G\+AP Advertisement/\+Scan Response data token. \end{DoxyCompactList}\item 
+b\+Status\+\_\+t \mbox{\hyperlink{group___g_a_p___a_p_i_ga3c63f064944cbe909700e26e042d4cb7}{G\+A\+P\+\_\+\+Update\+Adv\+Tokens}} (void)
+\begin{DoxyCompactList}\small\item\em Called to rebuild and load Advertisement and Scan Response data from existing G\+AP Advertisement Tokens. \end{DoxyCompactList}\item 
+b\+Status\+\_\+t \mbox{\hyperlink{group___g_a_p___a_p_i_ga45fab6682fc253681d7abe697a4fc0b5}{G\+A\+P\+\_\+\+Set\+Param\+Value}} (\mbox{\hyperlink{group___b_l_e___g_a_p___d_e_f_i_n_e_s_ga5ab906d5f305edeefbfc865f7405e6a0}{gap\+Param\+I\+Ds\+\_\+t}} param\+ID, uint16 param\+Value)
+\begin{DoxyCompactList}\small\item\em Set a G\+AP Parameter value. Use this function to change the default G\+AP parameter values. \end{DoxyCompactList}\item 
+uint16 \mbox{\hyperlink{group___g_a_p___a_p_i_ga357fe8676645fcc9b09b1d1317a6f193}{G\+A\+P\+\_\+\+Get\+Param\+Value}} (\mbox{\hyperlink{group___b_l_e___g_a_p___d_e_f_i_n_e_s_ga5ab906d5f305edeefbfc865f7405e6a0}{gap\+Param\+I\+Ds\+\_\+t}} param\+ID)
+\begin{DoxyCompactList}\small\item\em Get a G\+AP Parameter value. \end{DoxyCompactList}\item 
+b\+Status\+\_\+t \mbox{\hyperlink{group___g_a_p___a_p_i_gaaffa833dc484847afd019d087eefb2c6}{G\+A\+P\+\_\+\+Config\+Device\+Addr}} (uint8 addr\+Mode, uint8 $\ast$p\+Static\+Addr)
+\begin{DoxyCompactList}\small\item\em Setup the device\textquotesingle{}s address type. If A\+D\+D\+R\+M\+O\+D\+E\+\_\+\+P\+R\+I\+V\+A\+T\+E\+\_\+\+R\+E\+S\+O\+L\+VE is selected, the address will change periodically. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___g_a_p___a_p_i_ga29744ff36f2789227405780eea015a24}{G\+A\+P\+\_\+\+Register\+For\+Msgs}} (uint8 task\+ID)
+\begin{DoxyCompactList}\small\item\em Register your task ID to receive extra (unprocessed) H\+CI status and complete, and Host events. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___g_a_p___a_p_i_gaf17ced2616f8b7f67b110e8e5ad141bc}{G\+A\+P\+\_\+\+Register\+Bond\+Mgr\+C\+Bs}} (\mbox{\hyperlink{structgap_bond_mgr_c_bs__t}{gap\+Bond\+Mgr\+C\+Bs\+\_\+t}} $\ast$p\+C\+Bs)
+\begin{DoxyCompactList}\small\item\em Register bond manager call backs. \end{DoxyCompactList}\item 
+b\+Status\+\_\+t \mbox{\hyperlink{group___g_a_p___a_p_i_gacd309bbef61eb5f83f369d98ef1b2529}{G\+A\+P\+\_\+\+Device\+Discovery\+Request}} (\mbox{\hyperlink{structgap_dev_disc_req__t}{gap\+Dev\+Disc\+Req\+\_\+t}} $\ast$p\+Params)
+\begin{DoxyCompactList}\small\item\em Start a device discovery scan. \end{DoxyCompactList}\item 
+b\+Status\+\_\+t \mbox{\hyperlink{group___g_a_p___a_p_i_ga1ec38cafcaf928e48ed2b859711fb0df}{G\+A\+P\+\_\+\+Device\+Discovery\+Cancel}} (uint8 task\+ID)
+\begin{DoxyCompactList}\small\item\em Cancel an existing device discovery request. \end{DoxyCompactList}\item 
+b\+Status\+\_\+t \mbox{\hyperlink{group___g_a_p___a_p_i_gae51c3724416b31db3c8fc350e3ceef3e}{G\+A\+P\+\_\+\+Make\+Discoverable}} (uint8 task\+ID, \mbox{\hyperlink{structgap_advertising_params__t}{gap\+Advertising\+Params\+\_\+t}} $\ast$p\+Params)
+\begin{DoxyCompactList}\small\item\em Setup or change advertising. Also starts advertising. \end{DoxyCompactList}\item 
+b\+Status\+\_\+t \mbox{\hyperlink{group___g_a_p___a_p_i_gaded667b28065286cf5851b8672112c23}{G\+A\+P\+\_\+\+Update\+Advertising\+Data}} (uint8 task\+ID, uint8 ad\+Type, uint8 data\+Len, uint8 $\ast$p\+Advert\+Data)
+\begin{DoxyCompactList}\small\item\em Setup or change advertising and scan response data. \end{DoxyCompactList}\item 
+b\+Status\+\_\+t \mbox{\hyperlink{group___g_a_p___a_p_i_gaf766e38b0823c4f9ca015e86ef806778}{G\+A\+P\+\_\+\+End\+Discoverable}} (uint8 task\+ID)
+\begin{DoxyCompactList}\small\item\em Stops advertising. \end{DoxyCompactList}\item 
+b\+Status\+\_\+t \mbox{\hyperlink{group___g_a_p___a_p_i_gaeb699212aa5c8048af8b251165b5c1d5}{G\+A\+P\+\_\+\+Resolve\+Private\+Addr}} (uint8 $\ast$p\+I\+RK, uint8 $\ast$p\+Addr)
+\begin{DoxyCompactList}\small\item\em Resolves a private address against an I\+RK. \end{DoxyCompactList}\item 
+b\+Status\+\_\+t \mbox{\hyperlink{group___g_a_p___a_p_i_gac1850075e9bd9ca2823999c8f2246041}{G\+A\+P\+\_\+\+Establish\+Link\+Req}} (\mbox{\hyperlink{structgap_est_link_req__t}{gap\+Est\+Link\+Req\+\_\+t}} $\ast$p\+Params)
+\begin{DoxyCompactList}\small\item\em Establish a link to a slave device. \end{DoxyCompactList}\item 
+b\+Status\+\_\+t \mbox{\hyperlink{group___g_a_p___a_p_i_ga45287a9df199ff8fd90b5fe1bfdc249a}{G\+A\+P\+\_\+\+Terminate\+Link\+Req}} (uint8 task\+ID, uint16 connection\+Handle, uint8 reason)
+\begin{DoxyCompactList}\small\item\em Terminate a link connection. \end{DoxyCompactList}\item 
+b\+Status\+\_\+t \mbox{\hyperlink{group___g_a_p___a_p_i_gaad99f6598df0ee36c4cd2608afa09618}{G\+A\+P\+\_\+\+Update\+Link\+Param\+Req}} (\mbox{\hyperlink{structgap_update_link_param_req__t}{gap\+Update\+Link\+Param\+Req\+\_\+t}} $\ast$p\+Params)
+\begin{DoxyCompactList}\small\item\em Update the link parameters to a Master or Slave device. \end{DoxyCompactList}\item 
+b\+Status\+\_\+t \mbox{\hyperlink{group___g_a_p___a_p_i_gaed1b6299bfe3b0469e2baf53cba04fe1}{G\+A\+P\+\_\+\+Update\+Link\+Param\+Req\+Reply}} (\mbox{\hyperlink{structgap_update_link_param_req_reply__t}{gap\+Update\+Link\+Param\+Req\+Reply\+\_\+t}} $\ast$p\+Params)
+\begin{DoxyCompactList}\small\item\em Reply to a Connection Parameter Update Request sent from a remote device. \end{DoxyCompactList}\item 
+uint8 \mbox{\hyperlink{group___g_a_p___a_p_i_gafe7f1125452478c395a09f4874c6374a}{G\+A\+P\+\_\+\+Num\+Active\+Connections}} (void)
+\begin{DoxyCompactList}\small\item\em Returns the number of active connections. \end{DoxyCompactList}\item 
+b\+Status\+\_\+t \mbox{\hyperlink{group___g_a_p___a_p_i_ga21cd72be1c8feccc658a7b0faec167a5}{G\+A\+P\+\_\+\+Authenticate}} (\mbox{\hyperlink{structgap_auth_params__t}{gap\+Auth\+Params\+\_\+t}} $\ast$p\+Params, \mbox{\hyperlink{structgap_pairing_req__t}{gap\+Pairing\+Req\+\_\+t}} $\ast$p\+Pair\+Req)
+\begin{DoxyCompactList}\small\item\em Start the Authentication process with the requested device. This function is used to Initiate/\+Allow pairing. Called by both master and slave device (Central and Peripheral). \end{DoxyCompactList}\item 
+b\+Status\+\_\+t \mbox{\hyperlink{group___g_a_p___a_p_i_gac9528b14ce20c351bae25ce6067a5d49}{G\+A\+P\+\_\+\+Terminate\+Auth}} (uint16 connection\+Handle, uint8 reason)
+\begin{DoxyCompactList}\small\item\em Send a Pairing Failed message and end any existing pairing. \end{DoxyCompactList}\item 
+b\+Status\+\_\+t \mbox{\hyperlink{group___g_a_p___a_p_i_ga95006a6e09ec3bbe5d29dadb30e2f464}{G\+A\+P\+\_\+\+Passkey\+Update}} (uint8 $\ast$p\+Passkey, uint16 connection\+Handle)
+\begin{DoxyCompactList}\small\item\em Update the passkey in string format. This function is called by the application/profile in response to receiving the G\+A\+P\+\_\+\+P\+A\+S\+S\+K\+E\+Y\+\_\+\+N\+E\+E\+D\+E\+D\+\_\+\+E\+V\+E\+NT message. \end{DoxyCompactList}\item 
+b\+Status\+\_\+t \mbox{\hyperlink{group___g_a_p___a_p_i_gaa546cf97fa0ba4c0bab58178e052eeb2}{G\+A\+P\+\_\+\+Passcode\+Update}} (uint32 passcode, uint16 connection\+Handle)
+\begin{DoxyCompactList}\small\item\em Update the passkey in a numeric value (not string). This function is called by the application/profile in response to receiving the G\+A\+P\+\_\+\+P\+A\+S\+S\+K\+E\+Y\+\_\+\+N\+E\+E\+D\+E\+D\+\_\+\+E\+V\+E\+NT message. \end{DoxyCompactList}\item 
+b\+Status\+\_\+t \mbox{\hyperlink{group___g_a_p___a_p_i_ga44473883ee83b5c18f956aab5570db3c}{G\+A\+P\+\_\+\+Send\+Slave\+Security\+Request}} (uint16 connection\+Handle, uint8 auth\+Req)
+\begin{DoxyCompactList}\small\item\em Generate a Slave Requested Security message to the master. \end{DoxyCompactList}\item 
+b\+Status\+\_\+t \mbox{\hyperlink{group___g_a_p___a_p_i_ga6a978b3a5b0441b2538a5da87ee9c409}{G\+A\+P\+\_\+\+Signable}} (uint16 connection\+Handle, uint8 authenticated, sm\+Signing\+Info\+\_\+t $\ast$p\+Params)
+\begin{DoxyCompactList}\small\item\em Set up the connection to accept signed data. \end{DoxyCompactList}\item 
+b\+Status\+\_\+t \mbox{\hyperlink{group___g_a_p___a_p_i_ga54c684222fd69ffdfed61ed57cb5e64e}{G\+A\+P\+\_\+\+Bond}} (uint16 connection\+Handle, uint8 authenticated, uint8 secure\+Connections, sm\+Security\+Info\+\_\+t $\ast$p\+Params, uint8 start\+Encryption)
+\begin{DoxyCompactList}\small\item\em Set up the connection\textquotesingle{}s bound paramaters. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{group___g_a_p___a_p_i_ga21cd72be1c8feccc658a7b0faec167a5}\label{group___g_a_p___a_p_i_ga21cd72be1c8feccc658a7b0faec167a5}} 
+\index{GAP API Functions@{GAP API Functions}!GAP\_Authenticate@{GAP\_Authenticate}}
+\index{GAP\_Authenticate@{GAP\_Authenticate}!GAP API Functions@{GAP API Functions}}
+\doxysubsubsection{\texorpdfstring{GAP\_Authenticate()}{GAP\_Authenticate()}}
+{\footnotesize\ttfamily b\+Status\+\_\+t G\+A\+P\+\_\+\+Authenticate (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structgap_auth_params__t}{gap\+Auth\+Params\+\_\+t}} $\ast$}]{p\+Params,  }\item[{\mbox{\hyperlink{structgap_pairing_req__t}{gap\+Pairing\+Req\+\_\+t}} $\ast$}]{p\+Pair\+Req }\end{DoxyParamCaption})}
+
+
+
+Start the Authentication process with the requested device. This function is used to Initiate/\+Allow pairing. Called by both master and slave device (Central and Peripheral). 
+
+N\+O\+TE\+: This function is called after the link is established.
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Params} & -\/ Authentication parameters \\
+\hline
+{\em p\+Pair\+Req} & -\/ Enter these parameters if the Pairing Request was already received. N\+U\+LL, if waiting for Pairing Request or if initiating.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+S\+U\+C\+C\+E\+SS,~\newline
+ ble\+Incorrect\+Mode\+: Not correct profile role,~\newline
+ I\+N\+V\+A\+L\+I\+D\+P\+A\+R\+A\+M\+E\+T\+ER, ~\newline
+ ble\+Not\+Connected,~\newline
+ ble\+Already\+In\+Requested\+Mode,~\newline
+ F\+A\+I\+L\+U\+RE -\/ not workable.~\newline
+ 
+\end{DoxyReturn}
+
+
+Definition at line 2385 of file icall\+\_\+api.\+c.
+
+\mbox{\Hypertarget{group___g_a_p___a_p_i_ga54c684222fd69ffdfed61ed57cb5e64e}\label{group___g_a_p___a_p_i_ga54c684222fd69ffdfed61ed57cb5e64e}} 
+\index{GAP API Functions@{GAP API Functions}!GAP\_Bond@{GAP\_Bond}}
+\index{GAP\_Bond@{GAP\_Bond}!GAP API Functions@{GAP API Functions}}
+\doxysubsubsection{\texorpdfstring{GAP\_Bond()}{GAP\_Bond()}}
+{\footnotesize\ttfamily b\+Status\+\_\+t G\+A\+P\+\_\+\+Bond (\begin{DoxyParamCaption}\item[{uint16}]{connection\+Handle,  }\item[{uint8}]{authenticated,  }\item[{uint8}]{secure\+Connections,  }\item[{sm\+Security\+Info\+\_\+t $\ast$}]{p\+Params,  }\item[{uint8}]{start\+Encryption }\end{DoxyParamCaption})}
+
+
+
+Set up the connection\textquotesingle{}s bound paramaters. 
+
+N\+O\+TE\+: This function is called after the link is established.
+
+
+\begin{DoxyParams}{Parameters}
+{\em connection\+Handle} & -\/ connection handle of the signing information \\
+\hline
+{\em authenticated} & -\/ T\+R\+UE if bond is authenticated. \\
+\hline
+{\em secure\+Connections} & -\/ T\+R\+UE if bond has Secure Connections strength. \\
+\hline
+{\em p\+Params} & -\/ the connected device\textquotesingle{}s security parameters \\
+\hline
+{\em start\+Encryption} & -\/ whether or not to start encryption\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+S\+U\+C\+C\+E\+SS, ~\newline
+ ble\+Incorrect\+Mode\+: Not correct profile role,~\newline
+ I\+N\+V\+A\+L\+I\+D\+P\+A\+R\+A\+M\+E\+T\+ER, ~\newline
+ ble\+Not\+Connected,~\newline
+ F\+A\+I\+L\+U\+RE\+: not workable.~\newline
+ 
+\end{DoxyReturn}
+
+
+Definition at line 2413 of file icall\+\_\+api.\+c.
+
+\mbox{\Hypertarget{group___g_a_p___a_p_i_gaaffa833dc484847afd019d087eefb2c6}\label{group___g_a_p___a_p_i_gaaffa833dc484847afd019d087eefb2c6}} 
+\index{GAP API Functions@{GAP API Functions}!GAP\_ConfigDeviceAddr@{GAP\_ConfigDeviceAddr}}
+\index{GAP\_ConfigDeviceAddr@{GAP\_ConfigDeviceAddr}!GAP API Functions@{GAP API Functions}}
+\doxysubsubsection{\texorpdfstring{GAP\_ConfigDeviceAddr()}{GAP\_ConfigDeviceAddr()}}
+{\footnotesize\ttfamily b\+Status\+\_\+t G\+A\+P\+\_\+\+Config\+Device\+Addr (\begin{DoxyParamCaption}\item[{uint8}]{addr\+Mode,  }\item[{uint8 $\ast$}]{p\+Static\+Addr }\end{DoxyParamCaption})}
+
+
+
+Setup the device\textquotesingle{}s address type. If A\+D\+D\+R\+M\+O\+D\+E\+\_\+\+P\+R\+I\+V\+A\+T\+E\+\_\+\+R\+E\+S\+O\+L\+VE is selected, the address will change periodically. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em addr\+Mode} & -\/ \mbox{\hyperlink{group___g_a_p___a_d_d_r___m_o_d_e___d_e_f_i_n_e_s}{G\+AP Addressing Modes}} \\
+\hline
+{\em p\+Static\+Addr} & -\/ Only used with A\+D\+D\+R\+M\+O\+D\+E\+\_\+\+S\+T\+A\+T\+IC or A\+D\+D\+R\+M\+O\+D\+E\+\_\+\+P\+R\+I\+V\+A\+T\+E\+\_\+\+N\+O\+N\+R\+E\+S\+O\+L\+VE type.~\newline
+ N\+U\+LL to auto generate otherwise the application can specify the address value\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+S\+U\+C\+C\+E\+SS\+: address type updated,~\newline
+ ble\+Not\+Ready\+: Can\textquotesingle{}t be called until \mbox{\hyperlink{group___g_a_p___a_p_i_ga729bcdb44b9ea7717cbfd55d25ba5194}{G\+A\+P\+\_\+\+Device\+Init()}} is called and the init process is completed,~\newline
+ ble\+Incorrect\+Mode\+: can\textquotesingle{}t change with an active connection,~\newline
+ or I\+N\+V\+A\+L\+I\+D\+P\+A\+R\+A\+M\+E\+T\+ER.~\newline
+
+\end{DoxyReturn}
+If return value isn\textquotesingle{}t S\+U\+C\+C\+E\+SS, the address type remains the same as before this call. 
+
+Definition at line 2143 of file icall\+\_\+api.\+c.
+
+\mbox{\Hypertarget{group___g_a_p___a_p_i_ga1ec38cafcaf928e48ed2b859711fb0df}\label{group___g_a_p___a_p_i_ga1ec38cafcaf928e48ed2b859711fb0df}} 
+\index{GAP API Functions@{GAP API Functions}!GAP\_DeviceDiscoveryCancel@{GAP\_DeviceDiscoveryCancel}}
+\index{GAP\_DeviceDiscoveryCancel@{GAP\_DeviceDiscoveryCancel}!GAP API Functions@{GAP API Functions}}
+\doxysubsubsection{\texorpdfstring{GAP\_DeviceDiscoveryCancel()}{GAP\_DeviceDiscoveryCancel()}}
+{\footnotesize\ttfamily b\+Status\+\_\+t G\+A\+P\+\_\+\+Device\+Discovery\+Cancel (\begin{DoxyParamCaption}\item[{uint8}]{task\+ID }\end{DoxyParamCaption})}
+
+
+
+Cancel an existing device discovery request. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em task\+ID} & -\/ used to return G\+A\+P\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+E\+V\+E\+NT\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+S\+U\+C\+C\+E\+SS\+: cancel started,~\newline
+ ble\+Invalid\+Task\+ID\+: Not the task that started discovery,~\newline
+ ble\+Incorrect\+Mode\+: not in discovery mode~\newline
+ 
+\end{DoxyReturn}
+
+
+Definition at line 2247 of file icall\+\_\+api.\+c.
+
+\mbox{\Hypertarget{group___g_a_p___a_p_i_gacd309bbef61eb5f83f369d98ef1b2529}\label{group___g_a_p___a_p_i_gacd309bbef61eb5f83f369d98ef1b2529}} 
+\index{GAP API Functions@{GAP API Functions}!GAP\_DeviceDiscoveryRequest@{GAP\_DeviceDiscoveryRequest}}
+\index{GAP\_DeviceDiscoveryRequest@{GAP\_DeviceDiscoveryRequest}!GAP API Functions@{GAP API Functions}}
+\doxysubsubsection{\texorpdfstring{GAP\_DeviceDiscoveryRequest()}{GAP\_DeviceDiscoveryRequest()}}
+{\footnotesize\ttfamily b\+Status\+\_\+t G\+A\+P\+\_\+\+Device\+Discovery\+Request (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structgap_dev_disc_req__t}{gap\+Dev\+Disc\+Req\+\_\+t}} $\ast$}]{p\+Params }\end{DoxyParamCaption})}
+
+
+
+Start a device discovery scan. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Params} & -\/ Device Discovery parameters\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+S\+U\+C\+C\+E\+SS\+: scan started,~\newline
+ ble\+Incorrect\+Mode\+: invalid profile role,~\newline
+ ble\+Already\+In\+Requested\+Mode\+: not available~\newline
+ 
+\end{DoxyReturn}
+
+
+Definition at line 2235 of file icall\+\_\+api.\+c.
+
+\mbox{\Hypertarget{group___g_a_p___a_p_i_ga729bcdb44b9ea7717cbfd55d25ba5194}\label{group___g_a_p___a_p_i_ga729bcdb44b9ea7717cbfd55d25ba5194}} 
+\index{GAP API Functions@{GAP API Functions}!GAP\_DeviceInit@{GAP\_DeviceInit}}
+\index{GAP\_DeviceInit@{GAP\_DeviceInit}!GAP API Functions@{GAP API Functions}}
+\doxysubsubsection{\texorpdfstring{GAP\_DeviceInit()}{GAP\_DeviceInit()}}
+{\footnotesize\ttfamily b\+Status\+\_\+t G\+A\+P\+\_\+\+Device\+Init (\begin{DoxyParamCaption}\item[{uint8}]{task\+ID,  }\item[{uint8}]{profile\+Role,  }\item[{uint8}]{max\+Scan\+Responses,  }\item[{uint8 $\ast$}]{p\+I\+RK,  }\item[{uint8 $\ast$}]{p\+S\+RK,  }\item[{uint32 $\ast$}]{p\+Sign\+Counter }\end{DoxyParamCaption})}
+
+
+
+Called to setup the device. Call just once on initialization. 
+
+N\+O\+TE\+: When initialization is complete, the calling app will be sent the G\+A\+P\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+I\+N\+I\+T\+\_\+\+D\+O\+N\+E\+\_\+\+E\+V\+E\+NT
+
+
+\begin{DoxyParams}{Parameters}
+{\em task\+ID} & -\/ Default task ID to send events. \\
+\hline
+{\em profile\+Role} & -\/ G\+AP Profile Roles\+: \mbox{\hyperlink{group___g_a_p___p_r_o_f_i_l_e___r_o_l_e___d_e_f_i_n_e_s}{G\+AP Profile Roles}} \\
+\hline
+{\em max\+Scan\+Responses} & -\/ maximum number to scan responses we can receive during a device discovery. \\
+\hline
+{\em p\+I\+RK} & -\/ pointer to Identity Root Key, N\+U\+L\+L\+K\+EY (all zeroes) if the app wants the G\+AP to generate the key. \\
+\hline
+{\em p\+S\+RK} & -\/ pointer to Sign Resolving Key, N\+U\+L\+L\+K\+EY if the app wants the G\+AP to generate the key. \\
+\hline
+{\em p\+Sign\+Counter} & -\/ 32 bit value used in the SM Signing algorithm that shall be initialized to zero and incremented with every new signing. This variable must also be maintained by the application.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+S\+U\+C\+C\+E\+SS -\/ Processing, expect G\+A\+P\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+I\+N\+I\+T\+\_\+\+D\+O\+N\+E\+\_\+\+E\+V\+E\+NT, ~\newline
+ I\+N\+V\+A\+L\+I\+D\+P\+A\+R\+A\+M\+E\+T\+ER -\/ for invalid profile role or role combination, ~\newline
+ ble\+Incorrect\+Mode -\/ trouble communicating with H\+CI 
+\end{DoxyReturn}
+
+
+Definition at line 2104 of file icall\+\_\+api.\+c.
+
+\mbox{\Hypertarget{group___g_a_p___a_p_i_gaf766e38b0823c4f9ca015e86ef806778}\label{group___g_a_p___a_p_i_gaf766e38b0823c4f9ca015e86ef806778}} 
+\index{GAP API Functions@{GAP API Functions}!GAP\_EndDiscoverable@{GAP\_EndDiscoverable}}
+\index{GAP\_EndDiscoverable@{GAP\_EndDiscoverable}!GAP API Functions@{GAP API Functions}}
+\doxysubsubsection{\texorpdfstring{GAP\_EndDiscoverable()}{GAP\_EndDiscoverable()}}
+{\footnotesize\ttfamily b\+Status\+\_\+t G\+A\+P\+\_\+\+End\+Discoverable (\begin{DoxyParamCaption}\item[{uint8}]{task\+ID }\end{DoxyParamCaption})}
+
+
+
+Stops advertising. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em task\+ID} & -\/ of task that called G\+A\+P\+\_\+\+Make\+Discoverable\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+S\+U\+C\+C\+E\+SS\+: stopping discoverable mode,~\newline
+ ble\+Incorrect\+Mode\+: not in discoverable mode,~\newline
+ ble\+Invalid\+Task\+ID\+: not correct task~\newline
+ 
+\end{DoxyReturn}
+
+
+Definition at line 2306 of file icall\+\_\+api.\+c.
+
+\mbox{\Hypertarget{group___g_a_p___a_p_i_gac1850075e9bd9ca2823999c8f2246041}\label{group___g_a_p___a_p_i_gac1850075e9bd9ca2823999c8f2246041}} 
+\index{GAP API Functions@{GAP API Functions}!GAP\_EstablishLinkReq@{GAP\_EstablishLinkReq}}
+\index{GAP\_EstablishLinkReq@{GAP\_EstablishLinkReq}!GAP API Functions@{GAP API Functions}}
+\doxysubsubsection{\texorpdfstring{GAP\_EstablishLinkReq()}{GAP\_EstablishLinkReq()}}
+{\footnotesize\ttfamily b\+Status\+\_\+t G\+A\+P\+\_\+\+Establish\+Link\+Req (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structgap_est_link_req__t}{gap\+Est\+Link\+Req\+\_\+t}} $\ast$}]{p\+Params }\end{DoxyParamCaption})}
+
+
+
+Establish a link to a slave device. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Params} & -\/ link establishment parameters\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+S\+U\+C\+C\+E\+SS\+: started establish link process,~\newline
+ ble\+Incorrect\+Mode\+: invalid profile role,~\newline
+ ble\+Not\+Ready\+: a scan is in progress,~\newline
+ ble\+Already\+In\+Requested\+Mode\+: can\textquotesingle{}t process now,~\newline
+ ble\+No\+Resources\+: Too many links~\newline
+ 
+\end{DoxyReturn}
+
+
+Definition at line 2171 of file icall\+\_\+api.\+c.
+
+\mbox{\Hypertarget{group___g_a_p___a_p_i_ga08d79d346dd04df356adcc689b19ebae}\label{group___g_a_p___a_p_i_ga08d79d346dd04df356adcc689b19ebae}} 
+\index{GAP API Functions@{GAP API Functions}!GAP\_GetAdvToken@{GAP\_GetAdvToken}}
+\index{GAP\_GetAdvToken@{GAP\_GetAdvToken}!GAP API Functions@{GAP API Functions}}
+\doxysubsubsection{\texorpdfstring{GAP\_GetAdvToken()}{GAP\_GetAdvToken()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structgap_adv_data_token__t}{gap\+Adv\+Data\+Token\+\_\+t}}$\ast$ G\+A\+P\+\_\+\+Get\+Adv\+Token (\begin{DoxyParamCaption}\item[{uint8}]{ad\+Type }\end{DoxyParamCaption})}
+
+
+
+Called to read a G\+AP Advertisement/\+Scan Response data token. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ad\+Type} & -\/ Advertisement type to get\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+pointer to the advertisement data token structure, N\+U\+LL if not found. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group___g_a_p___a_p_i_ga357fe8676645fcc9b09b1d1317a6f193}\label{group___g_a_p___a_p_i_ga357fe8676645fcc9b09b1d1317a6f193}} 
+\index{GAP API Functions@{GAP API Functions}!GAP\_GetParamValue@{GAP\_GetParamValue}}
+\index{GAP\_GetParamValue@{GAP\_GetParamValue}!GAP API Functions@{GAP API Functions}}
+\doxysubsubsection{\texorpdfstring{GAP\_GetParamValue()}{GAP\_GetParamValue()}}
+{\footnotesize\ttfamily uint16 G\+A\+P\+\_\+\+Get\+Param\+Value (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group___b_l_e___g_a_p___d_e_f_i_n_e_s_ga5ab906d5f305edeefbfc865f7405e6a0}{gap\+Param\+I\+Ds\+\_\+t}}}]{param\+ID }\end{DoxyParamCaption})}
+
+
+
+Get a G\+AP Parameter value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em param\+ID} & -\/ parameter ID\+: \mbox{\hyperlink{group___g_a_p___p_a_r_a_m_e_t_e_r___i_d___d_e_f_i_n_e_s}{G\+AP Parameter I\+Ds}}\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+G\+AP Parameter value or 0x\+F\+F\+FF if invalid 
+\end{DoxyReturn}
+
+
+Definition at line 2527 of file icall\+\_\+api.\+c.
+
+\mbox{\Hypertarget{group___g_a_p___a_p_i_gae51c3724416b31db3c8fc350e3ceef3e}\label{group___g_a_p___a_p_i_gae51c3724416b31db3c8fc350e3ceef3e}} 
+\index{GAP API Functions@{GAP API Functions}!GAP\_MakeDiscoverable@{GAP\_MakeDiscoverable}}
+\index{GAP\_MakeDiscoverable@{GAP\_MakeDiscoverable}!GAP API Functions@{GAP API Functions}}
+\doxysubsubsection{\texorpdfstring{GAP\_MakeDiscoverable()}{GAP\_MakeDiscoverable()}}
+{\footnotesize\ttfamily b\+Status\+\_\+t G\+A\+P\+\_\+\+Make\+Discoverable (\begin{DoxyParamCaption}\item[{uint8}]{task\+ID,  }\item[{\mbox{\hyperlink{structgap_advertising_params__t}{gap\+Advertising\+Params\+\_\+t}} $\ast$}]{p\+Params }\end{DoxyParamCaption})}
+
+
+
+Setup or change advertising. Also starts advertising. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em task\+ID} & -\/ used to return G\+A\+P\+\_\+\+D\+I\+S\+C\+O\+V\+E\+R\+A\+B\+L\+E\+\_\+\+R\+E\+S\+P\+O\+N\+S\+E\+\_\+\+E\+V\+E\+NT \\
+\hline
+{\em p\+Params} & -\/ advertising parameters\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+S\+U\+C\+C\+E\+SS\+: advertising started,~\newline
+ ble\+Incorrect\+Mode\+: invalid profile role,~\newline
+ ble\+Already\+In\+Requested\+Mode\+: not available at this time,~\newline
+ ble\+Not\+Ready\+: advertising data isn\textquotesingle{}t set up yet.~\newline
+ 
+\end{DoxyReturn}
+
+
+Definition at line 2258 of file icall\+\_\+api.\+c.
+
+\mbox{\Hypertarget{group___g_a_p___a_p_i_gafe7f1125452478c395a09f4874c6374a}\label{group___g_a_p___a_p_i_gafe7f1125452478c395a09f4874c6374a}} 
+\index{GAP API Functions@{GAP API Functions}!GAP\_NumActiveConnections@{GAP\_NumActiveConnections}}
+\index{GAP\_NumActiveConnections@{GAP\_NumActiveConnections}!GAP API Functions@{GAP API Functions}}
+\doxysubsubsection{\texorpdfstring{GAP\_NumActiveConnections()}{GAP\_NumActiveConnections()}}
+{\footnotesize\ttfamily uint8 G\+A\+P\+\_\+\+Num\+Active\+Connections (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Returns the number of active connections. 
+
+\begin{DoxyReturn}{Returns}
+Number of active connections. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group___g_a_p___a_p_i_gaa546cf97fa0ba4c0bab58178e052eeb2}\label{group___g_a_p___a_p_i_gaa546cf97fa0ba4c0bab58178e052eeb2}} 
+\index{GAP API Functions@{GAP API Functions}!GAP\_PasscodeUpdate@{GAP\_PasscodeUpdate}}
+\index{GAP\_PasscodeUpdate@{GAP\_PasscodeUpdate}!GAP API Functions@{GAP API Functions}}
+\doxysubsubsection{\texorpdfstring{GAP\_PasscodeUpdate()}{GAP\_PasscodeUpdate()}}
+{\footnotesize\ttfamily b\+Status\+\_\+t G\+A\+P\+\_\+\+Passcode\+Update (\begin{DoxyParamCaption}\item[{uint32}]{passcode,  }\item[{uint16}]{connection\+Handle }\end{DoxyParamCaption})}
+
+
+
+Update the passkey in a numeric value (not string). This function is called by the application/profile in response to receiving the G\+A\+P\+\_\+\+P\+A\+S\+S\+K\+E\+Y\+\_\+\+N\+E\+E\+D\+E\+D\+\_\+\+E\+V\+E\+NT message. 
+
+N\+O\+TE\+: This function is the same as \mbox{\hyperlink{group___g_a_p___a_p_i_ga95006a6e09ec3bbe5d29dadb30e2f464}{G\+A\+P\+\_\+\+Passkey\+Update()}}, except that the passkey is passed in as a non-\/string format.
+
+
+\begin{DoxyParams}{Parameters}
+{\em passcode} & -\/ not string -\/ range\+: 0 -\/ 999,999. \\
+\hline
+{\em connection\+Handle} & -\/ connection handle.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+S\+U\+C\+C\+E\+SS\+: will start pairing with this entry,~\newline
+ ble\+Incorrect\+Mode\+: Link not found,~\newline
+ I\+N\+V\+A\+L\+I\+D\+P\+A\+R\+A\+M\+E\+T\+ER\+: passkey == N\+U\+LL or passkey isn\textquotesingle{}t formatted properly.~\newline
+ 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group___g_a_p___a_p_i_ga95006a6e09ec3bbe5d29dadb30e2f464}\label{group___g_a_p___a_p_i_ga95006a6e09ec3bbe5d29dadb30e2f464}} 
+\index{GAP API Functions@{GAP API Functions}!GAP\_PasskeyUpdate@{GAP\_PasskeyUpdate}}
+\index{GAP\_PasskeyUpdate@{GAP\_PasskeyUpdate}!GAP API Functions@{GAP API Functions}}
+\doxysubsubsection{\texorpdfstring{GAP\_PasskeyUpdate()}{GAP\_PasskeyUpdate()}}
+{\footnotesize\ttfamily b\+Status\+\_\+t G\+A\+P\+\_\+\+Passkey\+Update (\begin{DoxyParamCaption}\item[{uint8 $\ast$}]{p\+Passkey,  }\item[{uint16}]{connection\+Handle }\end{DoxyParamCaption})}
+
+
+
+Update the passkey in string format. This function is called by the application/profile in response to receiving the G\+A\+P\+\_\+\+P\+A\+S\+S\+K\+E\+Y\+\_\+\+N\+E\+E\+D\+E\+D\+\_\+\+E\+V\+E\+NT message. 
+
+N\+O\+TE\+: This function is the same as \mbox{\hyperlink{group___g_a_p___a_p_i_gaa546cf97fa0ba4c0bab58178e052eeb2}{G\+A\+P\+\_\+\+Passcode\+Update()}}, except that the passkey is passed in as a string format.
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Passkey} & -\/ new passkey -\/ pointer to numeric string (ie. \char`\"{}019655\char`\"{} ). This string\textquotesingle{}s range is \char`\"{}000000\char`\"{} to \char`\"{}999999\char`\"{}. \\
+\hline
+{\em connection\+Handle} & -\/ connection handle.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+S\+U\+C\+C\+E\+SS\+: will start pairing with this entry,~\newline
+ ble\+Incorrect\+Mode\+: Link not found,~\newline
+ I\+N\+V\+A\+L\+I\+D\+P\+A\+R\+A\+M\+E\+T\+ER\+: passkey == N\+U\+LL or passkey isn\textquotesingle{}t formatted properly.~\newline
+ 
+\end{DoxyReturn}
+
+
+Definition at line 2473 of file icall\+\_\+api.\+c.
+
+\mbox{\Hypertarget{group___g_a_p___a_p_i_gaf17ced2616f8b7f67b110e8e5ad141bc}\label{group___g_a_p___a_p_i_gaf17ced2616f8b7f67b110e8e5ad141bc}} 
+\index{GAP API Functions@{GAP API Functions}!GAP\_RegisterBondMgrCBs@{GAP\_RegisterBondMgrCBs}}
+\index{GAP\_RegisterBondMgrCBs@{GAP\_RegisterBondMgrCBs}!GAP API Functions@{GAP API Functions}}
+\doxysubsubsection{\texorpdfstring{GAP\_RegisterBondMgrCBs()}{GAP\_RegisterBondMgrCBs()}}
+{\footnotesize\ttfamily void G\+A\+P\+\_\+\+Register\+Bond\+Mgr\+C\+Bs (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structgap_bond_mgr_c_bs__t}{gap\+Bond\+Mgr\+C\+Bs\+\_\+t}} $\ast$}]{p\+C\+Bs }\end{DoxyParamCaption})}
+
+
+
+Register bond manager call backs. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+C\+Bs} & -\/ pointer to Bond Manager Callbacks.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group___g_a_p___a_p_i_ga29744ff36f2789227405780eea015a24}\label{group___g_a_p___a_p_i_ga29744ff36f2789227405780eea015a24}} 
+\index{GAP API Functions@{GAP API Functions}!GAP\_RegisterForMsgs@{GAP\_RegisterForMsgs}}
+\index{GAP\_RegisterForMsgs@{GAP\_RegisterForMsgs}!GAP API Functions@{GAP API Functions}}
+\doxysubsubsection{\texorpdfstring{GAP\_RegisterForMsgs()}{GAP\_RegisterForMsgs()}}
+{\footnotesize\ttfamily void G\+A\+P\+\_\+\+Register\+For\+Msgs (\begin{DoxyParamCaption}\item[{uint8}]{task\+ID }\end{DoxyParamCaption})}
+
+
+
+Register your task ID to receive extra (unprocessed) H\+CI status and complete, and Host events. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em task\+ID} & -\/ Default task ID to send events.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+
+
+Definition at line 693 of file icall\+\_\+api.\+c.
+
+\mbox{\Hypertarget{group___g_a_p___a_p_i_gae98a99bcf9423126a2896bcf794cce76}\label{group___g_a_p___a_p_i_gae98a99bcf9423126a2896bcf794cce76}} 
+\index{GAP API Functions@{GAP API Functions}!GAP\_RemoveAdvToken@{GAP\_RemoveAdvToken}}
+\index{GAP\_RemoveAdvToken@{GAP\_RemoveAdvToken}!GAP API Functions@{GAP API Functions}}
+\doxysubsubsection{\texorpdfstring{GAP\_RemoveAdvToken()}{GAP\_RemoveAdvToken()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structgap_adv_data_token__t}{gap\+Adv\+Data\+Token\+\_\+t}}$\ast$ G\+A\+P\+\_\+\+Remove\+Adv\+Token (\begin{DoxyParamCaption}\item[{uint8}]{ad\+Type }\end{DoxyParamCaption})}
+
+
+
+Called to remove a G\+AP Advertisement/\+Scan Response data token. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ad\+Type} & -\/ Advertisement type to remove\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+pointer to the token structure removed from the G\+AP A\+D\+Type list N\+U\+LL if the requested ad\+Type wasn\textquotesingle{}t found. 
+\end{DoxyReturn}
+
+
+Definition at line 2332 of file icall\+\_\+api.\+c.
+
+\mbox{\Hypertarget{group___g_a_p___a_p_i_gaeb699212aa5c8048af8b251165b5c1d5}\label{group___g_a_p___a_p_i_gaeb699212aa5c8048af8b251165b5c1d5}} 
+\index{GAP API Functions@{GAP API Functions}!GAP\_ResolvePrivateAddr@{GAP\_ResolvePrivateAddr}}
+\index{GAP\_ResolvePrivateAddr@{GAP\_ResolvePrivateAddr}!GAP API Functions@{GAP API Functions}}
+\doxysubsubsection{\texorpdfstring{GAP\_ResolvePrivateAddr()}{GAP\_ResolvePrivateAddr()}}
+{\footnotesize\ttfamily b\+Status\+\_\+t G\+A\+P\+\_\+\+Resolve\+Private\+Addr (\begin{DoxyParamCaption}\item[{uint8 $\ast$}]{p\+I\+RK,  }\item[{uint8 $\ast$}]{p\+Addr }\end{DoxyParamCaption})}
+
+
+
+Resolves a private address against an I\+RK. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+I\+RK} & -\/ pointer to the I\+RK \\
+\hline
+{\em p\+Addr} & -\/ pointer to the Resolvable Private address\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+S\+U\+C\+C\+E\+SS\+: match,~\newline
+ F\+A\+I\+L\+U\+RE\+: don\textquotesingle{}t match,~\newline
+ I\+N\+V\+A\+L\+I\+D\+P\+A\+R\+A\+M\+E\+T\+ER\+: parameters invalid~\newline
+ 
+\end{DoxyReturn}
+
+
+Definition at line 2554 of file icall\+\_\+api.\+c.
+
+\mbox{\Hypertarget{group___g_a_p___a_p_i_ga44473883ee83b5c18f956aab5570db3c}\label{group___g_a_p___a_p_i_ga44473883ee83b5c18f956aab5570db3c}} 
+\index{GAP API Functions@{GAP API Functions}!GAP\_SendSlaveSecurityRequest@{GAP\_SendSlaveSecurityRequest}}
+\index{GAP\_SendSlaveSecurityRequest@{GAP\_SendSlaveSecurityRequest}!GAP API Functions@{GAP API Functions}}
+\doxysubsubsection{\texorpdfstring{GAP\_SendSlaveSecurityRequest()}{GAP\_SendSlaveSecurityRequest()}}
+{\footnotesize\ttfamily b\+Status\+\_\+t G\+A\+P\+\_\+\+Send\+Slave\+Security\+Request (\begin{DoxyParamCaption}\item[{uint16}]{connection\+Handle,  }\item[{uint8}]{auth\+Req }\end{DoxyParamCaption})}
+
+
+
+Generate a Slave Requested Security message to the master. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em connection\+Handle} & -\/ connection handle. \\
+\hline
+{\em auth\+Req} & -\/ Authentication Requirements\+: Bit 2\+: M\+I\+TM, Bits 0-\/1\+: bonding (0 -\/ no bonding, 1 -\/ bonding) Bit 3\+: Secure Connections\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+S\+U\+C\+C\+E\+SS\+: will send,~\newline
+ ble\+Not\+Connected\+: Link not found,~\newline
+ ble\+Incorrect\+Mode\+: wrong G\+AP role, must be a Peripheral Role~\newline
+ 
+\end{DoxyReturn}
+
+
+Definition at line 2565 of file icall\+\_\+api.\+c.
+
+\mbox{\Hypertarget{group___g_a_p___a_p_i_ga7a5784b0b07fa89d6896a5c5e6345aef}\label{group___g_a_p___a_p_i_ga7a5784b0b07fa89d6896a5c5e6345aef}} 
+\index{GAP API Functions@{GAP API Functions}!GAP\_SetAdvToken@{GAP\_SetAdvToken}}
+\index{GAP\_SetAdvToken@{GAP\_SetAdvToken}!GAP API Functions@{GAP API Functions}}
+\doxysubsubsection{\texorpdfstring{GAP\_SetAdvToken()}{GAP\_SetAdvToken()}}
+{\footnotesize\ttfamily b\+Status\+\_\+t G\+A\+P\+\_\+\+Set\+Adv\+Token (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structgap_adv_data_token__t}{gap\+Adv\+Data\+Token\+\_\+t}} $\ast$}]{p\+Token }\end{DoxyParamCaption})}
+
+
+
+Called to setup a G\+AP Advertisement/\+Scan Response data token. 
+
+N\+O\+TE\+: The data in these items are stored as low byte first (O\+TA format). The passed in structure \char`\"{}token\char`\"{} should be allocated by the calling app/profile and not released until after calling \mbox{\hyperlink{group___g_a_p___a_p_i_gae98a99bcf9423126a2896bcf794cce76}{G\+A\+P\+\_\+\+Remove\+Adv\+Token()}}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Token} & -\/ Advertisement/\+Scan response token to write.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+S\+U\+C\+C\+E\+SS -\/ advertisement token added to the G\+AP list ~\newline
+ I\+N\+V\+A\+L\+I\+D\+P\+A\+R\+A\+M\+E\+T\+ER -\/ Invalid Advertisement Type or p\+Attr\+Data is N\+U\+LL ~\newline
+ I\+N\+V\+A\+L\+I\+D\+\_\+\+M\+E\+M\+\_\+\+S\+I\+ZE -\/ The tokens take up too much space and don\textquotesingle{}t fit into Advertisement data and Scan Response Data~\newline
+ ble\+Invalid\+Range -\/ token ID already exists.~\newline
+ ble\+Incorrect\+Mode -\/ not a peripheral device~\newline
+ ble\+Mem\+Alloc\+Error -\/ memory allocation failure, 
+\end{DoxyReturn}
+
+
+Definition at line 2319 of file icall\+\_\+api.\+c.
+
+\mbox{\Hypertarget{group___g_a_p___a_p_i_ga45fab6682fc253681d7abe697a4fc0b5}\label{group___g_a_p___a_p_i_ga45fab6682fc253681d7abe697a4fc0b5}} 
+\index{GAP API Functions@{GAP API Functions}!GAP\_SetParamValue@{GAP\_SetParamValue}}
+\index{GAP\_SetParamValue@{GAP\_SetParamValue}!GAP API Functions@{GAP API Functions}}
+\doxysubsubsection{\texorpdfstring{GAP\_SetParamValue()}{GAP\_SetParamValue()}}
+{\footnotesize\ttfamily b\+Status\+\_\+t G\+A\+P\+\_\+\+Set\+Param\+Value (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group___b_l_e___g_a_p___d_e_f_i_n_e_s_ga5ab906d5f305edeefbfc865f7405e6a0}{gap\+Param\+I\+Ds\+\_\+t}}}]{param\+ID,  }\item[{uint16}]{param\+Value }\end{DoxyParamCaption})}
+
+
+
+Set a G\+AP Parameter value. Use this function to change the default G\+AP parameter values. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em param\+ID} & -\/ parameter ID\+: \mbox{\hyperlink{group___g_a_p___p_a_r_a_m_e_t_e_r___i_d___d_e_f_i_n_e_s}{G\+AP Parameter I\+Ds}} \\
+\hline
+{\em param\+Value} & -\/ new param value\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+S\+U\+C\+C\+E\+SS or I\+N\+V\+A\+L\+I\+D\+P\+A\+R\+A\+M\+E\+T\+ER (invalid param\+ID) 
+\end{DoxyReturn}
+
+
+Definition at line 2501 of file icall\+\_\+api.\+c.
+
+\mbox{\Hypertarget{group___g_a_p___a_p_i_ga6a978b3a5b0441b2538a5da87ee9c409}\label{group___g_a_p___a_p_i_ga6a978b3a5b0441b2538a5da87ee9c409}} 
+\index{GAP API Functions@{GAP API Functions}!GAP\_Signable@{GAP\_Signable}}
+\index{GAP\_Signable@{GAP\_Signable}!GAP API Functions@{GAP API Functions}}
+\doxysubsubsection{\texorpdfstring{GAP\_Signable()}{GAP\_Signable()}}
+{\footnotesize\ttfamily b\+Status\+\_\+t G\+A\+P\+\_\+\+Signable (\begin{DoxyParamCaption}\item[{uint16}]{connection\+Handle,  }\item[{uint8}]{authenticated,  }\item[{sm\+Signing\+Info\+\_\+t $\ast$}]{p\+Params }\end{DoxyParamCaption})}
+
+
+
+Set up the connection to accept signed data. 
+
+N\+O\+TE\+: This function is called after the link is established.
+
+
+\begin{DoxyParams}{Parameters}
+{\em connection\+Handle} & -\/ connection handle of the signing information \\
+\hline
+{\em authenticated} & -\/ T\+R\+UE if the signing information is authenticated, F\+A\+L\+SE otherwise \\
+\hline
+{\em p\+Params} & -\/ signing parameters\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+S\+U\+C\+C\+E\+SS, ~\newline
+ ble\+Incorrect\+Mode\+: Not correct profile role,~\newline
+ I\+N\+V\+A\+L\+I\+D\+P\+A\+R\+A\+M\+E\+T\+ER, ~\newline
+ ble\+Not\+Connected,~\newline
+ F\+A\+I\+L\+U\+RE\+: not workable.~\newline
+ 
+\end{DoxyReturn}
+
+
+Definition at line 2444 of file icall\+\_\+api.\+c.
+
+\mbox{\Hypertarget{group___g_a_p___a_p_i_gac9528b14ce20c351bae25ce6067a5d49}\label{group___g_a_p___a_p_i_gac9528b14ce20c351bae25ce6067a5d49}} 
+\index{GAP API Functions@{GAP API Functions}!GAP\_TerminateAuth@{GAP\_TerminateAuth}}
+\index{GAP\_TerminateAuth@{GAP\_TerminateAuth}!GAP API Functions@{GAP API Functions}}
+\doxysubsubsection{\texorpdfstring{GAP\_TerminateAuth()}{GAP\_TerminateAuth()}}
+{\footnotesize\ttfamily b\+Status\+\_\+t G\+A\+P\+\_\+\+Terminate\+Auth (\begin{DoxyParamCaption}\item[{uint16}]{connection\+Handle,  }\item[{uint8}]{reason }\end{DoxyParamCaption})}
+
+
+
+Send a Pairing Failed message and end any existing pairing. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em connection\+Handle} & -\/ connection handle. \\
+\hline
+{\em reason} & -\/ Pairing Failed reason code.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+S\+U\+C\+C\+E\+SS -\/ function was successful,~\newline
+ ble\+Mem\+Alloc\+Error -\/ memory allocation error,~\newline
+ I\+N\+V\+A\+L\+I\+D\+P\+A\+R\+A\+M\+E\+T\+ER -\/ one of the parameters were invalid,~\newline
+ ble\+Not\+Connected -\/ link not found,~\newline
+ ble\+Invalid\+Range -\/ one of the parameters were not within range. 
+\end{DoxyReturn}
+
+
+Definition at line 2400 of file icall\+\_\+api.\+c.
+
+\mbox{\Hypertarget{group___g_a_p___a_p_i_ga45287a9df199ff8fd90b5fe1bfdc249a}\label{group___g_a_p___a_p_i_ga45287a9df199ff8fd90b5fe1bfdc249a}} 
+\index{GAP API Functions@{GAP API Functions}!GAP\_TerminateLinkReq@{GAP\_TerminateLinkReq}}
+\index{GAP\_TerminateLinkReq@{GAP\_TerminateLinkReq}!GAP API Functions@{GAP API Functions}}
+\doxysubsubsection{\texorpdfstring{GAP\_TerminateLinkReq()}{GAP\_TerminateLinkReq()}}
+{\footnotesize\ttfamily b\+Status\+\_\+t G\+A\+P\+\_\+\+Terminate\+Link\+Req (\begin{DoxyParamCaption}\item[{uint8}]{task\+ID,  }\item[{uint16}]{connection\+Handle,  }\item[{uint8}]{reason }\end{DoxyParamCaption})}
+
+
+
+Terminate a link connection. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em task\+ID} & -\/ requesting app\textquotesingle{}s task id. \\
+\hline
+{\em connection\+Handle} & -\/ connection handle of link to terminate or \mbox{\hyperlink{group___g_a_p___c_o_n_n___h_a_n_d_l_e___d_e_f_i_n_e_s}{G\+AP Special Connection Handles}} \\
+\hline
+{\em reason} & -\/ terminate reason.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+S\+U\+C\+C\+E\+SS\+: Terminate started,~\newline
+ ble\+Incorrect\+Mode\+: No Link to terminate,~\newline
+ ble\+Invalid\+Task\+ID\+: not app that established link~\newline
+ 
+\end{DoxyReturn}
+
+
+Definition at line 2207 of file icall\+\_\+api.\+c.
+
+\mbox{\Hypertarget{group___g_a_p___a_p_i_gaded667b28065286cf5851b8672112c23}\label{group___g_a_p___a_p_i_gaded667b28065286cf5851b8672112c23}} 
+\index{GAP API Functions@{GAP API Functions}!GAP\_UpdateAdvertisingData@{GAP\_UpdateAdvertisingData}}
+\index{GAP\_UpdateAdvertisingData@{GAP\_UpdateAdvertisingData}!GAP API Functions@{GAP API Functions}}
+\doxysubsubsection{\texorpdfstring{GAP\_UpdateAdvertisingData()}{GAP\_UpdateAdvertisingData()}}
+{\footnotesize\ttfamily b\+Status\+\_\+t G\+A\+P\+\_\+\+Update\+Advertising\+Data (\begin{DoxyParamCaption}\item[{uint8}]{task\+ID,  }\item[{uint8}]{ad\+Type,  }\item[{uint8}]{data\+Len,  }\item[{uint8 $\ast$}]{p\+Advert\+Data }\end{DoxyParamCaption})}
+
+
+
+Setup or change advertising and scan response data. 
+
+N\+O\+TE\+: if the return status from this function is S\+U\+C\+C\+E\+SS, the task isn\textquotesingle{}t complete until the G\+A\+P\+\_\+\+A\+D\+V\+\_\+\+D\+A\+T\+A\+\_\+\+U\+P\+D\+A\+T\+E\+\_\+\+D\+O\+N\+E\+\_\+\+E\+V\+E\+NT is sent to the calling application task.
+
+
+\begin{DoxyParams}{Parameters}
+{\em task\+ID} & -\/ task ID of the app requesting the change \\
+\hline
+{\em ad\+Type} & -\/ T\+R\+UE -\/ advertisement data, F\+A\+L\+SE -\/ scan response data \\
+\hline
+{\em data\+Len} & -\/ Octet length of advert\+Data \\
+\hline
+{\em p\+Advert\+Data} & -\/ advertising or scan response data\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+S\+U\+C\+C\+E\+SS\+: data accepted,~\newline
+ ble\+Incorrect\+Mode\+: invalid profile role,~\newline
+ 
+\end{DoxyReturn}
+
+
+Definition at line 2274 of file icall\+\_\+api.\+c.
+
+\mbox{\Hypertarget{group___g_a_p___a_p_i_ga3c63f064944cbe909700e26e042d4cb7}\label{group___g_a_p___a_p_i_ga3c63f064944cbe909700e26e042d4cb7}} 
+\index{GAP API Functions@{GAP API Functions}!GAP\_UpdateAdvTokens@{GAP\_UpdateAdvTokens}}
+\index{GAP\_UpdateAdvTokens@{GAP\_UpdateAdvTokens}!GAP API Functions@{GAP API Functions}}
+\doxysubsubsection{\texorpdfstring{GAP\_UpdateAdvTokens()}{GAP\_UpdateAdvTokens()}}
+{\footnotesize\ttfamily b\+Status\+\_\+t G\+A\+P\+\_\+\+Update\+Adv\+Tokens (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Called to rebuild and load Advertisement and Scan Response data from existing G\+AP Advertisement Tokens. 
+
+\begin{DoxyReturn}{Returns}
+S\+U\+C\+C\+E\+SS or ble\+Incorrect\+Mode 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group___g_a_p___a_p_i_gaad99f6598df0ee36c4cd2608afa09618}\label{group___g_a_p___a_p_i_gaad99f6598df0ee36c4cd2608afa09618}} 
+\index{GAP API Functions@{GAP API Functions}!GAP\_UpdateLinkParamReq@{GAP\_UpdateLinkParamReq}}
+\index{GAP\_UpdateLinkParamReq@{GAP\_UpdateLinkParamReq}!GAP API Functions@{GAP API Functions}}
+\doxysubsubsection{\texorpdfstring{GAP\_UpdateLinkParamReq()}{GAP\_UpdateLinkParamReq()}}
+{\footnotesize\ttfamily b\+Status\+\_\+t G\+A\+P\+\_\+\+Update\+Link\+Param\+Req (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structgap_update_link_param_req__t}{gap\+Update\+Link\+Param\+Req\+\_\+t}} $\ast$}]{p\+Params }\end{DoxyParamCaption})}
+
+
+
+Update the link parameters to a Master or Slave device. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Params} & -\/ link update parameters\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+S\+U\+C\+C\+E\+SS\+: started update link process,~\newline
+ I\+N\+V\+A\+L\+I\+D\+P\+A\+R\+A\+M\+E\+T\+ER\+: one of the parameters were invalid,~\newline
+ ble\+Incorrect\+Mode\+: invalid profile role,~\newline
+ ble\+Already\+In\+Requested\+Mode\+: already updating link parameters,~\newline
+ ble\+Not\+Connected\+: not in a connection~\newline
+ 
+\end{DoxyReturn}
+
+
+Definition at line 2182 of file icall\+\_\+api.\+c.
+
+\mbox{\Hypertarget{group___g_a_p___a_p_i_gaed1b6299bfe3b0469e2baf53cba04fe1}\label{group___g_a_p___a_p_i_gaed1b6299bfe3b0469e2baf53cba04fe1}} 
+\index{GAP API Functions@{GAP API Functions}!GAP\_UpdateLinkParamReqReply@{GAP\_UpdateLinkParamReqReply}}
+\index{GAP\_UpdateLinkParamReqReply@{GAP\_UpdateLinkParamReqReply}!GAP API Functions@{GAP API Functions}}
+\doxysubsubsection{\texorpdfstring{GAP\_UpdateLinkParamReqReply()}{GAP\_UpdateLinkParamReqReply()}}
+{\footnotesize\ttfamily b\+Status\+\_\+t G\+A\+P\+\_\+\+Update\+Link\+Param\+Req\+Reply (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structgap_update_link_param_req_reply__t}{gap\+Update\+Link\+Param\+Req\+Reply\+\_\+t}} $\ast$}]{p\+Params }\end{DoxyParamCaption})}
+
+
+
+Reply to a Connection Parameter Update Request sent from a remote device. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Params} & -\/ local device\textquotesingle{}s desired connection parameters.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+S\+U\+C\+C\+E\+SS\+: reply sent successfully,~\newline
+ I\+N\+V\+A\+L\+I\+D\+P\+A\+R\+A\+M\+E\+T\+ER\+: one of the parameters were invalid,~\newline
+ ble\+Incorect\+Mode\+: invalid profile role,~\newline
+ ble\+Already\+In\+Requested\+Mode\+: already updating link parameters,~\newline
+ ble\+Not\+Connected\+: not in a connection~\newline
+ 
+\end{DoxyReturn}
+
+
+Definition at line 2195 of file icall\+\_\+api.\+c.
+

@@ -1,0 +1,86 @@
+\hypertarget{group___s_p_i___c_m_d}{}\doxysection{Command Codes}
+\label{group___s_p_i___c_m_d}\index{Command Codes@{Command Codes}}
+
+
+S\+P\+I\+\_\+\+C\+M\+D\+\_\+$\ast$ macros are general command codes for \mbox{\hyperlink{_s_p_i_8h_ab9d3a23991be2741f382749d3844cc2f}{S\+P\+I\+\_\+control()}}. Not all S\+PI driver implementations support these command codes.  
+
+
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___c_m_d_ga348d271d5ad295c5e049e78d745c57e1}{S\+P\+I\+C\+C26\+X\+X\+D\+M\+A\+\_\+\+C\+M\+D\+\_\+\+R\+E\+T\+U\+R\+N\+\_\+\+P\+A\+R\+T\+I\+A\+L\+\_\+\+E\+N\+A\+B\+LE}}~\mbox{\hyperlink{group___s_p_i___c_o_n_t_r_o_l_ga3d23d16525ee76f77276472d8dea80b0}{S\+P\+I\+\_\+\+C\+M\+D\+\_\+\+R\+E\+S\+E\+R\+V\+ED}} + 0
+\begin{DoxyCompactList}\small\item\em Command used by S\+P\+I\+\_\+control to enable partial return. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___s_p_i___c_m_d_gaff8de4036abcdb2903cb5280120c30b4}{S\+P\+I\+C\+C26\+X\+X\+D\+M\+A\+\_\+\+C\+M\+D\+\_\+\+R\+E\+T\+U\+R\+N\+\_\+\+P\+A\+R\+T\+I\+A\+L\+\_\+\+D\+I\+S\+A\+B\+LE}}~\mbox{\hyperlink{group___s_p_i___c_o_n_t_r_o_l_ga3d23d16525ee76f77276472d8dea80b0}{S\+P\+I\+\_\+\+C\+M\+D\+\_\+\+R\+E\+S\+E\+R\+V\+ED}} + 1
+\begin{DoxyCompactList}\small\item\em Command used by S\+P\+I\+\_\+control to disable partial return. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___s_p_i___c_m_d_gab3ab03abd9ca073344acdcc6b442f9eb}{S\+P\+I\+C\+C26\+X\+X\+D\+M\+A\+\_\+\+C\+M\+D\+\_\+\+S\+E\+T\+\_\+\+C\+S\+N\+\_\+\+P\+IN}}~\mbox{\hyperlink{group___s_p_i___c_o_n_t_r_o_l_ga3d23d16525ee76f77276472d8dea80b0}{S\+P\+I\+\_\+\+C\+M\+D\+\_\+\+R\+E\+S\+E\+R\+V\+ED}} + 2
+\begin{DoxyCompactList}\small\item\em Command used by S\+P\+I\+\_\+control to re-\/configure chip select pin. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___s_p_i___c_m_d_gae07fd93964e63fc93795835eaa14b589}{S\+P\+I\+C\+C26\+X\+X\+D\+M\+A\+\_\+\+C\+M\+D\+\_\+\+S\+E\+T\+\_\+\+C\+S\+N\+\_\+\+W\+A\+K\+E\+UP}}~\mbox{\hyperlink{group___s_p_i___c_o_n_t_r_o_l_ga3d23d16525ee76f77276472d8dea80b0}{S\+P\+I\+\_\+\+C\+M\+D\+\_\+\+R\+E\+S\+E\+R\+V\+ED}} + 3
+\begin{DoxyCompactList}\small\item\em Command used by S\+P\+I\+\_\+control to re-\/configure a wakeup pin. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+S\+P\+I\+\_\+\+C\+M\+D\+\_\+$\ast$ macros are general command codes for \mbox{\hyperlink{_s_p_i_8h_ab9d3a23991be2741f382749d3844cc2f}{S\+P\+I\+\_\+control()}}. Not all S\+PI driver implementations support these command codes. 
+
+S\+P\+I\+C\+C26\+X\+X\+D\+M\+A\+\_\+\+C\+M\+D\+\_\+$\ast$ macros are command codes only defined in the \mbox{\hyperlink{_s_p_i_c_c26_x_x_d_m_a_8h}{S\+P\+I\+C\+C26\+X\+X\+D\+M\+A.\+h}} driver implementation and need to\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include <ti/drivers/sdspi/SPICC26XXDMA.h>}}
+\end{DoxyCode}
+ 
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{group___s_p_i___c_m_d_gaff8de4036abcdb2903cb5280120c30b4}\label{group___s_p_i___c_m_d_gaff8de4036abcdb2903cb5280120c30b4}} 
+\index{Command Codes@{Command Codes}!SPICC26XXDMA\_CMD\_RETURN\_PARTIAL\_DISABLE@{SPICC26XXDMA\_CMD\_RETURN\_PARTIAL\_DISABLE}}
+\index{SPICC26XXDMA\_CMD\_RETURN\_PARTIAL\_DISABLE@{SPICC26XXDMA\_CMD\_RETURN\_PARTIAL\_DISABLE}!Command Codes@{Command Codes}}
+\doxysubsubsection{\texorpdfstring{SPICC26XXDMA\_CMD\_RETURN\_PARTIAL\_DISABLE}{SPICC26XXDMA\_CMD\_RETURN\_PARTIAL\_DISABLE}}
+{\footnotesize\ttfamily \#define S\+P\+I\+C\+C26\+X\+X\+D\+M\+A\+\_\+\+C\+M\+D\+\_\+\+R\+E\+T\+U\+R\+N\+\_\+\+P\+A\+R\+T\+I\+A\+L\+\_\+\+D\+I\+S\+A\+B\+LE~\mbox{\hyperlink{group___s_p_i___c_o_n_t_r_o_l_ga3d23d16525ee76f77276472d8dea80b0}{S\+P\+I\+\_\+\+C\+M\+D\+\_\+\+R\+E\+S\+E\+R\+V\+ED}} + 1}
+
+
+
+Command used by S\+P\+I\+\_\+control to disable partial return. 
+
+Disabling this command returns the S\+P\+I\+C\+C26\+X\+X\+D\+MA to the default blocking behavior where S\+P\+I\+\_\+transfer blocks until all data bytes were received. With this comand {\bfseries{arg}} is {\itshape don\textquotesingle{}t} {\itshape care} and it returns S\+P\+I\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+S\+U\+C\+C\+E\+SS. 
+
+Definition at line 550 of file S\+P\+I\+C\+C26\+X\+X\+D\+M\+A.\+h.
+
+\mbox{\Hypertarget{group___s_p_i___c_m_d_ga348d271d5ad295c5e049e78d745c57e1}\label{group___s_p_i___c_m_d_ga348d271d5ad295c5e049e78d745c57e1}} 
+\index{Command Codes@{Command Codes}!SPICC26XXDMA\_CMD\_RETURN\_PARTIAL\_ENABLE@{SPICC26XXDMA\_CMD\_RETURN\_PARTIAL\_ENABLE}}
+\index{SPICC26XXDMA\_CMD\_RETURN\_PARTIAL\_ENABLE@{SPICC26XXDMA\_CMD\_RETURN\_PARTIAL\_ENABLE}!Command Codes@{Command Codes}}
+\doxysubsubsection{\texorpdfstring{SPICC26XXDMA\_CMD\_RETURN\_PARTIAL\_ENABLE}{SPICC26XXDMA\_CMD\_RETURN\_PARTIAL\_ENABLE}}
+{\footnotesize\ttfamily \#define S\+P\+I\+C\+C26\+X\+X\+D\+M\+A\+\_\+\+C\+M\+D\+\_\+\+R\+E\+T\+U\+R\+N\+\_\+\+P\+A\+R\+T\+I\+A\+L\+\_\+\+E\+N\+A\+B\+LE~\mbox{\hyperlink{group___s_p_i___c_o_n_t_r_o_l_ga3d23d16525ee76f77276472d8dea80b0}{S\+P\+I\+\_\+\+C\+M\+D\+\_\+\+R\+E\+S\+E\+R\+V\+ED}} + 0}
+
+
+
+Command used by S\+P\+I\+\_\+control to enable partial return. 
+
+Enabling this command allows S\+P\+I\+\_\+transfer to return partial data if data reception is inactive for a given 32-\/bit period. With this command {\bfseries{arg}} is {\itshape don\textquotesingle{}t} {\itshape care} and it returns S\+P\+I\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+S\+U\+C\+C\+E\+SS. 
+
+Definition at line 541 of file S\+P\+I\+C\+C26\+X\+X\+D\+M\+A.\+h.
+
+\mbox{\Hypertarget{group___s_p_i___c_m_d_gab3ab03abd9ca073344acdcc6b442f9eb}\label{group___s_p_i___c_m_d_gab3ab03abd9ca073344acdcc6b442f9eb}} 
+\index{Command Codes@{Command Codes}!SPICC26XXDMA\_CMD\_SET\_CSN\_PIN@{SPICC26XXDMA\_CMD\_SET\_CSN\_PIN}}
+\index{SPICC26XXDMA\_CMD\_SET\_CSN\_PIN@{SPICC26XXDMA\_CMD\_SET\_CSN\_PIN}!Command Codes@{Command Codes}}
+\doxysubsubsection{\texorpdfstring{SPICC26XXDMA\_CMD\_SET\_CSN\_PIN}{SPICC26XXDMA\_CMD\_SET\_CSN\_PIN}}
+{\footnotesize\ttfamily \#define S\+P\+I\+C\+C26\+X\+X\+D\+M\+A\+\_\+\+C\+M\+D\+\_\+\+S\+E\+T\+\_\+\+C\+S\+N\+\_\+\+P\+IN~\mbox{\hyperlink{group___s_p_i___c_o_n_t_r_o_l_ga3d23d16525ee76f77276472d8dea80b0}{S\+P\+I\+\_\+\+C\+M\+D\+\_\+\+R\+E\+S\+E\+R\+V\+ED}} + 2}
+
+
+
+Command used by S\+P\+I\+\_\+control to re-\/configure chip select pin. 
+
+This command specifies a chip select pin With this command {\bfseries{arg}} is of type {\ttfamily P\+I\+N\+\_\+\+Id} and it return S\+P\+I\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+S\+U\+C\+C\+E\+SS 
+
+Definition at line 558 of file S\+P\+I\+C\+C26\+X\+X\+D\+M\+A.\+h.
+
+\mbox{\Hypertarget{group___s_p_i___c_m_d_gae07fd93964e63fc93795835eaa14b589}\label{group___s_p_i___c_m_d_gae07fd93964e63fc93795835eaa14b589}} 
+\index{Command Codes@{Command Codes}!SPICC26XXDMA\_CMD\_SET\_CSN\_WAKEUP@{SPICC26XXDMA\_CMD\_SET\_CSN\_WAKEUP}}
+\index{SPICC26XXDMA\_CMD\_SET\_CSN\_WAKEUP@{SPICC26XXDMA\_CMD\_SET\_CSN\_WAKEUP}!Command Codes@{Command Codes}}
+\doxysubsubsection{\texorpdfstring{SPICC26XXDMA\_CMD\_SET\_CSN\_WAKEUP}{SPICC26XXDMA\_CMD\_SET\_CSN\_WAKEUP}}
+{\footnotesize\ttfamily \#define S\+P\+I\+C\+C26\+X\+X\+D\+M\+A\+\_\+\+C\+M\+D\+\_\+\+S\+E\+T\+\_\+\+C\+S\+N\+\_\+\+W\+A\+K\+E\+UP~\mbox{\hyperlink{group___s_p_i___c_o_n_t_r_o_l_ga3d23d16525ee76f77276472d8dea80b0}{S\+P\+I\+\_\+\+C\+M\+D\+\_\+\+R\+E\+S\+E\+R\+V\+ED}} + 3}
+
+
+
+Command used by S\+P\+I\+\_\+control to re-\/configure a wakeup pin. 
+
+This command specifies a wakeup pin With this command {\bfseries{arg}} is of type {\ttfamily S\+P\+I\+C\+C26\+X\+X\+D\+M\+A\+\_\+\+Callback\+Fxn} and it return S\+P\+I\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+S\+U\+C\+C\+E\+SS 
+
+Definition at line 567 of file S\+P\+I\+C\+C26\+X\+X\+D\+M\+A.\+h.
+

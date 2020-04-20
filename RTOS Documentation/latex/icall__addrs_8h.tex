@@ -1,0 +1,108 @@
+\hypertarget{icall__addrs_8h}{}\doxysection{I\+Call/icall\+\_\+addrs.h File Reference}
+\label{icall__addrs_8h}\index{ICall/icall\_addrs.h@{ICall/icall\_addrs.h}}
+{\ttfamily \#include $<$icall.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}hal\+\_\+types.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}ble\+\_\+user\+\_\+config.\+h\char`\"{}}\newline
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{icall__addrs_8h_a0a252ca4ca84a1ed8b4685c8bfd4a555}{U\+S\+E\+R0\+\_\+\+C\+FG}}~\&\mbox{\hyperlink{main_8c_a14bb28c3a1fcd6a0d9c0bfb74f06b9a5}{user0\+Cfg}}
+\item 
+\#define \mbox{\hyperlink{icall__addrs_8h_a3aa0ac43eb702f30a85ebd2f9f1acaed}{I\+C\+A\+L\+L\+\_\+\+S\+T\+A\+C\+K0\+\_\+\+A\+D\+DR}}~0x00005000ul
+\item 
+\#define \mbox{\hyperlink{icall__addrs_8h_acb3eb97c0bc1b7135207fe6956baac04}{I\+C\+A\+L\+L\+\_\+\+A\+D\+D\+R\+\_\+\+M\+A\+PS}}
+\item 
+\#define \mbox{\hyperlink{icall__addrs_8h_a1ff2f82e55437db74abe475acc1d3819}{I\+C\+A\+L\+L\+\_\+\+T\+A\+S\+K\+\_\+\+P\+R\+I\+O\+R\+I\+T\+I\+ES}}~\{ 5 \}
+\item 
+\#define \mbox{\hyperlink{icall__addrs_8h_a3b566bb13fa877129dcb5d937cf3ec50}{I\+C\+A\+L\+L\+\_\+\+T\+A\+S\+K\+\_\+\+S\+T\+A\+C\+K\+\_\+\+S\+I\+Z\+ES}}~\{ 950 \}
+\item 
+\#define \mbox{\hyperlink{icall__addrs_8h_a4110118f3c902f3cfef06f9411c927ae}{I\+C\+A\+L\+L\+\_\+\+C\+U\+S\+T\+O\+M\+\_\+\+I\+N\+I\+T\+\_\+\+P\+A\+R\+A\+MS}}~\{ \mbox{\hyperlink{icall__addrs_8h_a0a252ca4ca84a1ed8b4685c8bfd4a555}{U\+S\+E\+R0\+\_\+\+C\+FG}} \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structble_user_cfg__t}{ble\+User\+Cfg\+\_\+t}} \mbox{\hyperlink{icall__addrs_8h_a14bb28c3a1fcd6a0d9c0bfb74f06b9a5}{user0\+Cfg}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{icall__addrs_8h_acb3eb97c0bc1b7135207fe6956baac04}\label{icall__addrs_8h_acb3eb97c0bc1b7135207fe6956baac04}} 
+\index{icall\_addrs.h@{icall\_addrs.h}!ICALL\_ADDR\_MAPS@{ICALL\_ADDR\_MAPS}}
+\index{ICALL\_ADDR\_MAPS@{ICALL\_ADDR\_MAPS}!icall\_addrs.h@{icall\_addrs.h}}
+\doxysubsubsection{\texorpdfstring{ICALL\_ADDR\_MAPS}{ICALL\_ADDR\_MAPS}}
+{\footnotesize\ttfamily \#define I\+C\+A\+L\+L\+\_\+\+A\+D\+D\+R\+\_\+\+M\+A\+PS}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\{ \(\backslash\)}
+\DoxyCodeLine{  (\mbox{\hyperlink{icall_8h_a6d9df00896a3fdff6577159d0da14421}{ICall\_RemoteTaskEntry}}) (\mbox{\hyperlink{icall__addrs_8h_a3aa0ac43eb702f30a85ebd2f9f1acaed}{ICALL\_STACK0\_ADDR}}) \(\backslash\)}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+Initializer for an array of \mbox{\hyperlink{icall_8h_a6d9df00896a3fdff6577159d0da14421}{I\+Call\+\_\+\+Remote\+Task\+Entry}}. Each element of the array corresponds to an entry function of an external image. The function address must be an odd address for C\+C2650 so that call will be made in Thumb mode 
+
+Definition at line 85 of file icall\+\_\+addrs.\+h.
+
+\mbox{\Hypertarget{icall__addrs_8h_a4110118f3c902f3cfef06f9411c927ae}\label{icall__addrs_8h_a4110118f3c902f3cfef06f9411c927ae}} 
+\index{icall\_addrs.h@{icall\_addrs.h}!ICALL\_CUSTOM\_INIT\_PARAMS@{ICALL\_CUSTOM\_INIT\_PARAMS}}
+\index{ICALL\_CUSTOM\_INIT\_PARAMS@{ICALL\_CUSTOM\_INIT\_PARAMS}!icall\_addrs.h@{icall\_addrs.h}}
+\doxysubsubsection{\texorpdfstring{ICALL\_CUSTOM\_INIT\_PARAMS}{ICALL\_CUSTOM\_INIT\_PARAMS}}
+{\footnotesize\ttfamily \#define I\+C\+A\+L\+L\+\_\+\+C\+U\+S\+T\+O\+M\+\_\+\+I\+N\+I\+T\+\_\+\+P\+A\+R\+A\+MS~\{ \mbox{\hyperlink{icall__addrs_8h_a0a252ca4ca84a1ed8b4685c8bfd4a555}{U\+S\+E\+R0\+\_\+\+C\+FG}} \}}
+
+Initializer for custom initialization parameters. Each element of the array corresponds to initialization parameter (a pointer) specific to the image to be passed to the entry function defined in \mbox{\hyperlink{icall__addrs_8h_acb3eb97c0bc1b7135207fe6956baac04}{I\+C\+A\+L\+L\+\_\+\+A\+D\+D\+R\+\_\+\+M\+A\+PS}} initializer. 
+
+Definition at line 113 of file icall\+\_\+addrs.\+h.
+
+\mbox{\Hypertarget{icall__addrs_8h_a3aa0ac43eb702f30a85ebd2f9f1acaed}\label{icall__addrs_8h_a3aa0ac43eb702f30a85ebd2f9f1acaed}} 
+\index{icall\_addrs.h@{icall\_addrs.h}!ICALL\_STACK0\_ADDR@{ICALL\_STACK0\_ADDR}}
+\index{ICALL\_STACK0\_ADDR@{ICALL\_STACK0\_ADDR}!icall\_addrs.h@{icall\_addrs.h}}
+\doxysubsubsection{\texorpdfstring{ICALL\_STACK0\_ADDR}{ICALL\_STACK0\_ADDR}}
+{\footnotesize\ttfamily \#define I\+C\+A\+L\+L\+\_\+\+S\+T\+A\+C\+K0\+\_\+\+A\+D\+DR~0x00005000ul}
+
+An entry function address of an external image. Note that it is not necessary to define this macro in this header file. The macro is internally used to expand \mbox{\hyperlink{icall__addrs_8h_acb3eb97c0bc1b7135207fe6956baac04}{I\+C\+A\+L\+L\+\_\+\+A\+D\+D\+R\+\_\+\+M\+A\+PS}} and also used for the sample Dummy\+Stack code. 
+
+Definition at line 75 of file icall\+\_\+addrs.\+h.
+
+\mbox{\Hypertarget{icall__addrs_8h_a1ff2f82e55437db74abe475acc1d3819}\label{icall__addrs_8h_a1ff2f82e55437db74abe475acc1d3819}} 
+\index{icall\_addrs.h@{icall\_addrs.h}!ICALL\_TASK\_PRIORITIES@{ICALL\_TASK\_PRIORITIES}}
+\index{ICALL\_TASK\_PRIORITIES@{ICALL\_TASK\_PRIORITIES}!icall\_addrs.h@{icall\_addrs.h}}
+\doxysubsubsection{\texorpdfstring{ICALL\_TASK\_PRIORITIES}{ICALL\_TASK\_PRIORITIES}}
+{\footnotesize\ttfamily \#define I\+C\+A\+L\+L\+\_\+\+T\+A\+S\+K\+\_\+\+P\+R\+I\+O\+R\+I\+T\+I\+ES~\{ 5 \}}
+
+Initializer for an array of thread priorities. Each element of the array corresponds to T\+I-\/\+R\+T\+OS specific thread priority value given to a thread to be created per the entry function defined in \mbox{\hyperlink{icall__addrs_8h_acb3eb97c0bc1b7135207fe6956baac04}{I\+C\+A\+L\+L\+\_\+\+A\+D\+D\+R\+\_\+\+M\+A\+PS}} initializer, in the same sequence. 
+
+Definition at line 97 of file icall\+\_\+addrs.\+h.
+
+\mbox{\Hypertarget{icall__addrs_8h_a3b566bb13fa877129dcb5d937cf3ec50}\label{icall__addrs_8h_a3b566bb13fa877129dcb5d937cf3ec50}} 
+\index{icall\_addrs.h@{icall\_addrs.h}!ICALL\_TASK\_STACK\_SIZES@{ICALL\_TASK\_STACK\_SIZES}}
+\index{ICALL\_TASK\_STACK\_SIZES@{ICALL\_TASK\_STACK\_SIZES}!icall\_addrs.h@{icall\_addrs.h}}
+\doxysubsubsection{\texorpdfstring{ICALL\_TASK\_STACK\_SIZES}{ICALL\_TASK\_STACK\_SIZES}}
+{\footnotesize\ttfamily \#define I\+C\+A\+L\+L\+\_\+\+T\+A\+S\+K\+\_\+\+S\+T\+A\+C\+K\+\_\+\+S\+I\+Z\+ES~\{ 950 \}}
+
+Initializer for an array of thread stack sizes. Each element of the array corresponds to stack depth allocated to a thread to be created per the entry function defined in \mbox{\hyperlink{icall__addrs_8h_acb3eb97c0bc1b7135207fe6956baac04}{I\+C\+A\+L\+L\+\_\+\+A\+D\+D\+R\+\_\+\+M\+A\+PS}} initializer, in the same sequence. 
+
+Definition at line 105 of file icall\+\_\+addrs.\+h.
+
+\mbox{\Hypertarget{icall__addrs_8h_a0a252ca4ca84a1ed8b4685c8bfd4a555}\label{icall__addrs_8h_a0a252ca4ca84a1ed8b4685c8bfd4a555}} 
+\index{icall\_addrs.h@{icall\_addrs.h}!USER0\_CFG@{USER0\_CFG}}
+\index{USER0\_CFG@{USER0\_CFG}!icall\_addrs.h@{icall\_addrs.h}}
+\doxysubsubsection{\texorpdfstring{USER0\_CFG}{USER0\_CFG}}
+{\footnotesize\ttfamily \#define U\+S\+E\+R0\+\_\+\+C\+FG~\&\mbox{\hyperlink{main_8c_a14bb28c3a1fcd6a0d9c0bfb74f06b9a5}{user0\+Cfg}}}
+
+
+
+Definition at line 59 of file icall\+\_\+addrs.\+h.
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{icall__addrs_8h_a14bb28c3a1fcd6a0d9c0bfb74f06b9a5}\label{icall__addrs_8h_a14bb28c3a1fcd6a0d9c0bfb74f06b9a5}} 
+\index{icall\_addrs.h@{icall\_addrs.h}!user0Cfg@{user0Cfg}}
+\index{user0Cfg@{user0Cfg}!icall\_addrs.h@{icall\_addrs.h}}
+\doxysubsubsection{\texorpdfstring{user0Cfg}{user0Cfg}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structble_user_cfg__t}{ble\+User\+Cfg\+\_\+t}} user0\+Cfg}
+
+
+
+Definition at line 38 of file main.\+c.
+

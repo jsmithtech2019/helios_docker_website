@@ -1,0 +1,74 @@
+\hypertarget{struct_display___config}{}\doxysection{Display\+\_\+\+Config Struct Reference}
+\label{struct_display___config}\index{Display\_Config@{Display\_Config}}
+
+
+Display Global configuration.  
+
+
+
+
+{\ttfamily \#include $<$Display.\+h$>$}
+
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_display___fxn_table}{Display\+\_\+\+Fxn\+Table}} const  $\ast$ \mbox{\hyperlink{struct_display___config_adce10e2738107a8b017ac8df3dbe1d73}{fxn\+Table\+Ptr}}
+\item 
+void $\ast$ \mbox{\hyperlink{struct_display___config_a3888ffcab482aacee937ec782f49110d}{object}}
+\item 
+void const  $\ast$ \mbox{\hyperlink{struct_display___config_a5fe62abb9c875eca79144e916082ecb8}{hw\+Attrs}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Display Global configuration. 
+
+The \mbox{\hyperlink{struct_display___config}{Display\+\_\+\+Config}} structure contains a set of pointers used to characterize the Display interface implementation.
+
+This structure needs to be defined before calling \mbox{\hyperlink{_display_8h_a3aa87973a354d4fd6a2969f764e8afe6}{Display\+\_\+open()}} and it must not be changed thereafter.
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{_display_8h_a3aa87973a354d4fd6a2969f764e8afe6}{Display\+\_\+open()}} 
+\end{DoxySeeAlso}
+
+
+Definition at line 469 of file Display.\+h.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{struct_display___config_adce10e2738107a8b017ac8df3dbe1d73}\label{struct_display___config_adce10e2738107a8b017ac8df3dbe1d73}} 
+\index{Display\_Config@{Display\_Config}!fxnTablePtr@{fxnTablePtr}}
+\index{fxnTablePtr@{fxnTablePtr}!Display\_Config@{Display\_Config}}
+\doxysubsubsection{\texorpdfstring{fxnTablePtr}{fxnTablePtr}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_display___fxn_table}{Display\+\_\+\+Fxn\+Table}} const$\ast$ Display\+\_\+\+Config\+::fxn\+Table\+Ptr}
+
+Pointer to a table of driver-\/specific implementations of Display A\+P\+Is 
+
+Definition at line 472 of file Display.\+h.
+
+\mbox{\Hypertarget{struct_display___config_a5fe62abb9c875eca79144e916082ecb8}\label{struct_display___config_a5fe62abb9c875eca79144e916082ecb8}} 
+\index{Display\_Config@{Display\_Config}!hwAttrs@{hwAttrs}}
+\index{hwAttrs@{hwAttrs}!Display\_Config@{Display\_Config}}
+\doxysubsubsection{\texorpdfstring{hwAttrs}{hwAttrs}}
+{\footnotesize\ttfamily void const$\ast$ Display\+\_\+\+Config\+::hw\+Attrs}
+
+Pointer to a driver specific hardware attributes structure 
+
+Definition at line 478 of file Display.\+h.
+
+\mbox{\Hypertarget{struct_display___config_a3888ffcab482aacee937ec782f49110d}\label{struct_display___config_a3888ffcab482aacee937ec782f49110d}} 
+\index{Display\_Config@{Display\_Config}!object@{object}}
+\index{object@{object}!Display\_Config@{Display\_Config}}
+\doxysubsubsection{\texorpdfstring{object}{object}}
+{\footnotesize\ttfamily void$\ast$ Display\+\_\+\+Config\+::object}
+
+Pointer to a driver specific data object 
+
+Definition at line 475 of file Display.\+h.
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Drivers/\+Display/\mbox{\hyperlink{_display_8h}{Display.\+h}}\end{DoxyCompactItemize}

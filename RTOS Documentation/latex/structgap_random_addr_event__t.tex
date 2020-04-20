@@ -1,0 +1,88 @@
+\hypertarget{structgap_random_addr_event__t}{}\doxysection{gap\+Random\+Addr\+Event\+\_\+t Struct Reference}
+\label{structgap_random_addr_event__t}\index{gapRandomAddrEvent\_t@{gapRandomAddrEvent\_t}}
+
+
+{\ttfamily \#include $<$gap.\+h$>$}
+
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+osal\+\_\+event\+\_\+hdr\+\_\+t \mbox{\hyperlink{structgap_random_addr_event__t_a840d4626c1b57b68b849812696ff1fb5}{hdr}}
+\begin{DoxyCompactList}\small\item\em G\+A\+P\+\_\+\+M\+S\+G\+\_\+\+E\+V\+E\+NT and status. \end{DoxyCompactList}\item 
+uint8 \mbox{\hyperlink{structgap_random_addr_event__t_a20b931c9be37c94893936a9878334383}{opcode}}
+\begin{DoxyCompactList}\small\item\em G\+A\+P\+\_\+\+R\+A\+N\+D\+O\+M\+\_\+\+A\+D\+D\+R\+\_\+\+C\+H\+A\+N\+G\+E\+D\+\_\+\+E\+V\+E\+NT. \end{DoxyCompactList}\item 
+uint8 \mbox{\hyperlink{structgap_random_addr_event__t_a95ca413a9e07c8ccee7a97c46fe370d5}{addr\+Mode}}
+\begin{DoxyCompactList}\small\item\em Address mode\+: \mbox{\hyperlink{group___g_a_p___a_d_d_r___m_o_d_e___d_e_f_i_n_e_s}{G\+AP Addressing Modes}}. \end{DoxyCompactList}\item 
+uint8 \mbox{\hyperlink{structgap_random_addr_event__t_ab4b7696650d6fc278ab02038b4620ecb}{new\+Random\+Addr}} \mbox{[}B\+\_\+\+A\+D\+D\+R\+\_\+\+L\+EN\mbox{]}
+\begin{DoxyCompactList}\small\item\em the new calculated private addr \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+G\+A\+P\+\_\+\+R\+A\+N\+D\+O\+M\+\_\+\+A\+D\+D\+R\+\_\+\+C\+H\+A\+N\+G\+E\+D\+\_\+\+E\+V\+E\+NT message format. This message is sent to the app when the random address changes. 
+
+Definition at line 446 of file gap.\+h.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{structgap_random_addr_event__t_a95ca413a9e07c8ccee7a97c46fe370d5}\label{structgap_random_addr_event__t_a95ca413a9e07c8ccee7a97c46fe370d5}} 
+\index{gapRandomAddrEvent\_t@{gapRandomAddrEvent\_t}!addrMode@{addrMode}}
+\index{addrMode@{addrMode}!gapRandomAddrEvent\_t@{gapRandomAddrEvent\_t}}
+\doxysubsubsection{\texorpdfstring{addrMode}{addrMode}}
+{\footnotesize\ttfamily uint8 gap\+Random\+Addr\+Event\+\_\+t\+::addr\+Mode}
+
+
+
+Address mode\+: \mbox{\hyperlink{group___g_a_p___a_d_d_r___m_o_d_e___d_e_f_i_n_e_s}{G\+AP Addressing Modes}}. 
+
+
+
+Definition at line 450 of file gap.\+h.
+
+\mbox{\Hypertarget{structgap_random_addr_event__t_a840d4626c1b57b68b849812696ff1fb5}\label{structgap_random_addr_event__t_a840d4626c1b57b68b849812696ff1fb5}} 
+\index{gapRandomAddrEvent\_t@{gapRandomAddrEvent\_t}!hdr@{hdr}}
+\index{hdr@{hdr}!gapRandomAddrEvent\_t@{gapRandomAddrEvent\_t}}
+\doxysubsubsection{\texorpdfstring{hdr}{hdr}}
+{\footnotesize\ttfamily osal\+\_\+event\+\_\+hdr\+\_\+t gap\+Random\+Addr\+Event\+\_\+t\+::hdr}
+
+
+
+G\+A\+P\+\_\+\+M\+S\+G\+\_\+\+E\+V\+E\+NT and status. 
+
+
+
+Definition at line 448 of file gap.\+h.
+
+\mbox{\Hypertarget{structgap_random_addr_event__t_ab4b7696650d6fc278ab02038b4620ecb}\label{structgap_random_addr_event__t_ab4b7696650d6fc278ab02038b4620ecb}} 
+\index{gapRandomAddrEvent\_t@{gapRandomAddrEvent\_t}!newRandomAddr@{newRandomAddr}}
+\index{newRandomAddr@{newRandomAddr}!gapRandomAddrEvent\_t@{gapRandomAddrEvent\_t}}
+\doxysubsubsection{\texorpdfstring{newRandomAddr}{newRandomAddr}}
+{\footnotesize\ttfamily uint8 gap\+Random\+Addr\+Event\+\_\+t\+::new\+Random\+Addr\mbox{[}B\+\_\+\+A\+D\+D\+R\+\_\+\+L\+EN\mbox{]}}
+
+
+
+the new calculated private addr 
+
+
+
+Definition at line 451 of file gap.\+h.
+
+\mbox{\Hypertarget{structgap_random_addr_event__t_a20b931c9be37c94893936a9878334383}\label{structgap_random_addr_event__t_a20b931c9be37c94893936a9878334383}} 
+\index{gapRandomAddrEvent\_t@{gapRandomAddrEvent\_t}!opcode@{opcode}}
+\index{opcode@{opcode}!gapRandomAddrEvent\_t@{gapRandomAddrEvent\_t}}
+\doxysubsubsection{\texorpdfstring{opcode}{opcode}}
+{\footnotesize\ttfamily uint8 gap\+Random\+Addr\+Event\+\_\+t\+::opcode}
+
+
+
+G\+A\+P\+\_\+\+R\+A\+N\+D\+O\+M\+\_\+\+A\+D\+D\+R\+\_\+\+C\+H\+A\+N\+G\+E\+D\+\_\+\+E\+V\+E\+NT. 
+
+
+
+Definition at line 449 of file gap.\+h.
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Include/\mbox{\hyperlink{gap_8h}{gap.\+h}}\end{DoxyCompactItemize}

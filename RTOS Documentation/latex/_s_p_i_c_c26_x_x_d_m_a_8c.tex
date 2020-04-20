@@ -1,0 +1,354 @@
+\hypertarget{_s_p_i_c_c26_x_x_d_m_a_8c}{}\doxysection{Drivers/\+S\+P\+I/\+S\+P\+I\+C\+C26\+X\+X\+D\+MA.c File Reference}
+\label{_s_p_i_c_c26_x_x_d_m_a_8c}\index{Drivers/SPI/SPICC26XXDMA.c@{Drivers/SPI/SPICC26XXDMA.c}}
+{\ttfamily \#include $<$xdc/runtime/\+Error.\+h$>$}\newline
+{\ttfamily \#include $<$xdc/runtime/\+Assert.\+h$>$}\newline
+{\ttfamily \#include $<$xdc/runtime/\+Diags.\+h$>$}\newline
+{\ttfamily \#include $<$xdc/runtime/\+Log.\+h$>$}\newline
+{\ttfamily \#include $<$xdc/runtime/\+System.\+h$>$}\newline
+{\ttfamily \#include $<$xdc/runtime/\+Types.\+h$>$}\newline
+{\ttfamily \#include $<$ti/sysbios/\+B\+I\+O\+S.\+h$>$}\newline
+{\ttfamily \#include $<$ti/sysbios/knl/\+Semaphore.\+h$>$}\newline
+{\ttfamily \#include $<$ti/sysbios/knl/\+Swi.\+h$>$}\newline
+{\ttfamily \#include $<$ti/sysbios/family/arm/m3/\+Hwi.\+h$>$}\newline
+{\ttfamily \#include $<$ti/drivers/\+Power.\+h$>$}\newline
+{\ttfamily \#include $<$ti/drivers/power/\+Power\+C\+C26\+X\+X.\+h$>$}\newline
+{\ttfamily \#include $<$ti/drivers/spi/\+S\+P\+I\+C\+C26\+X\+X\+D\+M\+A.\+h$>$}\newline
+{\ttfamily \#include $<$ti/drivers/dma/\+U\+D\+M\+A\+C\+C26\+X\+X.\+h$>$}\newline
+{\ttfamily \#include $<$inc/hw\+\_\+memmap.\+h$>$}\newline
+{\ttfamily \#include $<$inc/hw\+\_\+ints.\+h$>$}\newline
+{\ttfamily \#include $<$inc/hw\+\_\+types.\+h$>$}\newline
+{\ttfamily \#include $<$driverlib/ssi.\+h$>$}\newline
+{\ttfamily \#include $<$driverlib/sys\+\_\+ctrl.\+h$>$}\newline
+{\ttfamily \#include $<$driverlib/udma.\+h$>$}\newline
+{\ttfamily \#include $<$driverlib/ioc.\+h$>$}\newline
+{\ttfamily \#include $<$driverlib/prcm.\+h$>$}\newline
+{\ttfamily \#include $<$driverlib/rom.\+h$>$}\newline
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{_s_p_i_c_c26_x_x_d_m_a_8c_a7f40c15f220957ebadbefb3c2ab1bd20}{S\+S\+I\+\_\+\+O\+\_\+\+T\+CR}}~0x00000080
+\item 
+\#define \mbox{\hyperlink{_s_p_i_c_c26_x_x_d_m_a_8c_ac476a8b047711b3cca72b96c4dbc6800}{S\+S\+I\+\_\+\+T\+C\+R\+\_\+\+T\+E\+S\+T\+F\+I\+F\+O\+\_\+\+E\+N\+A\+B\+LE}}~0x2
+\item 
+\#define \mbox{\hyperlink{_s_p_i_c_c26_x_x_d_m_a_8c_a6b132e118aa6be8587031b4ab96e7dd2}{S\+S\+I\+\_\+\+T\+C\+R\+\_\+\+T\+E\+S\+T\+F\+I\+F\+O\+\_\+\+D\+I\+S\+A\+B\+LE}}~0x0
+\item 
+\#define \mbox{\hyperlink{_s_p_i_c_c26_x_x_d_m_a_8c_aa02ddad9a64fba40d82e77128da007c0}{S\+S\+I\+\_\+\+O\+\_\+\+T\+DR}}~0x0000008C
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef \mbox{\hyperlink{struct_s_p_i_c_c26_x_x_d_m_a___h_w_attrs_v1}{S\+P\+I\+C\+C26\+X\+X\+D\+M\+A\+\_\+\+H\+W\+Attrs\+V1}} \mbox{\hyperlink{_s_p_i_c_c26_x_x_d_m_a_8c_add2b1cba0bf17bd514609b76010edc04}{S\+P\+I\+C\+C26\+X\+X\+D\+M\+A\+\_\+\+H\+W\+Attrs}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_s_p_i_c_c26_x_x_d_m_a_8c_a99975e1b765ffa3c8c01376cb149da55}{A\+L\+L\+O\+C\+A\+T\+E\+\_\+\+C\+O\+N\+T\+R\+O\+L\+\_\+\+T\+A\+B\+L\+E\+\_\+\+E\+N\+T\+RY}} (dma\+Spi0\+Tx\+Control\+Table\+Entry, U\+D\+M\+A\+\_\+\+C\+H\+A\+N\+\_\+\+S\+S\+I0\+\_\+\+TX)
+\item 
+\mbox{\hyperlink{_s_p_i_c_c26_x_x_d_m_a_8c_ae3425ffd3f31d5d0129ac14cd486f873}{A\+L\+L\+O\+C\+A\+T\+E\+\_\+\+C\+O\+N\+T\+R\+O\+L\+\_\+\+T\+A\+B\+L\+E\+\_\+\+E\+N\+T\+RY}} (dma\+Spi0\+Rx\+Control\+Table\+Entry, U\+D\+M\+A\+\_\+\+C\+H\+A\+N\+\_\+\+S\+S\+I0\+\_\+\+RX)
+\item 
+\mbox{\hyperlink{_s_p_i_c_c26_x_x_d_m_a_8c_afe3221da7330f11a3abfefc3198add80}{A\+L\+L\+O\+C\+A\+T\+E\+\_\+\+C\+O\+N\+T\+R\+O\+L\+\_\+\+T\+A\+B\+L\+E\+\_\+\+E\+N\+T\+RY}} (dma\+Spi1\+Tx\+Control\+Table\+Entry, U\+D\+M\+A\+\_\+\+C\+H\+A\+N\+\_\+\+S\+S\+I1\+\_\+\+TX)
+\item 
+\mbox{\hyperlink{_s_p_i_c_c26_x_x_d_m_a_8c_aaacbc35d05017208981cae7ed7b3758b}{A\+L\+L\+O\+C\+A\+T\+E\+\_\+\+C\+O\+N\+T\+R\+O\+L\+\_\+\+T\+A\+B\+L\+E\+\_\+\+E\+N\+T\+RY}} (dma\+Spi1\+Rx\+Control\+Table\+Entry, U\+D\+M\+A\+\_\+\+C\+H\+A\+N\+\_\+\+S\+S\+I1\+\_\+\+RX)
+\item 
+void \mbox{\hyperlink{_s_p_i_c_c26_x_x_d_m_a_8c_a029b5e65ddc65cbd2469f31822286b7c}{S\+P\+I\+C\+C26\+X\+X\+D\+M\+A\+\_\+close}} (\mbox{\hyperlink{_s_p_i_8h_a728806534c3c3e8675cfbfb7d8e36f13}{S\+P\+I\+\_\+\+Handle}} handle)
+\begin{DoxyCompactList}\small\item\em Function to close a given C\+C26\+XX S\+PI peripheral specified by the S\+PI handle. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{_s_p_i_c_c26_x_x_d_m_a_8c_a39daa494b5680e6140cbd16a53d5bb57}{S\+P\+I\+C\+C26\+X\+X\+D\+M\+A\+\_\+control}} (\mbox{\hyperlink{_s_p_i_8h_a728806534c3c3e8675cfbfb7d8e36f13}{S\+P\+I\+\_\+\+Handle}} handle, unsigned int cmd, void $\ast$arg)
+\begin{DoxyCompactList}\small\item\em Function for setting control parameters of the S\+PI driver after it has been opened. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_s_p_i_c_c26_x_x_d_m_a_8c_a9c2af6a68116b6577b7996ce8fae3970}{S\+P\+I\+C\+C26\+X\+X\+D\+M\+A\+\_\+init}} (\mbox{\hyperlink{_s_p_i_8h_a728806534c3c3e8675cfbfb7d8e36f13}{S\+P\+I\+\_\+\+Handle}} handle)
+\begin{DoxyCompactList}\small\item\em S\+PI C\+C26\+XX initialization. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_s_p_i_8h_a728806534c3c3e8675cfbfb7d8e36f13}{S\+P\+I\+\_\+\+Handle}} \mbox{\hyperlink{_s_p_i_c_c26_x_x_d_m_a_8c_a85dd106e353eb64b10b47ea44d0591d1}{S\+P\+I\+C\+C26\+X\+X\+D\+M\+A\+\_\+open}} (\mbox{\hyperlink{_s_p_i_8h_a728806534c3c3e8675cfbfb7d8e36f13}{S\+P\+I\+\_\+\+Handle}} handle, \mbox{\hyperlink{struct_s_p_i___params}{S\+P\+I\+\_\+\+Params}} $\ast$params)
+\begin{DoxyCompactList}\small\item\em Function to initialize the C\+C26\+XX S\+PI peripheral specified by the particular handle. The parameter specifies which mode the S\+PI will operate. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{_s_p_i_c_c26_x_x_d_m_a_8c_aa6c4d6b633647be617db766cd6c685d3}{S\+P\+I\+C\+C26\+X\+X\+D\+M\+A\+\_\+transfer}} (\mbox{\hyperlink{_s_p_i_8h_a728806534c3c3e8675cfbfb7d8e36f13}{S\+P\+I\+\_\+\+Handle}} handle, \mbox{\hyperlink{struct_s_p_i___transaction}{S\+P\+I\+\_\+\+Transaction}} $\ast$transaction)
+\begin{DoxyCompactList}\small\item\em Function for transferring using the S\+PI interface. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_s_p_i_c_c26_x_x_d_m_a_8c_af67ffed26c2beb49d2f5b59a4f01b12c}{S\+P\+I\+C\+C26\+X\+X\+D\+M\+A\+\_\+transfer\+Cancel}} (\mbox{\hyperlink{_s_p_i_8h_a728806534c3c3e8675cfbfb7d8e36f13}{S\+P\+I\+\_\+\+Handle}} handle)
+\begin{DoxyCompactList}\small\item\em Function that cancels a S\+PI transfer. Will disable S\+PI and U\+D\+MA modules and allow standby. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const \mbox{\hyperlink{struct_s_p_i___fxn_table}{S\+P\+I\+\_\+\+Fxn\+Table}} \mbox{\hyperlink{_s_p_i_c_c26_x_x_d_m_a_8c_a7a96d71ae8382c6fa489107d34d6c9b3}{S\+P\+I\+C\+C26\+X\+X\+D\+M\+A\+\_\+fxn\+Table}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{_s_p_i_c_c26_x_x_d_m_a_8c_a7f40c15f220957ebadbefb3c2ab1bd20}\label{_s_p_i_c_c26_x_x_d_m_a_8c_a7f40c15f220957ebadbefb3c2ab1bd20}} 
+\index{SPICC26XXDMA.c@{SPICC26XXDMA.c}!SSI\_O\_TCR@{SSI\_O\_TCR}}
+\index{SSI\_O\_TCR@{SSI\_O\_TCR}!SPICC26XXDMA.c@{SPICC26XXDMA.c}}
+\doxysubsubsection{\texorpdfstring{SSI\_O\_TCR}{SSI\_O\_TCR}}
+{\footnotesize\ttfamily \#define S\+S\+I\+\_\+\+O\+\_\+\+T\+CR~0x00000080}
+
+
+
+Definition at line 63 of file S\+P\+I\+C\+C26\+X\+X\+D\+M\+A.\+c.
+
+\mbox{\Hypertarget{_s_p_i_c_c26_x_x_d_m_a_8c_aa02ddad9a64fba40d82e77128da007c0}\label{_s_p_i_c_c26_x_x_d_m_a_8c_aa02ddad9a64fba40d82e77128da007c0}} 
+\index{SPICC26XXDMA.c@{SPICC26XXDMA.c}!SSI\_O\_TDR@{SSI\_O\_TDR}}
+\index{SSI\_O\_TDR@{SSI\_O\_TDR}!SPICC26XXDMA.c@{SPICC26XXDMA.c}}
+\doxysubsubsection{\texorpdfstring{SSI\_O\_TDR}{SSI\_O\_TDR}}
+{\footnotesize\ttfamily \#define S\+S\+I\+\_\+\+O\+\_\+\+T\+DR~0x0000008C}
+
+
+
+Definition at line 67 of file S\+P\+I\+C\+C26\+X\+X\+D\+M\+A.\+c.
+
+\mbox{\Hypertarget{_s_p_i_c_c26_x_x_d_m_a_8c_a6b132e118aa6be8587031b4ab96e7dd2}\label{_s_p_i_c_c26_x_x_d_m_a_8c_a6b132e118aa6be8587031b4ab96e7dd2}} 
+\index{SPICC26XXDMA.c@{SPICC26XXDMA.c}!SSI\_TCR\_TESTFIFO\_DISABLE@{SSI\_TCR\_TESTFIFO\_DISABLE}}
+\index{SSI\_TCR\_TESTFIFO\_DISABLE@{SSI\_TCR\_TESTFIFO\_DISABLE}!SPICC26XXDMA.c@{SPICC26XXDMA.c}}
+\doxysubsubsection{\texorpdfstring{SSI\_TCR\_TESTFIFO\_DISABLE}{SSI\_TCR\_TESTFIFO\_DISABLE}}
+{\footnotesize\ttfamily \#define S\+S\+I\+\_\+\+T\+C\+R\+\_\+\+T\+E\+S\+T\+F\+I\+F\+O\+\_\+\+D\+I\+S\+A\+B\+LE~0x0}
+
+
+
+Definition at line 65 of file S\+P\+I\+C\+C26\+X\+X\+D\+M\+A.\+c.
+
+\mbox{\Hypertarget{_s_p_i_c_c26_x_x_d_m_a_8c_ac476a8b047711b3cca72b96c4dbc6800}\label{_s_p_i_c_c26_x_x_d_m_a_8c_ac476a8b047711b3cca72b96c4dbc6800}} 
+\index{SPICC26XXDMA.c@{SPICC26XXDMA.c}!SSI\_TCR\_TESTFIFO\_ENABLE@{SSI\_TCR\_TESTFIFO\_ENABLE}}
+\index{SSI\_TCR\_TESTFIFO\_ENABLE@{SSI\_TCR\_TESTFIFO\_ENABLE}!SPICC26XXDMA.c@{SPICC26XXDMA.c}}
+\doxysubsubsection{\texorpdfstring{SSI\_TCR\_TESTFIFO\_ENABLE}{SSI\_TCR\_TESTFIFO\_ENABLE}}
+{\footnotesize\ttfamily \#define S\+S\+I\+\_\+\+T\+C\+R\+\_\+\+T\+E\+S\+T\+F\+I\+F\+O\+\_\+\+E\+N\+A\+B\+LE~0x2}
+
+
+
+Definition at line 64 of file S\+P\+I\+C\+C26\+X\+X\+D\+M\+A.\+c.
+
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{_s_p_i_c_c26_x_x_d_m_a_8c_add2b1cba0bf17bd514609b76010edc04}\label{_s_p_i_c_c26_x_x_d_m_a_8c_add2b1cba0bf17bd514609b76010edc04}} 
+\index{SPICC26XXDMA.c@{SPICC26XXDMA.c}!SPICC26XXDMA\_HWAttrs@{SPICC26XXDMA\_HWAttrs}}
+\index{SPICC26XXDMA\_HWAttrs@{SPICC26XXDMA\_HWAttrs}!SPICC26XXDMA.c@{SPICC26XXDMA.c}}
+\doxysubsubsection{\texorpdfstring{SPICC26XXDMA\_HWAttrs}{SPICC26XXDMA\_HWAttrs}}
+{\footnotesize\ttfamily typedef \mbox{\hyperlink{struct_s_p_i_c_c26_x_x_d_m_a___h_w_attrs_v1}{S\+P\+I\+C\+C26\+X\+X\+D\+M\+A\+\_\+\+H\+W\+Attrs\+V1}} \mbox{\hyperlink{_s_p_i_c_c26_x_x_d_m_a_8c_add2b1cba0bf17bd514609b76010edc04}{S\+P\+I\+C\+C26\+X\+X\+D\+M\+A\+\_\+\+H\+W\+Attrs}}}
+
+
+
+Definition at line 69 of file S\+P\+I\+C\+C26\+X\+X\+D\+M\+A.\+c.
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{_s_p_i_c_c26_x_x_d_m_a_8c_ae3425ffd3f31d5d0129ac14cd486f873}\label{_s_p_i_c_c26_x_x_d_m_a_8c_ae3425ffd3f31d5d0129ac14cd486f873}} 
+\index{SPICC26XXDMA.c@{SPICC26XXDMA.c}!ALLOCATE\_CONTROL\_TABLE\_ENTRY@{ALLOCATE\_CONTROL\_TABLE\_ENTRY}}
+\index{ALLOCATE\_CONTROL\_TABLE\_ENTRY@{ALLOCATE\_CONTROL\_TABLE\_ENTRY}!SPICC26XXDMA.c@{SPICC26XXDMA.c}}
+\doxysubsubsection{\texorpdfstring{ALLOCATE\_CONTROL\_TABLE\_ENTRY()}{ALLOCATE\_CONTROL\_TABLE\_ENTRY()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily A\+L\+L\+O\+C\+A\+T\+E\+\_\+\+C\+O\+N\+T\+R\+O\+L\+\_\+\+T\+A\+B\+L\+E\+\_\+\+E\+N\+T\+RY (\begin{DoxyParamCaption}\item[{dma\+Spi0\+Rx\+Control\+Table\+Entry}]{,  }\item[{U\+D\+M\+A\+\_\+\+C\+H\+A\+N\+\_\+\+S\+S\+I0\+\_\+\+RX}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{_s_p_i_c_c26_x_x_d_m_a_8c_a99975e1b765ffa3c8c01376cb149da55}\label{_s_p_i_c_c26_x_x_d_m_a_8c_a99975e1b765ffa3c8c01376cb149da55}} 
+\index{SPICC26XXDMA.c@{SPICC26XXDMA.c}!ALLOCATE\_CONTROL\_TABLE\_ENTRY@{ALLOCATE\_CONTROL\_TABLE\_ENTRY}}
+\index{ALLOCATE\_CONTROL\_TABLE\_ENTRY@{ALLOCATE\_CONTROL\_TABLE\_ENTRY}!SPICC26XXDMA.c@{SPICC26XXDMA.c}}
+\doxysubsubsection{\texorpdfstring{ALLOCATE\_CONTROL\_TABLE\_ENTRY()}{ALLOCATE\_CONTROL\_TABLE\_ENTRY()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily A\+L\+L\+O\+C\+A\+T\+E\+\_\+\+C\+O\+N\+T\+R\+O\+L\+\_\+\+T\+A\+B\+L\+E\+\_\+\+E\+N\+T\+RY (\begin{DoxyParamCaption}\item[{dma\+Spi0\+Tx\+Control\+Table\+Entry}]{,  }\item[{U\+D\+M\+A\+\_\+\+C\+H\+A\+N\+\_\+\+S\+S\+I0\+\_\+\+TX}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{_s_p_i_c_c26_x_x_d_m_a_8c_aaacbc35d05017208981cae7ed7b3758b}\label{_s_p_i_c_c26_x_x_d_m_a_8c_aaacbc35d05017208981cae7ed7b3758b}} 
+\index{SPICC26XXDMA.c@{SPICC26XXDMA.c}!ALLOCATE\_CONTROL\_TABLE\_ENTRY@{ALLOCATE\_CONTROL\_TABLE\_ENTRY}}
+\index{ALLOCATE\_CONTROL\_TABLE\_ENTRY@{ALLOCATE\_CONTROL\_TABLE\_ENTRY}!SPICC26XXDMA.c@{SPICC26XXDMA.c}}
+\doxysubsubsection{\texorpdfstring{ALLOCATE\_CONTROL\_TABLE\_ENTRY()}{ALLOCATE\_CONTROL\_TABLE\_ENTRY()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily A\+L\+L\+O\+C\+A\+T\+E\+\_\+\+C\+O\+N\+T\+R\+O\+L\+\_\+\+T\+A\+B\+L\+E\+\_\+\+E\+N\+T\+RY (\begin{DoxyParamCaption}\item[{dma\+Spi1\+Rx\+Control\+Table\+Entry}]{,  }\item[{U\+D\+M\+A\+\_\+\+C\+H\+A\+N\+\_\+\+S\+S\+I1\+\_\+\+RX}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{_s_p_i_c_c26_x_x_d_m_a_8c_afe3221da7330f11a3abfefc3198add80}\label{_s_p_i_c_c26_x_x_d_m_a_8c_afe3221da7330f11a3abfefc3198add80}} 
+\index{SPICC26XXDMA.c@{SPICC26XXDMA.c}!ALLOCATE\_CONTROL\_TABLE\_ENTRY@{ALLOCATE\_CONTROL\_TABLE\_ENTRY}}
+\index{ALLOCATE\_CONTROL\_TABLE\_ENTRY@{ALLOCATE\_CONTROL\_TABLE\_ENTRY}!SPICC26XXDMA.c@{SPICC26XXDMA.c}}
+\doxysubsubsection{\texorpdfstring{ALLOCATE\_CONTROL\_TABLE\_ENTRY()}{ALLOCATE\_CONTROL\_TABLE\_ENTRY()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily A\+L\+L\+O\+C\+A\+T\+E\+\_\+\+C\+O\+N\+T\+R\+O\+L\+\_\+\+T\+A\+B\+L\+E\+\_\+\+E\+N\+T\+RY (\begin{DoxyParamCaption}\item[{dma\+Spi1\+Tx\+Control\+Table\+Entry}]{,  }\item[{U\+D\+M\+A\+\_\+\+C\+H\+A\+N\+\_\+\+S\+S\+I1\+\_\+\+TX}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{_s_p_i_c_c26_x_x_d_m_a_8c_a029b5e65ddc65cbd2469f31822286b7c}\label{_s_p_i_c_c26_x_x_d_m_a_8c_a029b5e65ddc65cbd2469f31822286b7c}} 
+\index{SPICC26XXDMA.c@{SPICC26XXDMA.c}!SPICC26XXDMA\_close@{SPICC26XXDMA\_close}}
+\index{SPICC26XXDMA\_close@{SPICC26XXDMA\_close}!SPICC26XXDMA.c@{SPICC26XXDMA.c}}
+\doxysubsubsection{\texorpdfstring{SPICC26XXDMA\_close()}{SPICC26XXDMA\_close()}}
+{\footnotesize\ttfamily void S\+P\+I\+C\+C26\+X\+X\+D\+M\+A\+\_\+close (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_s_p_i_8h_a728806534c3c3e8675cfbfb7d8e36f13}{S\+P\+I\+\_\+\+Handle}}}]{handle }\end{DoxyParamCaption})}
+
+
+
+Function to close a given C\+C26\+XX S\+PI peripheral specified by the S\+PI handle. 
+
+Will disable the S\+PI, disable all S\+PI interrupts and release the dependency on the corresponding power domain.
+
+\begin{DoxyPrecond}{Precondition}
+\mbox{\hyperlink{_s_p_i_c_c26_x_x_d_m_a_8c_a85dd106e353eb64b10b47ea44d0591d1}{S\+P\+I\+C\+C26\+X\+X\+D\+M\+A\+\_\+open()}} has to be called first. Calling context\+: Task
+\end{DoxyPrecond}
+
+\begin{DoxyParams}{Parameters}
+{\em handle} & A S\+P\+I\+\_\+\+Handle returned from \mbox{\hyperlink{_s_p_i_8c_a62cfe494cb1df47cd602e8747e894fd1}{S\+P\+I\+\_\+open()}}\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{_s_p_i_c_c26_x_x_d_m_a_8c_a85dd106e353eb64b10b47ea44d0591d1}{S\+P\+I\+C\+C26\+X\+X\+D\+M\+A\+\_\+open}} 
+\end{DoxySeeAlso}
+
+
+Definition at line 214 of file S\+P\+I\+C\+C26\+X\+X\+D\+M\+A.\+c.
+
+\mbox{\Hypertarget{_s_p_i_c_c26_x_x_d_m_a_8c_a39daa494b5680e6140cbd16a53d5bb57}\label{_s_p_i_c_c26_x_x_d_m_a_8c_a39daa494b5680e6140cbd16a53d5bb57}} 
+\index{SPICC26XXDMA.c@{SPICC26XXDMA.c}!SPICC26XXDMA\_control@{SPICC26XXDMA\_control}}
+\index{SPICC26XXDMA\_control@{SPICC26XXDMA\_control}!SPICC26XXDMA.c@{SPICC26XXDMA.c}}
+\doxysubsubsection{\texorpdfstring{SPICC26XXDMA\_control()}{SPICC26XXDMA\_control()}}
+{\footnotesize\ttfamily int S\+P\+I\+C\+C26\+X\+X\+D\+M\+A\+\_\+control (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_s_p_i_8h_a728806534c3c3e8675cfbfb7d8e36f13}{S\+P\+I\+\_\+\+Handle}}}]{handle,  }\item[{unsigned int}]{cmd,  }\item[{void $\ast$}]{arg }\end{DoxyParamCaption})}
+
+
+
+Function for setting control parameters of the S\+PI driver after it has been opened. 
+
+\begin{DoxyPrecond}{Precondition}
+\mbox{\hyperlink{_s_p_i_c_c26_x_x_d_m_a_8c_a85dd106e353eb64b10b47ea44d0591d1}{S\+P\+I\+C\+C26\+X\+X\+D\+M\+A\+\_\+open()}} has to be called first. Calling context\+: Hwi, Swi, Task
+\end{DoxyPrecond}
+
+\begin{DoxyParams}{Parameters}
+{\em handle} & A S\+PI handle returned from \mbox{\hyperlink{_s_p_i_c_c26_x_x_d_m_a_8c_a85dd106e353eb64b10b47ea44d0591d1}{S\+P\+I\+C\+C26\+X\+X\+D\+M\+A\+\_\+open()}}\\
+\hline
+{\em cmd} & The command to execute, supported commands are\+: {\begin{tabularx}{\linewidth}{|*{2}{>{\raggedright\arraybackslash}X|}}\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Command }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Description  }\\\cline{1-2}
+\mbox{\hyperlink{group___s_p_i___c_m_d_ga348d271d5ad295c5e049e78d745c57e1}{S\+P\+I\+C\+C26\+X\+X\+D\+M\+A\+\_\+\+C\+M\+D\+\_\+\+R\+E\+T\+U\+R\+N\+\_\+\+P\+A\+R\+T\+I\+A\+L\+\_\+\+E\+N\+A\+B\+LE}} &Enable R\+E\+T\+U\+R\+N\+\_\+\+P\+A\+R\+T\+I\+AL  \\\cline{1-2}
+\mbox{\hyperlink{group___s_p_i___c_m_d_gaff8de4036abcdb2903cb5280120c30b4}{S\+P\+I\+C\+C26\+X\+X\+D\+M\+A\+\_\+\+C\+M\+D\+\_\+\+R\+E\+T\+U\+R\+N\+\_\+\+P\+A\+R\+T\+I\+A\+L\+\_\+\+D\+I\+S\+A\+B\+LE}} &Disable R\+E\+T\+U\+R\+N\+\_\+\+P\+A\+R\+T\+I\+AL  \\\cline{1-2}
+\mbox{\hyperlink{group___s_p_i___c_m_d_gab3ab03abd9ca073344acdcc6b442f9eb}{S\+P\+I\+C\+C26\+X\+X\+D\+M\+A\+\_\+\+C\+M\+D\+\_\+\+S\+E\+T\+\_\+\+C\+S\+N\+\_\+\+P\+IN}} &Re-\/configure chip select pin  \\\cline{1-2}
+\end{tabularx}}
+\\
+\hline
+{\em $\ast$arg} & Pointer to command arguments.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{group___s_p_i___s_t_a_t_u_s_gab38fa90ff62128dbc98b2ecd84ca106f}{S\+P\+I\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+S\+U\+C\+C\+E\+SS}} if success, or error code if error. 
+\end{DoxyReturn}
+
+
+Definition at line 280 of file S\+P\+I\+C\+C26\+X\+X\+D\+M\+A.\+c.
+
+\mbox{\Hypertarget{_s_p_i_c_c26_x_x_d_m_a_8c_a9c2af6a68116b6577b7996ce8fae3970}\label{_s_p_i_c_c26_x_x_d_m_a_8c_a9c2af6a68116b6577b7996ce8fae3970}} 
+\index{SPICC26XXDMA.c@{SPICC26XXDMA.c}!SPICC26XXDMA\_init@{SPICC26XXDMA\_init}}
+\index{SPICC26XXDMA\_init@{SPICC26XXDMA\_init}!SPICC26XXDMA.c@{SPICC26XXDMA.c}}
+\doxysubsubsection{\texorpdfstring{SPICC26XXDMA\_init()}{SPICC26XXDMA\_init()}}
+{\footnotesize\ttfamily void S\+P\+I\+C\+C26\+X\+X\+D\+M\+A\+\_\+init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_s_p_i_8h_a728806534c3c3e8675cfbfb7d8e36f13}{S\+P\+I\+\_\+\+Handle}}}]{handle }\end{DoxyParamCaption})}
+
+
+
+S\+PI C\+C26\+XX initialization. 
+
+The function will set the is\+Open flag to false.
+
+\begin{DoxyPrecond}{Precondition}
+Calling context\+: Hwi, Swi, Task, Main
+\end{DoxyPrecond}
+
+\begin{DoxyParams}{Parameters}
+{\em handle} & A S\+P\+I\+\_\+\+Handle \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 612 of file S\+P\+I\+C\+C26\+X\+X\+D\+M\+A.\+c.
+
+\mbox{\Hypertarget{_s_p_i_c_c26_x_x_d_m_a_8c_a85dd106e353eb64b10b47ea44d0591d1}\label{_s_p_i_c_c26_x_x_d_m_a_8c_a85dd106e353eb64b10b47ea44d0591d1}} 
+\index{SPICC26XXDMA.c@{SPICC26XXDMA.c}!SPICC26XXDMA\_open@{SPICC26XXDMA\_open}}
+\index{SPICC26XXDMA\_open@{SPICC26XXDMA\_open}!SPICC26XXDMA.c@{SPICC26XXDMA.c}}
+\doxysubsubsection{\texorpdfstring{SPICC26XXDMA\_open()}{SPICC26XXDMA\_open()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_p_i_8h_a728806534c3c3e8675cfbfb7d8e36f13}{S\+P\+I\+\_\+\+Handle}} S\+P\+I\+C\+C26\+X\+X\+D\+M\+A\+\_\+open (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_s_p_i_8h_a728806534c3c3e8675cfbfb7d8e36f13}{S\+P\+I\+\_\+\+Handle}}}]{handle,  }\item[{\mbox{\hyperlink{struct_s_p_i___params}{S\+P\+I\+\_\+\+Params}} $\ast$}]{params }\end{DoxyParamCaption})}
+
+
+
+Function to initialize the C\+C26\+XX S\+PI peripheral specified by the particular handle. The parameter specifies which mode the S\+PI will operate. 
+
+The function will set a dependency on it power domain, i.\+e. power up the module and enable the clock. The I\+Os are allocated. Neither the S\+PI nor U\+D\+MA module will be enabled.
+
+\begin{DoxyPrecond}{Precondition}
+S\+PI controller has been initialized. Calling context\+: Task
+\end{DoxyPrecond}
+
+\begin{DoxyParams}{Parameters}
+{\em handle} & A S\+P\+I\+\_\+\+Handle\\
+\hline
+{\em params} & Pointer to a parameter block, if N\+U\+LL it will use default values\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A S\+P\+I\+\_\+\+Handle on success or a N\+U\+LL on an error or if it has been already opened
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{_s_p_i_c_c26_x_x_d_m_a_8c_a029b5e65ddc65cbd2469f31822286b7c}{S\+P\+I\+C\+C26\+X\+X\+D\+M\+A\+\_\+close()}} 
+\end{DoxySeeAlso}
+
+
+Definition at line 648 of file S\+P\+I\+C\+C26\+X\+X\+D\+M\+A.\+c.
+
+\mbox{\Hypertarget{_s_p_i_c_c26_x_x_d_m_a_8c_aa6c4d6b633647be617db766cd6c685d3}\label{_s_p_i_c_c26_x_x_d_m_a_8c_aa6c4d6b633647be617db766cd6c685d3}} 
+\index{SPICC26XXDMA.c@{SPICC26XXDMA.c}!SPICC26XXDMA\_transfer@{SPICC26XXDMA\_transfer}}
+\index{SPICC26XXDMA\_transfer@{SPICC26XXDMA\_transfer}!SPICC26XXDMA.c@{SPICC26XXDMA.c}}
+\doxysubsubsection{\texorpdfstring{SPICC26XXDMA\_transfer()}{SPICC26XXDMA\_transfer()}}
+{\footnotesize\ttfamily bool S\+P\+I\+C\+C26\+X\+X\+D\+M\+A\+\_\+transfer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_s_p_i_8h_a728806534c3c3e8675cfbfb7d8e36f13}{S\+P\+I\+\_\+\+Handle}}}]{handle,  }\item[{\mbox{\hyperlink{struct_s_p_i___transaction}{S\+P\+I\+\_\+\+Transaction}} $\ast$}]{transaction }\end{DoxyParamCaption})}
+
+
+
+Function for transferring using the S\+PI interface. 
+
+The function will enable the S\+PI and U\+D\+MA modules and disallow the device from going into standby.
+
+In \mbox{\hyperlink{_s_p_i_8h_ab9ea76c6529d6076eee5e1c4a5a92c6fa0dfb2358e008316426895e7237c398e8}{S\+P\+I\+\_\+\+M\+O\+D\+E\+\_\+\+B\+L\+O\+C\+K\+I\+NG}}, S\+P\+I\+\_\+transfer will block task execution until the transfer has ended.
+
+In \mbox{\hyperlink{_s_p_i_8h_ab9ea76c6529d6076eee5e1c4a5a92c6fa5631e69925c47a62a261c78ebbda39fb}{S\+P\+I\+\_\+\+M\+O\+D\+E\+\_\+\+C\+A\+L\+L\+B\+A\+CK}}, S\+P\+I\+\_\+transfer does not block task execution, but calls a callback function specified by transfer\+Callback when the transfer has ended.
+
+\begin{DoxyPrecond}{Precondition}
+\mbox{\hyperlink{_s_p_i_c_c26_x_x_d_m_a_8c_a85dd106e353eb64b10b47ea44d0591d1}{S\+P\+I\+C\+C26\+X\+X\+D\+M\+A\+\_\+open()}} has to be called first. Calling context\+: Hwi and Swi (only if using \mbox{\hyperlink{_s_p_i_8h_ab9ea76c6529d6076eee5e1c4a5a92c6fa5631e69925c47a62a261c78ebbda39fb}{S\+P\+I\+\_\+\+M\+O\+D\+E\+\_\+\+C\+A\+L\+L\+B\+A\+CK}}), Task
+\end{DoxyPrecond}
+
+\begin{DoxyParams}{Parameters}
+{\em handle} & A S\+PI handle returned from \mbox{\hyperlink{_s_p_i_c_c26_x_x_d_m_a_8c_a85dd106e353eb64b10b47ea44d0591d1}{S\+P\+I\+C\+C26\+X\+X\+D\+M\+A\+\_\+open()}}\\
+\hline
+{\em $\ast$transaction} & Pointer to transaction struct\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if transfer is successful and false if not
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{_s_p_i_c_c26_x_x_d_m_a_8c_a85dd106e353eb64b10b47ea44d0591d1}{S\+P\+I\+C\+C26\+X\+X\+D\+M\+A\+\_\+open()}}, \mbox{\hyperlink{_s_p_i_c_c26_x_x_d_m_a_8c_af67ffed26c2beb49d2f5b59a4f01b12c}{S\+P\+I\+C\+C26\+X\+X\+D\+M\+A\+\_\+transfer\+Cancel()}} 
+\end{DoxySeeAlso}
+
+
+Definition at line 812 of file S\+P\+I\+C\+C26\+X\+X\+D\+M\+A.\+c.
+
+\mbox{\Hypertarget{_s_p_i_c_c26_x_x_d_m_a_8c_af67ffed26c2beb49d2f5b59a4f01b12c}\label{_s_p_i_c_c26_x_x_d_m_a_8c_af67ffed26c2beb49d2f5b59a4f01b12c}} 
+\index{SPICC26XXDMA.c@{SPICC26XXDMA.c}!SPICC26XXDMA\_transferCancel@{SPICC26XXDMA\_transferCancel}}
+\index{SPICC26XXDMA\_transferCancel@{SPICC26XXDMA\_transferCancel}!SPICC26XXDMA.c@{SPICC26XXDMA.c}}
+\doxysubsubsection{\texorpdfstring{SPICC26XXDMA\_transferCancel()}{SPICC26XXDMA\_transferCancel()}}
+{\footnotesize\ttfamily void S\+P\+I\+C\+C26\+X\+X\+D\+M\+A\+\_\+transfer\+Cancel (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_s_p_i_8h_a728806534c3c3e8675cfbfb7d8e36f13}{S\+P\+I\+\_\+\+Handle}}}]{handle }\end{DoxyParamCaption})}
+
+
+
+Function that cancels a S\+PI transfer. Will disable S\+PI and U\+D\+MA modules and allow standby. 
+
+\begin{DoxyPrecond}{Precondition}
+\mbox{\hyperlink{_s_p_i_c_c26_x_x_d_m_a_8c_a85dd106e353eb64b10b47ea44d0591d1}{S\+P\+I\+C\+C26\+X\+X\+D\+M\+A\+\_\+open()}} has to be called first. Calling context\+: Task
+\end{DoxyPrecond}
+
+\begin{DoxyParams}{Parameters}
+{\em handle} & The S\+P\+I\+\_\+\+Handle for ongoing transaction. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 897 of file S\+P\+I\+C\+C26\+X\+X\+D\+M\+A.\+c.
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{_s_p_i_c_c26_x_x_d_m_a_8c_a7a96d71ae8382c6fa489107d34d6c9b3}\label{_s_p_i_c_c26_x_x_d_m_a_8c_a7a96d71ae8382c6fa489107d34d6c9b3}} 
+\index{SPICC26XXDMA.c@{SPICC26XXDMA.c}!SPICC26XXDMA\_fxnTable@{SPICC26XXDMA\_fxnTable}}
+\index{SPICC26XXDMA\_fxnTable@{SPICC26XXDMA\_fxnTable}!SPICC26XXDMA.c@{SPICC26XXDMA.c}}
+\doxysubsubsection{\texorpdfstring{SPICC26XXDMA\_fxnTable}{SPICC26XXDMA\_fxnTable}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{struct_s_p_i___fxn_table}{S\+P\+I\+\_\+\+Fxn\+Table}} S\+P\+I\+C\+C26\+X\+X\+D\+M\+A\+\_\+fxn\+Table}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{= \{}
+\DoxyCodeLine{    \mbox{\hyperlink{_s_p_i_c_c26_x_x_d_m_a_8c_a029b5e65ddc65cbd2469f31822286b7c}{SPICC26XXDMA\_close}},}
+\DoxyCodeLine{    \mbox{\hyperlink{_s_p_i_c_c26_x_x_d_m_a_8c_a39daa494b5680e6140cbd16a53d5bb57}{SPICC26XXDMA\_control}},}
+\DoxyCodeLine{    \mbox{\hyperlink{_s_p_i_c_c26_x_x_d_m_a_8c_a9c2af6a68116b6577b7996ce8fae3970}{SPICC26XXDMA\_init}},}
+\DoxyCodeLine{    \mbox{\hyperlink{_s_p_i_c_c26_x_x_d_m_a_8c_a85dd106e353eb64b10b47ea44d0591d1}{SPICC26XXDMA\_open}},}
+\DoxyCodeLine{    \mbox{\hyperlink{_s_p_i_c_c26_x_x_d_m_a_8c_aa6c4d6b633647be617db766cd6c685d3}{SPICC26XXDMA\_transfer}},}
+\DoxyCodeLine{    \mbox{\hyperlink{_s_p_i_c_c26_x_x_d_m_a_8c_af67ffed26c2beb49d2f5b59a4f01b12c}{SPICC26XXDMA\_transferCancel}},}
+\DoxyCodeLine{    SPICC26XXDMA\_serviceISR}
+\DoxyCodeLine{    \}}
+
+\end{DoxyCode}
+
+
+Definition at line 100 of file S\+P\+I\+C\+C26\+X\+X\+D\+M\+A.\+c.
+

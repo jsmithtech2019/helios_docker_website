@@ -1,0 +1,147 @@
+\hypertarget{struct_e_c_c_r_o_m_c_c26_x_x___curve_params}{}\doxysection{E\+C\+C\+R\+O\+M\+C\+C26\+X\+X\+\_\+\+Curve\+Params Struct Reference}
+\label{struct_e_c_c_r_o_m_c_c26_x_x___curve_params}\index{ECCROMCC26XX\_CurveParams@{ECCROMCC26XX\_CurveParams}}
+
+
+E\+C\+C\+R\+O\+M\+C\+C26\+XX Curve Parameters.  
+
+
+
+
+{\ttfamily \#include $<$E\+C\+C\+R\+O\+M\+C\+C26\+X\+X.\+h$>$}
+
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{struct_e_c_c_r_o_m_c_c26_x_x___curve_params_a4420900f1c4817b8620ff5fbfbb30d21}{key\+Len}}
+\item 
+uint16\+\_\+t \mbox{\hyperlink{struct_e_c_c_r_o_m_c_c26_x_x___curve_params_a266cef7f9db405fde9b10463e97d0605}{workzone\+Len}}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{struct_e_c_c_r_o_m_c_c26_x_x___curve_params_a3dc6d040b441d4a79c49990d753db77b}{window\+Size}}
+\item 
+uint32\+\_\+t $\ast$ \mbox{\hyperlink{struct_e_c_c_r_o_m_c_c26_x_x___curve_params_a800e6f78544f05d9aa60f1f151cf1260}{param\+\_\+p}}
+\item 
+uint32\+\_\+t $\ast$ \mbox{\hyperlink{struct_e_c_c_r_o_m_c_c26_x_x___curve_params_aafa32a3f3d0f5ee11bc1338498a09e24}{param\+\_\+r}}
+\item 
+uint32\+\_\+t $\ast$ \mbox{\hyperlink{struct_e_c_c_r_o_m_c_c26_x_x___curve_params_abddc1c9031ac651764b2196586a6c2e9}{param\+\_\+a}}
+\item 
+uint32\+\_\+t $\ast$ \mbox{\hyperlink{struct_e_c_c_r_o_m_c_c26_x_x___curve_params_a1905576593584933cdb7ec940e0b993c}{param\+\_\+b}}
+\item 
+uint32\+\_\+t $\ast$ \mbox{\hyperlink{struct_e_c_c_r_o_m_c_c26_x_x___curve_params_a5040a7dcf12285f69f65d1025630c7b2}{param\+\_\+gx}}
+\item 
+uint32\+\_\+t $\ast$ \mbox{\hyperlink{struct_e_c_c_r_o_m_c_c26_x_x___curve_params_ae67ea5091dbf910e04043867262dc4a5}{param\+\_\+gy}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+E\+C\+C\+R\+O\+M\+C\+C26\+XX Curve Parameters. 
+
+This holds the E\+CC Curve information to be used. Offset 0 of each param\+\_\+$\ast$ buffer contains the length of each parameter in uint32\+\_\+t blocks, not including the first offset. 
+
+Definition at line 304 of file E\+C\+C\+R\+O\+M\+C\+C26\+X\+X.\+h.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{struct_e_c_c_r_o_m_c_c26_x_x___curve_params_a4420900f1c4817b8620ff5fbfbb30d21}\label{struct_e_c_c_r_o_m_c_c26_x_x___curve_params_a4420900f1c4817b8620ff5fbfbb30d21}} 
+\index{ECCROMCC26XX\_CurveParams@{ECCROMCC26XX\_CurveParams}!keyLen@{keyLen}}
+\index{keyLen@{keyLen}!ECCROMCC26XX\_CurveParams@{ECCROMCC26XX\_CurveParams}}
+\doxysubsubsection{\texorpdfstring{keyLen}{keyLen}}
+{\footnotesize\ttfamily uint8\+\_\+t E\+C\+C\+R\+O\+M\+C\+C26\+X\+X\+\_\+\+Curve\+Params\+::key\+Len}
+
+Length in bytes of curve parameters and keys 
+
+Definition at line 306 of file E\+C\+C\+R\+O\+M\+C\+C26\+X\+X.\+h.
+
+\mbox{\Hypertarget{struct_e_c_c_r_o_m_c_c26_x_x___curve_params_abddc1c9031ac651764b2196586a6c2e9}\label{struct_e_c_c_r_o_m_c_c26_x_x___curve_params_abddc1c9031ac651764b2196586a6c2e9}} 
+\index{ECCROMCC26XX\_CurveParams@{ECCROMCC26XX\_CurveParams}!param\_a@{param\_a}}
+\index{param\_a@{param\_a}!ECCROMCC26XX\_CurveParams@{ECCROMCC26XX\_CurveParams}}
+\doxysubsubsection{\texorpdfstring{param\_a}{param\_a}}
+{\footnotesize\ttfamily uint32\+\_\+t$\ast$ E\+C\+C\+R\+O\+M\+C\+C26\+X\+X\+\_\+\+Curve\+Params\+::param\+\_\+a}
+
+E\+CC Curve Parameter A ~\newline
+ 
+
+Definition at line 311 of file E\+C\+C\+R\+O\+M\+C\+C26\+X\+X.\+h.
+
+\mbox{\Hypertarget{struct_e_c_c_r_o_m_c_c26_x_x___curve_params_a1905576593584933cdb7ec940e0b993c}\label{struct_e_c_c_r_o_m_c_c26_x_x___curve_params_a1905576593584933cdb7ec940e0b993c}} 
+\index{ECCROMCC26XX\_CurveParams@{ECCROMCC26XX\_CurveParams}!param\_b@{param\_b}}
+\index{param\_b@{param\_b}!ECCROMCC26XX\_CurveParams@{ECCROMCC26XX\_CurveParams}}
+\doxysubsubsection{\texorpdfstring{param\_b}{param\_b}}
+{\footnotesize\ttfamily uint32\+\_\+t$\ast$ E\+C\+C\+R\+O\+M\+C\+C26\+X\+X\+\_\+\+Curve\+Params\+::param\+\_\+b}
+
+E\+CC Curve Parameter B ~\newline
+ 
+
+Definition at line 312 of file E\+C\+C\+R\+O\+M\+C\+C26\+X\+X.\+h.
+
+\mbox{\Hypertarget{struct_e_c_c_r_o_m_c_c26_x_x___curve_params_a5040a7dcf12285f69f65d1025630c7b2}\label{struct_e_c_c_r_o_m_c_c26_x_x___curve_params_a5040a7dcf12285f69f65d1025630c7b2}} 
+\index{ECCROMCC26XX\_CurveParams@{ECCROMCC26XX\_CurveParams}!param\_gx@{param\_gx}}
+\index{param\_gx@{param\_gx}!ECCROMCC26XX\_CurveParams@{ECCROMCC26XX\_CurveParams}}
+\doxysubsubsection{\texorpdfstring{param\_gx}{param\_gx}}
+{\footnotesize\ttfamily uint32\+\_\+t$\ast$ E\+C\+C\+R\+O\+M\+C\+C26\+X\+X\+\_\+\+Curve\+Params\+::param\+\_\+gx}
+
+E\+CC Curve Parameter Gx ~\newline
+ 
+
+Definition at line 313 of file E\+C\+C\+R\+O\+M\+C\+C26\+X\+X.\+h.
+
+\mbox{\Hypertarget{struct_e_c_c_r_o_m_c_c26_x_x___curve_params_ae67ea5091dbf910e04043867262dc4a5}\label{struct_e_c_c_r_o_m_c_c26_x_x___curve_params_ae67ea5091dbf910e04043867262dc4a5}} 
+\index{ECCROMCC26XX\_CurveParams@{ECCROMCC26XX\_CurveParams}!param\_gy@{param\_gy}}
+\index{param\_gy@{param\_gy}!ECCROMCC26XX\_CurveParams@{ECCROMCC26XX\_CurveParams}}
+\doxysubsubsection{\texorpdfstring{param\_gy}{param\_gy}}
+{\footnotesize\ttfamily uint32\+\_\+t$\ast$ E\+C\+C\+R\+O\+M\+C\+C26\+X\+X\+\_\+\+Curve\+Params\+::param\+\_\+gy}
+
+E\+CC Curve Parameter Gy ~\newline
+ 
+
+Definition at line 314 of file E\+C\+C\+R\+O\+M\+C\+C26\+X\+X.\+h.
+
+\mbox{\Hypertarget{struct_e_c_c_r_o_m_c_c26_x_x___curve_params_a800e6f78544f05d9aa60f1f151cf1260}\label{struct_e_c_c_r_o_m_c_c26_x_x___curve_params_a800e6f78544f05d9aa60f1f151cf1260}} 
+\index{ECCROMCC26XX\_CurveParams@{ECCROMCC26XX\_CurveParams}!param\_p@{param\_p}}
+\index{param\_p@{param\_p}!ECCROMCC26XX\_CurveParams@{ECCROMCC26XX\_CurveParams}}
+\doxysubsubsection{\texorpdfstring{param\_p}{param\_p}}
+{\footnotesize\ttfamily uint32\+\_\+t$\ast$ E\+C\+C\+R\+O\+M\+C\+C26\+X\+X\+\_\+\+Curve\+Params\+::param\+\_\+p}
+
+E\+CC Curve Parameter P ~\newline
+ 
+
+Definition at line 309 of file E\+C\+C\+R\+O\+M\+C\+C26\+X\+X.\+h.
+
+\mbox{\Hypertarget{struct_e_c_c_r_o_m_c_c26_x_x___curve_params_aafa32a3f3d0f5ee11bc1338498a09e24}\label{struct_e_c_c_r_o_m_c_c26_x_x___curve_params_aafa32a3f3d0f5ee11bc1338498a09e24}} 
+\index{ECCROMCC26XX\_CurveParams@{ECCROMCC26XX\_CurveParams}!param\_r@{param\_r}}
+\index{param\_r@{param\_r}!ECCROMCC26XX\_CurveParams@{ECCROMCC26XX\_CurveParams}}
+\doxysubsubsection{\texorpdfstring{param\_r}{param\_r}}
+{\footnotesize\ttfamily uint32\+\_\+t$\ast$ E\+C\+C\+R\+O\+M\+C\+C26\+X\+X\+\_\+\+Curve\+Params\+::param\+\_\+r}
+
+E\+CC Curve Parameter R ~\newline
+ 
+
+Definition at line 310 of file E\+C\+C\+R\+O\+M\+C\+C26\+X\+X.\+h.
+
+\mbox{\Hypertarget{struct_e_c_c_r_o_m_c_c26_x_x___curve_params_a3dc6d040b441d4a79c49990d753db77b}\label{struct_e_c_c_r_o_m_c_c26_x_x___curve_params_a3dc6d040b441d4a79c49990d753db77b}} 
+\index{ECCROMCC26XX\_CurveParams@{ECCROMCC26XX\_CurveParams}!windowSize@{windowSize}}
+\index{windowSize@{windowSize}!ECCROMCC26XX\_CurveParams@{ECCROMCC26XX\_CurveParams}}
+\doxysubsubsection{\texorpdfstring{windowSize}{windowSize}}
+{\footnotesize\ttfamily uint8\+\_\+t E\+C\+C\+R\+O\+M\+C\+C26\+X\+X\+\_\+\+Curve\+Params\+::window\+Size}
+
+Window size of operation ~\newline
+ 
+
+Definition at line 308 of file E\+C\+C\+R\+O\+M\+C\+C26\+X\+X.\+h.
+
+\mbox{\Hypertarget{struct_e_c_c_r_o_m_c_c26_x_x___curve_params_a266cef7f9db405fde9b10463e97d0605}\label{struct_e_c_c_r_o_m_c_c26_x_x___curve_params_a266cef7f9db405fde9b10463e97d0605}} 
+\index{ECCROMCC26XX\_CurveParams@{ECCROMCC26XX\_CurveParams}!workzoneLen@{workzoneLen}}
+\index{workzoneLen@{workzoneLen}!ECCROMCC26XX\_CurveParams@{ECCROMCC26XX\_CurveParams}}
+\doxysubsubsection{\texorpdfstring{workzoneLen}{workzoneLen}}
+{\footnotesize\ttfamily uint16\+\_\+t E\+C\+C\+R\+O\+M\+C\+C26\+X\+X\+\_\+\+Curve\+Params\+::workzone\+Len}
+
+Length in bytes of workzone to malloc ~\newline
+ 
+
+Definition at line 307 of file E\+C\+C\+R\+O\+M\+C\+C26\+X\+X.\+h.
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Drivers/\+E\+C\+C/\mbox{\hyperlink{_e_c_c_r_o_m_c_c26_x_x_8h}{E\+C\+C\+R\+O\+M\+C\+C26\+X\+X.\+h}}\end{DoxyCompactItemize}

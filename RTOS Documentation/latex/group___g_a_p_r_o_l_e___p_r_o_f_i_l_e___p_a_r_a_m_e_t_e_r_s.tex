@@ -1,0 +1,491 @@
+\hypertarget{group___g_a_p_r_o_l_e___p_r_o_f_i_l_e___p_a_r_a_m_e_t_e_r_s}{}\doxysection{G\+AP Role Parameters}
+\label{group___g_a_p_r_o_l_e___p_r_o_f_i_l_e___p_a_r_a_m_e_t_e_r_s}\index{GAP Role Parameters@{GAP Role Parameters}}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group___g_a_p_r_o_l_e___p_r_o_f_i_l_e___p_a_r_a_m_e_t_e_r_s_ga9c1b73946d52cde9c33dfa1f37dfadcb}{G\+A\+P\+R\+O\+L\+E\+\_\+\+P\+R\+O\+F\+I\+L\+E\+R\+O\+LE}}~0x300
+\begin{DoxyCompactList}\small\item\em Reading this parameter will return G\+AP Role type. Read Only. Size is uint8\+\_\+t. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p_r_o_l_e___p_r_o_f_i_l_e___p_a_r_a_m_e_t_e_r_s_ga86ba11375469a01867bc81bde4f92b6a}{G\+A\+P\+R\+O\+L\+E\+\_\+\+I\+RK}}~0x301
+\begin{DoxyCompactList}\small\item\em Identity Resolving Key. Read/\+Write. Size is uint8\+\_\+t\mbox{[}K\+E\+Y\+L\+EN\mbox{]}. Default is all 0, which means that the I\+RK will be randomly generated. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p_r_o_l_e___p_r_o_f_i_l_e___p_a_r_a_m_e_t_e_r_s_ga2e90ba4e9daa5807d907fd6da1c26082}{G\+A\+P\+R\+O\+L\+E\+\_\+\+S\+RK}}~0x302
+\begin{DoxyCompactList}\small\item\em Signature Resolving Key. Read/\+Write. Size is uint8\+\_\+t\mbox{[}K\+E\+Y\+L\+EN\mbox{]}. Default is all 0, which means that the S\+RK will be randomly generated. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p_r_o_l_e___p_r_o_f_i_l_e___p_a_r_a_m_e_t_e_r_s_ga1971b7634252c93d4af51a55af7a329a}{G\+A\+P\+R\+O\+L\+E\+\_\+\+S\+I\+G\+N\+C\+O\+U\+N\+T\+ER}}~0x303
+\begin{DoxyCompactList}\small\item\em Sign Counter. Read/\+Write. Size is uint32\+\_\+t. Default is 0. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p_r_o_l_e___p_r_o_f_i_l_e___p_a_r_a_m_e_t_e_r_s_ga208c757950af451c0ac9f3e3e5442418}{G\+A\+P\+R\+O\+L\+E\+\_\+\+B\+D\+\_\+\+A\+D\+DR}}~0x304
+\begin{DoxyCompactList}\small\item\em Device\textquotesingle{}s Address. Read Only. Size is uint8\+\_\+t\mbox{[}B\+\_\+\+A\+D\+D\+R\+\_\+\+L\+EN\mbox{]}. This item is read from the controller. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p_r_o_l_e___p_r_o_f_i_l_e___p_a_r_a_m_e_t_e_r_s_ga4a5e8b612070ec12194140e2a59899ec}{G\+A\+P\+R\+O\+L\+E\+\_\+\+A\+D\+V\+E\+R\+T\+\_\+\+E\+N\+A\+B\+L\+ED}}~0x305
+\begin{DoxyCompactList}\small\item\em Enable/\+Disable Advertising. Read/\+Write. Size is uint8\+\_\+t. Default is T\+R\+UE=Enabled. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p_r_o_l_e___p_r_o_f_i_l_e___p_a_r_a_m_e_t_e_r_s_gafdd079f2e3b6ab6093653ef08058975e}{G\+A\+P\+R\+O\+L\+E\+\_\+\+A\+D\+V\+E\+R\+T\+\_\+\+O\+F\+F\+\_\+\+T\+I\+ME}}~0x306
+\begin{DoxyCompactList}\small\item\em Advertising Off Time for Limited advertisements (in milliseconds). Read/\+Write. Size is uint16\+\_\+t. Default is 30 seconds. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p_r_o_l_e___p_r_o_f_i_l_e___p_a_r_a_m_e_t_e_r_s_gac842b78d178b31175d30a0cbe0a7c654}{G\+A\+P\+R\+O\+L\+E\+\_\+\+A\+D\+V\+E\+R\+T\+\_\+\+D\+A\+TA}}~0x307
+\begin{DoxyCompactList}\small\item\em Advertisement Data. Read/\+Write. Max size is uint8\+\_\+t\mbox{[}B\+\_\+\+M\+A\+X\+\_\+\+A\+D\+V\+\_\+\+L\+EN\mbox{]}. Default is \char`\"{}02\+:01\+:01\char`\"{}, which means that it is a Limited Discoverable Advertisement. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p_r_o_l_e___p_r_o_f_i_l_e___p_a_r_a_m_e_t_e_r_s_ga9047ae80d29878ab295ec67f3e24da3f}{G\+A\+P\+R\+O\+L\+E\+\_\+\+S\+C\+A\+N\+\_\+\+R\+S\+P\+\_\+\+D\+A\+TA}}~0x308
+\begin{DoxyCompactList}\small\item\em Scan Response Data. Read/\+Write. Max size is uint8\+\_\+t\mbox{[}B\+\_\+\+M\+A\+X\+\_\+\+A\+D\+V\+\_\+\+L\+EN\mbox{]}. Defaults to all 0. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p_r_o_l_e___p_r_o_f_i_l_e___p_a_r_a_m_e_t_e_r_s_gaf94d22d001773f449b0de10c0ef001c2}{G\+A\+P\+R\+O\+L\+E\+\_\+\+A\+D\+V\+\_\+\+E\+V\+E\+N\+T\+\_\+\+T\+Y\+PE}}~0x309
+\begin{DoxyCompactList}\small\item\em Advertisement Type. Read/\+Write. Size is uint8\+\_\+t. Default is G\+A\+P\+\_\+\+A\+D\+T\+Y\+P\+E\+\_\+\+A\+D\+V\+\_\+\+I\+ND (defined in G\+A\+P.\+h). \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p_r_o_l_e___p_r_o_f_i_l_e___p_a_r_a_m_e_t_e_r_s_ga15988bce58119e43b93d02b7bb791e01}{G\+A\+P\+R\+O\+L\+E\+\_\+\+A\+D\+V\+\_\+\+D\+I\+R\+E\+C\+T\+\_\+\+T\+Y\+PE}}~0x30A
+\begin{DoxyCompactList}\small\item\em Direct Advertisement Address Type. Read/\+Write. Size is uint8\+\_\+t. Default is A\+D\+D\+R\+M\+O\+D\+E\+\_\+\+P\+U\+B\+L\+IC (defined in G\+A\+P.\+h). \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p_r_o_l_e___p_r_o_f_i_l_e___p_a_r_a_m_e_t_e_r_s_gaae8020aa393465f37c4c96bc6e727cb5}{G\+A\+P\+R\+O\+L\+E\+\_\+\+A\+D\+V\+\_\+\+D\+I\+R\+E\+C\+T\+\_\+\+A\+D\+DR}}~0x30B
+\begin{DoxyCompactList}\small\item\em Direct Advertisement Address. Read/\+Write. Size is uint8\+\_\+t\mbox{[}B\+\_\+\+A\+D\+D\+R\+\_\+\+L\+EN\mbox{]}. Default is N\+U\+LL. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p_r_o_l_e___p_r_o_f_i_l_e___p_a_r_a_m_e_t_e_r_s_ga1f41f85e3db95aa9b8de472ddc8d4699}{G\+A\+P\+R\+O\+L\+E\+\_\+\+A\+D\+V\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+M\+AP}}~0x30C
+\begin{DoxyCompactList}\small\item\em Which channels to advertise on. Read/\+Write Size is uint8\+\_\+t. Default is G\+A\+P\+\_\+\+A\+D\+V\+C\+H\+A\+N\+\_\+\+A\+LL (defined in G\+A\+P.\+h) \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p_r_o_l_e___p_r_o_f_i_l_e___p_a_r_a_m_e_t_e_r_s_ga062fb6a34df869a02ba3efd4615c8cfc}{G\+A\+P\+R\+O\+L\+E\+\_\+\+A\+D\+V\+\_\+\+F\+I\+L\+T\+E\+R\+\_\+\+P\+O\+L\+I\+CY}}~0x30D
+\begin{DoxyCompactList}\small\item\em Filter Policy. Ignored when directed advertising is used. Read/\+Write. Size is uint8\+\_\+t. Default is G\+A\+P\+\_\+\+F\+I\+L\+T\+E\+R\+\_\+\+P\+O\+L\+I\+C\+Y\+\_\+\+A\+LL (defined in G\+A\+P.\+h). \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p_r_o_l_e___p_r_o_f_i_l_e___p_a_r_a_m_e_t_e_r_s_ga562de483d67edd4a253e16e21b938cee}{G\+A\+P\+R\+O\+L\+E\+\_\+\+C\+O\+N\+N\+H\+A\+N\+D\+LE}}~0x30E
+\begin{DoxyCompactList}\small\item\em Connection Handle. Read Only. Size is uint16\+\_\+t. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p_r_o_l_e___p_r_o_f_i_l_e___p_a_r_a_m_e_t_e_r_s_ga7a1710f3003bde68ae5f9cadd0742426}{G\+A\+P\+R\+O\+L\+E\+\_\+\+R\+S\+S\+I\+\_\+\+R\+E\+A\+D\+\_\+\+R\+A\+TE}}~0x30F
+\begin{DoxyCompactList}\small\item\em How often to read the R\+S\+SI during a connection. Read/\+Write. Size is uint16\+\_\+t. The value is in milliseconds. Default is 0 = O\+FF. Obsolete -\/ Do not use. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p_r_o_l_e___p_r_o_f_i_l_e___p_a_r_a_m_e_t_e_r_s_ga2d3fb4fca123cc41bd17d469cbd0ba27}{G\+A\+P\+R\+O\+L\+E\+\_\+\+P\+A\+R\+A\+M\+\_\+\+U\+P\+D\+A\+T\+E\+\_\+\+E\+N\+A\+B\+LE}}~0x310
+\begin{DoxyCompactList}\small\item\em Slave Connection Parameter Update Enable. Read/\+Write. Size is uint8\+\_\+t. If T\+R\+UE then automatic connection parameter update request is sent. Default is F\+A\+L\+SE. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p_r_o_l_e___p_r_o_f_i_l_e___p_a_r_a_m_e_t_e_r_s_gad9610d5181d12756b64ae59c531c6ddf}{G\+A\+P\+R\+O\+L\+E\+\_\+\+M\+I\+N\+\_\+\+C\+O\+N\+N\+\_\+\+I\+N\+T\+E\+R\+V\+AL}}~0x311
+\begin{DoxyCompactList}\small\item\em Minimum Connection Interval to allow (n $\ast$ 1.\+25ms). Range\+: 7.\+5 msec to 4 seconds (0x0006 to 0x0\+C80). Read/\+Write. Size is uint16\+\_\+t. Default is 7.\+5 milliseconds (0x0006). \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p_r_o_l_e___p_r_o_f_i_l_e___p_a_r_a_m_e_t_e_r_s_gac6188000c9c54884d2f905e104fdff3e}{G\+A\+P\+R\+O\+L\+E\+\_\+\+M\+A\+X\+\_\+\+C\+O\+N\+N\+\_\+\+I\+N\+T\+E\+R\+V\+AL}}~0x312
+\begin{DoxyCompactList}\small\item\em Maximum Connection Interval to allow (n $\ast$ 1.\+25ms). Range\+: 7.\+5 msec to 4 seconds (0x0006 to 0x0\+C80). Read/\+Write. Size is uint16\+\_\+t. Default is 4 seconds (0x0\+C80). \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p_r_o_l_e___p_r_o_f_i_l_e___p_a_r_a_m_e_t_e_r_s_gae1278d5886d13f4b58b9d038ba90ad4a}{G\+A\+P\+R\+O\+L\+E\+\_\+\+S\+L\+A\+V\+E\+\_\+\+L\+A\+T\+E\+N\+CY}}~0x313
+\begin{DoxyCompactList}\small\item\em Update Parameter Slave Latency. Range\+: 0 -\/ 499. Read/\+Write. Size is uint16\+\_\+t. Default is 0. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p_r_o_l_e___p_r_o_f_i_l_e___p_a_r_a_m_e_t_e_r_s_ga48215c98a7c3673cbc224e3c5a3b401d}{G\+A\+P\+R\+O\+L\+E\+\_\+\+T\+I\+M\+E\+O\+U\+T\+\_\+\+M\+U\+L\+T\+I\+P\+L\+I\+ER}}~0x314
+\begin{DoxyCompactList}\small\item\em Update Parameter Timeout Multiplier (n $\ast$ 10ms). Range\+: 100ms to 32 seconds (0x000a -\/ 0x0c80). Read/\+Write. Size is uint16\+\_\+t. Default is 1000. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p_r_o_l_e___p_r_o_f_i_l_e___p_a_r_a_m_e_t_e_r_s_ga552a1cca52b8c5469a88bd1aeee1f367}{G\+A\+P\+R\+O\+L\+E\+\_\+\+C\+O\+N\+N\+\_\+\+B\+D\+\_\+\+A\+D\+DR}}~0x315
+\begin{DoxyCompactList}\small\item\em Address of connected device. Read only. Size is uint8\+\_\+t\mbox{[}B\+\_\+\+M\+A\+X\+\_\+\+A\+D\+V\+\_\+\+L\+EN\mbox{]}. Set to all zeros when not connected. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p_r_o_l_e___p_r_o_f_i_l_e___p_a_r_a_m_e_t_e_r_s_ga76e8b541c10b628fc386989b3c894680}{G\+A\+P\+R\+O\+L\+E\+\_\+\+C\+O\+N\+N\+\_\+\+I\+N\+T\+E\+R\+V\+AL}}~0x316
+\begin{DoxyCompactList}\small\item\em Current connection interval. Read only. Size is uint16\+\_\+t. Range is 7.\+5ms to 4 seconds (0x0006 to 0x0\+C80). Default is 0 (no connection). \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p_r_o_l_e___p_r_o_f_i_l_e___p_a_r_a_m_e_t_e_r_s_ga1b041eee4cb673c7ade421b4ba01b96d}{G\+A\+P\+R\+O\+L\+E\+\_\+\+C\+O\+N\+N\+\_\+\+L\+A\+T\+E\+N\+CY}}~0x317
+\begin{DoxyCompactList}\small\item\em Current slave latency. Read only. Size is uint16\+\_\+t. Range is 0 to 499. Default is 0 (no slave latency or no connection). \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p_r_o_l_e___p_r_o_f_i_l_e___p_a_r_a_m_e_t_e_r_s_gabcd0316bdd2ad21baa58c9e2ac2b5a86}{G\+A\+P\+R\+O\+L\+E\+\_\+\+C\+O\+N\+N\+\_\+\+T\+I\+M\+E\+O\+UT}}~0x318
+\begin{DoxyCompactList}\small\item\em Current timeout value. Read only. size is uint16\+\_\+t. Range is 100ms to 32 seconds. Default is 0 (no connection). \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p_r_o_l_e___p_r_o_f_i_l_e___p_a_r_a_m_e_t_e_r_s_ga02b3fa1eb26b28fcac262a8e55600be8}{G\+A\+P\+R\+O\+L\+E\+\_\+\+P\+A\+R\+A\+M\+\_\+\+U\+P\+D\+A\+T\+E\+\_\+\+R\+EQ}}~0x319
+\begin{DoxyCompactList}\small\item\em Slave Connection Parameter Update Request. Write. Size is uint8\+\_\+t. If T\+R\+UE then connection parameter update request is sent. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p_r_o_l_e___p_r_o_f_i_l_e___p_a_r_a_m_e_t_e_r_s_ga170060c650d733d42b7fffc01fdbb0d1}{G\+A\+P\+R\+O\+L\+E\+\_\+\+S\+T\+A\+TE}}~0x31A
+\begin{DoxyCompactList}\small\item\em Reading this parameter will return G\+AP Peripheral Role State. Read Only. Size is uint8\+\_\+t. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p_r_o_l_e___p_r_o_f_i_l_e___p_a_r_a_m_e_t_e_r_s_ga711a258baee155eeec77c7ffadf3c396}{G\+A\+P\+R\+O\+L\+E\+\_\+\+A\+D\+V\+\_\+\+N\+O\+N\+C\+O\+N\+N\+\_\+\+E\+N\+A\+B\+L\+ED}}~0x31B
+\begin{DoxyCompactList}\small\item\em Enable/\+Disable Non-\/\+Connectable Advertising. Read/\+Write. Size is uint8\+\_\+t. Default is F\+A\+L\+SE=Disabled. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p_r_o_l_e___p_r_o_f_i_l_e___p_a_r_a_m_e_t_e_r_s_ga31c2e41e0d21535f63accee11dde2f34}{G\+A\+P\+R\+O\+L\+E\+\_\+\+B\+D\+\_\+\+A\+D\+D\+R\+\_\+\+T\+Y\+PE}}~0x31C
+\begin{DoxyCompactList}\small\item\em Address type of connected device. Read only. Size is uint8\+\_\+t. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p_r_o_l_e___p_r_o_f_i_l_e___p_a_r_a_m_e_t_e_r_s_ga16148eea8c0c537721d37b1157ebffe2}{G\+A\+P\+R\+O\+L\+E\+\_\+\+C\+O\+N\+N\+\_\+\+T\+E\+R\+M\+\_\+\+R\+E\+A\+S\+ON}}~0x31D
+\begin{DoxyCompactList}\small\item\em Reason of the last connection terminated event. Size is uint8\+\_\+t. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{group___g_a_p_r_o_l_e___p_r_o_f_i_l_e___p_a_r_a_m_e_t_e_r_s_ga1f41f85e3db95aa9b8de472ddc8d4699}\label{group___g_a_p_r_o_l_e___p_r_o_f_i_l_e___p_a_r_a_m_e_t_e_r_s_ga1f41f85e3db95aa9b8de472ddc8d4699}} 
+\index{GAP Role Parameters@{GAP Role Parameters}!GAPROLE\_ADV\_CHANNEL\_MAP@{GAPROLE\_ADV\_CHANNEL\_MAP}}
+\index{GAPROLE\_ADV\_CHANNEL\_MAP@{GAPROLE\_ADV\_CHANNEL\_MAP}!GAP Role Parameters@{GAP Role Parameters}}
+\doxysubsubsection{\texorpdfstring{GAPROLE\_ADV\_CHANNEL\_MAP}{GAPROLE\_ADV\_CHANNEL\_MAP}}
+{\footnotesize\ttfamily \#define G\+A\+P\+R\+O\+L\+E\+\_\+\+A\+D\+V\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+M\+AP~0x30C}
+
+
+
+Which channels to advertise on. Read/\+Write Size is uint8\+\_\+t. Default is G\+A\+P\+\_\+\+A\+D\+V\+C\+H\+A\+N\+\_\+\+A\+LL (defined in G\+A\+P.\+h) 
+
+
+
+Definition at line 81 of file peripheral.\+h.
+
+\mbox{\Hypertarget{group___g_a_p_r_o_l_e___p_r_o_f_i_l_e___p_a_r_a_m_e_t_e_r_s_gaae8020aa393465f37c4c96bc6e727cb5}\label{group___g_a_p_r_o_l_e___p_r_o_f_i_l_e___p_a_r_a_m_e_t_e_r_s_gaae8020aa393465f37c4c96bc6e727cb5}} 
+\index{GAP Role Parameters@{GAP Role Parameters}!GAPROLE\_ADV\_DIRECT\_ADDR@{GAPROLE\_ADV\_DIRECT\_ADDR}}
+\index{GAPROLE\_ADV\_DIRECT\_ADDR@{GAPROLE\_ADV\_DIRECT\_ADDR}!GAP Role Parameters@{GAP Role Parameters}}
+\doxysubsubsection{\texorpdfstring{GAPROLE\_ADV\_DIRECT\_ADDR}{GAPROLE\_ADV\_DIRECT\_ADDR}}
+{\footnotesize\ttfamily \#define G\+A\+P\+R\+O\+L\+E\+\_\+\+A\+D\+V\+\_\+\+D\+I\+R\+E\+C\+T\+\_\+\+A\+D\+DR~0x30B}
+
+
+
+Direct Advertisement Address. Read/\+Write. Size is uint8\+\_\+t\mbox{[}B\+\_\+\+A\+D\+D\+R\+\_\+\+L\+EN\mbox{]}. Default is N\+U\+LL. 
+
+
+
+Definition at line 80 of file peripheral.\+h.
+
+\mbox{\Hypertarget{group___g_a_p_r_o_l_e___p_r_o_f_i_l_e___p_a_r_a_m_e_t_e_r_s_ga15988bce58119e43b93d02b7bb791e01}\label{group___g_a_p_r_o_l_e___p_r_o_f_i_l_e___p_a_r_a_m_e_t_e_r_s_ga15988bce58119e43b93d02b7bb791e01}} 
+\index{GAP Role Parameters@{GAP Role Parameters}!GAPROLE\_ADV\_DIRECT\_TYPE@{GAPROLE\_ADV\_DIRECT\_TYPE}}
+\index{GAPROLE\_ADV\_DIRECT\_TYPE@{GAPROLE\_ADV\_DIRECT\_TYPE}!GAP Role Parameters@{GAP Role Parameters}}
+\doxysubsubsection{\texorpdfstring{GAPROLE\_ADV\_DIRECT\_TYPE}{GAPROLE\_ADV\_DIRECT\_TYPE}}
+{\footnotesize\ttfamily \#define G\+A\+P\+R\+O\+L\+E\+\_\+\+A\+D\+V\+\_\+\+D\+I\+R\+E\+C\+T\+\_\+\+T\+Y\+PE~0x30A}
+
+
+
+Direct Advertisement Address Type. Read/\+Write. Size is uint8\+\_\+t. Default is A\+D\+D\+R\+M\+O\+D\+E\+\_\+\+P\+U\+B\+L\+IC (defined in G\+A\+P.\+h). 
+
+
+
+Definition at line 79 of file peripheral.\+h.
+
+\mbox{\Hypertarget{group___g_a_p_r_o_l_e___p_r_o_f_i_l_e___p_a_r_a_m_e_t_e_r_s_gaf94d22d001773f449b0de10c0ef001c2}\label{group___g_a_p_r_o_l_e___p_r_o_f_i_l_e___p_a_r_a_m_e_t_e_r_s_gaf94d22d001773f449b0de10c0ef001c2}} 
+\index{GAP Role Parameters@{GAP Role Parameters}!GAPROLE\_ADV\_EVENT\_TYPE@{GAPROLE\_ADV\_EVENT\_TYPE}}
+\index{GAPROLE\_ADV\_EVENT\_TYPE@{GAPROLE\_ADV\_EVENT\_TYPE}!GAP Role Parameters@{GAP Role Parameters}}
+\doxysubsubsection{\texorpdfstring{GAPROLE\_ADV\_EVENT\_TYPE}{GAPROLE\_ADV\_EVENT\_TYPE}}
+{\footnotesize\ttfamily \#define G\+A\+P\+R\+O\+L\+E\+\_\+\+A\+D\+V\+\_\+\+E\+V\+E\+N\+T\+\_\+\+T\+Y\+PE~0x309}
+
+
+
+Advertisement Type. Read/\+Write. Size is uint8\+\_\+t. Default is G\+A\+P\+\_\+\+A\+D\+T\+Y\+P\+E\+\_\+\+A\+D\+V\+\_\+\+I\+ND (defined in G\+A\+P.\+h). 
+
+
+
+Definition at line 78 of file peripheral.\+h.
+
+\mbox{\Hypertarget{group___g_a_p_r_o_l_e___p_r_o_f_i_l_e___p_a_r_a_m_e_t_e_r_s_ga062fb6a34df869a02ba3efd4615c8cfc}\label{group___g_a_p_r_o_l_e___p_r_o_f_i_l_e___p_a_r_a_m_e_t_e_r_s_ga062fb6a34df869a02ba3efd4615c8cfc}} 
+\index{GAP Role Parameters@{GAP Role Parameters}!GAPROLE\_ADV\_FILTER\_POLICY@{GAPROLE\_ADV\_FILTER\_POLICY}}
+\index{GAPROLE\_ADV\_FILTER\_POLICY@{GAPROLE\_ADV\_FILTER\_POLICY}!GAP Role Parameters@{GAP Role Parameters}}
+\doxysubsubsection{\texorpdfstring{GAPROLE\_ADV\_FILTER\_POLICY}{GAPROLE\_ADV\_FILTER\_POLICY}}
+{\footnotesize\ttfamily \#define G\+A\+P\+R\+O\+L\+E\+\_\+\+A\+D\+V\+\_\+\+F\+I\+L\+T\+E\+R\+\_\+\+P\+O\+L\+I\+CY~0x30D}
+
+
+
+Filter Policy. Ignored when directed advertising is used. Read/\+Write. Size is uint8\+\_\+t. Default is G\+A\+P\+\_\+\+F\+I\+L\+T\+E\+R\+\_\+\+P\+O\+L\+I\+C\+Y\+\_\+\+A\+LL (defined in G\+A\+P.\+h). 
+
+
+
+Definition at line 82 of file peripheral.\+h.
+
+\mbox{\Hypertarget{group___g_a_p_r_o_l_e___p_r_o_f_i_l_e___p_a_r_a_m_e_t_e_r_s_ga711a258baee155eeec77c7ffadf3c396}\label{group___g_a_p_r_o_l_e___p_r_o_f_i_l_e___p_a_r_a_m_e_t_e_r_s_ga711a258baee155eeec77c7ffadf3c396}} 
+\index{GAP Role Parameters@{GAP Role Parameters}!GAPROLE\_ADV\_NONCONN\_ENABLED@{GAPROLE\_ADV\_NONCONN\_ENABLED}}
+\index{GAPROLE\_ADV\_NONCONN\_ENABLED@{GAPROLE\_ADV\_NONCONN\_ENABLED}!GAP Role Parameters@{GAP Role Parameters}}
+\doxysubsubsection{\texorpdfstring{GAPROLE\_ADV\_NONCONN\_ENABLED}{GAPROLE\_ADV\_NONCONN\_ENABLED}}
+{\footnotesize\ttfamily \#define G\+A\+P\+R\+O\+L\+E\+\_\+\+A\+D\+V\+\_\+\+N\+O\+N\+C\+O\+N\+N\+\_\+\+E\+N\+A\+B\+L\+ED~0x31B}
+
+
+
+Enable/\+Disable Non-\/\+Connectable Advertising. Read/\+Write. Size is uint8\+\_\+t. Default is F\+A\+L\+SE=Disabled. 
+
+
+
+Definition at line 96 of file peripheral.\+h.
+
+\mbox{\Hypertarget{group___g_a_p_r_o_l_e___p_r_o_f_i_l_e___p_a_r_a_m_e_t_e_r_s_gac842b78d178b31175d30a0cbe0a7c654}\label{group___g_a_p_r_o_l_e___p_r_o_f_i_l_e___p_a_r_a_m_e_t_e_r_s_gac842b78d178b31175d30a0cbe0a7c654}} 
+\index{GAP Role Parameters@{GAP Role Parameters}!GAPROLE\_ADVERT\_DATA@{GAPROLE\_ADVERT\_DATA}}
+\index{GAPROLE\_ADVERT\_DATA@{GAPROLE\_ADVERT\_DATA}!GAP Role Parameters@{GAP Role Parameters}}
+\doxysubsubsection{\texorpdfstring{GAPROLE\_ADVERT\_DATA}{GAPROLE\_ADVERT\_DATA}}
+{\footnotesize\ttfamily \#define G\+A\+P\+R\+O\+L\+E\+\_\+\+A\+D\+V\+E\+R\+T\+\_\+\+D\+A\+TA~0x307}
+
+
+
+Advertisement Data. Read/\+Write. Max size is uint8\+\_\+t\mbox{[}B\+\_\+\+M\+A\+X\+\_\+\+A\+D\+V\+\_\+\+L\+EN\mbox{]}. Default is \char`\"{}02\+:01\+:01\char`\"{}, which means that it is a Limited Discoverable Advertisement. 
+
+
+
+Definition at line 76 of file peripheral.\+h.
+
+\mbox{\Hypertarget{group___g_a_p_r_o_l_e___p_r_o_f_i_l_e___p_a_r_a_m_e_t_e_r_s_ga4a5e8b612070ec12194140e2a59899ec}\label{group___g_a_p_r_o_l_e___p_r_o_f_i_l_e___p_a_r_a_m_e_t_e_r_s_ga4a5e8b612070ec12194140e2a59899ec}} 
+\index{GAP Role Parameters@{GAP Role Parameters}!GAPROLE\_ADVERT\_ENABLED@{GAPROLE\_ADVERT\_ENABLED}}
+\index{GAPROLE\_ADVERT\_ENABLED@{GAPROLE\_ADVERT\_ENABLED}!GAP Role Parameters@{GAP Role Parameters}}
+\doxysubsubsection{\texorpdfstring{GAPROLE\_ADVERT\_ENABLED}{GAPROLE\_ADVERT\_ENABLED}}
+{\footnotesize\ttfamily \#define G\+A\+P\+R\+O\+L\+E\+\_\+\+A\+D\+V\+E\+R\+T\+\_\+\+E\+N\+A\+B\+L\+ED~0x305}
+
+
+
+Enable/\+Disable Advertising. Read/\+Write. Size is uint8\+\_\+t. Default is T\+R\+UE=Enabled. 
+
+
+
+Definition at line 74 of file peripheral.\+h.
+
+\mbox{\Hypertarget{group___g_a_p_r_o_l_e___p_r_o_f_i_l_e___p_a_r_a_m_e_t_e_r_s_gafdd079f2e3b6ab6093653ef08058975e}\label{group___g_a_p_r_o_l_e___p_r_o_f_i_l_e___p_a_r_a_m_e_t_e_r_s_gafdd079f2e3b6ab6093653ef08058975e}} 
+\index{GAP Role Parameters@{GAP Role Parameters}!GAPROLE\_ADVERT\_OFF\_TIME@{GAPROLE\_ADVERT\_OFF\_TIME}}
+\index{GAPROLE\_ADVERT\_OFF\_TIME@{GAPROLE\_ADVERT\_OFF\_TIME}!GAP Role Parameters@{GAP Role Parameters}}
+\doxysubsubsection{\texorpdfstring{GAPROLE\_ADVERT\_OFF\_TIME}{GAPROLE\_ADVERT\_OFF\_TIME}}
+{\footnotesize\ttfamily \#define G\+A\+P\+R\+O\+L\+E\+\_\+\+A\+D\+V\+E\+R\+T\+\_\+\+O\+F\+F\+\_\+\+T\+I\+ME~0x306}
+
+
+
+Advertising Off Time for Limited advertisements (in milliseconds). Read/\+Write. Size is uint16\+\_\+t. Default is 30 seconds. 
+
+
+
+Definition at line 75 of file peripheral.\+h.
+
+\mbox{\Hypertarget{group___g_a_p_r_o_l_e___p_r_o_f_i_l_e___p_a_r_a_m_e_t_e_r_s_ga208c757950af451c0ac9f3e3e5442418}\label{group___g_a_p_r_o_l_e___p_r_o_f_i_l_e___p_a_r_a_m_e_t_e_r_s_ga208c757950af451c0ac9f3e3e5442418}} 
+\index{GAP Role Parameters@{GAP Role Parameters}!GAPROLE\_BD\_ADDR@{GAPROLE\_BD\_ADDR}}
+\index{GAPROLE\_BD\_ADDR@{GAPROLE\_BD\_ADDR}!GAP Role Parameters@{GAP Role Parameters}}
+\doxysubsubsection{\texorpdfstring{GAPROLE\_BD\_ADDR}{GAPROLE\_BD\_ADDR}}
+{\footnotesize\ttfamily \#define G\+A\+P\+R\+O\+L\+E\+\_\+\+B\+D\+\_\+\+A\+D\+DR~0x304}
+
+
+
+Device\textquotesingle{}s Address. Read Only. Size is uint8\+\_\+t\mbox{[}B\+\_\+\+A\+D\+D\+R\+\_\+\+L\+EN\mbox{]}. This item is read from the controller. 
+
+
+
+Definition at line 73 of file peripheral.\+h.
+
+\mbox{\Hypertarget{group___g_a_p_r_o_l_e___p_r_o_f_i_l_e___p_a_r_a_m_e_t_e_r_s_ga31c2e41e0d21535f63accee11dde2f34}\label{group___g_a_p_r_o_l_e___p_r_o_f_i_l_e___p_a_r_a_m_e_t_e_r_s_ga31c2e41e0d21535f63accee11dde2f34}} 
+\index{GAP Role Parameters@{GAP Role Parameters}!GAPROLE\_BD\_ADDR\_TYPE@{GAPROLE\_BD\_ADDR\_TYPE}}
+\index{GAPROLE\_BD\_ADDR\_TYPE@{GAPROLE\_BD\_ADDR\_TYPE}!GAP Role Parameters@{GAP Role Parameters}}
+\doxysubsubsection{\texorpdfstring{GAPROLE\_BD\_ADDR\_TYPE}{GAPROLE\_BD\_ADDR\_TYPE}}
+{\footnotesize\ttfamily \#define G\+A\+P\+R\+O\+L\+E\+\_\+\+B\+D\+\_\+\+A\+D\+D\+R\+\_\+\+T\+Y\+PE~0x31C}
+
+
+
+Address type of connected device. Read only. Size is uint8\+\_\+t. 
+
+
+
+Definition at line 97 of file peripheral.\+h.
+
+\mbox{\Hypertarget{group___g_a_p_r_o_l_e___p_r_o_f_i_l_e___p_a_r_a_m_e_t_e_r_s_ga552a1cca52b8c5469a88bd1aeee1f367}\label{group___g_a_p_r_o_l_e___p_r_o_f_i_l_e___p_a_r_a_m_e_t_e_r_s_ga552a1cca52b8c5469a88bd1aeee1f367}} 
+\index{GAP Role Parameters@{GAP Role Parameters}!GAPROLE\_CONN\_BD\_ADDR@{GAPROLE\_CONN\_BD\_ADDR}}
+\index{GAPROLE\_CONN\_BD\_ADDR@{GAPROLE\_CONN\_BD\_ADDR}!GAP Role Parameters@{GAP Role Parameters}}
+\doxysubsubsection{\texorpdfstring{GAPROLE\_CONN\_BD\_ADDR}{GAPROLE\_CONN\_BD\_ADDR}}
+{\footnotesize\ttfamily \#define G\+A\+P\+R\+O\+L\+E\+\_\+\+C\+O\+N\+N\+\_\+\+B\+D\+\_\+\+A\+D\+DR~0x315}
+
+
+
+Address of connected device. Read only. Size is uint8\+\_\+t\mbox{[}B\+\_\+\+M\+A\+X\+\_\+\+A\+D\+V\+\_\+\+L\+EN\mbox{]}. Set to all zeros when not connected. 
+
+
+
+Definition at line 90 of file peripheral.\+h.
+
+\mbox{\Hypertarget{group___g_a_p_r_o_l_e___p_r_o_f_i_l_e___p_a_r_a_m_e_t_e_r_s_ga76e8b541c10b628fc386989b3c894680}\label{group___g_a_p_r_o_l_e___p_r_o_f_i_l_e___p_a_r_a_m_e_t_e_r_s_ga76e8b541c10b628fc386989b3c894680}} 
+\index{GAP Role Parameters@{GAP Role Parameters}!GAPROLE\_CONN\_INTERVAL@{GAPROLE\_CONN\_INTERVAL}}
+\index{GAPROLE\_CONN\_INTERVAL@{GAPROLE\_CONN\_INTERVAL}!GAP Role Parameters@{GAP Role Parameters}}
+\doxysubsubsection{\texorpdfstring{GAPROLE\_CONN\_INTERVAL}{GAPROLE\_CONN\_INTERVAL}}
+{\footnotesize\ttfamily \#define G\+A\+P\+R\+O\+L\+E\+\_\+\+C\+O\+N\+N\+\_\+\+I\+N\+T\+E\+R\+V\+AL~0x316}
+
+
+
+Current connection interval. Read only. Size is uint16\+\_\+t. Range is 7.\+5ms to 4 seconds (0x0006 to 0x0\+C80). Default is 0 (no connection). 
+
+
+
+Definition at line 91 of file peripheral.\+h.
+
+\mbox{\Hypertarget{group___g_a_p_r_o_l_e___p_r_o_f_i_l_e___p_a_r_a_m_e_t_e_r_s_ga1b041eee4cb673c7ade421b4ba01b96d}\label{group___g_a_p_r_o_l_e___p_r_o_f_i_l_e___p_a_r_a_m_e_t_e_r_s_ga1b041eee4cb673c7ade421b4ba01b96d}} 
+\index{GAP Role Parameters@{GAP Role Parameters}!GAPROLE\_CONN\_LATENCY@{GAPROLE\_CONN\_LATENCY}}
+\index{GAPROLE\_CONN\_LATENCY@{GAPROLE\_CONN\_LATENCY}!GAP Role Parameters@{GAP Role Parameters}}
+\doxysubsubsection{\texorpdfstring{GAPROLE\_CONN\_LATENCY}{GAPROLE\_CONN\_LATENCY}}
+{\footnotesize\ttfamily \#define G\+A\+P\+R\+O\+L\+E\+\_\+\+C\+O\+N\+N\+\_\+\+L\+A\+T\+E\+N\+CY~0x317}
+
+
+
+Current slave latency. Read only. Size is uint16\+\_\+t. Range is 0 to 499. Default is 0 (no slave latency or no connection). 
+
+
+
+Definition at line 92 of file peripheral.\+h.
+
+\mbox{\Hypertarget{group___g_a_p_r_o_l_e___p_r_o_f_i_l_e___p_a_r_a_m_e_t_e_r_s_ga16148eea8c0c537721d37b1157ebffe2}\label{group___g_a_p_r_o_l_e___p_r_o_f_i_l_e___p_a_r_a_m_e_t_e_r_s_ga16148eea8c0c537721d37b1157ebffe2}} 
+\index{GAP Role Parameters@{GAP Role Parameters}!GAPROLE\_CONN\_TERM\_REASON@{GAPROLE\_CONN\_TERM\_REASON}}
+\index{GAPROLE\_CONN\_TERM\_REASON@{GAPROLE\_CONN\_TERM\_REASON}!GAP Role Parameters@{GAP Role Parameters}}
+\doxysubsubsection{\texorpdfstring{GAPROLE\_CONN\_TERM\_REASON}{GAPROLE\_CONN\_TERM\_REASON}}
+{\footnotesize\ttfamily \#define G\+A\+P\+R\+O\+L\+E\+\_\+\+C\+O\+N\+N\+\_\+\+T\+E\+R\+M\+\_\+\+R\+E\+A\+S\+ON~0x31D}
+
+
+
+Reason of the last connection terminated event. Size is uint8\+\_\+t. 
+
+
+
+Definition at line 98 of file peripheral.\+h.
+
+\mbox{\Hypertarget{group___g_a_p_r_o_l_e___p_r_o_f_i_l_e___p_a_r_a_m_e_t_e_r_s_gabcd0316bdd2ad21baa58c9e2ac2b5a86}\label{group___g_a_p_r_o_l_e___p_r_o_f_i_l_e___p_a_r_a_m_e_t_e_r_s_gabcd0316bdd2ad21baa58c9e2ac2b5a86}} 
+\index{GAP Role Parameters@{GAP Role Parameters}!GAPROLE\_CONN\_TIMEOUT@{GAPROLE\_CONN\_TIMEOUT}}
+\index{GAPROLE\_CONN\_TIMEOUT@{GAPROLE\_CONN\_TIMEOUT}!GAP Role Parameters@{GAP Role Parameters}}
+\doxysubsubsection{\texorpdfstring{GAPROLE\_CONN\_TIMEOUT}{GAPROLE\_CONN\_TIMEOUT}}
+{\footnotesize\ttfamily \#define G\+A\+P\+R\+O\+L\+E\+\_\+\+C\+O\+N\+N\+\_\+\+T\+I\+M\+E\+O\+UT~0x318}
+
+
+
+Current timeout value. Read only. size is uint16\+\_\+t. Range is 100ms to 32 seconds. Default is 0 (no connection). 
+
+
+
+Definition at line 93 of file peripheral.\+h.
+
+\mbox{\Hypertarget{group___g_a_p_r_o_l_e___p_r_o_f_i_l_e___p_a_r_a_m_e_t_e_r_s_ga562de483d67edd4a253e16e21b938cee}\label{group___g_a_p_r_o_l_e___p_r_o_f_i_l_e___p_a_r_a_m_e_t_e_r_s_ga562de483d67edd4a253e16e21b938cee}} 
+\index{GAP Role Parameters@{GAP Role Parameters}!GAPROLE\_CONNHANDLE@{GAPROLE\_CONNHANDLE}}
+\index{GAPROLE\_CONNHANDLE@{GAPROLE\_CONNHANDLE}!GAP Role Parameters@{GAP Role Parameters}}
+\doxysubsubsection{\texorpdfstring{GAPROLE\_CONNHANDLE}{GAPROLE\_CONNHANDLE}}
+{\footnotesize\ttfamily \#define G\+A\+P\+R\+O\+L\+E\+\_\+\+C\+O\+N\+N\+H\+A\+N\+D\+LE~0x30E}
+
+
+
+Connection Handle. Read Only. Size is uint16\+\_\+t. 
+
+
+
+Definition at line 83 of file peripheral.\+h.
+
+\mbox{\Hypertarget{group___g_a_p_r_o_l_e___p_r_o_f_i_l_e___p_a_r_a_m_e_t_e_r_s_ga86ba11375469a01867bc81bde4f92b6a}\label{group___g_a_p_r_o_l_e___p_r_o_f_i_l_e___p_a_r_a_m_e_t_e_r_s_ga86ba11375469a01867bc81bde4f92b6a}} 
+\index{GAP Role Parameters@{GAP Role Parameters}!GAPROLE\_IRK@{GAPROLE\_IRK}}
+\index{GAPROLE\_IRK@{GAPROLE\_IRK}!GAP Role Parameters@{GAP Role Parameters}}
+\doxysubsubsection{\texorpdfstring{GAPROLE\_IRK}{GAPROLE\_IRK}}
+{\footnotesize\ttfamily \#define G\+A\+P\+R\+O\+L\+E\+\_\+\+I\+RK~0x301}
+
+
+
+Identity Resolving Key. Read/\+Write. Size is uint8\+\_\+t\mbox{[}K\+E\+Y\+L\+EN\mbox{]}. Default is all 0, which means that the I\+RK will be randomly generated. 
+
+
+
+Definition at line 70 of file peripheral.\+h.
+
+\mbox{\Hypertarget{group___g_a_p_r_o_l_e___p_r_o_f_i_l_e___p_a_r_a_m_e_t_e_r_s_gac6188000c9c54884d2f905e104fdff3e}\label{group___g_a_p_r_o_l_e___p_r_o_f_i_l_e___p_a_r_a_m_e_t_e_r_s_gac6188000c9c54884d2f905e104fdff3e}} 
+\index{GAP Role Parameters@{GAP Role Parameters}!GAPROLE\_MAX\_CONN\_INTERVAL@{GAPROLE\_MAX\_CONN\_INTERVAL}}
+\index{GAPROLE\_MAX\_CONN\_INTERVAL@{GAPROLE\_MAX\_CONN\_INTERVAL}!GAP Role Parameters@{GAP Role Parameters}}
+\doxysubsubsection{\texorpdfstring{GAPROLE\_MAX\_CONN\_INTERVAL}{GAPROLE\_MAX\_CONN\_INTERVAL}}
+{\footnotesize\ttfamily \#define G\+A\+P\+R\+O\+L\+E\+\_\+\+M\+A\+X\+\_\+\+C\+O\+N\+N\+\_\+\+I\+N\+T\+E\+R\+V\+AL~0x312}
+
+
+
+Maximum Connection Interval to allow (n $\ast$ 1.\+25ms). Range\+: 7.\+5 msec to 4 seconds (0x0006 to 0x0\+C80). Read/\+Write. Size is uint16\+\_\+t. Default is 4 seconds (0x0\+C80). 
+
+
+
+Definition at line 87 of file peripheral.\+h.
+
+\mbox{\Hypertarget{group___g_a_p_r_o_l_e___p_r_o_f_i_l_e___p_a_r_a_m_e_t_e_r_s_gad9610d5181d12756b64ae59c531c6ddf}\label{group___g_a_p_r_o_l_e___p_r_o_f_i_l_e___p_a_r_a_m_e_t_e_r_s_gad9610d5181d12756b64ae59c531c6ddf}} 
+\index{GAP Role Parameters@{GAP Role Parameters}!GAPROLE\_MIN\_CONN\_INTERVAL@{GAPROLE\_MIN\_CONN\_INTERVAL}}
+\index{GAPROLE\_MIN\_CONN\_INTERVAL@{GAPROLE\_MIN\_CONN\_INTERVAL}!GAP Role Parameters@{GAP Role Parameters}}
+\doxysubsubsection{\texorpdfstring{GAPROLE\_MIN\_CONN\_INTERVAL}{GAPROLE\_MIN\_CONN\_INTERVAL}}
+{\footnotesize\ttfamily \#define G\+A\+P\+R\+O\+L\+E\+\_\+\+M\+I\+N\+\_\+\+C\+O\+N\+N\+\_\+\+I\+N\+T\+E\+R\+V\+AL~0x311}
+
+
+
+Minimum Connection Interval to allow (n $\ast$ 1.\+25ms). Range\+: 7.\+5 msec to 4 seconds (0x0006 to 0x0\+C80). Read/\+Write. Size is uint16\+\_\+t. Default is 7.\+5 milliseconds (0x0006). 
+
+
+
+Definition at line 86 of file peripheral.\+h.
+
+\mbox{\Hypertarget{group___g_a_p_r_o_l_e___p_r_o_f_i_l_e___p_a_r_a_m_e_t_e_r_s_ga2d3fb4fca123cc41bd17d469cbd0ba27}\label{group___g_a_p_r_o_l_e___p_r_o_f_i_l_e___p_a_r_a_m_e_t_e_r_s_ga2d3fb4fca123cc41bd17d469cbd0ba27}} 
+\index{GAP Role Parameters@{GAP Role Parameters}!GAPROLE\_PARAM\_UPDATE\_ENABLE@{GAPROLE\_PARAM\_UPDATE\_ENABLE}}
+\index{GAPROLE\_PARAM\_UPDATE\_ENABLE@{GAPROLE\_PARAM\_UPDATE\_ENABLE}!GAP Role Parameters@{GAP Role Parameters}}
+\doxysubsubsection{\texorpdfstring{GAPROLE\_PARAM\_UPDATE\_ENABLE}{GAPROLE\_PARAM\_UPDATE\_ENABLE}}
+{\footnotesize\ttfamily \#define G\+A\+P\+R\+O\+L\+E\+\_\+\+P\+A\+R\+A\+M\+\_\+\+U\+P\+D\+A\+T\+E\+\_\+\+E\+N\+A\+B\+LE~0x310}
+
+
+
+Slave Connection Parameter Update Enable. Read/\+Write. Size is uint8\+\_\+t. If T\+R\+UE then automatic connection parameter update request is sent. Default is F\+A\+L\+SE. 
+
+
+
+Definition at line 85 of file peripheral.\+h.
+
+\mbox{\Hypertarget{group___g_a_p_r_o_l_e___p_r_o_f_i_l_e___p_a_r_a_m_e_t_e_r_s_ga02b3fa1eb26b28fcac262a8e55600be8}\label{group___g_a_p_r_o_l_e___p_r_o_f_i_l_e___p_a_r_a_m_e_t_e_r_s_ga02b3fa1eb26b28fcac262a8e55600be8}} 
+\index{GAP Role Parameters@{GAP Role Parameters}!GAPROLE\_PARAM\_UPDATE\_REQ@{GAPROLE\_PARAM\_UPDATE\_REQ}}
+\index{GAPROLE\_PARAM\_UPDATE\_REQ@{GAPROLE\_PARAM\_UPDATE\_REQ}!GAP Role Parameters@{GAP Role Parameters}}
+\doxysubsubsection{\texorpdfstring{GAPROLE\_PARAM\_UPDATE\_REQ}{GAPROLE\_PARAM\_UPDATE\_REQ}}
+{\footnotesize\ttfamily \#define G\+A\+P\+R\+O\+L\+E\+\_\+\+P\+A\+R\+A\+M\+\_\+\+U\+P\+D\+A\+T\+E\+\_\+\+R\+EQ~0x319}
+
+
+
+Slave Connection Parameter Update Request. Write. Size is uint8\+\_\+t. If T\+R\+UE then connection parameter update request is sent. 
+
+
+
+Definition at line 94 of file peripheral.\+h.
+
+\mbox{\Hypertarget{group___g_a_p_r_o_l_e___p_r_o_f_i_l_e___p_a_r_a_m_e_t_e_r_s_ga9c1b73946d52cde9c33dfa1f37dfadcb}\label{group___g_a_p_r_o_l_e___p_r_o_f_i_l_e___p_a_r_a_m_e_t_e_r_s_ga9c1b73946d52cde9c33dfa1f37dfadcb}} 
+\index{GAP Role Parameters@{GAP Role Parameters}!GAPROLE\_PROFILEROLE@{GAPROLE\_PROFILEROLE}}
+\index{GAPROLE\_PROFILEROLE@{GAPROLE\_PROFILEROLE}!GAP Role Parameters@{GAP Role Parameters}}
+\doxysubsubsection{\texorpdfstring{GAPROLE\_PROFILEROLE}{GAPROLE\_PROFILEROLE}}
+{\footnotesize\ttfamily \#define G\+A\+P\+R\+O\+L\+E\+\_\+\+P\+R\+O\+F\+I\+L\+E\+R\+O\+LE~0x300}
+
+
+
+Reading this parameter will return G\+AP Role type. Read Only. Size is uint8\+\_\+t. 
+
+
+
+Definition at line 69 of file peripheral.\+h.
+
+\mbox{\Hypertarget{group___g_a_p_r_o_l_e___p_r_o_f_i_l_e___p_a_r_a_m_e_t_e_r_s_ga7a1710f3003bde68ae5f9cadd0742426}\label{group___g_a_p_r_o_l_e___p_r_o_f_i_l_e___p_a_r_a_m_e_t_e_r_s_ga7a1710f3003bde68ae5f9cadd0742426}} 
+\index{GAP Role Parameters@{GAP Role Parameters}!GAPROLE\_RSSI\_READ\_RATE@{GAPROLE\_RSSI\_READ\_RATE}}
+\index{GAPROLE\_RSSI\_READ\_RATE@{GAPROLE\_RSSI\_READ\_RATE}!GAP Role Parameters@{GAP Role Parameters}}
+\doxysubsubsection{\texorpdfstring{GAPROLE\_RSSI\_READ\_RATE}{GAPROLE\_RSSI\_READ\_RATE}}
+{\footnotesize\ttfamily \#define G\+A\+P\+R\+O\+L\+E\+\_\+\+R\+S\+S\+I\+\_\+\+R\+E\+A\+D\+\_\+\+R\+A\+TE~0x30F}
+
+
+
+How often to read the R\+S\+SI during a connection. Read/\+Write. Size is uint16\+\_\+t. The value is in milliseconds. Default is 0 = O\+FF. Obsolete -\/ Do not use. 
+
+
+
+Definition at line 84 of file peripheral.\+h.
+
+\mbox{\Hypertarget{group___g_a_p_r_o_l_e___p_r_o_f_i_l_e___p_a_r_a_m_e_t_e_r_s_ga9047ae80d29878ab295ec67f3e24da3f}\label{group___g_a_p_r_o_l_e___p_r_o_f_i_l_e___p_a_r_a_m_e_t_e_r_s_ga9047ae80d29878ab295ec67f3e24da3f}} 
+\index{GAP Role Parameters@{GAP Role Parameters}!GAPROLE\_SCAN\_RSP\_DATA@{GAPROLE\_SCAN\_RSP\_DATA}}
+\index{GAPROLE\_SCAN\_RSP\_DATA@{GAPROLE\_SCAN\_RSP\_DATA}!GAP Role Parameters@{GAP Role Parameters}}
+\doxysubsubsection{\texorpdfstring{GAPROLE\_SCAN\_RSP\_DATA}{GAPROLE\_SCAN\_RSP\_DATA}}
+{\footnotesize\ttfamily \#define G\+A\+P\+R\+O\+L\+E\+\_\+\+S\+C\+A\+N\+\_\+\+R\+S\+P\+\_\+\+D\+A\+TA~0x308}
+
+
+
+Scan Response Data. Read/\+Write. Max size is uint8\+\_\+t\mbox{[}B\+\_\+\+M\+A\+X\+\_\+\+A\+D\+V\+\_\+\+L\+EN\mbox{]}. Defaults to all 0. 
+
+
+
+Definition at line 77 of file peripheral.\+h.
+
+\mbox{\Hypertarget{group___g_a_p_r_o_l_e___p_r_o_f_i_l_e___p_a_r_a_m_e_t_e_r_s_ga1971b7634252c93d4af51a55af7a329a}\label{group___g_a_p_r_o_l_e___p_r_o_f_i_l_e___p_a_r_a_m_e_t_e_r_s_ga1971b7634252c93d4af51a55af7a329a}} 
+\index{GAP Role Parameters@{GAP Role Parameters}!GAPROLE\_SIGNCOUNTER@{GAPROLE\_SIGNCOUNTER}}
+\index{GAPROLE\_SIGNCOUNTER@{GAPROLE\_SIGNCOUNTER}!GAP Role Parameters@{GAP Role Parameters}}
+\doxysubsubsection{\texorpdfstring{GAPROLE\_SIGNCOUNTER}{GAPROLE\_SIGNCOUNTER}}
+{\footnotesize\ttfamily \#define G\+A\+P\+R\+O\+L\+E\+\_\+\+S\+I\+G\+N\+C\+O\+U\+N\+T\+ER~0x303}
+
+
+
+Sign Counter. Read/\+Write. Size is uint32\+\_\+t. Default is 0. 
+
+
+
+Definition at line 72 of file peripheral.\+h.
+
+\mbox{\Hypertarget{group___g_a_p_r_o_l_e___p_r_o_f_i_l_e___p_a_r_a_m_e_t_e_r_s_gae1278d5886d13f4b58b9d038ba90ad4a}\label{group___g_a_p_r_o_l_e___p_r_o_f_i_l_e___p_a_r_a_m_e_t_e_r_s_gae1278d5886d13f4b58b9d038ba90ad4a}} 
+\index{GAP Role Parameters@{GAP Role Parameters}!GAPROLE\_SLAVE\_LATENCY@{GAPROLE\_SLAVE\_LATENCY}}
+\index{GAPROLE\_SLAVE\_LATENCY@{GAPROLE\_SLAVE\_LATENCY}!GAP Role Parameters@{GAP Role Parameters}}
+\doxysubsubsection{\texorpdfstring{GAPROLE\_SLAVE\_LATENCY}{GAPROLE\_SLAVE\_LATENCY}}
+{\footnotesize\ttfamily \#define G\+A\+P\+R\+O\+L\+E\+\_\+\+S\+L\+A\+V\+E\+\_\+\+L\+A\+T\+E\+N\+CY~0x313}
+
+
+
+Update Parameter Slave Latency. Range\+: 0 -\/ 499. Read/\+Write. Size is uint16\+\_\+t. Default is 0. 
+
+
+
+Definition at line 88 of file peripheral.\+h.
+
+\mbox{\Hypertarget{group___g_a_p_r_o_l_e___p_r_o_f_i_l_e___p_a_r_a_m_e_t_e_r_s_ga2e90ba4e9daa5807d907fd6da1c26082}\label{group___g_a_p_r_o_l_e___p_r_o_f_i_l_e___p_a_r_a_m_e_t_e_r_s_ga2e90ba4e9daa5807d907fd6da1c26082}} 
+\index{GAP Role Parameters@{GAP Role Parameters}!GAPROLE\_SRK@{GAPROLE\_SRK}}
+\index{GAPROLE\_SRK@{GAPROLE\_SRK}!GAP Role Parameters@{GAP Role Parameters}}
+\doxysubsubsection{\texorpdfstring{GAPROLE\_SRK}{GAPROLE\_SRK}}
+{\footnotesize\ttfamily \#define G\+A\+P\+R\+O\+L\+E\+\_\+\+S\+RK~0x302}
+
+
+
+Signature Resolving Key. Read/\+Write. Size is uint8\+\_\+t\mbox{[}K\+E\+Y\+L\+EN\mbox{]}. Default is all 0, which means that the S\+RK will be randomly generated. 
+
+
+
+Definition at line 71 of file peripheral.\+h.
+
+\mbox{\Hypertarget{group___g_a_p_r_o_l_e___p_r_o_f_i_l_e___p_a_r_a_m_e_t_e_r_s_ga170060c650d733d42b7fffc01fdbb0d1}\label{group___g_a_p_r_o_l_e___p_r_o_f_i_l_e___p_a_r_a_m_e_t_e_r_s_ga170060c650d733d42b7fffc01fdbb0d1}} 
+\index{GAP Role Parameters@{GAP Role Parameters}!GAPROLE\_STATE@{GAPROLE\_STATE}}
+\index{GAPROLE\_STATE@{GAPROLE\_STATE}!GAP Role Parameters@{GAP Role Parameters}}
+\doxysubsubsection{\texorpdfstring{GAPROLE\_STATE}{GAPROLE\_STATE}}
+{\footnotesize\ttfamily \#define G\+A\+P\+R\+O\+L\+E\+\_\+\+S\+T\+A\+TE~0x31A}
+
+
+
+Reading this parameter will return G\+AP Peripheral Role State. Read Only. Size is uint8\+\_\+t. 
+
+
+
+Definition at line 95 of file peripheral.\+h.
+
+\mbox{\Hypertarget{group___g_a_p_r_o_l_e___p_r_o_f_i_l_e___p_a_r_a_m_e_t_e_r_s_ga48215c98a7c3673cbc224e3c5a3b401d}\label{group___g_a_p_r_o_l_e___p_r_o_f_i_l_e___p_a_r_a_m_e_t_e_r_s_ga48215c98a7c3673cbc224e3c5a3b401d}} 
+\index{GAP Role Parameters@{GAP Role Parameters}!GAPROLE\_TIMEOUT\_MULTIPLIER@{GAPROLE\_TIMEOUT\_MULTIPLIER}}
+\index{GAPROLE\_TIMEOUT\_MULTIPLIER@{GAPROLE\_TIMEOUT\_MULTIPLIER}!GAP Role Parameters@{GAP Role Parameters}}
+\doxysubsubsection{\texorpdfstring{GAPROLE\_TIMEOUT\_MULTIPLIER}{GAPROLE\_TIMEOUT\_MULTIPLIER}}
+{\footnotesize\ttfamily \#define G\+A\+P\+R\+O\+L\+E\+\_\+\+T\+I\+M\+E\+O\+U\+T\+\_\+\+M\+U\+L\+T\+I\+P\+L\+I\+ER~0x314}
+
+
+
+Update Parameter Timeout Multiplier (n $\ast$ 10ms). Range\+: 100ms to 32 seconds (0x000a -\/ 0x0c80). Read/\+Write. Size is uint16\+\_\+t. Default is 1000. 
+
+
+
+Definition at line 89 of file peripheral.\+h.
+

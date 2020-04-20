@@ -1,0 +1,94 @@
+\hypertarget{structgap_pairing_req_event__t}{}\doxysection{gap\+Pairing\+Req\+Event\+\_\+t Struct Reference}
+\label{structgap_pairing_req_event__t}\index{gapPairingReqEvent\_t@{gapPairingReqEvent\_t}}
+
+
+{\ttfamily \#include $<$gap.\+h$>$}
+
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+osal\+\_\+event\+\_\+hdr\+\_\+t \mbox{\hyperlink{structgap_pairing_req_event__t_a138e767d6ac25b93d165c212bae15758}{hdr}}
+\begin{DoxyCompactList}\small\item\em G\+A\+P\+\_\+\+M\+S\+G\+\_\+\+E\+V\+E\+NT and status. \end{DoxyCompactList}\item 
+uint8 \mbox{\hyperlink{structgap_pairing_req_event__t_af94cb9733404768817556b007e91a289}{opcode}}
+\begin{DoxyCompactList}\small\item\em G\+A\+P\+\_\+\+P\+A\+I\+R\+I\+N\+G\+\_\+\+R\+E\+Q\+\_\+\+E\+V\+E\+NT. \end{DoxyCompactList}\item 
+uint16 \mbox{\hyperlink{structgap_pairing_req_event__t_a9a95280e3590ae3c8ff1dfe4697c6fd8}{connection\+Handle}}
+\begin{DoxyCompactList}\small\item\em connection Handle \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structgap_pairing_req__t}{gap\+Pairing\+Req\+\_\+t}} \mbox{\hyperlink{structgap_pairing_req_event__t_a74803784eb149e1228bf6dbd34a47db4}{pair\+Req}}
+\begin{DoxyCompactList}\small\item\em The Pairing Request fields received. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+G\+A\+P\+\_\+\+P\+A\+I\+R\+I\+N\+G\+\_\+\+R\+E\+Q\+\_\+\+E\+V\+E\+NT message format.~\newline
+ ~\newline
+ This message is sent to the app when an unexpected Pairing Request is received. The application is expected to setup for a Security Manager pairing/bonding.~\newline
+ ~\newline
+ To setup an SM Pairing, the application should call \mbox{\hyperlink{group___g_a_p___a_p_i_ga21cd72be1c8feccc658a7b0faec167a5}{G\+A\+P\+\_\+\+Authenticate()}} with these \char`\"{}pair\+Req\char`\"{} fields.~\newline
+ ~\newline
+ N\+O\+TE\+: This message should only be sent to peripheral devices. 
+
+Definition at line 792 of file gap.\+h.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{structgap_pairing_req_event__t_a9a95280e3590ae3c8ff1dfe4697c6fd8}\label{structgap_pairing_req_event__t_a9a95280e3590ae3c8ff1dfe4697c6fd8}} 
+\index{gapPairingReqEvent\_t@{gapPairingReqEvent\_t}!connectionHandle@{connectionHandle}}
+\index{connectionHandle@{connectionHandle}!gapPairingReqEvent\_t@{gapPairingReqEvent\_t}}
+\doxysubsubsection{\texorpdfstring{connectionHandle}{connectionHandle}}
+{\footnotesize\ttfamily uint16 gap\+Pairing\+Req\+Event\+\_\+t\+::connection\+Handle}
+
+
+
+connection Handle 
+
+
+
+Definition at line 796 of file gap.\+h.
+
+\mbox{\Hypertarget{structgap_pairing_req_event__t_a138e767d6ac25b93d165c212bae15758}\label{structgap_pairing_req_event__t_a138e767d6ac25b93d165c212bae15758}} 
+\index{gapPairingReqEvent\_t@{gapPairingReqEvent\_t}!hdr@{hdr}}
+\index{hdr@{hdr}!gapPairingReqEvent\_t@{gapPairingReqEvent\_t}}
+\doxysubsubsection{\texorpdfstring{hdr}{hdr}}
+{\footnotesize\ttfamily osal\+\_\+event\+\_\+hdr\+\_\+t gap\+Pairing\+Req\+Event\+\_\+t\+::hdr}
+
+
+
+G\+A\+P\+\_\+\+M\+S\+G\+\_\+\+E\+V\+E\+NT and status. 
+
+
+
+Definition at line 794 of file gap.\+h.
+
+\mbox{\Hypertarget{structgap_pairing_req_event__t_af94cb9733404768817556b007e91a289}\label{structgap_pairing_req_event__t_af94cb9733404768817556b007e91a289}} 
+\index{gapPairingReqEvent\_t@{gapPairingReqEvent\_t}!opcode@{opcode}}
+\index{opcode@{opcode}!gapPairingReqEvent\_t@{gapPairingReqEvent\_t}}
+\doxysubsubsection{\texorpdfstring{opcode}{opcode}}
+{\footnotesize\ttfamily uint8 gap\+Pairing\+Req\+Event\+\_\+t\+::opcode}
+
+
+
+G\+A\+P\+\_\+\+P\+A\+I\+R\+I\+N\+G\+\_\+\+R\+E\+Q\+\_\+\+E\+V\+E\+NT. 
+
+
+
+Definition at line 795 of file gap.\+h.
+
+\mbox{\Hypertarget{structgap_pairing_req_event__t_a74803784eb149e1228bf6dbd34a47db4}\label{structgap_pairing_req_event__t_a74803784eb149e1228bf6dbd34a47db4}} 
+\index{gapPairingReqEvent\_t@{gapPairingReqEvent\_t}!pairReq@{pairReq}}
+\index{pairReq@{pairReq}!gapPairingReqEvent\_t@{gapPairingReqEvent\_t}}
+\doxysubsubsection{\texorpdfstring{pairReq}{pairReq}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structgap_pairing_req__t}{gap\+Pairing\+Req\+\_\+t}} gap\+Pairing\+Req\+Event\+\_\+t\+::pair\+Req}
+
+
+
+The Pairing Request fields received. 
+
+
+
+Definition at line 797 of file gap.\+h.
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Include/\mbox{\hyperlink{gap_8h}{gap.\+h}}\end{DoxyCompactItemize}

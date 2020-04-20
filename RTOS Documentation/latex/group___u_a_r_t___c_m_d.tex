@@ -1,0 +1,155 @@
+\hypertarget{group___u_a_r_t___c_m_d}{}\doxysection{Command Codes}
+\label{group___u_a_r_t___c_m_d}\index{Command Codes@{Command Codes}}
+
+
+U\+A\+R\+T\+\_\+\+C\+M\+D\+\_\+$\ast$ macros are general command codes for \mbox{\hyperlink{_u_a_r_t_8h_a9de3c26cfe4ce6b7f350a6ea6e16801d}{U\+A\+R\+T\+\_\+control()}}. Not all U\+A\+RT driver implementations support these command codes.  
+
+
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group___u_a_r_t___c_m_d_ga942596a37cb2109ae021f88f3d907bdc}{U\+A\+R\+T\+\_\+\+C\+M\+D\+\_\+\+P\+E\+EK}}~0
+\begin{DoxyCompactList}\small\item\em Command code used by \mbox{\hyperlink{_u_a_r_t_8h_a9de3c26cfe4ce6b7f350a6ea6e16801d}{U\+A\+R\+T\+\_\+control()}} to read the next unsigned char. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___u_a_r_t___c_m_d_gaf5be6db621c5b048637dc93b26797693}{U\+A\+R\+T\+\_\+\+C\+M\+D\+\_\+\+I\+S\+A\+V\+A\+I\+L\+A\+B\+LE}}~1
+\begin{DoxyCompactList}\small\item\em Command code used by \mbox{\hyperlink{_u_a_r_t_8h_a9de3c26cfe4ce6b7f350a6ea6e16801d}{U\+A\+R\+T\+\_\+control()}} to determine if the read buffer is empty. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___u_a_r_t___c_m_d_ga470321cbd9eccf137ffbe6553ae7f35f}{U\+A\+R\+T\+\_\+\+C\+M\+D\+\_\+\+G\+E\+T\+R\+X\+C\+O\+U\+NT}}~2
+\begin{DoxyCompactList}\small\item\em Command code used by \mbox{\hyperlink{_u_a_r_t_8h_a9de3c26cfe4ce6b7f350a6ea6e16801d}{U\+A\+R\+T\+\_\+control()}} to determine how many unsigned chars are in the read buffer. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___u_a_r_t___c_m_d_gad67d01fa376f25bb28141d819647e8d3}{U\+A\+R\+T\+\_\+\+C\+M\+D\+\_\+\+R\+X\+E\+N\+A\+B\+LE}}~3
+\begin{DoxyCompactList}\small\item\em Command code used by \mbox{\hyperlink{_u_a_r_t_8h_a9de3c26cfe4ce6b7f350a6ea6e16801d}{U\+A\+R\+T\+\_\+control()}} to enable data receive by the U\+A\+RT. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___u_a_r_t___c_m_d_gac0b19ce2fa9f43d3fe255bcdbd3cda7b}{U\+A\+R\+T\+\_\+\+C\+M\+D\+\_\+\+R\+X\+D\+I\+S\+A\+B\+LE}}~4
+\begin{DoxyCompactList}\small\item\em Command code used by \mbox{\hyperlink{_u_a_r_t_8h_a9de3c26cfe4ce6b7f350a6ea6e16801d}{U\+A\+R\+T\+\_\+control()}} to disable data received by the U\+A\+RT. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___u_a_r_t___c_m_d_ga90f59d674fd3b290c3dd711128413014}{U\+A\+R\+T\+C\+C26\+X\+X\+\_\+\+C\+M\+D\+\_\+\+R\+E\+T\+U\+R\+N\+\_\+\+P\+A\+R\+T\+I\+A\+L\+\_\+\+E\+N\+A\+B\+LE}}~\mbox{\hyperlink{group___u_a_r_t___c_o_n_t_r_o_l_ga0f5a809e0884da33fef102236eb51644}{U\+A\+R\+T\+\_\+\+C\+M\+D\+\_\+\+R\+E\+S\+E\+R\+V\+ED}} + 0
+\begin{DoxyCompactList}\small\item\em Command used by U\+A\+R\+T\+\_\+control to enable partial return. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___u_a_r_t___c_m_d_ga7cc7c1551022a60bd310c79acb6b26b8}{U\+A\+R\+T\+C\+C26\+X\+X\+\_\+\+C\+M\+D\+\_\+\+R\+E\+T\+U\+R\+N\+\_\+\+P\+A\+R\+T\+I\+A\+L\+\_\+\+D\+I\+S\+A\+B\+LE}}~\mbox{\hyperlink{group___u_a_r_t___c_o_n_t_r_o_l_ga0f5a809e0884da33fef102236eb51644}{U\+A\+R\+T\+\_\+\+C\+M\+D\+\_\+\+R\+E\+S\+E\+R\+V\+ED}} + 1
+\begin{DoxyCompactList}\small\item\em Command used by U\+A\+R\+T\+\_\+control to disable partial return. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___u_a_r_t___c_m_d_ga56280a288223c44c73a5169e957dc078}{U\+A\+R\+T\+C\+C26\+X\+X\+\_\+\+C\+M\+D\+\_\+\+R\+X\+\_\+\+F\+I\+F\+O\+\_\+\+F\+L\+U\+SH}}~\mbox{\hyperlink{group___u_a_r_t___c_o_n_t_r_o_l_ga0f5a809e0884da33fef102236eb51644}{U\+A\+R\+T\+\_\+\+C\+M\+D\+\_\+\+R\+E\+S\+E\+R\+V\+ED}} + 2
+\begin{DoxyCompactList}\small\item\em Command used by U\+A\+R\+T\+\_\+control to flush the RX F\+I\+FO. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+U\+A\+R\+T\+\_\+\+C\+M\+D\+\_\+$\ast$ macros are general command codes for \mbox{\hyperlink{_u_a_r_t_8h_a9de3c26cfe4ce6b7f350a6ea6e16801d}{U\+A\+R\+T\+\_\+control()}}. Not all U\+A\+RT driver implementations support these command codes. 
+
+U\+A\+R\+T\+C\+C26\+X\+X\+\_\+\+C\+M\+D\+\_\+$\ast$ macros are command codes only defined in the \mbox{\hyperlink{_u_a_r_t_c_c26_x_x_8h}{U\+A\+R\+T\+C\+C26\+X\+X.\+h}} driver implementation and need to\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include <ti/drivers/uart/UARTCC26XX.h>}}
+\end{DoxyCode}
+ 
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{group___u_a_r_t___c_m_d_ga470321cbd9eccf137ffbe6553ae7f35f}\label{group___u_a_r_t___c_m_d_ga470321cbd9eccf137ffbe6553ae7f35f}} 
+\index{Command Codes@{Command Codes}!UART\_CMD\_GETRXCOUNT@{UART\_CMD\_GETRXCOUNT}}
+\index{UART\_CMD\_GETRXCOUNT@{UART\_CMD\_GETRXCOUNT}!Command Codes@{Command Codes}}
+\doxysubsubsection{\texorpdfstring{UART\_CMD\_GETRXCOUNT}{UART\_CMD\_GETRXCOUNT}}
+{\footnotesize\ttfamily \#define U\+A\+R\+T\+\_\+\+C\+M\+D\+\_\+\+G\+E\+T\+R\+X\+C\+O\+U\+NT~2}
+
+
+
+Command code used by \mbox{\hyperlink{_u_a_r_t_8h_a9de3c26cfe4ce6b7f350a6ea6e16801d}{U\+A\+R\+T\+\_\+control()}} to determine how many unsigned chars are in the read buffer. 
+
+This command is used to determine how many {\ttfamily unsigned} {\ttfamily chars} are available to read from the U\+A\+RT\textquotesingle{}s circular buffer using \mbox{\hyperlink{_u_a_r_t_8h_a023152d57539cad94bdd813956013e73}{U\+A\+R\+T\+\_\+read()}}. With this command code, {\bfseries{arg}} is a pointer to an {\itshape integer}. {\bfseries{$\ast$arg}} contains the number of {\ttfamily unsigned} {\ttfamily chars} available to read. 
+
+Definition at line 257 of file U\+A\+R\+T.\+h.
+
+\mbox{\Hypertarget{group___u_a_r_t___c_m_d_gaf5be6db621c5b048637dc93b26797693}\label{group___u_a_r_t___c_m_d_gaf5be6db621c5b048637dc93b26797693}} 
+\index{Command Codes@{Command Codes}!UART\_CMD\_ISAVAILABLE@{UART\_CMD\_ISAVAILABLE}}
+\index{UART\_CMD\_ISAVAILABLE@{UART\_CMD\_ISAVAILABLE}!Command Codes@{Command Codes}}
+\doxysubsubsection{\texorpdfstring{UART\_CMD\_ISAVAILABLE}{UART\_CMD\_ISAVAILABLE}}
+{\footnotesize\ttfamily \#define U\+A\+R\+T\+\_\+\+C\+M\+D\+\_\+\+I\+S\+A\+V\+A\+I\+L\+A\+B\+LE~1}
+
+
+
+Command code used by \mbox{\hyperlink{_u_a_r_t_8h_a9de3c26cfe4ce6b7f350a6ea6e16801d}{U\+A\+R\+T\+\_\+control()}} to determine if the read buffer is empty. 
+
+This command is used to determine if there are any unsigned chars available to read from the U\+A\+RT\textquotesingle{}s circular buffer using \mbox{\hyperlink{_u_a_r_t_8h_a023152d57539cad94bdd813956013e73}{U\+A\+R\+T\+\_\+read()}}. With this command code, {\bfseries{arg}} is a pointer to a {\ttfamily bool}. {\bfseries{$\ast$arg}} contains {\ttfamily true} if data is available, else {\ttfamily false}. 
+
+Definition at line 246 of file U\+A\+R\+T.\+h.
+
+\mbox{\Hypertarget{group___u_a_r_t___c_m_d_ga942596a37cb2109ae021f88f3d907bdc}\label{group___u_a_r_t___c_m_d_ga942596a37cb2109ae021f88f3d907bdc}} 
+\index{Command Codes@{Command Codes}!UART\_CMD\_PEEK@{UART\_CMD\_PEEK}}
+\index{UART\_CMD\_PEEK@{UART\_CMD\_PEEK}!Command Codes@{Command Codes}}
+\doxysubsubsection{\texorpdfstring{UART\_CMD\_PEEK}{UART\_CMD\_PEEK}}
+{\footnotesize\ttfamily \#define U\+A\+R\+T\+\_\+\+C\+M\+D\+\_\+\+P\+E\+EK~0}
+
+
+
+Command code used by \mbox{\hyperlink{_u_a_r_t_8h_a9de3c26cfe4ce6b7f350a6ea6e16801d}{U\+A\+R\+T\+\_\+control()}} to read the next unsigned char. 
+
+This command is used to read the next unsigned char from the U\+A\+RT\textquotesingle{}s circular buffer without removing it. With this command code, {\bfseries{arg}} is a pointer to an integer. {\bfseries{$\ast$arg}} contains the next {\ttfamily unsigned} {\ttfamily char} read if data is present, else {\bfseries{$\ast$arg}} is set to U\+A\+R\+T\+\_\+\+E\+R\+R\+OR. 
+
+Definition at line 235 of file U\+A\+R\+T.\+h.
+
+\mbox{\Hypertarget{group___u_a_r_t___c_m_d_gac0b19ce2fa9f43d3fe255bcdbd3cda7b}\label{group___u_a_r_t___c_m_d_gac0b19ce2fa9f43d3fe255bcdbd3cda7b}} 
+\index{Command Codes@{Command Codes}!UART\_CMD\_RXDISABLE@{UART\_CMD\_RXDISABLE}}
+\index{UART\_CMD\_RXDISABLE@{UART\_CMD\_RXDISABLE}!Command Codes@{Command Codes}}
+\doxysubsubsection{\texorpdfstring{UART\_CMD\_RXDISABLE}{UART\_CMD\_RXDISABLE}}
+{\footnotesize\ttfamily \#define U\+A\+R\+T\+\_\+\+C\+M\+D\+\_\+\+R\+X\+D\+I\+S\+A\+B\+LE~4}
+
+
+
+Command code used by \mbox{\hyperlink{_u_a_r_t_8h_a9de3c26cfe4ce6b7f350a6ea6e16801d}{U\+A\+R\+T\+\_\+control()}} to disable data received by the U\+A\+RT. 
+
+This command is used to disable the U\+A\+RT in such a way that ignores the data it receives. For drivers that support power management, this typically means that the driver will release any power constraints, to permit the system to enter low power modes. With this command code, {\bfseries{arg}} is {\itshape don\textquotesingle{}t} {\itshape care}.
+
+\begin{DoxyWarning}{Warning}
+A call to \mbox{\hyperlink{_u_a_r_t_8h_a023152d57539cad94bdd813956013e73}{U\+A\+R\+T\+\_\+read()}} does !!\+N\+O\+T!! re-\/enable receive. 
+\end{DoxyWarning}
+
+
+Definition at line 282 of file U\+A\+R\+T.\+h.
+
+\mbox{\Hypertarget{group___u_a_r_t___c_m_d_gad67d01fa376f25bb28141d819647e8d3}\label{group___u_a_r_t___c_m_d_gad67d01fa376f25bb28141d819647e8d3}} 
+\index{Command Codes@{Command Codes}!UART\_CMD\_RXENABLE@{UART\_CMD\_RXENABLE}}
+\index{UART\_CMD\_RXENABLE@{UART\_CMD\_RXENABLE}!Command Codes@{Command Codes}}
+\doxysubsubsection{\texorpdfstring{UART\_CMD\_RXENABLE}{UART\_CMD\_RXENABLE}}
+{\footnotesize\ttfamily \#define U\+A\+R\+T\+\_\+\+C\+M\+D\+\_\+\+R\+X\+E\+N\+A\+B\+LE~3}
+
+
+
+Command code used by \mbox{\hyperlink{_u_a_r_t_8h_a9de3c26cfe4ce6b7f350a6ea6e16801d}{U\+A\+R\+T\+\_\+control()}} to enable data receive by the U\+A\+RT. 
+
+This command is used to enable the U\+A\+RT in such a way that it stores received unsigned chars into the circular buffer. For drivers that support power management, this typically means that the U\+A\+RT will set a power constraint while receive is enabled. \mbox{\hyperlink{_u_a_r_t_8h_a0442ea1ec23901168da31726bb3254c1}{U\+A\+R\+T\+\_\+open()}} will always have this option enabled. With this command code, {\bfseries{arg}} is {\itshape don\textquotesingle{}t} {\itshape care}. 
+
+Definition at line 269 of file U\+A\+R\+T.\+h.
+
+\mbox{\Hypertarget{group___u_a_r_t___c_m_d_ga7cc7c1551022a60bd310c79acb6b26b8}\label{group___u_a_r_t___c_m_d_ga7cc7c1551022a60bd310c79acb6b26b8}} 
+\index{Command Codes@{Command Codes}!UARTCC26XX\_CMD\_RETURN\_PARTIAL\_DISABLE@{UARTCC26XX\_CMD\_RETURN\_PARTIAL\_DISABLE}}
+\index{UARTCC26XX\_CMD\_RETURN\_PARTIAL\_DISABLE@{UARTCC26XX\_CMD\_RETURN\_PARTIAL\_DISABLE}!Command Codes@{Command Codes}}
+\doxysubsubsection{\texorpdfstring{UARTCC26XX\_CMD\_RETURN\_PARTIAL\_DISABLE}{UARTCC26XX\_CMD\_RETURN\_PARTIAL\_DISABLE}}
+{\footnotesize\ttfamily \#define U\+A\+R\+T\+C\+C26\+X\+X\+\_\+\+C\+M\+D\+\_\+\+R\+E\+T\+U\+R\+N\+\_\+\+P\+A\+R\+T\+I\+A\+L\+\_\+\+D\+I\+S\+A\+B\+LE~\mbox{\hyperlink{group___u_a_r_t___c_o_n_t_r_o_l_ga0f5a809e0884da33fef102236eb51644}{U\+A\+R\+T\+\_\+\+C\+M\+D\+\_\+\+R\+E\+S\+E\+R\+V\+ED}} + 1}
+
+
+
+Command used by U\+A\+R\+T\+\_\+control to disable partial return. 
+
+Disabling this command returns the U\+A\+R\+T\+C\+C26\+XX to the default blocking behavior where U\+A\+R\+T\+\_\+read blocks until all data bytes were received. With this comand {\bfseries{arg}} is {\itshape don\textquotesingle{}t} {\itshape care} and it returns U\+A\+R\+T\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+S\+U\+C\+C\+E\+SS. 
+
+Definition at line 404 of file U\+A\+R\+T\+C\+C26\+X\+X.\+h.
+
+\mbox{\Hypertarget{group___u_a_r_t___c_m_d_ga90f59d674fd3b290c3dd711128413014}\label{group___u_a_r_t___c_m_d_ga90f59d674fd3b290c3dd711128413014}} 
+\index{Command Codes@{Command Codes}!UARTCC26XX\_CMD\_RETURN\_PARTIAL\_ENABLE@{UARTCC26XX\_CMD\_RETURN\_PARTIAL\_ENABLE}}
+\index{UARTCC26XX\_CMD\_RETURN\_PARTIAL\_ENABLE@{UARTCC26XX\_CMD\_RETURN\_PARTIAL\_ENABLE}!Command Codes@{Command Codes}}
+\doxysubsubsection{\texorpdfstring{UARTCC26XX\_CMD\_RETURN\_PARTIAL\_ENABLE}{UARTCC26XX\_CMD\_RETURN\_PARTIAL\_ENABLE}}
+{\footnotesize\ttfamily \#define U\+A\+R\+T\+C\+C26\+X\+X\+\_\+\+C\+M\+D\+\_\+\+R\+E\+T\+U\+R\+N\+\_\+\+P\+A\+R\+T\+I\+A\+L\+\_\+\+E\+N\+A\+B\+LE~\mbox{\hyperlink{group___u_a_r_t___c_o_n_t_r_o_l_ga0f5a809e0884da33fef102236eb51644}{U\+A\+R\+T\+\_\+\+C\+M\+D\+\_\+\+R\+E\+S\+E\+R\+V\+ED}} + 0}
+
+
+
+Command used by U\+A\+R\+T\+\_\+control to enable partial return. 
+
+Enabling this command allows U\+A\+R\+T\+\_\+read to return partial data if data reception is inactive for a given 32-\/bit period. With this command {\bfseries{arg}} is {\itshape don\textquotesingle{}t} {\itshape care} and it returns U\+A\+R\+T\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+S\+U\+C\+C\+E\+SS. 
+
+Definition at line 395 of file U\+A\+R\+T\+C\+C26\+X\+X.\+h.
+
+\mbox{\Hypertarget{group___u_a_r_t___c_m_d_ga56280a288223c44c73a5169e957dc078}\label{group___u_a_r_t___c_m_d_ga56280a288223c44c73a5169e957dc078}} 
+\index{Command Codes@{Command Codes}!UARTCC26XX\_CMD\_RX\_FIFO\_FLUSH@{UARTCC26XX\_CMD\_RX\_FIFO\_FLUSH}}
+\index{UARTCC26XX\_CMD\_RX\_FIFO\_FLUSH@{UARTCC26XX\_CMD\_RX\_FIFO\_FLUSH}!Command Codes@{Command Codes}}
+\doxysubsubsection{\texorpdfstring{UARTCC26XX\_CMD\_RX\_FIFO\_FLUSH}{UARTCC26XX\_CMD\_RX\_FIFO\_FLUSH}}
+{\footnotesize\ttfamily \#define U\+A\+R\+T\+C\+C26\+X\+X\+\_\+\+C\+M\+D\+\_\+\+R\+X\+\_\+\+F\+I\+F\+O\+\_\+\+F\+L\+U\+SH~\mbox{\hyperlink{group___u_a_r_t___c_o_n_t_r_o_l_ga0f5a809e0884da33fef102236eb51644}{U\+A\+R\+T\+\_\+\+C\+M\+D\+\_\+\+R\+E\+S\+E\+R\+V\+ED}} + 2}
+
+
+
+Command used by U\+A\+R\+T\+\_\+control to flush the RX F\+I\+FO. 
+
+This control command flushes any contents in the RX F\+I\+FO. With this command {\bfseries{arg}} is {\itshape don\textquotesingle{}t} {\itshape care} and it returns U\+A\+R\+T\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+S\+U\+C\+C\+E\+SS. 
+
+Definition at line 412 of file U\+A\+R\+T\+C\+C26\+X\+X.\+h.
+

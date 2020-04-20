@@ -1,0 +1,88 @@
+\hypertarget{structgap_dev_disc_event__t}{}\doxysection{gap\+Dev\+Disc\+Event\+\_\+t Struct Reference}
+\label{structgap_dev_disc_event__t}\index{gapDevDiscEvent\_t@{gapDevDiscEvent\_t}}
+
+
+{\ttfamily \#include $<$gap.\+h$>$}
+
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+osal\+\_\+event\+\_\+hdr\+\_\+t \mbox{\hyperlink{structgap_dev_disc_event__t_a6801cf542b013b230236d0435e67956a}{hdr}}
+\begin{DoxyCompactList}\small\item\em G\+A\+P\+\_\+\+M\+S\+G\+\_\+\+E\+V\+E\+NT and status. \end{DoxyCompactList}\item 
+uint8 \mbox{\hyperlink{structgap_dev_disc_event__t_a3114ee9efbbac42ce79d9efbdee8a70f}{opcode}}
+\begin{DoxyCompactList}\small\item\em G\+A\+P\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+E\+V\+E\+NT. \end{DoxyCompactList}\item 
+uint8 \mbox{\hyperlink{structgap_dev_disc_event__t_af9332edbfdd24a52ec34ea7bef02c850}{num\+Devs}}
+\begin{DoxyCompactList}\small\item\em Number of devices found during scan. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structgap_dev_rec__t}{gap\+Dev\+Rec\+\_\+t}} $\ast$ \mbox{\hyperlink{structgap_dev_disc_event__t_a72766a7024b7056b6e31bfca565f71a4}{p\+Dev\+List}}
+\begin{DoxyCompactList}\small\item\em array of device records \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+G\+A\+P\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+E\+V\+E\+NT message format. This message is sent to the Application after a scan is performed. 
+
+Definition at line 548 of file gap.\+h.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{structgap_dev_disc_event__t_a6801cf542b013b230236d0435e67956a}\label{structgap_dev_disc_event__t_a6801cf542b013b230236d0435e67956a}} 
+\index{gapDevDiscEvent\_t@{gapDevDiscEvent\_t}!hdr@{hdr}}
+\index{hdr@{hdr}!gapDevDiscEvent\_t@{gapDevDiscEvent\_t}}
+\doxysubsubsection{\texorpdfstring{hdr}{hdr}}
+{\footnotesize\ttfamily osal\+\_\+event\+\_\+hdr\+\_\+t gap\+Dev\+Disc\+Event\+\_\+t\+::hdr}
+
+
+
+G\+A\+P\+\_\+\+M\+S\+G\+\_\+\+E\+V\+E\+NT and status. 
+
+
+
+Definition at line 550 of file gap.\+h.
+
+\mbox{\Hypertarget{structgap_dev_disc_event__t_af9332edbfdd24a52ec34ea7bef02c850}\label{structgap_dev_disc_event__t_af9332edbfdd24a52ec34ea7bef02c850}} 
+\index{gapDevDiscEvent\_t@{gapDevDiscEvent\_t}!numDevs@{numDevs}}
+\index{numDevs@{numDevs}!gapDevDiscEvent\_t@{gapDevDiscEvent\_t}}
+\doxysubsubsection{\texorpdfstring{numDevs}{numDevs}}
+{\footnotesize\ttfamily uint8 gap\+Dev\+Disc\+Event\+\_\+t\+::num\+Devs}
+
+
+
+Number of devices found during scan. 
+
+
+
+Definition at line 552 of file gap.\+h.
+
+\mbox{\Hypertarget{structgap_dev_disc_event__t_a3114ee9efbbac42ce79d9efbdee8a70f}\label{structgap_dev_disc_event__t_a3114ee9efbbac42ce79d9efbdee8a70f}} 
+\index{gapDevDiscEvent\_t@{gapDevDiscEvent\_t}!opcode@{opcode}}
+\index{opcode@{opcode}!gapDevDiscEvent\_t@{gapDevDiscEvent\_t}}
+\doxysubsubsection{\texorpdfstring{opcode}{opcode}}
+{\footnotesize\ttfamily uint8 gap\+Dev\+Disc\+Event\+\_\+t\+::opcode}
+
+
+
+G\+A\+P\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+E\+V\+E\+NT. 
+
+
+
+Definition at line 551 of file gap.\+h.
+
+\mbox{\Hypertarget{structgap_dev_disc_event__t_a72766a7024b7056b6e31bfca565f71a4}\label{structgap_dev_disc_event__t_a72766a7024b7056b6e31bfca565f71a4}} 
+\index{gapDevDiscEvent\_t@{gapDevDiscEvent\_t}!pDevList@{pDevList}}
+\index{pDevList@{pDevList}!gapDevDiscEvent\_t@{gapDevDiscEvent\_t}}
+\doxysubsubsection{\texorpdfstring{pDevList}{pDevList}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structgap_dev_rec__t}{gap\+Dev\+Rec\+\_\+t}}$\ast$ gap\+Dev\+Disc\+Event\+\_\+t\+::p\+Dev\+List}
+
+
+
+array of device records 
+
+
+
+Definition at line 553 of file gap.\+h.
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Include/\mbox{\hyperlink{gap_8h}{gap.\+h}}\end{DoxyCompactItemize}

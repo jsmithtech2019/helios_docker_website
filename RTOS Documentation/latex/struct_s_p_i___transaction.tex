@@ -1,0 +1,89 @@
+\hypertarget{struct_s_p_i___transaction}{}\doxysection{S\+P\+I\+\_\+\+Transaction Struct Reference}
+\label{struct_s_p_i___transaction}\index{SPI\_Transaction@{SPI\_Transaction}}
+
+
+A \mbox{\hyperlink{struct_s_p_i___transaction}{S\+P\+I\+\_\+\+Transaction}} data structure is used with \mbox{\hyperlink{_s_p_i_8c_a989e17f96b54fcc3dc2cac5f8ac6bdb2}{S\+P\+I\+\_\+transfer()}}. It indicates how many \mbox{\hyperlink{_s_p_i_8h_aab964e6d993849cb48f27806d5856013}{S\+P\+I\+\_\+\+Frame\+Format}} frames are sent and received from the buffers pointed to tx\+Buf and rx\+Buf. The arg variable is an user-\/definable argument which gets passed to the \mbox{\hyperlink{_s_p_i_8h_a207e2d5a7e7ea5606b6995b6485ca015}{S\+P\+I\+\_\+\+Callback\+Fxn}} when the S\+PI driver is in \mbox{\hyperlink{_s_p_i_8h_ab9ea76c6529d6076eee5e1c4a5a92c6fa5631e69925c47a62a261c78ebbda39fb}{S\+P\+I\+\_\+\+M\+O\+D\+E\+\_\+\+C\+A\+L\+L\+B\+A\+CK}}.  
+
+
+
+
+{\ttfamily \#include $<$S\+P\+I.\+h$>$}
+
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+size\+\_\+t \mbox{\hyperlink{struct_s_p_i___transaction_ad049d6a900c4bdb59a5ee8ce3d5bced2}{count}}
+\item 
+void $\ast$ \mbox{\hyperlink{struct_s_p_i___transaction_a9461a248f1cceb4048668d44b323a0b8}{tx\+Buf}}
+\item 
+void $\ast$ \mbox{\hyperlink{struct_s_p_i___transaction_a214f57d7809c875fb9456a62a406e041}{rx\+Buf}}
+\item 
+void $\ast$ \mbox{\hyperlink{struct_s_p_i___transaction_ac47daaa10705d748ace918a098aa1945}{arg}}
+\item 
+\mbox{\hyperlink{_s_p_i_8h_a913c57c335166de9caa54b7eb9ad95fb}{S\+P\+I\+\_\+\+Status}} \mbox{\hyperlink{struct_s_p_i___transaction_aa244504b2384411f7de17340be62128a}{status}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A \mbox{\hyperlink{struct_s_p_i___transaction}{S\+P\+I\+\_\+\+Transaction}} data structure is used with \mbox{\hyperlink{_s_p_i_8c_a989e17f96b54fcc3dc2cac5f8ac6bdb2}{S\+P\+I\+\_\+transfer()}}. It indicates how many \mbox{\hyperlink{_s_p_i_8h_aab964e6d993849cb48f27806d5856013}{S\+P\+I\+\_\+\+Frame\+Format}} frames are sent and received from the buffers pointed to tx\+Buf and rx\+Buf. The arg variable is an user-\/definable argument which gets passed to the \mbox{\hyperlink{_s_p_i_8h_a207e2d5a7e7ea5606b6995b6485ca015}{S\+P\+I\+\_\+\+Callback\+Fxn}} when the S\+PI driver is in \mbox{\hyperlink{_s_p_i_8h_ab9ea76c6529d6076eee5e1c4a5a92c6fa5631e69925c47a62a261c78ebbda39fb}{S\+P\+I\+\_\+\+M\+O\+D\+E\+\_\+\+C\+A\+L\+L\+B\+A\+CK}}. 
+
+Definition at line 262 of file S\+P\+I.\+h.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{struct_s_p_i___transaction_ac47daaa10705d748ace918a098aa1945}\label{struct_s_p_i___transaction_ac47daaa10705d748ace918a098aa1945}} 
+\index{SPI\_Transaction@{SPI\_Transaction}!arg@{arg}}
+\index{arg@{arg}!SPI\_Transaction@{SPI\_Transaction}}
+\doxysubsubsection{\texorpdfstring{arg}{arg}}
+{\footnotesize\ttfamily void$\ast$ S\+P\+I\+\_\+\+Transaction\+::arg}
+
+Argument to be passed to the callback function 
+
+Definition at line 267 of file S\+P\+I.\+h.
+
+\mbox{\Hypertarget{struct_s_p_i___transaction_ad049d6a900c4bdb59a5ee8ce3d5bced2}\label{struct_s_p_i___transaction_ad049d6a900c4bdb59a5ee8ce3d5bced2}} 
+\index{SPI\_Transaction@{SPI\_Transaction}!count@{count}}
+\index{count@{count}!SPI\_Transaction@{SPI\_Transaction}}
+\doxysubsubsection{\texorpdfstring{count}{count}}
+{\footnotesize\ttfamily size\+\_\+t S\+P\+I\+\_\+\+Transaction\+::count}
+
+Number of frames for this transaction 
+
+Definition at line 264 of file S\+P\+I.\+h.
+
+\mbox{\Hypertarget{struct_s_p_i___transaction_a214f57d7809c875fb9456a62a406e041}\label{struct_s_p_i___transaction_a214f57d7809c875fb9456a62a406e041}} 
+\index{SPI\_Transaction@{SPI\_Transaction}!rxBuf@{rxBuf}}
+\index{rxBuf@{rxBuf}!SPI\_Transaction@{SPI\_Transaction}}
+\doxysubsubsection{\texorpdfstring{rxBuf}{rxBuf}}
+{\footnotesize\ttfamily void$\ast$ S\+P\+I\+\_\+\+Transaction\+::rx\+Buf}
+
+void $\ast$ to a buffer to receive data 
+
+Definition at line 266 of file S\+P\+I.\+h.
+
+\mbox{\Hypertarget{struct_s_p_i___transaction_aa244504b2384411f7de17340be62128a}\label{struct_s_p_i___transaction_aa244504b2384411f7de17340be62128a}} 
+\index{SPI\_Transaction@{SPI\_Transaction}!status@{status}}
+\index{status@{status}!SPI\_Transaction@{SPI\_Transaction}}
+\doxysubsubsection{\texorpdfstring{status}{status}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_p_i_8h_a913c57c335166de9caa54b7eb9ad95fb}{S\+P\+I\+\_\+\+Status}} S\+P\+I\+\_\+\+Transaction\+::status}
+
+Status code set by S\+P\+I\+\_\+transfer 
+
+Definition at line 270 of file S\+P\+I.\+h.
+
+\mbox{\Hypertarget{struct_s_p_i___transaction_a9461a248f1cceb4048668d44b323a0b8}\label{struct_s_p_i___transaction_a9461a248f1cceb4048668d44b323a0b8}} 
+\index{SPI\_Transaction@{SPI\_Transaction}!txBuf@{txBuf}}
+\index{txBuf@{txBuf}!SPI\_Transaction@{SPI\_Transaction}}
+\doxysubsubsection{\texorpdfstring{txBuf}{txBuf}}
+{\footnotesize\ttfamily void$\ast$ S\+P\+I\+\_\+\+Transaction\+::tx\+Buf}
+
+void $\ast$ to a buffer with data to be transmitted 
+
+Definition at line 265 of file S\+P\+I.\+h.
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Drivers/\+S\+P\+I/\mbox{\hyperlink{_s_p_i_8h}{S\+P\+I.\+h}}\end{DoxyCompactItemize}

@@ -1,0 +1,125 @@
+\hypertarget{struct_r_f___params}{}\doxysection{R\+F\+\_\+\+Params Struct Reference}
+\label{struct_r_f___params}\index{RF\_Params@{RF\_Params}}
+
+
+RF parameter struct RF parameters are used with the \mbox{\hyperlink{_r_f_8h_a13a7c6f5a2b797e0aac18fecfaba6f64}{R\+F\+\_\+open()}} and \mbox{\hyperlink{_r_f_8h_ab956de3745437cb7a69c4edfb006434e}{R\+F\+\_\+\+Params\+\_\+init()}} call.  
+
+
+
+
+{\ttfamily \#include $<$R\+F.\+h$>$}
+
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{struct_r_f___params_a01d3752799ea4318bbf9d1384cb49b97}{n\+Inactivity\+Timeout}}
+\begin{DoxyCompactList}\small\item\em Inactivity timeout in us, default is infinite. \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{struct_r_f___params_a58dc682aa09acabe6411ea186dd3aebf}{n\+Power\+Up\+Duration}}
+\begin{DoxyCompactList}\small\item\em Measured poweruptime in us or specified startup time (if left default it will measure) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_r_f_8h_a4d2ce6dc70b0f329dc5e249ec10c574a}{R\+F\+\_\+\+Callback}} \mbox{\hyperlink{struct_r_f___params_ae683ebc129d40a11fb9ec7e371f1e11b}{p\+Power\+Cb}}
+\begin{DoxyCompactList}\small\item\em Power up callback. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_r_f_8h_a4d2ce6dc70b0f329dc5e249ec10c574a}{R\+F\+\_\+\+Callback}} \mbox{\hyperlink{struct_r_f___params_ab7be231b23fab2503b8c54b474fba74d}{p\+Err\+Cb}}
+\begin{DoxyCompactList}\small\item\em Error callback. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{struct_r_f___params_a66feaf5103de9d0b45085c7c44ea918b}{b\+Power\+Up\+X\+O\+SC}}
+\begin{DoxyCompactList}\small\item\em Allways enable X\+O\+S\+C\+\_\+\+HF at chip wakeup. \end{DoxyCompactList}\item 
+uint16\+\_\+t \mbox{\hyperlink{struct_r_f___params_a848ebeabce42f87f6a1d4f51f908dbe4}{n\+Power\+Up\+Duration\+Margin}}
+\begin{DoxyCompactList}\small\item\em Powerup duration margin in us. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+RF parameter struct RF parameters are used with the \mbox{\hyperlink{_r_f_8h_a13a7c6f5a2b797e0aac18fecfaba6f64}{R\+F\+\_\+open()}} and \mbox{\hyperlink{_r_f_8h_ab956de3745437cb7a69c4edfb006434e}{R\+F\+\_\+\+Params\+\_\+init()}} call. 
+
+Definition at line 457 of file R\+F.\+h.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{struct_r_f___params_a66feaf5103de9d0b45085c7c44ea918b}\label{struct_r_f___params_a66feaf5103de9d0b45085c7c44ea918b}} 
+\index{RF\_Params@{RF\_Params}!bPowerUpXOSC@{bPowerUpXOSC}}
+\index{bPowerUpXOSC@{bPowerUpXOSC}!RF\_Params@{RF\_Params}}
+\doxysubsubsection{\texorpdfstring{bPowerUpXOSC}{bPowerUpXOSC}}
+{\footnotesize\ttfamily bool R\+F\+\_\+\+Params\+::b\+Power\+Up\+X\+O\+SC}
+
+
+
+Allways enable X\+O\+S\+C\+\_\+\+HF at chip wakeup. 
+
+
+
+Definition at line 462 of file R\+F.\+h.
+
+\mbox{\Hypertarget{struct_r_f___params_a01d3752799ea4318bbf9d1384cb49b97}\label{struct_r_f___params_a01d3752799ea4318bbf9d1384cb49b97}} 
+\index{RF\_Params@{RF\_Params}!nInactivityTimeout@{nInactivityTimeout}}
+\index{nInactivityTimeout@{nInactivityTimeout}!RF\_Params@{RF\_Params}}
+\doxysubsubsection{\texorpdfstring{nInactivityTimeout}{nInactivityTimeout}}
+{\footnotesize\ttfamily uint32\+\_\+t R\+F\+\_\+\+Params\+::n\+Inactivity\+Timeout}
+
+
+
+Inactivity timeout in us, default is infinite. 
+
+
+
+Definition at line 458 of file R\+F.\+h.
+
+\mbox{\Hypertarget{struct_r_f___params_a58dc682aa09acabe6411ea186dd3aebf}\label{struct_r_f___params_a58dc682aa09acabe6411ea186dd3aebf}} 
+\index{RF\_Params@{RF\_Params}!nPowerUpDuration@{nPowerUpDuration}}
+\index{nPowerUpDuration@{nPowerUpDuration}!RF\_Params@{RF\_Params}}
+\doxysubsubsection{\texorpdfstring{nPowerUpDuration}{nPowerUpDuration}}
+{\footnotesize\ttfamily uint32\+\_\+t R\+F\+\_\+\+Params\+::n\+Power\+Up\+Duration}
+
+
+
+Measured poweruptime in us or specified startup time (if left default it will measure) 
+
+
+
+Definition at line 459 of file R\+F.\+h.
+
+\mbox{\Hypertarget{struct_r_f___params_a848ebeabce42f87f6a1d4f51f908dbe4}\label{struct_r_f___params_a848ebeabce42f87f6a1d4f51f908dbe4}} 
+\index{RF\_Params@{RF\_Params}!nPowerUpDurationMargin@{nPowerUpDurationMargin}}
+\index{nPowerUpDurationMargin@{nPowerUpDurationMargin}!RF\_Params@{RF\_Params}}
+\doxysubsubsection{\texorpdfstring{nPowerUpDurationMargin}{nPowerUpDurationMargin}}
+{\footnotesize\ttfamily uint16\+\_\+t R\+F\+\_\+\+Params\+::n\+Power\+Up\+Duration\+Margin}
+
+
+
+Powerup duration margin in us. 
+
+
+
+Definition at line 463 of file R\+F.\+h.
+
+\mbox{\Hypertarget{struct_r_f___params_ab7be231b23fab2503b8c54b474fba74d}\label{struct_r_f___params_ab7be231b23fab2503b8c54b474fba74d}} 
+\index{RF\_Params@{RF\_Params}!pErrCb@{pErrCb}}
+\index{pErrCb@{pErrCb}!RF\_Params@{RF\_Params}}
+\doxysubsubsection{\texorpdfstring{pErrCb}{pErrCb}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_r_f_8h_a4d2ce6dc70b0f329dc5e249ec10c574a}{R\+F\+\_\+\+Callback}} R\+F\+\_\+\+Params\+::p\+Err\+Cb}
+
+
+
+Error callback. 
+
+
+
+Definition at line 461 of file R\+F.\+h.
+
+\mbox{\Hypertarget{struct_r_f___params_ae683ebc129d40a11fb9ec7e371f1e11b}\label{struct_r_f___params_ae683ebc129d40a11fb9ec7e371f1e11b}} 
+\index{RF\_Params@{RF\_Params}!pPowerCb@{pPowerCb}}
+\index{pPowerCb@{pPowerCb}!RF\_Params@{RF\_Params}}
+\doxysubsubsection{\texorpdfstring{pPowerCb}{pPowerCb}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_r_f_8h_a4d2ce6dc70b0f329dc5e249ec10c574a}{R\+F\+\_\+\+Callback}} R\+F\+\_\+\+Params\+::p\+Power\+Cb}
+
+
+
+Power up callback. 
+
+
+
+Definition at line 460 of file R\+F.\+h.
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Drivers/\+R\+F/\mbox{\hyperlink{_r_f_8h}{R\+F.\+h}}\end{DoxyCompactItemize}

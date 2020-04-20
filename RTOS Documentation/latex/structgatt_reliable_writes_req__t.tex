@@ -1,0 +1,100 @@
+\hypertarget{structgatt_reliable_writes_req__t}{}\doxysection{gatt\+Reliable\+Writes\+Req\+\_\+t Struct Reference}
+\label{structgatt_reliable_writes_req__t}\index{gattReliableWritesReq\_t@{gattReliableWritesReq\_t}}
+
+
+{\ttfamily \#include $<$gatt.\+h$>$}
+
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+uint8 \mbox{\hyperlink{structgatt_reliable_writes_req__t_aeff9bd7341d3aa7b6d2e800ad6c331f1}{reliable}}
+\begin{DoxyCompactList}\small\item\em Whether reliable writes requested (always T\+R\+UE for Reliable Writes) \end{DoxyCompactList}\item 
+att\+Prepare\+Write\+Req\+\_\+t $\ast$ \mbox{\hyperlink{structgatt_reliable_writes_req__t_ab2f1f86233b32fbc3d05bb8289879c5c}{p\+Reqs}}
+\begin{DoxyCompactList}\small\item\em Array of Prepare Write Requests (must be allocated) \end{DoxyCompactList}\item 
+uint8 \mbox{\hyperlink{structgatt_reliable_writes_req__t_a7fc33375e896ef886c4c760aa0fa78fe}{num\+Reqs}}
+\begin{DoxyCompactList}\small\item\em Number of Prepare Write Requests. \end{DoxyCompactList}\item 
+uint8 \mbox{\hyperlink{structgatt_reliable_writes_req__t_a217156e2da9e354b3397328502c83005}{index}}
+\begin{DoxyCompactList}\small\item\em Index of last Prepare Write Request sent. \end{DoxyCompactList}\item 
+uint8 \mbox{\hyperlink{structgatt_reliable_writes_req__t_aa64ed9bf8e3669745af3e36df4fe2de1}{flags}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+G\+A\+TT Reliable Writes Request format. Do not change the order of the members. 
+
+Definition at line 196 of file gatt.\+h.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{structgatt_reliable_writes_req__t_aa64ed9bf8e3669745af3e36df4fe2de1}\label{structgatt_reliable_writes_req__t_aa64ed9bf8e3669745af3e36df4fe2de1}} 
+\index{gattReliableWritesReq\_t@{gattReliableWritesReq\_t}!flags@{flags}}
+\index{flags@{flags}!gattReliableWritesReq\_t@{gattReliableWritesReq\_t}}
+\doxysubsubsection{\texorpdfstring{flags}{flags}}
+{\footnotesize\ttfamily uint8 gatt\+Reliable\+Writes\+Req\+\_\+t\+::flags}
+
+0x00 -\/ cancel all prepared writes. 0x01 -\/ immediately write all pending prepared values. 
+
+Definition at line 202 of file gatt.\+h.
+
+\mbox{\Hypertarget{structgatt_reliable_writes_req__t_a217156e2da9e354b3397328502c83005}\label{structgatt_reliable_writes_req__t_a217156e2da9e354b3397328502c83005}} 
+\index{gattReliableWritesReq\_t@{gattReliableWritesReq\_t}!index@{index}}
+\index{index@{index}!gattReliableWritesReq\_t@{gattReliableWritesReq\_t}}
+\doxysubsubsection{\texorpdfstring{index}{index}}
+{\footnotesize\ttfamily uint8 gatt\+Reliable\+Writes\+Req\+\_\+t\+::index}
+
+
+
+Index of last Prepare Write Request sent. 
+
+
+
+Definition at line 201 of file gatt.\+h.
+
+\mbox{\Hypertarget{structgatt_reliable_writes_req__t_a7fc33375e896ef886c4c760aa0fa78fe}\label{structgatt_reliable_writes_req__t_a7fc33375e896ef886c4c760aa0fa78fe}} 
+\index{gattReliableWritesReq\_t@{gattReliableWritesReq\_t}!numReqs@{numReqs}}
+\index{numReqs@{numReqs}!gattReliableWritesReq\_t@{gattReliableWritesReq\_t}}
+\doxysubsubsection{\texorpdfstring{numReqs}{numReqs}}
+{\footnotesize\ttfamily uint8 gatt\+Reliable\+Writes\+Req\+\_\+t\+::num\+Reqs}
+
+
+
+Number of Prepare Write Requests. 
+
+
+
+Definition at line 200 of file gatt.\+h.
+
+\mbox{\Hypertarget{structgatt_reliable_writes_req__t_ab2f1f86233b32fbc3d05bb8289879c5c}\label{structgatt_reliable_writes_req__t_ab2f1f86233b32fbc3d05bb8289879c5c}} 
+\index{gattReliableWritesReq\_t@{gattReliableWritesReq\_t}!pReqs@{pReqs}}
+\index{pReqs@{pReqs}!gattReliableWritesReq\_t@{gattReliableWritesReq\_t}}
+\doxysubsubsection{\texorpdfstring{pReqs}{pReqs}}
+{\footnotesize\ttfamily att\+Prepare\+Write\+Req\+\_\+t$\ast$ gatt\+Reliable\+Writes\+Req\+\_\+t\+::p\+Reqs}
+
+
+
+Array of Prepare Write Requests (must be allocated) 
+
+
+
+Definition at line 199 of file gatt.\+h.
+
+\mbox{\Hypertarget{structgatt_reliable_writes_req__t_aeff9bd7341d3aa7b6d2e800ad6c331f1}\label{structgatt_reliable_writes_req__t_aeff9bd7341d3aa7b6d2e800ad6c331f1}} 
+\index{gattReliableWritesReq\_t@{gattReliableWritesReq\_t}!reliable@{reliable}}
+\index{reliable@{reliable}!gattReliableWritesReq\_t@{gattReliableWritesReq\_t}}
+\doxysubsubsection{\texorpdfstring{reliable}{reliable}}
+{\footnotesize\ttfamily uint8 gatt\+Reliable\+Writes\+Req\+\_\+t\+::reliable}
+
+
+
+Whether reliable writes requested (always T\+R\+UE for Reliable Writes) 
+
+
+
+Definition at line 198 of file gatt.\+h.
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Include/\mbox{\hyperlink{gatt_8h}{gatt.\+h}}\end{DoxyCompactItemize}

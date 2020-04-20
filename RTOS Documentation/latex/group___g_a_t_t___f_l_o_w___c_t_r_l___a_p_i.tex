@@ -1,0 +1,63 @@
+\hypertarget{group___g_a_t_t___f_l_o_w___c_t_r_l___a_p_i}{}\doxysection{G\+A\+TT Flow Control A\+PI Functions}
+\label{group___g_a_t_t___f_l_o_w___c_t_r_l___a_p_i}\index{GATT Flow Control API Functions@{GATT Flow Control API Functions}}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{group___g_a_t_t___f_l_o_w___c_t_r_l___a_p_i_ga186d864b6591723505b3f0ff6d94ecb0}{G\+A\+T\+T\+\_\+\+Set\+Host\+To\+App\+Flow\+Ctrl}} (uint16 heap\+Size, uint8 flow\+Ctrl\+Mode)
+\begin{DoxyCompactList}\small\item\em This A\+PI is used by the Application to turn flow control on or off for G\+A\+TT messages sent from the Host to the Application. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___g_a_t_t___f_l_o_w___c_t_r_l___a_p_i_gaf879443ffb9fa104d6905246a2337828}{G\+A\+T\+T\+\_\+\+App\+Completed\+Msg}} (\mbox{\hyperlink{structgatt_msg_event__t}{gatt\+Msg\+Event\+\_\+t}} $\ast$p\+Msg)
+\begin{DoxyCompactList}\small\item\em This A\+PI is used by the Application to notify G\+A\+TT that the processing of a message has been completed. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{group___g_a_t_t___f_l_o_w___c_t_r_l___a_p_i_gaf879443ffb9fa104d6905246a2337828}\label{group___g_a_t_t___f_l_o_w___c_t_r_l___a_p_i_gaf879443ffb9fa104d6905246a2337828}} 
+\index{GATT Flow Control API Functions@{GATT Flow Control API Functions}!GATT\_AppCompletedMsg@{GATT\_AppCompletedMsg}}
+\index{GATT\_AppCompletedMsg@{GATT\_AppCompletedMsg}!GATT Flow Control API Functions@{GATT Flow Control API Functions}}
+\doxysubsubsection{\texorpdfstring{GATT\_AppCompletedMsg()}{GATT\_AppCompletedMsg()}}
+{\footnotesize\ttfamily void G\+A\+T\+T\+\_\+\+App\+Completed\+Msg (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structgatt_msg_event__t}{gatt\+Msg\+Event\+\_\+t}} $\ast$}]{p\+Msg }\end{DoxyParamCaption})}
+
+
+
+This A\+PI is used by the Application to notify G\+A\+TT that the processing of a message has been completed. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Msg} & -\/ pointer to the processed G\+A\+TT message\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+Definition at line 1171 of file icall\+\_\+api.\+c.
+
+\mbox{\Hypertarget{group___g_a_t_t___f_l_o_w___c_t_r_l___a_p_i_ga186d864b6591723505b3f0ff6d94ecb0}\label{group___g_a_t_t___f_l_o_w___c_t_r_l___a_p_i_ga186d864b6591723505b3f0ff6d94ecb0}} 
+\index{GATT Flow Control API Functions@{GATT Flow Control API Functions}!GATT\_SetHostToAppFlowCtrl@{GATT\_SetHostToAppFlowCtrl}}
+\index{GATT\_SetHostToAppFlowCtrl@{GATT\_SetHostToAppFlowCtrl}!GATT Flow Control API Functions@{GATT Flow Control API Functions}}
+\doxysubsubsection{\texorpdfstring{GATT\_SetHostToAppFlowCtrl()}{GATT\_SetHostToAppFlowCtrl()}}
+{\footnotesize\ttfamily void G\+A\+T\+T\+\_\+\+Set\+Host\+To\+App\+Flow\+Ctrl (\begin{DoxyParamCaption}\item[{uint16}]{heap\+Size,  }\item[{uint8}]{flow\+Ctrl\+Mode }\end{DoxyParamCaption})}
+
+
+
+This A\+PI is used by the Application to turn flow control on or off for G\+A\+TT messages sent from the Host to the Application. 
+
+Note\+: If the flow control is enabled then the Application must call the \mbox{\hyperlink{group___g_a_t_t___f_l_o_w___c_t_r_l___a_p_i_gaf879443ffb9fa104d6905246a2337828}{G\+A\+T\+T\+\_\+\+App\+Completed\+Msg()}} A\+PI when it completes processing an incoming G\+A\+TT message.
+
+
+\begin{DoxyParams}{Parameters}
+{\em heap\+Size} & -\/ internal heap size \\
+\hline
+{\em flow\+Ctrl\+Mode} & -\/ flow control mode\+: T\+R\+UE or F\+A\+L\+SE\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+Definition at line 1144 of file icall\+\_\+api.\+c.
+

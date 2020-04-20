@@ -1,0 +1,158 @@
+\hypertarget{_display_u_a_r_t_8h}{}\doxysection{Drivers/\+Display/\+Display\+U\+A\+RT.h File Reference}
+\label{_display_u_a_r_t_8h}\index{Drivers/Display/DisplayUART.h@{Drivers/Display/DisplayUART.h}}
+{\ttfamily \#include $<$ti/sysbios/knl/\+Semaphore.\+h$>$}\newline
+{\ttfamily \#include $<$ti/drivers/\+U\+A\+R\+T.\+h$>$}\newline
+{\ttfamily \#include $<$ti/mw/display/\+Display.\+h$>$}\newline
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_display_uart___h_w_attrs}{Display\+Uart\+\_\+\+H\+W\+Attrs}}
+\item 
+struct \mbox{\hyperlink{struct_display_uart___object}{Display\+Uart\+\_\+\+Object}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \mbox{\hyperlink{struct_display_uart___h_w_attrs}{Display\+Uart\+\_\+\+H\+W\+Attrs}} \mbox{\hyperlink{_display_u_a_r_t_8h_a580aa80a2ee2012e4041fb21cbcea798}{Display\+Uart\+\_\+\+H\+W\+Attrs}}
+\item 
+typedef struct \mbox{\hyperlink{struct_display_uart___object}{Display\+Uart\+\_\+\+Object}} \mbox{\hyperlink{_display_u_a_r_t_8h_ae74a68cef9ae376da9597ebb693d9dc8}{Display\+Uart\+\_\+\+Object}}
+\item 
+typedef struct \mbox{\hyperlink{struct_display_uart___object}{Display\+Uart\+\_\+\+Object}} $\ast$ \mbox{\hyperlink{_display_u_a_r_t_8h_af5f02e5764d31e98b6c9862c07fa1d0b}{Display\+Uart\+\_\+\+Handle}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_display_8h_a045a26811755aabf1886d982c49e54ab}{Display\+\_\+\+Handle}} \mbox{\hyperlink{_display_u_a_r_t_8h_a58c8e11f0be124287ada48de65c848d9}{Display\+Uart\+\_\+open}} (\mbox{\hyperlink{_display_8h_a045a26811755aabf1886d982c49e54ab}{Display\+\_\+\+Handle}}, \mbox{\hyperlink{struct_display___params}{Display\+\_\+\+Params}} $\ast$params)
+\item 
+void \mbox{\hyperlink{_display_u_a_r_t_8h_a3adb09a819a500fb7c236747067bea0c}{Display\+Uart\+\_\+clear}} (\mbox{\hyperlink{_display_8h_a045a26811755aabf1886d982c49e54ab}{Display\+\_\+\+Handle}} handle)
+\item 
+void \mbox{\hyperlink{_display_u_a_r_t_8h_aefc6253ba3fefbe78c19f5f412297e6d}{Display\+Uart\+\_\+clear\+Lines}} (\mbox{\hyperlink{_display_8h_a045a26811755aabf1886d982c49e54ab}{Display\+\_\+\+Handle}} handle, uint8\+\_\+t from\+Line, uint8\+\_\+t to\+Line)
+\item 
+void \mbox{\hyperlink{_display_u_a_r_t_8h_a7077c4aa704496057a17e156851cc9f8}{Display\+Uart\+\_\+put5}} (\mbox{\hyperlink{_display_8h_a045a26811755aabf1886d982c49e54ab}{Display\+\_\+\+Handle}} handle, uint8\+\_\+t line, uint8\+\_\+t column, uintptr\+\_\+t fmt, uintptr\+\_\+t a0, uintptr\+\_\+t a1, uintptr\+\_\+t a2, uintptr\+\_\+t a3, uintptr\+\_\+t a4)
+\item 
+void \mbox{\hyperlink{_display_u_a_r_t_8h_a815c5303af098b7fe30725cdbb3456c0}{Display\+Uart\+\_\+close}} (\mbox{\hyperlink{_display_8h_a045a26811755aabf1886d982c49e54ab}{Display\+\_\+\+Handle}})
+\item 
+int \mbox{\hyperlink{_display_u_a_r_t_8h_ac7d0522532a79aa97c808f1a01d40b04}{Display\+Uart\+\_\+control}} (\mbox{\hyperlink{_display_8h_a045a26811755aabf1886d982c49e54ab}{Display\+\_\+\+Handle}} handle, unsigned int cmd, void $\ast$arg)
+\item 
+unsigned int \mbox{\hyperlink{_display_u_a_r_t_8h_aa7e1e84aec144b836ae9ccc26cadb60c}{Display\+Uart\+\_\+get\+Type}} (void)
+\begin{DoxyCompactList}\small\item\em Returns type of transport. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const \mbox{\hyperlink{struct_display___fxn_table}{Display\+\_\+\+Fxn\+Table}} \mbox{\hyperlink{_display_u_a_r_t_8h_a10c6aa83bc55d8ebc6f8ff01da3fde4e}{Display\+Uart\+\_\+fxn\+Table}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{_display_u_a_r_t_8h_af5f02e5764d31e98b6c9862c07fa1d0b}\label{_display_u_a_r_t_8h_af5f02e5764d31e98b6c9862c07fa1d0b}} 
+\index{DisplayUART.h@{DisplayUART.h}!DisplayUart\_Handle@{DisplayUart\_Handle}}
+\index{DisplayUart\_Handle@{DisplayUart\_Handle}!DisplayUART.h@{DisplayUART.h}}
+\doxysubsubsection{\texorpdfstring{DisplayUart\_Handle}{DisplayUart\_Handle}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_display_uart___object}{Display\+Uart\+\_\+\+Object}} $\ast$ \mbox{\hyperlink{_display_u_a_r_t_8h_af5f02e5764d31e98b6c9862c07fa1d0b}{Display\+Uart\+\_\+\+Handle}}}
+
+\mbox{\Hypertarget{_display_u_a_r_t_8h_a580aa80a2ee2012e4041fb21cbcea798}\label{_display_u_a_r_t_8h_a580aa80a2ee2012e4041fb21cbcea798}} 
+\index{DisplayUART.h@{DisplayUART.h}!DisplayUart\_HWAttrs@{DisplayUart\_HWAttrs}}
+\index{DisplayUart\_HWAttrs@{DisplayUart\_HWAttrs}!DisplayUART.h@{DisplayUART.h}}
+\doxysubsubsection{\texorpdfstring{DisplayUart\_HWAttrs}{DisplayUart\_HWAttrs}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_display_uart___h_w_attrs}{Display\+Uart\+\_\+\+H\+W\+Attrs}} \mbox{\hyperlink{struct_display_uart___h_w_attrs}{Display\+Uart\+\_\+\+H\+W\+Attrs}}}
+
+\mbox{\Hypertarget{_display_u_a_r_t_8h_ae74a68cef9ae376da9597ebb693d9dc8}\label{_display_u_a_r_t_8h_ae74a68cef9ae376da9597ebb693d9dc8}} 
+\index{DisplayUART.h@{DisplayUART.h}!DisplayUart\_Object@{DisplayUart\_Object}}
+\index{DisplayUart\_Object@{DisplayUart\_Object}!DisplayUART.h@{DisplayUART.h}}
+\doxysubsubsection{\texorpdfstring{DisplayUart\_Object}{DisplayUart\_Object}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_display_uart___object}{Display\+Uart\+\_\+\+Object}} \mbox{\hyperlink{struct_display_uart___object}{Display\+Uart\+\_\+\+Object}}}
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{_display_u_a_r_t_8h_a3adb09a819a500fb7c236747067bea0c}\label{_display_u_a_r_t_8h_a3adb09a819a500fb7c236747067bea0c}} 
+\index{DisplayUART.h@{DisplayUART.h}!DisplayUart\_clear@{DisplayUart\_clear}}
+\index{DisplayUart\_clear@{DisplayUart\_clear}!DisplayUART.h@{DisplayUART.h}}
+\doxysubsubsection{\texorpdfstring{DisplayUart\_clear()}{DisplayUart\_clear()}}
+{\footnotesize\ttfamily void Display\+Uart\+\_\+clear (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_display_8h_a045a26811755aabf1886d982c49e54ab}{Display\+\_\+\+Handle}}}]{handle }\end{DoxyParamCaption})}
+
+
+
+Definition at line 133 of file Display\+U\+A\+R\+T.\+c.
+
+\mbox{\Hypertarget{_display_u_a_r_t_8h_aefc6253ba3fefbe78c19f5f412297e6d}\label{_display_u_a_r_t_8h_aefc6253ba3fefbe78c19f5f412297e6d}} 
+\index{DisplayUART.h@{DisplayUART.h}!DisplayUart\_clearLines@{DisplayUart\_clearLines}}
+\index{DisplayUart\_clearLines@{DisplayUart\_clearLines}!DisplayUART.h@{DisplayUART.h}}
+\doxysubsubsection{\texorpdfstring{DisplayUart\_clearLines()}{DisplayUart\_clearLines()}}
+{\footnotesize\ttfamily void Display\+Uart\+\_\+clear\+Lines (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_display_8h_a045a26811755aabf1886d982c49e54ab}{Display\+\_\+\+Handle}}}]{handle,  }\item[{uint8\+\_\+t}]{from\+Line,  }\item[{uint8\+\_\+t}]{to\+Line }\end{DoxyParamCaption})}
+
+
+
+Definition at line 149 of file Display\+U\+A\+R\+T.\+c.
+
+\mbox{\Hypertarget{_display_u_a_r_t_8h_a815c5303af098b7fe30725cdbb3456c0}\label{_display_u_a_r_t_8h_a815c5303af098b7fe30725cdbb3456c0}} 
+\index{DisplayUART.h@{DisplayUART.h}!DisplayUart\_close@{DisplayUart\_close}}
+\index{DisplayUart\_close@{DisplayUart\_close}!DisplayUART.h@{DisplayUART.h}}
+\doxysubsubsection{\texorpdfstring{DisplayUart\_close()}{DisplayUart\_close()}}
+{\footnotesize\ttfamily void Display\+Uart\+\_\+close (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_display_8h_a045a26811755aabf1886d982c49e54ab}{Display\+\_\+\+Handle}}}]{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 200 of file Display\+U\+A\+R\+T.\+c.
+
+\mbox{\Hypertarget{_display_u_a_r_t_8h_ac7d0522532a79aa97c808f1a01d40b04}\label{_display_u_a_r_t_8h_ac7d0522532a79aa97c808f1a01d40b04}} 
+\index{DisplayUART.h@{DisplayUART.h}!DisplayUart\_control@{DisplayUart\_control}}
+\index{DisplayUart\_control@{DisplayUart\_control}!DisplayUART.h@{DisplayUART.h}}
+\doxysubsubsection{\texorpdfstring{DisplayUart\_control()}{DisplayUart\_control()}}
+{\footnotesize\ttfamily int Display\+Uart\+\_\+control (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_display_8h_a045a26811755aabf1886d982c49e54ab}{Display\+\_\+\+Handle}}}]{handle,  }\item[{unsigned int}]{cmd,  }\item[{void $\ast$}]{arg }\end{DoxyParamCaption})}
+
+
+
+Definition at line 224 of file Display\+U\+A\+R\+T.\+c.
+
+\mbox{\Hypertarget{_display_u_a_r_t_8h_aa7e1e84aec144b836ae9ccc26cadb60c}\label{_display_u_a_r_t_8h_aa7e1e84aec144b836ae9ccc26cadb60c}} 
+\index{DisplayUART.h@{DisplayUART.h}!DisplayUart\_getType@{DisplayUart\_getType}}
+\index{DisplayUart\_getType@{DisplayUart\_getType}!DisplayUART.h@{DisplayUART.h}}
+\doxysubsubsection{\texorpdfstring{DisplayUart\_getType()}{DisplayUart\_getType()}}
+{\footnotesize\ttfamily unsigned int Display\+Uart\+\_\+get\+Type (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Returns type of transport. 
+
+\begin{DoxyReturn}{Returns}
+Display type U\+A\+RT 
+\end{DoxyReturn}
+
+
+Definition at line 236 of file Display\+U\+A\+R\+T.\+c.
+
+\mbox{\Hypertarget{_display_u_a_r_t_8h_a58c8e11f0be124287ada48de65c848d9}\label{_display_u_a_r_t_8h_a58c8e11f0be124287ada48de65c848d9}} 
+\index{DisplayUART.h@{DisplayUART.h}!DisplayUart\_open@{DisplayUart\_open}}
+\index{DisplayUart\_open@{DisplayUart\_open}!DisplayUART.h@{DisplayUART.h}}
+\doxysubsubsection{\texorpdfstring{DisplayUart\_open()}{DisplayUart\_open()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_display_8h_a045a26811755aabf1886d982c49e54ab}{Display\+\_\+\+Handle}} Display\+Uart\+\_\+open (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_display_8h_a045a26811755aabf1886d982c49e54ab}{Display\+\_\+\+Handle}}}]{,  }\item[{\mbox{\hyperlink{struct_display___params}{Display\+\_\+\+Params}} $\ast$}]{params }\end{DoxyParamCaption})}
+
+
+
+Definition at line 97 of file Display\+U\+A\+R\+T.\+c.
+
+\mbox{\Hypertarget{_display_u_a_r_t_8h_a7077c4aa704496057a17e156851cc9f8}\label{_display_u_a_r_t_8h_a7077c4aa704496057a17e156851cc9f8}} 
+\index{DisplayUART.h@{DisplayUART.h}!DisplayUart\_put5@{DisplayUart\_put5}}
+\index{DisplayUart\_put5@{DisplayUart\_put5}!DisplayUART.h@{DisplayUART.h}}
+\doxysubsubsection{\texorpdfstring{DisplayUart\_put5()}{DisplayUart\_put5()}}
+{\footnotesize\ttfamily void Display\+Uart\+\_\+put5 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_display_8h_a045a26811755aabf1886d982c49e54ab}{Display\+\_\+\+Handle}}}]{handle,  }\item[{uint8\+\_\+t}]{line,  }\item[{uint8\+\_\+t}]{column,  }\item[{uintptr\+\_\+t}]{fmt,  }\item[{uintptr\+\_\+t}]{a0,  }\item[{uintptr\+\_\+t}]{a1,  }\item[{uintptr\+\_\+t}]{a2,  }\item[{uintptr\+\_\+t}]{a3,  }\item[{uintptr\+\_\+t}]{a4 }\end{DoxyParamCaption})}
+
+
+
+Definition at line 168 of file Display\+U\+A\+R\+T.\+c.
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{_display_u_a_r_t_8h_a10c6aa83bc55d8ebc6f8ff01da3fde4e}\label{_display_u_a_r_t_8h_a10c6aa83bc55d8ebc6f8ff01da3fde4e}} 
+\index{DisplayUART.h@{DisplayUART.h}!DisplayUart\_fxnTable@{DisplayUart\_fxnTable}}
+\index{DisplayUart\_fxnTable@{DisplayUart\_fxnTable}!DisplayUART.h@{DisplayUART.h}}
+\doxysubsubsection{\texorpdfstring{DisplayUart\_fxnTable}{DisplayUart\_fxnTable}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{struct_display___fxn_table}{Display\+\_\+\+Fxn\+Table}} Display\+Uart\+\_\+fxn\+Table}
+
+
+
+Definition at line 70 of file Display\+U\+A\+R\+T.\+c.
+

@@ -1,0 +1,384 @@
+\hypertarget{gapgattserver_8h}{}\doxysection{Include/gapgattserver.h File Reference}
+\label{gapgattserver_8h}\index{Include/gapgattserver.h@{Include/gapgattserver.h}}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structggs_app_c_bs__t}{ggs\+App\+C\+Bs\+\_\+t}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{gapgattserver_8h_af61e23036a464a4299b13309cb44b11d}{G\+A\+P\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+N\+A\+M\+E\+\_\+\+L\+EN}}~21
+\item 
+\#define \mbox{\hyperlink{gapgattserver_8h_a8028d2a55eabc426e92f04523a25eb92}{G\+A\+P\+\_\+\+P\+R\+I\+V\+A\+C\+Y\+\_\+\+D\+I\+S\+A\+B\+L\+ED}}~0x00
+\item 
+\#define \mbox{\hyperlink{gapgattserver_8h_aaa4a94ecdfaeaf7fd02ef55c2358482f}{G\+A\+P\+\_\+\+P\+R\+I\+V\+A\+C\+Y\+\_\+\+E\+N\+A\+B\+L\+ED}}~0x01
+\item 
+\#define \mbox{\hyperlink{gapgattserver_8h_a32f221f846f0feda64490a0151cc17de}{G\+G\+S\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+N\+A\+M\+E\+\_\+\+A\+TT}}~0
+\item 
+\#define \mbox{\hyperlink{gapgattserver_8h_a8fc4927311308ffd0ffb76e6596cb7f4}{G\+G\+S\+\_\+\+A\+P\+P\+E\+A\+R\+A\+N\+C\+E\+\_\+\+A\+TT}}~1
+\item 
+\#define \mbox{\hyperlink{gapgattserver_8h_afedf165f0a795762d8a29c863447c81c}{G\+G\+S\+\_\+\+P\+E\+R\+I\+\_\+\+P\+R\+I\+V\+A\+C\+Y\+\_\+\+F\+L\+A\+G\+\_\+\+A\+TT}}~2
+\item 
+\#define \mbox{\hyperlink{gapgattserver_8h_a8a471fefacd5f4ba7d786ee8c2bf3eea}{G\+G\+S\+\_\+\+R\+E\+C\+O\+N\+N\+C\+T\+\_\+\+A\+D\+D\+R\+\_\+\+A\+TT}}~3
+\item 
+\#define \mbox{\hyperlink{gapgattserver_8h_a8310649c81db3fc0ce061d7be733a357}{G\+G\+S\+\_\+\+P\+E\+R\+I\+\_\+\+C\+O\+N\+N\+\_\+\+P\+A\+R\+A\+M\+\_\+\+A\+TT}}~4
+\item 
+\#define \mbox{\hyperlink{gapgattserver_8h_a76bbed41340bb01313cd9a40a2d33c4e}{G\+G\+S\+\_\+\+P\+E\+R\+I\+\_\+\+P\+R\+I\+V\+A\+C\+Y\+\_\+\+F\+L\+A\+G\+\_\+\+P\+R\+O\+PS}}~5
+\item 
+\#define \mbox{\hyperlink{gapgattserver_8h_a134112a5f7dc1c9a8499307b6f27a6bb}{G\+G\+S\+\_\+\+W\+\_\+\+P\+E\+R\+M\+I\+T\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+N\+A\+M\+E\+\_\+\+A\+TT}}~6
+\item 
+\#define \mbox{\hyperlink{gapgattserver_8h_a9d08b760ed58c6c6350fe877a8d4e842}{G\+G\+S\+\_\+\+W\+\_\+\+P\+E\+R\+M\+I\+T\+\_\+\+A\+P\+P\+E\+A\+R\+A\+N\+C\+E\+\_\+\+A\+TT}}~7
+\item 
+\#define \mbox{\hyperlink{gapgattserver_8h_ab1b4858d8da3de9d7b8aae7810412447}{G\+G\+S\+\_\+\+W\+\_\+\+P\+E\+R\+M\+I\+T\+\_\+\+P\+R\+I\+V\+A\+C\+Y\+\_\+\+F\+L\+A\+G\+\_\+\+A\+TT}}~8
+\item 
+\#define \mbox{\hyperlink{gapgattserver_8h_a55d855ee6b0af51e88cfc0851f72e369}{G\+G\+S\+\_\+\+C\+E\+N\+T\+\_\+\+A\+D\+D\+R\+\_\+\+R\+E\+S\+\_\+\+A\+TT}}~9
+\item 
+\#define \mbox{\hyperlink{gapgattserver_8h_af79db39c6e86afc70e621fe472dc4589}{G\+A\+P\+\_\+\+S\+E\+R\+V\+I\+CE}}~0x00000001
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef void($\ast$ \mbox{\hyperlink{gapgattserver_8h_a2cf35140c0b400918a30a2410272f63d}{ggs\+Attr\+Value\+Change\+\_\+t}}) (uint16 conn\+Handle, uint8 attr\+Id)
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+b\+Status\+\_\+t \mbox{\hyperlink{gapgattserver_8h_aa199a7c7fe4464c84e4440135d2e91f8}{G\+G\+S\+\_\+\+Set\+Parameter}} (uint8 param, uint8 \mbox{\hyperlink{icall__apimsg_8h_a8ccac76f35f79d74917e1c5dd6f69fea}{len}}, void $\ast$value)
+\begin{DoxyCompactList}\small\item\em Set a G\+AP G\+A\+TT Server parameter. \end{DoxyCompactList}\item 
+b\+Status\+\_\+t \mbox{\hyperlink{gapgattserver_8h_a4ae1b24aef90dc8dd36dcfe7592b395c}{G\+G\+S\+\_\+\+Get\+Parameter}} (uint8 param, void $\ast$value)
+\begin{DoxyCompactList}\small\item\em Get a G\+AP G\+A\+TT Server parameter. \end{DoxyCompactList}\item 
+b\+Status\+\_\+t \mbox{\hyperlink{gapgattserver_8h_a378d66bb6f1fc9863df3727a6920c752}{G\+G\+S\+\_\+\+Add\+Service}} (uint32 services)
+\begin{DoxyCompactList}\small\item\em Add function for the G\+AP G\+A\+TT Service. \end{DoxyCompactList}\item 
+b\+Status\+\_\+t \mbox{\hyperlink{gapgattserver_8h_adb5d755b466055f8a6d167a4b881c59f}{G\+G\+S\+\_\+\+Del\+Service}} (uint32 services)
+\begin{DoxyCompactList}\small\item\em Delete function for the G\+AP G\+A\+TT Service. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{gapgattserver_8h_a10a83d35cf8405bd4e4b5f34c72fa66e}{G\+G\+S\+\_\+\+Register\+App\+C\+Bs}} (\mbox{\hyperlink{structggs_app_c_bs__t}{ggs\+App\+C\+Bs\+\_\+t}} $\ast$app\+Callbacks)
+\begin{DoxyCompactList}\small\item\em Registers the application callback function. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{gapgattserver_8h_abd1a14b5364121531cf5004e98db002d}{G\+G\+S\+\_\+\+Set\+Param\+Value}} (uint16 value)
+\begin{DoxyCompactList}\small\item\em Set a G\+GS Parameter value. Use this function to change the default G\+GS parameter values. \end{DoxyCompactList}\item 
+uint16 \mbox{\hyperlink{gapgattserver_8h_a89e9d4cef43e2f3e7c397f12b53667c2}{G\+G\+S\+\_\+\+Get\+Param\+Value}} (void)
+\begin{DoxyCompactList}\small\item\em Get a G\+GS Parameter value. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{gapgattserver_8h_af61e23036a464a4299b13309cb44b11d}\label{gapgattserver_8h_af61e23036a464a4299b13309cb44b11d}} 
+\index{gapgattserver.h@{gapgattserver.h}!GAP\_DEVICE\_NAME\_LEN@{GAP\_DEVICE\_NAME\_LEN}}
+\index{GAP\_DEVICE\_NAME\_LEN@{GAP\_DEVICE\_NAME\_LEN}!gapgattserver.h@{gapgattserver.h}}
+\doxysubsubsection{\texorpdfstring{GAP\_DEVICE\_NAME\_LEN}{GAP\_DEVICE\_NAME\_LEN}}
+{\footnotesize\ttfamily \#define G\+A\+P\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+N\+A\+M\+E\+\_\+\+L\+EN~21}
+
+
+
+Definition at line 65 of file gapgattserver.\+h.
+
+\mbox{\Hypertarget{gapgattserver_8h_a8028d2a55eabc426e92f04523a25eb92}\label{gapgattserver_8h_a8028d2a55eabc426e92f04523a25eb92}} 
+\index{gapgattserver.h@{gapgattserver.h}!GAP\_PRIVACY\_DISABLED@{GAP\_PRIVACY\_DISABLED}}
+\index{GAP\_PRIVACY\_DISABLED@{GAP\_PRIVACY\_DISABLED}!gapgattserver.h@{gapgattserver.h}}
+\doxysubsubsection{\texorpdfstring{GAP\_PRIVACY\_DISABLED}{GAP\_PRIVACY\_DISABLED}}
+{\footnotesize\ttfamily \#define G\+A\+P\+\_\+\+P\+R\+I\+V\+A\+C\+Y\+\_\+\+D\+I\+S\+A\+B\+L\+ED~0x00}
+
+
+
+Definition at line 68 of file gapgattserver.\+h.
+
+\mbox{\Hypertarget{gapgattserver_8h_aaa4a94ecdfaeaf7fd02ef55c2358482f}\label{gapgattserver_8h_aaa4a94ecdfaeaf7fd02ef55c2358482f}} 
+\index{gapgattserver.h@{gapgattserver.h}!GAP\_PRIVACY\_ENABLED@{GAP\_PRIVACY\_ENABLED}}
+\index{GAP\_PRIVACY\_ENABLED@{GAP\_PRIVACY\_ENABLED}!gapgattserver.h@{gapgattserver.h}}
+\doxysubsubsection{\texorpdfstring{GAP\_PRIVACY\_ENABLED}{GAP\_PRIVACY\_ENABLED}}
+{\footnotesize\ttfamily \#define G\+A\+P\+\_\+\+P\+R\+I\+V\+A\+C\+Y\+\_\+\+E\+N\+A\+B\+L\+ED~0x01}
+
+
+
+Definition at line 69 of file gapgattserver.\+h.
+
+\mbox{\Hypertarget{gapgattserver_8h_af79db39c6e86afc70e621fe472dc4589}\label{gapgattserver_8h_af79db39c6e86afc70e621fe472dc4589}} 
+\index{gapgattserver.h@{gapgattserver.h}!GAP\_SERVICE@{GAP\_SERVICE}}
+\index{GAP\_SERVICE@{GAP\_SERVICE}!gapgattserver.h@{gapgattserver.h}}
+\doxysubsubsection{\texorpdfstring{GAP\_SERVICE}{GAP\_SERVICE}}
+{\footnotesize\ttfamily \#define G\+A\+P\+\_\+\+S\+E\+R\+V\+I\+CE~0x00000001}
+
+
+
+Definition at line 84 of file gapgattserver.\+h.
+
+\mbox{\Hypertarget{gapgattserver_8h_a8fc4927311308ffd0ffb76e6596cb7f4}\label{gapgattserver_8h_a8fc4927311308ffd0ffb76e6596cb7f4}} 
+\index{gapgattserver.h@{gapgattserver.h}!GGS\_APPEARANCE\_ATT@{GGS\_APPEARANCE\_ATT}}
+\index{GGS\_APPEARANCE\_ATT@{GGS\_APPEARANCE\_ATT}!gapgattserver.h@{gapgattserver.h}}
+\doxysubsubsection{\texorpdfstring{GGS\_APPEARANCE\_ATT}{GGS\_APPEARANCE\_ATT}}
+{\footnotesize\ttfamily \#define G\+G\+S\+\_\+\+A\+P\+P\+E\+A\+R\+A\+N\+C\+E\+\_\+\+A\+TT~1}
+
+
+
+Definition at line 73 of file gapgattserver.\+h.
+
+\mbox{\Hypertarget{gapgattserver_8h_a55d855ee6b0af51e88cfc0851f72e369}\label{gapgattserver_8h_a55d855ee6b0af51e88cfc0851f72e369}} 
+\index{gapgattserver.h@{gapgattserver.h}!GGS\_CENT\_ADDR\_RES\_ATT@{GGS\_CENT\_ADDR\_RES\_ATT}}
+\index{GGS\_CENT\_ADDR\_RES\_ATT@{GGS\_CENT\_ADDR\_RES\_ATT}!gapgattserver.h@{gapgattserver.h}}
+\doxysubsubsection{\texorpdfstring{GGS\_CENT\_ADDR\_RES\_ATT}{GGS\_CENT\_ADDR\_RES\_ATT}}
+{\footnotesize\ttfamily \#define G\+G\+S\+\_\+\+C\+E\+N\+T\+\_\+\+A\+D\+D\+R\+\_\+\+R\+E\+S\+\_\+\+A\+TT~9}
+
+
+
+Definition at line 81 of file gapgattserver.\+h.
+
+\mbox{\Hypertarget{gapgattserver_8h_a32f221f846f0feda64490a0151cc17de}\label{gapgattserver_8h_a32f221f846f0feda64490a0151cc17de}} 
+\index{gapgattserver.h@{gapgattserver.h}!GGS\_DEVICE\_NAME\_ATT@{GGS\_DEVICE\_NAME\_ATT}}
+\index{GGS\_DEVICE\_NAME\_ATT@{GGS\_DEVICE\_NAME\_ATT}!gapgattserver.h@{gapgattserver.h}}
+\doxysubsubsection{\texorpdfstring{GGS\_DEVICE\_NAME\_ATT}{GGS\_DEVICE\_NAME\_ATT}}
+{\footnotesize\ttfamily \#define G\+G\+S\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+N\+A\+M\+E\+\_\+\+A\+TT~0}
+
+
+
+Definition at line 72 of file gapgattserver.\+h.
+
+\mbox{\Hypertarget{gapgattserver_8h_a8310649c81db3fc0ce061d7be733a357}\label{gapgattserver_8h_a8310649c81db3fc0ce061d7be733a357}} 
+\index{gapgattserver.h@{gapgattserver.h}!GGS\_PERI\_CONN\_PARAM\_ATT@{GGS\_PERI\_CONN\_PARAM\_ATT}}
+\index{GGS\_PERI\_CONN\_PARAM\_ATT@{GGS\_PERI\_CONN\_PARAM\_ATT}!gapgattserver.h@{gapgattserver.h}}
+\doxysubsubsection{\texorpdfstring{GGS\_PERI\_CONN\_PARAM\_ATT}{GGS\_PERI\_CONN\_PARAM\_ATT}}
+{\footnotesize\ttfamily \#define G\+G\+S\+\_\+\+P\+E\+R\+I\+\_\+\+C\+O\+N\+N\+\_\+\+P\+A\+R\+A\+M\+\_\+\+A\+TT~4}
+
+
+
+Definition at line 76 of file gapgattserver.\+h.
+
+\mbox{\Hypertarget{gapgattserver_8h_afedf165f0a795762d8a29c863447c81c}\label{gapgattserver_8h_afedf165f0a795762d8a29c863447c81c}} 
+\index{gapgattserver.h@{gapgattserver.h}!GGS\_PERI\_PRIVACY\_FLAG\_ATT@{GGS\_PERI\_PRIVACY\_FLAG\_ATT}}
+\index{GGS\_PERI\_PRIVACY\_FLAG\_ATT@{GGS\_PERI\_PRIVACY\_FLAG\_ATT}!gapgattserver.h@{gapgattserver.h}}
+\doxysubsubsection{\texorpdfstring{GGS\_PERI\_PRIVACY\_FLAG\_ATT}{GGS\_PERI\_PRIVACY\_FLAG\_ATT}}
+{\footnotesize\ttfamily \#define G\+G\+S\+\_\+\+P\+E\+R\+I\+\_\+\+P\+R\+I\+V\+A\+C\+Y\+\_\+\+F\+L\+A\+G\+\_\+\+A\+TT~2}
+
+
+
+Definition at line 74 of file gapgattserver.\+h.
+
+\mbox{\Hypertarget{gapgattserver_8h_a76bbed41340bb01313cd9a40a2d33c4e}\label{gapgattserver_8h_a76bbed41340bb01313cd9a40a2d33c4e}} 
+\index{gapgattserver.h@{gapgattserver.h}!GGS\_PERI\_PRIVACY\_FLAG\_PROPS@{GGS\_PERI\_PRIVACY\_FLAG\_PROPS}}
+\index{GGS\_PERI\_PRIVACY\_FLAG\_PROPS@{GGS\_PERI\_PRIVACY\_FLAG\_PROPS}!gapgattserver.h@{gapgattserver.h}}
+\doxysubsubsection{\texorpdfstring{GGS\_PERI\_PRIVACY\_FLAG\_PROPS}{GGS\_PERI\_PRIVACY\_FLAG\_PROPS}}
+{\footnotesize\ttfamily \#define G\+G\+S\+\_\+\+P\+E\+R\+I\+\_\+\+P\+R\+I\+V\+A\+C\+Y\+\_\+\+F\+L\+A\+G\+\_\+\+P\+R\+O\+PS~5}
+
+
+
+Definition at line 77 of file gapgattserver.\+h.
+
+\mbox{\Hypertarget{gapgattserver_8h_a8a471fefacd5f4ba7d786ee8c2bf3eea}\label{gapgattserver_8h_a8a471fefacd5f4ba7d786ee8c2bf3eea}} 
+\index{gapgattserver.h@{gapgattserver.h}!GGS\_RECONNCT\_ADDR\_ATT@{GGS\_RECONNCT\_ADDR\_ATT}}
+\index{GGS\_RECONNCT\_ADDR\_ATT@{GGS\_RECONNCT\_ADDR\_ATT}!gapgattserver.h@{gapgattserver.h}}
+\doxysubsubsection{\texorpdfstring{GGS\_RECONNCT\_ADDR\_ATT}{GGS\_RECONNCT\_ADDR\_ATT}}
+{\footnotesize\ttfamily \#define G\+G\+S\+\_\+\+R\+E\+C\+O\+N\+N\+C\+T\+\_\+\+A\+D\+D\+R\+\_\+\+A\+TT~3}
+
+
+
+Definition at line 75 of file gapgattserver.\+h.
+
+\mbox{\Hypertarget{gapgattserver_8h_a9d08b760ed58c6c6350fe877a8d4e842}\label{gapgattserver_8h_a9d08b760ed58c6c6350fe877a8d4e842}} 
+\index{gapgattserver.h@{gapgattserver.h}!GGS\_W\_PERMIT\_APPEARANCE\_ATT@{GGS\_W\_PERMIT\_APPEARANCE\_ATT}}
+\index{GGS\_W\_PERMIT\_APPEARANCE\_ATT@{GGS\_W\_PERMIT\_APPEARANCE\_ATT}!gapgattserver.h@{gapgattserver.h}}
+\doxysubsubsection{\texorpdfstring{GGS\_W\_PERMIT\_APPEARANCE\_ATT}{GGS\_W\_PERMIT\_APPEARANCE\_ATT}}
+{\footnotesize\ttfamily \#define G\+G\+S\+\_\+\+W\+\_\+\+P\+E\+R\+M\+I\+T\+\_\+\+A\+P\+P\+E\+A\+R\+A\+N\+C\+E\+\_\+\+A\+TT~7}
+
+
+
+Definition at line 79 of file gapgattserver.\+h.
+
+\mbox{\Hypertarget{gapgattserver_8h_a134112a5f7dc1c9a8499307b6f27a6bb}\label{gapgattserver_8h_a134112a5f7dc1c9a8499307b6f27a6bb}} 
+\index{gapgattserver.h@{gapgattserver.h}!GGS\_W\_PERMIT\_DEVICE\_NAME\_ATT@{GGS\_W\_PERMIT\_DEVICE\_NAME\_ATT}}
+\index{GGS\_W\_PERMIT\_DEVICE\_NAME\_ATT@{GGS\_W\_PERMIT\_DEVICE\_NAME\_ATT}!gapgattserver.h@{gapgattserver.h}}
+\doxysubsubsection{\texorpdfstring{GGS\_W\_PERMIT\_DEVICE\_NAME\_ATT}{GGS\_W\_PERMIT\_DEVICE\_NAME\_ATT}}
+{\footnotesize\ttfamily \#define G\+G\+S\+\_\+\+W\+\_\+\+P\+E\+R\+M\+I\+T\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+N\+A\+M\+E\+\_\+\+A\+TT~6}
+
+
+
+Definition at line 78 of file gapgattserver.\+h.
+
+\mbox{\Hypertarget{gapgattserver_8h_ab1b4858d8da3de9d7b8aae7810412447}\label{gapgattserver_8h_ab1b4858d8da3de9d7b8aae7810412447}} 
+\index{gapgattserver.h@{gapgattserver.h}!GGS\_W\_PERMIT\_PRIVACY\_FLAG\_ATT@{GGS\_W\_PERMIT\_PRIVACY\_FLAG\_ATT}}
+\index{GGS\_W\_PERMIT\_PRIVACY\_FLAG\_ATT@{GGS\_W\_PERMIT\_PRIVACY\_FLAG\_ATT}!gapgattserver.h@{gapgattserver.h}}
+\doxysubsubsection{\texorpdfstring{GGS\_W\_PERMIT\_PRIVACY\_FLAG\_ATT}{GGS\_W\_PERMIT\_PRIVACY\_FLAG\_ATT}}
+{\footnotesize\ttfamily \#define G\+G\+S\+\_\+\+W\+\_\+\+P\+E\+R\+M\+I\+T\+\_\+\+P\+R\+I\+V\+A\+C\+Y\+\_\+\+F\+L\+A\+G\+\_\+\+A\+TT~8}
+
+
+
+Definition at line 80 of file gapgattserver.\+h.
+
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{gapgattserver_8h_a2cf35140c0b400918a30a2410272f63d}\label{gapgattserver_8h_a2cf35140c0b400918a30a2410272f63d}} 
+\index{gapgattserver.h@{gapgattserver.h}!ggsAttrValueChange\_t@{ggsAttrValueChange\_t}}
+\index{ggsAttrValueChange\_t@{ggsAttrValueChange\_t}!gapgattserver.h@{gapgattserver.h}}
+\doxysubsubsection{\texorpdfstring{ggsAttrValueChange\_t}{ggsAttrValueChange\_t}}
+{\footnotesize\ttfamily typedef void($\ast$ ggs\+Attr\+Value\+Change\+\_\+t) (uint16 conn\+Handle, uint8 attr\+Id)}
+
+
+
+Definition at line 97 of file gapgattserver.\+h.
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{gapgattserver_8h_a378d66bb6f1fc9863df3727a6920c752}\label{gapgattserver_8h_a378d66bb6f1fc9863df3727a6920c752}} 
+\index{gapgattserver.h@{gapgattserver.h}!GGS\_AddService@{GGS\_AddService}}
+\index{GGS\_AddService@{GGS\_AddService}!gapgattserver.h@{gapgattserver.h}}
+\doxysubsubsection{\texorpdfstring{GGS\_AddService()}{GGS\_AddService()}}
+{\footnotesize\ttfamily b\+Status\+\_\+t G\+G\+S\+\_\+\+Add\+Service (\begin{DoxyParamCaption}\item[{uint32}]{services }\end{DoxyParamCaption})}
+
+
+
+Add function for the G\+AP G\+A\+TT Service. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em services} & -\/ services to add. This is a bit map and can contain more than one service.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+S\+U\+C\+C\+E\+SS\+: Service added successfully.~\newline
+ I\+N\+V\+A\+L\+I\+D\+P\+A\+R\+A\+M\+E\+T\+ER\+: Invalid service field.~\newline
+ F\+A\+I\+L\+U\+RE\+: Not enough attribute handles available.~\newline
+ ble\+Mem\+Alloc\+Error\+: Memory allocation error occurred.~\newline
+ 
+\end{DoxyReturn}
+
+
+Definition at line 1228 of file icall\+\_\+api.\+c.
+
+\mbox{\Hypertarget{gapgattserver_8h_adb5d755b466055f8a6d167a4b881c59f}\label{gapgattserver_8h_adb5d755b466055f8a6d167a4b881c59f}} 
+\index{gapgattserver.h@{gapgattserver.h}!GGS\_DelService@{GGS\_DelService}}
+\index{GGS\_DelService@{GGS\_DelService}!gapgattserver.h@{gapgattserver.h}}
+\doxysubsubsection{\texorpdfstring{GGS\_DelService()}{GGS\_DelService()}}
+{\footnotesize\ttfamily b\+Status\+\_\+t G\+G\+S\+\_\+\+Del\+Service (\begin{DoxyParamCaption}\item[{uint32}]{services }\end{DoxyParamCaption})}
+
+
+
+Delete function for the G\+AP G\+A\+TT Service. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em services} & -\/ services to delete. This is a bit map and can contain more than one service.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+S\+U\+C\+C\+E\+SS\+: Service deleted successfully.~\newline
+ F\+A\+I\+L\+U\+RE\+: Service not found.~\newline
+ 
+\end{DoxyReturn}
+\mbox{\Hypertarget{gapgattserver_8h_a4ae1b24aef90dc8dd36dcfe7592b395c}\label{gapgattserver_8h_a4ae1b24aef90dc8dd36dcfe7592b395c}} 
+\index{gapgattserver.h@{gapgattserver.h}!GGS\_GetParameter@{GGS\_GetParameter}}
+\index{GGS\_GetParameter@{GGS\_GetParameter}!gapgattserver.h@{gapgattserver.h}}
+\doxysubsubsection{\texorpdfstring{GGS\_GetParameter()}{GGS\_GetParameter()}}
+{\footnotesize\ttfamily b\+Status\+\_\+t G\+G\+S\+\_\+\+Get\+Parameter (\begin{DoxyParamCaption}\item[{uint8}]{param,  }\item[{void $\ast$}]{value }\end{DoxyParamCaption})}
+
+
+
+Get a G\+AP G\+A\+TT Server parameter. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em param} & -\/ Profile parameter ID~\newline
+ \\
+\hline
+{\em value} & -\/ pointer to data to put. This is dependent on the parameter ID and W\+I\+LL be cast to the appropriate data type (example\+: data type of uint16 will be cast to uint16 pointer).~\newline
+\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+b\+Status\+\_\+t 
+\end{DoxyReturn}
+
+
+Definition at line 1250 of file icall\+\_\+api.\+c.
+
+\mbox{\Hypertarget{gapgattserver_8h_a89e9d4cef43e2f3e7c397f12b53667c2}\label{gapgattserver_8h_a89e9d4cef43e2f3e7c397f12b53667c2}} 
+\index{gapgattserver.h@{gapgattserver.h}!GGS\_GetParamValue@{GGS\_GetParamValue}}
+\index{GGS\_GetParamValue@{GGS\_GetParamValue}!gapgattserver.h@{gapgattserver.h}}
+\doxysubsubsection{\texorpdfstring{GGS\_GetParamValue()}{GGS\_GetParamValue()}}
+{\footnotesize\ttfamily uint16 G\+G\+S\+\_\+\+Get\+Param\+Value (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Get a G\+GS Parameter value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+G\+GS Parameter value 
+\end{DoxyReturn}
+\mbox{\Hypertarget{gapgattserver_8h_a10a83d35cf8405bd4e4b5f34c72fa66e}\label{gapgattserver_8h_a10a83d35cf8405bd4e4b5f34c72fa66e}} 
+\index{gapgattserver.h@{gapgattserver.h}!GGS\_RegisterAppCBs@{GGS\_RegisterAppCBs}}
+\index{GGS\_RegisterAppCBs@{GGS\_RegisterAppCBs}!gapgattserver.h@{gapgattserver.h}}
+\doxysubsubsection{\texorpdfstring{GGS\_RegisterAppCBs()}{GGS\_RegisterAppCBs()}}
+{\footnotesize\ttfamily void G\+G\+S\+\_\+\+Register\+App\+C\+Bs (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structggs_app_c_bs__t}{ggs\+App\+C\+Bs\+\_\+t}} $\ast$}]{app\+Callbacks }\end{DoxyParamCaption})}
+
+
+
+Registers the application callback function. 
+
+\begin{DoxyVerb}     Note: Callback registration is needed only when the
+           Device Name is made writable. The application
+           will be notified when the Device Name is changed
+           over the air.
+\end{DoxyVerb}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em app\+Callbacks} & -\/ pointer to application callbacks.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+
+
+Definition at line 1261 of file icall\+\_\+api.\+c.
+
+\mbox{\Hypertarget{gapgattserver_8h_aa199a7c7fe4464c84e4440135d2e91f8}\label{gapgattserver_8h_aa199a7c7fe4464c84e4440135d2e91f8}} 
+\index{gapgattserver.h@{gapgattserver.h}!GGS\_SetParameter@{GGS\_SetParameter}}
+\index{GGS\_SetParameter@{GGS\_SetParameter}!gapgattserver.h@{gapgattserver.h}}
+\doxysubsubsection{\texorpdfstring{GGS\_SetParameter()}{GGS\_SetParameter()}}
+{\footnotesize\ttfamily b\+Status\+\_\+t G\+G\+S\+\_\+\+Set\+Parameter (\begin{DoxyParamCaption}\item[{uint8}]{param,  }\item[{uint8}]{len,  }\item[{void $\ast$}]{value }\end{DoxyParamCaption})}
+
+
+
+Set a G\+AP G\+A\+TT Server parameter. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em param} & -\/ Profile parameter ID~\newline
+ \\
+\hline
+{\em len} & -\/ length of data to right \\
+\hline
+{\em value} & -\/ pointer to data to write. This is dependent on the parameter ID and W\+I\+LL be cast to the appropriate data type (example\+: data type of uint16 will be cast to uint16 pointer).~\newline
+\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+b\+Status\+\_\+t 
+\end{DoxyReturn}
+
+
+Definition at line 1239 of file icall\+\_\+api.\+c.
+
+\mbox{\Hypertarget{gapgattserver_8h_abd1a14b5364121531cf5004e98db002d}\label{gapgattserver_8h_abd1a14b5364121531cf5004e98db002d}} 
+\index{gapgattserver.h@{gapgattserver.h}!GGS\_SetParamValue@{GGS\_SetParamValue}}
+\index{GGS\_SetParamValue@{GGS\_SetParamValue}!gapgattserver.h@{gapgattserver.h}}
+\doxysubsubsection{\texorpdfstring{GGS\_SetParamValue()}{GGS\_SetParamValue()}}
+{\footnotesize\ttfamily void G\+G\+S\+\_\+\+Set\+Param\+Value (\begin{DoxyParamCaption}\item[{uint16}]{value }\end{DoxyParamCaption})}
+
+
+
+Set a G\+GS Parameter value. Use this function to change the default G\+GS parameter values. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & -\/ new G\+GS param value\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}

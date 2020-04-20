@@ -1,0 +1,88 @@
+\hypertarget{structgatt_msg_event__t}{}\doxysection{gatt\+Msg\+Event\+\_\+t Struct Reference}
+\label{structgatt_msg_event__t}\index{gattMsgEvent\_t@{gattMsgEvent\_t}}
+
+
+{\ttfamily \#include $<$gatt.\+h$>$}
+
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+osal\+\_\+event\+\_\+hdr\+\_\+t \mbox{\hyperlink{structgatt_msg_event__t_ad46b847b7b0a81e42e43b14994006524}{hdr}}
+\begin{DoxyCompactList}\small\item\em G\+A\+T\+T\+\_\+\+M\+S\+G\+\_\+\+E\+V\+E\+NT and status. \end{DoxyCompactList}\item 
+uint16 \mbox{\hyperlink{structgatt_msg_event__t_aa3bc65f17f392f16eb0d5e04338b51eb}{conn\+Handle}}
+\begin{DoxyCompactList}\small\item\em Connection message was received on. \end{DoxyCompactList}\item 
+uint8 \mbox{\hyperlink{structgatt_msg_event__t_ac10a2ae4f22904fa1e4f8e41a2cab256}{method}}
+\begin{DoxyCompactList}\small\item\em Type of message. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{uniongatt_msg__t}{gatt\+Msg\+\_\+t}} \mbox{\hyperlink{structgatt_msg_event__t_ae897e946ef65d45b727ce9497620e862}{msg}}
+\begin{DoxyCompactList}\small\item\em Attribute protocol/profile message. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+G\+A\+TT O\+S\+AL G\+A\+T\+T\+\_\+\+M\+S\+G\+\_\+\+E\+V\+E\+NT message format. This message is used to forward an incoming attribute protocol/profile message up to upper layer application. 
+
+Definition at line 255 of file gatt.\+h.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{structgatt_msg_event__t_aa3bc65f17f392f16eb0d5e04338b51eb}\label{structgatt_msg_event__t_aa3bc65f17f392f16eb0d5e04338b51eb}} 
+\index{gattMsgEvent\_t@{gattMsgEvent\_t}!connHandle@{connHandle}}
+\index{connHandle@{connHandle}!gattMsgEvent\_t@{gattMsgEvent\_t}}
+\doxysubsubsection{\texorpdfstring{connHandle}{connHandle}}
+{\footnotesize\ttfamily uint16 gatt\+Msg\+Event\+\_\+t\+::conn\+Handle}
+
+
+
+Connection message was received on. 
+
+
+
+Definition at line 258 of file gatt.\+h.
+
+\mbox{\Hypertarget{structgatt_msg_event__t_ad46b847b7b0a81e42e43b14994006524}\label{structgatt_msg_event__t_ad46b847b7b0a81e42e43b14994006524}} 
+\index{gattMsgEvent\_t@{gattMsgEvent\_t}!hdr@{hdr}}
+\index{hdr@{hdr}!gattMsgEvent\_t@{gattMsgEvent\_t}}
+\doxysubsubsection{\texorpdfstring{hdr}{hdr}}
+{\footnotesize\ttfamily osal\+\_\+event\+\_\+hdr\+\_\+t gatt\+Msg\+Event\+\_\+t\+::hdr}
+
+
+
+G\+A\+T\+T\+\_\+\+M\+S\+G\+\_\+\+E\+V\+E\+NT and status. 
+
+
+
+Definition at line 257 of file gatt.\+h.
+
+\mbox{\Hypertarget{structgatt_msg_event__t_ac10a2ae4f22904fa1e4f8e41a2cab256}\label{structgatt_msg_event__t_ac10a2ae4f22904fa1e4f8e41a2cab256}} 
+\index{gattMsgEvent\_t@{gattMsgEvent\_t}!method@{method}}
+\index{method@{method}!gattMsgEvent\_t@{gattMsgEvent\_t}}
+\doxysubsubsection{\texorpdfstring{method}{method}}
+{\footnotesize\ttfamily uint8 gatt\+Msg\+Event\+\_\+t\+::method}
+
+
+
+Type of message. 
+
+
+
+Definition at line 259 of file gatt.\+h.
+
+\mbox{\Hypertarget{structgatt_msg_event__t_ae897e946ef65d45b727ce9497620e862}\label{structgatt_msg_event__t_ae897e946ef65d45b727ce9497620e862}} 
+\index{gattMsgEvent\_t@{gattMsgEvent\_t}!msg@{msg}}
+\index{msg@{msg}!gattMsgEvent\_t@{gattMsgEvent\_t}}
+\doxysubsubsection{\texorpdfstring{msg}{msg}}
+{\footnotesize\ttfamily \mbox{\hyperlink{uniongatt_msg__t}{gatt\+Msg\+\_\+t}} gatt\+Msg\+Event\+\_\+t\+::msg}
+
+
+
+Attribute protocol/profile message. 
+
+
+
+Definition at line 260 of file gatt.\+h.
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Include/\mbox{\hyperlink{gatt_8h}{gatt.\+h}}\end{DoxyCompactItemize}

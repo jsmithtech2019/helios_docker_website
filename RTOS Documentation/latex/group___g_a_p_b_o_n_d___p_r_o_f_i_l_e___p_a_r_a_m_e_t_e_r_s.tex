@@ -1,0 +1,411 @@
+\hypertarget{group___g_a_p_b_o_n_d___p_r_o_f_i_l_e___p_a_r_a_m_e_t_e_r_s}{}\doxysection{G\+AP Bond Manager Parameters}
+\label{group___g_a_p_b_o_n_d___p_r_o_f_i_l_e___p_a_r_a_m_e_t_e_r_s}\index{GAP Bond Manager Parameters@{GAP Bond Manager Parameters}}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group___g_a_p_b_o_n_d___p_r_o_f_i_l_e___p_a_r_a_m_e_t_e_r_s_ga69cbc789081308c169eb2015361b1c39}{G\+A\+P\+B\+O\+N\+D\+\_\+\+P\+A\+I\+R\+I\+N\+G\+\_\+\+M\+O\+DE}}~0x400
+\begin{DoxyCompactList}\small\item\em Pairing Mode\+: \mbox{\hyperlink{group___g_a_p_b_o_n_d___p_a_i_r_i_n_g___m_o_d_e___d_e_f_i_n_e_s}{G\+AP Bond Manager Pairing Modes}}. Read/\+Write. Size is uint8. Default is G\+A\+P\+B\+O\+N\+D\+\_\+\+P\+A\+I\+R\+I\+N\+G\+\_\+\+M\+O\+D\+E\+\_\+\+W\+A\+I\+T\+\_\+\+F\+O\+R\+\_\+\+R\+EQ. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p_b_o_n_d___p_r_o_f_i_l_e___p_a_r_a_m_e_t_e_r_s_gafa5b8af2a64062e20ee932e73cd2bcb8}{G\+A\+P\+B\+O\+N\+D\+\_\+\+I\+N\+I\+T\+I\+A\+T\+E\+\_\+\+W\+A\+IT}}~0x401
+\begin{DoxyCompactList}\small\item\em Pairing Mode Initiate wait timeout. This is the time it will wait for a Pairing Request before sending the Slave Initiate Request. Read/\+Write. Size is uint16. Default is 1000(in milliseconds). \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p_b_o_n_d___p_r_o_f_i_l_e___p_a_r_a_m_e_t_e_r_s_gaea6e3f468650f820c43ceb197aaa7d17}{G\+A\+P\+B\+O\+N\+D\+\_\+\+M\+I\+T\+M\+\_\+\+P\+R\+O\+T\+E\+C\+T\+I\+ON}}~0x402
+\begin{DoxyCompactList}\small\item\em Man-\/\+In-\/\+The-\/\+Middle (M\+I\+TM) basically turns on Passkey protection in the pairing algorithm. Read/\+Write. Size is uint8. Default is 0(disabled). \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p_b_o_n_d___p_r_o_f_i_l_e___p_a_r_a_m_e_t_e_r_s_gaa177361a4c710ead875395d56e87dfbc}{G\+A\+P\+B\+O\+N\+D\+\_\+\+I\+O\+\_\+\+C\+A\+P\+A\+B\+I\+L\+I\+T\+I\+ES}}~0x403
+\begin{DoxyCompactList}\small\item\em I/O capabilities. Read/\+Write. Size is uint8. Default is G\+A\+P\+B\+O\+N\+D\+\_\+\+I\+O\+\_\+\+C\+A\+P\+\_\+\+D\+I\+S\+P\+L\+A\+Y\+\_\+\+O\+N\+LY \mbox{\hyperlink{group___g_a_p_b_o_n_d___i_o___c_a_p___d_e_f_i_n_e_s}{G\+AP Bond Manager I/O Capabilities}}. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p_b_o_n_d___p_r_o_f_i_l_e___p_a_r_a_m_e_t_e_r_s_ga0a4c3787199b3116d1e9812ef69db419}{G\+A\+P\+B\+O\+N\+D\+\_\+\+O\+O\+B\+\_\+\+E\+N\+A\+B\+L\+ED}}~0x404
+\begin{DoxyCompactList}\small\item\em O\+OB data available for pairing algorithm. Read/\+Write. Size is uint8. Default is 0(disabled). \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p_b_o_n_d___p_r_o_f_i_l_e___p_a_r_a_m_e_t_e_r_s_ga2b3a83cd47bc40139c5c92862a7fb4cb}{G\+A\+P\+B\+O\+N\+D\+\_\+\+O\+O\+B\+\_\+\+D\+A\+TA}}~0x405
+\begin{DoxyCompactList}\small\item\em O\+OB Data. Read/\+Write. size uint8\mbox{[}16\mbox{]}. Default is all 0\textquotesingle{}s. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p_b_o_n_d___p_r_o_f_i_l_e___p_a_r_a_m_e_t_e_r_s_ga894ffb13059819fa2b212030d3d8065b}{G\+A\+P\+B\+O\+N\+D\+\_\+\+B\+O\+N\+D\+I\+N\+G\+\_\+\+E\+N\+A\+B\+L\+ED}}~0x406
+\begin{DoxyCompactList}\small\item\em Request Bonding during the pairing process if enabled. Read/\+Write. Size is uint8. Default is 0(disabled). \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p_b_o_n_d___p_r_o_f_i_l_e___p_a_r_a_m_e_t_e_r_s_ga3c2c27897cc365841de26290b9d37331}{G\+A\+P\+B\+O\+N\+D\+\_\+\+K\+E\+Y\+\_\+\+D\+I\+S\+T\+\_\+\+L\+I\+ST}}~0x407
+\begin{DoxyCompactList}\small\item\em The key distribution list for bonding. size is uint8. \mbox{\hyperlink{group___g_a_p_b_o_n_d___k_e_y___d_i_s_t___d_e_f_i_n_e_s}{G\+AP Bond Manager Key Distribution}}. Default is s\+Enc\+Key, s\+Id\+Key, m\+Id\+Key, m\+Sign enabled. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p_b_o_n_d___p_r_o_f_i_l_e___p_a_r_a_m_e_t_e_r_s_ga51acffa4cc86830f459fc5a9452cec07}{G\+A\+P\+B\+O\+N\+D\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+P\+A\+S\+S\+C\+O\+DE}}~0x408
+\begin{DoxyCompactList}\small\item\em The default passcode for M\+I\+TM protection. size is uint32. Range is 0 -\/ 999,999. Default is 0. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p_b_o_n_d___p_r_o_f_i_l_e___p_a_r_a_m_e_t_e_r_s_ga55ebd6f67a38165aaa5765f0870d396d}{G\+A\+P\+B\+O\+N\+D\+\_\+\+E\+R\+A\+S\+E\+\_\+\+A\+L\+L\+B\+O\+N\+DS}}~0x409
+\begin{DoxyCompactList}\small\item\em Erase all of the bonded devices. Write Only. No Size. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p_b_o_n_d___p_r_o_f_i_l_e___p_a_r_a_m_e_t_e_r_s_gac067add6ca2031c14fba1efd356fcab8}{G\+A\+P\+B\+O\+N\+D\+\_\+\+A\+U\+T\+O\+\_\+\+F\+A\+I\+L\+\_\+\+P\+A\+I\+R\+I\+NG}}~0x40A
+\begin{DoxyCompactList}\small\item\em T\+E\+ST M\+O\+DE (DO N\+OT U\+SE) to automatically send a Pairing Fail when a Pairing Request is received. Read/\+Write. size is uint8. Default is 0 (disabled). \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p_b_o_n_d___p_r_o_f_i_l_e___p_a_r_a_m_e_t_e_r_s_ga0ede7752ec571a1bb1af20701c1f4640}{G\+A\+P\+B\+O\+N\+D\+\_\+\+A\+U\+T\+O\+\_\+\+F\+A\+I\+L\+\_\+\+R\+E\+A\+S\+ON}}~0x40B
+\begin{DoxyCompactList}\small\item\em T\+E\+ST M\+O\+DE (DO N\+OT U\+SE) Pairing Fail reason when auto failing. Read/\+Write. size is uint8. Default is 0x05 (S\+M\+P\+\_\+\+P\+A\+I\+R\+I\+N\+G\+\_\+\+F\+A\+I\+L\+E\+D\+\_\+\+N\+O\+T\+\_\+\+S\+U\+P\+P\+O\+R\+T\+ED). \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p_b_o_n_d___p_r_o_f_i_l_e___p_a_r_a_m_e_t_e_r_s_ga502a78fd630cfdb670f068d4c86fed2c}{G\+A\+P\+B\+O\+N\+D\+\_\+\+K\+E\+Y\+S\+I\+ZE}}~0x40C
+\begin{DoxyCompactList}\small\item\em Key Size used in pairing. Read/\+Write. size is uint8. Default is 16. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p_b_o_n_d___p_r_o_f_i_l_e___p_a_r_a_m_e_t_e_r_s_ga8e58bbab3dc3033475a368c709018360}{G\+A\+P\+B\+O\+N\+D\+\_\+\+A\+U\+T\+O\+\_\+\+S\+Y\+N\+C\+\_\+\+WL}}~0x40D
+\begin{DoxyCompactList}\small\item\em Clears the White List adds to it each unique address stored by bonds in NV. Read/\+Write. Size is uint8. Default is F\+A\+L\+SE. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p_b_o_n_d___p_r_o_f_i_l_e___p_a_r_a_m_e_t_e_r_s_ga3b307b2fc9d37a0d5e980b327b9eb82a}{G\+A\+P\+B\+O\+N\+D\+\_\+\+B\+O\+N\+D\+\_\+\+C\+O\+U\+NT}}~0x40E
+\begin{DoxyCompactList}\small\item\em Gets the total number of bonds stored in NV. Read Only. Size is uint8. Default is 0 (no bonds). \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p_b_o_n_d___p_r_o_f_i_l_e___p_a_r_a_m_e_t_e_r_s_ga05585dcf7c6804c44cfffd02e4a919cc}{G\+A\+P\+B\+O\+N\+D\+\_\+\+B\+O\+N\+D\+\_\+\+F\+A\+I\+L\+\_\+\+A\+C\+T\+I\+ON}}~0x40F
+\begin{DoxyCompactList}\small\item\em Possible actions Central may take upon an unsuccessful bonding. Write Only. Size is uint8. Default is 0x02 (Terminate link upon unsuccessful bonding). \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p_b_o_n_d___p_r_o_f_i_l_e___p_a_r_a_m_e_t_e_r_s_ga9026cb4e1ae671dee6e7ceea576dafca}{G\+A\+P\+B\+O\+N\+D\+\_\+\+E\+R\+A\+S\+E\+\_\+\+S\+I\+N\+G\+L\+E\+B\+O\+ND}}~0x410
+\begin{DoxyCompactList}\small\item\em Erase a single bonded device. Write only. Must provide address type followed by device address. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p_b_o_n_d___p_r_o_f_i_l_e___p_a_r_a_m_e_t_e_r_s_ga2c634d3c1a070888ceb1ae1423da2f5e}{G\+A\+P\+B\+O\+N\+D\+\_\+\+S\+E\+C\+U\+R\+E\+\_\+\+C\+O\+N\+N\+E\+C\+T\+I\+ON}}~0x411
+\begin{DoxyCompactList}\small\item\em Defines Secure Connections usage. Read/\+Write. size is uint8. Secure Connections only. G\+A\+P\+B\+O\+N\+D\+\_\+\+S\+E\+C\+U\+R\+E\+\_\+\+C\+O\+N\+N\+E\+C\+T\+I\+O\+N\+S\+\_\+\+D\+E\+F\+I\+N\+ES. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p_b_o_n_d___p_r_o_f_i_l_e___p_a_r_a_m_e_t_e_r_s_ga237ea455f08591067d72aca90498a567}{G\+A\+P\+B\+O\+N\+D\+\_\+\+E\+C\+C\+K\+E\+Y\+\_\+\+R\+E\+G\+E\+N\+\_\+\+P\+O\+L\+I\+CY}}~0x412
+\begin{DoxyCompactList}\small\item\em Count of how many times an E\+CC keypair may be reused before regeneration. Write only. Range is 0-\/254. Default is 0. Secure Connections only. \mbox{\hyperlink{group___g_a_p_b_o_n_d___e_c_c_k_e_y___r_e_g_e_n___p_o_l_i_c_y___d_e_f_i_n_e_s}{G\+AP Bond Manager E\+CC Re-\/use count before regeneration}}. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p_b_o_n_d___p_r_o_f_i_l_e___p_a_r_a_m_e_t_e_r_s_ga446563bfbb29df64b2c4fa1ecd3563ee}{G\+A\+P\+B\+O\+N\+D\+\_\+\+E\+C\+C\+\_\+\+K\+E\+YS}}~0x413
+\begin{DoxyCompactList}\small\item\em Use application requested public-\/private keypair for Secure Connections. Read/\+Write. size is \mbox{\hyperlink{structgap_bond_ecc_keys__t}{gap\+Bond\+Ecc\+Keys\+\_\+t}}. Secure Connections only. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p_b_o_n_d___p_r_o_f_i_l_e___p_a_r_a_m_e_t_e_r_s_ga5be9f0bd6c2096dfadb742dca4583c12}{G\+A\+P\+B\+O\+N\+D\+\_\+\+R\+E\+M\+O\+T\+E\+\_\+\+O\+O\+B\+\_\+\+S\+C\+\_\+\+E\+N\+A\+B\+L\+ED}}~0x414
+\begin{DoxyCompactList}\small\item\em Secure Connections O\+OB data from remote device availabe. Read/\+Write. Size is uint8. Default is 0 (disabled). Secure Connections only. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p_b_o_n_d___p_r_o_f_i_l_e___p_a_r_a_m_e_t_e_r_s_gad0a1258ac8d1a8670f67a1320213185f}{G\+A\+P\+B\+O\+N\+D\+\_\+\+R\+E\+M\+O\+T\+E\+\_\+\+O\+O\+B\+\_\+\+S\+C\+\_\+\+D\+A\+TA}}~0x415
+\begin{DoxyCompactList}\small\item\em Secure Connections O\+OB data. Read/\+Write. Size is \mbox{\hyperlink{structgap_bond_oob_s_c__t}{gap\+Bond\+Oob\+S\+C\+\_\+t}}. Default is all 0\textquotesingle{}s. Secure Connections only. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p_b_o_n_d___p_r_o_f_i_l_e___p_a_r_a_m_e_t_e_r_s_ga77abcb338af7670f09473477e67625da}{G\+A\+P\+B\+O\+N\+D\+\_\+\+L\+O\+C\+A\+L\+\_\+\+O\+O\+B\+\_\+\+S\+C\+\_\+\+E\+N\+A\+B\+L\+ED}}~0x416
+\begin{DoxyCompactList}\small\item\em Secure Connection local O\+OB data is available. Read/\+Write. Size is uint8. Default is 0 (disabled). Secure Connections only. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p_b_o_n_d___p_r_o_f_i_l_e___p_a_r_a_m_e_t_e_r_s_ga78802e4dcd220f53bb12c9c0b8fb7dc0}{G\+A\+P\+B\+O\+N\+D\+\_\+\+L\+O\+C\+A\+L\+\_\+\+O\+O\+B\+\_\+\+S\+C\+\_\+\+D\+A\+TA}}~0x417
+\begin{DoxyCompactList}\small\item\em Local O\+OB Data. Read/\+Write. size uint8\mbox{[}16\mbox{]}. Default is all 0\textquotesingle{}s. Secure Connections only. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p_b_o_n_d___p_r_o_f_i_l_e___p_a_r_a_m_e_t_e_r_s_ga23c142909c19cff1c4f672a29783a2aa}{G\+A\+P\+B\+O\+N\+D\+\_\+\+L\+R\+U\+\_\+\+B\+O\+N\+D\+\_\+\+R\+E\+P\+L\+A\+C\+E\+M\+E\+NT}}~0x418
+\begin{DoxyCompactList}\small\item\em Remote Least Recently Used Bond when newly bonded device is added and the all entries are full. Read/\+Write. size uint8. Default is F\+A\+L\+SE. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{group___g_a_p_b_o_n_d___p_r_o_f_i_l_e___p_a_r_a_m_e_t_e_r_s_gac067add6ca2031c14fba1efd356fcab8}\label{group___g_a_p_b_o_n_d___p_r_o_f_i_l_e___p_a_r_a_m_e_t_e_r_s_gac067add6ca2031c14fba1efd356fcab8}} 
+\index{GAP Bond Manager Parameters@{GAP Bond Manager Parameters}!GAPBOND\_AUTO\_FAIL\_PAIRING@{GAPBOND\_AUTO\_FAIL\_PAIRING}}
+\index{GAPBOND\_AUTO\_FAIL\_PAIRING@{GAPBOND\_AUTO\_FAIL\_PAIRING}!GAP Bond Manager Parameters@{GAP Bond Manager Parameters}}
+\doxysubsubsection{\texorpdfstring{GAPBOND\_AUTO\_FAIL\_PAIRING}{GAPBOND\_AUTO\_FAIL\_PAIRING}}
+{\footnotesize\ttfamily \#define G\+A\+P\+B\+O\+N\+D\+\_\+\+A\+U\+T\+O\+\_\+\+F\+A\+I\+L\+\_\+\+P\+A\+I\+R\+I\+NG~0x40A}
+
+
+
+T\+E\+ST M\+O\+DE (DO N\+OT U\+SE) to automatically send a Pairing Fail when a Pairing Request is received. Read/\+Write. size is uint8. Default is 0 (disabled). 
+
+
+
+Definition at line 110 of file gapbondmgr.\+h.
+
+\mbox{\Hypertarget{group___g_a_p_b_o_n_d___p_r_o_f_i_l_e___p_a_r_a_m_e_t_e_r_s_ga0ede7752ec571a1bb1af20701c1f4640}\label{group___g_a_p_b_o_n_d___p_r_o_f_i_l_e___p_a_r_a_m_e_t_e_r_s_ga0ede7752ec571a1bb1af20701c1f4640}} 
+\index{GAP Bond Manager Parameters@{GAP Bond Manager Parameters}!GAPBOND\_AUTO\_FAIL\_REASON@{GAPBOND\_AUTO\_FAIL\_REASON}}
+\index{GAPBOND\_AUTO\_FAIL\_REASON@{GAPBOND\_AUTO\_FAIL\_REASON}!GAP Bond Manager Parameters@{GAP Bond Manager Parameters}}
+\doxysubsubsection{\texorpdfstring{GAPBOND\_AUTO\_FAIL\_REASON}{GAPBOND\_AUTO\_FAIL\_REASON}}
+{\footnotesize\ttfamily \#define G\+A\+P\+B\+O\+N\+D\+\_\+\+A\+U\+T\+O\+\_\+\+F\+A\+I\+L\+\_\+\+R\+E\+A\+S\+ON~0x40B}
+
+
+
+T\+E\+ST M\+O\+DE (DO N\+OT U\+SE) Pairing Fail reason when auto failing. Read/\+Write. size is uint8. Default is 0x05 (S\+M\+P\+\_\+\+P\+A\+I\+R\+I\+N\+G\+\_\+\+F\+A\+I\+L\+E\+D\+\_\+\+N\+O\+T\+\_\+\+S\+U\+P\+P\+O\+R\+T\+ED). 
+
+
+
+Definition at line 111 of file gapbondmgr.\+h.
+
+\mbox{\Hypertarget{group___g_a_p_b_o_n_d___p_r_o_f_i_l_e___p_a_r_a_m_e_t_e_r_s_ga8e58bbab3dc3033475a368c709018360}\label{group___g_a_p_b_o_n_d___p_r_o_f_i_l_e___p_a_r_a_m_e_t_e_r_s_ga8e58bbab3dc3033475a368c709018360}} 
+\index{GAP Bond Manager Parameters@{GAP Bond Manager Parameters}!GAPBOND\_AUTO\_SYNC\_WL@{GAPBOND\_AUTO\_SYNC\_WL}}
+\index{GAPBOND\_AUTO\_SYNC\_WL@{GAPBOND\_AUTO\_SYNC\_WL}!GAP Bond Manager Parameters@{GAP Bond Manager Parameters}}
+\doxysubsubsection{\texorpdfstring{GAPBOND\_AUTO\_SYNC\_WL}{GAPBOND\_AUTO\_SYNC\_WL}}
+{\footnotesize\ttfamily \#define G\+A\+P\+B\+O\+N\+D\+\_\+\+A\+U\+T\+O\+\_\+\+S\+Y\+N\+C\+\_\+\+WL~0x40D}
+
+
+
+Clears the White List adds to it each unique address stored by bonds in NV. Read/\+Write. Size is uint8. Default is F\+A\+L\+SE. 
+
+
+
+Definition at line 113 of file gapbondmgr.\+h.
+
+\mbox{\Hypertarget{group___g_a_p_b_o_n_d___p_r_o_f_i_l_e___p_a_r_a_m_e_t_e_r_s_ga3b307b2fc9d37a0d5e980b327b9eb82a}\label{group___g_a_p_b_o_n_d___p_r_o_f_i_l_e___p_a_r_a_m_e_t_e_r_s_ga3b307b2fc9d37a0d5e980b327b9eb82a}} 
+\index{GAP Bond Manager Parameters@{GAP Bond Manager Parameters}!GAPBOND\_BOND\_COUNT@{GAPBOND\_BOND\_COUNT}}
+\index{GAPBOND\_BOND\_COUNT@{GAPBOND\_BOND\_COUNT}!GAP Bond Manager Parameters@{GAP Bond Manager Parameters}}
+\doxysubsubsection{\texorpdfstring{GAPBOND\_BOND\_COUNT}{GAPBOND\_BOND\_COUNT}}
+{\footnotesize\ttfamily \#define G\+A\+P\+B\+O\+N\+D\+\_\+\+B\+O\+N\+D\+\_\+\+C\+O\+U\+NT~0x40E}
+
+
+
+Gets the total number of bonds stored in NV. Read Only. Size is uint8. Default is 0 (no bonds). 
+
+
+
+Definition at line 114 of file gapbondmgr.\+h.
+
+\mbox{\Hypertarget{group___g_a_p_b_o_n_d___p_r_o_f_i_l_e___p_a_r_a_m_e_t_e_r_s_ga05585dcf7c6804c44cfffd02e4a919cc}\label{group___g_a_p_b_o_n_d___p_r_o_f_i_l_e___p_a_r_a_m_e_t_e_r_s_ga05585dcf7c6804c44cfffd02e4a919cc}} 
+\index{GAP Bond Manager Parameters@{GAP Bond Manager Parameters}!GAPBOND\_BOND\_FAIL\_ACTION@{GAPBOND\_BOND\_FAIL\_ACTION}}
+\index{GAPBOND\_BOND\_FAIL\_ACTION@{GAPBOND\_BOND\_FAIL\_ACTION}!GAP Bond Manager Parameters@{GAP Bond Manager Parameters}}
+\doxysubsubsection{\texorpdfstring{GAPBOND\_BOND\_FAIL\_ACTION}{GAPBOND\_BOND\_FAIL\_ACTION}}
+{\footnotesize\ttfamily \#define G\+A\+P\+B\+O\+N\+D\+\_\+\+B\+O\+N\+D\+\_\+\+F\+A\+I\+L\+\_\+\+A\+C\+T\+I\+ON~0x40F}
+
+
+
+Possible actions Central may take upon an unsuccessful bonding. Write Only. Size is uint8. Default is 0x02 (Terminate link upon unsuccessful bonding). 
+
+
+
+Definition at line 115 of file gapbondmgr.\+h.
+
+\mbox{\Hypertarget{group___g_a_p_b_o_n_d___p_r_o_f_i_l_e___p_a_r_a_m_e_t_e_r_s_ga894ffb13059819fa2b212030d3d8065b}\label{group___g_a_p_b_o_n_d___p_r_o_f_i_l_e___p_a_r_a_m_e_t_e_r_s_ga894ffb13059819fa2b212030d3d8065b}} 
+\index{GAP Bond Manager Parameters@{GAP Bond Manager Parameters}!GAPBOND\_BONDING\_ENABLED@{GAPBOND\_BONDING\_ENABLED}}
+\index{GAPBOND\_BONDING\_ENABLED@{GAPBOND\_BONDING\_ENABLED}!GAP Bond Manager Parameters@{GAP Bond Manager Parameters}}
+\doxysubsubsection{\texorpdfstring{GAPBOND\_BONDING\_ENABLED}{GAPBOND\_BONDING\_ENABLED}}
+{\footnotesize\ttfamily \#define G\+A\+P\+B\+O\+N\+D\+\_\+\+B\+O\+N\+D\+I\+N\+G\+\_\+\+E\+N\+A\+B\+L\+ED~0x406}
+
+
+
+Request Bonding during the pairing process if enabled. Read/\+Write. Size is uint8. Default is 0(disabled). 
+
+
+
+Definition at line 106 of file gapbondmgr.\+h.
+
+\mbox{\Hypertarget{group___g_a_p_b_o_n_d___p_r_o_f_i_l_e___p_a_r_a_m_e_t_e_r_s_ga51acffa4cc86830f459fc5a9452cec07}\label{group___g_a_p_b_o_n_d___p_r_o_f_i_l_e___p_a_r_a_m_e_t_e_r_s_ga51acffa4cc86830f459fc5a9452cec07}} 
+\index{GAP Bond Manager Parameters@{GAP Bond Manager Parameters}!GAPBOND\_DEFAULT\_PASSCODE@{GAPBOND\_DEFAULT\_PASSCODE}}
+\index{GAPBOND\_DEFAULT\_PASSCODE@{GAPBOND\_DEFAULT\_PASSCODE}!GAP Bond Manager Parameters@{GAP Bond Manager Parameters}}
+\doxysubsubsection{\texorpdfstring{GAPBOND\_DEFAULT\_PASSCODE}{GAPBOND\_DEFAULT\_PASSCODE}}
+{\footnotesize\ttfamily \#define G\+A\+P\+B\+O\+N\+D\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+P\+A\+S\+S\+C\+O\+DE~0x408}
+
+
+
+The default passcode for M\+I\+TM protection. size is uint32. Range is 0 -\/ 999,999. Default is 0. 
+
+
+
+Definition at line 108 of file gapbondmgr.\+h.
+
+\mbox{\Hypertarget{group___g_a_p_b_o_n_d___p_r_o_f_i_l_e___p_a_r_a_m_e_t_e_r_s_ga446563bfbb29df64b2c4fa1ecd3563ee}\label{group___g_a_p_b_o_n_d___p_r_o_f_i_l_e___p_a_r_a_m_e_t_e_r_s_ga446563bfbb29df64b2c4fa1ecd3563ee}} 
+\index{GAP Bond Manager Parameters@{GAP Bond Manager Parameters}!GAPBOND\_ECC\_KEYS@{GAPBOND\_ECC\_KEYS}}
+\index{GAPBOND\_ECC\_KEYS@{GAPBOND\_ECC\_KEYS}!GAP Bond Manager Parameters@{GAP Bond Manager Parameters}}
+\doxysubsubsection{\texorpdfstring{GAPBOND\_ECC\_KEYS}{GAPBOND\_ECC\_KEYS}}
+{\footnotesize\ttfamily \#define G\+A\+P\+B\+O\+N\+D\+\_\+\+E\+C\+C\+\_\+\+K\+E\+YS~0x413}
+
+
+
+Use application requested public-\/private keypair for Secure Connections. Read/\+Write. size is \mbox{\hyperlink{structgap_bond_ecc_keys__t}{gap\+Bond\+Ecc\+Keys\+\_\+t}}. Secure Connections only. 
+
+
+
+Definition at line 119 of file gapbondmgr.\+h.
+
+\mbox{\Hypertarget{group___g_a_p_b_o_n_d___p_r_o_f_i_l_e___p_a_r_a_m_e_t_e_r_s_ga237ea455f08591067d72aca90498a567}\label{group___g_a_p_b_o_n_d___p_r_o_f_i_l_e___p_a_r_a_m_e_t_e_r_s_ga237ea455f08591067d72aca90498a567}} 
+\index{GAP Bond Manager Parameters@{GAP Bond Manager Parameters}!GAPBOND\_ECCKEY\_REGEN\_POLICY@{GAPBOND\_ECCKEY\_REGEN\_POLICY}}
+\index{GAPBOND\_ECCKEY\_REGEN\_POLICY@{GAPBOND\_ECCKEY\_REGEN\_POLICY}!GAP Bond Manager Parameters@{GAP Bond Manager Parameters}}
+\doxysubsubsection{\texorpdfstring{GAPBOND\_ECCKEY\_REGEN\_POLICY}{GAPBOND\_ECCKEY\_REGEN\_POLICY}}
+{\footnotesize\ttfamily \#define G\+A\+P\+B\+O\+N\+D\+\_\+\+E\+C\+C\+K\+E\+Y\+\_\+\+R\+E\+G\+E\+N\+\_\+\+P\+O\+L\+I\+CY~0x412}
+
+
+
+Count of how many times an E\+CC keypair may be reused before regeneration. Write only. Range is 0-\/254. Default is 0. Secure Connections only. \mbox{\hyperlink{group___g_a_p_b_o_n_d___e_c_c_k_e_y___r_e_g_e_n___p_o_l_i_c_y___d_e_f_i_n_e_s}{G\+AP Bond Manager E\+CC Re-\/use count before regeneration}}. 
+
+
+
+Definition at line 118 of file gapbondmgr.\+h.
+
+\mbox{\Hypertarget{group___g_a_p_b_o_n_d___p_r_o_f_i_l_e___p_a_r_a_m_e_t_e_r_s_ga55ebd6f67a38165aaa5765f0870d396d}\label{group___g_a_p_b_o_n_d___p_r_o_f_i_l_e___p_a_r_a_m_e_t_e_r_s_ga55ebd6f67a38165aaa5765f0870d396d}} 
+\index{GAP Bond Manager Parameters@{GAP Bond Manager Parameters}!GAPBOND\_ERASE\_ALLBONDS@{GAPBOND\_ERASE\_ALLBONDS}}
+\index{GAPBOND\_ERASE\_ALLBONDS@{GAPBOND\_ERASE\_ALLBONDS}!GAP Bond Manager Parameters@{GAP Bond Manager Parameters}}
+\doxysubsubsection{\texorpdfstring{GAPBOND\_ERASE\_ALLBONDS}{GAPBOND\_ERASE\_ALLBONDS}}
+{\footnotesize\ttfamily \#define G\+A\+P\+B\+O\+N\+D\+\_\+\+E\+R\+A\+S\+E\+\_\+\+A\+L\+L\+B\+O\+N\+DS~0x409}
+
+
+
+Erase all of the bonded devices. Write Only. No Size. 
+
+
+
+Definition at line 109 of file gapbondmgr.\+h.
+
+\mbox{\Hypertarget{group___g_a_p_b_o_n_d___p_r_o_f_i_l_e___p_a_r_a_m_e_t_e_r_s_ga9026cb4e1ae671dee6e7ceea576dafca}\label{group___g_a_p_b_o_n_d___p_r_o_f_i_l_e___p_a_r_a_m_e_t_e_r_s_ga9026cb4e1ae671dee6e7ceea576dafca}} 
+\index{GAP Bond Manager Parameters@{GAP Bond Manager Parameters}!GAPBOND\_ERASE\_SINGLEBOND@{GAPBOND\_ERASE\_SINGLEBOND}}
+\index{GAPBOND\_ERASE\_SINGLEBOND@{GAPBOND\_ERASE\_SINGLEBOND}!GAP Bond Manager Parameters@{GAP Bond Manager Parameters}}
+\doxysubsubsection{\texorpdfstring{GAPBOND\_ERASE\_SINGLEBOND}{GAPBOND\_ERASE\_SINGLEBOND}}
+{\footnotesize\ttfamily \#define G\+A\+P\+B\+O\+N\+D\+\_\+\+E\+R\+A\+S\+E\+\_\+\+S\+I\+N\+G\+L\+E\+B\+O\+ND~0x410}
+
+
+
+Erase a single bonded device. Write only. Must provide address type followed by device address. 
+
+
+
+Definition at line 116 of file gapbondmgr.\+h.
+
+\mbox{\Hypertarget{group___g_a_p_b_o_n_d___p_r_o_f_i_l_e___p_a_r_a_m_e_t_e_r_s_gafa5b8af2a64062e20ee932e73cd2bcb8}\label{group___g_a_p_b_o_n_d___p_r_o_f_i_l_e___p_a_r_a_m_e_t_e_r_s_gafa5b8af2a64062e20ee932e73cd2bcb8}} 
+\index{GAP Bond Manager Parameters@{GAP Bond Manager Parameters}!GAPBOND\_INITIATE\_WAIT@{GAPBOND\_INITIATE\_WAIT}}
+\index{GAPBOND\_INITIATE\_WAIT@{GAPBOND\_INITIATE\_WAIT}!GAP Bond Manager Parameters@{GAP Bond Manager Parameters}}
+\doxysubsubsection{\texorpdfstring{GAPBOND\_INITIATE\_WAIT}{GAPBOND\_INITIATE\_WAIT}}
+{\footnotesize\ttfamily \#define G\+A\+P\+B\+O\+N\+D\+\_\+\+I\+N\+I\+T\+I\+A\+T\+E\+\_\+\+W\+A\+IT~0x401}
+
+
+
+Pairing Mode Initiate wait timeout. This is the time it will wait for a Pairing Request before sending the Slave Initiate Request. Read/\+Write. Size is uint16. Default is 1000(in milliseconds). 
+
+
+
+Definition at line 101 of file gapbondmgr.\+h.
+
+\mbox{\Hypertarget{group___g_a_p_b_o_n_d___p_r_o_f_i_l_e___p_a_r_a_m_e_t_e_r_s_gaa177361a4c710ead875395d56e87dfbc}\label{group___g_a_p_b_o_n_d___p_r_o_f_i_l_e___p_a_r_a_m_e_t_e_r_s_gaa177361a4c710ead875395d56e87dfbc}} 
+\index{GAP Bond Manager Parameters@{GAP Bond Manager Parameters}!GAPBOND\_IO\_CAPABILITIES@{GAPBOND\_IO\_CAPABILITIES}}
+\index{GAPBOND\_IO\_CAPABILITIES@{GAPBOND\_IO\_CAPABILITIES}!GAP Bond Manager Parameters@{GAP Bond Manager Parameters}}
+\doxysubsubsection{\texorpdfstring{GAPBOND\_IO\_CAPABILITIES}{GAPBOND\_IO\_CAPABILITIES}}
+{\footnotesize\ttfamily \#define G\+A\+P\+B\+O\+N\+D\+\_\+\+I\+O\+\_\+\+C\+A\+P\+A\+B\+I\+L\+I\+T\+I\+ES~0x403}
+
+
+
+I/O capabilities. Read/\+Write. Size is uint8. Default is G\+A\+P\+B\+O\+N\+D\+\_\+\+I\+O\+\_\+\+C\+A\+P\+\_\+\+D\+I\+S\+P\+L\+A\+Y\+\_\+\+O\+N\+LY \mbox{\hyperlink{group___g_a_p_b_o_n_d___i_o___c_a_p___d_e_f_i_n_e_s}{G\+AP Bond Manager I/O Capabilities}}. 
+
+
+
+Definition at line 103 of file gapbondmgr.\+h.
+
+\mbox{\Hypertarget{group___g_a_p_b_o_n_d___p_r_o_f_i_l_e___p_a_r_a_m_e_t_e_r_s_ga3c2c27897cc365841de26290b9d37331}\label{group___g_a_p_b_o_n_d___p_r_o_f_i_l_e___p_a_r_a_m_e_t_e_r_s_ga3c2c27897cc365841de26290b9d37331}} 
+\index{GAP Bond Manager Parameters@{GAP Bond Manager Parameters}!GAPBOND\_KEY\_DIST\_LIST@{GAPBOND\_KEY\_DIST\_LIST}}
+\index{GAPBOND\_KEY\_DIST\_LIST@{GAPBOND\_KEY\_DIST\_LIST}!GAP Bond Manager Parameters@{GAP Bond Manager Parameters}}
+\doxysubsubsection{\texorpdfstring{GAPBOND\_KEY\_DIST\_LIST}{GAPBOND\_KEY\_DIST\_LIST}}
+{\footnotesize\ttfamily \#define G\+A\+P\+B\+O\+N\+D\+\_\+\+K\+E\+Y\+\_\+\+D\+I\+S\+T\+\_\+\+L\+I\+ST~0x407}
+
+
+
+The key distribution list for bonding. size is uint8. \mbox{\hyperlink{group___g_a_p_b_o_n_d___k_e_y___d_i_s_t___d_e_f_i_n_e_s}{G\+AP Bond Manager Key Distribution}}. Default is s\+Enc\+Key, s\+Id\+Key, m\+Id\+Key, m\+Sign enabled. 
+
+
+
+Definition at line 107 of file gapbondmgr.\+h.
+
+\mbox{\Hypertarget{group___g_a_p_b_o_n_d___p_r_o_f_i_l_e___p_a_r_a_m_e_t_e_r_s_ga502a78fd630cfdb670f068d4c86fed2c}\label{group___g_a_p_b_o_n_d___p_r_o_f_i_l_e___p_a_r_a_m_e_t_e_r_s_ga502a78fd630cfdb670f068d4c86fed2c}} 
+\index{GAP Bond Manager Parameters@{GAP Bond Manager Parameters}!GAPBOND\_KEYSIZE@{GAPBOND\_KEYSIZE}}
+\index{GAPBOND\_KEYSIZE@{GAPBOND\_KEYSIZE}!GAP Bond Manager Parameters@{GAP Bond Manager Parameters}}
+\doxysubsubsection{\texorpdfstring{GAPBOND\_KEYSIZE}{GAPBOND\_KEYSIZE}}
+{\footnotesize\ttfamily \#define G\+A\+P\+B\+O\+N\+D\+\_\+\+K\+E\+Y\+S\+I\+ZE~0x40C}
+
+
+
+Key Size used in pairing. Read/\+Write. size is uint8. Default is 16. 
+
+
+
+Definition at line 112 of file gapbondmgr.\+h.
+
+\mbox{\Hypertarget{group___g_a_p_b_o_n_d___p_r_o_f_i_l_e___p_a_r_a_m_e_t_e_r_s_ga78802e4dcd220f53bb12c9c0b8fb7dc0}\label{group___g_a_p_b_o_n_d___p_r_o_f_i_l_e___p_a_r_a_m_e_t_e_r_s_ga78802e4dcd220f53bb12c9c0b8fb7dc0}} 
+\index{GAP Bond Manager Parameters@{GAP Bond Manager Parameters}!GAPBOND\_LOCAL\_OOB\_SC\_DATA@{GAPBOND\_LOCAL\_OOB\_SC\_DATA}}
+\index{GAPBOND\_LOCAL\_OOB\_SC\_DATA@{GAPBOND\_LOCAL\_OOB\_SC\_DATA}!GAP Bond Manager Parameters@{GAP Bond Manager Parameters}}
+\doxysubsubsection{\texorpdfstring{GAPBOND\_LOCAL\_OOB\_SC\_DATA}{GAPBOND\_LOCAL\_OOB\_SC\_DATA}}
+{\footnotesize\ttfamily \#define G\+A\+P\+B\+O\+N\+D\+\_\+\+L\+O\+C\+A\+L\+\_\+\+O\+O\+B\+\_\+\+S\+C\+\_\+\+D\+A\+TA~0x417}
+
+
+
+Local O\+OB Data. Read/\+Write. size uint8\mbox{[}16\mbox{]}. Default is all 0\textquotesingle{}s. Secure Connections only. 
+
+
+
+Definition at line 123 of file gapbondmgr.\+h.
+
+\mbox{\Hypertarget{group___g_a_p_b_o_n_d___p_r_o_f_i_l_e___p_a_r_a_m_e_t_e_r_s_ga77abcb338af7670f09473477e67625da}\label{group___g_a_p_b_o_n_d___p_r_o_f_i_l_e___p_a_r_a_m_e_t_e_r_s_ga77abcb338af7670f09473477e67625da}} 
+\index{GAP Bond Manager Parameters@{GAP Bond Manager Parameters}!GAPBOND\_LOCAL\_OOB\_SC\_ENABLED@{GAPBOND\_LOCAL\_OOB\_SC\_ENABLED}}
+\index{GAPBOND\_LOCAL\_OOB\_SC\_ENABLED@{GAPBOND\_LOCAL\_OOB\_SC\_ENABLED}!GAP Bond Manager Parameters@{GAP Bond Manager Parameters}}
+\doxysubsubsection{\texorpdfstring{GAPBOND\_LOCAL\_OOB\_SC\_ENABLED}{GAPBOND\_LOCAL\_OOB\_SC\_ENABLED}}
+{\footnotesize\ttfamily \#define G\+A\+P\+B\+O\+N\+D\+\_\+\+L\+O\+C\+A\+L\+\_\+\+O\+O\+B\+\_\+\+S\+C\+\_\+\+E\+N\+A\+B\+L\+ED~0x416}
+
+
+
+Secure Connection local O\+OB data is available. Read/\+Write. Size is uint8. Default is 0 (disabled). Secure Connections only. 
+
+
+
+Definition at line 122 of file gapbondmgr.\+h.
+
+\mbox{\Hypertarget{group___g_a_p_b_o_n_d___p_r_o_f_i_l_e___p_a_r_a_m_e_t_e_r_s_ga23c142909c19cff1c4f672a29783a2aa}\label{group___g_a_p_b_o_n_d___p_r_o_f_i_l_e___p_a_r_a_m_e_t_e_r_s_ga23c142909c19cff1c4f672a29783a2aa}} 
+\index{GAP Bond Manager Parameters@{GAP Bond Manager Parameters}!GAPBOND\_LRU\_BOND\_REPLACEMENT@{GAPBOND\_LRU\_BOND\_REPLACEMENT}}
+\index{GAPBOND\_LRU\_BOND\_REPLACEMENT@{GAPBOND\_LRU\_BOND\_REPLACEMENT}!GAP Bond Manager Parameters@{GAP Bond Manager Parameters}}
+\doxysubsubsection{\texorpdfstring{GAPBOND\_LRU\_BOND\_REPLACEMENT}{GAPBOND\_LRU\_BOND\_REPLACEMENT}}
+{\footnotesize\ttfamily \#define G\+A\+P\+B\+O\+N\+D\+\_\+\+L\+R\+U\+\_\+\+B\+O\+N\+D\+\_\+\+R\+E\+P\+L\+A\+C\+E\+M\+E\+NT~0x418}
+
+
+
+Remote Least Recently Used Bond when newly bonded device is added and the all entries are full. Read/\+Write. size uint8. Default is F\+A\+L\+SE. 
+
+
+
+Definition at line 124 of file gapbondmgr.\+h.
+
+\mbox{\Hypertarget{group___g_a_p_b_o_n_d___p_r_o_f_i_l_e___p_a_r_a_m_e_t_e_r_s_gaea6e3f468650f820c43ceb197aaa7d17}\label{group___g_a_p_b_o_n_d___p_r_o_f_i_l_e___p_a_r_a_m_e_t_e_r_s_gaea6e3f468650f820c43ceb197aaa7d17}} 
+\index{GAP Bond Manager Parameters@{GAP Bond Manager Parameters}!GAPBOND\_MITM\_PROTECTION@{GAPBOND\_MITM\_PROTECTION}}
+\index{GAPBOND\_MITM\_PROTECTION@{GAPBOND\_MITM\_PROTECTION}!GAP Bond Manager Parameters@{GAP Bond Manager Parameters}}
+\doxysubsubsection{\texorpdfstring{GAPBOND\_MITM\_PROTECTION}{GAPBOND\_MITM\_PROTECTION}}
+{\footnotesize\ttfamily \#define G\+A\+P\+B\+O\+N\+D\+\_\+\+M\+I\+T\+M\+\_\+\+P\+R\+O\+T\+E\+C\+T\+I\+ON~0x402}
+
+
+
+Man-\/\+In-\/\+The-\/\+Middle (M\+I\+TM) basically turns on Passkey protection in the pairing algorithm. Read/\+Write. Size is uint8. Default is 0(disabled). 
+
+
+
+Definition at line 102 of file gapbondmgr.\+h.
+
+\mbox{\Hypertarget{group___g_a_p_b_o_n_d___p_r_o_f_i_l_e___p_a_r_a_m_e_t_e_r_s_ga2b3a83cd47bc40139c5c92862a7fb4cb}\label{group___g_a_p_b_o_n_d___p_r_o_f_i_l_e___p_a_r_a_m_e_t_e_r_s_ga2b3a83cd47bc40139c5c92862a7fb4cb}} 
+\index{GAP Bond Manager Parameters@{GAP Bond Manager Parameters}!GAPBOND\_OOB\_DATA@{GAPBOND\_OOB\_DATA}}
+\index{GAPBOND\_OOB\_DATA@{GAPBOND\_OOB\_DATA}!GAP Bond Manager Parameters@{GAP Bond Manager Parameters}}
+\doxysubsubsection{\texorpdfstring{GAPBOND\_OOB\_DATA}{GAPBOND\_OOB\_DATA}}
+{\footnotesize\ttfamily \#define G\+A\+P\+B\+O\+N\+D\+\_\+\+O\+O\+B\+\_\+\+D\+A\+TA~0x405}
+
+
+
+O\+OB Data. Read/\+Write. size uint8\mbox{[}16\mbox{]}. Default is all 0\textquotesingle{}s. 
+
+
+
+Definition at line 105 of file gapbondmgr.\+h.
+
+\mbox{\Hypertarget{group___g_a_p_b_o_n_d___p_r_o_f_i_l_e___p_a_r_a_m_e_t_e_r_s_ga0a4c3787199b3116d1e9812ef69db419}\label{group___g_a_p_b_o_n_d___p_r_o_f_i_l_e___p_a_r_a_m_e_t_e_r_s_ga0a4c3787199b3116d1e9812ef69db419}} 
+\index{GAP Bond Manager Parameters@{GAP Bond Manager Parameters}!GAPBOND\_OOB\_ENABLED@{GAPBOND\_OOB\_ENABLED}}
+\index{GAPBOND\_OOB\_ENABLED@{GAPBOND\_OOB\_ENABLED}!GAP Bond Manager Parameters@{GAP Bond Manager Parameters}}
+\doxysubsubsection{\texorpdfstring{GAPBOND\_OOB\_ENABLED}{GAPBOND\_OOB\_ENABLED}}
+{\footnotesize\ttfamily \#define G\+A\+P\+B\+O\+N\+D\+\_\+\+O\+O\+B\+\_\+\+E\+N\+A\+B\+L\+ED~0x404}
+
+
+
+O\+OB data available for pairing algorithm. Read/\+Write. Size is uint8. Default is 0(disabled). 
+
+
+
+Definition at line 104 of file gapbondmgr.\+h.
+
+\mbox{\Hypertarget{group___g_a_p_b_o_n_d___p_r_o_f_i_l_e___p_a_r_a_m_e_t_e_r_s_ga69cbc789081308c169eb2015361b1c39}\label{group___g_a_p_b_o_n_d___p_r_o_f_i_l_e___p_a_r_a_m_e_t_e_r_s_ga69cbc789081308c169eb2015361b1c39}} 
+\index{GAP Bond Manager Parameters@{GAP Bond Manager Parameters}!GAPBOND\_PAIRING\_MODE@{GAPBOND\_PAIRING\_MODE}}
+\index{GAPBOND\_PAIRING\_MODE@{GAPBOND\_PAIRING\_MODE}!GAP Bond Manager Parameters@{GAP Bond Manager Parameters}}
+\doxysubsubsection{\texorpdfstring{GAPBOND\_PAIRING\_MODE}{GAPBOND\_PAIRING\_MODE}}
+{\footnotesize\ttfamily \#define G\+A\+P\+B\+O\+N\+D\+\_\+\+P\+A\+I\+R\+I\+N\+G\+\_\+\+M\+O\+DE~0x400}
+
+
+
+Pairing Mode\+: \mbox{\hyperlink{group___g_a_p_b_o_n_d___p_a_i_r_i_n_g___m_o_d_e___d_e_f_i_n_e_s}{G\+AP Bond Manager Pairing Modes}}. Read/\+Write. Size is uint8. Default is G\+A\+P\+B\+O\+N\+D\+\_\+\+P\+A\+I\+R\+I\+N\+G\+\_\+\+M\+O\+D\+E\+\_\+\+W\+A\+I\+T\+\_\+\+F\+O\+R\+\_\+\+R\+EQ. 
+
+
+
+Definition at line 100 of file gapbondmgr.\+h.
+
+\mbox{\Hypertarget{group___g_a_p_b_o_n_d___p_r_o_f_i_l_e___p_a_r_a_m_e_t_e_r_s_gad0a1258ac8d1a8670f67a1320213185f}\label{group___g_a_p_b_o_n_d___p_r_o_f_i_l_e___p_a_r_a_m_e_t_e_r_s_gad0a1258ac8d1a8670f67a1320213185f}} 
+\index{GAP Bond Manager Parameters@{GAP Bond Manager Parameters}!GAPBOND\_REMOTE\_OOB\_SC\_DATA@{GAPBOND\_REMOTE\_OOB\_SC\_DATA}}
+\index{GAPBOND\_REMOTE\_OOB\_SC\_DATA@{GAPBOND\_REMOTE\_OOB\_SC\_DATA}!GAP Bond Manager Parameters@{GAP Bond Manager Parameters}}
+\doxysubsubsection{\texorpdfstring{GAPBOND\_REMOTE\_OOB\_SC\_DATA}{GAPBOND\_REMOTE\_OOB\_SC\_DATA}}
+{\footnotesize\ttfamily \#define G\+A\+P\+B\+O\+N\+D\+\_\+\+R\+E\+M\+O\+T\+E\+\_\+\+O\+O\+B\+\_\+\+S\+C\+\_\+\+D\+A\+TA~0x415}
+
+
+
+Secure Connections O\+OB data. Read/\+Write. Size is \mbox{\hyperlink{structgap_bond_oob_s_c__t}{gap\+Bond\+Oob\+S\+C\+\_\+t}}. Default is all 0\textquotesingle{}s. Secure Connections only. 
+
+
+
+Definition at line 121 of file gapbondmgr.\+h.
+
+\mbox{\Hypertarget{group___g_a_p_b_o_n_d___p_r_o_f_i_l_e___p_a_r_a_m_e_t_e_r_s_ga5be9f0bd6c2096dfadb742dca4583c12}\label{group___g_a_p_b_o_n_d___p_r_o_f_i_l_e___p_a_r_a_m_e_t_e_r_s_ga5be9f0bd6c2096dfadb742dca4583c12}} 
+\index{GAP Bond Manager Parameters@{GAP Bond Manager Parameters}!GAPBOND\_REMOTE\_OOB\_SC\_ENABLED@{GAPBOND\_REMOTE\_OOB\_SC\_ENABLED}}
+\index{GAPBOND\_REMOTE\_OOB\_SC\_ENABLED@{GAPBOND\_REMOTE\_OOB\_SC\_ENABLED}!GAP Bond Manager Parameters@{GAP Bond Manager Parameters}}
+\doxysubsubsection{\texorpdfstring{GAPBOND\_REMOTE\_OOB\_SC\_ENABLED}{GAPBOND\_REMOTE\_OOB\_SC\_ENABLED}}
+{\footnotesize\ttfamily \#define G\+A\+P\+B\+O\+N\+D\+\_\+\+R\+E\+M\+O\+T\+E\+\_\+\+O\+O\+B\+\_\+\+S\+C\+\_\+\+E\+N\+A\+B\+L\+ED~0x414}
+
+
+
+Secure Connections O\+OB data from remote device availabe. Read/\+Write. Size is uint8. Default is 0 (disabled). Secure Connections only. 
+
+
+
+Definition at line 120 of file gapbondmgr.\+h.
+
+\mbox{\Hypertarget{group___g_a_p_b_o_n_d___p_r_o_f_i_l_e___p_a_r_a_m_e_t_e_r_s_ga2c634d3c1a070888ceb1ae1423da2f5e}\label{group___g_a_p_b_o_n_d___p_r_o_f_i_l_e___p_a_r_a_m_e_t_e_r_s_ga2c634d3c1a070888ceb1ae1423da2f5e}} 
+\index{GAP Bond Manager Parameters@{GAP Bond Manager Parameters}!GAPBOND\_SECURE\_CONNECTION@{GAPBOND\_SECURE\_CONNECTION}}
+\index{GAPBOND\_SECURE\_CONNECTION@{GAPBOND\_SECURE\_CONNECTION}!GAP Bond Manager Parameters@{GAP Bond Manager Parameters}}
+\doxysubsubsection{\texorpdfstring{GAPBOND\_SECURE\_CONNECTION}{GAPBOND\_SECURE\_CONNECTION}}
+{\footnotesize\ttfamily \#define G\+A\+P\+B\+O\+N\+D\+\_\+\+S\+E\+C\+U\+R\+E\+\_\+\+C\+O\+N\+N\+E\+C\+T\+I\+ON~0x411}
+
+
+
+Defines Secure Connections usage. Read/\+Write. size is uint8. Secure Connections only. G\+A\+P\+B\+O\+N\+D\+\_\+\+S\+E\+C\+U\+R\+E\+\_\+\+C\+O\+N\+N\+E\+C\+T\+I\+O\+N\+S\+\_\+\+D\+E\+F\+I\+N\+ES. 
+
+
+
+Definition at line 117 of file gapbondmgr.\+h.
+

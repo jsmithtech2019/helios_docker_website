@@ -1,0 +1,530 @@
+\hypertarget{group___g_a_p___a_d_t_y_p_e___d_e_f_i_n_e_s}{}\doxysection{G\+AP Advertisement Data Types}
+\label{group___g_a_p___a_d_t_y_p_e___d_e_f_i_n_e_s}\index{GAP Advertisement Data Types@{GAP Advertisement Data Types}}
+
+
+These are the data type identifiers for the data tokens in the advertisement data field.  
+
+
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group___g_a_p___a_d_t_y_p_e___d_e_f_i_n_e_s_gab1bd711d70038fc779c4bf6a2c5166d0}{G\+A\+P\+\_\+\+A\+D\+T\+Y\+P\+E\+\_\+\+F\+L\+A\+GS}}~0x01
+\begin{DoxyCompactList}\small\item\em Discovery Mode\+: \mbox{\hyperlink{group___g_a_p___a_d_t_y_p_e___f_l_a_g_s___m_o_d_e_s}{G\+AP A\+D\+T\+Y\+PE Flags Discovery Modes}}. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p___a_d_t_y_p_e___d_e_f_i_n_e_s_ga4b8f6502debe1760131ee0e5d2d3a2f5}{G\+A\+P\+\_\+\+A\+D\+T\+Y\+P\+E\+\_\+16\+B\+I\+T\+\_\+\+M\+O\+RE}}~0x02
+\begin{DoxyCompactList}\small\item\em Service\+: More 16-\/bit U\+U\+I\+Ds available. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p___a_d_t_y_p_e___d_e_f_i_n_e_s_ga035ae8edc40c2ddc9bc77fb29ee08d75}{G\+A\+P\+\_\+\+A\+D\+T\+Y\+P\+E\+\_\+16\+B\+I\+T\+\_\+\+C\+O\+M\+P\+L\+E\+TE}}~0x03
+\begin{DoxyCompactList}\small\item\em Service\+: Complete list of 16-\/bit U\+U\+I\+Ds. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p___a_d_t_y_p_e___d_e_f_i_n_e_s_ga9e9dd19298a2fce7f2f2ba7b106d0032}{G\+A\+P\+\_\+\+A\+D\+T\+Y\+P\+E\+\_\+32\+B\+I\+T\+\_\+\+M\+O\+RE}}~0x04
+\begin{DoxyCompactList}\small\item\em Service\+: More 32-\/bit U\+U\+I\+Ds available. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p___a_d_t_y_p_e___d_e_f_i_n_e_s_gaa1c66218b55e707ab09aa8e33942db06}{G\+A\+P\+\_\+\+A\+D\+T\+Y\+P\+E\+\_\+32\+B\+I\+T\+\_\+\+C\+O\+M\+P\+L\+E\+TE}}~0x05
+\begin{DoxyCompactList}\small\item\em Service\+: Complete list of 32-\/bit U\+U\+I\+Ds. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p___a_d_t_y_p_e___d_e_f_i_n_e_s_ga4eed7b002abac1b211828922418a6956}{G\+A\+P\+\_\+\+A\+D\+T\+Y\+P\+E\+\_\+128\+B\+I\+T\+\_\+\+M\+O\+RE}}~0x06
+\begin{DoxyCompactList}\small\item\em Service\+: More 128-\/bit U\+U\+I\+Ds available. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p___a_d_t_y_p_e___d_e_f_i_n_e_s_ga7c31a650b5808cbcab679a1d5a820f73}{G\+A\+P\+\_\+\+A\+D\+T\+Y\+P\+E\+\_\+128\+B\+I\+T\+\_\+\+C\+O\+M\+P\+L\+E\+TE}}~0x07
+\begin{DoxyCompactList}\small\item\em Service\+: Complete list of 128-\/bit U\+U\+I\+Ds. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p___a_d_t_y_p_e___d_e_f_i_n_e_s_ga936235e7fde3970fe6c4db8eb96ff14d}{G\+A\+P\+\_\+\+A\+D\+T\+Y\+P\+E\+\_\+\+L\+O\+C\+A\+L\+\_\+\+N\+A\+M\+E\+\_\+\+S\+H\+O\+RT}}~0x08
+\begin{DoxyCompactList}\small\item\em Shortened local name. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p___a_d_t_y_p_e___d_e_f_i_n_e_s_ga73e43d425fe3ddbea114d87b2300c6a1}{G\+A\+P\+\_\+\+A\+D\+T\+Y\+P\+E\+\_\+\+L\+O\+C\+A\+L\+\_\+\+N\+A\+M\+E\+\_\+\+C\+O\+M\+P\+L\+E\+TE}}~0x09
+\begin{DoxyCompactList}\small\item\em Complete local name. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p___a_d_t_y_p_e___d_e_f_i_n_e_s_ga55eda91c788ee1de741c59fe36ee69c6}{G\+A\+P\+\_\+\+A\+D\+T\+Y\+P\+E\+\_\+\+P\+O\+W\+E\+R\+\_\+\+L\+E\+V\+EL}}~0x0A
+\begin{DoxyCompactList}\small\item\em TX Power Level\+: 0x\+XX\+: -\/127 to +127 d\+Bm. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p___a_d_t_y_p_e___d_e_f_i_n_e_s_ga5f168a38e0873452e1f9446cc7525001}{G\+A\+P\+\_\+\+A\+D\+T\+Y\+P\+E\+\_\+\+O\+O\+B\+\_\+\+C\+L\+A\+S\+S\+\_\+\+O\+F\+\_\+\+D\+E\+V\+I\+CE}}~0x0D
+\begin{DoxyCompactList}\small\item\em Simple Pairing O\+OB Tag\+: Class of device (3 octets) \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p___a_d_t_y_p_e___d_e_f_i_n_e_s_gae27044607e7e36d2da9fb9d679467743}{G\+A\+P\+\_\+\+A\+D\+T\+Y\+P\+E\+\_\+\+O\+O\+B\+\_\+\+S\+I\+M\+P\+L\+E\+\_\+\+P\+A\+I\+R\+I\+N\+G\+\_\+\+H\+A\+S\+HC}}~0x0E
+\begin{DoxyCompactList}\small\item\em Simple Pairing O\+OB Tag\+: Simple Pairing Hash C (16 octets) \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p___a_d_t_y_p_e___d_e_f_i_n_e_s_ga8efa0ecb3535d2325296cc4eb9e7d080}{G\+A\+P\+\_\+\+A\+D\+T\+Y\+P\+E\+\_\+\+O\+O\+B\+\_\+\+S\+I\+M\+P\+L\+E\+\_\+\+P\+A\+I\+R\+I\+N\+G\+\_\+\+R\+A\+N\+DR}}~0x0F
+\begin{DoxyCompactList}\small\item\em Simple Pairing O\+OB Tag\+: Simple Pairing Randomizer R (16 octets) \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p___a_d_t_y_p_e___d_e_f_i_n_e_s_gad8cc0432f90f79ca308934ab9cc87cf2}{G\+A\+P\+\_\+\+A\+D\+T\+Y\+P\+E\+\_\+\+S\+M\+\_\+\+TK}}~0x10
+\begin{DoxyCompactList}\small\item\em Security Manager TK Value. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p___a_d_t_y_p_e___d_e_f_i_n_e_s_gacbf847408255b26ab611ae360f9468ab}{G\+A\+P\+\_\+\+A\+D\+T\+Y\+P\+E\+\_\+\+S\+M\+\_\+\+O\+O\+B\+\_\+\+F\+L\+AG}}~0x11
+\begin{DoxyCompactList}\small\item\em Security Manager O\+OB Flags. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p___a_d_t_y_p_e___d_e_f_i_n_e_s_gaaeae6d5a447b67b0b050016cdf8e07a3}{G\+A\+P\+\_\+\+A\+D\+T\+Y\+P\+E\+\_\+\+S\+L\+A\+V\+E\+\_\+\+C\+O\+N\+N\+\_\+\+I\+N\+T\+E\+R\+V\+A\+L\+\_\+\+R\+A\+N\+GE}}~0x12
+\begin{DoxyCompactList}\small\item\em Min and Max values of the connection interval (2 octets Min, 2 octets Max) (0x\+F\+F\+FF indicates no conn interval min or max) \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p___a_d_t_y_p_e___d_e_f_i_n_e_s_ga6982e730ed77ec7166ac4ed8189d6b3b}{G\+A\+P\+\_\+\+A\+D\+T\+Y\+P\+E\+\_\+\+S\+I\+G\+N\+E\+D\+\_\+\+D\+A\+TA}}~0x13
+\begin{DoxyCompactList}\small\item\em Signed Data field. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p___a_d_t_y_p_e___d_e_f_i_n_e_s_ga1c151154bc1122e4c81a5556269b34a8}{G\+A\+P\+\_\+\+A\+D\+T\+Y\+P\+E\+\_\+\+S\+E\+R\+V\+I\+C\+E\+S\+\_\+\+L\+I\+S\+T\+\_\+16\+B\+IT}}~0x14
+\begin{DoxyCompactList}\small\item\em Service Solicitation\+: list of 16-\/bit Service U\+U\+I\+Ds. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p___a_d_t_y_p_e___d_e_f_i_n_e_s_gafc1e8a49cbc2d847552ce9d039513784}{G\+A\+P\+\_\+\+A\+D\+T\+Y\+P\+E\+\_\+\+S\+E\+R\+V\+I\+C\+E\+S\+\_\+\+L\+I\+S\+T\+\_\+128\+B\+IT}}~0x15
+\begin{DoxyCompactList}\small\item\em Service Solicitation\+: list of 128-\/bit Service U\+U\+I\+Ds. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p___a_d_t_y_p_e___d_e_f_i_n_e_s_ga26d15769ff3ce64a0827fe6eeb67974e}{G\+A\+P\+\_\+\+A\+D\+T\+Y\+P\+E\+\_\+\+S\+E\+R\+V\+I\+C\+E\+\_\+\+D\+A\+TA}}~0x16
+\begin{DoxyCompactList}\small\item\em Service Data -\/ 16-\/bit U\+U\+ID. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p___a_d_t_y_p_e___d_e_f_i_n_e_s_ga6365f4d14cb2e2130b035078024215c0}{G\+A\+P\+\_\+\+A\+D\+T\+Y\+P\+E\+\_\+\+P\+U\+B\+L\+I\+C\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+A\+D\+DR}}~0x17
+\begin{DoxyCompactList}\small\item\em Public Target Address. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p___a_d_t_y_p_e___d_e_f_i_n_e_s_ga3b9e4adcefb014562483e8727084cb44}{G\+A\+P\+\_\+\+A\+D\+T\+Y\+P\+E\+\_\+\+R\+A\+N\+D\+O\+M\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+A\+D\+DR}}~0x18
+\begin{DoxyCompactList}\small\item\em Random Target Address. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p___a_d_t_y_p_e___d_e_f_i_n_e_s_ga73192f11d357968c4e9c3f89fa494021}{G\+A\+P\+\_\+\+A\+D\+T\+Y\+P\+E\+\_\+\+A\+P\+P\+E\+A\+R\+A\+N\+CE}}~0x19
+\begin{DoxyCompactList}\small\item\em Appearance. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p___a_d_t_y_p_e___d_e_f_i_n_e_s_gaf92ee4ad8b92f11512dfd084cbb93f1d}{G\+A\+P\+\_\+\+A\+D\+T\+Y\+P\+E\+\_\+\+A\+D\+V\+\_\+\+I\+N\+T\+E\+R\+V\+AL}}~0x1A
+\begin{DoxyCompactList}\small\item\em Advertising Interval. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p___a_d_t_y_p_e___d_e_f_i_n_e_s_ga23445a91750c512da9c9a41f5c501259}{G\+A\+P\+\_\+\+A\+D\+T\+Y\+P\+E\+\_\+\+L\+E\+\_\+\+B\+D\+\_\+\+A\+D\+DR}}~0x1B
+\begin{DoxyCompactList}\small\item\em LE Bluetooth Device Address. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p___a_d_t_y_p_e___d_e_f_i_n_e_s_ga42c3e935f3d9583331a907ff1d4eb67a}{G\+A\+P\+\_\+\+A\+D\+T\+Y\+P\+E\+\_\+\+L\+E\+\_\+\+R\+O\+LE}}~0x1C
+\begin{DoxyCompactList}\small\item\em LE Role. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p___a_d_t_y_p_e___d_e_f_i_n_e_s_gacedd6c88165fe2522b28528cfacf5d92}{G\+A\+P\+\_\+\+A\+D\+T\+Y\+P\+E\+\_\+\+S\+I\+M\+P\+L\+E\+\_\+\+P\+A\+I\+R\+I\+N\+G\+\_\+\+H\+A\+S\+H\+C\+\_\+256}}~0x1D
+\begin{DoxyCompactList}\small\item\em Simple Pairing Hash C-\/256. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p___a_d_t_y_p_e___d_e_f_i_n_e_s_gaa53dfdb6080ba7936fb512819895bbe6}{G\+A\+P\+\_\+\+A\+D\+T\+Y\+P\+E\+\_\+\+S\+I\+M\+P\+L\+E\+\_\+\+P\+A\+I\+R\+I\+N\+G\+\_\+\+R\+A\+N\+D\+R\+\_\+256}}~0x1E
+\begin{DoxyCompactList}\small\item\em Simple Pairing Randomizer R-\/256. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p___a_d_t_y_p_e___d_e_f_i_n_e_s_ga084d319f6c4fe534e623744dc1eda453}{G\+A\+P\+\_\+\+A\+D\+T\+Y\+P\+E\+\_\+\+S\+E\+R\+V\+I\+C\+E\+\_\+\+D\+A\+T\+A\+\_\+32\+B\+IT}}~0x20
+\begin{DoxyCompactList}\small\item\em Service Data -\/ 32-\/bit U\+U\+ID. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p___a_d_t_y_p_e___d_e_f_i_n_e_s_gab19799f55365df4bfd60f037cd87e3c3}{G\+A\+P\+\_\+\+A\+D\+T\+Y\+P\+E\+\_\+\+S\+E\+R\+V\+I\+C\+E\+\_\+\+D\+A\+T\+A\+\_\+128\+B\+IT}}~0x21
+\begin{DoxyCompactList}\small\item\em Service Data -\/ 128-\/bit U\+U\+ID. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p___a_d_t_y_p_e___d_e_f_i_n_e_s_ga317692be33792955cd75767d7168bb8c}{G\+A\+P\+\_\+\+A\+D\+T\+Y\+P\+E\+\_\+3\+D\+\_\+\+I\+N\+F\+O\+\_\+\+D\+A\+TA}}~0x3D
+\begin{DoxyCompactList}\small\item\em 3D Information Data \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_a_p___a_d_t_y_p_e___d_e_f_i_n_e_s_gaf9922633430d1ec97bd973f51b5b73c4}{G\+A\+P\+\_\+\+A\+D\+T\+Y\+P\+E\+\_\+\+M\+A\+N\+U\+F\+A\+C\+T\+U\+R\+E\+R\+\_\+\+S\+P\+E\+C\+I\+F\+IC}}~0x\+FF
+\begin{DoxyCompactList}\small\item\em Manufacturer Specific Data\+: first 2 octets contain the Company Identifier Code followed by the additional manufacturer specific data. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+These are the data type identifiers for the data tokens in the advertisement data field. 
+
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{group___g_a_p___a_d_t_y_p_e___d_e_f_i_n_e_s_ga7c31a650b5808cbcab679a1d5a820f73}\label{group___g_a_p___a_d_t_y_p_e___d_e_f_i_n_e_s_ga7c31a650b5808cbcab679a1d5a820f73}} 
+\index{GAP Advertisement Data Types@{GAP Advertisement Data Types}!GAP\_ADTYPE\_128BIT\_COMPLETE@{GAP\_ADTYPE\_128BIT\_COMPLETE}}
+\index{GAP\_ADTYPE\_128BIT\_COMPLETE@{GAP\_ADTYPE\_128BIT\_COMPLETE}!GAP Advertisement Data Types@{GAP Advertisement Data Types}}
+\doxysubsubsection{\texorpdfstring{GAP\_ADTYPE\_128BIT\_COMPLETE}{GAP\_ADTYPE\_128BIT\_COMPLETE}}
+{\footnotesize\ttfamily \#define G\+A\+P\+\_\+\+A\+D\+T\+Y\+P\+E\+\_\+128\+B\+I\+T\+\_\+\+C\+O\+M\+P\+L\+E\+TE~0x07}
+
+
+
+Service\+: Complete list of 128-\/bit U\+U\+I\+Ds. 
+
+
+
+Definition at line 346 of file gap.\+h.
+
+\mbox{\Hypertarget{group___g_a_p___a_d_t_y_p_e___d_e_f_i_n_e_s_ga4eed7b002abac1b211828922418a6956}\label{group___g_a_p___a_d_t_y_p_e___d_e_f_i_n_e_s_ga4eed7b002abac1b211828922418a6956}} 
+\index{GAP Advertisement Data Types@{GAP Advertisement Data Types}!GAP\_ADTYPE\_128BIT\_MORE@{GAP\_ADTYPE\_128BIT\_MORE}}
+\index{GAP\_ADTYPE\_128BIT\_MORE@{GAP\_ADTYPE\_128BIT\_MORE}!GAP Advertisement Data Types@{GAP Advertisement Data Types}}
+\doxysubsubsection{\texorpdfstring{GAP\_ADTYPE\_128BIT\_MORE}{GAP\_ADTYPE\_128BIT\_MORE}}
+{\footnotesize\ttfamily \#define G\+A\+P\+\_\+\+A\+D\+T\+Y\+P\+E\+\_\+128\+B\+I\+T\+\_\+\+M\+O\+RE~0x06}
+
+
+
+Service\+: More 128-\/bit U\+U\+I\+Ds available. 
+
+
+
+Definition at line 345 of file gap.\+h.
+
+\mbox{\Hypertarget{group___g_a_p___a_d_t_y_p_e___d_e_f_i_n_e_s_ga035ae8edc40c2ddc9bc77fb29ee08d75}\label{group___g_a_p___a_d_t_y_p_e___d_e_f_i_n_e_s_ga035ae8edc40c2ddc9bc77fb29ee08d75}} 
+\index{GAP Advertisement Data Types@{GAP Advertisement Data Types}!GAP\_ADTYPE\_16BIT\_COMPLETE@{GAP\_ADTYPE\_16BIT\_COMPLETE}}
+\index{GAP\_ADTYPE\_16BIT\_COMPLETE@{GAP\_ADTYPE\_16BIT\_COMPLETE}!GAP Advertisement Data Types@{GAP Advertisement Data Types}}
+\doxysubsubsection{\texorpdfstring{GAP\_ADTYPE\_16BIT\_COMPLETE}{GAP\_ADTYPE\_16BIT\_COMPLETE}}
+{\footnotesize\ttfamily \#define G\+A\+P\+\_\+\+A\+D\+T\+Y\+P\+E\+\_\+16\+B\+I\+T\+\_\+\+C\+O\+M\+P\+L\+E\+TE~0x03}
+
+
+
+Service\+: Complete list of 16-\/bit U\+U\+I\+Ds. 
+
+
+
+Definition at line 342 of file gap.\+h.
+
+\mbox{\Hypertarget{group___g_a_p___a_d_t_y_p_e___d_e_f_i_n_e_s_ga4b8f6502debe1760131ee0e5d2d3a2f5}\label{group___g_a_p___a_d_t_y_p_e___d_e_f_i_n_e_s_ga4b8f6502debe1760131ee0e5d2d3a2f5}} 
+\index{GAP Advertisement Data Types@{GAP Advertisement Data Types}!GAP\_ADTYPE\_16BIT\_MORE@{GAP\_ADTYPE\_16BIT\_MORE}}
+\index{GAP\_ADTYPE\_16BIT\_MORE@{GAP\_ADTYPE\_16BIT\_MORE}!GAP Advertisement Data Types@{GAP Advertisement Data Types}}
+\doxysubsubsection{\texorpdfstring{GAP\_ADTYPE\_16BIT\_MORE}{GAP\_ADTYPE\_16BIT\_MORE}}
+{\footnotesize\ttfamily \#define G\+A\+P\+\_\+\+A\+D\+T\+Y\+P\+E\+\_\+16\+B\+I\+T\+\_\+\+M\+O\+RE~0x02}
+
+
+
+Service\+: More 16-\/bit U\+U\+I\+Ds available. 
+
+
+
+Definition at line 341 of file gap.\+h.
+
+\mbox{\Hypertarget{group___g_a_p___a_d_t_y_p_e___d_e_f_i_n_e_s_gaa1c66218b55e707ab09aa8e33942db06}\label{group___g_a_p___a_d_t_y_p_e___d_e_f_i_n_e_s_gaa1c66218b55e707ab09aa8e33942db06}} 
+\index{GAP Advertisement Data Types@{GAP Advertisement Data Types}!GAP\_ADTYPE\_32BIT\_COMPLETE@{GAP\_ADTYPE\_32BIT\_COMPLETE}}
+\index{GAP\_ADTYPE\_32BIT\_COMPLETE@{GAP\_ADTYPE\_32BIT\_COMPLETE}!GAP Advertisement Data Types@{GAP Advertisement Data Types}}
+\doxysubsubsection{\texorpdfstring{GAP\_ADTYPE\_32BIT\_COMPLETE}{GAP\_ADTYPE\_32BIT\_COMPLETE}}
+{\footnotesize\ttfamily \#define G\+A\+P\+\_\+\+A\+D\+T\+Y\+P\+E\+\_\+32\+B\+I\+T\+\_\+\+C\+O\+M\+P\+L\+E\+TE~0x05}
+
+
+
+Service\+: Complete list of 32-\/bit U\+U\+I\+Ds. 
+
+
+
+Definition at line 344 of file gap.\+h.
+
+\mbox{\Hypertarget{group___g_a_p___a_d_t_y_p_e___d_e_f_i_n_e_s_ga9e9dd19298a2fce7f2f2ba7b106d0032}\label{group___g_a_p___a_d_t_y_p_e___d_e_f_i_n_e_s_ga9e9dd19298a2fce7f2f2ba7b106d0032}} 
+\index{GAP Advertisement Data Types@{GAP Advertisement Data Types}!GAP\_ADTYPE\_32BIT\_MORE@{GAP\_ADTYPE\_32BIT\_MORE}}
+\index{GAP\_ADTYPE\_32BIT\_MORE@{GAP\_ADTYPE\_32BIT\_MORE}!GAP Advertisement Data Types@{GAP Advertisement Data Types}}
+\doxysubsubsection{\texorpdfstring{GAP\_ADTYPE\_32BIT\_MORE}{GAP\_ADTYPE\_32BIT\_MORE}}
+{\footnotesize\ttfamily \#define G\+A\+P\+\_\+\+A\+D\+T\+Y\+P\+E\+\_\+32\+B\+I\+T\+\_\+\+M\+O\+RE~0x04}
+
+
+
+Service\+: More 32-\/bit U\+U\+I\+Ds available. 
+
+
+
+Definition at line 343 of file gap.\+h.
+
+\mbox{\Hypertarget{group___g_a_p___a_d_t_y_p_e___d_e_f_i_n_e_s_ga317692be33792955cd75767d7168bb8c}\label{group___g_a_p___a_d_t_y_p_e___d_e_f_i_n_e_s_ga317692be33792955cd75767d7168bb8c}} 
+\index{GAP Advertisement Data Types@{GAP Advertisement Data Types}!GAP\_ADTYPE\_3D\_INFO\_DATA@{GAP\_ADTYPE\_3D\_INFO\_DATA}}
+\index{GAP\_ADTYPE\_3D\_INFO\_DATA@{GAP\_ADTYPE\_3D\_INFO\_DATA}!GAP Advertisement Data Types@{GAP Advertisement Data Types}}
+\doxysubsubsection{\texorpdfstring{GAP\_ADTYPE\_3D\_INFO\_DATA}{GAP\_ADTYPE\_3D\_INFO\_DATA}}
+{\footnotesize\ttfamily \#define G\+A\+P\+\_\+\+A\+D\+T\+Y\+P\+E\+\_\+3\+D\+\_\+\+I\+N\+F\+O\+\_\+\+D\+A\+TA~0x3D}
+
+
+
+3D Information Data 
+
+
+
+Definition at line 370 of file gap.\+h.
+
+\mbox{\Hypertarget{group___g_a_p___a_d_t_y_p_e___d_e_f_i_n_e_s_gaf92ee4ad8b92f11512dfd084cbb93f1d}\label{group___g_a_p___a_d_t_y_p_e___d_e_f_i_n_e_s_gaf92ee4ad8b92f11512dfd084cbb93f1d}} 
+\index{GAP Advertisement Data Types@{GAP Advertisement Data Types}!GAP\_ADTYPE\_ADV\_INTERVAL@{GAP\_ADTYPE\_ADV\_INTERVAL}}
+\index{GAP\_ADTYPE\_ADV\_INTERVAL@{GAP\_ADTYPE\_ADV\_INTERVAL}!GAP Advertisement Data Types@{GAP Advertisement Data Types}}
+\doxysubsubsection{\texorpdfstring{GAP\_ADTYPE\_ADV\_INTERVAL}{GAP\_ADTYPE\_ADV\_INTERVAL}}
+{\footnotesize\ttfamily \#define G\+A\+P\+\_\+\+A\+D\+T\+Y\+P\+E\+\_\+\+A\+D\+V\+\_\+\+I\+N\+T\+E\+R\+V\+AL~0x1A}
+
+
+
+Advertising Interval. 
+
+
+
+Definition at line 363 of file gap.\+h.
+
+\mbox{\Hypertarget{group___g_a_p___a_d_t_y_p_e___d_e_f_i_n_e_s_ga73192f11d357968c4e9c3f89fa494021}\label{group___g_a_p___a_d_t_y_p_e___d_e_f_i_n_e_s_ga73192f11d357968c4e9c3f89fa494021}} 
+\index{GAP Advertisement Data Types@{GAP Advertisement Data Types}!GAP\_ADTYPE\_APPEARANCE@{GAP\_ADTYPE\_APPEARANCE}}
+\index{GAP\_ADTYPE\_APPEARANCE@{GAP\_ADTYPE\_APPEARANCE}!GAP Advertisement Data Types@{GAP Advertisement Data Types}}
+\doxysubsubsection{\texorpdfstring{GAP\_ADTYPE\_APPEARANCE}{GAP\_ADTYPE\_APPEARANCE}}
+{\footnotesize\ttfamily \#define G\+A\+P\+\_\+\+A\+D\+T\+Y\+P\+E\+\_\+\+A\+P\+P\+E\+A\+R\+A\+N\+CE~0x19}
+
+
+
+Appearance. 
+
+
+
+Definition at line 362 of file gap.\+h.
+
+\mbox{\Hypertarget{group___g_a_p___a_d_t_y_p_e___d_e_f_i_n_e_s_gab1bd711d70038fc779c4bf6a2c5166d0}\label{group___g_a_p___a_d_t_y_p_e___d_e_f_i_n_e_s_gab1bd711d70038fc779c4bf6a2c5166d0}} 
+\index{GAP Advertisement Data Types@{GAP Advertisement Data Types}!GAP\_ADTYPE\_FLAGS@{GAP\_ADTYPE\_FLAGS}}
+\index{GAP\_ADTYPE\_FLAGS@{GAP\_ADTYPE\_FLAGS}!GAP Advertisement Data Types@{GAP Advertisement Data Types}}
+\doxysubsubsection{\texorpdfstring{GAP\_ADTYPE\_FLAGS}{GAP\_ADTYPE\_FLAGS}}
+{\footnotesize\ttfamily \#define G\+A\+P\+\_\+\+A\+D\+T\+Y\+P\+E\+\_\+\+F\+L\+A\+GS~0x01}
+
+
+
+Discovery Mode\+: \mbox{\hyperlink{group___g_a_p___a_d_t_y_p_e___f_l_a_g_s___m_o_d_e_s}{G\+AP A\+D\+T\+Y\+PE Flags Discovery Modes}}. 
+
+
+
+Definition at line 340 of file gap.\+h.
+
+\mbox{\Hypertarget{group___g_a_p___a_d_t_y_p_e___d_e_f_i_n_e_s_ga23445a91750c512da9c9a41f5c501259}\label{group___g_a_p___a_d_t_y_p_e___d_e_f_i_n_e_s_ga23445a91750c512da9c9a41f5c501259}} 
+\index{GAP Advertisement Data Types@{GAP Advertisement Data Types}!GAP\_ADTYPE\_LE\_BD\_ADDR@{GAP\_ADTYPE\_LE\_BD\_ADDR}}
+\index{GAP\_ADTYPE\_LE\_BD\_ADDR@{GAP\_ADTYPE\_LE\_BD\_ADDR}!GAP Advertisement Data Types@{GAP Advertisement Data Types}}
+\doxysubsubsection{\texorpdfstring{GAP\_ADTYPE\_LE\_BD\_ADDR}{GAP\_ADTYPE\_LE\_BD\_ADDR}}
+{\footnotesize\ttfamily \#define G\+A\+P\+\_\+\+A\+D\+T\+Y\+P\+E\+\_\+\+L\+E\+\_\+\+B\+D\+\_\+\+A\+D\+DR~0x1B}
+
+
+
+LE Bluetooth Device Address. 
+
+
+
+Definition at line 364 of file gap.\+h.
+
+\mbox{\Hypertarget{group___g_a_p___a_d_t_y_p_e___d_e_f_i_n_e_s_ga42c3e935f3d9583331a907ff1d4eb67a}\label{group___g_a_p___a_d_t_y_p_e___d_e_f_i_n_e_s_ga42c3e935f3d9583331a907ff1d4eb67a}} 
+\index{GAP Advertisement Data Types@{GAP Advertisement Data Types}!GAP\_ADTYPE\_LE\_ROLE@{GAP\_ADTYPE\_LE\_ROLE}}
+\index{GAP\_ADTYPE\_LE\_ROLE@{GAP\_ADTYPE\_LE\_ROLE}!GAP Advertisement Data Types@{GAP Advertisement Data Types}}
+\doxysubsubsection{\texorpdfstring{GAP\_ADTYPE\_LE\_ROLE}{GAP\_ADTYPE\_LE\_ROLE}}
+{\footnotesize\ttfamily \#define G\+A\+P\+\_\+\+A\+D\+T\+Y\+P\+E\+\_\+\+L\+E\+\_\+\+R\+O\+LE~0x1C}
+
+
+
+LE Role. 
+
+
+
+Definition at line 365 of file gap.\+h.
+
+\mbox{\Hypertarget{group___g_a_p___a_d_t_y_p_e___d_e_f_i_n_e_s_ga73e43d425fe3ddbea114d87b2300c6a1}\label{group___g_a_p___a_d_t_y_p_e___d_e_f_i_n_e_s_ga73e43d425fe3ddbea114d87b2300c6a1}} 
+\index{GAP Advertisement Data Types@{GAP Advertisement Data Types}!GAP\_ADTYPE\_LOCAL\_NAME\_COMPLETE@{GAP\_ADTYPE\_LOCAL\_NAME\_COMPLETE}}
+\index{GAP\_ADTYPE\_LOCAL\_NAME\_COMPLETE@{GAP\_ADTYPE\_LOCAL\_NAME\_COMPLETE}!GAP Advertisement Data Types@{GAP Advertisement Data Types}}
+\doxysubsubsection{\texorpdfstring{GAP\_ADTYPE\_LOCAL\_NAME\_COMPLETE}{GAP\_ADTYPE\_LOCAL\_NAME\_COMPLETE}}
+{\footnotesize\ttfamily \#define G\+A\+P\+\_\+\+A\+D\+T\+Y\+P\+E\+\_\+\+L\+O\+C\+A\+L\+\_\+\+N\+A\+M\+E\+\_\+\+C\+O\+M\+P\+L\+E\+TE~0x09}
+
+
+
+Complete local name. 
+
+
+
+Definition at line 348 of file gap.\+h.
+
+\mbox{\Hypertarget{group___g_a_p___a_d_t_y_p_e___d_e_f_i_n_e_s_ga936235e7fde3970fe6c4db8eb96ff14d}\label{group___g_a_p___a_d_t_y_p_e___d_e_f_i_n_e_s_ga936235e7fde3970fe6c4db8eb96ff14d}} 
+\index{GAP Advertisement Data Types@{GAP Advertisement Data Types}!GAP\_ADTYPE\_LOCAL\_NAME\_SHORT@{GAP\_ADTYPE\_LOCAL\_NAME\_SHORT}}
+\index{GAP\_ADTYPE\_LOCAL\_NAME\_SHORT@{GAP\_ADTYPE\_LOCAL\_NAME\_SHORT}!GAP Advertisement Data Types@{GAP Advertisement Data Types}}
+\doxysubsubsection{\texorpdfstring{GAP\_ADTYPE\_LOCAL\_NAME\_SHORT}{GAP\_ADTYPE\_LOCAL\_NAME\_SHORT}}
+{\footnotesize\ttfamily \#define G\+A\+P\+\_\+\+A\+D\+T\+Y\+P\+E\+\_\+\+L\+O\+C\+A\+L\+\_\+\+N\+A\+M\+E\+\_\+\+S\+H\+O\+RT~0x08}
+
+
+
+Shortened local name. 
+
+
+
+Definition at line 347 of file gap.\+h.
+
+\mbox{\Hypertarget{group___g_a_p___a_d_t_y_p_e___d_e_f_i_n_e_s_gaf9922633430d1ec97bd973f51b5b73c4}\label{group___g_a_p___a_d_t_y_p_e___d_e_f_i_n_e_s_gaf9922633430d1ec97bd973f51b5b73c4}} 
+\index{GAP Advertisement Data Types@{GAP Advertisement Data Types}!GAP\_ADTYPE\_MANUFACTURER\_SPECIFIC@{GAP\_ADTYPE\_MANUFACTURER\_SPECIFIC}}
+\index{GAP\_ADTYPE\_MANUFACTURER\_SPECIFIC@{GAP\_ADTYPE\_MANUFACTURER\_SPECIFIC}!GAP Advertisement Data Types@{GAP Advertisement Data Types}}
+\doxysubsubsection{\texorpdfstring{GAP\_ADTYPE\_MANUFACTURER\_SPECIFIC}{GAP\_ADTYPE\_MANUFACTURER\_SPECIFIC}}
+{\footnotesize\ttfamily \#define G\+A\+P\+\_\+\+A\+D\+T\+Y\+P\+E\+\_\+\+M\+A\+N\+U\+F\+A\+C\+T\+U\+R\+E\+R\+\_\+\+S\+P\+E\+C\+I\+F\+IC~0x\+FF}
+
+
+
+Manufacturer Specific Data\+: first 2 octets contain the Company Identifier Code followed by the additional manufacturer specific data. 
+
+
+
+Definition at line 371 of file gap.\+h.
+
+\mbox{\Hypertarget{group___g_a_p___a_d_t_y_p_e___d_e_f_i_n_e_s_ga5f168a38e0873452e1f9446cc7525001}\label{group___g_a_p___a_d_t_y_p_e___d_e_f_i_n_e_s_ga5f168a38e0873452e1f9446cc7525001}} 
+\index{GAP Advertisement Data Types@{GAP Advertisement Data Types}!GAP\_ADTYPE\_OOB\_CLASS\_OF\_DEVICE@{GAP\_ADTYPE\_OOB\_CLASS\_OF\_DEVICE}}
+\index{GAP\_ADTYPE\_OOB\_CLASS\_OF\_DEVICE@{GAP\_ADTYPE\_OOB\_CLASS\_OF\_DEVICE}!GAP Advertisement Data Types@{GAP Advertisement Data Types}}
+\doxysubsubsection{\texorpdfstring{GAP\_ADTYPE\_OOB\_CLASS\_OF\_DEVICE}{GAP\_ADTYPE\_OOB\_CLASS\_OF\_DEVICE}}
+{\footnotesize\ttfamily \#define G\+A\+P\+\_\+\+A\+D\+T\+Y\+P\+E\+\_\+\+O\+O\+B\+\_\+\+C\+L\+A\+S\+S\+\_\+\+O\+F\+\_\+\+D\+E\+V\+I\+CE~0x0D}
+
+
+
+Simple Pairing O\+OB Tag\+: Class of device (3 octets) 
+
+
+
+Definition at line 350 of file gap.\+h.
+
+\mbox{\Hypertarget{group___g_a_p___a_d_t_y_p_e___d_e_f_i_n_e_s_gae27044607e7e36d2da9fb9d679467743}\label{group___g_a_p___a_d_t_y_p_e___d_e_f_i_n_e_s_gae27044607e7e36d2da9fb9d679467743}} 
+\index{GAP Advertisement Data Types@{GAP Advertisement Data Types}!GAP\_ADTYPE\_OOB\_SIMPLE\_PAIRING\_HASHC@{GAP\_ADTYPE\_OOB\_SIMPLE\_PAIRING\_HASHC}}
+\index{GAP\_ADTYPE\_OOB\_SIMPLE\_PAIRING\_HASHC@{GAP\_ADTYPE\_OOB\_SIMPLE\_PAIRING\_HASHC}!GAP Advertisement Data Types@{GAP Advertisement Data Types}}
+\doxysubsubsection{\texorpdfstring{GAP\_ADTYPE\_OOB\_SIMPLE\_PAIRING\_HASHC}{GAP\_ADTYPE\_OOB\_SIMPLE\_PAIRING\_HASHC}}
+{\footnotesize\ttfamily \#define G\+A\+P\+\_\+\+A\+D\+T\+Y\+P\+E\+\_\+\+O\+O\+B\+\_\+\+S\+I\+M\+P\+L\+E\+\_\+\+P\+A\+I\+R\+I\+N\+G\+\_\+\+H\+A\+S\+HC~0x0E}
+
+
+
+Simple Pairing O\+OB Tag\+: Simple Pairing Hash C (16 octets) 
+
+
+
+Definition at line 351 of file gap.\+h.
+
+\mbox{\Hypertarget{group___g_a_p___a_d_t_y_p_e___d_e_f_i_n_e_s_ga8efa0ecb3535d2325296cc4eb9e7d080}\label{group___g_a_p___a_d_t_y_p_e___d_e_f_i_n_e_s_ga8efa0ecb3535d2325296cc4eb9e7d080}} 
+\index{GAP Advertisement Data Types@{GAP Advertisement Data Types}!GAP\_ADTYPE\_OOB\_SIMPLE\_PAIRING\_RANDR@{GAP\_ADTYPE\_OOB\_SIMPLE\_PAIRING\_RANDR}}
+\index{GAP\_ADTYPE\_OOB\_SIMPLE\_PAIRING\_RANDR@{GAP\_ADTYPE\_OOB\_SIMPLE\_PAIRING\_RANDR}!GAP Advertisement Data Types@{GAP Advertisement Data Types}}
+\doxysubsubsection{\texorpdfstring{GAP\_ADTYPE\_OOB\_SIMPLE\_PAIRING\_RANDR}{GAP\_ADTYPE\_OOB\_SIMPLE\_PAIRING\_RANDR}}
+{\footnotesize\ttfamily \#define G\+A\+P\+\_\+\+A\+D\+T\+Y\+P\+E\+\_\+\+O\+O\+B\+\_\+\+S\+I\+M\+P\+L\+E\+\_\+\+P\+A\+I\+R\+I\+N\+G\+\_\+\+R\+A\+N\+DR~0x0F}
+
+
+
+Simple Pairing O\+OB Tag\+: Simple Pairing Randomizer R (16 octets) 
+
+
+
+Definition at line 352 of file gap.\+h.
+
+\mbox{\Hypertarget{group___g_a_p___a_d_t_y_p_e___d_e_f_i_n_e_s_ga55eda91c788ee1de741c59fe36ee69c6}\label{group___g_a_p___a_d_t_y_p_e___d_e_f_i_n_e_s_ga55eda91c788ee1de741c59fe36ee69c6}} 
+\index{GAP Advertisement Data Types@{GAP Advertisement Data Types}!GAP\_ADTYPE\_POWER\_LEVEL@{GAP\_ADTYPE\_POWER\_LEVEL}}
+\index{GAP\_ADTYPE\_POWER\_LEVEL@{GAP\_ADTYPE\_POWER\_LEVEL}!GAP Advertisement Data Types@{GAP Advertisement Data Types}}
+\doxysubsubsection{\texorpdfstring{GAP\_ADTYPE\_POWER\_LEVEL}{GAP\_ADTYPE\_POWER\_LEVEL}}
+{\footnotesize\ttfamily \#define G\+A\+P\+\_\+\+A\+D\+T\+Y\+P\+E\+\_\+\+P\+O\+W\+E\+R\+\_\+\+L\+E\+V\+EL~0x0A}
+
+
+
+TX Power Level\+: 0x\+XX\+: -\/127 to +127 d\+Bm. 
+
+
+
+Definition at line 349 of file gap.\+h.
+
+\mbox{\Hypertarget{group___g_a_p___a_d_t_y_p_e___d_e_f_i_n_e_s_ga6365f4d14cb2e2130b035078024215c0}\label{group___g_a_p___a_d_t_y_p_e___d_e_f_i_n_e_s_ga6365f4d14cb2e2130b035078024215c0}} 
+\index{GAP Advertisement Data Types@{GAP Advertisement Data Types}!GAP\_ADTYPE\_PUBLIC\_TARGET\_ADDR@{GAP\_ADTYPE\_PUBLIC\_TARGET\_ADDR}}
+\index{GAP\_ADTYPE\_PUBLIC\_TARGET\_ADDR@{GAP\_ADTYPE\_PUBLIC\_TARGET\_ADDR}!GAP Advertisement Data Types@{GAP Advertisement Data Types}}
+\doxysubsubsection{\texorpdfstring{GAP\_ADTYPE\_PUBLIC\_TARGET\_ADDR}{GAP\_ADTYPE\_PUBLIC\_TARGET\_ADDR}}
+{\footnotesize\ttfamily \#define G\+A\+P\+\_\+\+A\+D\+T\+Y\+P\+E\+\_\+\+P\+U\+B\+L\+I\+C\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+A\+D\+DR~0x17}
+
+
+
+Public Target Address. 
+
+
+
+Definition at line 360 of file gap.\+h.
+
+\mbox{\Hypertarget{group___g_a_p___a_d_t_y_p_e___d_e_f_i_n_e_s_ga3b9e4adcefb014562483e8727084cb44}\label{group___g_a_p___a_d_t_y_p_e___d_e_f_i_n_e_s_ga3b9e4adcefb014562483e8727084cb44}} 
+\index{GAP Advertisement Data Types@{GAP Advertisement Data Types}!GAP\_ADTYPE\_RANDOM\_TARGET\_ADDR@{GAP\_ADTYPE\_RANDOM\_TARGET\_ADDR}}
+\index{GAP\_ADTYPE\_RANDOM\_TARGET\_ADDR@{GAP\_ADTYPE\_RANDOM\_TARGET\_ADDR}!GAP Advertisement Data Types@{GAP Advertisement Data Types}}
+\doxysubsubsection{\texorpdfstring{GAP\_ADTYPE\_RANDOM\_TARGET\_ADDR}{GAP\_ADTYPE\_RANDOM\_TARGET\_ADDR}}
+{\footnotesize\ttfamily \#define G\+A\+P\+\_\+\+A\+D\+T\+Y\+P\+E\+\_\+\+R\+A\+N\+D\+O\+M\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+A\+D\+DR~0x18}
+
+
+
+Random Target Address. 
+
+
+
+Definition at line 361 of file gap.\+h.
+
+\mbox{\Hypertarget{group___g_a_p___a_d_t_y_p_e___d_e_f_i_n_e_s_ga26d15769ff3ce64a0827fe6eeb67974e}\label{group___g_a_p___a_d_t_y_p_e___d_e_f_i_n_e_s_ga26d15769ff3ce64a0827fe6eeb67974e}} 
+\index{GAP Advertisement Data Types@{GAP Advertisement Data Types}!GAP\_ADTYPE\_SERVICE\_DATA@{GAP\_ADTYPE\_SERVICE\_DATA}}
+\index{GAP\_ADTYPE\_SERVICE\_DATA@{GAP\_ADTYPE\_SERVICE\_DATA}!GAP Advertisement Data Types@{GAP Advertisement Data Types}}
+\doxysubsubsection{\texorpdfstring{GAP\_ADTYPE\_SERVICE\_DATA}{GAP\_ADTYPE\_SERVICE\_DATA}}
+{\footnotesize\ttfamily \#define G\+A\+P\+\_\+\+A\+D\+T\+Y\+P\+E\+\_\+\+S\+E\+R\+V\+I\+C\+E\+\_\+\+D\+A\+TA~0x16}
+
+
+
+Service Data -\/ 16-\/bit U\+U\+ID. 
+
+
+
+Definition at line 359 of file gap.\+h.
+
+\mbox{\Hypertarget{group___g_a_p___a_d_t_y_p_e___d_e_f_i_n_e_s_gab19799f55365df4bfd60f037cd87e3c3}\label{group___g_a_p___a_d_t_y_p_e___d_e_f_i_n_e_s_gab19799f55365df4bfd60f037cd87e3c3}} 
+\index{GAP Advertisement Data Types@{GAP Advertisement Data Types}!GAP\_ADTYPE\_SERVICE\_DATA\_128BIT@{GAP\_ADTYPE\_SERVICE\_DATA\_128BIT}}
+\index{GAP\_ADTYPE\_SERVICE\_DATA\_128BIT@{GAP\_ADTYPE\_SERVICE\_DATA\_128BIT}!GAP Advertisement Data Types@{GAP Advertisement Data Types}}
+\doxysubsubsection{\texorpdfstring{GAP\_ADTYPE\_SERVICE\_DATA\_128BIT}{GAP\_ADTYPE\_SERVICE\_DATA\_128BIT}}
+{\footnotesize\ttfamily \#define G\+A\+P\+\_\+\+A\+D\+T\+Y\+P\+E\+\_\+\+S\+E\+R\+V\+I\+C\+E\+\_\+\+D\+A\+T\+A\+\_\+128\+B\+IT~0x21}
+
+
+
+Service Data -\/ 128-\/bit U\+U\+ID. 
+
+
+
+Definition at line 369 of file gap.\+h.
+
+\mbox{\Hypertarget{group___g_a_p___a_d_t_y_p_e___d_e_f_i_n_e_s_ga084d319f6c4fe534e623744dc1eda453}\label{group___g_a_p___a_d_t_y_p_e___d_e_f_i_n_e_s_ga084d319f6c4fe534e623744dc1eda453}} 
+\index{GAP Advertisement Data Types@{GAP Advertisement Data Types}!GAP\_ADTYPE\_SERVICE\_DATA\_32BIT@{GAP\_ADTYPE\_SERVICE\_DATA\_32BIT}}
+\index{GAP\_ADTYPE\_SERVICE\_DATA\_32BIT@{GAP\_ADTYPE\_SERVICE\_DATA\_32BIT}!GAP Advertisement Data Types@{GAP Advertisement Data Types}}
+\doxysubsubsection{\texorpdfstring{GAP\_ADTYPE\_SERVICE\_DATA\_32BIT}{GAP\_ADTYPE\_SERVICE\_DATA\_32BIT}}
+{\footnotesize\ttfamily \#define G\+A\+P\+\_\+\+A\+D\+T\+Y\+P\+E\+\_\+\+S\+E\+R\+V\+I\+C\+E\+\_\+\+D\+A\+T\+A\+\_\+32\+B\+IT~0x20}
+
+
+
+Service Data -\/ 32-\/bit U\+U\+ID. 
+
+
+
+Definition at line 368 of file gap.\+h.
+
+\mbox{\Hypertarget{group___g_a_p___a_d_t_y_p_e___d_e_f_i_n_e_s_gafc1e8a49cbc2d847552ce9d039513784}\label{group___g_a_p___a_d_t_y_p_e___d_e_f_i_n_e_s_gafc1e8a49cbc2d847552ce9d039513784}} 
+\index{GAP Advertisement Data Types@{GAP Advertisement Data Types}!GAP\_ADTYPE\_SERVICES\_LIST\_128BIT@{GAP\_ADTYPE\_SERVICES\_LIST\_128BIT}}
+\index{GAP\_ADTYPE\_SERVICES\_LIST\_128BIT@{GAP\_ADTYPE\_SERVICES\_LIST\_128BIT}!GAP Advertisement Data Types@{GAP Advertisement Data Types}}
+\doxysubsubsection{\texorpdfstring{GAP\_ADTYPE\_SERVICES\_LIST\_128BIT}{GAP\_ADTYPE\_SERVICES\_LIST\_128BIT}}
+{\footnotesize\ttfamily \#define G\+A\+P\+\_\+\+A\+D\+T\+Y\+P\+E\+\_\+\+S\+E\+R\+V\+I\+C\+E\+S\+\_\+\+L\+I\+S\+T\+\_\+128\+B\+IT~0x15}
+
+
+
+Service Solicitation\+: list of 128-\/bit Service U\+U\+I\+Ds. 
+
+
+
+Definition at line 358 of file gap.\+h.
+
+\mbox{\Hypertarget{group___g_a_p___a_d_t_y_p_e___d_e_f_i_n_e_s_ga1c151154bc1122e4c81a5556269b34a8}\label{group___g_a_p___a_d_t_y_p_e___d_e_f_i_n_e_s_ga1c151154bc1122e4c81a5556269b34a8}} 
+\index{GAP Advertisement Data Types@{GAP Advertisement Data Types}!GAP\_ADTYPE\_SERVICES\_LIST\_16BIT@{GAP\_ADTYPE\_SERVICES\_LIST\_16BIT}}
+\index{GAP\_ADTYPE\_SERVICES\_LIST\_16BIT@{GAP\_ADTYPE\_SERVICES\_LIST\_16BIT}!GAP Advertisement Data Types@{GAP Advertisement Data Types}}
+\doxysubsubsection{\texorpdfstring{GAP\_ADTYPE\_SERVICES\_LIST\_16BIT}{GAP\_ADTYPE\_SERVICES\_LIST\_16BIT}}
+{\footnotesize\ttfamily \#define G\+A\+P\+\_\+\+A\+D\+T\+Y\+P\+E\+\_\+\+S\+E\+R\+V\+I\+C\+E\+S\+\_\+\+L\+I\+S\+T\+\_\+16\+B\+IT~0x14}
+
+
+
+Service Solicitation\+: list of 16-\/bit Service U\+U\+I\+Ds. 
+
+
+
+Definition at line 357 of file gap.\+h.
+
+\mbox{\Hypertarget{group___g_a_p___a_d_t_y_p_e___d_e_f_i_n_e_s_ga6982e730ed77ec7166ac4ed8189d6b3b}\label{group___g_a_p___a_d_t_y_p_e___d_e_f_i_n_e_s_ga6982e730ed77ec7166ac4ed8189d6b3b}} 
+\index{GAP Advertisement Data Types@{GAP Advertisement Data Types}!GAP\_ADTYPE\_SIGNED\_DATA@{GAP\_ADTYPE\_SIGNED\_DATA}}
+\index{GAP\_ADTYPE\_SIGNED\_DATA@{GAP\_ADTYPE\_SIGNED\_DATA}!GAP Advertisement Data Types@{GAP Advertisement Data Types}}
+\doxysubsubsection{\texorpdfstring{GAP\_ADTYPE\_SIGNED\_DATA}{GAP\_ADTYPE\_SIGNED\_DATA}}
+{\footnotesize\ttfamily \#define G\+A\+P\+\_\+\+A\+D\+T\+Y\+P\+E\+\_\+\+S\+I\+G\+N\+E\+D\+\_\+\+D\+A\+TA~0x13}
+
+
+
+Signed Data field. 
+
+
+
+Definition at line 356 of file gap.\+h.
+
+\mbox{\Hypertarget{group___g_a_p___a_d_t_y_p_e___d_e_f_i_n_e_s_gacedd6c88165fe2522b28528cfacf5d92}\label{group___g_a_p___a_d_t_y_p_e___d_e_f_i_n_e_s_gacedd6c88165fe2522b28528cfacf5d92}} 
+\index{GAP Advertisement Data Types@{GAP Advertisement Data Types}!GAP\_ADTYPE\_SIMPLE\_PAIRING\_HASHC\_256@{GAP\_ADTYPE\_SIMPLE\_PAIRING\_HASHC\_256}}
+\index{GAP\_ADTYPE\_SIMPLE\_PAIRING\_HASHC\_256@{GAP\_ADTYPE\_SIMPLE\_PAIRING\_HASHC\_256}!GAP Advertisement Data Types@{GAP Advertisement Data Types}}
+\doxysubsubsection{\texorpdfstring{GAP\_ADTYPE\_SIMPLE\_PAIRING\_HASHC\_256}{GAP\_ADTYPE\_SIMPLE\_PAIRING\_HASHC\_256}}
+{\footnotesize\ttfamily \#define G\+A\+P\+\_\+\+A\+D\+T\+Y\+P\+E\+\_\+\+S\+I\+M\+P\+L\+E\+\_\+\+P\+A\+I\+R\+I\+N\+G\+\_\+\+H\+A\+S\+H\+C\+\_\+256~0x1D}
+
+
+
+Simple Pairing Hash C-\/256. 
+
+
+
+Definition at line 366 of file gap.\+h.
+
+\mbox{\Hypertarget{group___g_a_p___a_d_t_y_p_e___d_e_f_i_n_e_s_gaa53dfdb6080ba7936fb512819895bbe6}\label{group___g_a_p___a_d_t_y_p_e___d_e_f_i_n_e_s_gaa53dfdb6080ba7936fb512819895bbe6}} 
+\index{GAP Advertisement Data Types@{GAP Advertisement Data Types}!GAP\_ADTYPE\_SIMPLE\_PAIRING\_RANDR\_256@{GAP\_ADTYPE\_SIMPLE\_PAIRING\_RANDR\_256}}
+\index{GAP\_ADTYPE\_SIMPLE\_PAIRING\_RANDR\_256@{GAP\_ADTYPE\_SIMPLE\_PAIRING\_RANDR\_256}!GAP Advertisement Data Types@{GAP Advertisement Data Types}}
+\doxysubsubsection{\texorpdfstring{GAP\_ADTYPE\_SIMPLE\_PAIRING\_RANDR\_256}{GAP\_ADTYPE\_SIMPLE\_PAIRING\_RANDR\_256}}
+{\footnotesize\ttfamily \#define G\+A\+P\+\_\+\+A\+D\+T\+Y\+P\+E\+\_\+\+S\+I\+M\+P\+L\+E\+\_\+\+P\+A\+I\+R\+I\+N\+G\+\_\+\+R\+A\+N\+D\+R\+\_\+256~0x1E}
+
+
+
+Simple Pairing Randomizer R-\/256. 
+
+
+
+Definition at line 367 of file gap.\+h.
+
+\mbox{\Hypertarget{group___g_a_p___a_d_t_y_p_e___d_e_f_i_n_e_s_gaaeae6d5a447b67b0b050016cdf8e07a3}\label{group___g_a_p___a_d_t_y_p_e___d_e_f_i_n_e_s_gaaeae6d5a447b67b0b050016cdf8e07a3}} 
+\index{GAP Advertisement Data Types@{GAP Advertisement Data Types}!GAP\_ADTYPE\_SLAVE\_CONN\_INTERVAL\_RANGE@{GAP\_ADTYPE\_SLAVE\_CONN\_INTERVAL\_RANGE}}
+\index{GAP\_ADTYPE\_SLAVE\_CONN\_INTERVAL\_RANGE@{GAP\_ADTYPE\_SLAVE\_CONN\_INTERVAL\_RANGE}!GAP Advertisement Data Types@{GAP Advertisement Data Types}}
+\doxysubsubsection{\texorpdfstring{GAP\_ADTYPE\_SLAVE\_CONN\_INTERVAL\_RANGE}{GAP\_ADTYPE\_SLAVE\_CONN\_INTERVAL\_RANGE}}
+{\footnotesize\ttfamily \#define G\+A\+P\+\_\+\+A\+D\+T\+Y\+P\+E\+\_\+\+S\+L\+A\+V\+E\+\_\+\+C\+O\+N\+N\+\_\+\+I\+N\+T\+E\+R\+V\+A\+L\+\_\+\+R\+A\+N\+GE~0x12}
+
+
+
+Min and Max values of the connection interval (2 octets Min, 2 octets Max) (0x\+F\+F\+FF indicates no conn interval min or max) 
+
+
+
+Definition at line 355 of file gap.\+h.
+
+\mbox{\Hypertarget{group___g_a_p___a_d_t_y_p_e___d_e_f_i_n_e_s_gacbf847408255b26ab611ae360f9468ab}\label{group___g_a_p___a_d_t_y_p_e___d_e_f_i_n_e_s_gacbf847408255b26ab611ae360f9468ab}} 
+\index{GAP Advertisement Data Types@{GAP Advertisement Data Types}!GAP\_ADTYPE\_SM\_OOB\_FLAG@{GAP\_ADTYPE\_SM\_OOB\_FLAG}}
+\index{GAP\_ADTYPE\_SM\_OOB\_FLAG@{GAP\_ADTYPE\_SM\_OOB\_FLAG}!GAP Advertisement Data Types@{GAP Advertisement Data Types}}
+\doxysubsubsection{\texorpdfstring{GAP\_ADTYPE\_SM\_OOB\_FLAG}{GAP\_ADTYPE\_SM\_OOB\_FLAG}}
+{\footnotesize\ttfamily \#define G\+A\+P\+\_\+\+A\+D\+T\+Y\+P\+E\+\_\+\+S\+M\+\_\+\+O\+O\+B\+\_\+\+F\+L\+AG~0x11}
+
+
+
+Security Manager O\+OB Flags. 
+
+
+
+Definition at line 354 of file gap.\+h.
+
+\mbox{\Hypertarget{group___g_a_p___a_d_t_y_p_e___d_e_f_i_n_e_s_gad8cc0432f90f79ca308934ab9cc87cf2}\label{group___g_a_p___a_d_t_y_p_e___d_e_f_i_n_e_s_gad8cc0432f90f79ca308934ab9cc87cf2}} 
+\index{GAP Advertisement Data Types@{GAP Advertisement Data Types}!GAP\_ADTYPE\_SM\_TK@{GAP\_ADTYPE\_SM\_TK}}
+\index{GAP\_ADTYPE\_SM\_TK@{GAP\_ADTYPE\_SM\_TK}!GAP Advertisement Data Types@{GAP Advertisement Data Types}}
+\doxysubsubsection{\texorpdfstring{GAP\_ADTYPE\_SM\_TK}{GAP\_ADTYPE\_SM\_TK}}
+{\footnotesize\ttfamily \#define G\+A\+P\+\_\+\+A\+D\+T\+Y\+P\+E\+\_\+\+S\+M\+\_\+\+TK~0x10}
+
+
+
+Security Manager TK Value. 
+
+
+
+Definition at line 353 of file gap.\+h.
+

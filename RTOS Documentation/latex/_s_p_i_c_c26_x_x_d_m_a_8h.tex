@@ -1,0 +1,631 @@
+\hypertarget{_s_p_i_c_c26_x_x_d_m_a_8h}{}\doxysection{Drivers/\+S\+P\+I/\+S\+P\+I\+C\+C26\+X\+X\+D\+MA.h File Reference}
+\label{_s_p_i_c_c26_x_x_d_m_a_8h}\index{Drivers/SPI/SPICC26XXDMA.h@{Drivers/SPI/SPICC26XXDMA.h}}
+
+
+S\+PI driver implementation for a C\+C26\+XX S\+PI controller using the U\+D\+MA controller.  
+
+
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include $<$ti/drivers/\+S\+P\+I.\+h$>$}\newline
+{\ttfamily \#include $<$ti/drivers/pin/\+P\+I\+N\+C\+C26\+X\+X.\+h$>$}\newline
+{\ttfamily \#include $<$ti/drivers/dma/\+U\+D\+M\+A\+C\+C26\+X\+X.\+h$>$}\newline
+{\ttfamily \#include $<$ti/drivers/\+Power.\+h$>$}\newline
+{\ttfamily \#include $<$ti/drivers/power/\+Power\+C\+C26\+X\+X.\+h$>$}\newline
+{\ttfamily \#include $<$ti/sysbios/knl/\+Semaphore.\+h$>$}\newline
+{\ttfamily \#include $<$ti/sysbios/knl/\+Swi.\+h$>$}\newline
+{\ttfamily \#include $<$ti/sysbios/family/arm/m3/\+Hwi.\+h$>$}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_s_p_i_c_c26_x_x_d_m_a___h_w_attrs_v1}{S\+P\+I\+C\+C26\+X\+X\+D\+M\+A\+\_\+\+H\+W\+Attrs\+V1}}
+\begin{DoxyCompactList}\small\item\em S\+P\+I\+C\+C26\+X\+X\+D\+MA Hardware attributes. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_s_p_i_c_c26_x_x_d_m_a___object}{S\+P\+I\+C\+C26\+X\+X\+D\+M\+A\+\_\+\+Object}}
+\begin{DoxyCompactList}\small\item\em S\+P\+I\+C\+C26\+X\+X\+D\+MA Object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{_s_p_i_c_c26_x_x_d_m_a_8h_aaa17ecf48f5762e2e1bdb0bab8aacf0c}{ti\+\_\+sysbios\+\_\+family\+\_\+arm\+\_\+m3\+\_\+\+Hwi\+\_\+\+\_\+nolocalnames}}
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___c_m_d_ga348d271d5ad295c5e049e78d745c57e1}{S\+P\+I\+C\+C26\+X\+X\+D\+M\+A\+\_\+\+C\+M\+D\+\_\+\+R\+E\+T\+U\+R\+N\+\_\+\+P\+A\+R\+T\+I\+A\+L\+\_\+\+E\+N\+A\+B\+LE}}~\mbox{\hyperlink{group___s_p_i___c_o_n_t_r_o_l_ga3d23d16525ee76f77276472d8dea80b0}{S\+P\+I\+\_\+\+C\+M\+D\+\_\+\+R\+E\+S\+E\+R\+V\+ED}} + 0
+\begin{DoxyCompactList}\small\item\em Command used by S\+P\+I\+\_\+control to enable partial return. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___s_p_i___c_m_d_gaff8de4036abcdb2903cb5280120c30b4}{S\+P\+I\+C\+C26\+X\+X\+D\+M\+A\+\_\+\+C\+M\+D\+\_\+\+R\+E\+T\+U\+R\+N\+\_\+\+P\+A\+R\+T\+I\+A\+L\+\_\+\+D\+I\+S\+A\+B\+LE}}~\mbox{\hyperlink{group___s_p_i___c_o_n_t_r_o_l_ga3d23d16525ee76f77276472d8dea80b0}{S\+P\+I\+\_\+\+C\+M\+D\+\_\+\+R\+E\+S\+E\+R\+V\+ED}} + 1
+\begin{DoxyCompactList}\small\item\em Command used by S\+P\+I\+\_\+control to disable partial return. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___s_p_i___c_m_d_gab3ab03abd9ca073344acdcc6b442f9eb}{S\+P\+I\+C\+C26\+X\+X\+D\+M\+A\+\_\+\+C\+M\+D\+\_\+\+S\+E\+T\+\_\+\+C\+S\+N\+\_\+\+P\+IN}}~\mbox{\hyperlink{group___s_p_i___c_o_n_t_r_o_l_ga3d23d16525ee76f77276472d8dea80b0}{S\+P\+I\+\_\+\+C\+M\+D\+\_\+\+R\+E\+S\+E\+R\+V\+ED}} + 2
+\begin{DoxyCompactList}\small\item\em Command used by S\+P\+I\+\_\+control to re-\/configure chip select pin. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___s_p_i___c_m_d_gae07fd93964e63fc93795835eaa14b589}{S\+P\+I\+C\+C26\+X\+X\+D\+M\+A\+\_\+\+C\+M\+D\+\_\+\+S\+E\+T\+\_\+\+C\+S\+N\+\_\+\+W\+A\+K\+E\+UP}}~\mbox{\hyperlink{group___s_p_i___c_o_n_t_r_o_l_ga3d23d16525ee76f77276472d8dea80b0}{S\+P\+I\+\_\+\+C\+M\+D\+\_\+\+R\+E\+S\+E\+R\+V\+ED}} + 3
+\begin{DoxyCompactList}\small\item\em Command used by S\+P\+I\+\_\+control to re-\/configure a wakeup pin. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{_s_p_i_c_c26_x_x_d_m_a_8h_a5d2c909f70c7093227d1b288354cef27}{S\+P\+I\+C\+C26\+X\+X\+D\+M\+A\+\_\+\+R\+E\+T\+U\+R\+N\+\_\+\+P\+A\+R\+T\+I\+A\+L\+\_\+\+E\+N\+A\+B\+LE}}~\mbox{\hyperlink{group___s_p_i___c_m_d_ga348d271d5ad295c5e049e78d745c57e1}{S\+P\+I\+C\+C26\+X\+X\+D\+M\+A\+\_\+\+C\+M\+D\+\_\+\+R\+E\+T\+U\+R\+N\+\_\+\+P\+A\+R\+T\+I\+A\+L\+\_\+\+E\+N\+A\+B\+LE}}
+\item 
+\#define \mbox{\hyperlink{_s_p_i_c_c26_x_x_d_m_a_8h_a6454ac0d2222d98114cf15a4a60367ca}{S\+P\+I\+C\+C26\+X\+X\+D\+M\+A\+\_\+\+R\+E\+T\+U\+R\+N\+\_\+\+P\+A\+R\+T\+I\+A\+L\+\_\+\+D\+I\+S\+A\+B\+LE}}~\mbox{\hyperlink{group___s_p_i___c_m_d_gaff8de4036abcdb2903cb5280120c30b4}{S\+P\+I\+C\+C26\+X\+X\+D\+M\+A\+\_\+\+C\+M\+D\+\_\+\+R\+E\+T\+U\+R\+N\+\_\+\+P\+A\+R\+T\+I\+A\+L\+\_\+\+D\+I\+S\+A\+B\+LE}}
+\item 
+\#define \mbox{\hyperlink{_s_p_i_c_c26_x_x_d_m_a_8h_a447172f0061a6de65a8f0d221a23f93c}{S\+P\+I\+C\+C26\+X\+X\+D\+M\+A\+\_\+\+S\+E\+T\+\_\+\+C\+S\+N\+\_\+\+P\+IN}}~\mbox{\hyperlink{group___s_p_i___c_m_d_gab3ab03abd9ca073344acdcc6b442f9eb}{S\+P\+I\+C\+C26\+X\+X\+D\+M\+A\+\_\+\+C\+M\+D\+\_\+\+S\+E\+T\+\_\+\+C\+S\+N\+\_\+\+P\+IN}}
+\item 
+\#define \mbox{\hyperlink{_s_p_i_c_c26_x_x_d_m_a_8h_a55b298e59379bdd6020f8d55bb4264a9}{S\+P\+I\+C\+C26\+X\+X\+D\+M\+A\+\_\+\+S\+E\+T\+\_\+\+C\+S\+N\+\_\+\+W\+A\+K\+E\+UP}}~\mbox{\hyperlink{group___s_p_i___c_m_d_gae07fd93964e63fc93795835eaa14b589}{S\+P\+I\+C\+C26\+X\+X\+D\+M\+A\+\_\+\+C\+M\+D\+\_\+\+S\+E\+T\+\_\+\+C\+S\+N\+\_\+\+W\+A\+K\+E\+UP}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef enum \mbox{\hyperlink{_s_p_i_c_c26_x_x_d_m_a_8h_a1c5afb8465d3e8689a82088ad25fc81a}{S\+P\+I\+C\+C26\+X\+X\+D\+M\+A\+\_\+\+Frame\+Size}} \mbox{\hyperlink{_s_p_i_c_c26_x_x_d_m_a_8h_ac5b542d4da3d8dddfae47b15902ecebb}{S\+P\+I\+C\+C26\+X\+X\+D\+M\+A\+\_\+\+Frame\+Size}}
+\item 
+typedef void($\ast$ \mbox{\hyperlink{_s_p_i_c_c26_x_x_d_m_a_8h_aee214140ae2ad978d6d755f12a84f331}{S\+P\+I\+C\+C26\+X\+X\+D\+M\+A\+\_\+\+Callback\+Fxn}}) (\mbox{\hyperlink{_s_p_i_8h_a728806534c3c3e8675cfbfb7d8e36f13}{S\+P\+I\+\_\+\+Handle}} handle)
+\item 
+typedef struct \mbox{\hyperlink{struct_s_p_i_c_c26_x_x_d_m_a___h_w_attrs_v1}{S\+P\+I\+C\+C26\+X\+X\+D\+M\+A\+\_\+\+H\+W\+Attrs\+V1}} \mbox{\hyperlink{_s_p_i_c_c26_x_x_d_m_a_8h_aec5e61590f37f9390a26ee821bca9894}{S\+P\+I\+C\+C26\+X\+X\+D\+M\+A\+\_\+\+H\+W\+Attrs\+V1}}
+\begin{DoxyCompactList}\small\item\em S\+P\+I\+C\+C26\+X\+X\+D\+MA Hardware attributes. \end{DoxyCompactList}\item 
+typedef struct \mbox{\hyperlink{struct_s_p_i_c_c26_x_x_d_m_a___object}{S\+P\+I\+C\+C26\+X\+X\+D\+M\+A\+\_\+\+Object}} \mbox{\hyperlink{_s_p_i_c_c26_x_x_d_m_a_8h_aeb717175b092644a133c70a38752d90a}{S\+P\+I\+C\+C26\+X\+X\+D\+M\+A\+\_\+\+Object}}
+\begin{DoxyCompactList}\small\item\em S\+P\+I\+C\+C26\+X\+X\+D\+MA Object. \end{DoxyCompactList}\item 
+typedef struct \mbox{\hyperlink{struct_s_p_i_c_c26_x_x_d_m_a___object}{S\+P\+I\+C\+C26\+X\+X\+D\+M\+A\+\_\+\+Object}} $\ast$ \mbox{\hyperlink{_s_p_i_c_c26_x_x_d_m_a_8h_a23f13f9c52a6ced04e082c64bebf128f}{S\+P\+I\+C\+C26\+X\+X\+D\+M\+A\+\_\+\+Handle}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{_s_p_i_c_c26_x_x_d_m_a_8h_a1c5afb8465d3e8689a82088ad25fc81a}{S\+P\+I\+C\+C26\+X\+X\+D\+M\+A\+\_\+\+Frame\+Size}} \{ \mbox{\hyperlink{_s_p_i_c_c26_x_x_d_m_a_8h_a1c5afb8465d3e8689a82088ad25fc81aae775eeccbba1a059e3cf6ada00472a1b}{S\+P\+I\+C\+C26\+X\+X\+D\+M\+A\+\_\+8bit}} = 0, 
+\mbox{\hyperlink{_s_p_i_c_c26_x_x_d_m_a_8h_a1c5afb8465d3e8689a82088ad25fc81aab7e0c593e19cb06ea65ad293f6fd0971}{S\+P\+I\+C\+C26\+X\+X\+D\+M\+A\+\_\+16bit}} = 1
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const \mbox{\hyperlink{struct_s_p_i___fxn_table}{S\+P\+I\+\_\+\+Fxn\+Table}} \mbox{\hyperlink{_s_p_i_c_c26_x_x_d_m_a_8h_a7a96d71ae8382c6fa489107d34d6c9b3}{S\+P\+I\+C\+C26\+X\+X\+D\+M\+A\+\_\+fxn\+Table}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+S\+PI driver implementation for a C\+C26\+XX S\+PI controller using the U\+D\+MA controller. 
+
+============================================================================\hypertarget{_s_p_i_c_c26_x_x_d_m_a_8h_autotoc_md62}{}\doxysubsection{Driver include}\label{_s_p_i_c_c26_x_x_d_m_a_8h_autotoc_md62}
+The S\+PI header file should be included in an application as follows\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include <ti/drivers/SPI.h>}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include <ti/drivers/spi/SPICC26XXDMA.h>}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include <ti/drivers/dma/UDMACC26XX.h>}}
+\end{DoxyCode}
+
+
+Refer to \mbox{\hyperlink{_s_p_i_8h}{S\+P\+I.\+h}} for a complete description of A\+P\+Is.
+
+Note that the user also needs to include the \mbox{\hyperlink{_u_d_m_a_c_c26_x_x_8h}{U\+D\+M\+A\+C\+C26\+X\+X.\+h}} driver since the S\+PI uses u\+D\+MA in order to improve throughput.\hypertarget{_s_p_i_c_c26_x_x_d_m_a_8h_autotoc_md63}{}\doxysubsection{Overview}\label{_s_p_i_c_c26_x_x_d_m_a_8h_autotoc_md63}
+The general S\+PI A\+PI should be used in application code, i.\+e. \mbox{\hyperlink{_s_p_i_8c_a62cfe494cb1df47cd602e8747e894fd1}{S\+P\+I\+\_\+open()}} should be used instead of \mbox{\hyperlink{_s_p_i_c_c26_x_x_d_m_a_8c_a85dd106e353eb64b10b47ea44d0591d1}{S\+P\+I\+C\+C26\+X\+X\+D\+M\+A\+\_\+open()}}. The board file will define the device specific config, and casting in the general A\+PI will ensure that the correct device specific functions are called. This is also reflected in the example code in Use Cases.\hypertarget{_s_p_i_c_c26_x_x_d_m_a_8h_autotoc_md64}{}\doxysubsection{General Behavior}\label{_s_p_i_c_c26_x_x_d_m_a_8h_autotoc_md64}
+Before using S\+PI on C\+C26\+XX\+:
+\begin{DoxyItemize}
+\item The S\+PI driver is initialized by calling \mbox{\hyperlink{_s_p_i_8c_afd9b09f58917f0e2d14c61b956eba214}{S\+P\+I\+\_\+init()}}.
+\item The S\+PI HW is configured and flags system dependencies (e.\+g. I\+Os, power, etc.) by calling \mbox{\hyperlink{_s_p_i_8c_a62cfe494cb1df47cd602e8747e894fd1}{S\+P\+I\+\_\+open()}}.
+\item The S\+PI driver makes use of D\+MA in order to optimize throughput. This is handled directly by the S\+PI driver, so the application should never to make any calls directly to the \mbox{\hyperlink{_u_d_m_a_c_c26_x_x_8h}{U\+D\+M\+A\+C\+C26\+X\+X.\+h}} driver.
+\end{DoxyItemize}
+
+The following is true for slave operation\+:
+\begin{DoxyItemize}
+\item RX overrun I\+RQ, S\+PI and U\+D\+MA modules are enabled by calling \mbox{\hyperlink{_s_p_i_8c_a989e17f96b54fcc3dc2cac5f8ac6bdb2}{S\+P\+I\+\_\+transfer()}}.
+\item All received bytes are ignored after \mbox{\hyperlink{_s_p_i_8c_a62cfe494cb1df47cd602e8747e894fd1}{S\+P\+I\+\_\+open()}} is called, until the first \mbox{\hyperlink{_s_p_i_8c_a989e17f96b54fcc3dc2cac5f8ac6bdb2}{S\+P\+I\+\_\+transfer()}}.
+\item If an RX overrun occur or if \mbox{\hyperlink{_s_p_i_8c_a6819f7761fc3505c4f885653ff8121f0}{S\+P\+I\+\_\+transfer\+Cancel()}} is called, RX overrun I\+RQ, S\+PI and U\+D\+MA modules are disabled, TX and RX F\+I\+F\+Os are flushed and all bytes are ignored.
+\item After a successful transfer, RX overrun I\+RQ and S\+PI module remains enabled and U\+D\+MA module is disabled. \mbox{\hyperlink{_s_p_i_8c_a989e17f96b54fcc3dc2cac5f8ac6bdb2}{S\+P\+I\+\_\+transfer()}} must be called again before RX F\+I\+FO goes full in order to avoid overflow. If the TX buffer is underflowed, zeros will be outputted. It is safe to call another \mbox{\hyperlink{_s_p_i_8c_a989e17f96b54fcc3dc2cac5f8ac6bdb2}{S\+P\+I\+\_\+transfer()}} from the transfer callback, see Continous Slave Transfer use case below.
+\item The S\+PI driver supports partial return, that can be used if the transfer size is unknown. If P\+A\+R\+T\+I\+A\+L\+\_\+\+R\+E\+T\+U\+RN is enabled, the transfer will end when chip select is deasserted. The \mbox{\hyperlink{struct_s_p_i___transaction_aa244504b2384411f7de17340be62128a}{S\+P\+I\+\_\+\+Transaction.\+status}} and the \mbox{\hyperlink{struct_s_p_i___transaction_ad049d6a900c4bdb59a5ee8ce3d5bced2}{S\+P\+I\+\_\+\+Transaction.\+count}} will be updated to indicate whether the transfer ended due to a chip select deassertion and how many bytes were transferred. See Slave Mode With Return Partial use case below.
+\end{DoxyItemize}
+
+The following apply for master operation\+:
+\begin{DoxyItemize}
+\item S\+PI and U\+D\+MA modules are enabled by calling \mbox{\hyperlink{_s_p_i_8c_a989e17f96b54fcc3dc2cac5f8ac6bdb2}{S\+P\+I\+\_\+transfer()}}.
+\item If the \mbox{\hyperlink{_s_p_i_8c_a989e17f96b54fcc3dc2cac5f8ac6bdb2}{S\+P\+I\+\_\+transfer()}} succeeds, S\+PI module is enabled and U\+D\+MA module is disabled.
+\item If \mbox{\hyperlink{_s_p_i_8c_a6819f7761fc3505c4f885653ff8121f0}{S\+P\+I\+\_\+transfer\+Cancel()}} is called, S\+PI and U\+D\+MA modules are disabled and TX and RX F\+I\+F\+Os are flushed.
+\end{DoxyItemize}After S\+PI operation has ended\+:
+\begin{DoxyItemize}
+\item Release system dependencies for S\+PI by calling \mbox{\hyperlink{_s_p_i_8c_a0e3448b30b88609fa120915e49560601}{S\+P\+I\+\_\+close()}}.
+\end{DoxyItemize}The callback function is called in the following context\+:
+\begin{DoxyItemize}
+\item When an error occurs, the callback function is called in a H\+WI context.
+\item When no error occurs, the callback function is called in a S\+WI context.
+\end{DoxyItemize}
+
+\begin{DoxyWarning}{Warning}
+The application should avoid transmitting data stored in flash via S\+PI if the application might switch to the X\+O\+S\+C\+\_\+\+HF, the high frequency external oscillator, during this transfer.
+\end{DoxyWarning}
+\hypertarget{_s_p_i_c_c26_x_x_d_m_a_8h_autotoc_md65}{}\doxysubsection{Error handling}\label{_s_p_i_c_c26_x_x_d_m_a_8h_autotoc_md65}
+If an RX overrun occurs during slave operation\+:
+\begin{DoxyItemize}
+\item If a transfer is ongoing, all bytes received up until the error occurs will be returned, with the error signaled in the \mbox{\hyperlink{struct_s_p_i___transaction_aa244504b2384411f7de17340be62128a}{S\+P\+I\+\_\+\+Transaction.\+status}} field. RX overrun I\+RQ, S\+PI and U\+D\+MA modules are then disabled, TX and RX F\+I\+F\+Os are flushed and all bytes will be ignored until a new transfer is issued.
+\item If a transfer is not ongoing, RX overrun I\+RQ, S\+PI and U\+D\+MA modules are disabled, TX and RX F\+I\+F\+Os are flushed and all bytes will be ignored until a new transfer is issued.
+\end{DoxyItemize}\hypertarget{_s_p_i_c_c26_x_x_d_m_a_8h_autotoc_md66}{}\doxysubsection{Timeout}\label{_s_p_i_c_c26_x_x_d_m_a_8h_autotoc_md66}
+Timeout can occur in \mbox{\hyperlink{_s_p_i_8h_ab9ea76c6529d6076eee5e1c4a5a92c6fa0dfb2358e008316426895e7237c398e8}{S\+P\+I\+\_\+\+M\+O\+D\+E\+\_\+\+B\+L\+O\+C\+K\+I\+NG}}, there\textquotesingle{}s no timeout in \mbox{\hyperlink{_s_p_i_8h_ab9ea76c6529d6076eee5e1c4a5a92c6fa5631e69925c47a62a261c78ebbda39fb}{S\+P\+I\+\_\+\+M\+O\+D\+E\+\_\+\+C\+A\+L\+L\+B\+A\+CK}}. When in \mbox{\hyperlink{_s_p_i_8h_ab9ea76c6529d6076eee5e1c4a5a92c6fa5631e69925c47a62a261c78ebbda39fb}{S\+P\+I\+\_\+\+M\+O\+D\+E\+\_\+\+C\+A\+L\+L\+B\+A\+CK}}, the transfer must be cancelled by calling \mbox{\hyperlink{_s_p_i_8c_a6819f7761fc3505c4f885653ff8121f0}{S\+P\+I\+\_\+transfer\+Cancel()}}.~\newline
+If a timeout happens in either \mbox{\hyperlink{_s_p_i_8h_a60a7e3d74577b38aa79ea6983362f942abc98c1546fe12d3fceb1f86cf670faa9}{S\+P\+I\+\_\+\+S\+L\+A\+VE}} or \mbox{\hyperlink{_s_p_i_8h_a60a7e3d74577b38aa79ea6983362f942a84379dc90398ca075038c8d5ee465f6a}{S\+P\+I\+\_\+\+M\+A\+S\+T\+ER}} mode, the receive buffer will contain the bytes received up until the timeout occured. The S\+PI transaction status will be set to \mbox{\hyperlink{_s_p_i_8h_a913c57c335166de9caa54b7eb9ad95fbac01b83da31c34da13025a5b987ef013f}{S\+P\+I\+\_\+\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+F\+A\+I\+L\+ED}}. The S\+PI transaction count will be set to the number of bytes sent/received before timeout. The remaining bytes will be flushed from the TX F\+I\+FO so that the subsequent transfer can be executed correctly.\hypertarget{_s_p_i_c_c26_x_x_d_m_a_8h_autotoc_md67}{}\doxysubsection{Power Management}\label{_s_p_i_c_c26_x_x_d_m_a_8h_autotoc_md67}
+The T\+I-\/\+R\+T\+OS power management framework will try to put the device into the most power efficient mode whenever possible. Please see the technical reference manual for further details on each power mode.
+
+The \mbox{\hyperlink{_s_p_i_c_c26_x_x_d_m_a_8h}{S\+P\+I\+C\+C26\+X\+X\+D\+M\+A.\+h}} driver is setting a power constraint during transfers to keep the device out of standby. When the transfer has finished, the power constraint is released. The following statements are valid\+:
+\begin{DoxyItemize}
+\item After \mbox{\hyperlink{_s_p_i_8c_a62cfe494cb1df47cd602e8747e894fd1}{S\+P\+I\+\_\+open()}}\+: the device is still allowed to enter standby.
+\item In slave mode\+:
+\begin{DoxyItemize}
+\item During \mbox{\hyperlink{_s_p_i_8c_a989e17f96b54fcc3dc2cac5f8ac6bdb2}{S\+P\+I\+\_\+transfer()}}\+: the device cannot enter standby, only idle.
+\item After an RX overflow\+: device is allowed to enter standby.
+\item After a successful \mbox{\hyperlink{_s_p_i_8c_a989e17f96b54fcc3dc2cac5f8ac6bdb2}{S\+P\+I\+\_\+transfer()}}\+: the device is allowed to enter standby, but S\+PI module remains enabled.
+\begin{DoxyItemize}
+\item {\itshape Note}\+: In slave mode, the device might enter standby while a byte is being transferred if \mbox{\hyperlink{_s_p_i_8c_a989e17f96b54fcc3dc2cac5f8ac6bdb2}{S\+P\+I\+\_\+transfer()}} is not called again after a successful transfer. This could result in corrupt data being transferred.
+\end{DoxyItemize}
+\item Application thread should typically either issue another transfer after \mbox{\hyperlink{_s_p_i_8c_a989e17f96b54fcc3dc2cac5f8ac6bdb2}{S\+P\+I\+\_\+transfer()}} completes successfully, or call \mbox{\hyperlink{_s_p_i_8c_a6819f7761fc3505c4f885653ff8121f0}{S\+P\+I\+\_\+transfer\+Cancel()}} to disable the S\+PI module and thus assuring that no data is received while entering standby.
+\end{DoxyItemize}
+\item In master mode\+:
+\begin{DoxyItemize}
+\item During \mbox{\hyperlink{_s_p_i_8c_a989e17f96b54fcc3dc2cac5f8ac6bdb2}{S\+P\+I\+\_\+transfer()}}\+: the device cannot enter standby, only idle.
+\item After \mbox{\hyperlink{_s_p_i_8c_a989e17f96b54fcc3dc2cac5f8ac6bdb2}{S\+P\+I\+\_\+transfer()}} succeeds\+: the device can enter standby.
+\item If \mbox{\hyperlink{_s_p_i_8c_a6819f7761fc3505c4f885653ff8121f0}{S\+P\+I\+\_\+transfer\+Cancel()}} is called\+: the device can enter standby.
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+\begin{DoxyNote}{Note}
+The external hardware connected to the S\+PI might have some pull configured on the S\+PI lines. When the S\+PI is inactive, this might cause leakage on the IO and the current consumption to increase. The application must configure a pull configuration that alignes with the external hardware. See Ensure low power during inactive periods for code example.
+\end{DoxyNote}
+\hypertarget{_s_p_i_c_c26_x_x_d_m_a_8h_autotoc_md68}{}\doxysubsection{S\+P\+I details}\label{_s_p_i_c_c26_x_x_d_m_a_8h_autotoc_md68}
+\hypertarget{_s_p_i_c_c26_x_x_d_m_a_8h_autotoc_md69}{}\doxysubsubsection{Chip Select}\label{_s_p_i_c_c26_x_x_d_m_a_8h_autotoc_md69}
+This S\+PI controller supports a hardware chip select pin. Refer to the user manual on how this hardware chip select pin behaves in regards to the S\+PI frame format.
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{3}{|X[-1]}|}
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ Chip select type }&\cellcolor{\tableheadbgcolor}\textbf{ S\+P\+I\+\_\+\+M\+A\+S\+T\+ER mode }&\cellcolor{\tableheadbgcolor}\textbf{ S\+P\+I\+\_\+\+S\+L\+A\+VE mode  }\\\cline{1-3}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ Chip select type }&\cellcolor{\tableheadbgcolor}\textbf{ S\+P\+I\+\_\+\+M\+A\+S\+T\+ER mode }&\cellcolor{\tableheadbgcolor}\textbf{ S\+P\+I\+\_\+\+S\+L\+A\+VE mode  }\\\cline{1-3}
+\endhead
+Hardware chip select &No action is needed by the application to select the peripheral. &See the device documentation on it\textquotesingle{}s chip select requirements.  \\\cline{1-3}
+Software chip select &The application is responsible to ensure that correct S\+PI slave is selected before performing a \mbox{\hyperlink{_s_p_i_8c_a989e17f96b54fcc3dc2cac5f8ac6bdb2}{S\+P\+I\+\_\+transfer()}}. &See the device documentation on it\textquotesingle{}s chip select requirements.  \\\cline{1-3}
+\end{longtabu}
+\hypertarget{_s_p_i_c_c26_x_x_d_m_a_8h_autotoc_md70}{}\doxyparagraph{Multiple slaves when operating in master mode}\label{_s_p_i_c_c26_x_x_d_m_a_8h_autotoc_md70}
+In a scenario where the S\+PI module is operating in master mode with multiple S\+PI slaves, the chip select pin can be reallocated at runtime to select the appropiate slave device. See Master Mode With Multiple Slaves use case below. This is only relevant when chip select is a hardware chip select. Otherwise the application can control the chip select pins directly using the P\+IN driver.\hypertarget{_s_p_i_c_c26_x_x_d_m_a_8h_autotoc_md71}{}\doxysubsubsection{Data Frames}\label{_s_p_i_c_c26_x_x_d_m_a_8h_autotoc_md71}
+S\+PI data frames can be any size from 4-\/bits to 16-\/bits. If the data\+Size in \mbox{\hyperlink{struct_s_p_i___params}{S\+P\+I\+\_\+\+Params}} is greater that 8-\/bits, then the S\+P\+I\+C\+C26\+X\+X\+D\+MA driver implementation will assume that the \mbox{\hyperlink{struct_s_p_i___transaction}{S\+P\+I\+\_\+\+Transaction}} tx\+Buf and rx\+Buf point to an array of 16-\/bit uint16\+\_\+t elements.
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ data\+Size }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ buffer element size  }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ data\+Size }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ buffer element size  }\\\cline{1-2}
+\endhead
+4-\/8 bits &uint8\+\_\+t  \\\cline{1-2}
+9-\/16 bits &uint16\+\_\+t  \\\cline{1-2}
+\end{longtabu}
+\hypertarget{_s_p_i_c_c26_x_x_d_m_a_8h_autotoc_md72}{}\doxysubsubsection{Bit Rate}\label{_s_p_i_c_c26_x_x_d_m_a_8h_autotoc_md72}
+When the S\+PI is configured as S\+PI slave, the maximum bit rate is 4M\+Hz.
+
+When the S\+PI is configured as S\+PI master, the maximum bit rate is 12M\+Hz.\hypertarget{_s_p_i_c_c26_x_x_d_m_a_8h_autotoc_md73}{}\doxysubsubsection{U\+D\+MA}\label{_s_p_i_c_c26_x_x_d_m_a_8h_autotoc_md73}
+\hypertarget{_s_p_i_c_c26_x_x_d_m_a_8h_autotoc_md74}{}\doxyparagraph{Interrupts}\label{_s_p_i_c_c26_x_x_d_m_a_8h_autotoc_md74}
+The U\+D\+MA module generates I\+R\+Qs on the S\+PI interrupt vector. This driver automatically installs a U\+D\+MA aware Hwi (interrupt) to service the assigned U\+D\+MA channels.\hypertarget{_s_p_i_c_c26_x_x_d_m_a_8h_autotoc_md75}{}\doxyparagraph{Transfer Size Limit}\label{_s_p_i_c_c26_x_x_d_m_a_8h_autotoc_md75}
+The U\+D\+MA contoller only supports data transfers of upto 1024 data frames. A data frame can be 4 to 16 bits in length.\hypertarget{_s_p_i_c_c26_x_x_d_m_a_8h_autotoc_md76}{}\doxyparagraph{Scratch Buffers}\label{_s_p_i_c_c26_x_x_d_m_a_8h_autotoc_md76}
+A uint16\+\_\+t scratch buffer is used to allow S\+P\+I\+\_\+transfers where tx\+Buf or rx\+Buf are N\+U\+LL. Rather than requiring tx\+Buf or rx\+Buf to have a dummy buffer of size of the transfer count, a single-\/word U\+D\+MA accessible uint16\+\_\+t scratch buffer is used. When rx\+Buf is N\+U\+LL, the U\+D\+MA will transfer all the received S\+PI data into the scratch buffer as a \char`\"{}bit-\/bucket\char`\"{}. When tx\+Buf is N\+U\+LL, the scratch buffer is initialized to default\+Tx\+Buf\+Value so the u\+D\+MA will send some known value. Each S\+PI driver instance uses its own scratch buffer.\hypertarget{_s_p_i_c_c26_x_x_d_m_a_8h_autotoc_md77}{}\doxyparagraph{T\+X and R\+X buffers}\label{_s_p_i_c_c26_x_x_d_m_a_8h_autotoc_md77}
+Before S\+P\+I\+\_\+transfer, tx\+Buf should be filled with the outgoing S\+PI data. These data are sent out during the transfer, while the incoming data are received into rx\+Buf. To save memory space, tx\+Buf and rx\+Buf can be assigned to the same buffer location. At the beginning of the transfer, this buffer holds outgoing data. At the end of the transfer, the outgoing data are overwritten and the buffer holds the received S\+PI data.\hypertarget{_s_p_i_c_c26_x_x_d_m_a_8h_autotoc_md78}{}\doxysubsection{Supported Functions}\label{_s_p_i_c_c26_x_x_d_m_a_8h_autotoc_md78}
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{3}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Generic A\+PI function }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ A\+PI function }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Description  }\\\cline{1-3}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Generic A\+PI function }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ A\+PI function }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Description  }\\\cline{1-3}
+\endhead
+\mbox{\hyperlink{_s_p_i_8c_afd9b09f58917f0e2d14c61b956eba214}{S\+P\+I\+\_\+init()}} &\mbox{\hyperlink{_s_p_i_c_c26_x_x_d_m_a_8c_a9c2af6a68116b6577b7996ce8fae3970}{S\+P\+I\+C\+C26\+X\+X\+D\+M\+A\+\_\+init()}} &Initialize S\+PI driver  \\\cline{1-3}
+\mbox{\hyperlink{_s_p_i_8c_a62cfe494cb1df47cd602e8747e894fd1}{S\+P\+I\+\_\+open()}} &\mbox{\hyperlink{_s_p_i_c_c26_x_x_d_m_a_8c_a85dd106e353eb64b10b47ea44d0591d1}{S\+P\+I\+C\+C26\+X\+X\+D\+M\+A\+\_\+open()}} &Initialize S\+PI HW and set system dependencies  \\\cline{1-3}
+\mbox{\hyperlink{_s_p_i_8c_a0e3448b30b88609fa120915e49560601}{S\+P\+I\+\_\+close()}} &\mbox{\hyperlink{_s_p_i_c_c26_x_x_d_m_a_8c_a029b5e65ddc65cbd2469f31822286b7c}{S\+P\+I\+C\+C26\+X\+X\+D\+M\+A\+\_\+close()}} &Disable S\+PI and U\+D\+MA HW and release system dependencies  \\\cline{1-3}
+\mbox{\hyperlink{_s_p_i_8c_ab9d3a23991be2741f382749d3844cc2f}{S\+P\+I\+\_\+control()}} &\mbox{\hyperlink{_s_p_i_c_c26_x_x_d_m_a_8c_a39daa494b5680e6140cbd16a53d5bb57}{S\+P\+I\+C\+C26\+X\+X\+D\+M\+A\+\_\+control()}} &Configure an already opened S\+PI handle  \\\cline{1-3}
+\mbox{\hyperlink{_s_p_i_8c_a989e17f96b54fcc3dc2cac5f8ac6bdb2}{S\+P\+I\+\_\+transfer()}} &\mbox{\hyperlink{_s_p_i_c_c26_x_x_d_m_a_8c_aa6c4d6b633647be617db766cd6c685d3}{S\+P\+I\+C\+C26\+X\+X\+D\+M\+A\+\_\+transfer()}} &Start transfer from S\+PI  \\\cline{1-3}
+\mbox{\hyperlink{_s_p_i_8c_a6819f7761fc3505c4f885653ff8121f0}{S\+P\+I\+\_\+transfer\+Cancel()}} &\mbox{\hyperlink{_s_p_i_c_c26_x_x_d_m_a_8c_af67ffed26c2beb49d2f5b59a4f01b12c}{S\+P\+I\+C\+C26\+X\+X\+D\+M\+A\+\_\+transfer\+Cancel()}} &Cancel ongoing transfer from S\+PI  \\\cline{1-3}
+\end{longtabu}
+
+
+\begin{DoxyNote}{Note}
+All calls should go through the generic A\+PI
+\end{DoxyNote}
+\hypertarget{_s_p_i_c_c26_x_x_d_m_a_8h_autotoc_md79}{}\doxysubsubsection{Unsupported Functionality}\label{_s_p_i_c_c26_x_x_d_m_a_8h_autotoc_md79}
+The C\+C26\+XX S\+PI driver does not support\+:
+\begin{DoxyItemize}
+\item S\+P\+I\+C\+C26\+X\+X\+D\+M\+A\+\_\+service\+I\+S\+R()
+\end{DoxyItemize}\hypertarget{_s_p_i_c_c26_x_x_d_m_a_8h_autotoc_md80}{}\doxysubsubsection{Use Cases @anchor U\+S\+E\+\_\+\+C\+A\+S\+E\+S\+\_\+\+S\+PI}\label{_s_p_i_c_c26_x_x_d_m_a_8h_autotoc_md80}
+\hypertarget{_s_p_i_c_c26_x_x_d_m_a_8h_autotoc_md81}{}\doxyparagraph{Basic Slave Mode}\label{_s_p_i_c_c26_x_x_d_m_a_8h_autotoc_md81}
+Receive 100 bytes over S\+PI in \mbox{\hyperlink{_s_p_i_8h_ab9ea76c6529d6076eee5e1c4a5a92c6fa0dfb2358e008316426895e7237c398e8}{S\+P\+I\+\_\+\+M\+O\+D\+E\+\_\+\+B\+L\+O\+C\+K\+I\+NG}}. 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{struct_s_p_i___config}{SPI\_Handle}} handle;}
+\DoxyCodeLine{\mbox{\hyperlink{struct_s_p_i___params}{SPI\_Params}} params;}
+\DoxyCodeLine{\mbox{\hyperlink{struct_s_p_i___transaction}{SPI\_Transaction}} transaction;}
+\DoxyCodeLine{uint8\_t rxBuf[100];     \textcolor{comment}{// Receive buffer}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{// Init SPI and specify non-\/default parameters}}
+\DoxyCodeLine{\mbox{\hyperlink{_s_p_i_8c_a9c3dd1748332fd6e31c79a6538a71642}{SPI\_Params\_init}}(\&params);}
+\DoxyCodeLine{params.\mbox{\hyperlink{struct_s_p_i___params_ab3f035044fdbe75adac8c1d729d8cf20}{bitRate}}     = 1000000;}
+\DoxyCodeLine{params.\mbox{\hyperlink{struct_s_p_i___params_a67b5ebb8ec72796a0260c427c91cc093}{frameFormat}} = \mbox{\hyperlink{_s_p_i_8h_a4e1f33555dfa8147205af5b266f3a489a4441729b292511628cb1e9f102da9166}{SPI\_POL1\_PHA1}};}
+\DoxyCodeLine{params.\mbox{\hyperlink{struct_s_p_i___params_abe5eca64adf4ca96bed206a271d9b157}{mode}}        = \mbox{\hyperlink{_s_p_i_8h_a60a7e3d74577b38aa79ea6983362f942abc98c1546fe12d3fceb1f86cf670faa9}{SPI\_SLAVE}};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{// Configure the transaction}}
+\DoxyCodeLine{transaction.\mbox{\hyperlink{struct_s_p_i___transaction_ad049d6a900c4bdb59a5ee8ce3d5bced2}{count}} = 100;}
+\DoxyCodeLine{transaction.\mbox{\hyperlink{struct_s_p_i___transaction_a9461a248f1cceb4048668d44b323a0b8}{txBuf}} = NULL;}
+\DoxyCodeLine{transaction.\mbox{\hyperlink{struct_s_p_i___transaction_a214f57d7809c875fb9456a62a406e041}{rxBuf}} = rxBuf;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{// Open the SPI and perform the transfer}}
+\DoxyCodeLine{handle = \mbox{\hyperlink{_s_p_i_8c_a62cfe494cb1df47cd602e8747e894fd1}{SPI\_open}}(Board\_SPI, \&params);}
+\DoxyCodeLine{\mbox{\hyperlink{_s_p_i_8c_a989e17f96b54fcc3dc2cac5f8ac6bdb2}{SPI\_transfer}}(handle, \&transaction);}
+\end{DoxyCode}
+\hypertarget{_s_p_i_c_c26_x_x_d_m_a_8h_autotoc_md82}{}\doxyparagraph{Slave Mode With Return Partial @anchor U\+S\+E\+\_\+\+C\+A\+S\+E\+\_\+\+RP}\label{_s_p_i_c_c26_x_x_d_m_a_8h_autotoc_md82}
+This use case will perform a transfer in \mbox{\hyperlink{_s_p_i_8h_ab9ea76c6529d6076eee5e1c4a5a92c6fa0dfb2358e008316426895e7237c398e8}{S\+P\+I\+\_\+\+M\+O\+D\+E\+\_\+\+B\+L\+O\+C\+K\+I\+NG}} until the wanted amount of bytes is transferred or until chip select is deasserted by the S\+PI master. This \mbox{\hyperlink{_s_p_i_8c_a989e17f96b54fcc3dc2cac5f8ac6bdb2}{S\+P\+I\+\_\+transfer()}} call can be used when unknown amount of bytes shall be transferred. Note\+: The partial return is also possible in \mbox{\hyperlink{_s_p_i_8h_ab9ea76c6529d6076eee5e1c4a5a92c6fa5631e69925c47a62a261c78ebbda39fb}{S\+P\+I\+\_\+\+M\+O\+D\+E\+\_\+\+C\+A\+L\+L\+B\+A\+CK}} mode. 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{struct_s_p_i___config}{SPI\_Handle}} handle;}
+\DoxyCodeLine{\mbox{\hyperlink{struct_s_p_i___params}{SPI\_Params}} params;}
+\DoxyCodeLine{\mbox{\hyperlink{struct_s_p_i___transaction}{SPI\_Transaction}} transaction;}
+\DoxyCodeLine{uint8\_t rxBuf[100];     \textcolor{comment}{// Receive buffer}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{// Init SPI and specify non-\/default parameters}}
+\DoxyCodeLine{\mbox{\hyperlink{_s_p_i_8c_a9c3dd1748332fd6e31c79a6538a71642}{SPI\_Params\_init}}(\&params);}
+\DoxyCodeLine{params.\mbox{\hyperlink{struct_s_p_i___params_ab3f035044fdbe75adac8c1d729d8cf20}{bitRate}}     = 1000000;}
+\DoxyCodeLine{params.\mbox{\hyperlink{struct_s_p_i___params_a67b5ebb8ec72796a0260c427c91cc093}{frameFormat}} = \mbox{\hyperlink{_s_p_i_8h_a4e1f33555dfa8147205af5b266f3a489a4441729b292511628cb1e9f102da9166}{SPI\_POL1\_PHA1}};}
+\DoxyCodeLine{params.\mbox{\hyperlink{struct_s_p_i___params_abe5eca64adf4ca96bed206a271d9b157}{mode}}        = \mbox{\hyperlink{_s_p_i_8h_a60a7e3d74577b38aa79ea6983362f942abc98c1546fe12d3fceb1f86cf670faa9}{SPI\_SLAVE}};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{// Configure the transaction}}
+\DoxyCodeLine{transaction.\mbox{\hyperlink{struct_s_p_i___transaction_ad049d6a900c4bdb59a5ee8ce3d5bced2}{count}} = 100;}
+\DoxyCodeLine{transaction.\mbox{\hyperlink{struct_s_p_i___transaction_a9461a248f1cceb4048668d44b323a0b8}{txBuf}} = NULL;}
+\DoxyCodeLine{transaction.\mbox{\hyperlink{struct_s_p_i___transaction_a214f57d7809c875fb9456a62a406e041}{rxBuf}} = rxBuf;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{// Open the SPI and initiate the partial read}}
+\DoxyCodeLine{handle = \mbox{\hyperlink{_s_p_i_8c_a62cfe494cb1df47cd602e8747e894fd1}{SPI\_open}}(Board\_SPI, \&params);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{// Enable RETURN\_PARTIAL}}
+\DoxyCodeLine{\mbox{\hyperlink{_s_p_i_8c_ab9d3a23991be2741f382749d3844cc2f}{SPI\_control}}(handle, \mbox{\hyperlink{_s_p_i_c_c26_x_x_d_m_a_8h_a5d2c909f70c7093227d1b288354cef27}{SPICC26XXDMA\_RETURN\_PARTIAL\_ENABLE}}, NULL);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{// Begin transfer}}
+\DoxyCodeLine{\mbox{\hyperlink{_s_p_i_8c_a989e17f96b54fcc3dc2cac5f8ac6bdb2}{SPI\_transfer}}(handle, \&transaction);}
+\end{DoxyCode}
+\hypertarget{_s_p_i_c_c26_x_x_d_m_a_8h_autotoc_md83}{}\doxyparagraph{Continous Slave Transfer In \+::\+S\+P\+I\+\_\+\+M\+O\+D\+E\+\_\+\+C\+A\+L\+L\+B\+A\+C\+K @anchor U\+S\+E\+\_\+\+C\+A\+S\+E\+\_\+\+C\+ST}\label{_s_p_i_c_c26_x_x_d_m_a_8h_autotoc_md83}
+This use case will configure the S\+PI driver to transfer continously in \mbox{\hyperlink{_s_p_i_8h_ab9ea76c6529d6076eee5e1c4a5a92c6fa5631e69925c47a62a261c78ebbda39fb}{S\+P\+I\+\_\+\+M\+O\+D\+E\+\_\+\+C\+A\+L\+L\+B\+A\+CK}}, 16 bytes at the time and echoing received data after every 16 bytes. 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{comment}{// Callback function}}
+\DoxyCodeLine{\textcolor{keyword}{static} \textcolor{keywordtype}{void} transferCallback(\mbox{\hyperlink{struct_s_p_i___config}{SPI\_Handle}} handle, \mbox{\hyperlink{struct_s_p_i___transaction}{SPI\_Transaction}} *transaction)}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{    \textcolor{comment}{// Start another transfer}}
+\DoxyCodeLine{    \mbox{\hyperlink{_s_p_i_8c_a989e17f96b54fcc3dc2cac5f8ac6bdb2}{SPI\_transfer}}(handle, transaction);}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keyword}{static} \textcolor{keywordtype}{void} taskFxn(UArg a0, UArg a1)}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{    \mbox{\hyperlink{struct_s_p_i___config}{SPI\_Handle}} handle;}
+\DoxyCodeLine{    \mbox{\hyperlink{struct_s_p_i___params}{SPI\_Params}} params;}
+\DoxyCodeLine{    \mbox{\hyperlink{struct_s_p_i___transaction}{SPI\_Transaction}} transaction;}
+\DoxyCodeLine{    uint8\_t buf[16];                  \textcolor{comment}{// Receive and transmit buffer}}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \textcolor{comment}{// Init SPI and specify non-\/default parameters}}
+\DoxyCodeLine{    \mbox{\hyperlink{_s_p_i_8c_a9c3dd1748332fd6e31c79a6538a71642}{SPI\_Params\_init}}(\&params);}
+\DoxyCodeLine{    params.\mbox{\hyperlink{struct_s_p_i___params_ab3f035044fdbe75adac8c1d729d8cf20}{bitRate}}             = 1000000;}
+\DoxyCodeLine{    params.\mbox{\hyperlink{struct_s_p_i___params_a67b5ebb8ec72796a0260c427c91cc093}{frameFormat}}         = \mbox{\hyperlink{_s_p_i_8h_a4e1f33555dfa8147205af5b266f3a489a4441729b292511628cb1e9f102da9166}{SPI\_POL1\_PHA1}};}
+\DoxyCodeLine{    params.\mbox{\hyperlink{struct_s_p_i___params_abe5eca64adf4ca96bed206a271d9b157}{mode}}                = \mbox{\hyperlink{_s_p_i_8h_a60a7e3d74577b38aa79ea6983362f942abc98c1546fe12d3fceb1f86cf670faa9}{SPI\_SLAVE}};}
+\DoxyCodeLine{    params.\mbox{\hyperlink{struct_s_p_i___params_a16dbcc3768a01fb7deae25b48fc0d69c}{transferMode}}        = \mbox{\hyperlink{_s_p_i_8h_ab9ea76c6529d6076eee5e1c4a5a92c6fa5631e69925c47a62a261c78ebbda39fb}{SPI\_MODE\_CALLBACK}};}
+\DoxyCodeLine{    params.\mbox{\hyperlink{struct_s_p_i___params_a68d1d610da6a6bf299121b939ef2a352}{transferCallbackFxn}} = transferCallback;}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \textcolor{comment}{// Configure the transaction}}
+\DoxyCodeLine{    transaction.\mbox{\hyperlink{struct_s_p_i___transaction_ad049d6a900c4bdb59a5ee8ce3d5bced2}{count}} = 16;}
+\DoxyCodeLine{    transaction.\mbox{\hyperlink{struct_s_p_i___transaction_a9461a248f1cceb4048668d44b323a0b8}{txBuf}} = buf;}
+\DoxyCodeLine{    transaction.\mbox{\hyperlink{struct_s_p_i___transaction_a214f57d7809c875fb9456a62a406e041}{rxBuf}} = buf;}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \textcolor{comment}{// Open the SPI and initiate the first transfer}}
+\DoxyCodeLine{    handle = \mbox{\hyperlink{_s_p_i_8c_a62cfe494cb1df47cd602e8747e894fd1}{SPI\_open}}(Board\_SPI, \&params);}
+\DoxyCodeLine{    \mbox{\hyperlink{_s_p_i_8c_a989e17f96b54fcc3dc2cac5f8ac6bdb2}{SPI\_transfer}}(handle, \&transaction);}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \textcolor{comment}{// Wait forever}}
+\DoxyCodeLine{    \textcolor{keywordflow}{while}(\textcolor{keyword}{true});}
+\DoxyCodeLine{\}}
+\end{DoxyCode}
+\hypertarget{_s_p_i_c_c26_x_x_d_m_a_8h_autotoc_md84}{}\doxyparagraph{Basic Master Mode}\label{_s_p_i_c_c26_x_x_d_m_a_8h_autotoc_md84}
+This use case will configure a S\+PI master to send the data in tx\+Buf while receiving data to rx\+Buf in B\+L\+O\+C\+K\+I\+N\+G\+\_\+\+M\+O\+DE. 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{struct_s_p_i___config}{SPI\_Handle}} handle;}
+\DoxyCodeLine{\mbox{\hyperlink{struct_s_p_i___params}{SPI\_Params}} params;}
+\DoxyCodeLine{\mbox{\hyperlink{struct_s_p_i___transaction}{SPI\_Transaction}} transaction;}
+\DoxyCodeLine{uint8\_t txBuf[] = \textcolor{stringliteral}{"Hello World"};    \textcolor{comment}{// Transmit buffer}}
+\DoxyCodeLine{uint8\_t rxBuf[11];                  \textcolor{comment}{// Receive buffer}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{// Init SPI and specify non-\/default parameters}}
+\DoxyCodeLine{\mbox{\hyperlink{_s_p_i_8c_a9c3dd1748332fd6e31c79a6538a71642}{SPI\_Params\_init}}(\&params);}
+\DoxyCodeLine{params.\mbox{\hyperlink{struct_s_p_i___params_ab3f035044fdbe75adac8c1d729d8cf20}{bitRate}}     = 1000000;}
+\DoxyCodeLine{params.\mbox{\hyperlink{struct_s_p_i___params_a67b5ebb8ec72796a0260c427c91cc093}{frameFormat}} = \mbox{\hyperlink{_s_p_i_8h_a4e1f33555dfa8147205af5b266f3a489a4441729b292511628cb1e9f102da9166}{SPI\_POL1\_PHA1}};}
+\DoxyCodeLine{params.\mbox{\hyperlink{struct_s_p_i___params_abe5eca64adf4ca96bed206a271d9b157}{mode}}        = \mbox{\hyperlink{_s_p_i_8h_a60a7e3d74577b38aa79ea6983362f942a84379dc90398ca075038c8d5ee465f6a}{SPI\_MASTER}};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{// Configure the transaction}}
+\DoxyCodeLine{transaction.\mbox{\hyperlink{struct_s_p_i___transaction_ad049d6a900c4bdb59a5ee8ce3d5bced2}{count}} = \textcolor{keyword}{sizeof}(txBuf);}
+\DoxyCodeLine{transaction.\mbox{\hyperlink{struct_s_p_i___transaction_a9461a248f1cceb4048668d44b323a0b8}{txBuf}} = txBuf;}
+\DoxyCodeLine{transaction.\mbox{\hyperlink{struct_s_p_i___transaction_a214f57d7809c875fb9456a62a406e041}{rxBuf}} = rxBuf;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{// Open the SPI and perform the transfer}}
+\DoxyCodeLine{handle = \mbox{\hyperlink{_s_p_i_8c_a62cfe494cb1df47cd602e8747e894fd1}{SPI\_open}}(Board\_SPI, \&params);}
+\DoxyCodeLine{\mbox{\hyperlink{_s_p_i_8c_a989e17f96b54fcc3dc2cac5f8ac6bdb2}{SPI\_transfer}}(handle, \&transaction);}
+\end{DoxyCode}
+\hypertarget{_s_p_i_c_c26_x_x_d_m_a_8h_autotoc_md85}{}\doxyparagraph{Master Mode With Multiple Slaves @anchor U\+S\+E\+\_\+\+C\+A\+S\+E\+\_\+\+M\+M\+MS}\label{_s_p_i_c_c26_x_x_d_m_a_8h_autotoc_md85}
+This use case will configure a S\+PI master to send data to one slave and then to another in B\+L\+O\+C\+K\+I\+N\+G\+\_\+\+M\+O\+DE. It is assumed that the board file is configured so that the two chip select pins have a default setting of a high output and that the \mbox{\hyperlink{struct_s_p_i_c_c26_x_x_d_m_a___h_w_attrs_v1}{S\+P\+I\+C\+C26\+X\+X\+D\+M\+A\+\_\+\+H\+W\+Attrs\+V1}} used points to one of them since the S\+PI driver will revert to this default setting when switching the chip select pin.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{comment}{// From board.c}}
+\DoxyCodeLine{\mbox{\hyperlink{_p_i_n_8h_ae427b7d2925f9b0f3145e455cfdb5841}{PIN\_Config}} BoardGpioInitTable[] = \{}
+\DoxyCodeLine{    Board\_CSN\_0   | \mbox{\hyperlink{_p_i_n_8h_a086fd19a419fb4b09f30ed993a3088c7}{PIN\_GPIO\_OUTPUT\_EN}} | \mbox{\hyperlink{_p_i_n_8h_aee8e9896270f36a15df12fb85f2cb4ad}{PIN\_GPIO\_HIGH}}   | \mbox{\hyperlink{_p_i_n_8h_a8b219fa4a7727c4f5a7beb5134144324}{PIN\_PUSHPULL}},   \textcolor{comment}{// Ensure SPI slave 0 is not selected}}
+\DoxyCodeLine{    Board\_CSN\_1   | \mbox{\hyperlink{_p_i_n_8h_a086fd19a419fb4b09f30ed993a3088c7}{PIN\_GPIO\_OUTPUT\_EN}} | \mbox{\hyperlink{_p_i_n_8h_aee8e9896270f36a15df12fb85f2cb4ad}{PIN\_GPIO\_HIGH}}   | \mbox{\hyperlink{_p_i_n_8h_a8b219fa4a7727c4f5a7beb5134144324}{PIN\_PUSHPULL}}    \textcolor{comment}{// Ensure SPI slave 1 is not selected}}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keyword}{const} \mbox{\hyperlink{struct_s_p_i_c_c26_x_x_d_m_a___h_w_attrs_v1}{SPICC26XXDMA\_HWAttrsV1}} spiCC26XXDMAHWAttrs[CC2650\_SPICOUNT] = \{}
+\DoxyCodeLine{\{   \textcolor{comment}{// Use SPI0 module with default chip select on Board\_CSN\_0}}
+\DoxyCodeLine{    .\mbox{\hyperlink{struct_s_p_i_c_c26_x_x_d_m_a___h_w_attrs_v1_a9599bdd7fa7cd54ba21abd1620ff9b7c}{baseAddr}} = SSI0\_BASE,}
+\DoxyCodeLine{    .intNum = INT\_SSI0,}
+\DoxyCodeLine{    .intPriority = \string~0,}
+\DoxyCodeLine{    .swiPriority = 0,}
+\DoxyCodeLine{    .defaultTxBufValue = 0,}
+\DoxyCodeLine{    .powerMngrId = PERIPH\_SSI0,}
+\DoxyCodeLine{    .rxChannelIndex = UDMA\_CHAN\_SSI0\_RX,}
+\DoxyCodeLine{    .txChannelIndex = UDMA\_CHAN\_SSI0\_TX,}
+\DoxyCodeLine{    .mosiPin = Board\_SPI0\_MOSI,}
+\DoxyCodeLine{    .misoPin = Board\_SPI0\_MISO,}
+\DoxyCodeLine{    .clkPin = Board\_SPI0\_CLK,}
+\DoxyCodeLine{    .csnPin = Board\_CSN\_0}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{// From your\_application.c}}
+\DoxyCodeLine{\textcolor{keyword}{static} \textcolor{keywordtype}{void} taskFxn(UArg a0, UArg a1)}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{    \mbox{\hyperlink{struct_s_p_i___config}{SPI\_Handle}} handle;}
+\DoxyCodeLine{    \mbox{\hyperlink{struct_s_p_i___params}{SPI\_Params}} params;}
+\DoxyCodeLine{    \mbox{\hyperlink{struct_s_p_i___transaction}{SPI\_Transaction}} transaction;}
+\DoxyCodeLine{    \mbox{\hyperlink{_p_i_n_8h_a9ae8197f460bb76ea09a84f47d09921f}{PIN\_Id}} csnPin1  = \mbox{\hyperlink{_p_i_n_8h_add47c82f7563d28053f76d368d344bc6}{PIN\_ID}}(Board\_CSN\_1);}
+\DoxyCodeLine{    uint8\_t txBuf[] = \textcolor{stringliteral}{"Hello World"};    \textcolor{comment}{// Transmit buffer}}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \textcolor{comment}{// Init SPI and specify non-\/default parameters}}
+\DoxyCodeLine{    \mbox{\hyperlink{_s_p_i_8c_a9c3dd1748332fd6e31c79a6538a71642}{SPI\_Params\_init}}(\&params);}
+\DoxyCodeLine{    params.\mbox{\hyperlink{struct_s_p_i___params_ab3f035044fdbe75adac8c1d729d8cf20}{bitRate}}     = 1000000;}
+\DoxyCodeLine{    params.\mbox{\hyperlink{struct_s_p_i___params_a67b5ebb8ec72796a0260c427c91cc093}{frameFormat}} = \mbox{\hyperlink{_s_p_i_8h_a4e1f33555dfa8147205af5b266f3a489a4441729b292511628cb1e9f102da9166}{SPI\_POL1\_PHA1}};}
+\DoxyCodeLine{    params.\mbox{\hyperlink{struct_s_p_i___params_abe5eca64adf4ca96bed206a271d9b157}{mode}}        = \mbox{\hyperlink{_s_p_i_8h_a60a7e3d74577b38aa79ea6983362f942a84379dc90398ca075038c8d5ee465f6a}{SPI\_MASTER}};}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \textcolor{comment}{// Configure the transaction}}
+\DoxyCodeLine{    transaction.\mbox{\hyperlink{struct_s_p_i___transaction_ad049d6a900c4bdb59a5ee8ce3d5bced2}{count}} = \textcolor{keyword}{sizeof}(txBuf);}
+\DoxyCodeLine{    transaction.\mbox{\hyperlink{struct_s_p_i___transaction_a9461a248f1cceb4048668d44b323a0b8}{txBuf}} = txBuf;}
+\DoxyCodeLine{    transaction.\mbox{\hyperlink{struct_s_p_i___transaction_a214f57d7809c875fb9456a62a406e041}{rxBuf}} = NULL;}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \textcolor{comment}{// Open the SPI and perform transfer to the first slave}}
+\DoxyCodeLine{    handle = \mbox{\hyperlink{_s_p_i_8c_a62cfe494cb1df47cd602e8747e894fd1}{SPI\_open}}(Board\_SPI, \&params);}
+\DoxyCodeLine{    \mbox{\hyperlink{_s_p_i_8c_a989e17f96b54fcc3dc2cac5f8ac6bdb2}{SPI\_transfer}}(handle, \&transaction);}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \textcolor{comment}{// Then switch chip select pin and perform transfer to the second slave}}
+\DoxyCodeLine{    \mbox{\hyperlink{_s_p_i_8c_ab9d3a23991be2741f382749d3844cc2f}{SPI\_control}}(handle, \mbox{\hyperlink{_s_p_i_c_c26_x_x_d_m_a_8h_a447172f0061a6de65a8f0d221a23f93c}{SPICC26XXDMA\_SET\_CSN\_PIN}}, \&csnPin1);}
+\DoxyCodeLine{    \mbox{\hyperlink{_s_p_i_8c_a989e17f96b54fcc3dc2cac5f8ac6bdb2}{SPI\_transfer}}(handle, \&transaction);}
+\DoxyCodeLine{\}}
+\end{DoxyCode}
+\hypertarget{_s_p_i_c_c26_x_x_d_m_a_8h_autotoc_md86}{}\doxyparagraph{Ensure low power during inactive periods @anchor U\+S\+E\+\_\+\+C\+A\+S\+E\+\_\+\+L\+P\+WR}\label{_s_p_i_c_c26_x_x_d_m_a_8h_autotoc_md86}
+External hardware connected on the S\+PI, i.\+e. S\+PI host/slave, might have configured a pull on one or more of the S\+PI lines. Dependent on the hardware, it might conflict with the pull used for the C\+C26\+XX S\+PI. To avoid increased leakage and ensure the lowest possible power consumption when the S\+PI is inactive, the application must configure a matching pull on the S\+PI I\+Os. An example of how this can be done is shown below.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{struct_p_i_n___state__s}{PIN\_Handle}} pinHandle;}
+\DoxyCodeLine{\mbox{\hyperlink{struct_s_p_i___config}{SPI\_Handle}} handle;}
+\DoxyCodeLine{\mbox{\hyperlink{struct_s_p_i___params}{SPI\_Params}} params;}
+\DoxyCodeLine{\mbox{\hyperlink{struct_s_p_i___transaction}{SPI\_Transaction}} transaction;}
+\DoxyCodeLine{uint8\_t txBuf[] = \textcolor{stringliteral}{"Heartbeat"};    \textcolor{comment}{// Transmit buffer}}
+\DoxyCodeLine{uint8\_t rxBuf[9];                 \textcolor{comment}{// Receive buffer}}
+\DoxyCodeLine{\mbox{\hyperlink{_p_i_n_8h_a9ae8197f460bb76ea09a84f47d09921f}{PIN\_Id}} misoPinId;}
+\DoxyCodeLine{uint32\_t standbyDurationMs = 100;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{// Init SPI and specify non-\/default parameters}}
+\DoxyCodeLine{\mbox{\hyperlink{_s_p_i_8c_a9c3dd1748332fd6e31c79a6538a71642}{SPI\_Params\_init}}(\&params);}
+\DoxyCodeLine{params.\mbox{\hyperlink{struct_s_p_i___params_ab3f035044fdbe75adac8c1d729d8cf20}{bitRate}}     = 1000000;}
+\DoxyCodeLine{params.\mbox{\hyperlink{struct_s_p_i___params_a67b5ebb8ec72796a0260c427c91cc093}{frameFormat}} = \mbox{\hyperlink{_s_p_i_8h_a4e1f33555dfa8147205af5b266f3a489a4441729b292511628cb1e9f102da9166}{SPI\_POL1\_PHA1}};}
+\DoxyCodeLine{params.\mbox{\hyperlink{struct_s_p_i___params_abe5eca64adf4ca96bed206a271d9b157}{mode}}        = \mbox{\hyperlink{_s_p_i_8h_a60a7e3d74577b38aa79ea6983362f942a84379dc90398ca075038c8d5ee465f6a}{SPI\_MASTER}};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{// Configure the transaction}}
+\DoxyCodeLine{transaction.\mbox{\hyperlink{struct_s_p_i___transaction_ad049d6a900c4bdb59a5ee8ce3d5bced2}{count}} = \textcolor{keyword}{sizeof}(txBuf);}
+\DoxyCodeLine{transaction.\mbox{\hyperlink{struct_s_p_i___transaction_a9461a248f1cceb4048668d44b323a0b8}{txBuf}} = txBuf;}
+\DoxyCodeLine{transaction.\mbox{\hyperlink{struct_s_p_i___transaction_a214f57d7809c875fb9456a62a406e041}{rxBuf}} = rxBuf;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{// Open the SPI and perform the transfer}}
+\DoxyCodeLine{handle = \mbox{\hyperlink{_s_p_i_8c_a62cfe494cb1df47cd602e8747e894fd1}{SPI\_open}}(Board\_SPI, \&params);}
+\DoxyCodeLine{\textcolor{comment}{// Get pinHandle}}
+\DoxyCodeLine{pinHandle = ((\mbox{\hyperlink{struct_s_p_i_c_c26_x_x_d_m_a___object}{SPICC26XXDMA\_Object}} *)spiHandle-\/>object)-\/>pinHandle;}
+\DoxyCodeLine{\textcolor{comment}{// Get miso pin id}}
+\DoxyCodeLine{misoPinId = ((\mbox{\hyperlink{struct_s_p_i_c_c26_x_x_d_m_a___h_w_attrs_v1}{SPICC26XXDMA\_HWAttrsV1}} *)spiHandle-\/>hwAttrs)-\/>misoPin;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{// Apply low power sleep pull config for MISO}}
+\DoxyCodeLine{\mbox{\hyperlink{_p_i_n_8h_a4b9fbd1a86e63d2f14f679b87f17c857}{PIN\_setConfig}}(pinHandle, \mbox{\hyperlink{_p_i_n_8h_a4f6a52f4c21a5ae30926e4d595ee9837}{PIN\_BM\_PULLING}}, \mbox{\hyperlink{_p_i_n_8h_a8dd57072ca956a8ace1ee869216dda0a}{PIN\_PULLUP}} | misoPinId);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{// Do forever}}
+\DoxyCodeLine{\textcolor{keywordflow}{while}(1) \{}
+\DoxyCodeLine{  \textcolor{comment}{// Transfer data}}
+\DoxyCodeLine{  \mbox{\hyperlink{_s_p_i_8c_a989e17f96b54fcc3dc2cac5f8ac6bdb2}{SPI\_transfer}}(handle, \&transaction);}
+\DoxyCodeLine{  \textcolor{comment}{// Sleep}}
+\DoxyCodeLine{  Task\_sleep(standbyDurationMs*100);}
+\DoxyCodeLine{\}}
+\end{DoxyCode}
+\hypertarget{_s_p_i_c_c26_x_x_d_m_a_8h_autotoc_md87}{}\doxysubsection{Instrumentation}\label{_s_p_i_c_c26_x_x_d_m_a_8h_autotoc_md87}
+The S\+PI driver interface produces log statements if instrumentation is enabled.
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Diagnostics Mask }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Log details  }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Diagnostics Mask }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Log details  }\\\cline{1-2}
+\endhead
+Diags\+\_\+\+U\+S\+E\+R1 &basic S\+PI operations performed  \\\cline{1-2}
+Diags\+\_\+\+U\+S\+E\+R2 &detailed S\+PI operations performed  \\\cline{1-2}
+\end{longtabu}
+
+
+\DoxyHorRuler{0}
+ 
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{_s_p_i_c_c26_x_x_d_m_a_8h_a6454ac0d2222d98114cf15a4a60367ca}\label{_s_p_i_c_c26_x_x_d_m_a_8h_a6454ac0d2222d98114cf15a4a60367ca}} 
+\index{SPICC26XXDMA.h@{SPICC26XXDMA.h}!SPICC26XXDMA\_RETURN\_PARTIAL\_DISABLE@{SPICC26XXDMA\_RETURN\_PARTIAL\_DISABLE}}
+\index{SPICC26XXDMA\_RETURN\_PARTIAL\_DISABLE@{SPICC26XXDMA\_RETURN\_PARTIAL\_DISABLE}!SPICC26XXDMA.h@{SPICC26XXDMA.h}}
+\doxysubsubsection{\texorpdfstring{SPICC26XXDMA\_RETURN\_PARTIAL\_DISABLE}{SPICC26XXDMA\_RETURN\_PARTIAL\_DISABLE}}
+{\footnotesize\ttfamily \#define S\+P\+I\+C\+C26\+X\+X\+D\+M\+A\+\_\+\+R\+E\+T\+U\+R\+N\+\_\+\+P\+A\+R\+T\+I\+A\+L\+\_\+\+D\+I\+S\+A\+B\+LE~\mbox{\hyperlink{group___s_p_i___c_m_d_gaff8de4036abcdb2903cb5280120c30b4}{S\+P\+I\+C\+C26\+X\+X\+D\+M\+A\+\_\+\+C\+M\+D\+\_\+\+R\+E\+T\+U\+R\+N\+\_\+\+P\+A\+R\+T\+I\+A\+L\+\_\+\+D\+I\+S\+A\+B\+LE}}}
+
+
+
+Definition at line 572 of file S\+P\+I\+C\+C26\+X\+X\+D\+M\+A.\+h.
+
+\mbox{\Hypertarget{_s_p_i_c_c26_x_x_d_m_a_8h_a5d2c909f70c7093227d1b288354cef27}\label{_s_p_i_c_c26_x_x_d_m_a_8h_a5d2c909f70c7093227d1b288354cef27}} 
+\index{SPICC26XXDMA.h@{SPICC26XXDMA.h}!SPICC26XXDMA\_RETURN\_PARTIAL\_ENABLE@{SPICC26XXDMA\_RETURN\_PARTIAL\_ENABLE}}
+\index{SPICC26XXDMA\_RETURN\_PARTIAL\_ENABLE@{SPICC26XXDMA\_RETURN\_PARTIAL\_ENABLE}!SPICC26XXDMA.h@{SPICC26XXDMA.h}}
+\doxysubsubsection{\texorpdfstring{SPICC26XXDMA\_RETURN\_PARTIAL\_ENABLE}{SPICC26XXDMA\_RETURN\_PARTIAL\_ENABLE}}
+{\footnotesize\ttfamily \#define S\+P\+I\+C\+C26\+X\+X\+D\+M\+A\+\_\+\+R\+E\+T\+U\+R\+N\+\_\+\+P\+A\+R\+T\+I\+A\+L\+\_\+\+E\+N\+A\+B\+LE~\mbox{\hyperlink{group___s_p_i___c_m_d_ga348d271d5ad295c5e049e78d745c57e1}{S\+P\+I\+C\+C26\+X\+X\+D\+M\+A\+\_\+\+C\+M\+D\+\_\+\+R\+E\+T\+U\+R\+N\+\_\+\+P\+A\+R\+T\+I\+A\+L\+\_\+\+E\+N\+A\+B\+LE}}}
+
+
+
+Definition at line 571 of file S\+P\+I\+C\+C26\+X\+X\+D\+M\+A.\+h.
+
+\mbox{\Hypertarget{_s_p_i_c_c26_x_x_d_m_a_8h_a447172f0061a6de65a8f0d221a23f93c}\label{_s_p_i_c_c26_x_x_d_m_a_8h_a447172f0061a6de65a8f0d221a23f93c}} 
+\index{SPICC26XXDMA.h@{SPICC26XXDMA.h}!SPICC26XXDMA\_SET\_CSN\_PIN@{SPICC26XXDMA\_SET\_CSN\_PIN}}
+\index{SPICC26XXDMA\_SET\_CSN\_PIN@{SPICC26XXDMA\_SET\_CSN\_PIN}!SPICC26XXDMA.h@{SPICC26XXDMA.h}}
+\doxysubsubsection{\texorpdfstring{SPICC26XXDMA\_SET\_CSN\_PIN}{SPICC26XXDMA\_SET\_CSN\_PIN}}
+{\footnotesize\ttfamily \#define S\+P\+I\+C\+C26\+X\+X\+D\+M\+A\+\_\+\+S\+E\+T\+\_\+\+C\+S\+N\+\_\+\+P\+IN~\mbox{\hyperlink{group___s_p_i___c_m_d_gab3ab03abd9ca073344acdcc6b442f9eb}{S\+P\+I\+C\+C26\+X\+X\+D\+M\+A\+\_\+\+C\+M\+D\+\_\+\+S\+E\+T\+\_\+\+C\+S\+N\+\_\+\+P\+IN}}}
+
+
+
+Definition at line 573 of file S\+P\+I\+C\+C26\+X\+X\+D\+M\+A.\+h.
+
+\mbox{\Hypertarget{_s_p_i_c_c26_x_x_d_m_a_8h_a55b298e59379bdd6020f8d55bb4264a9}\label{_s_p_i_c_c26_x_x_d_m_a_8h_a55b298e59379bdd6020f8d55bb4264a9}} 
+\index{SPICC26XXDMA.h@{SPICC26XXDMA.h}!SPICC26XXDMA\_SET\_CSN\_WAKEUP@{SPICC26XXDMA\_SET\_CSN\_WAKEUP}}
+\index{SPICC26XXDMA\_SET\_CSN\_WAKEUP@{SPICC26XXDMA\_SET\_CSN\_WAKEUP}!SPICC26XXDMA.h@{SPICC26XXDMA.h}}
+\doxysubsubsection{\texorpdfstring{SPICC26XXDMA\_SET\_CSN\_WAKEUP}{SPICC26XXDMA\_SET\_CSN\_WAKEUP}}
+{\footnotesize\ttfamily \#define S\+P\+I\+C\+C26\+X\+X\+D\+M\+A\+\_\+\+S\+E\+T\+\_\+\+C\+S\+N\+\_\+\+W\+A\+K\+E\+UP~\mbox{\hyperlink{group___s_p_i___c_m_d_gae07fd93964e63fc93795835eaa14b589}{S\+P\+I\+C\+C26\+X\+X\+D\+M\+A\+\_\+\+C\+M\+D\+\_\+\+S\+E\+T\+\_\+\+C\+S\+N\+\_\+\+W\+A\+K\+E\+UP}}}
+
+
+
+Definition at line 574 of file S\+P\+I\+C\+C26\+X\+X\+D\+M\+A.\+h.
+
+\mbox{\Hypertarget{_s_p_i_c_c26_x_x_d_m_a_8h_aaa17ecf48f5762e2e1bdb0bab8aacf0c}\label{_s_p_i_c_c26_x_x_d_m_a_8h_aaa17ecf48f5762e2e1bdb0bab8aacf0c}} 
+\index{SPICC26XXDMA.h@{SPICC26XXDMA.h}!ti\_sysbios\_family\_arm\_m3\_Hwi\_\_nolocalnames@{ti\_sysbios\_family\_arm\_m3\_Hwi\_\_nolocalnames}}
+\index{ti\_sysbios\_family\_arm\_m3\_Hwi\_\_nolocalnames@{ti\_sysbios\_family\_arm\_m3\_Hwi\_\_nolocalnames}!SPICC26XXDMA.h@{SPICC26XXDMA.h}}
+\doxysubsubsection{\texorpdfstring{ti\_sysbios\_family\_arm\_m3\_Hwi\_\_nolocalnames}{ti\_sysbios\_family\_arm\_m3\_Hwi\_\_nolocalnames}}
+{\footnotesize\ttfamily \#define ti\+\_\+sysbios\+\_\+family\+\_\+arm\+\_\+m3\+\_\+\+Hwi\+\_\+\+\_\+nolocalnames}
+
+
+
+Definition at line 505 of file S\+P\+I\+C\+C26\+X\+X\+D\+M\+A.\+h.
+
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{_s_p_i_c_c26_x_x_d_m_a_8h_aee214140ae2ad978d6d755f12a84f331}\label{_s_p_i_c_c26_x_x_d_m_a_8h_aee214140ae2ad978d6d755f12a84f331}} 
+\index{SPICC26XXDMA.h@{SPICC26XXDMA.h}!SPICC26XXDMA\_CallbackFxn@{SPICC26XXDMA\_CallbackFxn}}
+\index{SPICC26XXDMA\_CallbackFxn@{SPICC26XXDMA\_CallbackFxn}!SPICC26XXDMA.h@{SPICC26XXDMA.h}}
+\doxysubsubsection{\texorpdfstring{SPICC26XXDMA\_CallbackFxn}{SPICC26XXDMA\_CallbackFxn}}
+{\footnotesize\ttfamily typedef void($\ast$ S\+P\+I\+C\+C26\+X\+X\+D\+M\+A\+\_\+\+Callback\+Fxn) (\mbox{\hyperlink{_s_p_i_8h_a728806534c3c3e8675cfbfb7d8e36f13}{S\+P\+I\+\_\+\+Handle}} handle)}
+
+
+
+Definition at line 604 of file S\+P\+I\+C\+C26\+X\+X\+D\+M\+A.\+h.
+
+\mbox{\Hypertarget{_s_p_i_c_c26_x_x_d_m_a_8h_ac5b542d4da3d8dddfae47b15902ecebb}\label{_s_p_i_c_c26_x_x_d_m_a_8h_ac5b542d4da3d8dddfae47b15902ecebb}} 
+\index{SPICC26XXDMA.h@{SPICC26XXDMA.h}!SPICC26XXDMA\_FrameSize@{SPICC26XXDMA\_FrameSize}}
+\index{SPICC26XXDMA\_FrameSize@{SPICC26XXDMA\_FrameSize}!SPICC26XXDMA.h@{SPICC26XXDMA.h}}
+\doxysubsubsection{\texorpdfstring{SPICC26XXDMA\_FrameSize}{SPICC26XXDMA\_FrameSize}}
+{\footnotesize\ttfamily typedef enum \mbox{\hyperlink{_s_p_i_c_c26_x_x_d_m_a_8h_a1c5afb8465d3e8689a82088ad25fc81a}{S\+P\+I\+C\+C26\+X\+X\+D\+M\+A\+\_\+\+Frame\+Size}} \mbox{\hyperlink{_s_p_i_c_c26_x_x_d_m_a_8h_a1c5afb8465d3e8689a82088ad25fc81a}{S\+P\+I\+C\+C26\+X\+X\+D\+M\+A\+\_\+\+Frame\+Size}}}
+
+\mbox{\Hypertarget{_s_p_i_c_c26_x_x_d_m_a_8h_a23f13f9c52a6ced04e082c64bebf128f}\label{_s_p_i_c_c26_x_x_d_m_a_8h_a23f13f9c52a6ced04e082c64bebf128f}} 
+\index{SPICC26XXDMA.h@{SPICC26XXDMA.h}!SPICC26XXDMA\_Handle@{SPICC26XXDMA\_Handle}}
+\index{SPICC26XXDMA\_Handle@{SPICC26XXDMA\_Handle}!SPICC26XXDMA.h@{SPICC26XXDMA.h}}
+\doxysubsubsection{\texorpdfstring{SPICC26XXDMA\_Handle}{SPICC26XXDMA\_Handle}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_s_p_i_c_c26_x_x_d_m_a___object}{S\+P\+I\+C\+C26\+X\+X\+D\+M\+A\+\_\+\+Object}} $\ast$ \mbox{\hyperlink{_s_p_i_c_c26_x_x_d_m_a_8h_a23f13f9c52a6ced04e082c64bebf128f}{S\+P\+I\+C\+C26\+X\+X\+D\+M\+A\+\_\+\+Handle}}}
+
+\mbox{\Hypertarget{_s_p_i_c_c26_x_x_d_m_a_8h_aec5e61590f37f9390a26ee821bca9894}\label{_s_p_i_c_c26_x_x_d_m_a_8h_aec5e61590f37f9390a26ee821bca9894}} 
+\index{SPICC26XXDMA.h@{SPICC26XXDMA.h}!SPICC26XXDMA\_HWAttrsV1@{SPICC26XXDMA\_HWAttrsV1}}
+\index{SPICC26XXDMA\_HWAttrsV1@{SPICC26XXDMA\_HWAttrsV1}!SPICC26XXDMA.h@{SPICC26XXDMA.h}}
+\doxysubsubsection{\texorpdfstring{SPICC26XXDMA\_HWAttrsV1}{SPICC26XXDMA\_HWAttrsV1}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_s_p_i_c_c26_x_x_d_m_a___h_w_attrs_v1}{S\+P\+I\+C\+C26\+X\+X\+D\+M\+A\+\_\+\+H\+W\+Attrs\+V1}} \mbox{\hyperlink{struct_s_p_i_c_c26_x_x_d_m_a___h_w_attrs_v1}{S\+P\+I\+C\+C26\+X\+X\+D\+M\+A\+\_\+\+H\+W\+Attrs\+V1}}}
+
+
+
+S\+P\+I\+C\+C26\+X\+X\+D\+MA Hardware attributes. 
+
+These fields, with the exception of int\+Priority, are used by driverlib A\+P\+Is and therefore must be populated by driverlib macro definitions. For C\+C26xx\+Ware these definitions are found in\+:
+\begin{DoxyItemize}
+\item inc/hw\+\_\+memmap.\+h
+\item inc/hw\+\_\+ints.\+h
+\item driverlib/udma.\+h
+\end{DoxyItemize}
+
+int\+Priority is the S\+PI peripheral\textquotesingle{}s interrupt priority, as defined by the underlying OS. It is passed unmodified to the underlying OS\textquotesingle{}s interrupt handler creation code, so you need to refer to the OS documentation for usage. For example, for S\+Y\+S/\+B\+I\+OS applications, refer to the ti.\+sysbios.\+family.\+arm.\+m3.\+Hwi documentation for S\+Y\+S/\+B\+I\+OS usage of interrupt priorities. If the driver uses the ti.\+drivers.\+ports interface instead of making OS calls directly, then the HwiP port handles the interrupt priority in an OS specific way. In the case of the S\+Y\+S/\+B\+I\+OS port, int\+Priority is passed unmodified to Hwi\+\_\+create().
+
+A sample structure is shown below\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{const} \mbox{\hyperlink{struct_s_p_i_c_c26_x_x_d_m_a___h_w_attrs_v1}{SPICC26XXDMA\_HWAttrsV1}} spiCC26XXDMAobjects[] = \{}
+\DoxyCodeLine{    \{}
+\DoxyCodeLine{        .\mbox{\hyperlink{struct_s_p_i_c_c26_x_x_d_m_a___h_w_attrs_v1_a9599bdd7fa7cd54ba21abd1620ff9b7c}{baseAddr}} = SSI0\_BASE,}
+\DoxyCodeLine{        .intNum = INT\_SPI0,}
+\DoxyCodeLine{        .intPriority = \string~0,}
+\DoxyCodeLine{        .swiPriority = 0,}
+\DoxyCodeLine{        .powerMngrId = PERIPH\_SPI0,}
+\DoxyCodeLine{        .defaultTxBufValue = 0,}
+\DoxyCodeLine{        .rxChannelBitMask = UDMA\_CHAN\_SPI0\_RX,}
+\DoxyCodeLine{        .txChannelBitMask = UDMA\_CHAN\_SPI0\_TX,}
+\DoxyCodeLine{        .mosiPin = Board\_SPI0\_MISO,}
+\DoxyCodeLine{        .misoPin = Board\_SPI0\_MOSI,}
+\DoxyCodeLine{        .clkPin = Board\_SPI0\_CLK,}
+\DoxyCodeLine{        .csnPin = Board\_SPI0\_CSN}
+\DoxyCodeLine{    \},}
+\DoxyCodeLine{    \{}
+\DoxyCodeLine{        .baseAddr = SSI1\_BASE,}
+\DoxyCodeLine{        .intNum = INT\_SPI1,}
+\DoxyCodeLine{        .intPriority = \string~0,}
+\DoxyCodeLine{        .swiPriority = 0,}
+\DoxyCodeLine{        .powerMngrId = PERIPH\_SPI1,}
+\DoxyCodeLine{        .defaultTxBufValue = 0,}
+\DoxyCodeLine{        .rxChannelBitMask = UDMA\_CHAN\_SPI1\_RX,}
+\DoxyCodeLine{        .txChannelBitMask = UDMA\_CHAN\_SPI1\_TX,}
+\DoxyCodeLine{        .mosiPin = Board\_SPI1\_MISO,}
+\DoxyCodeLine{        .misoPin = Board\_SPI1\_MOSI,}
+\DoxyCodeLine{        .clkPin = Board\_SPI1\_CLK,}
+\DoxyCodeLine{        .csnPin = Board\_SPI1\_CSN}
+\DoxyCodeLine{    \},}
+\DoxyCodeLine{\};}
+\end{DoxyCode}
+ \mbox{\Hypertarget{_s_p_i_c_c26_x_x_d_m_a_8h_aeb717175b092644a133c70a38752d90a}\label{_s_p_i_c_c26_x_x_d_m_a_8h_aeb717175b092644a133c70a38752d90a}} 
+\index{SPICC26XXDMA.h@{SPICC26XXDMA.h}!SPICC26XXDMA\_Object@{SPICC26XXDMA\_Object}}
+\index{SPICC26XXDMA\_Object@{SPICC26XXDMA\_Object}!SPICC26XXDMA.h@{SPICC26XXDMA.h}}
+\doxysubsubsection{\texorpdfstring{SPICC26XXDMA\_Object}{SPICC26XXDMA\_Object}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_s_p_i_c_c26_x_x_d_m_a___object}{S\+P\+I\+C\+C26\+X\+X\+D\+M\+A\+\_\+\+Object}} \mbox{\hyperlink{struct_s_p_i_c_c26_x_x_d_m_a___object}{S\+P\+I\+C\+C26\+X\+X\+D\+M\+A\+\_\+\+Object}}}
+
+
+
+S\+P\+I\+C\+C26\+X\+X\+D\+MA Object. 
+
+The application must not access any member variables of this structure! 
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{_s_p_i_c_c26_x_x_d_m_a_8h_a1c5afb8465d3e8689a82088ad25fc81a}\label{_s_p_i_c_c26_x_x_d_m_a_8h_a1c5afb8465d3e8689a82088ad25fc81a}} 
+\index{SPICC26XXDMA.h@{SPICC26XXDMA.h}!SPICC26XXDMA\_FrameSize@{SPICC26XXDMA\_FrameSize}}
+\index{SPICC26XXDMA\_FrameSize@{SPICC26XXDMA\_FrameSize}!SPICC26XXDMA.h@{SPICC26XXDMA.h}}
+\doxysubsubsection{\texorpdfstring{SPICC26XXDMA\_FrameSize}{SPICC26XXDMA\_FrameSize}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{_s_p_i_c_c26_x_x_d_m_a_8h_a1c5afb8465d3e8689a82088ad25fc81a}{S\+P\+I\+C\+C26\+X\+X\+D\+M\+A\+\_\+\+Frame\+Size}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SPICC26XXDMA\_8bit@{SPICC26XXDMA\_8bit}!SPICC26XXDMA.h@{SPICC26XXDMA.h}}\index{SPICC26XXDMA.h@{SPICC26XXDMA.h}!SPICC26XXDMA\_8bit@{SPICC26XXDMA\_8bit}}}\mbox{\Hypertarget{_s_p_i_c_c26_x_x_d_m_a_8h_a1c5afb8465d3e8689a82088ad25fc81aae775eeccbba1a059e3cf6ada00472a1b}\label{_s_p_i_c_c26_x_x_d_m_a_8h_a1c5afb8465d3e8689a82088ad25fc81aae775eeccbba1a059e3cf6ada00472a1b}} 
+S\+P\+I\+C\+C26\+X\+X\+D\+M\+A\+\_\+8bit&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SPICC26XXDMA\_16bit@{SPICC26XXDMA\_16bit}!SPICC26XXDMA.h@{SPICC26XXDMA.h}}\index{SPICC26XXDMA.h@{SPICC26XXDMA.h}!SPICC26XXDMA\_16bit@{SPICC26XXDMA\_16bit}}}\mbox{\Hypertarget{_s_p_i_c_c26_x_x_d_m_a_8h_a1c5afb8465d3e8689a82088ad25fc81aab7e0c593e19cb06ea65ad293f6fd0971}\label{_s_p_i_c_c26_x_x_d_m_a_8h_a1c5afb8465d3e8689a82088ad25fc81aab7e0c593e19cb06ea65ad293f6fd0971}} 
+S\+P\+I\+C\+C26\+X\+X\+D\+M\+A\+\_\+16bit&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line 592 of file S\+P\+I\+C\+C26\+X\+X\+D\+M\+A.\+h.
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{_s_p_i_c_c26_x_x_d_m_a_8h_a7a96d71ae8382c6fa489107d34d6c9b3}\label{_s_p_i_c_c26_x_x_d_m_a_8h_a7a96d71ae8382c6fa489107d34d6c9b3}} 
+\index{SPICC26XXDMA.h@{SPICC26XXDMA.h}!SPICC26XXDMA\_fxnTable@{SPICC26XXDMA\_fxnTable}}
+\index{SPICC26XXDMA\_fxnTable@{SPICC26XXDMA\_fxnTable}!SPICC26XXDMA.h@{SPICC26XXDMA.h}}
+\doxysubsubsection{\texorpdfstring{SPICC26XXDMA\_fxnTable}{SPICC26XXDMA\_fxnTable}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{struct_s_p_i___fxn_table}{S\+P\+I\+\_\+\+Fxn\+Table}} S\+P\+I\+C\+C26\+X\+X\+D\+M\+A\+\_\+fxn\+Table}
+
+
+
+Definition at line 100 of file S\+P\+I\+C\+C26\+X\+X\+D\+M\+A.\+c.
+

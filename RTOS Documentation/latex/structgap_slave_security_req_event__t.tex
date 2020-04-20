@@ -1,0 +1,104 @@
+\hypertarget{structgap_slave_security_req_event__t}{}\doxysection{gap\+Slave\+Security\+Req\+Event\+\_\+t Struct Reference}
+\label{structgap_slave_security_req_event__t}\index{gapSlaveSecurityReqEvent\_t@{gapSlaveSecurityReqEvent\_t}}
+
+
+{\ttfamily \#include $<$gap.\+h$>$}
+
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+osal\+\_\+event\+\_\+hdr\+\_\+t \mbox{\hyperlink{structgap_slave_security_req_event__t_a45ecd65c47995bb4bdfe84c1f52b3eea}{hdr}}
+\begin{DoxyCompactList}\small\item\em G\+A\+P\+\_\+\+M\+S\+G\+\_\+\+E\+V\+E\+NT and status. \end{DoxyCompactList}\item 
+uint8 \mbox{\hyperlink{structgap_slave_security_req_event__t_ae03802118b578910981c8a7b95c60364}{opcode}}
+\begin{DoxyCompactList}\small\item\em G\+A\+P\+\_\+\+S\+L\+A\+V\+E\+\_\+\+R\+E\+Q\+U\+E\+S\+T\+E\+D\+\_\+\+S\+E\+C\+U\+R\+I\+T\+Y\+\_\+\+E\+V\+E\+NT. \end{DoxyCompactList}\item 
+uint16 \mbox{\hyperlink{structgap_slave_security_req_event__t_af8a00b44a5e71c5caa3542c18a5b6bff}{connection\+Handle}}
+\begin{DoxyCompactList}\small\item\em Connection Handle. \end{DoxyCompactList}\item 
+uint8 \mbox{\hyperlink{structgap_slave_security_req_event__t_a5a194053ac4b0f588e03dcd8548a8f7f}{device\+Addr}} \mbox{[}B\+\_\+\+A\+D\+D\+R\+\_\+\+L\+EN\mbox{]}
+\begin{DoxyCompactList}\small\item\em address of device requesting security \end{DoxyCompactList}\item 
+uint8 \mbox{\hyperlink{structgap_slave_security_req_event__t_a8d2d359a328bc0915505a5e7508f4b2b}{auth\+Req}}
+\begin{DoxyCompactList}\small\item\em Authentication Requirements\+: Bit 2\+: M\+I\+TM, Bits 0-\/1\+: bonding (0 -\/ no bonding, 1 -\/ bonding) \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+G\+A\+P\+\_\+\+S\+L\+A\+V\+E\+\_\+\+R\+E\+Q\+U\+E\+S\+T\+E\+D\+\_\+\+S\+E\+C\+U\+R\+I\+T\+Y\+\_\+\+E\+V\+E\+NT message format. This message is sent to the app when a Slave Security Request is received. 
+
+Definition at line 749 of file gap.\+h.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{structgap_slave_security_req_event__t_a8d2d359a328bc0915505a5e7508f4b2b}\label{structgap_slave_security_req_event__t_a8d2d359a328bc0915505a5e7508f4b2b}} 
+\index{gapSlaveSecurityReqEvent\_t@{gapSlaveSecurityReqEvent\_t}!authReq@{authReq}}
+\index{authReq@{authReq}!gapSlaveSecurityReqEvent\_t@{gapSlaveSecurityReqEvent\_t}}
+\doxysubsubsection{\texorpdfstring{authReq}{authReq}}
+{\footnotesize\ttfamily uint8 gap\+Slave\+Security\+Req\+Event\+\_\+t\+::auth\+Req}
+
+
+
+Authentication Requirements\+: Bit 2\+: M\+I\+TM, Bits 0-\/1\+: bonding (0 -\/ no bonding, 1 -\/ bonding) 
+
+
+
+Definition at line 755 of file gap.\+h.
+
+\mbox{\Hypertarget{structgap_slave_security_req_event__t_af8a00b44a5e71c5caa3542c18a5b6bff}\label{structgap_slave_security_req_event__t_af8a00b44a5e71c5caa3542c18a5b6bff}} 
+\index{gapSlaveSecurityReqEvent\_t@{gapSlaveSecurityReqEvent\_t}!connectionHandle@{connectionHandle}}
+\index{connectionHandle@{connectionHandle}!gapSlaveSecurityReqEvent\_t@{gapSlaveSecurityReqEvent\_t}}
+\doxysubsubsection{\texorpdfstring{connectionHandle}{connectionHandle}}
+{\footnotesize\ttfamily uint16 gap\+Slave\+Security\+Req\+Event\+\_\+t\+::connection\+Handle}
+
+
+
+Connection Handle. 
+
+
+
+Definition at line 753 of file gap.\+h.
+
+\mbox{\Hypertarget{structgap_slave_security_req_event__t_a5a194053ac4b0f588e03dcd8548a8f7f}\label{structgap_slave_security_req_event__t_a5a194053ac4b0f588e03dcd8548a8f7f}} 
+\index{gapSlaveSecurityReqEvent\_t@{gapSlaveSecurityReqEvent\_t}!deviceAddr@{deviceAddr}}
+\index{deviceAddr@{deviceAddr}!gapSlaveSecurityReqEvent\_t@{gapSlaveSecurityReqEvent\_t}}
+\doxysubsubsection{\texorpdfstring{deviceAddr}{deviceAddr}}
+{\footnotesize\ttfamily uint8 gap\+Slave\+Security\+Req\+Event\+\_\+t\+::device\+Addr\mbox{[}B\+\_\+\+A\+D\+D\+R\+\_\+\+L\+EN\mbox{]}}
+
+
+
+address of device requesting security 
+
+
+
+Definition at line 754 of file gap.\+h.
+
+\mbox{\Hypertarget{structgap_slave_security_req_event__t_a45ecd65c47995bb4bdfe84c1f52b3eea}\label{structgap_slave_security_req_event__t_a45ecd65c47995bb4bdfe84c1f52b3eea}} 
+\index{gapSlaveSecurityReqEvent\_t@{gapSlaveSecurityReqEvent\_t}!hdr@{hdr}}
+\index{hdr@{hdr}!gapSlaveSecurityReqEvent\_t@{gapSlaveSecurityReqEvent\_t}}
+\doxysubsubsection{\texorpdfstring{hdr}{hdr}}
+{\footnotesize\ttfamily osal\+\_\+event\+\_\+hdr\+\_\+t gap\+Slave\+Security\+Req\+Event\+\_\+t\+::hdr}
+
+
+
+G\+A\+P\+\_\+\+M\+S\+G\+\_\+\+E\+V\+E\+NT and status. 
+
+
+
+Definition at line 751 of file gap.\+h.
+
+\mbox{\Hypertarget{structgap_slave_security_req_event__t_ae03802118b578910981c8a7b95c60364}\label{structgap_slave_security_req_event__t_ae03802118b578910981c8a7b95c60364}} 
+\index{gapSlaveSecurityReqEvent\_t@{gapSlaveSecurityReqEvent\_t}!opcode@{opcode}}
+\index{opcode@{opcode}!gapSlaveSecurityReqEvent\_t@{gapSlaveSecurityReqEvent\_t}}
+\doxysubsubsection{\texorpdfstring{opcode}{opcode}}
+{\footnotesize\ttfamily uint8 gap\+Slave\+Security\+Req\+Event\+\_\+t\+::opcode}
+
+
+
+G\+A\+P\+\_\+\+S\+L\+A\+V\+E\+\_\+\+R\+E\+Q\+U\+E\+S\+T\+E\+D\+\_\+\+S\+E\+C\+U\+R\+I\+T\+Y\+\_\+\+E\+V\+E\+NT. 
+
+
+
+Definition at line 752 of file gap.\+h.
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Include/\mbox{\hyperlink{gap_8h}{gap.\+h}}\end{DoxyCompactItemize}

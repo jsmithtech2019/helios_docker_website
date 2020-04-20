@@ -1,0 +1,903 @@
+\hypertarget{_p_i_n_c_c26_x_x_8c}{}\doxysection{Drivers/\+P\+I\+N/\+P\+I\+N\+C\+C26\+XX.c File Reference}
+\label{_p_i_n_c_c26_x_x_8c}\index{Drivers/PIN/PINCC26XX.c@{Drivers/PIN/PINCC26XX.c}}
+
+
+Device-\/specific P\+IN \& G\+P\+IO driver for C\+C26xx family \mbox{[}impl\mbox{]}.  
+
+
+{\ttfamily \#include $<$inc/hw\+\_\+memmap.\+h$>$}\newline
+{\ttfamily \#include $<$inc/hw\+\_\+aon\+\_\+event.\+h$>$}\newline
+{\ttfamily \#include $<$inc/hw\+\_\+aon\+\_\+ioc.\+h$>$}\newline
+{\ttfamily \#include $<$inc/hw\+\_\+aon\+\_\+sysctl.\+h$>$}\newline
+{\ttfamily \#include $<$inc/hw\+\_\+gpio.\+h$>$}\newline
+{\ttfamily \#include $<$inc/hw\+\_\+ioc.\+h$>$}\newline
+{\ttfamily \#include $<$inc/hw\+\_\+ints.\+h$>$}\newline
+{\ttfamily \#include $<$inc/hw\+\_\+ccfg.\+h$>$}\newline
+{\ttfamily \#include $<$driverlib/driverlib\+\_\+release.\+h$>$}\newline
+{\ttfamily \#include $<$driverlib/chipinfo.\+h$>$}\newline
+{\ttfamily \#include $<$ti/sysbios/\+B\+I\+O\+S.\+h$>$}\newline
+{\ttfamily \#include $<$ti/sysbios/knl/\+Semaphore.\+h$>$}\newline
+{\ttfamily \#include $<$ti/sysbios/knl/\+Swi.\+h$>$}\newline
+{\ttfamily \#include $<$ti/sysbios/family/arm/m3/\+Hwi.\+h$>$}\newline
+{\ttfamily \#include $<$ti/drivers/\+Power.\+h$>$}\newline
+{\ttfamily \#include $<$ti/drivers/power/\+Power\+C\+C26\+X\+X.\+h$>$}\newline
+{\ttfamily \#include $<$ti/drivers/pin/\+P\+I\+N\+C\+C26\+X\+X.\+h$>$}\newline
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{_p_i_n_c_c26_x_x_8c_a390bcd0ab1fc9898d740cf7452330e50}{M\+A\+X\+\_\+\+N\+U\+M\+\_\+\+P\+I\+NS}}~31
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_p_i_n_8h_a12a1e9b3ce141648783a82445d02b58d}{uint\+\_\+t}} \mbox{\hyperlink{_p_i_n_c_c26_x_x_8c_aaacad5683f4594c19c4c2d23d5d1e6a2}{P\+I\+N\+C\+C26\+X\+X\+\_\+get\+Pin\+Count}} ()
+\begin{DoxyCompactList}\small\item\em Get device-\/specific count of how many pins are available on this device and package. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_p_i_n_8h_abe0ad59bbf09e51fe37195a5e70b23f6}{P\+I\+N\+\_\+\+Status}} \mbox{\hyperlink{_p_i_n_c_c26_x_x_8c_a0de1df98a14e6e13b16db414e54472ef}{P\+I\+N\+\_\+init}} (const \mbox{\hyperlink{_p_i_n_8h_ae427b7d2925f9b0f3145e455cfdb5841}{P\+I\+N\+\_\+\+Config}} a\+Pin\+Cfg\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em P\+IN module initialization. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_p_i_n_8h_afb2de52b054638f63c39df1f30a0d88d}{P\+I\+N\+\_\+\+Handle}} \mbox{\hyperlink{_p_i_n_c_c26_x_x_8c_a731c5bb641ffeb064579432adfc8dba0}{P\+I\+N\+\_\+open}} (\mbox{\hyperlink{_p_i_n_8h_a36ef69d50df6baa6973482669c24a522}{P\+I\+N\+\_\+\+State}} $\ast$p\+State, const \mbox{\hyperlink{_p_i_n_8h_ae427b7d2925f9b0f3145e455cfdb5841}{P\+I\+N\+\_\+\+Config}} a\+Pin\+List\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em Allocate one or more pins for a driver or an application. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_p_i_n_8h_abe0ad59bbf09e51fe37195a5e70b23f6}{P\+I\+N\+\_\+\+Status}} \mbox{\hyperlink{_p_i_n_c_c26_x_x_8c_ae96b7cc445336d52f8f6db762ff80156}{P\+I\+N\+\_\+add}} (\mbox{\hyperlink{_p_i_n_8h_afb2de52b054638f63c39df1f30a0d88d}{P\+I\+N\+\_\+\+Handle}} handle, \mbox{\hyperlink{_p_i_n_8h_ae427b7d2925f9b0f3145e455cfdb5841}{P\+I\+N\+\_\+\+Config}} pin\+Cfg)
+\begin{DoxyCompactList}\small\item\em Add pin to pin set for open P\+IN handle. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_p_i_n_8h_abe0ad59bbf09e51fe37195a5e70b23f6}{P\+I\+N\+\_\+\+Status}} \mbox{\hyperlink{_p_i_n_c_c26_x_x_8c_a7edb10913792e741318ef339d5c7ef13}{P\+I\+N\+\_\+remove}} (\mbox{\hyperlink{_p_i_n_8h_afb2de52b054638f63c39df1f30a0d88d}{P\+I\+N\+\_\+\+Handle}} handle, \mbox{\hyperlink{_p_i_n_8h_a9ae8197f460bb76ea09a84f47d09921f}{P\+I\+N\+\_\+\+Id}} pin\+Id)
+\begin{DoxyCompactList}\small\item\em Removes pin from pin set foropen P\+IN handle. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_p_i_n_c_c26_x_x_8c_a877e82b9c5333a122cc408e103feba68}{P\+I\+N\+\_\+close}} (\mbox{\hyperlink{_p_i_n_8h_afb2de52b054638f63c39df1f30a0d88d}{P\+I\+N\+\_\+\+Handle}} handle)
+\begin{DoxyCompactList}\small\item\em Deallocate all pins previously allocated with a call to \mbox{\hyperlink{_p_i_n_8h_a731c5bb641ffeb064579432adfc8dba0}{P\+I\+N\+\_\+open()}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_p_i_n_8h_a12a1e9b3ce141648783a82445d02b58d}{uint\+\_\+t}} \mbox{\hyperlink{_p_i_n_c_c26_x_x_8c_a9bfcc2ddeaaac6dcd90d31ff0c125f3d}{P\+I\+N\+\_\+get\+Input\+Value}} (\mbox{\hyperlink{_p_i_n_8h_a9ae8197f460bb76ea09a84f47d09921f}{P\+I\+N\+\_\+\+Id}} pin\+Id)
+\begin{DoxyCompactList}\small\item\em Get pin input value (0/1) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_p_i_n_8h_abe0ad59bbf09e51fe37195a5e70b23f6}{P\+I\+N\+\_\+\+Status}} \mbox{\hyperlink{_p_i_n_c_c26_x_x_8c_ace57b32daf13b67b2d8bb1b8470b5cd6}{P\+I\+N\+\_\+set\+Output\+Enable}} (\mbox{\hyperlink{_p_i_n_8h_afb2de52b054638f63c39df1f30a0d88d}{P\+I\+N\+\_\+\+Handle}} handle, \mbox{\hyperlink{_p_i_n_8h_a9ae8197f460bb76ea09a84f47d09921f}{P\+I\+N\+\_\+\+Id}} pin\+Id, bool b\+Out\+En)
+\begin{DoxyCompactList}\small\item\em Control output enable for G\+P\+IO pin. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_p_i_n_8h_abe0ad59bbf09e51fe37195a5e70b23f6}{P\+I\+N\+\_\+\+Status}} \mbox{\hyperlink{_p_i_n_c_c26_x_x_8c_aa928e8e84148f7df7bfd2fb46e475016}{P\+I\+N\+\_\+set\+Output\+Value}} (\mbox{\hyperlink{_p_i_n_8h_afb2de52b054638f63c39df1f30a0d88d}{P\+I\+N\+\_\+\+Handle}} handle, \mbox{\hyperlink{_p_i_n_8h_a9ae8197f460bb76ea09a84f47d09921f}{P\+I\+N\+\_\+\+Id}} pin\+Id, \mbox{\hyperlink{_p_i_n_8h_a12a1e9b3ce141648783a82445d02b58d}{uint\+\_\+t}} val)
+\begin{DoxyCompactList}\small\item\em Control output value for G\+P\+IO pin. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_p_i_n_8h_a12a1e9b3ce141648783a82445d02b58d}{uint\+\_\+t}} \mbox{\hyperlink{_p_i_n_c_c26_x_x_8c_a4a05603f0e075a37af59ed66fd6c6443}{P\+I\+N\+\_\+get\+Output\+Value}} (\mbox{\hyperlink{_p_i_n_8h_a9ae8197f460bb76ea09a84f47d09921f}{P\+I\+N\+\_\+\+Id}} pin\+Id)
+\begin{DoxyCompactList}\small\item\em Get value of G\+P\+IO pin output buffer. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_p_i_n_8h_abe0ad59bbf09e51fe37195a5e70b23f6}{P\+I\+N\+\_\+\+Status}} \mbox{\hyperlink{_p_i_n_c_c26_x_x_8c_a69e2aac02eaabf8d3c3a248a27dd7d0e}{P\+I\+N\+\_\+set\+Interrupt}} (\mbox{\hyperlink{_p_i_n_8h_afb2de52b054638f63c39df1f30a0d88d}{P\+I\+N\+\_\+\+Handle}} handle, \mbox{\hyperlink{_p_i_n_8h_ae427b7d2925f9b0f3145e455cfdb5841}{P\+I\+N\+\_\+\+Config}} pin\+Cfg)
+\begin{DoxyCompactList}\small\item\em Control interrupt enable and edge for pin. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_p_i_n_8h_abe0ad59bbf09e51fe37195a5e70b23f6}{P\+I\+N\+\_\+\+Status}} \mbox{\hyperlink{_p_i_n_c_c26_x_x_8c_a82957789e7c370b6dd4f16fa36045522}{P\+I\+N\+\_\+clr\+Pend\+Interrupt}} (\mbox{\hyperlink{_p_i_n_8h_afb2de52b054638f63c39df1f30a0d88d}{P\+I\+N\+\_\+\+Handle}} handle, \mbox{\hyperlink{_p_i_n_8h_a9ae8197f460bb76ea09a84f47d09921f}{P\+I\+N\+\_\+\+Id}} pin\+Id)
+\begin{DoxyCompactList}\small\item\em Clear pending interrupt for pin, if any. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_p_i_n_8h_abe0ad59bbf09e51fe37195a5e70b23f6}{P\+I\+N\+\_\+\+Status}} \mbox{\hyperlink{_p_i_n_c_c26_x_x_8c_ae906e3b4880c7c921c90d0baf0ce6e42}{P\+I\+N\+\_\+register\+Int\+Cb}} (\mbox{\hyperlink{_p_i_n_8h_afb2de52b054638f63c39df1f30a0d88d}{P\+I\+N\+\_\+\+Handle}} handle, \mbox{\hyperlink{_p_i_n_8h_a289cbfdcb1e23ade7c3b0f5fc3b2d695}{P\+I\+N\+\_\+\+Int\+Cb}} p\+Cb)
+\begin{DoxyCompactList}\small\item\em Register callback function for a set of pins. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_p_i_n_8h_ae427b7d2925f9b0f3145e455cfdb5841}{P\+I\+N\+\_\+\+Config}} \mbox{\hyperlink{_p_i_n_c_c26_x_x_8c_aed24cb96de8fa957e9f7c05dd239f2f9}{P\+I\+N\+\_\+get\+Config}} (\mbox{\hyperlink{_p_i_n_8h_a9ae8197f460bb76ea09a84f47d09921f}{P\+I\+N\+\_\+\+Id}} pin\+Id)
+\begin{DoxyCompactList}\small\item\em Returns pin configuration. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_p_i_n_8h_abe0ad59bbf09e51fe37195a5e70b23f6}{P\+I\+N\+\_\+\+Status}} \mbox{\hyperlink{_p_i_n_c_c26_x_x_8c_a4b9fbd1a86e63d2f14f679b87f17c857}{P\+I\+N\+\_\+set\+Config}} (\mbox{\hyperlink{_p_i_n_8h_afb2de52b054638f63c39df1f30a0d88d}{P\+I\+N\+\_\+\+Handle}} handle, \mbox{\hyperlink{_p_i_n_8h_ae427b7d2925f9b0f3145e455cfdb5841}{P\+I\+N\+\_\+\+Config}} bm\+Mask, \mbox{\hyperlink{_p_i_n_8h_ae427b7d2925f9b0f3145e455cfdb5841}{P\+I\+N\+\_\+\+Config}} pin\+Cfg)
+\begin{DoxyCompactList}\small\item\em Sets complete pin configuration. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_p_i_n_8h_ae427b7d2925f9b0f3145e455cfdb5841}{P\+I\+N\+\_\+\+Config}} \mbox{\hyperlink{_p_i_n_c_c26_x_x_8c_aef985455a19581bdb47fff4314fc318b}{P\+I\+N\+C\+C26\+X\+X\+\_\+get\+Config}} (\mbox{\hyperlink{_p_i_n_8h_a9ae8197f460bb76ea09a84f47d09921f}{P\+I\+N\+\_\+\+Id}} pin\+Id)
+\begin{DoxyCompactList}\small\item\em Returns C\+C26xx device-\/specific pin configuration. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_p_i_n_8h_ab6fd6105e64ed14a0c9281326f05e623}{int\+\_\+t}} \mbox{\hyperlink{_p_i_n_c_c26_x_x_8c_a568b24bc5bf40ce5f525be32a67c969a}{P\+I\+N\+C\+C26\+X\+X\+\_\+get\+Mux}} (\mbox{\hyperlink{_p_i_n_8h_a9ae8197f460bb76ea09a84f47d09921f}{P\+I\+N\+\_\+\+Id}} pin\+Id)
+\begin{DoxyCompactList}\small\item\em Get device-\/specific pin mapping to G\+P\+IO, HW peripheral or HW signal. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_p_i_n_8h_abe0ad59bbf09e51fe37195a5e70b23f6}{P\+I\+N\+\_\+\+Status}} \mbox{\hyperlink{_p_i_n_c_c26_x_x_8c_ac8cbb649db80dd03d8e8a487aef43294}{P\+I\+N\+C\+C26\+X\+X\+\_\+set\+Mux}} (\mbox{\hyperlink{_p_i_n_8h_afb2de52b054638f63c39df1f30a0d88d}{P\+I\+N\+\_\+\+Handle}} handle, \mbox{\hyperlink{_p_i_n_8h_a9ae8197f460bb76ea09a84f47d09921f}{P\+I\+N\+\_\+\+Id}} pin\+Id, int32\+\_\+t n\+Mux)
+\begin{DoxyCompactList}\small\item\em Connect pin to HW peripheral, signal or to G\+P\+IO. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_p_i_n_8h_abe0ad59bbf09e51fe37195a5e70b23f6}{P\+I\+N\+\_\+\+Status}} \mbox{\hyperlink{_p_i_n_c_c26_x_x_8c_a7eea7460f3e2d4c68df55239471805aa}{P\+I\+N\+C\+C26\+X\+X\+\_\+set\+Wakeup}} (const \mbox{\hyperlink{_p_i_n_8h_ae427b7d2925f9b0f3145e455cfdb5841}{P\+I\+N\+\_\+\+Config}} a\+Pin\+Cfg\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em Configure wakeup (from shutdown) on pins. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_p_i_n_8h_a12a1e9b3ce141648783a82445d02b58d}{uint\+\_\+t}} \mbox{\hyperlink{_p_i_n_c_c26_x_x_8c_a9f5b2367253b355909032742a7e6b5e0}{P\+I\+N\+\_\+get\+Port\+Mask}} (\mbox{\hyperlink{_p_i_n_8h_afb2de52b054638f63c39df1f30a0d88d}{P\+I\+N\+\_\+\+Handle}} handle)
+\begin{DoxyCompactList}\small\item\em Returns bitmask indicating pins allocated to client in G\+P\+IO port. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_p_i_n_8h_a12a1e9b3ce141648783a82445d02b58d}{uint\+\_\+t}} \mbox{\hyperlink{_p_i_n_c_c26_x_x_8c_a726e06dcb7c0d096efaee431ae7b2aaa}{P\+I\+N\+\_\+get\+Port\+Input\+Value}} (\mbox{\hyperlink{_p_i_n_8h_afb2de52b054638f63c39df1f30a0d88d}{P\+I\+N\+\_\+\+Handle}} handle)
+\begin{DoxyCompactList}\small\item\em Read input value of whole G\+P\+IO port. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_p_i_n_8h_a12a1e9b3ce141648783a82445d02b58d}{uint\+\_\+t}} \mbox{\hyperlink{_p_i_n_c_c26_x_x_8c_ae7dedbfc51ba785bb2f546eed5fdd806}{P\+I\+N\+\_\+get\+Port\+Output\+Value}} (\mbox{\hyperlink{_p_i_n_8h_afb2de52b054638f63c39df1f30a0d88d}{P\+I\+N\+\_\+\+Handle}} handle)
+\begin{DoxyCompactList}\small\item\em Returns value of whole G\+P\+IO port\textquotesingle{}s output buffers. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_p_i_n_8h_abe0ad59bbf09e51fe37195a5e70b23f6}{P\+I\+N\+\_\+\+Status}} \mbox{\hyperlink{_p_i_n_c_c26_x_x_8c_a380bb69c858753895cf62fb462797fc6}{P\+I\+N\+\_\+set\+Port\+Output\+Value}} (\mbox{\hyperlink{_p_i_n_8h_afb2de52b054638f63c39df1f30a0d88d}{P\+I\+N\+\_\+\+Handle}} handle, \mbox{\hyperlink{_p_i_n_8h_a12a1e9b3ce141648783a82445d02b58d}{uint\+\_\+t}} bm\+Out\+Val)
+\begin{DoxyCompactList}\small\item\em Simultaneous write output buffer values of all allocated pins in G\+P\+IO port. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_p_i_n_8h_abe0ad59bbf09e51fe37195a5e70b23f6}{P\+I\+N\+\_\+\+Status}} \mbox{\hyperlink{_p_i_n_c_c26_x_x_8c_a597fe2039644ee0389980d0a729de4e7}{P\+I\+N\+\_\+set\+Port\+Output\+Enable}} (\mbox{\hyperlink{_p_i_n_8h_afb2de52b054638f63c39df1f30a0d88d}{P\+I\+N\+\_\+\+Handle}} handle, \mbox{\hyperlink{_p_i_n_8h_a12a1e9b3ce141648783a82445d02b58d}{uint\+\_\+t}} bm\+Out\+En)
+\begin{DoxyCompactList}\small\item\em Set output enable for all pins allocated to client in G\+P\+IO port. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_p_i_n_8h_a12a1e9b3ce141648783a82445d02b58d}{uint\+\_\+t}} \mbox{\hyperlink{_p_i_n_c_c26_x_x_8c_a138463d5bac2d11077c400c268491136}{P\+I\+N\+\_\+\+Num\+Pins}}
+\begin{DoxyCompactList}\small\item\em Number of pins available on device. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_p_i_n_8h_afb2de52b054638f63c39df1f30a0d88d}{P\+I\+N\+\_\+\+Handle}} \mbox{\hyperlink{_p_i_n_c_c26_x_x_8c_a0339959620e0e758086813e5d7a7368f}{P\+I\+N\+\_\+\+Handle\+Table}} \mbox{[}\mbox{\hyperlink{_p_i_n_c_c26_x_x_8c_a390bcd0ab1fc9898d740cf7452330e50}{M\+A\+X\+\_\+\+N\+U\+M\+\_\+\+P\+I\+NS}}\mbox{]}
+\begin{DoxyCompactList}\small\item\em Array of handles, one per pin (pin id is index) \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{struct_p_i_n_c_c26_x_x___h_w_attrs}{P\+I\+N\+C\+C26\+X\+X\+\_\+\+H\+W\+Attrs}} \mbox{\hyperlink{_p_i_n_c_c26_x_x_8c_aabafe6d8f4663d66fb645c710edb5782}{P\+I\+N\+C\+C26\+X\+X\+\_\+hw\+Attrs}}
+\begin{DoxyCompactList}\small\item\em Hardware attribute structure populated in \mbox{\hyperlink{board_8c}{board.\+c}} to set H\+WI and S\+WI priorities. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Device-\/specific P\+IN \& G\+P\+IO driver for C\+C26xx family \mbox{[}impl\mbox{]}. 
+
+\DoxyHorRuler{0}
+\hypertarget{_p_i_n_c_c26_x_x_8c_autotoc_md44}{}\doxysubsection{Overview}\label{_p_i_n_c_c26_x_x_8c_autotoc_md44}
+This is the device-\/specific implementation of the generic P\+IN driver for the C\+C26xx family of devices. 
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{_p_i_n_c_c26_x_x_8c_a390bcd0ab1fc9898d740cf7452330e50}\label{_p_i_n_c_c26_x_x_8c_a390bcd0ab1fc9898d740cf7452330e50}} 
+\index{PINCC26XX.c@{PINCC26XX.c}!MAX\_NUM\_PINS@{MAX\_NUM\_PINS}}
+\index{MAX\_NUM\_PINS@{MAX\_NUM\_PINS}!PINCC26XX.c@{PINCC26XX.c}}
+\doxysubsubsection{\texorpdfstring{MAX\_NUM\_PINS}{MAX\_NUM\_PINS}}
+{\footnotesize\ttfamily \#define M\+A\+X\+\_\+\+N\+U\+M\+\_\+\+P\+I\+NS~31}
+
+
+
+Definition at line 65 of file P\+I\+N\+C\+C26\+X\+X.\+c.
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{_p_i_n_c_c26_x_x_8c_ae96b7cc445336d52f8f6db762ff80156}\label{_p_i_n_c_c26_x_x_8c_ae96b7cc445336d52f8f6db762ff80156}} 
+\index{PINCC26XX.c@{PINCC26XX.c}!PIN\_add@{PIN\_add}}
+\index{PIN\_add@{PIN\_add}!PINCC26XX.c@{PINCC26XX.c}}
+\doxysubsubsection{\texorpdfstring{PIN\_add()}{PIN\_add()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_p_i_n_8h_abe0ad59bbf09e51fe37195a5e70b23f6}{P\+I\+N\+\_\+\+Status}} P\+I\+N\+\_\+add (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_p_i_n_8h_afb2de52b054638f63c39df1f30a0d88d}{P\+I\+N\+\_\+\+Handle}}}]{handle,  }\item[{\mbox{\hyperlink{_p_i_n_8h_ae427b7d2925f9b0f3145e455cfdb5841}{P\+I\+N\+\_\+\+Config}}}]{pin\+Cfg }\end{DoxyParamCaption})}
+
+
+
+Add pin to pin set for open P\+IN handle. 
+
+If the requested pin is unallocated it will be added, else an error code will be returned. 
+\begin{DoxyParams}{Parameters}
+{\em handle} & handle retrieved through an earlier call to \mbox{\hyperlink{_p_i_n_8h_a731c5bb641ffeb064579432adfc8dba0}{P\+I\+N\+\_\+open()}}. \\
+\hline
+{\em pin\+Cfg} & Pin I\+D/configuration for pin to add. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Error code if unsuccessful, else P\+I\+N\+\_\+\+S\+U\+C\+C\+E\+SS 
+\end{DoxyReturn}
+
+
+Definition at line 389 of file P\+I\+N\+C\+C26\+X\+X.\+c.
+
+\mbox{\Hypertarget{_p_i_n_c_c26_x_x_8c_a877e82b9c5333a122cc408e103feba68}\label{_p_i_n_c_c26_x_x_8c_a877e82b9c5333a122cc408e103feba68}} 
+\index{PINCC26XX.c@{PINCC26XX.c}!PIN\_close@{PIN\_close}}
+\index{PIN\_close@{PIN\_close}!PINCC26XX.c@{PINCC26XX.c}}
+\doxysubsubsection{\texorpdfstring{PIN\_close()}{PIN\_close()}}
+{\footnotesize\ttfamily void P\+I\+N\+\_\+close (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_p_i_n_8h_afb2de52b054638f63c39df1f30a0d88d}{P\+I\+N\+\_\+\+Handle}}}]{handle }\end{DoxyParamCaption})}
+
+
+
+Deallocate all pins previously allocated with a call to \mbox{\hyperlink{_p_i_n_8h_a731c5bb641ffeb064579432adfc8dba0}{P\+I\+N\+\_\+open()}}. 
+
+Deallocate pins allocated to handle and restore these pins to the pool of unallocated pins. Also restores the pin configuration to what it was set to when \mbox{\hyperlink{_p_i_n_8h_a0de1df98a14e6e13b16db414e54472ef}{P\+I\+N\+\_\+init()}} was called. 
+\begin{DoxyParams}{Parameters}
+{\em handle} & handle retrieved through an earlier call to \mbox{\hyperlink{_p_i_n_8h_a731c5bb641ffeb064579432adfc8dba0}{P\+I\+N\+\_\+open()}}. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 443 of file P\+I\+N\+C\+C26\+X\+X.\+c.
+
+\mbox{\Hypertarget{_p_i_n_c_c26_x_x_8c_a82957789e7c370b6dd4f16fa36045522}\label{_p_i_n_c_c26_x_x_8c_a82957789e7c370b6dd4f16fa36045522}} 
+\index{PINCC26XX.c@{PINCC26XX.c}!PIN\_clrPendInterrupt@{PIN\_clrPendInterrupt}}
+\index{PIN\_clrPendInterrupt@{PIN\_clrPendInterrupt}!PINCC26XX.c@{PINCC26XX.c}}
+\doxysubsubsection{\texorpdfstring{PIN\_clrPendInterrupt()}{PIN\_clrPendInterrupt()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_p_i_n_8h_abe0ad59bbf09e51fe37195a5e70b23f6}{P\+I\+N\+\_\+\+Status}} P\+I\+N\+\_\+clr\+Pend\+Interrupt (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_p_i_n_8h_afb2de52b054638f63c39df1f30a0d88d}{P\+I\+N\+\_\+\+Handle}}}]{handle,  }\item[{\mbox{\hyperlink{_p_i_n_8h_a9ae8197f460bb76ea09a84f47d09921f}{P\+I\+N\+\_\+\+Id}}}]{pin\+Id }\end{DoxyParamCaption})}
+
+
+
+Clear pending interrupt for pin, if any. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em handle} & Handle provided by previous call to \mbox{\hyperlink{_p_i_n_8h_a731c5bb641ffeb064579432adfc8dba0}{P\+I\+N\+\_\+open()}} \\
+\hline
+{\em pin\+Id} & \mbox{\hyperlink{_p_i_n_8h_a9ae8197f460bb76ea09a84f47d09921f}{P\+I\+N\+\_\+\+Id}} for pin to clear pending interrupt for \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{_p_i_n_8h_abe0ad59bbf09e51fe37195a5e70b23f6a5c9610fffc152c333036f2c2c7ee54e8}{P\+I\+N\+\_\+\+S\+U\+C\+C\+E\+SS}} if successful, else error code 
+\end{DoxyReturn}
+\begin{DoxyParagraph}{Usage}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{PIN\_ClrPendInterrupt(hPins, \mbox{\hyperlink{_p_i_n_8h_add47c82f7563d28053f76d368d344bc6}{PIN\_ID}}(8));}
+\end{DoxyCode}
+ 
+\end{DoxyParagraph}
+
+
+Definition at line 503 of file P\+I\+N\+C\+C26\+X\+X.\+c.
+
+\mbox{\Hypertarget{_p_i_n_c_c26_x_x_8c_aed24cb96de8fa957e9f7c05dd239f2f9}\label{_p_i_n_c_c26_x_x_8c_aed24cb96de8fa957e9f7c05dd239f2f9}} 
+\index{PINCC26XX.c@{PINCC26XX.c}!PIN\_getConfig@{PIN\_getConfig}}
+\index{PIN\_getConfig@{PIN\_getConfig}!PINCC26XX.c@{PINCC26XX.c}}
+\doxysubsubsection{\texorpdfstring{PIN\_getConfig()}{PIN\_getConfig()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_p_i_n_8h_ae427b7d2925f9b0f3145e455cfdb5841}{P\+I\+N\+\_\+\+Config}} P\+I\+N\+\_\+get\+Config (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_p_i_n_8h_a9ae8197f460bb76ea09a84f47d09921f}{P\+I\+N\+\_\+\+Id}}}]{pin\+Id }\end{DoxyParamCaption})}
+
+
+
+Returns pin configuration. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pin\+Id} & Pin ID \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Current pin configuration as a device-\/independent \mbox{\hyperlink{_p_i_n_8h_ae427b7d2925f9b0f3145e455cfdb5841}{P\+I\+N\+\_\+\+Config}} value 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+The pin ID is embedded in return value. 
+
+There is usually a device-\/specific version of this function that returns device-\/specific options 
+\end{DoxyNote}
+\begin{DoxyParagraph}{Usage}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{comment}{// Get config of pin 14 to be able to revert later}}
+\DoxyCodeLine{myPinConfig = \mbox{\hyperlink{_p_i_n_8h_aed24cb96de8fa957e9f7c05dd239f2f9}{PIN\_getConfig}}(\mbox{\hyperlink{_p_i_n_8h_add47c82f7563d28053f76d368d344bc6}{PIN\_ID}}(14));}
+\DoxyCodeLine{\textcolor{comment}{// ...}}
+\DoxyCodeLine{\textcolor{comment}{// Lots of pin reconfigurations}}
+\DoxyCodeLine{\textcolor{comment}{// ...}}
+\DoxyCodeLine{\textcolor{comment}{// Restore previous configuration}}
+\DoxyCodeLine{\mbox{\hyperlink{_p_i_n_8h_a4b9fbd1a86e63d2f14f679b87f17c857}{PIN\_setConfig}}(hPins, \mbox{\hyperlink{_p_i_n_8h_a7567bcbdf26a95ea42a860aa9beb5a11}{PIN\_BM\_ALL}}, myPinConfig);}
+\end{DoxyCode}
+ 
+\end{DoxyParagraph}
+
+
+Definition at line 525 of file P\+I\+N\+C\+C26\+X\+X.\+c.
+
+\mbox{\Hypertarget{_p_i_n_c_c26_x_x_8c_a9bfcc2ddeaaac6dcd90d31ff0c125f3d}\label{_p_i_n_c_c26_x_x_8c_a9bfcc2ddeaaac6dcd90d31ff0c125f3d}} 
+\index{PINCC26XX.c@{PINCC26XX.c}!PIN\_getInputValue@{PIN\_getInputValue}}
+\index{PIN\_getInputValue@{PIN\_getInputValue}!PINCC26XX.c@{PINCC26XX.c}}
+\doxysubsubsection{\texorpdfstring{PIN\_getInputValue()}{PIN\_getInputValue()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_p_i_n_8h_a12a1e9b3ce141648783a82445d02b58d}{uint\+\_\+t}} P\+I\+N\+\_\+get\+Input\+Value (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_p_i_n_8h_a9ae8197f460bb76ea09a84f47d09921f}{P\+I\+N\+\_\+\+Id}}}]{pin\+Id }\end{DoxyParamCaption})}
+
+
+
+Get pin input value (0/1) 
+
+Input values of all pins are available to everyone so no handle required 
+\begin{DoxyParams}{Parameters}
+{\em pin\+Id} & ID of pin to get input value from \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Current input buffer value 
+\end{DoxyReturn}
+\begin{DoxyRemark}{Remarks}
+This function typically has an inlined sibling function in the device-\/specific driver that may be used for higher efficiency 
+\end{DoxyRemark}
+\begin{DoxyParagraph}{Usage}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{myPin = \mbox{\hyperlink{_p_i_n_8h_a9bfcc2ddeaaac6dcd90d31ff0c125f3d}{PIN\_getInputValue}}(\mbox{\hyperlink{_p_i_n_8h_add47c82f7563d28053f76d368d344bc6}{PIN\_ID}}(5));}
+\end{DoxyCode}
+ 
+\end{DoxyParagraph}
+
+
+Definition at line 458 of file P\+I\+N\+C\+C26\+X\+X.\+c.
+
+\mbox{\Hypertarget{_p_i_n_c_c26_x_x_8c_a4a05603f0e075a37af59ed66fd6c6443}\label{_p_i_n_c_c26_x_x_8c_a4a05603f0e075a37af59ed66fd6c6443}} 
+\index{PINCC26XX.c@{PINCC26XX.c}!PIN\_getOutputValue@{PIN\_getOutputValue}}
+\index{PIN\_getOutputValue@{PIN\_getOutputValue}!PINCC26XX.c@{PINCC26XX.c}}
+\doxysubsubsection{\texorpdfstring{PIN\_getOutputValue()}{PIN\_getOutputValue()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_p_i_n_8h_a12a1e9b3ce141648783a82445d02b58d}{uint\+\_\+t}} P\+I\+N\+\_\+get\+Output\+Value (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_p_i_n_8h_a9ae8197f460bb76ea09a84f47d09921f}{P\+I\+N\+\_\+\+Id}}}]{pin\+Id }\end{DoxyParamCaption})}
+
+
+
+Get value of G\+P\+IO pin output buffer. 
+
+Output values of all pins are available to everyone so no handle required 
+\begin{DoxyParams}{Parameters}
+{\em pin\+Id} & Pin ID \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Output value (0/1) 
+\end{DoxyReturn}
+\begin{DoxyRemark}{Remarks}
+This function typically has an inlined sibling function in the device-\/specific driver that may be used for higher efficiency 
+\end{DoxyRemark}
+\begin{DoxyParagraph}{Usage}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{_p_i_n_8h_aa928e8e84148f7df7bfd2fb46e475016}{PIN\_setOutputValue}}(hpins, \mbox{\hyperlink{_p_i_n_8h_add47c82f7563d28053f76d368d344bc6}{PIN\_ID}}(4), \mbox{\hyperlink{_p_i_n_8h_a4a05603f0e075a37af59ed66fd6c6443}{PIN\_getOutputValue}}(\mbox{\hyperlink{_p_i_n_8h_add47c82f7563d28053f76d368d344bc6}{PIN\_ID}}(6)));}
+\end{DoxyCode}
+ 
+\end{DoxyParagraph}
+
+
+Definition at line 486 of file P\+I\+N\+C\+C26\+X\+X.\+c.
+
+\mbox{\Hypertarget{_p_i_n_c_c26_x_x_8c_a726e06dcb7c0d096efaee431ae7b2aaa}\label{_p_i_n_c_c26_x_x_8c_a726e06dcb7c0d096efaee431ae7b2aaa}} 
+\index{PINCC26XX.c@{PINCC26XX.c}!PIN\_getPortInputValue@{PIN\_getPortInputValue}}
+\index{PIN\_getPortInputValue@{PIN\_getPortInputValue}!PINCC26XX.c@{PINCC26XX.c}}
+\doxysubsubsection{\texorpdfstring{PIN\_getPortInputValue()}{PIN\_getPortInputValue()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_p_i_n_8h_a12a1e9b3ce141648783a82445d02b58d}{uint\+\_\+t}} P\+I\+N\+\_\+get\+Port\+Input\+Value (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_p_i_n_8h_afb2de52b054638f63c39df1f30a0d88d}{P\+I\+N\+\_\+\+Handle}}}]{handle }\end{DoxyParamCaption})}
+
+
+
+Read input value of whole G\+P\+IO port. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em handle} & Handle provided by previous call to \mbox{\hyperlink{_p_i_n_8h_a731c5bb641ffeb064579432adfc8dba0}{P\+I\+N\+\_\+open()}} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The simultaneous input value for the whole I/O port masked by the bit mask for the client\textquotesingle{}s allocated pins 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{_p_i_n_8h_a9f5b2367253b355909032742a7e6b5e0}{P\+I\+N\+\_\+get\+Port\+Mask()}} 
+\end{DoxySeeAlso}
+\begin{DoxyRemark}{Remarks}
+This function typically has an inlined sibling function in the device-\/specific driver that may be used for higher efficiency 
+\end{DoxyRemark}
+
+
+Definition at line 610 of file P\+I\+N\+C\+C26\+X\+X.\+c.
+
+\mbox{\Hypertarget{_p_i_n_c_c26_x_x_8c_a9f5b2367253b355909032742a7e6b5e0}\label{_p_i_n_c_c26_x_x_8c_a9f5b2367253b355909032742a7e6b5e0}} 
+\index{PINCC26XX.c@{PINCC26XX.c}!PIN\_getPortMask@{PIN\_getPortMask}}
+\index{PIN\_getPortMask@{PIN\_getPortMask}!PINCC26XX.c@{PINCC26XX.c}}
+\doxysubsubsection{\texorpdfstring{PIN\_getPortMask()}{PIN\_getPortMask()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_p_i_n_8h_a12a1e9b3ce141648783a82445d02b58d}{uint\+\_\+t}} P\+I\+N\+\_\+get\+Port\+Mask (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_p_i_n_8h_afb2de52b054638f63c39df1f30a0d88d}{P\+I\+N\+\_\+\+Handle}}}]{handle }\end{DoxyParamCaption})}
+
+
+
+Returns bitmask indicating pins allocated to client in G\+P\+IO port. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em handle} & Handle provided by previous call to \mbox{\hyperlink{_p_i_n_8h_a731c5bb641ffeb064579432adfc8dba0}{P\+I\+N\+\_\+open()}} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A bitmask indicating which bit positions in an I/O port the allocated I/O pins lie on, or zero if I/O port operations are not supported or the allocated pins span multiple I/O ports. The bitmask maps lowest pin index to the rightmost mask bit 
+\end{DoxyReturn}
+
+
+Definition at line 599 of file P\+I\+N\+C\+C26\+X\+X.\+c.
+
+\mbox{\Hypertarget{_p_i_n_c_c26_x_x_8c_ae7dedbfc51ba785bb2f546eed5fdd806}\label{_p_i_n_c_c26_x_x_8c_ae7dedbfc51ba785bb2f546eed5fdd806}} 
+\index{PINCC26XX.c@{PINCC26XX.c}!PIN\_getPortOutputValue@{PIN\_getPortOutputValue}}
+\index{PIN\_getPortOutputValue@{PIN\_getPortOutputValue}!PINCC26XX.c@{PINCC26XX.c}}
+\doxysubsubsection{\texorpdfstring{PIN\_getPortOutputValue()}{PIN\_getPortOutputValue()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_p_i_n_8h_a12a1e9b3ce141648783a82445d02b58d}{uint\+\_\+t}} P\+I\+N\+\_\+get\+Port\+Output\+Value (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_p_i_n_8h_afb2de52b054638f63c39df1f30a0d88d}{P\+I\+N\+\_\+\+Handle}}}]{handle }\end{DoxyParamCaption})}
+
+
+
+Returns value of whole G\+P\+IO port\textquotesingle{}s output buffers. 
+
+The I/O port is identified by the pins allocated by client in a previous call to \mbox{\hyperlink{_p_i_n_8h_a731c5bb641ffeb064579432adfc8dba0}{P\+I\+N\+\_\+open()}} 
+\begin{DoxyParams}{Parameters}
+{\em handle} & Handle provided by previous call to \mbox{\hyperlink{_p_i_n_8h_a731c5bb641ffeb064579432adfc8dba0}{P\+I\+N\+\_\+open()}} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The current output value for whole I/O port 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{_p_i_n_8h_a9f5b2367253b355909032742a7e6b5e0}{P\+I\+N\+\_\+get\+Port\+Mask()}} 
+\end{DoxySeeAlso}
+\begin{DoxyRemark}{Remarks}
+This function typically has an inlined sibling function in the device-\/specific driver that may be used for higher efficiency 
+\end{DoxyRemark}
+
+
+Definition at line 616 of file P\+I\+N\+C\+C26\+X\+X.\+c.
+
+\mbox{\Hypertarget{_p_i_n_c_c26_x_x_8c_a0de1df98a14e6e13b16db414e54472ef}\label{_p_i_n_c_c26_x_x_8c_a0de1df98a14e6e13b16db414e54472ef}} 
+\index{PINCC26XX.c@{PINCC26XX.c}!PIN\_init@{PIN\_init}}
+\index{PIN\_init@{PIN\_init}!PINCC26XX.c@{PINCC26XX.c}}
+\doxysubsubsection{\texorpdfstring{PIN\_init()}{PIN\_init()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_p_i_n_8h_abe0ad59bbf09e51fe37195a5e70b23f6}{P\+I\+N\+\_\+\+Status}} P\+I\+N\+\_\+init (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{_p_i_n_8h_ae427b7d2925f9b0f3145e455cfdb5841}{P\+I\+N\+\_\+\+Config}}}]{a\+Pin\+Cfg\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+P\+IN module initialization. 
+
+Must be called early in the boot sequence to ensure that I/O pins have safe configurations. This initialization sets up pins as G\+P\+IO as defined in an array (possibly user-\/generated) that typically resides in a board file. All pins not mentioned in a\+Pin\+Cfg\mbox{[}\mbox{]} are configured to be input/output/pull disabled.
+
+\begin{DoxyNote}{Note}
+Function {\itshape cannot} be called more than once.
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em a\+Pin\+Cfg\mbox{[}$\,$\mbox{]}} & Pointer to array of P\+I\+N\+\_\+\+Config entries, one per pin that needs configuration. List terminates when a \mbox{\hyperlink{_p_i_n_8h_ae22ec44ad92ee130a665ca56aad38c75}{P\+I\+N\+\_\+\+T\+E\+R\+M\+I\+N\+A\+TE}} entry is encountered. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{_p_i_n_8h_abe0ad59bbf09e51fe37195a5e70b23f6a5c9610fffc152c333036f2c2c7ee54e8}{P\+I\+N\+\_\+\+S\+U\+C\+C\+E\+SS}} if successful, else an error code. 
+\end{DoxyReturn}
+
+
+Definition at line 233 of file P\+I\+N\+C\+C26\+X\+X.\+c.
+
+\mbox{\Hypertarget{_p_i_n_c_c26_x_x_8c_a731c5bb641ffeb064579432adfc8dba0}\label{_p_i_n_c_c26_x_x_8c_a731c5bb641ffeb064579432adfc8dba0}} 
+\index{PINCC26XX.c@{PINCC26XX.c}!PIN\_open@{PIN\_open}}
+\index{PIN\_open@{PIN\_open}!PINCC26XX.c@{PINCC26XX.c}}
+\doxysubsubsection{\texorpdfstring{PIN\_open()}{PIN\_open()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_p_i_n_8h_afb2de52b054638f63c39df1f30a0d88d}{P\+I\+N\+\_\+\+Handle}} P\+I\+N\+\_\+open (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_p_i_n_8h_a36ef69d50df6baa6973482669c24a522}{P\+I\+N\+\_\+\+State}} $\ast$}]{p\+State,  }\item[{const \mbox{\hyperlink{_p_i_n_8h_ae427b7d2925f9b0f3145e455cfdb5841}{P\+I\+N\+\_\+\+Config}}}]{a\+Pin\+List\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Allocate one or more pins for a driver or an application. 
+
+Allows a P\+IN client (driver or application) to allocate a set of pins, thus ensuring that they cannot be reconfigured/controlled by anyone else. The pins are identified by and reconfigured according to the \mbox{\hyperlink{_p_i_n_8h_ae427b7d2925f9b0f3145e455cfdb5841}{P\+I\+N\+\_\+\+Config}} entries in a\+Pin\+List.
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+State} & Pointer to a P\+I\+N\+\_\+\+State object that will hold the state for this IO client. The object must be in persistent memory \\
+\hline
+{\em a\+Pin\+List\mbox{[}$\,$\mbox{]}} & Pointer to array of \mbox{\hyperlink{_p_i_n_8h_ae427b7d2925f9b0f3145e455cfdb5841}{P\+I\+N\+\_\+\+Config}} entries, one per pin to allocate. List terminates when \mbox{\hyperlink{_p_i_n_8h_ae22ec44ad92ee130a665ca56aad38c75}{P\+I\+N\+\_\+\+T\+E\+R\+M\+I\+N\+A\+TE}} entry is encountered. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A handle for further P\+IN driver calls or N\+U\+LL if an error occurred (already allocated pin in a\+Pin\+List or non-\/existent pin in a\+Pin\+List) 
+\end{DoxyReturn}
+
+
+Definition at line 341 of file P\+I\+N\+C\+C26\+X\+X.\+c.
+
+\mbox{\Hypertarget{_p_i_n_c_c26_x_x_8c_ae906e3b4880c7c921c90d0baf0ce6e42}\label{_p_i_n_c_c26_x_x_8c_ae906e3b4880c7c921c90d0baf0ce6e42}} 
+\index{PINCC26XX.c@{PINCC26XX.c}!PIN\_registerIntCb@{PIN\_registerIntCb}}
+\index{PIN\_registerIntCb@{PIN\_registerIntCb}!PINCC26XX.c@{PINCC26XX.c}}
+\doxysubsubsection{\texorpdfstring{PIN\_registerIntCb()}{PIN\_registerIntCb()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_p_i_n_8h_abe0ad59bbf09e51fe37195a5e70b23f6}{P\+I\+N\+\_\+\+Status}} P\+I\+N\+\_\+register\+Int\+Cb (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_p_i_n_8h_afb2de52b054638f63c39df1f30a0d88d}{P\+I\+N\+\_\+\+Handle}}}]{handle,  }\item[{\mbox{\hyperlink{_p_i_n_8h_a289cbfdcb1e23ade7c3b0f5fc3b2d695}{P\+I\+N\+\_\+\+Int\+Cb}}}]{p\+Cb }\end{DoxyParamCaption})}
+
+
+
+Register callback function for a set of pins. 
+
+Registers a callback function (see \mbox{\hyperlink{_p_i_n_8h_a289cbfdcb1e23ade7c3b0f5fc3b2d695}{P\+I\+N\+\_\+\+Int\+Cb}} for details) for the client identified by handle that will be called from H\+WI context upon an interrupt event on one or more of the allocated pins that have interrupts enabled 
+\begin{DoxyParams}{Parameters}
+{\em handle} & Handle provided by previous call to \mbox{\hyperlink{_p_i_n_8h_a731c5bb641ffeb064579432adfc8dba0}{P\+I\+N\+\_\+open()}} \\
+\hline
+{\em p\+Cb} & Function pointer to a \mbox{\hyperlink{_p_i_n_8h_a289cbfdcb1e23ade7c3b0f5fc3b2d695}{P\+I\+N\+\_\+\+Int\+Cb}} function. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{_p_i_n_8h_abe0ad59bbf09e51fe37195a5e70b23f6a5c9610fffc152c333036f2c2c7ee54e8}{P\+I\+N\+\_\+\+S\+U\+C\+C\+E\+SS}} if successful, else error code 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Pin interrupts are serviced one at a time in pin order when simultaneous. Pin hardware interrupt flags are automatically cleared by P\+IN driver. 
+\end{DoxyNote}
+\begin{DoxyParagraph}{Usage}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{void} pinIntHandler(\mbox{\hyperlink{struct_p_i_n___state__s}{PIN\_Handle}} handle, \mbox{\hyperlink{_p_i_n_8h_a9ae8197f460bb76ea09a84f47d09921f}{PIN\_Id}} pinId) \{}
+\DoxyCodeLine{    \textcolor{comment}{// Handle pin interrupt}}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{...}
+\DoxyCodeLine{PIN\_registerIntCb(hPins, pinIntHandler);}
+\end{DoxyCode}
+ 
+\end{DoxyParagraph}
+
+
+Definition at line 514 of file P\+I\+N\+C\+C26\+X\+X.\+c.
+
+\mbox{\Hypertarget{_p_i_n_c_c26_x_x_8c_a7edb10913792e741318ef339d5c7ef13}\label{_p_i_n_c_c26_x_x_8c_a7edb10913792e741318ef339d5c7ef13}} 
+\index{PINCC26XX.c@{PINCC26XX.c}!PIN\_remove@{PIN\_remove}}
+\index{PIN\_remove@{PIN\_remove}!PINCC26XX.c@{PINCC26XX.c}}
+\doxysubsubsection{\texorpdfstring{PIN\_remove()}{PIN\_remove()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_p_i_n_8h_abe0ad59bbf09e51fe37195a5e70b23f6}{P\+I\+N\+\_\+\+Status}} P\+I\+N\+\_\+remove (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_p_i_n_8h_afb2de52b054638f63c39df1f30a0d88d}{P\+I\+N\+\_\+\+Handle}}}]{handle,  }\item[{\mbox{\hyperlink{_p_i_n_8h_a9ae8197f460bb76ea09a84f47d09921f}{P\+I\+N\+\_\+\+Id}}}]{pin\+Id }\end{DoxyParamCaption})}
+
+
+
+Removes pin from pin set foropen P\+IN handle. 
+
+If the requested pin is allocated to handle it will be removed from the pin set, else an error code will be returned. 
+\begin{DoxyParams}{Parameters}
+{\em handle} & handle retrieved through an earlier call to \mbox{\hyperlink{_p_i_n_8h_a731c5bb641ffeb064579432adfc8dba0}{P\+I\+N\+\_\+open()}}. \\
+\hline
+{\em pin\+Id} & Pin ID for pin to remove. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Error code if unsuccessful, else P\+I\+N\+\_\+\+S\+U\+C\+C\+E\+SS 
+\end{DoxyReturn}
+
+
+Definition at line 419 of file P\+I\+N\+C\+C26\+X\+X.\+c.
+
+\mbox{\Hypertarget{_p_i_n_c_c26_x_x_8c_a4b9fbd1a86e63d2f14f679b87f17c857}\label{_p_i_n_c_c26_x_x_8c_a4b9fbd1a86e63d2f14f679b87f17c857}} 
+\index{PINCC26XX.c@{PINCC26XX.c}!PIN\_setConfig@{PIN\_setConfig}}
+\index{PIN\_setConfig@{PIN\_setConfig}!PINCC26XX.c@{PINCC26XX.c}}
+\doxysubsubsection{\texorpdfstring{PIN\_setConfig()}{PIN\_setConfig()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_p_i_n_8h_abe0ad59bbf09e51fe37195a5e70b23f6}{P\+I\+N\+\_\+\+Status}} P\+I\+N\+\_\+set\+Config (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_p_i_n_8h_afb2de52b054638f63c39df1f30a0d88d}{P\+I\+N\+\_\+\+Handle}}}]{handle,  }\item[{\mbox{\hyperlink{_p_i_n_8h_ae427b7d2925f9b0f3145e455cfdb5841}{P\+I\+N\+\_\+\+Config}}}]{bm\+Mask,  }\item[{\mbox{\hyperlink{_p_i_n_8h_ae427b7d2925f9b0f3145e455cfdb5841}{P\+I\+N\+\_\+\+Config}}}]{pin\+Cfg }\end{DoxyParamCaption})}
+
+
+
+Sets complete pin configuration. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em handle} & Handle provided by previous call to \mbox{\hyperlink{_p_i_n_8h_a731c5bb641ffeb064579432adfc8dba0}{P\+I\+N\+\_\+open()}} \\
+\hline
+{\em bm\+Mask} & Bitmask specifying which fields in cfg that should take effect, the rest keep their current value. \\
+\hline
+{\em pin\+Cfg} & \mbox{\hyperlink{_p_i_n_8h_ae427b7d2925f9b0f3145e455cfdb5841}{P\+I\+N\+\_\+\+Config}} entry with pin ID and pin configuration \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{_p_i_n_8h_abe0ad59bbf09e51fe37195a5e70b23f6a5c9610fffc152c333036f2c2c7ee54e8}{P\+I\+N\+\_\+\+S\+U\+C\+C\+E\+SS}} if successful, else error code 
+\end{DoxyReturn}
+\begin{DoxyParagraph}{Usage}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{comment}{// Set drive strength on pin 15}}
+\DoxyCodeLine{\mbox{\hyperlink{_p_i_n_8h_a4b9fbd1a86e63d2f14f679b87f17c857}{PIN\_setConfig}}(hPins, \mbox{\hyperlink{_p_i_n_8h_a743420ef571111b0d87f15c0aebb7834}{PIN\_BM\_DRVSTR}}, \mbox{\hyperlink{_p_i_n_8h_add47c82f7563d28053f76d368d344bc6}{PIN\_ID}}(15)|\mbox{\hyperlink{_p_i_n_8h_a218e028386e01367f6e86a2a69eb464a}{PIN\_DRVSTR\_MAX}});}
+\end{DoxyCode}
+ 
+\end{DoxyParagraph}
+
+
+Definition at line 532 of file P\+I\+N\+C\+C26\+X\+X.\+c.
+
+\mbox{\Hypertarget{_p_i_n_c_c26_x_x_8c_a69e2aac02eaabf8d3c3a248a27dd7d0e}\label{_p_i_n_c_c26_x_x_8c_a69e2aac02eaabf8d3c3a248a27dd7d0e}} 
+\index{PINCC26XX.c@{PINCC26XX.c}!PIN\_setInterrupt@{PIN\_setInterrupt}}
+\index{PIN\_setInterrupt@{PIN\_setInterrupt}!PINCC26XX.c@{PINCC26XX.c}}
+\doxysubsubsection{\texorpdfstring{PIN\_setInterrupt()}{PIN\_setInterrupt()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_p_i_n_8h_abe0ad59bbf09e51fe37195a5e70b23f6}{P\+I\+N\+\_\+\+Status}} P\+I\+N\+\_\+set\+Interrupt (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_p_i_n_8h_afb2de52b054638f63c39df1f30a0d88d}{P\+I\+N\+\_\+\+Handle}}}]{handle,  }\item[{\mbox{\hyperlink{_p_i_n_8h_ae427b7d2925f9b0f3145e455cfdb5841}{P\+I\+N\+\_\+\+Config}}}]{pin\+Cfg }\end{DoxyParamCaption})}
+
+
+
+Control interrupt enable and edge for pin. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em handle} & Handle provided by previous call to \mbox{\hyperlink{_p_i_n_8h_a731c5bb641ffeb064579432adfc8dba0}{P\+I\+N\+\_\+open()}} \\
+\hline
+{\em pin\+Cfg} & \mbox{\hyperlink{_p_i_n_8h_ae427b7d2925f9b0f3145e455cfdb5841}{P\+I\+N\+\_\+\+Config}} entry identifying pin ID and relevant pin configuration as combinations of\+:
+\begin{DoxyItemize}
+\item \mbox{\hyperlink{_p_i_n_8h_ad9b6d7921f5a8ad9591bed6c432cd6da}{P\+I\+N\+\_\+\+I\+R\+Q\+\_\+\+D\+IS}} (default)
+\item \mbox{\hyperlink{_p_i_n_8h_af4d309f5fad9c05487009326888154d1}{P\+I\+N\+\_\+\+I\+R\+Q\+\_\+\+P\+O\+S\+E\+D\+GE}}
+\item \mbox{\hyperlink{_p_i_n_8h_a3ec5fa8d38321d835720fa518dcfde44}{P\+I\+N\+\_\+\+I\+R\+Q\+\_\+\+N\+E\+G\+E\+D\+GE}}
+\item \mbox{\hyperlink{_p_i_n_8h_aba2bee3661f16506e67c7fd8289ccf8f}{P\+I\+N\+\_\+\+I\+R\+Q\+\_\+\+B\+O\+T\+H\+E\+D\+G\+ES}} 
+\end{DoxyItemize}\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{_p_i_n_8h_abe0ad59bbf09e51fe37195a5e70b23f6a5c9610fffc152c333036f2c2c7ee54e8}{P\+I\+N\+\_\+\+S\+U\+C\+C\+E\+SS}} if successful, else error code 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Any pending interrupts on pins that have not had interrupt enabled will be cleared when enabling interrupts 
+\end{DoxyNote}
+\begin{DoxyParagraph}{Usage}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{_p_i_n_8h_a69e2aac02eaabf8d3c3a248a27dd7d0e}{PIN\_setInterrupt}}(hPins, \mbox{\hyperlink{_p_i_n_8h_add47c82f7563d28053f76d368d344bc6}{PIN\_ID}}(8)|\mbox{\hyperlink{_p_i_n_8h_af4d309f5fad9c05487009326888154d1}{PIN\_IRQ\_POSEDGE}});}
+\end{DoxyCode}
+ 
+\end{DoxyParagraph}
+
+
+Definition at line 492 of file P\+I\+N\+C\+C26\+X\+X.\+c.
+
+\mbox{\Hypertarget{_p_i_n_c_c26_x_x_8c_ace57b32daf13b67b2d8bb1b8470b5cd6}\label{_p_i_n_c_c26_x_x_8c_ace57b32daf13b67b2d8bb1b8470b5cd6}} 
+\index{PINCC26XX.c@{PINCC26XX.c}!PIN\_setOutputEnable@{PIN\_setOutputEnable}}
+\index{PIN\_setOutputEnable@{PIN\_setOutputEnable}!PINCC26XX.c@{PINCC26XX.c}}
+\doxysubsubsection{\texorpdfstring{PIN\_setOutputEnable()}{PIN\_setOutputEnable()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_p_i_n_8h_abe0ad59bbf09e51fe37195a5e70b23f6}{P\+I\+N\+\_\+\+Status}} P\+I\+N\+\_\+set\+Output\+Enable (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_p_i_n_8h_afb2de52b054638f63c39df1f30a0d88d}{P\+I\+N\+\_\+\+Handle}}}]{handle,  }\item[{\mbox{\hyperlink{_p_i_n_8h_a9ae8197f460bb76ea09a84f47d09921f}{P\+I\+N\+\_\+\+Id}}}]{pin\+Id,  }\item[{bool}]{b\+Out\+En }\end{DoxyParamCaption})}
+
+
+
+Control output enable for G\+P\+IO pin. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em handle} & Handle provided by previous call to \mbox{\hyperlink{_p_i_n_8h_a731c5bb641ffeb064579432adfc8dba0}{P\+I\+N\+\_\+open()}} \\
+\hline
+{\em pin\+Id} & \mbox{\hyperlink{_p_i_n_8h_a9ae8197f460bb76ea09a84f47d09921f}{P\+I\+N\+\_\+\+Id}} entry identifying pin \\
+\hline
+{\em b\+Out\+En} & Enable output buffer when true, else disable \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{_p_i_n_8h_abe0ad59bbf09e51fe37195a5e70b23f6a5c9610fffc152c333036f2c2c7ee54e8}{P\+I\+N\+\_\+\+S\+U\+C\+C\+E\+SS}} if successful, else error code 
+\end{DoxyReturn}
+\begin{DoxyRemark}{Remarks}
+This function is included for consistency with the corresponding port function and to provide a more efficient/directed approach. \mbox{\hyperlink{_p_i_n_8h_a4b9fbd1a86e63d2f14f679b87f17c857}{P\+I\+N\+\_\+set\+Config()}} can be used to achieve same result. 
+
+This function typically has an inlined sibling function in the device-\/specific driver that may be used for higher efficiency 
+\end{DoxyRemark}
+\begin{DoxyParagraph}{Usage}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{_p_i_n_8h_ace57b32daf13b67b2d8bb1b8470b5cd6}{PIN\_setOutputEnable}}(hPins, \mbox{\hyperlink{_p_i_n_8h_add47c82f7563d28053f76d368d344bc6}{PIN\_ID}}(11), 0);}
+\end{DoxyCode}
+ 
+\end{DoxyParagraph}
+
+
+Definition at line 464 of file P\+I\+N\+C\+C26\+X\+X.\+c.
+
+\mbox{\Hypertarget{_p_i_n_c_c26_x_x_8c_aa928e8e84148f7df7bfd2fb46e475016}\label{_p_i_n_c_c26_x_x_8c_aa928e8e84148f7df7bfd2fb46e475016}} 
+\index{PINCC26XX.c@{PINCC26XX.c}!PIN\_setOutputValue@{PIN\_setOutputValue}}
+\index{PIN\_setOutputValue@{PIN\_setOutputValue}!PINCC26XX.c@{PINCC26XX.c}}
+\doxysubsubsection{\texorpdfstring{PIN\_setOutputValue()}{PIN\_setOutputValue()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_p_i_n_8h_abe0ad59bbf09e51fe37195a5e70b23f6}{P\+I\+N\+\_\+\+Status}} P\+I\+N\+\_\+set\+Output\+Value (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_p_i_n_8h_afb2de52b054638f63c39df1f30a0d88d}{P\+I\+N\+\_\+\+Handle}}}]{handle,  }\item[{\mbox{\hyperlink{_p_i_n_8h_a9ae8197f460bb76ea09a84f47d09921f}{P\+I\+N\+\_\+\+Id}}}]{pin\+Id,  }\item[{\mbox{\hyperlink{_p_i_n_8h_a12a1e9b3ce141648783a82445d02b58d}{uint\+\_\+t}}}]{val }\end{DoxyParamCaption})}
+
+
+
+Control output value for G\+P\+IO pin. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em handle} & Handle provided by previous call to \mbox{\hyperlink{_p_i_n_8h_a731c5bb641ffeb064579432adfc8dba0}{P\+I\+N\+\_\+open()}} \\
+\hline
+{\em pin\+Id} & Pin ID \\
+\hline
+{\em val} & Output value (0/1) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{_p_i_n_8h_abe0ad59bbf09e51fe37195a5e70b23f6a5c9610fffc152c333036f2c2c7ee54e8}{P\+I\+N\+\_\+\+S\+U\+C\+C\+E\+SS}} if successful, else error code 
+\end{DoxyReturn}
+\begin{DoxyRemark}{Remarks}
+This function typically has an inlined sibling function in the device-\/specific driver that may be used for higher efficiency 
+\end{DoxyRemark}
+\begin{DoxyParagraph}{Usage}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{_p_i_n_8h_aa928e8e84148f7df7bfd2fb46e475016}{PIN\_setOutputValue}}(hPins, \mbox{\hyperlink{_p_i_n_8h_add47c82f7563d28053f76d368d344bc6}{PIN\_ID}}(4), 1);}
+\end{DoxyCode}
+ 
+\end{DoxyParagraph}
+
+
+Definition at line 475 of file P\+I\+N\+C\+C26\+X\+X.\+c.
+
+\mbox{\Hypertarget{_p_i_n_c_c26_x_x_8c_a597fe2039644ee0389980d0a729de4e7}\label{_p_i_n_c_c26_x_x_8c_a597fe2039644ee0389980d0a729de4e7}} 
+\index{PINCC26XX.c@{PINCC26XX.c}!PIN\_setPortOutputEnable@{PIN\_setPortOutputEnable}}
+\index{PIN\_setPortOutputEnable@{PIN\_setPortOutputEnable}!PINCC26XX.c@{PINCC26XX.c}}
+\doxysubsubsection{\texorpdfstring{PIN\_setPortOutputEnable()}{PIN\_setPortOutputEnable()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_p_i_n_8h_abe0ad59bbf09e51fe37195a5e70b23f6}{P\+I\+N\+\_\+\+Status}} P\+I\+N\+\_\+set\+Port\+Output\+Enable (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_p_i_n_8h_afb2de52b054638f63c39df1f30a0d88d}{P\+I\+N\+\_\+\+Handle}}}]{handle,  }\item[{\mbox{\hyperlink{_p_i_n_8h_a12a1e9b3ce141648783a82445d02b58d}{uint\+\_\+t}}}]{bm\+Out\+En }\end{DoxyParamCaption})}
+
+
+
+Set output enable for all pins allocated to client in G\+P\+IO port. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em handle} & Handle provided by previous call to \mbox{\hyperlink{_p_i_n_8h_a731c5bb641ffeb064579432adfc8dba0}{P\+I\+N\+\_\+open()}} \\
+\hline
+{\em bm\+Out\+En} & Bitmask indicating the desired output enable configuration for the whole port, only the pins allocated to the client will be affected \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{_p_i_n_8h_abe0ad59bbf09e51fe37195a5e70b23f6a5c9610fffc152c333036f2c2c7ee54e8}{P\+I\+N\+\_\+\+S\+U\+C\+C\+E\+SS}} if successful, else error code 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{_p_i_n_8h_a9f5b2367253b355909032742a7e6b5e0}{P\+I\+N\+\_\+get\+Port\+Mask()}} 
+\end{DoxySeeAlso}
+\begin{DoxyRemark}{Remarks}
+This function typically has an inlined sibling function in the device-\/specific driver that may be used for higher efficiency 
+\end{DoxyRemark}
+\begin{DoxyParagraph}{Usage}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{comment}{// Set output to 0 on all allocated pins, then enable the output drivers}}
+\DoxyCodeLine{pin\_setPortOutputVal(hPins, 0);}
+\DoxyCodeLine{pin\_setPortOutputEnable(hPins, \mbox{\hyperlink{_p_i_n_8h_a9f5b2367253b355909032742a7e6b5e0}{PIN\_getPortMask}}());}
+\end{DoxyCode}
+ 
+\end{DoxyParagraph}
+
+
+Definition at line 632 of file P\+I\+N\+C\+C26\+X\+X.\+c.
+
+\mbox{\Hypertarget{_p_i_n_c_c26_x_x_8c_a380bb69c858753895cf62fb462797fc6}\label{_p_i_n_c_c26_x_x_8c_a380bb69c858753895cf62fb462797fc6}} 
+\index{PINCC26XX.c@{PINCC26XX.c}!PIN\_setPortOutputValue@{PIN\_setPortOutputValue}}
+\index{PIN\_setPortOutputValue@{PIN\_setPortOutputValue}!PINCC26XX.c@{PINCC26XX.c}}
+\doxysubsubsection{\texorpdfstring{PIN\_setPortOutputValue()}{PIN\_setPortOutputValue()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_p_i_n_8h_abe0ad59bbf09e51fe37195a5e70b23f6}{P\+I\+N\+\_\+\+Status}} P\+I\+N\+\_\+set\+Port\+Output\+Value (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_p_i_n_8h_afb2de52b054638f63c39df1f30a0d88d}{P\+I\+N\+\_\+\+Handle}}}]{handle,  }\item[{\mbox{\hyperlink{_p_i_n_8h_a12a1e9b3ce141648783a82445d02b58d}{uint\+\_\+t}}}]{bm\+Out\+Val }\end{DoxyParamCaption})}
+
+
+
+Simultaneous write output buffer values of all allocated pins in G\+P\+IO port. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em handle} & Handle provided by previous call to \mbox{\hyperlink{_p_i_n_8h_a731c5bb641ffeb064579432adfc8dba0}{P\+I\+N\+\_\+open()}} \\
+\hline
+{\em bm\+Out\+Val} & Bitmask indicating the desired output value for the whole port, only the pins allocated to the client will be affected \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{_p_i_n_8h_abe0ad59bbf09e51fe37195a5e70b23f6a5c9610fffc152c333036f2c2c7ee54e8}{P\+I\+N\+\_\+\+S\+U\+C\+C\+E\+SS}} if successful, else error code 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{_p_i_n_8h_a9f5b2367253b355909032742a7e6b5e0}{P\+I\+N\+\_\+get\+Port\+Mask()}} 
+\end{DoxySeeAlso}
+\begin{DoxyRemark}{Remarks}
+This function typically has an inlined sibling function in the device-\/specific driver that may be used for higher efficiency 
+\end{DoxyRemark}
+\begin{DoxyParagraph}{Usage}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{comment}{// Invert all pins allocated to client}}
+\DoxyCodeLine{PIN\_setPortOutputVal(hPins, \string~PIN\_getPortOutputVals(hPins));}
+\end{DoxyCode}
+ 
+\end{DoxyParagraph}
+
+
+Definition at line 622 of file P\+I\+N\+C\+C26\+X\+X.\+c.
+
+\mbox{\Hypertarget{_p_i_n_c_c26_x_x_8c_aef985455a19581bdb47fff4314fc318b}\label{_p_i_n_c_c26_x_x_8c_aef985455a19581bdb47fff4314fc318b}} 
+\index{PINCC26XX.c@{PINCC26XX.c}!PINCC26XX\_getConfig@{PINCC26XX\_getConfig}}
+\index{PINCC26XX\_getConfig@{PINCC26XX\_getConfig}!PINCC26XX.c@{PINCC26XX.c}}
+\doxysubsubsection{\texorpdfstring{PINCC26XX\_getConfig()}{PINCC26XX\_getConfig()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_p_i_n_8h_ae427b7d2925f9b0f3145e455cfdb5841}{P\+I\+N\+\_\+\+Config}} P\+I\+N\+C\+C26\+X\+X\+\_\+get\+Config (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_p_i_n_8h_a9ae8197f460bb76ea09a84f47d09921f}{P\+I\+N\+\_\+\+Id}}}]{pin\+Id }\end{DoxyParamCaption})}
+
+
+
+Returns C\+C26xx device-\/specific pin configuration. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pin\+Id} & Pin ID \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Current pin configuration as a \mbox{\hyperlink{_p_i_n_8h_ae427b7d2925f9b0f3145e455cfdb5841}{P\+I\+N\+\_\+\+Config}} value 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+The pin ID is embedded in return value. 
+
+Return value uses \mbox{\hyperlink{_p_i_n_c_c26_x_x_8h_PINCC26XX_FLAGS}{C\+C26xx specific I/O options}} 
+\end{DoxyNote}
+
+
+Definition at line 543 of file P\+I\+N\+C\+C26\+X\+X.\+c.
+
+\mbox{\Hypertarget{_p_i_n_c_c26_x_x_8c_a568b24bc5bf40ce5f525be32a67c969a}\label{_p_i_n_c_c26_x_x_8c_a568b24bc5bf40ce5f525be32a67c969a}} 
+\index{PINCC26XX.c@{PINCC26XX.c}!PINCC26XX\_getMux@{PINCC26XX\_getMux}}
+\index{PINCC26XX\_getMux@{PINCC26XX\_getMux}!PINCC26XX.c@{PINCC26XX.c}}
+\doxysubsubsection{\texorpdfstring{PINCC26XX\_getMux()}{PINCC26XX\_getMux()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_p_i_n_8h_ab6fd6105e64ed14a0c9281326f05e623}{int\+\_\+t}} P\+I\+N\+C\+C26\+X\+X\+\_\+get\+Mux (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_p_i_n_8h_a9ae8197f460bb76ea09a84f47d09921f}{P\+I\+N\+\_\+\+Id}}}]{pin\+Id }\end{DoxyParamCaption})}
+
+
+
+Get device-\/specific pin mapping to G\+P\+IO, HW peripheral or HW signal. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pin\+Id} & Pin ID \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Device-\/specific pin mapping index for connection to hardware peripheral or hardware signal, -\/1 if pin is used for G\+P\+IO 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Mostly used by driver code 
+\end{DoxyNote}
+\begin{DoxyParagraph}{Usage}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordflow}{if} (\mbox{\hyperlink{_p_i_n_c_c26_x_x_8c_a568b24bc5bf40ce5f525be32a67c969a}{PINCC26XX\_getMux}}(\mbox{\hyperlink{_p_i_n_8h_add47c82f7563d28053f76d368d344bc6}{PIN\_ID}}(16)) < 0) \{}
+\DoxyCodeLine{   \textcolor{comment}{// Pin is GPIO}}
+\DoxyCodeLine{\}}
+\end{DoxyCode}
+ 
+\end{DoxyParagraph}
+
+
+Definition at line 560 of file P\+I\+N\+C\+C26\+X\+X.\+c.
+
+\mbox{\Hypertarget{_p_i_n_c_c26_x_x_8c_aaacad5683f4594c19c4c2d23d5d1e6a2}\label{_p_i_n_c_c26_x_x_8c_aaacad5683f4594c19c4c2d23d5d1e6a2}} 
+\index{PINCC26XX.c@{PINCC26XX.c}!PINCC26XX\_getPinCount@{PINCC26XX\_getPinCount}}
+\index{PINCC26XX\_getPinCount@{PINCC26XX\_getPinCount}!PINCC26XX.c@{PINCC26XX.c}}
+\doxysubsubsection{\texorpdfstring{PINCC26XX\_getPinCount()}{PINCC26XX\_getPinCount()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_p_i_n_8h_a12a1e9b3ce141648783a82445d02b58d}{uint\+\_\+t}} P\+I\+N\+C\+C26\+X\+X\+\_\+get\+Pin\+Count (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get device-\/specific count of how many pins are available on this device and package. 
+
+\begin{DoxyReturn}{Returns}
+Device and package specific pin count 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Mostly used by driver code 
+\end{DoxyNote}
+
+
+Definition at line 218 of file P\+I\+N\+C\+C26\+X\+X.\+c.
+
+\mbox{\Hypertarget{_p_i_n_c_c26_x_x_8c_ac8cbb649db80dd03d8e8a487aef43294}\label{_p_i_n_c_c26_x_x_8c_ac8cbb649db80dd03d8e8a487aef43294}} 
+\index{PINCC26XX.c@{PINCC26XX.c}!PINCC26XX\_setMux@{PINCC26XX\_setMux}}
+\index{PINCC26XX\_setMux@{PINCC26XX\_setMux}!PINCC26XX.c@{PINCC26XX.c}}
+\doxysubsubsection{\texorpdfstring{PINCC26XX\_setMux()}{PINCC26XX\_setMux()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_p_i_n_8h_abe0ad59bbf09e51fe37195a5e70b23f6}{P\+I\+N\+\_\+\+Status}} P\+I\+N\+C\+C26\+X\+X\+\_\+set\+Mux (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_p_i_n_8h_afb2de52b054638f63c39df1f30a0d88d}{P\+I\+N\+\_\+\+Handle}}}]{handle,  }\item[{\mbox{\hyperlink{_p_i_n_8h_a9ae8197f460bb76ea09a84f47d09921f}{P\+I\+N\+\_\+\+Id}}}]{pin\+Id,  }\item[{int32\+\_\+t}]{n\+Mux }\end{DoxyParamCaption})}
+
+
+
+Connect pin to HW peripheral, signal or to G\+P\+IO. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em handle} & Handle provided by previous call to \mbox{\hyperlink{_p_i_n_8h_a731c5bb641ffeb064579432adfc8dba0}{P\+I\+N\+\_\+open()}} \\
+\hline
+{\em pin\+Id} & Pin ID \\
+\hline
+{\em n\+Mux} & Device-\/specific index of peripheral port or hardware signal. A value of -\/1 reverts the pin to G\+P\+IO mapping \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{_p_i_n_8h_abe0ad59bbf09e51fe37195a5e70b23f6a5c9610fffc152c333036f2c2c7ee54e8}{P\+I\+N\+\_\+\+S\+U\+C\+C\+E\+SS}} if successful, else error code 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Mostly used by driver code or for diagnostics 
+\end{DoxyNote}
+\begin{DoxyParagraph}{Usage}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{PIN\_setMux(hPins, \mbox{\hyperlink{_p_i_n_8h_add47c82f7563d28053f76d368d344bc6}{PIN\_ID}}(16), PINCC26XX\_UART\_TX);}
+\end{DoxyCode}
+ 
+\end{DoxyParagraph}
+
+
+Definition at line 576 of file P\+I\+N\+C\+C26\+X\+X.\+c.
+
+\mbox{\Hypertarget{_p_i_n_c_c26_x_x_8c_a7eea7460f3e2d4c68df55239471805aa}\label{_p_i_n_c_c26_x_x_8c_a7eea7460f3e2d4c68df55239471805aa}} 
+\index{PINCC26XX.c@{PINCC26XX.c}!PINCC26XX\_setWakeup@{PINCC26XX\_setWakeup}}
+\index{PINCC26XX\_setWakeup@{PINCC26XX\_setWakeup}!PINCC26XX.c@{PINCC26XX.c}}
+\doxysubsubsection{\texorpdfstring{PINCC26XX\_setWakeup()}{PINCC26XX\_setWakeup()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_p_i_n_8h_abe0ad59bbf09e51fe37195a5e70b23f6}{P\+I\+N\+\_\+\+Status}} P\+I\+N\+C\+C26\+X\+X\+\_\+set\+Wakeup (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{_p_i_n_8h_ae427b7d2925f9b0f3145e455cfdb5841}{P\+I\+N\+\_\+\+Config}}}]{a\+Pin\+Cfg\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Configure wakeup (from shutdown) on pins. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+Pin\+Cfg} & \mbox{\hyperlink{_p_i_n_8h_ae427b7d2925f9b0f3145e455cfdb5841}{P\+I\+N\+\_\+\+Config}} list identifying pin ID and relevant pin configuration as one of\+:
+\begin{DoxyItemize}
+\item \mbox{\hyperlink{_p_i_n_c_c26_x_x_8h_a30ad99cc9f54e321433088d3fca822b5}{P\+I\+N\+C\+C26\+X\+X\+\_\+\+N\+O\+\_\+\+W\+A\+K\+E\+UP}} (default)
+\item \mbox{\hyperlink{_p_i_n_c_c26_x_x_8h_ac66b4e9a1e30b3e9404d38af7f0de01e}{P\+I\+N\+C\+C26\+X\+X\+\_\+\+W\+A\+K\+E\+U\+P\+\_\+\+P\+O\+S\+E\+D\+GE}}
+\item \mbox{\hyperlink{_p_i_n_c_c26_x_x_8h_a477f89a960b69e8f9524f79fb27d121c}{P\+I\+N\+C\+C26\+X\+X\+\_\+\+W\+A\+K\+E\+U\+P\+\_\+\+N\+E\+G\+E\+D\+GE}} 
+\end{DoxyItemize}\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{_p_i_n_8h_abe0ad59bbf09e51fe37195a5e70b23f6a5c9610fffc152c333036f2c2c7ee54e8}{P\+I\+N\+\_\+\+S\+U\+C\+C\+E\+SS}} if successful, else error code 
+\end{DoxyReturn}
+\begin{DoxyRefDesc}{Todo}
+\item[\mbox{\hyperlink{todo__todo000001}{Todo}}]Define properly \end{DoxyRefDesc}
+\begin{DoxyParagraph}{Usage}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{PIN\_setWakeup(NULL, \mbox{\hyperlink{_p_i_n_8h_add47c82f7563d28053f76d368d344bc6}{PIN\_ID}}(9)|PIN\_WAKEUP\_NEGEDGE);}
+\DoxyCodeLine{Power\_enterShutdown();}
+\end{DoxyCode}
+ 
+\end{DoxyParagraph}
+
+
+Definition at line 587 of file P\+I\+N\+C\+C26\+X\+X.\+c.
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{_p_i_n_c_c26_x_x_8c_a0339959620e0e758086813e5d7a7368f}\label{_p_i_n_c_c26_x_x_8c_a0339959620e0e758086813e5d7a7368f}} 
+\index{PINCC26XX.c@{PINCC26XX.c}!PIN\_HandleTable@{PIN\_HandleTable}}
+\index{PIN\_HandleTable@{PIN\_HandleTable}!PINCC26XX.c@{PINCC26XX.c}}
+\doxysubsubsection{\texorpdfstring{PIN\_HandleTable}{PIN\_HandleTable}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_p_i_n_8h_afb2de52b054638f63c39df1f30a0d88d}{P\+I\+N\+\_\+\+Handle}} P\+I\+N\+\_\+\+Handle\+Table\mbox{[}\mbox{\hyperlink{_p_i_n_c_c26_x_x_8c_a390bcd0ab1fc9898d740cf7452330e50}{M\+A\+X\+\_\+\+N\+U\+M\+\_\+\+P\+I\+NS}}\mbox{]}}
+
+
+
+Array of handles, one per pin (pin id is index) 
+
+
+
+Definition at line 70 of file P\+I\+N\+C\+C26\+X\+X.\+c.
+
+\mbox{\Hypertarget{_p_i_n_c_c26_x_x_8c_a138463d5bac2d11077c400c268491136}\label{_p_i_n_c_c26_x_x_8c_a138463d5bac2d11077c400c268491136}} 
+\index{PINCC26XX.c@{PINCC26XX.c}!PIN\_NumPins@{PIN\_NumPins}}
+\index{PIN\_NumPins@{PIN\_NumPins}!PINCC26XX.c@{PINCC26XX.c}}
+\doxysubsubsection{\texorpdfstring{PIN\_NumPins}{PIN\_NumPins}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_p_i_n_8h_a12a1e9b3ce141648783a82445d02b58d}{uint\+\_\+t}} P\+I\+N\+\_\+\+Num\+Pins}
+
+
+
+Number of pins available on device. 
+
+
+
+Definition at line 67 of file P\+I\+N\+C\+C26\+X\+X.\+c.
+
+\mbox{\Hypertarget{_p_i_n_c_c26_x_x_8c_aabafe6d8f4663d66fb645c710edb5782}\label{_p_i_n_c_c26_x_x_8c_aabafe6d8f4663d66fb645c710edb5782}} 
+\index{PINCC26XX.c@{PINCC26XX.c}!PINCC26XX\_hwAttrs@{PINCC26XX\_hwAttrs}}
+\index{PINCC26XX\_hwAttrs@{PINCC26XX\_hwAttrs}!PINCC26XX.c@{PINCC26XX.c}}
+\doxysubsubsection{\texorpdfstring{PINCC26XX\_hwAttrs}{PINCC26XX\_hwAttrs}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{struct_p_i_n_c_c26_x_x___h_w_attrs}{P\+I\+N\+C\+C26\+X\+X\+\_\+\+H\+W\+Attrs}} P\+I\+N\+C\+C26\+X\+X\+\_\+hw\+Attrs}
+
+
+
+Hardware attribute structure populated in \mbox{\hyperlink{board_8c}{board.\+c}} to set H\+WI and S\+WI priorities. 
+

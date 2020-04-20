@@ -1,0 +1,547 @@
+\hypertarget{_u_a_r_t_c_c26_x_x_8h}{}\doxysection{Drivers/\+U\+A\+R\+T/\+U\+A\+R\+T\+C\+C26\+XX.h File Reference}
+\label{_u_a_r_t_c_c26_x_x_8h}\index{Drivers/UART/UARTCC26XX.h@{Drivers/UART/UARTCC26XX.h}}
+
+
+U\+A\+RT driver implementation for a C\+C26\+XX U\+A\+RT controller.  
+
+
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include $<$ti/drivers/\+U\+A\+R\+T.\+h$>$}\newline
+{\ttfamily \#include $<$ti/drivers/pin/\+P\+I\+N\+C\+C26\+X\+X.\+h$>$}\newline
+{\ttfamily \#include $<$ti/drivers/\+Power.\+h$>$}\newline
+{\ttfamily \#include $<$ti/drivers/utils/\+Ring\+Buf.\+h$>$}\newline
+{\ttfamily \#include $<$driverlib/uart.\+h$>$}\newline
+{\ttfamily \#include $<$ti/sysbios/family/arm/m3/\+Hwi.\+h$>$}\newline
+{\ttfamily \#include $<$ti/sysbios/knl/\+Swi.\+h$>$}\newline
+{\ttfamily \#include $<$ti/sysbios/knl/\+Clock.\+h$>$}\newline
+{\ttfamily \#include $<$ti/sysbios/knl/\+Semaphore.\+h$>$}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_u_a_r_t_c_c26_x_x___h_w_attrs_v2}{U\+A\+R\+T\+C\+C26\+X\+X\+\_\+\+H\+W\+Attrs\+V2}}
+\begin{DoxyCompactList}\small\item\em U\+A\+R\+T\+C\+C26\+XX Hardware attributes. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_u_a_r_t_c_c26_x_x___object}{U\+A\+R\+T\+C\+C26\+X\+X\+\_\+\+Object}}
+\begin{DoxyCompactList}\small\item\em U\+A\+R\+T\+C\+C26\+XX Object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{_u_a_r_t_c_c26_x_x_8h_aaa17ecf48f5762e2e1bdb0bab8aacf0c}{ti\+\_\+sysbios\+\_\+family\+\_\+arm\+\_\+m3\+\_\+\+Hwi\+\_\+\+\_\+nolocalnames}}
+\item 
+\#define \mbox{\hyperlink{group___u_a_r_t___c_m_d_ga90f59d674fd3b290c3dd711128413014}{U\+A\+R\+T\+C\+C26\+X\+X\+\_\+\+C\+M\+D\+\_\+\+R\+E\+T\+U\+R\+N\+\_\+\+P\+A\+R\+T\+I\+A\+L\+\_\+\+E\+N\+A\+B\+LE}}~\mbox{\hyperlink{group___u_a_r_t___c_o_n_t_r_o_l_ga0f5a809e0884da33fef102236eb51644}{U\+A\+R\+T\+\_\+\+C\+M\+D\+\_\+\+R\+E\+S\+E\+R\+V\+ED}} + 0
+\begin{DoxyCompactList}\small\item\em Command used by U\+A\+R\+T\+\_\+control to enable partial return. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___u_a_r_t___c_m_d_ga7cc7c1551022a60bd310c79acb6b26b8}{U\+A\+R\+T\+C\+C26\+X\+X\+\_\+\+C\+M\+D\+\_\+\+R\+E\+T\+U\+R\+N\+\_\+\+P\+A\+R\+T\+I\+A\+L\+\_\+\+D\+I\+S\+A\+B\+LE}}~\mbox{\hyperlink{group___u_a_r_t___c_o_n_t_r_o_l_ga0f5a809e0884da33fef102236eb51644}{U\+A\+R\+T\+\_\+\+C\+M\+D\+\_\+\+R\+E\+S\+E\+R\+V\+ED}} + 1
+\begin{DoxyCompactList}\small\item\em Command used by U\+A\+R\+T\+\_\+control to disable partial return. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___u_a_r_t___c_m_d_ga56280a288223c44c73a5169e957dc078}{U\+A\+R\+T\+C\+C26\+X\+X\+\_\+\+C\+M\+D\+\_\+\+R\+X\+\_\+\+F\+I\+F\+O\+\_\+\+F\+L\+U\+SH}}~\mbox{\hyperlink{group___u_a_r_t___c_o_n_t_r_o_l_ga0f5a809e0884da33fef102236eb51644}{U\+A\+R\+T\+\_\+\+C\+M\+D\+\_\+\+R\+E\+S\+E\+R\+V\+ED}} + 2
+\begin{DoxyCompactList}\small\item\em Command used by U\+A\+R\+T\+\_\+control to flush the RX F\+I\+FO. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{_u_a_r_t_c_c26_x_x_8h_aa3cbdad922e595319c76870add0d41e6}{U\+A\+R\+T\+C\+C26\+X\+X\+\_\+\+F\+I\+F\+O\+\_\+\+S\+I\+ZE}}~32
+\item 
+\#define \mbox{\hyperlink{_u_a_r_t_c_c26_x_x_8h_a681da30c89054d687603b864792894f7}{U\+A\+R\+T\+C\+C26\+X\+X\+\_\+\+R\+E\+T\+U\+R\+N\+\_\+\+P\+A\+R\+T\+I\+A\+L\+\_\+\+E\+N\+A\+B\+LE}}~\mbox{\hyperlink{group___u_a_r_t___c_m_d_ga90f59d674fd3b290c3dd711128413014}{U\+A\+R\+T\+C\+C26\+X\+X\+\_\+\+C\+M\+D\+\_\+\+R\+E\+T\+U\+R\+N\+\_\+\+P\+A\+R\+T\+I\+A\+L\+\_\+\+E\+N\+A\+B\+LE}}
+\item 
+\#define \mbox{\hyperlink{_u_a_r_t_c_c26_x_x_8h_a973b0815d1f88dc3f3e7191625783b99}{U\+A\+R\+T\+C\+C26\+X\+X\+\_\+\+R\+E\+T\+U\+R\+N\+\_\+\+P\+A\+R\+T\+I\+A\+L\+\_\+\+D\+I\+S\+A\+B\+LE}}~\mbox{\hyperlink{group___u_a_r_t___c_m_d_ga7cc7c1551022a60bd310c79acb6b26b8}{U\+A\+R\+T\+C\+C26\+X\+X\+\_\+\+C\+M\+D\+\_\+\+R\+E\+T\+U\+R\+N\+\_\+\+P\+A\+R\+T\+I\+A\+L\+\_\+\+D\+I\+S\+A\+B\+LE}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \mbox{\hyperlink{struct_u_a_r_t_c_c26_x_x___h_w_attrs_v2}{U\+A\+R\+T\+C\+C26\+X\+X\+\_\+\+H\+W\+Attrs\+V2}} \mbox{\hyperlink{_u_a_r_t_c_c26_x_x_8h_a1c2d8439603c7d2b08e7726d5db595bb}{U\+A\+R\+T\+C\+C26\+X\+X\+\_\+\+H\+W\+Attrs\+V2}}
+\begin{DoxyCompactList}\small\item\em U\+A\+R\+T\+C\+C26\+XX Hardware attributes. \end{DoxyCompactList}\item 
+typedef enum \mbox{\hyperlink{_u_a_r_t_c_c26_x_x_8h_a778bbef5f4b52a5651552136715f53c4}{U\+A\+R\+T\+\_\+\+Status}} \mbox{\hyperlink{_u_a_r_t_c_c26_x_x_8h_affcaf4286251e70b0848045a1292c1f1}{U\+A\+R\+T\+\_\+\+Status}}
+\begin{DoxyCompactList}\small\item\em U\+A\+RT status. \end{DoxyCompactList}\item 
+typedef enum \mbox{\hyperlink{_u_a_r_t_c_c26_x_x_8h_a292a5e751577698b215f5e8aa1c79e99}{U\+A\+R\+T\+\_\+\+Fifo\+Threshold}} \mbox{\hyperlink{_u_a_r_t_c_c26_x_x_8h_a96e00b9100ea241308695679c6417a29}{U\+A\+R\+T\+\_\+\+Fifo\+Threshold}}
+\begin{DoxyCompactList}\small\item\em U\+A\+RT F\+I\+FO threshold. \end{DoxyCompactList}\item 
+typedef struct \mbox{\hyperlink{struct_u_a_r_t_c_c26_x_x___object}{U\+A\+R\+T\+C\+C26\+X\+X\+\_\+\+Object}} \mbox{\hyperlink{_u_a_r_t_c_c26_x_x_8h_a2e789e5c18d4b34cc2d09cbd25ca01aa}{U\+A\+R\+T\+C\+C26\+X\+X\+\_\+\+Object}}
+\begin{DoxyCompactList}\small\item\em U\+A\+R\+T\+C\+C26\+XX Object. \end{DoxyCompactList}\item 
+typedef struct \mbox{\hyperlink{struct_u_a_r_t_c_c26_x_x___object}{U\+A\+R\+T\+C\+C26\+X\+X\+\_\+\+Object}} $\ast$ \mbox{\hyperlink{_u_a_r_t_c_c26_x_x_8h_a276d493f1689ad8c16b5cfb4dada194a}{U\+A\+R\+T\+C\+C26\+X\+X\+\_\+\+Handle}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{_u_a_r_t_c_c26_x_x_8h_a778bbef5f4b52a5651552136715f53c4}{U\+A\+R\+T\+\_\+\+Status}} \{ \newline
+\mbox{\hyperlink{_u_a_r_t_c_c26_x_x_8h_a778bbef5f4b52a5651552136715f53c4aa965b1df388dcc5c87f1bb51120877c7}{U\+A\+R\+T\+\_\+\+T\+I\+M\+E\+D\+\_\+\+O\+UT}} = 0x10, 
+\mbox{\hyperlink{_u_a_r_t_c_c26_x_x_8h_a778bbef5f4b52a5651552136715f53c4a505840052f6bf71374b427575c23e929}{U\+A\+R\+T\+\_\+\+P\+A\+R\+I\+T\+Y\+\_\+\+E\+R\+R\+OR}} = U\+A\+R\+T\+\_\+\+R\+X\+E\+R\+R\+O\+R\+\_\+\+P\+A\+R\+I\+TY, 
+\mbox{\hyperlink{_u_a_r_t_c_c26_x_x_8h_a778bbef5f4b52a5651552136715f53c4aeadc3b97f933501a079b1f300a92a01a}{U\+A\+R\+T\+\_\+\+B\+R\+A\+K\+E\+\_\+\+E\+R\+R\+OR}} = U\+A\+R\+T\+\_\+\+R\+X\+E\+R\+R\+O\+R\+\_\+\+B\+R\+E\+AK, 
+\mbox{\hyperlink{_u_a_r_t_c_c26_x_x_8h_a778bbef5f4b52a5651552136715f53c4a261d411fd495e2312aad0c43a01fc050}{U\+A\+R\+T\+\_\+\+O\+V\+E\+R\+R\+U\+N\+\_\+\+E\+R\+R\+OR}} = U\+A\+R\+T\+\_\+\+R\+X\+E\+R\+R\+O\+R\+\_\+\+O\+V\+E\+R\+R\+UN, 
+\newline
+\mbox{\hyperlink{_u_a_r_t_c_c26_x_x_8h_a778bbef5f4b52a5651552136715f53c4a2e97f20086d32b1d2c9f276351bcc100}{U\+A\+R\+T\+\_\+\+F\+R\+A\+M\+I\+N\+G\+\_\+\+E\+R\+R\+OR}} = U\+A\+R\+T\+\_\+\+R\+X\+E\+R\+R\+O\+R\+\_\+\+F\+R\+A\+M\+I\+NG, 
+\mbox{\hyperlink{_u_a_r_t_c_c26_x_x_8h_a778bbef5f4b52a5651552136715f53c4a525187963c0aaa465f2a35b30b894d07}{U\+A\+R\+T\+\_\+\+OK}} = 0x0
+ \}
+\begin{DoxyCompactList}\small\item\em U\+A\+RT status. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{_u_a_r_t_c_c26_x_x_8h_a292a5e751577698b215f5e8aa1c79e99}{U\+A\+R\+T\+\_\+\+Fifo\+Threshold}} \{ \newline
+\mbox{\hyperlink{_u_a_r_t_c_c26_x_x_8h_a292a5e751577698b215f5e8aa1c79e99a56bece2b58d0dab3674c00ece3197fff}{U\+A\+R\+T\+\_\+\+T\+H\+\_\+\+F\+I\+F\+O\+\_\+1\+\_\+8}} = 4, 
+\mbox{\hyperlink{_u_a_r_t_c_c26_x_x_8h_a292a5e751577698b215f5e8aa1c79e99a3c1979202b738122bab4924378108a42}{U\+A\+R\+T\+\_\+\+T\+H\+\_\+\+F\+I\+F\+O\+\_\+2\+\_\+8}} = 8, 
+\mbox{\hyperlink{_u_a_r_t_c_c26_x_x_8h_a292a5e751577698b215f5e8aa1c79e99ae34abfc239ba6e60a1aca5d6819b4a18}{U\+A\+R\+T\+\_\+\+T\+H\+\_\+\+F\+I\+F\+O\+\_\+4\+\_\+8}} = 16, 
+\mbox{\hyperlink{_u_a_r_t_c_c26_x_x_8h_a292a5e751577698b215f5e8aa1c79e99a43dc712fd0f011504b0b4492981bd0fd}{U\+A\+R\+T\+\_\+\+T\+H\+\_\+\+F\+I\+F\+O\+\_\+6\+\_\+8}} = 24, 
+\newline
+\mbox{\hyperlink{_u_a_r_t_c_c26_x_x_8h_a292a5e751577698b215f5e8aa1c79e99a5626e06eacec74562c303427dd33a95b}{U\+A\+R\+T\+\_\+\+T\+H\+\_\+\+F\+I\+F\+O\+\_\+7\+\_\+8}} = 28
+ \}
+\begin{DoxyCompactList}\small\item\em U\+A\+RT F\+I\+FO threshold. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const \mbox{\hyperlink{struct_u_a_r_t___fxn_table}{U\+A\+R\+T\+\_\+\+Fxn\+Table}} \mbox{\hyperlink{_u_a_r_t_c_c26_x_x_8h_abd5f1691efe38764c7ef10750e407e5e}{U\+A\+R\+T\+C\+C26\+X\+X\+\_\+fxn\+Table}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+U\+A\+RT driver implementation for a C\+C26\+XX U\+A\+RT controller. 
+
+============================================================================\hypertarget{_u_a_r_t_c_c26_x_x_8h_autotoc_md109}{}\doxysubsection{Driver include}\label{_u_a_r_t_c_c26_x_x_8h_autotoc_md109}
+The U\+A\+RT header file should be included in an application as follows\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include <ti/drivers/UART.h>}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include <ti/drivers/uart/UARTCC26XX.h>}}
+\end{DoxyCode}
+
+
+Refer to \mbox{\hyperlink{_u_a_r_t_8h}{U\+A\+R\+T.\+h}} for a complete description of A\+P\+Is.\hypertarget{_u_a_r_t_c_c26_x_x_8h_autotoc_md110}{}\doxysubsection{Overview}\label{_u_a_r_t_c_c26_x_x_8h_autotoc_md110}
+The general U\+A\+RT A\+PI should used in application code, i.\+e. \mbox{\hyperlink{_u_a_r_t_8c_a0442ea1ec23901168da31726bb3254c1}{U\+A\+R\+T\+\_\+open()}} is used instead of \mbox{\hyperlink{_u_a_r_t_c_c26_x_x_8c_af5b08ff04ba86a0e1e8b9dd676c61faf}{U\+A\+R\+T\+C\+C26\+X\+X\+\_\+open()}}. The board file will define the device specific config, and casting in the general A\+PI will ensure that the correct device specific functions are called. This is also reflected in the example code in Use Cases.\hypertarget{_u_a_r_t_c_c26_x_x_8h_autotoc_md111}{}\doxysubsection{General Behavior}\label{_u_a_r_t_c_c26_x_x_8h_autotoc_md111}
+Before using the U\+A\+RT in C\+C26\+XX\+:
+\begin{DoxyItemize}
+\item The U\+A\+RT driver is initialized by calling \mbox{\hyperlink{_u_a_r_t_8c_ab60a36f7295d704926120d22f806dcd1}{U\+A\+R\+T\+\_\+init()}}.
+\item The U\+A\+RT HW is configured and flags system dependencies (e.\+g. I\+Os, power, etc.) by calling \mbox{\hyperlink{_u_a_r_t_8c_a0442ea1ec23901168da31726bb3254c1}{U\+A\+R\+T\+\_\+open()}}.
+\item The RX and TX can operate independently of each other.
+\end{DoxyItemize}The following is true for receive operation\+:
+\begin{DoxyItemize}
+\item RX is enabled by calling \mbox{\hyperlink{_u_a_r_t_8c_a023152d57539cad94bdd813956013e73}{U\+A\+R\+T\+\_\+read()}}.
+\item All received bytes are ignored after \mbox{\hyperlink{_u_a_r_t_8c_a0442ea1ec23901168da31726bb3254c1}{U\+A\+R\+T\+\_\+open()}} is called, until the first \mbox{\hyperlink{_u_a_r_t_8c_a023152d57539cad94bdd813956013e73}{U\+A\+R\+T\+\_\+read()}}.
+\item If an RX error occur, RX is turned off and all bytes received before the error occured are returned.
+\item After a successful read, RX remains on. \mbox{\hyperlink{_u_a_r_t_8c_a023152d57539cad94bdd813956013e73}{U\+A\+R\+T\+\_\+read()}} must be called again before F\+I\+FO goes full in order to avoid overflow. It is safe to call another \mbox{\hyperlink{_u_a_r_t_8c_a023152d57539cad94bdd813956013e73}{U\+A\+R\+T\+\_\+read()}} from the read callback, See Receive Continously use case below.
+\item If a read times out (in \mbox{\hyperlink{_u_a_r_t_8h_a2507a620dba95cd20885c52494d19e90ae6b6bd5d2d5df859ad6724e89e605ebf}{U\+A\+R\+T\+\_\+\+M\+O\+D\+E\+\_\+\+B\+L\+O\+C\+K\+I\+NG}} mode), RX will remain on. \mbox{\hyperlink{_u_a_r_t_8c_a023152d57539cad94bdd813956013e73}{U\+A\+R\+T\+\_\+read()}} must be called again before F\+I\+FO goes full in order to avoid overflow.
+\item The \mbox{\hyperlink{_u_a_r_t_8c_a023152d57539cad94bdd813956013e73}{U\+A\+R\+T\+\_\+read()}} supports partial return, that can be used if the receive size is unknown. See Use Cases below.
+\item The Ring\+Buf serves as an extension of the F\+I\+FO. If data is received when \mbox{\hyperlink{_u_a_r_t_8c_a023152d57539cad94bdd813956013e73}{U\+A\+R\+T\+\_\+read()}} is not called, data will be stored in the Ring\+Buf. The functionality of the Ring\+Buf has been tested with a size of 32. This size can be changed to suit the application.
+\end{DoxyItemize}The following apply for transmit operation\+:
+\begin{DoxyItemize}
+\item TX is enabled by calling \mbox{\hyperlink{_u_a_r_t_8c_a6f2a04c09dc17886e69e361cd80aaedc}{U\+A\+R\+T\+\_\+write()}}.
+\item If the \mbox{\hyperlink{_u_a_r_t_8c_a6f2a04c09dc17886e69e361cd80aaedc}{U\+A\+R\+T\+\_\+write()}} succeeds, the TX is disabled.
+\end{DoxyItemize}If U\+A\+RT is no longer needed by application\+:
+\begin{DoxyItemize}
+\item Release system dependencies for U\+A\+RT by calling \mbox{\hyperlink{_u_a_r_t_8c_a6b49b65f3db709c408dc4db23a68895d}{U\+A\+R\+T\+\_\+close()}}.
+\end{DoxyItemize}If the U\+A\+RT is configured in \mbox{\hyperlink{_u_a_r_t_8h_a2507a620dba95cd20885c52494d19e90ae0dbd9b5195e56c3c2aed10163523754}{U\+A\+R\+T\+\_\+\+M\+O\+D\+E\+\_\+\+C\+A\+L\+L\+B\+A\+CK}} mode\+:
+\begin{DoxyItemize}
+\item The error handling callback is run in a H\+WI context.
+\item The regular callback is run in a S\+WI context.
+\end{DoxyItemize}\hypertarget{_u_a_r_t_c_c26_x_x_8h_autotoc_md112}{}\doxysubsection{Error handling}\label{_u_a_r_t_c_c26_x_x_8h_autotoc_md112}
+\hypertarget{_u_a_r_t_c_c26_x_x_8h_autotoc_md113}{}\doxysubsubsection{Read errors}\label{_u_a_r_t_c_c26_x_x_8h_autotoc_md113}
+If an error occurs during read operation\+:
+\begin{DoxyItemize}
+\item All bytes received up until an error occurs will be returned, with the error signaled in the \mbox{\hyperlink{struct_u_a_r_t_c_c26_x_x___object_a10ff4c367c40263e72d3494f78b9ce07}{U\+A\+R\+T\+C\+C26\+X\+X\+\_\+\+Object.\+status}} field. The RX is then turned off and all bytes will be ignored until a new read is issued. Note that only the read is cancelled when the error occurs. If a write was active while the RX error occurred, it will complete.
+\item If a RX break error occurs, an extra 0 byte will also be returned by the \mbox{\hyperlink{_u_a_r_t_8c_a023152d57539cad94bdd813956013e73}{U\+A\+R\+T\+\_\+read()}}.
+\end{DoxyItemize}\hypertarget{_u_a_r_t_c_c26_x_x_8h_autotoc_md114}{}\doxysubsubsection{Write errors}\label{_u_a_r_t_c_c26_x_x_8h_autotoc_md114}
+If a timeout occurs during a write, an U\+A\+R\+T\+\_\+\+E\+R\+R\+OR will be returned and the U\+A\+R\+T\+\_\+\+Object.\+status will be set to \mbox{\hyperlink{_u_a_r_t_c_c26_x_x_8h_a778bbef5f4b52a5651552136715f53c4aa965b1df388dcc5c87f1bb51120877c7}{U\+A\+R\+T\+\_\+\+T\+I\+M\+E\+D\+\_\+\+O\+UT}}. All bytes that are not transmitted, will be flushed. If flow control is not enabled, the \mbox{\hyperlink{struct_u_a_r_t_c_c26_x_x___object_a55b3ddd718d4de0aeffd2426c3f14efd}{U\+A\+R\+T\+C\+C26\+X\+X\+\_\+\+Object.\+write\+Timeout}} should be kept at default value, B\+I\+O\+S\+\_\+\+W\+A\+I\+T\+\_\+\+F\+O\+R\+E\+V\+ER. The write call will return after all bytes are transmitted. If flow control is enabled, the timeout should be set by the application in order to recover if the receiver gets stuck.\hypertarget{_u_a_r_t_c_c26_x_x_8h_autotoc_md115}{}\doxysubsubsection{General timeout}\label{_u_a_r_t_c_c26_x_x_8h_autotoc_md115}
+A timeout value can only be specified for reads and writes in \mbox{\hyperlink{_u_a_r_t_8h_a2507a620dba95cd20885c52494d19e90ae6b6bd5d2d5df859ad6724e89e605ebf}{U\+A\+R\+T\+\_\+\+M\+O\+D\+E\+\_\+\+B\+L\+O\+C\+K\+I\+NG}}. If a timeout occurs during a read when in \mbox{\hyperlink{_u_a_r_t_8h_a2507a620dba95cd20885c52494d19e90ae6b6bd5d2d5df859ad6724e89e605ebf}{U\+A\+R\+T\+\_\+\+M\+O\+D\+E\+\_\+\+B\+L\+O\+C\+K\+I\+NG}}, the number of bytes received will be returned and the U\+A\+R\+T\+\_\+\+Object.\+status will be set to \mbox{\hyperlink{_u_a_r_t_c_c26_x_x_8h_a778bbef5f4b52a5651552136715f53c4aa965b1df388dcc5c87f1bb51120877c7}{U\+A\+R\+T\+\_\+\+T\+I\+M\+E\+D\+\_\+\+O\+UT}}. After a read timeout, RX will remain on, but device is allowed to enter standby. For more details see Power Management chapter below.
+
+In \mbox{\hyperlink{_u_a_r_t_8h_a2507a620dba95cd20885c52494d19e90ae0dbd9b5195e56c3c2aed10163523754}{U\+A\+R\+T\+\_\+\+M\+O\+D\+E\+\_\+\+C\+A\+L\+L\+B\+A\+CK}} there is no timeout and the application must call \mbox{\hyperlink{_u_a_r_t_8c_a51ed7e94d5b409ca1fcb2d65c5a25c3c}{U\+A\+R\+T\+\_\+read\+Cancel()}} or \mbox{\hyperlink{_u_a_r_t_8c_a0482cd0ab9ee7e802c8e785a5754d16d}{U\+A\+R\+T\+\_\+write\+Cancel()}} to abort the operation.
+
+\begin{DoxyNote}{Note}
+A new read or write will reset the U\+A\+R\+T\+\_\+\+Object.\+status to U\+A\+R\+T\+\_\+\+OK. Caution must be taken when doing parallel reads and writes.
+\end{DoxyNote}
+\hypertarget{_u_a_r_t_c_c26_x_x_8h_autotoc_md116}{}\doxysubsection{Power Management @anchor P\+O\+W\+E\+R\+\_\+\+M\+A\+N\+A\+G\+E\+M\+E\+NT}\label{_u_a_r_t_c_c26_x_x_8h_autotoc_md116}
+The T\+I-\/\+R\+T\+OS power management framework will try to put the device into the most power efficient mode whenever possible. Please see the technical reference manual for further details on each power mode.
+
+The U\+A\+R\+T\+C\+C26\+XX driver is setting a power constraint during operation to keep the device out of standby. When the operation has finished, the power constraint is released. The following statements are valid\+:
+\begin{DoxyItemize}
+\item After \mbox{\hyperlink{_u_a_r_t_8c_a0442ea1ec23901168da31726bb3254c1}{U\+A\+R\+T\+\_\+open()}}\+: the device is still allowed to enter standby.
+\item During \mbox{\hyperlink{_u_a_r_t_8c_a023152d57539cad94bdd813956013e73}{U\+A\+R\+T\+\_\+read()}}\+: the device cannot enter standby.
+\item After an RX error (overrun, break, parity, framing)\+: device is allowed to enter standby.
+\item After a successful \mbox{\hyperlink{_u_a_r_t_8c_a023152d57539cad94bdd813956013e73}{U\+A\+R\+T\+\_\+read()}}\+: The device is allowed to enter standby, but RX remains on.
+\begin{DoxyItemize}
+\item {\itshape Note}\+: Device might enter standby while a byte is being received if \mbox{\hyperlink{_u_a_r_t_8c_a023152d57539cad94bdd813956013e73}{U\+A\+R\+T\+\_\+read()}} is not called again after a successful read. This could result in corrupt data being received.
+\item {\itshape Note}\+: Application thread should typically either issue another read after \mbox{\hyperlink{_u_a_r_t_8c_a023152d57539cad94bdd813956013e73}{U\+A\+R\+T\+\_\+read()}} completes successfully, or call \mbox{\hyperlink{_u_a_r_t_8c_a51ed7e94d5b409ca1fcb2d65c5a25c3c}{U\+A\+R\+T\+\_\+read\+Cancel()}} to disable RX and thus assuring that no data is received while entering standby.
+\end{DoxyItemize}
+\item After \mbox{\hyperlink{_u_a_r_t_8c_a023152d57539cad94bdd813956013e73}{U\+A\+R\+T\+\_\+read()}} times out in \mbox{\hyperlink{_u_a_r_t_8h_a2507a620dba95cd20885c52494d19e90ae6b6bd5d2d5df859ad6724e89e605ebf}{U\+A\+R\+T\+\_\+\+M\+O\+D\+E\+\_\+\+B\+L\+O\+C\+K\+I\+NG}}\+: The device is allowed to enter standby, but RX remains on.
+\begin{DoxyItemize}
+\item {\itshape Note}\+: Device might enter standby while a byte is being received if \mbox{\hyperlink{_u_a_r_t_8c_a023152d57539cad94bdd813956013e73}{U\+A\+R\+T\+\_\+read()}} is not called again after a timeout. This could result in corrupt data being received.
+\item {\itshape Note}\+: Application thread should typically either issue another read after \mbox{\hyperlink{_u_a_r_t_8c_a023152d57539cad94bdd813956013e73}{U\+A\+R\+T\+\_\+read()}} times out to continue reception.
+\end{DoxyItemize}
+\item During \mbox{\hyperlink{_u_a_r_t_8c_a6f2a04c09dc17886e69e361cd80aaedc}{U\+A\+R\+T\+\_\+write()}}\+: the device cannot enter standby.
+\item After \mbox{\hyperlink{_u_a_r_t_8c_a6f2a04c09dc17886e69e361cd80aaedc}{U\+A\+R\+T\+\_\+write()}} succeeds\+: the device can enter standby.
+\item If \mbox{\hyperlink{_u_a_r_t_8c_a0482cd0ab9ee7e802c8e785a5754d16d}{U\+A\+R\+T\+\_\+write\+Cancel()}} is called\+: the device can enter standby.
+\item After write timeout\+: the device can enter standby.
+\end{DoxyItemize}\hypertarget{_u_a_r_t_c_c26_x_x_8h_autotoc_md117}{}\doxysubsection{Flow Control}\label{_u_a_r_t_c_c26_x_x_8h_autotoc_md117}
+To enable Flow Control, the R\+TS and C\+TS pins must be assigned in the \mbox{\hyperlink{struct_u_a_r_t_c_c26_x_x___h_w_attrs_v2}{U\+A\+R\+T\+C\+C26\+X\+X\+\_\+\+H\+W\+Attrs\+V2}}\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{const} \mbox{\hyperlink{struct_u_a_r_t_c_c26_x_x___h_w_attrs_v2}{UARTCC26XX\_HWAttrsV2}} uartCC26xxHWAttrs[] = \{}
+\DoxyCodeLine{    \{}
+\DoxyCodeLine{        .\mbox{\hyperlink{struct_u_a_r_t_c_c26_x_x___h_w_attrs_v2_aba311f9c5938c83e262a0e5144013acc}{baseAddr}}    = UART0\_BASE,}
+\DoxyCodeLine{        .powerMngrId = PERIPH\_UART0,}
+\DoxyCodeLine{        .intNum      = INT\_UART0,}
+\DoxyCodeLine{        .intPriority = \string~0,}
+\DoxyCodeLine{        .swiPriority = 0,}
+\DoxyCodeLine{        .txPin       = Board\_UART\_TX,}
+\DoxyCodeLine{        .rxPin       = Board\_UART\_RX,}
+\DoxyCodeLine{        .ctsPin      = Board\_UART\_CTS,}
+\DoxyCodeLine{        .rtsPin      = Board\_UART\_RTS}
+\DoxyCodeLine{        .ringBufPtr  = uartCC26XXRingBuffer[0],}
+\DoxyCodeLine{        .ringBufSize = \textcolor{keyword}{sizeof}(uartCC26XXRingBuffer[0])}
+\DoxyCodeLine{    \}}
+\DoxyCodeLine{\};}
+\end{DoxyCode}
+
+
+If the R\+TS and C\+TS pins are set to \mbox{\hyperlink{_p_i_n_8h_aba219226dfdc9ea2fb82d6a7995395bf}{P\+I\+N\+\_\+\+U\+N\+A\+S\+S\+I\+G\+N\+ED}}, the flow control is disabled. An example is shown in the \mbox{\hyperlink{struct_u_a_r_t_c_c26_x_x___h_w_attrs_v2}{U\+A\+R\+T\+C\+C26\+X\+X\+\_\+\+H\+W\+Attrs\+V2}} description.\hypertarget{_u_a_r_t_c_c26_x_x_8h_autotoc_md118}{}\doxysubsection{Supported Functions}\label{_u_a_r_t_c_c26_x_x_8h_autotoc_md118}
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{3}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Generic A\+PI function }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ A\+PI function }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Description  }\\\cline{1-3}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Generic A\+PI function }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ A\+PI function }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Description  }\\\cline{1-3}
+\endhead
+\mbox{\hyperlink{_u_a_r_t_8c_ab60a36f7295d704926120d22f806dcd1}{U\+A\+R\+T\+\_\+init()}} &\mbox{\hyperlink{_u_a_r_t_c_c26_x_x_8c_a08b02dbf2d1252c950894adaa6d6259a}{U\+A\+R\+T\+C\+C26\+X\+X\+\_\+init()}} &Initialize U\+A\+RT driver  \\\cline{1-3}
+\mbox{\hyperlink{_u_a_r_t_8c_a0442ea1ec23901168da31726bb3254c1}{U\+A\+R\+T\+\_\+open()}} &\mbox{\hyperlink{_u_a_r_t_c_c26_x_x_8c_af5b08ff04ba86a0e1e8b9dd676c61faf}{U\+A\+R\+T\+C\+C26\+X\+X\+\_\+open()}} &Initialize U\+A\+RT HW and set system dependencies  \\\cline{1-3}
+\mbox{\hyperlink{_u_a_r_t_8c_a6b49b65f3db709c408dc4db23a68895d}{U\+A\+R\+T\+\_\+close()}} &\mbox{\hyperlink{_u_a_r_t_c_c26_x_x_8c_a108d57bc509f39d8dea2cbd9744c6cd4}{U\+A\+R\+T\+C\+C26\+X\+X\+\_\+close()}} &Disable U\+A\+RT HW and release system dependencies  \\\cline{1-3}
+\mbox{\hyperlink{_u_a_r_t_8c_a9de3c26cfe4ce6b7f350a6ea6e16801d}{U\+A\+R\+T\+\_\+control()}} &\mbox{\hyperlink{_u_a_r_t_c_c26_x_x_8c_a95e05b6d510cdea7a2c755de4373d40d}{U\+A\+R\+T\+C\+C26\+X\+X\+\_\+control()}} &Configure an already opened U\+A\+RT handle  \\\cline{1-3}
+\mbox{\hyperlink{_u_a_r_t_8c_a023152d57539cad94bdd813956013e73}{U\+A\+R\+T\+\_\+read()}} &\mbox{\hyperlink{_u_a_r_t_c_c26_x_x_8c_a4fe12ed98e759c6cc96870d67ec58cf6}{U\+A\+R\+T\+C\+C26\+X\+X\+\_\+read()}} &Start read from U\+A\+RT  \\\cline{1-3}
+\mbox{\hyperlink{_u_a_r_t_8c_a51ed7e94d5b409ca1fcb2d65c5a25c3c}{U\+A\+R\+T\+\_\+read\+Cancel()}} &\mbox{\hyperlink{_u_a_r_t_c_c26_x_x_8c_a0a316cb0a1db2e6ae67071454ec5d205}{U\+A\+R\+T\+C\+C26\+X\+X\+\_\+read\+Cancel()}} &Cancel ongoing read from U\+A\+RT  \\\cline{1-3}
+\mbox{\hyperlink{_u_a_r_t_8c_a6f2a04c09dc17886e69e361cd80aaedc}{U\+A\+R\+T\+\_\+write()}} &\mbox{\hyperlink{_u_a_r_t_c_c26_x_x_8c_a2a6805efea72cc30901593b75bc87c9f}{U\+A\+R\+T\+C\+C26\+X\+X\+\_\+write()}} &Start write to U\+A\+RT  \\\cline{1-3}
+\mbox{\hyperlink{_u_a_r_t_8c_a0482cd0ab9ee7e802c8e785a5754d16d}{U\+A\+R\+T\+\_\+write\+Cancel()}} &\mbox{\hyperlink{_u_a_r_t_c_c26_x_x_8c_a67c0d346a4359e80b8150e25ed4201c2}{U\+A\+R\+T\+C\+C26\+X\+X\+\_\+write\+Cancel()}} &Cancel ongoing write to U\+A\+RT  \\\cline{1-3}
+\end{longtabu}
+
+
+\begin{DoxyNote}{Note}
+All calls should go through the generic A\+PI
+\end{DoxyNote}
+\hypertarget{_u_a_r_t_c_c26_x_x_8h_autotoc_md119}{}\doxysubsection{Not Supported Functionality}\label{_u_a_r_t_c_c26_x_x_8h_autotoc_md119}
+The C\+C26\+XX U\+A\+RT driver currently does not support\+:
+\begin{DoxyItemize}
+\item \mbox{\hyperlink{_u_a_r_t_8h_aac6a03c2e1d76f53e1d9d923dcdc24f2a6c4d8a2d4e30c22cf9fa45cd1bf79306}{U\+A\+R\+T\+\_\+\+E\+C\+H\+O\+\_\+\+ON}}
+\item \mbox{\hyperlink{_u_a_r_t_8h_a694090fdb166f94ac30b809f9cba87b8a87fdfb7ca981eab7f56c51380fd7094e}{U\+A\+R\+T\+\_\+\+D\+A\+T\+A\+\_\+\+T\+E\+XT}}
+\item \mbox{\hyperlink{_u_a_r_t_8c_aee4c56b20ea1c4c33406d99369db3df1}{U\+A\+R\+T\+\_\+read\+Polling()}}
+\item \mbox{\hyperlink{_u_a_r_t_8c_aed09b432b5ebb7d88e78ccfe338e1bd4}{U\+A\+R\+T\+\_\+write\+Polling()}}
+\item Configurable TX F\+I\+FO Threshold (currently set to 1/8 full, i.\+e. 4 bytes)
+\item Configurable RX F\+I\+FO Threshold (currently set to 4/8 full, i.\+e. 16 bytes)
+\end{DoxyItemize}\hypertarget{_u_a_r_t_c_c26_x_x_8h_autotoc_md120}{}\doxysubsection{Use Cases @anchor U\+S\+E\+\_\+\+C\+A\+S\+ES}\label{_u_a_r_t_c_c26_x_x_8h_autotoc_md120}
+\hypertarget{_u_a_r_t_c_c26_x_x_8h_autotoc_md121}{}\doxysubsubsection{Basic Receive}\label{_u_a_r_t_c_c26_x_x_8h_autotoc_md121}
+Receive 100 bytes over U\+A\+RT in \mbox{\hyperlink{_u_a_r_t_8h_a2507a620dba95cd20885c52494d19e90ae6b6bd5d2d5df859ad6724e89e605ebf}{U\+A\+R\+T\+\_\+\+M\+O\+D\+E\+\_\+\+B\+L\+O\+C\+K\+I\+NG}}. 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{struct_u_a_r_t___config}{UART\_Handle}} handle;}
+\DoxyCodeLine{\mbox{\hyperlink{struct_u_a_r_t___params}{UART\_Params}} params;}
+\DoxyCodeLine{uint8\_t rxBuf[100];         \textcolor{comment}{// Receive buffer}}
+\DoxyCodeLine{uint32\_t timeoutUs = 5000;  \textcolor{comment}{// 5ms timeout, default timeout is no timeout (BIOS\_WAIT\_FOREVER)}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{// Init UART and specify non-\/default parameters}}
+\DoxyCodeLine{\mbox{\hyperlink{_u_a_r_t_8c_a40e5c0823bb7ffd2e8fbf19f9f20b399}{UART\_Params\_init}}(\&params);}
+\DoxyCodeLine{params.\mbox{\hyperlink{struct_u_a_r_t___params_afadb98d0a0ef6e17240bab79306e7828}{baudRate}}      = 9600;}
+\DoxyCodeLine{params.\mbox{\hyperlink{struct_u_a_r_t___params_a02e8b9127a7d6fa49021f01a7ee69ad2}{writeDataMode}} = \mbox{\hyperlink{_u_a_r_t_8h_a694090fdb166f94ac30b809f9cba87b8aaa8edcbf6c236b0d86491ea1e7c9e4d8}{UART\_DATA\_BINARY}};}
+\DoxyCodeLine{params.\mbox{\hyperlink{struct_u_a_r_t___params_a10875d91873fb77106bde0b799f961e2}{readTimeout}}   = timeoutUs / Clock\_tickPeriod; \textcolor{comment}{// Default tick period is 10us}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{// Open the UART and do the read}}
+\DoxyCodeLine{handle = \mbox{\hyperlink{_u_a_r_t_8c_a0442ea1ec23901168da31726bb3254c1}{UART\_open}}(Board\_UART, \&params);}
+\DoxyCodeLine{\textcolor{keywordtype}{int} rxBytes = \mbox{\hyperlink{_u_a_r_t_8c_a023152d57539cad94bdd813956013e73}{UART\_read}}(handle, rxBuf, 100);}
+\end{DoxyCode}
+\hypertarget{_u_a_r_t_c_c26_x_x_8h_autotoc_md122}{}\doxysubsubsection{Receive with Return Partial}\label{_u_a_r_t_c_c26_x_x_8h_autotoc_md122}
+This use case will read in \mbox{\hyperlink{_u_a_r_t_8h_a2507a620dba95cd20885c52494d19e90ae6b6bd5d2d5df859ad6724e89e605ebf}{U\+A\+R\+T\+\_\+\+M\+O\+D\+E\+\_\+\+B\+L\+O\+C\+K\+I\+NG}} until the wanted amount of bytes is received or until a started reception is inactive for a 32-\/bit period. This \mbox{\hyperlink{_u_a_r_t_8c_a023152d57539cad94bdd813956013e73}{U\+A\+R\+T\+\_\+read()}} call can also be used when unknown amount of bytes shall be read. Note\+: The partial return is also possible in \mbox{\hyperlink{_u_a_r_t_8h_a2507a620dba95cd20885c52494d19e90ae0dbd9b5195e56c3c2aed10163523754}{U\+A\+R\+T\+\_\+\+M\+O\+D\+E\+\_\+\+C\+A\+L\+L\+B\+A\+CK}} mode. 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{struct_u_a_r_t___config}{UART\_Handle}} handle;}
+\DoxyCodeLine{\mbox{\hyperlink{struct_u_a_r_t___params}{UART\_Params}} params;}
+\DoxyCodeLine{uint8\_t rxBuf[100];      \textcolor{comment}{// Receive buffer}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{// Init UART and specify non-\/default parameters}}
+\DoxyCodeLine{\mbox{\hyperlink{_u_a_r_t_8c_a40e5c0823bb7ffd2e8fbf19f9f20b399}{UART\_Params\_init}}(\&params);}
+\DoxyCodeLine{params.\mbox{\hyperlink{struct_u_a_r_t___params_afadb98d0a0ef6e17240bab79306e7828}{baudRate}}      = 9600;}
+\DoxyCodeLine{params.\mbox{\hyperlink{struct_u_a_r_t___params_a02e8b9127a7d6fa49021f01a7ee69ad2}{writeDataMode}} = \mbox{\hyperlink{_u_a_r_t_8h_a694090fdb166f94ac30b809f9cba87b8aaa8edcbf6c236b0d86491ea1e7c9e4d8}{UART\_DATA\_BINARY}};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{// Open the UART and initiate the partial read}}
+\DoxyCodeLine{handle = \mbox{\hyperlink{_u_a_r_t_8c_a0442ea1ec23901168da31726bb3254c1}{UART\_open}}(Board\_UART, \&params);}
+\DoxyCodeLine{\textcolor{comment}{// Enable RETURN\_PARTIAL}}
+\DoxyCodeLine{\mbox{\hyperlink{_u_a_r_t_8c_a9de3c26cfe4ce6b7f350a6ea6e16801d}{UART\_control}}(handle, \mbox{\hyperlink{group___u_a_r_t___c_m_d_ga90f59d674fd3b290c3dd711128413014}{UARTCC26XX\_CMD\_RETURN\_PARTIAL\_ENABLE}}, NULL);}
+\DoxyCodeLine{\textcolor{comment}{// Begin read}}
+\DoxyCodeLine{\textcolor{keywordtype}{int} rxBytes = \mbox{\hyperlink{_u_a_r_t_8c_a023152d57539cad94bdd813956013e73}{UART\_read}}(handle, rxBuf, 100));}
+\end{DoxyCode}
+\hypertarget{_u_a_r_t_c_c26_x_x_8h_autotoc_md123}{}\doxysubsubsection{Basic Transmit}\label{_u_a_r_t_c_c26_x_x_8h_autotoc_md123}
+This case will configure the U\+A\+RT to send the data in tx\+Buf in B\+L\+O\+C\+K\+I\+N\+G\+\_\+\+M\+O\+DE. 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{struct_u_a_r_t___config}{UART\_Handle}} handle;}
+\DoxyCodeLine{\mbox{\hyperlink{struct_u_a_r_t___params}{UART\_Params}} params;}
+\DoxyCodeLine{uint8\_t txBuf[] = \textcolor{stringliteral}{"Hello World"};    \textcolor{comment}{// Transmit buffer}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{// Init UART and specify non-\/default parameters}}
+\DoxyCodeLine{\mbox{\hyperlink{_u_a_r_t_8c_a40e5c0823bb7ffd2e8fbf19f9f20b399}{UART\_Params\_init}}(\&params);}
+\DoxyCodeLine{params.\mbox{\hyperlink{struct_u_a_r_t___params_afadb98d0a0ef6e17240bab79306e7828}{baudRate}}      = 9600;}
+\DoxyCodeLine{params.\mbox{\hyperlink{struct_u_a_r_t___params_a02e8b9127a7d6fa49021f01a7ee69ad2}{writeDataMode}} = \mbox{\hyperlink{_u_a_r_t_8h_a694090fdb166f94ac30b809f9cba87b8aaa8edcbf6c236b0d86491ea1e7c9e4d8}{UART\_DATA\_BINARY}};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{// Open the UART and do the write}}
+\DoxyCodeLine{handle = \mbox{\hyperlink{_u_a_r_t_8c_a0442ea1ec23901168da31726bb3254c1}{UART\_open}}(Board\_UART, \&params);}
+\DoxyCodeLine{\mbox{\hyperlink{_u_a_r_t_8c_a6f2a04c09dc17886e69e361cd80aaedc}{UART\_write}}(handle, txBuf, \textcolor{keyword}{sizeof}(txBuf));}
+\end{DoxyCode}
+\hypertarget{_u_a_r_t_c_c26_x_x_8h_autotoc_md124}{}\doxysubsubsection{Receive Continously in \+::\+U\+A\+R\+T\+\_\+\+M\+O\+D\+E\+\_\+\+C\+A\+L\+L\+B\+A\+C\+K @anchor U\+S\+E\+\_\+\+C\+A\+S\+E\+\_\+\+CB}\label{_u_a_r_t_c_c26_x_x_8h_autotoc_md124}
+This case will configure the U\+A\+RT to receive continously in \mbox{\hyperlink{_u_a_r_t_8h_a2507a620dba95cd20885c52494d19e90ae0dbd9b5195e56c3c2aed10163523754}{U\+A\+R\+T\+\_\+\+M\+O\+D\+E\+\_\+\+C\+A\+L\+L\+B\+A\+CK}}, 16 bytes at the time and transmit them back via U\+A\+RT TX. Note that \mbox{\hyperlink{struct_u_a_r_t___params_a10875d91873fb77106bde0b799f961e2}{U\+A\+R\+T\+\_\+\+Params.\+read\+Timeout}} is not in use when using \mbox{\hyperlink{_u_a_r_t_8h_a2507a620dba95cd20885c52494d19e90ae0dbd9b5195e56c3c2aed10163523754}{U\+A\+R\+T\+\_\+\+M\+O\+D\+E\+\_\+\+C\+A\+L\+L\+B\+A\+CK}} mode. 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define MAX\_NUM\_RX\_BYTES    1000   // Maximum RX bytes to receive in one go}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define MAX\_NUM\_TX\_BYTES    1000   // Maximum TX bytes to send in one go}}
+\DoxyCodeLine{}
+\DoxyCodeLine{uint32\_t wantedRxBytes;            \textcolor{comment}{// Number of bytes received so far}}
+\DoxyCodeLine{uint8\_t rxBuf[MAX\_NUM\_RX\_BYTES];   \textcolor{comment}{// Receive buffer}}
+\DoxyCodeLine{uint8\_t txBuf[MAX\_NUM\_TX\_BYTES];   \textcolor{comment}{// Transmit buffer}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{// Callback function}}
+\DoxyCodeLine{\textcolor{keyword}{static} \textcolor{keywordtype}{void} readCallback(\mbox{\hyperlink{struct_u_a_r_t___config}{UART\_Handle}} handle, \textcolor{keywordtype}{void} *rxBuf, \textcolor{keywordtype}{size\_t} size)}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{    \textcolor{comment}{// Copy bytes from RX buffer to TX buffer}}
+\DoxyCodeLine{    \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t} i = 0; i < size; i++)}
+\DoxyCodeLine{        txBuf[i] = ((uint8\_t*)rxBuf)[i];}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \textcolor{comment}{// Echo the bytes received back to transmitter}}
+\DoxyCodeLine{    \mbox{\hyperlink{_u_a_r_t_8c_a6f2a04c09dc17886e69e361cd80aaedc}{UART\_write}}(handle, txBuf, size);}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \textcolor{comment}{// Start another read, with size the same as it was during first call to}}
+\DoxyCodeLine{    \textcolor{comment}{// UART\_read()}}
+\DoxyCodeLine{    \mbox{\hyperlink{_u_a_r_t_8c_a023152d57539cad94bdd813956013e73}{UART\_read}}(handle, rxBuf, wantedRxBytes);}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keyword}{static} \textcolor{keywordtype}{void} taskFxn(UArg a0, UArg a1)}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{    \mbox{\hyperlink{struct_u_a_r_t___config}{UART\_Handle}} handle;}
+\DoxyCodeLine{    \mbox{\hyperlink{struct_u_a_r_t___params}{UART\_Params}} params;}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \textcolor{comment}{// Init UART and specify non-\/default parameters}}
+\DoxyCodeLine{    \mbox{\hyperlink{_u_a_r_t_8c_a40e5c0823bb7ffd2e8fbf19f9f20b399}{UART\_Params\_init}}(\&params);}
+\DoxyCodeLine{    params.\mbox{\hyperlink{struct_u_a_r_t___params_afadb98d0a0ef6e17240bab79306e7828}{baudRate}}      = 9600;}
+\DoxyCodeLine{    params.\mbox{\hyperlink{struct_u_a_r_t___params_a02e8b9127a7d6fa49021f01a7ee69ad2}{writeDataMode}} = \mbox{\hyperlink{_u_a_r_t_8h_a694090fdb166f94ac30b809f9cba87b8aaa8edcbf6c236b0d86491ea1e7c9e4d8}{UART\_DATA\_BINARY}};}
+\DoxyCodeLine{    params.\mbox{\hyperlink{struct_u_a_r_t___params_ab8677572499b3734fcaa00f6431b0e7b}{readMode}}      = \mbox{\hyperlink{_u_a_r_t_8h_a2507a620dba95cd20885c52494d19e90ae0dbd9b5195e56c3c2aed10163523754}{UART\_MODE\_CALLBACK}};}
+\DoxyCodeLine{    params.\mbox{\hyperlink{struct_u_a_r_t___params_a707659dcecb10f490000511ec2de2060}{readDataMode}}  = \mbox{\hyperlink{_u_a_r_t_8h_a694090fdb166f94ac30b809f9cba87b8aaa8edcbf6c236b0d86491ea1e7c9e4d8}{UART\_DATA\_BINARY}};}
+\DoxyCodeLine{    params.\mbox{\hyperlink{struct_u_a_r_t___params_a5457b86b6793f1c4757457b9b22e379d}{readCallback}}  = readCallback;}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \textcolor{comment}{// Open the UART and initiate the first read}}
+\DoxyCodeLine{    handle = \mbox{\hyperlink{_u_a_r_t_8c_a0442ea1ec23901168da31726bb3254c1}{UART\_open}}(Board\_UART, \&params);}
+\DoxyCodeLine{    wantedRxBytes = 16;}
+\DoxyCodeLine{    \textcolor{keywordtype}{int} rxBytes = \mbox{\hyperlink{_u_a_r_t_8c_a023152d57539cad94bdd813956013e73}{UART\_read}}(handle, rxBuf, wantedRxBytes);}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \textcolor{keywordflow}{while}(\textcolor{keyword}{true}); \textcolor{comment}{// Wait forever}}
+\DoxyCodeLine{\}}
+\end{DoxyCode}
+\hypertarget{_u_a_r_t_c_c26_x_x_8h_autotoc_md125}{}\doxysubsection{Baud Rate}\label{_u_a_r_t_c_c26_x_x_8h_autotoc_md125}
+The C\+C26xx driver supports baud rates up to 3Mbaud. However, when receiving more than 32 bytes back-\/to-\/back the baud rate is limited to approximately 2Mbaud. The throughput is also dependent on the user application.\hypertarget{_u_a_r_t_c_c26_x_x_8h_autotoc_md126}{}\doxysubsection{Stack requirements}\label{_u_a_r_t_c_c26_x_x_8h_autotoc_md126}
+There are no additional stack requirements for calling \mbox{\hyperlink{_u_a_r_t_8c_a023152d57539cad94bdd813956013e73}{U\+A\+R\+T\+\_\+read()}} within its own callback.\hypertarget{_u_a_r_t_c_c26_x_x_8h_autotoc_md127}{}\doxysubsection{Instrumentation}\label{_u_a_r_t_c_c26_x_x_8h_autotoc_md127}
+The U\+A\+RT driver interface produces log statements if instrumentation is enabled.
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Diagnostics Mask }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Log details  }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Diagnostics Mask }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Log details  }\\\cline{1-2}
+\endhead
+Diags\+\_\+\+U\+S\+E\+R1 &basic U\+A\+RT operations performed  \\\cline{1-2}
+Diags\+\_\+\+U\+S\+E\+R2 &detailed U\+A\+RT operations performed  \\\cline{1-2}
+\end{longtabu}
+
+
+\DoxyHorRuler{0}
+ 
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{_u_a_r_t_c_c26_x_x_8h_aaa17ecf48f5762e2e1bdb0bab8aacf0c}\label{_u_a_r_t_c_c26_x_x_8h_aaa17ecf48f5762e2e1bdb0bab8aacf0c}} 
+\index{UARTCC26XX.h@{UARTCC26XX.h}!ti\_sysbios\_family\_arm\_m3\_Hwi\_\_nolocalnames@{ti\_sysbios\_family\_arm\_m3\_Hwi\_\_nolocalnames}}
+\index{ti\_sysbios\_family\_arm\_m3\_Hwi\_\_nolocalnames@{ti\_sysbios\_family\_arm\_m3\_Hwi\_\_nolocalnames}!UARTCC26XX.h@{UARTCC26XX.h}}
+\doxysubsubsection{\texorpdfstring{ti\_sysbios\_family\_arm\_m3\_Hwi\_\_nolocalnames}{ti\_sysbios\_family\_arm\_m3\_Hwi\_\_nolocalnames}}
+{\footnotesize\ttfamily \#define ti\+\_\+sysbios\+\_\+family\+\_\+arm\+\_\+m3\+\_\+\+Hwi\+\_\+\+\_\+nolocalnames}
+
+
+
+Definition at line 358 of file U\+A\+R\+T\+C\+C26\+X\+X.\+h.
+
+\mbox{\Hypertarget{_u_a_r_t_c_c26_x_x_8h_aa3cbdad922e595319c76870add0d41e6}\label{_u_a_r_t_c_c26_x_x_8h_aa3cbdad922e595319c76870add0d41e6}} 
+\index{UARTCC26XX.h@{UARTCC26XX.h}!UARTCC26XX\_FIFO\_SIZE@{UARTCC26XX\_FIFO\_SIZE}}
+\index{UARTCC26XX\_FIFO\_SIZE@{UARTCC26XX\_FIFO\_SIZE}!UARTCC26XX.h@{UARTCC26XX.h}}
+\doxysubsubsection{\texorpdfstring{UARTCC26XX\_FIFO\_SIZE}{UARTCC26XX\_FIFO\_SIZE}}
+{\footnotesize\ttfamily \#define U\+A\+R\+T\+C\+C26\+X\+X\+\_\+\+F\+I\+F\+O\+\_\+\+S\+I\+ZE~32}
+
+Size of the TX and RX F\+I\+F\+Os is 32 items 
+
+Definition at line 416 of file U\+A\+R\+T\+C\+C26\+X\+X.\+h.
+
+\mbox{\Hypertarget{_u_a_r_t_c_c26_x_x_8h_a973b0815d1f88dc3f3e7191625783b99}\label{_u_a_r_t_c_c26_x_x_8h_a973b0815d1f88dc3f3e7191625783b99}} 
+\index{UARTCC26XX.h@{UARTCC26XX.h}!UARTCC26XX\_RETURN\_PARTIAL\_DISABLE@{UARTCC26XX\_RETURN\_PARTIAL\_DISABLE}}
+\index{UARTCC26XX\_RETURN\_PARTIAL\_DISABLE@{UARTCC26XX\_RETURN\_PARTIAL\_DISABLE}!UARTCC26XX.h@{UARTCC26XX.h}}
+\doxysubsubsection{\texorpdfstring{UARTCC26XX\_RETURN\_PARTIAL\_DISABLE}{UARTCC26XX\_RETURN\_PARTIAL\_DISABLE}}
+{\footnotesize\ttfamily \#define U\+A\+R\+T\+C\+C26\+X\+X\+\_\+\+R\+E\+T\+U\+R\+N\+\_\+\+P\+A\+R\+T\+I\+A\+L\+\_\+\+D\+I\+S\+A\+B\+LE~\mbox{\hyperlink{group___u_a_r_t___c_m_d_ga7cc7c1551022a60bd310c79acb6b26b8}{U\+A\+R\+T\+C\+C26\+X\+X\+\_\+\+C\+M\+D\+\_\+\+R\+E\+T\+U\+R\+N\+\_\+\+P\+A\+R\+T\+I\+A\+L\+\_\+\+D\+I\+S\+A\+B\+LE}}}
+
+
+
+Definition at line 420 of file U\+A\+R\+T\+C\+C26\+X\+X.\+h.
+
+\mbox{\Hypertarget{_u_a_r_t_c_c26_x_x_8h_a681da30c89054d687603b864792894f7}\label{_u_a_r_t_c_c26_x_x_8h_a681da30c89054d687603b864792894f7}} 
+\index{UARTCC26XX.h@{UARTCC26XX.h}!UARTCC26XX\_RETURN\_PARTIAL\_ENABLE@{UARTCC26XX\_RETURN\_PARTIAL\_ENABLE}}
+\index{UARTCC26XX\_RETURN\_PARTIAL\_ENABLE@{UARTCC26XX\_RETURN\_PARTIAL\_ENABLE}!UARTCC26XX.h@{UARTCC26XX.h}}
+\doxysubsubsection{\texorpdfstring{UARTCC26XX\_RETURN\_PARTIAL\_ENABLE}{UARTCC26XX\_RETURN\_PARTIAL\_ENABLE}}
+{\footnotesize\ttfamily \#define U\+A\+R\+T\+C\+C26\+X\+X\+\_\+\+R\+E\+T\+U\+R\+N\+\_\+\+P\+A\+R\+T\+I\+A\+L\+\_\+\+E\+N\+A\+B\+LE~\mbox{\hyperlink{group___u_a_r_t___c_m_d_ga90f59d674fd3b290c3dd711128413014}{U\+A\+R\+T\+C\+C26\+X\+X\+\_\+\+C\+M\+D\+\_\+\+R\+E\+T\+U\+R\+N\+\_\+\+P\+A\+R\+T\+I\+A\+L\+\_\+\+E\+N\+A\+B\+LE}}}
+
+
+
+Definition at line 419 of file U\+A\+R\+T\+C\+C26\+X\+X.\+h.
+
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{_u_a_r_t_c_c26_x_x_8h_a96e00b9100ea241308695679c6417a29}\label{_u_a_r_t_c_c26_x_x_8h_a96e00b9100ea241308695679c6417a29}} 
+\index{UARTCC26XX.h@{UARTCC26XX.h}!UART\_FifoThreshold@{UART\_FifoThreshold}}
+\index{UART\_FifoThreshold@{UART\_FifoThreshold}!UARTCC26XX.h@{UARTCC26XX.h}}
+\doxysubsubsection{\texorpdfstring{UART\_FifoThreshold}{UART\_FifoThreshold}}
+{\footnotesize\ttfamily typedef enum \mbox{\hyperlink{_u_a_r_t_c_c26_x_x_8h_a292a5e751577698b215f5e8aa1c79e99}{U\+A\+R\+T\+\_\+\+Fifo\+Threshold}} \mbox{\hyperlink{_u_a_r_t_c_c26_x_x_8h_a292a5e751577698b215f5e8aa1c79e99}{U\+A\+R\+T\+\_\+\+Fifo\+Threshold}}}
+
+
+
+U\+A\+RT F\+I\+FO threshold. 
+
+Mapping of F\+I\+FO thresholds from level to number of bytes. \mbox{\Hypertarget{_u_a_r_t_c_c26_x_x_8h_affcaf4286251e70b0848045a1292c1f1}\label{_u_a_r_t_c_c26_x_x_8h_affcaf4286251e70b0848045a1292c1f1}} 
+\index{UARTCC26XX.h@{UARTCC26XX.h}!UART\_Status@{UART\_Status}}
+\index{UART\_Status@{UART\_Status}!UARTCC26XX.h@{UARTCC26XX.h}}
+\doxysubsubsection{\texorpdfstring{UART\_Status}{UART\_Status}}
+{\footnotesize\ttfamily typedef enum \mbox{\hyperlink{_u_a_r_t_c_c26_x_x_8h_a778bbef5f4b52a5651552136715f53c4}{U\+A\+R\+T\+\_\+\+Status}} \mbox{\hyperlink{_u_a_r_t_c_c26_x_x_8h_a778bbef5f4b52a5651552136715f53c4}{U\+A\+R\+T\+\_\+\+Status}}}
+
+
+
+U\+A\+RT status. 
+
+The U\+A\+RT Status is used to flag the different Receive Errors. \mbox{\Hypertarget{_u_a_r_t_c_c26_x_x_8h_a276d493f1689ad8c16b5cfb4dada194a}\label{_u_a_r_t_c_c26_x_x_8h_a276d493f1689ad8c16b5cfb4dada194a}} 
+\index{UARTCC26XX.h@{UARTCC26XX.h}!UARTCC26XX\_Handle@{UARTCC26XX\_Handle}}
+\index{UARTCC26XX\_Handle@{UARTCC26XX\_Handle}!UARTCC26XX.h@{UARTCC26XX.h}}
+\doxysubsubsection{\texorpdfstring{UARTCC26XX\_Handle}{UARTCC26XX\_Handle}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_u_a_r_t_c_c26_x_x___object}{U\+A\+R\+T\+C\+C26\+X\+X\+\_\+\+Object}} $\ast$ \mbox{\hyperlink{_u_a_r_t_c_c26_x_x_8h_a276d493f1689ad8c16b5cfb4dada194a}{U\+A\+R\+T\+C\+C26\+X\+X\+\_\+\+Handle}}}
+
+\mbox{\Hypertarget{_u_a_r_t_c_c26_x_x_8h_a1c2d8439603c7d2b08e7726d5db595bb}\label{_u_a_r_t_c_c26_x_x_8h_a1c2d8439603c7d2b08e7726d5db595bb}} 
+\index{UARTCC26XX.h@{UARTCC26XX.h}!UARTCC26XX\_HWAttrsV2@{UARTCC26XX\_HWAttrsV2}}
+\index{UARTCC26XX\_HWAttrsV2@{UARTCC26XX\_HWAttrsV2}!UARTCC26XX.h@{UARTCC26XX.h}}
+\doxysubsubsection{\texorpdfstring{UARTCC26XX\_HWAttrsV2}{UARTCC26XX\_HWAttrsV2}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_u_a_r_t_c_c26_x_x___h_w_attrs_v2}{U\+A\+R\+T\+C\+C26\+X\+X\+\_\+\+H\+W\+Attrs\+V2}} \mbox{\hyperlink{struct_u_a_r_t_c_c26_x_x___h_w_attrs_v2}{U\+A\+R\+T\+C\+C26\+X\+X\+\_\+\+H\+W\+Attrs\+V2}}}
+
+
+
+U\+A\+R\+T\+C\+C26\+XX Hardware attributes. 
+
+These fields, with the exception of int\+Priority, are used by driverlib A\+P\+Is and therefore must be populated by driverlib macro definitions. For C\+C26xx\+Ware these definitions are found in\+:
+\begin{DoxyItemize}
+\item inc/hw\+\_\+memmap.\+h
+\item inc/hw\+\_\+ints.\+h
+\end{DoxyItemize}
+
+int\+Priority is the U\+A\+RT peripheral\textquotesingle{}s interrupt priority, as defined by the underlying OS. It is passed unmodified to the underlying OS\textquotesingle{}s interrupt handler creation code, so you need to refer to the OS documentation for usage. For example, for S\+Y\+S/\+B\+I\+OS applications, refer to the ti.\+sysbios.\+family.\+arm.\+m3.\+Hwi documentation for S\+Y\+S/\+B\+I\+OS usage of interrupt priorities. If the driver uses the ti.\+drivers.\+ports interface instead of making OS calls directly, then the HwiP port handles the interrupt priority in an OS specific way. In the case of the S\+Y\+S/\+B\+I\+OS port, int\+Priority is passed unmodified to Hwi\+\_\+create().
+
+A sample structure is shown below\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{const} \mbox{\hyperlink{struct_u_a_r_t_c_c26_x_x___h_w_attrs_v2}{UARTCC26XX\_HWAttrsV2}} uartCC26xxHWAttrs[] = \{}
+\DoxyCodeLine{    \{}
+\DoxyCodeLine{        .\mbox{\hyperlink{struct_u_a_r_t_c_c26_x_x___h_w_attrs_v2_aba311f9c5938c83e262a0e5144013acc}{baseAddr}}    = UART0\_BASE,}
+\DoxyCodeLine{        .powerMngrId = PERIPH\_UART0,}
+\DoxyCodeLine{        .intNum      = INT\_UART0,}
+\DoxyCodeLine{        .intPriority = \string~0,}
+\DoxyCodeLine{        .swiPriority = 0,}
+\DoxyCodeLine{        .txPin       = Board\_UART\_TX,}
+\DoxyCodeLine{        .rxPin       = Board\_UART\_RX,}
+\DoxyCodeLine{        .ctsPin      = \mbox{\hyperlink{_p_i_n_8h_aba219226dfdc9ea2fb82d6a7995395bf}{PIN\_UNASSIGNED}},}
+\DoxyCodeLine{        .rtsPin      = \mbox{\hyperlink{_p_i_n_8h_aba219226dfdc9ea2fb82d6a7995395bf}{PIN\_UNASSIGNED}},}
+\DoxyCodeLine{        .ringBufPtr  = uartCC26XXRingBuffer[0],}
+\DoxyCodeLine{        .ringBufSize = \textcolor{keyword}{sizeof}(uartCC26XXRingBuffer[0])}
+\DoxyCodeLine{    \}}
+\DoxyCodeLine{\};}
+\end{DoxyCode}
+
+
+The .cts\+Pin and .rts\+Pin must be assigned to enable flow control. \mbox{\Hypertarget{_u_a_r_t_c_c26_x_x_8h_a2e789e5c18d4b34cc2d09cbd25ca01aa}\label{_u_a_r_t_c_c26_x_x_8h_a2e789e5c18d4b34cc2d09cbd25ca01aa}} 
+\index{UARTCC26XX.h@{UARTCC26XX.h}!UARTCC26XX\_Object@{UARTCC26XX\_Object}}
+\index{UARTCC26XX\_Object@{UARTCC26XX\_Object}!UARTCC26XX.h@{UARTCC26XX.h}}
+\doxysubsubsection{\texorpdfstring{UARTCC26XX\_Object}{UARTCC26XX\_Object}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_u_a_r_t_c_c26_x_x___object}{U\+A\+R\+T\+C\+C26\+X\+X\+\_\+\+Object}} \mbox{\hyperlink{struct_u_a_r_t_c_c26_x_x___object}{U\+A\+R\+T\+C\+C26\+X\+X\+\_\+\+Object}}}
+
+
+
+U\+A\+R\+T\+C\+C26\+XX Object. 
+
+The application must not access any member variables of this structure! 
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{_u_a_r_t_c_c26_x_x_8h_a292a5e751577698b215f5e8aa1c79e99}\label{_u_a_r_t_c_c26_x_x_8h_a292a5e751577698b215f5e8aa1c79e99}} 
+\index{UARTCC26XX.h@{UARTCC26XX.h}!UART\_FifoThreshold@{UART\_FifoThreshold}}
+\index{UART\_FifoThreshold@{UART\_FifoThreshold}!UARTCC26XX.h@{UARTCC26XX.h}}
+\doxysubsubsection{\texorpdfstring{UART\_FifoThreshold}{UART\_FifoThreshold}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{_u_a_r_t_c_c26_x_x_8h_a292a5e751577698b215f5e8aa1c79e99}{U\+A\+R\+T\+\_\+\+Fifo\+Threshold}}}
+
+
+
+U\+A\+RT F\+I\+FO threshold. 
+
+Mapping of F\+I\+FO thresholds from level to number of bytes. \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UART\_TH\_FIFO\_1\_8@{UART\_TH\_FIFO\_1\_8}!UARTCC26XX.h@{UARTCC26XX.h}}\index{UARTCC26XX.h@{UARTCC26XX.h}!UART\_TH\_FIFO\_1\_8@{UART\_TH\_FIFO\_1\_8}}}\mbox{\Hypertarget{_u_a_r_t_c_c26_x_x_8h_a292a5e751577698b215f5e8aa1c79e99a56bece2b58d0dab3674c00ece3197fff}\label{_u_a_r_t_c_c26_x_x_8h_a292a5e751577698b215f5e8aa1c79e99a56bece2b58d0dab3674c00ece3197fff}} 
+U\+A\+R\+T\+\_\+\+T\+H\+\_\+\+F\+I\+F\+O\+\_\+1\+\_\+8&RX F\+I\+FO threshold of 1/8 = 4 bytes \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UART\_TH\_FIFO\_2\_8@{UART\_TH\_FIFO\_2\_8}!UARTCC26XX.h@{UARTCC26XX.h}}\index{UARTCC26XX.h@{UARTCC26XX.h}!UART\_TH\_FIFO\_2\_8@{UART\_TH\_FIFO\_2\_8}}}\mbox{\Hypertarget{_u_a_r_t_c_c26_x_x_8h_a292a5e751577698b215f5e8aa1c79e99a3c1979202b738122bab4924378108a42}\label{_u_a_r_t_c_c26_x_x_8h_a292a5e751577698b215f5e8aa1c79e99a3c1979202b738122bab4924378108a42}} 
+U\+A\+R\+T\+\_\+\+T\+H\+\_\+\+F\+I\+F\+O\+\_\+2\+\_\+8&RX F\+I\+FO threshold of 2/8 = 8 bytes \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UART\_TH\_FIFO\_4\_8@{UART\_TH\_FIFO\_4\_8}!UARTCC26XX.h@{UARTCC26XX.h}}\index{UARTCC26XX.h@{UARTCC26XX.h}!UART\_TH\_FIFO\_4\_8@{UART\_TH\_FIFO\_4\_8}}}\mbox{\Hypertarget{_u_a_r_t_c_c26_x_x_8h_a292a5e751577698b215f5e8aa1c79e99ae34abfc239ba6e60a1aca5d6819b4a18}\label{_u_a_r_t_c_c26_x_x_8h_a292a5e751577698b215f5e8aa1c79e99ae34abfc239ba6e60a1aca5d6819b4a18}} 
+U\+A\+R\+T\+\_\+\+T\+H\+\_\+\+F\+I\+F\+O\+\_\+4\+\_\+8&RX F\+I\+FO threshold of 4/8 = 16 bytes \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UART\_TH\_FIFO\_6\_8@{UART\_TH\_FIFO\_6\_8}!UARTCC26XX.h@{UARTCC26XX.h}}\index{UARTCC26XX.h@{UARTCC26XX.h}!UART\_TH\_FIFO\_6\_8@{UART\_TH\_FIFO\_6\_8}}}\mbox{\Hypertarget{_u_a_r_t_c_c26_x_x_8h_a292a5e751577698b215f5e8aa1c79e99a43dc712fd0f011504b0b4492981bd0fd}\label{_u_a_r_t_c_c26_x_x_8h_a292a5e751577698b215f5e8aa1c79e99a43dc712fd0f011504b0b4492981bd0fd}} 
+U\+A\+R\+T\+\_\+\+T\+H\+\_\+\+F\+I\+F\+O\+\_\+6\+\_\+8&RX F\+I\+FO threshold of 6/8 = 24 bytes \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UART\_TH\_FIFO\_7\_8@{UART\_TH\_FIFO\_7\_8}!UARTCC26XX.h@{UARTCC26XX.h}}\index{UARTCC26XX.h@{UARTCC26XX.h}!UART\_TH\_FIFO\_7\_8@{UART\_TH\_FIFO\_7\_8}}}\mbox{\Hypertarget{_u_a_r_t_c_c26_x_x_8h_a292a5e751577698b215f5e8aa1c79e99a5626e06eacec74562c303427dd33a95b}\label{_u_a_r_t_c_c26_x_x_8h_a292a5e751577698b215f5e8aa1c79e99a5626e06eacec74562c303427dd33a95b}} 
+U\+A\+R\+T\+\_\+\+T\+H\+\_\+\+F\+I\+F\+O\+\_\+7\+\_\+8&RX F\+I\+FO threshold of 7/8 = 28 bytes \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line 515 of file U\+A\+R\+T\+C\+C26\+X\+X.\+h.
+
+\mbox{\Hypertarget{_u_a_r_t_c_c26_x_x_8h_a778bbef5f4b52a5651552136715f53c4}\label{_u_a_r_t_c_c26_x_x_8h_a778bbef5f4b52a5651552136715f53c4}} 
+\index{UARTCC26XX.h@{UARTCC26XX.h}!UART\_Status@{UART\_Status}}
+\index{UART\_Status@{UART\_Status}!UARTCC26XX.h@{UARTCC26XX.h}}
+\doxysubsubsection{\texorpdfstring{UART\_Status}{UART\_Status}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{_u_a_r_t_c_c26_x_x_8h_a778bbef5f4b52a5651552136715f53c4}{U\+A\+R\+T\+\_\+\+Status}}}
+
+
+
+U\+A\+RT status. 
+
+The U\+A\+RT Status is used to flag the different Receive Errors. \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UART\_TIMED\_OUT@{UART\_TIMED\_OUT}!UARTCC26XX.h@{UARTCC26XX.h}}\index{UARTCC26XX.h@{UARTCC26XX.h}!UART\_TIMED\_OUT@{UART\_TIMED\_OUT}}}\mbox{\Hypertarget{_u_a_r_t_c_c26_x_x_8h_a778bbef5f4b52a5651552136715f53c4aa965b1df388dcc5c87f1bb51120877c7}\label{_u_a_r_t_c_c26_x_x_8h_a778bbef5f4b52a5651552136715f53c4aa965b1df388dcc5c87f1bb51120877c7}} 
+U\+A\+R\+T\+\_\+\+T\+I\+M\+E\+D\+\_\+\+O\+UT&U\+A\+RT timed out \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UART\_PARITY\_ERROR@{UART\_PARITY\_ERROR}!UARTCC26XX.h@{UARTCC26XX.h}}\index{UARTCC26XX.h@{UARTCC26XX.h}!UART\_PARITY\_ERROR@{UART\_PARITY\_ERROR}}}\mbox{\Hypertarget{_u_a_r_t_c_c26_x_x_8h_a778bbef5f4b52a5651552136715f53c4a505840052f6bf71374b427575c23e929}\label{_u_a_r_t_c_c26_x_x_8h_a778bbef5f4b52a5651552136715f53c4a505840052f6bf71374b427575c23e929}} 
+U\+A\+R\+T\+\_\+\+P\+A\+R\+I\+T\+Y\+\_\+\+E\+R\+R\+OR&U\+A\+RT Parity error \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UART\_BRAKE\_ERROR@{UART\_BRAKE\_ERROR}!UARTCC26XX.h@{UARTCC26XX.h}}\index{UARTCC26XX.h@{UARTCC26XX.h}!UART\_BRAKE\_ERROR@{UART\_BRAKE\_ERROR}}}\mbox{\Hypertarget{_u_a_r_t_c_c26_x_x_8h_a778bbef5f4b52a5651552136715f53c4aeadc3b97f933501a079b1f300a92a01a}\label{_u_a_r_t_c_c26_x_x_8h_a778bbef5f4b52a5651552136715f53c4aeadc3b97f933501a079b1f300a92a01a}} 
+U\+A\+R\+T\+\_\+\+B\+R\+A\+K\+E\+\_\+\+E\+R\+R\+OR&U\+A\+RT Break error \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UART\_OVERRUN\_ERROR@{UART\_OVERRUN\_ERROR}!UARTCC26XX.h@{UARTCC26XX.h}}\index{UARTCC26XX.h@{UARTCC26XX.h}!UART\_OVERRUN\_ERROR@{UART\_OVERRUN\_ERROR}}}\mbox{\Hypertarget{_u_a_r_t_c_c26_x_x_8h_a778bbef5f4b52a5651552136715f53c4a261d411fd495e2312aad0c43a01fc050}\label{_u_a_r_t_c_c26_x_x_8h_a778bbef5f4b52a5651552136715f53c4a261d411fd495e2312aad0c43a01fc050}} 
+U\+A\+R\+T\+\_\+\+O\+V\+E\+R\+R\+U\+N\+\_\+\+E\+R\+R\+OR&U\+A\+RT overrun error \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UART\_FRAMING\_ERROR@{UART\_FRAMING\_ERROR}!UARTCC26XX.h@{UARTCC26XX.h}}\index{UARTCC26XX.h@{UARTCC26XX.h}!UART\_FRAMING\_ERROR@{UART\_FRAMING\_ERROR}}}\mbox{\Hypertarget{_u_a_r_t_c_c26_x_x_8h_a778bbef5f4b52a5651552136715f53c4a2e97f20086d32b1d2c9f276351bcc100}\label{_u_a_r_t_c_c26_x_x_8h_a778bbef5f4b52a5651552136715f53c4a2e97f20086d32b1d2c9f276351bcc100}} 
+U\+A\+R\+T\+\_\+\+F\+R\+A\+M\+I\+N\+G\+\_\+\+E\+R\+R\+OR&U\+A\+RT Framing error \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UART\_OK@{UART\_OK}!UARTCC26XX.h@{UARTCC26XX.h}}\index{UARTCC26XX.h@{UARTCC26XX.h}!UART\_OK@{UART\_OK}}}\mbox{\Hypertarget{_u_a_r_t_c_c26_x_x_8h_a778bbef5f4b52a5651552136715f53c4a525187963c0aaa465f2a35b30b894d07}\label{_u_a_r_t_c_c26_x_x_8h_a778bbef5f4b52a5651552136715f53c4a525187963c0aaa465f2a35b30b894d07}} 
+U\+A\+R\+T\+\_\+\+OK&U\+A\+RT OK \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line 501 of file U\+A\+R\+T\+C\+C26\+X\+X.\+h.
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{_u_a_r_t_c_c26_x_x_8h_abd5f1691efe38764c7ef10750e407e5e}\label{_u_a_r_t_c_c26_x_x_8h_abd5f1691efe38764c7ef10750e407e5e}} 
+\index{UARTCC26XX.h@{UARTCC26XX.h}!UARTCC26XX\_fxnTable@{UARTCC26XX\_fxnTable}}
+\index{UARTCC26XX\_fxnTable@{UARTCC26XX\_fxnTable}!UARTCC26XX.h@{UARTCC26XX.h}}
+\doxysubsubsection{\texorpdfstring{UARTCC26XX\_fxnTable}{UARTCC26XX\_fxnTable}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{struct_u_a_r_t___fxn_table}{U\+A\+R\+T\+\_\+\+Fxn\+Table}} U\+A\+R\+T\+C\+C26\+X\+X\+\_\+fxn\+Table}
+
+
+
+Definition at line 77 of file U\+A\+R\+T\+C\+C26\+X\+X.\+c.
+

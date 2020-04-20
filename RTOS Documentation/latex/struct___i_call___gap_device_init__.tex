@@ -1,0 +1,142 @@
+\hypertarget{struct___i_call___gap_device_init__}{}\doxysection{\+\_\+\+I\+Call\+\_\+\+Gap\+Device\+Init\+\_\+ Struct Reference}
+\label{struct___i_call___gap_device_init__}\index{\_ICall\_GapDeviceInit\_@{\_ICall\_GapDeviceInit\_}}
+
+
+{\ttfamily \#include $<$icall\+\_\+apimsg.\+h$>$}
+
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{icall__apimsg_8h_afa62f50d802fab57d759c527cead246e}{I\+Call\+\_\+\+Hci\+Ext\+Cmd}} \mbox{\hyperlink{struct___i_call___gap_device_init___aed71f00762bd17cbb94809550e8e80a3}{hdr}}
+\begin{DoxyCompactList}\small\item\em hdr event field must be set as I\+C\+A\+L\+L\+\_\+\+C\+M\+D\+\_\+\+E\+V\+E\+NT \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{struct___i_call___gap_device_init___ac7815311f4e010a0004b6447855c851d}{task\+ID}}
+\begin{DoxyCompactList}\small\item\em task ID \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{struct___i_call___gap_device_init___ac28fbd7a01b2a61102a44fa2775970ec}{profile\+Role}}
+\begin{DoxyCompactList}\small\item\em profile\+Role \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{struct___i_call___gap_device_init___ad3d02456ad9cfe80b2c9d9016af486dd}{max\+Scan\+Responses}}
+\begin{DoxyCompactList}\small\item\em max\+Scan\+Responses \end{DoxyCompactList}\item 
+uint8\+\_\+t $\ast$ \mbox{\hyperlink{struct___i_call___gap_device_init___ae7f10320fba64f70d9df9eec3e5f3c03}{p\+I\+RK}}
+\begin{DoxyCompactList}\small\item\em I\+RK. \end{DoxyCompactList}\item 
+uint8\+\_\+t $\ast$ \mbox{\hyperlink{struct___i_call___gap_device_init___a713b590912afa81fc41956c3ce173160}{p\+S\+RK}}
+\begin{DoxyCompactList}\small\item\em S\+RK. \end{DoxyCompactList}\item 
+uint32\+\_\+t $\ast$ \mbox{\hyperlink{struct___i_call___gap_device_init___ad47db1601b94bc4a320c7a8038db736c}{p\+Sign\+Counter}}
+\begin{DoxyCompactList}\small\item\em pointer to Sign Counter \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+B\+LE G\+AP D\+E\+V\+I\+CE I\+N\+IT message header and body. This is an example of how legacy C function A\+PI is translated into a messaging interface. \begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{group___g_a_p___a_p_i_ga729bcdb44b9ea7717cbfd55d25ba5194}{G\+A\+P\+\_\+\+Device\+Init()}} 
+\end{DoxySeeAlso}
+
+
+Definition at line 100 of file icall\+\_\+apimsg.\+h.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{struct___i_call___gap_device_init___aed71f00762bd17cbb94809550e8e80a3}\label{struct___i_call___gap_device_init___aed71f00762bd17cbb94809550e8e80a3}} 
+\index{\_ICall\_GapDeviceInit\_@{\_ICall\_GapDeviceInit\_}!hdr@{hdr}}
+\index{hdr@{hdr}!\_ICall\_GapDeviceInit\_@{\_ICall\_GapDeviceInit\_}}
+\doxysubsubsection{\texorpdfstring{hdr}{hdr}}
+{\footnotesize\ttfamily \mbox{\hyperlink{icall__apimsg_8h_afa62f50d802fab57d759c527cead246e}{I\+Call\+\_\+\+Hci\+Ext\+Cmd}} \+\_\+\+I\+Call\+\_\+\+Gap\+Device\+Init\+\_\+\+::hdr}
+
+
+
+hdr event field must be set as I\+C\+A\+L\+L\+\_\+\+C\+M\+D\+\_\+\+E\+V\+E\+NT 
+
+Message header. Note that the event field must be set to I\+C\+A\+L\+L\+\_\+\+C\+M\+D\+\_\+\+E\+V\+E\+NT in order to identify the message as distinct from H\+C\+I\+\_\+\+E\+X\+T\+\_\+\+C\+M\+D\+\_\+\+E\+V\+E\+NT. 
+
+Definition at line 108 of file icall\+\_\+apimsg.\+h.
+
+\mbox{\Hypertarget{struct___i_call___gap_device_init___ad3d02456ad9cfe80b2c9d9016af486dd}\label{struct___i_call___gap_device_init___ad3d02456ad9cfe80b2c9d9016af486dd}} 
+\index{\_ICall\_GapDeviceInit\_@{\_ICall\_GapDeviceInit\_}!maxScanResponses@{maxScanResponses}}
+\index{maxScanResponses@{maxScanResponses}!\_ICall\_GapDeviceInit\_@{\_ICall\_GapDeviceInit\_}}
+\doxysubsubsection{\texorpdfstring{maxScanResponses}{maxScanResponses}}
+{\footnotesize\ttfamily uint8\+\_\+t \+\_\+\+I\+Call\+\_\+\+Gap\+Device\+Init\+\_\+\+::max\+Scan\+Responses}
+
+
+
+max\+Scan\+Responses 
+
+
+
+Definition at line 111 of file icall\+\_\+apimsg.\+h.
+
+\mbox{\Hypertarget{struct___i_call___gap_device_init___ae7f10320fba64f70d9df9eec3e5f3c03}\label{struct___i_call___gap_device_init___ae7f10320fba64f70d9df9eec3e5f3c03}} 
+\index{\_ICall\_GapDeviceInit\_@{\_ICall\_GapDeviceInit\_}!pIRK@{pIRK}}
+\index{pIRK@{pIRK}!\_ICall\_GapDeviceInit\_@{\_ICall\_GapDeviceInit\_}}
+\doxysubsubsection{\texorpdfstring{pIRK}{pIRK}}
+{\footnotesize\ttfamily uint8\+\_\+t$\ast$ \+\_\+\+I\+Call\+\_\+\+Gap\+Device\+Init\+\_\+\+::p\+I\+RK}
+
+
+
+I\+RK. 
+
+p\+I\+RK~\newline
+ Note that the pointer is embedded into this sample replicated message, since we know that the lifetime of the dereferenced memory block must be persistent while B\+LE stack is active. 
+
+Definition at line 119 of file icall\+\_\+apimsg.\+h.
+
+\mbox{\Hypertarget{struct___i_call___gap_device_init___ac28fbd7a01b2a61102a44fa2775970ec}\label{struct___i_call___gap_device_init___ac28fbd7a01b2a61102a44fa2775970ec}} 
+\index{\_ICall\_GapDeviceInit\_@{\_ICall\_GapDeviceInit\_}!profileRole@{profileRole}}
+\index{profileRole@{profileRole}!\_ICall\_GapDeviceInit\_@{\_ICall\_GapDeviceInit\_}}
+\doxysubsubsection{\texorpdfstring{profileRole}{profileRole}}
+{\footnotesize\ttfamily uint8\+\_\+t \+\_\+\+I\+Call\+\_\+\+Gap\+Device\+Init\+\_\+\+::profile\+Role}
+
+
+
+profile\+Role 
+
+
+
+Definition at line 110 of file icall\+\_\+apimsg.\+h.
+
+\mbox{\Hypertarget{struct___i_call___gap_device_init___ad47db1601b94bc4a320c7a8038db736c}\label{struct___i_call___gap_device_init___ad47db1601b94bc4a320c7a8038db736c}} 
+\index{\_ICall\_GapDeviceInit\_@{\_ICall\_GapDeviceInit\_}!pSignCounter@{pSignCounter}}
+\index{pSignCounter@{pSignCounter}!\_ICall\_GapDeviceInit\_@{\_ICall\_GapDeviceInit\_}}
+\doxysubsubsection{\texorpdfstring{pSignCounter}{pSignCounter}}
+{\footnotesize\ttfamily uint32\+\_\+t$\ast$ \+\_\+\+I\+Call\+\_\+\+Gap\+Device\+Init\+\_\+\+::p\+Sign\+Counter}
+
+
+
+pointer to Sign Counter 
+
+p\+Sign\+Counter~\newline
+ Same logic behind the pointer as p\+I\+RK. 
+
+Definition at line 131 of file icall\+\_\+apimsg.\+h.
+
+\mbox{\Hypertarget{struct___i_call___gap_device_init___a713b590912afa81fc41956c3ce173160}\label{struct___i_call___gap_device_init___a713b590912afa81fc41956c3ce173160}} 
+\index{\_ICall\_GapDeviceInit\_@{\_ICall\_GapDeviceInit\_}!pSRK@{pSRK}}
+\index{pSRK@{pSRK}!\_ICall\_GapDeviceInit\_@{\_ICall\_GapDeviceInit\_}}
+\doxysubsubsection{\texorpdfstring{pSRK}{pSRK}}
+{\footnotesize\ttfamily uint8\+\_\+t$\ast$ \+\_\+\+I\+Call\+\_\+\+Gap\+Device\+Init\+\_\+\+::p\+S\+RK}
+
+
+
+S\+RK. 
+
+p\+S\+RK~\newline
+ Same logic behind the pointer as p\+I\+RK. 
+
+Definition at line 125 of file icall\+\_\+apimsg.\+h.
+
+\mbox{\Hypertarget{struct___i_call___gap_device_init___ac7815311f4e010a0004b6447855c851d}\label{struct___i_call___gap_device_init___ac7815311f4e010a0004b6447855c851d}} 
+\index{\_ICall\_GapDeviceInit\_@{\_ICall\_GapDeviceInit\_}!taskID@{taskID}}
+\index{taskID@{taskID}!\_ICall\_GapDeviceInit\_@{\_ICall\_GapDeviceInit\_}}
+\doxysubsubsection{\texorpdfstring{taskID}{taskID}}
+{\footnotesize\ttfamily uint8\+\_\+t \+\_\+\+I\+Call\+\_\+\+Gap\+Device\+Init\+\_\+\+::task\+ID}
+
+
+
+task ID 
+
+
+
+Definition at line 109 of file icall\+\_\+apimsg.\+h.
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+I\+Call\+B\+L\+E/\mbox{\hyperlink{icall__apimsg_8h}{icall\+\_\+apimsg.\+h}}\end{DoxyCompactItemize}

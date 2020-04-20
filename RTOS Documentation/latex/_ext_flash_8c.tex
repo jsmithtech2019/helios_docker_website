@@ -1,0 +1,397 @@
+\hypertarget{_ext_flash_8c}{}\doxysection{Middleware/extflash/\+Ext\+Flash.c File Reference}
+\label{_ext_flash_8c}\index{Middleware/extflash/ExtFlash.c@{Middleware/extflash/ExtFlash.c}}
+{\ttfamily \#include \char`\"{}Board.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Ext\+Flash.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}string.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$ti/drivers/spi/\+S\+P\+I\+C\+C26\+X\+X\+D\+M\+A.\+h$>$}\newline
+{\ttfamily \#include $<$ti/drivers/dma/\+U\+D\+M\+A\+C\+C26\+X\+X.\+h$>$}\newline
+{\ttfamily \#include $<$driverlib/ssi.\+h$>$}\newline
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{_ext_flash_8c_a572cf423a2b50bc49e86db025a9481fb}{S\+P\+I\+\_\+\+B\+I\+T\+\_\+\+R\+A\+TE}}~4000000
+\item 
+\#define \mbox{\hyperlink{_ext_flash_8c_af7f385ddfac8c3665707b89f38d244ff}{B\+L\+S\+\_\+\+C\+O\+D\+E\+\_\+\+P\+R\+O\+G\+R\+AM}}~0x02
+\item 
+\#define \mbox{\hyperlink{_ext_flash_8c_a9e63a8e9ef9e4f8c4a84a1a2ae11cf38}{B\+L\+S\+\_\+\+C\+O\+D\+E\+\_\+\+R\+E\+AD}}~0x03
+\item 
+\#define \mbox{\hyperlink{_ext_flash_8c_a8da27214cc36cdfeded873f5ba902aee}{B\+L\+S\+\_\+\+C\+O\+D\+E\+\_\+\+R\+E\+A\+D\+\_\+\+S\+T\+A\+T\+US}}~0x05
+\item 
+\#define \mbox{\hyperlink{_ext_flash_8c_ae53c2b498f5c1f90f4af03cbd009e387}{B\+L\+S\+\_\+\+C\+O\+D\+E\+\_\+\+W\+R\+I\+T\+E\+\_\+\+E\+N\+A\+B\+LE}}~0x06
+\item 
+\#define \mbox{\hyperlink{_ext_flash_8c_a5e76eac84116b400c078055b9fc2e438}{B\+L\+S\+\_\+\+C\+O\+D\+E\+\_\+\+S\+E\+C\+T\+O\+R\+\_\+\+E\+R\+A\+SE}}~0x20
+\item 
+\#define \mbox{\hyperlink{_ext_flash_8c_a57bc3bedf4e302893bd0f3a0d9bfc4c7}{B\+L\+S\+\_\+\+C\+O\+D\+E\+\_\+\+M\+D\+ID}}~0x90
+\item 
+\#define \mbox{\hyperlink{_ext_flash_8c_a20d7622dbd88dcb16beac3e8141c644c}{B\+L\+S\+\_\+\+C\+O\+D\+E\+\_\+\+DP}}~0x\+B9
+\item 
+\#define \mbox{\hyperlink{_ext_flash_8c_a76128a16c3436b4144f5205c3fd1e79c}{B\+L\+S\+\_\+\+C\+O\+D\+E\+\_\+\+R\+DP}}~0x\+AB
+\item 
+\#define \mbox{\hyperlink{_ext_flash_8c_a0df31bb344fd5e36f3fec8f69cb293ad}{B\+L\+S\+\_\+\+C\+O\+D\+E\+\_\+\+E\+R\+A\+S\+E\+\_\+4K}}~0x20
+\item 
+\#define \mbox{\hyperlink{_ext_flash_8c_af9f58caa3c3c5de5c44363b177d17194}{B\+L\+S\+\_\+\+C\+O\+D\+E\+\_\+\+E\+R\+A\+S\+E\+\_\+32K}}~0x52
+\item 
+\#define \mbox{\hyperlink{_ext_flash_8c_ae1d96e3da3382842f17ca5cafc94aae5}{B\+L\+S\+\_\+\+C\+O\+D\+E\+\_\+\+E\+R\+A\+S\+E\+\_\+64K}}~0x\+D8
+\item 
+\#define \mbox{\hyperlink{_ext_flash_8c_a53b0528989a74aa8768974d795216d2e}{B\+L\+S\+\_\+\+C\+O\+D\+E\+\_\+\+E\+R\+A\+S\+E\+\_\+\+A\+LL}}~0x\+C7
+\item 
+\#define \mbox{\hyperlink{_ext_flash_8c_aa7ae8be36f811c4cb0ddab451d20ca09}{B\+L\+S\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+S\+R\+W\+D\+\_\+\+BM}}~0x80
+\item 
+\#define \mbox{\hyperlink{_ext_flash_8c_a68c2011c2976374407da818e4999aa54}{B\+L\+S\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+B\+P\+\_\+\+BM}}~0x0C
+\item 
+\#define \mbox{\hyperlink{_ext_flash_8c_a5d1d6e28ca13bdc91ba494eba533578d}{B\+L\+S\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+W\+E\+L\+\_\+\+BM}}~0x02
+\item 
+\#define \mbox{\hyperlink{_ext_flash_8c_af7364470edc4c9cdeaee96ce740841cc}{B\+L\+S\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+W\+I\+P\+\_\+\+BM}}~0x01
+\item 
+\#define \mbox{\hyperlink{_ext_flash_8c_a72e273e3dc039e5cf33d6fd5f580c192}{B\+L\+S\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+B\+I\+T\+\_\+\+B\+U\+SY}}~0x01
+\item 
+\#define \mbox{\hyperlink{_ext_flash_8c_ac41df1071e617bcf8cd6e729864ab6bd}{B\+L\+S\+\_\+\+P\+R\+O\+G\+R\+A\+M\+\_\+\+P\+A\+G\+E\+\_\+\+S\+I\+ZE}}~256
+\item 
+\#define \mbox{\hyperlink{_ext_flash_8c_a8ee4462977af7f7f526266452d14bbec}{B\+L\+S\+\_\+\+E\+R\+A\+S\+E\+\_\+\+S\+E\+C\+T\+O\+R\+\_\+\+S\+I\+ZE}}~4096
+\item 
+\#define \mbox{\hyperlink{_ext_flash_8c_a0c962fd79877d7e84b7d3db0d8ea494b}{M\+F\+\_\+\+M\+A\+C\+R\+O\+N\+IX}}~0x\+C2
+\item 
+\#define \mbox{\hyperlink{_ext_flash_8c_adb7131115f27056a300e392824c5b2bf}{M\+F\+\_\+\+W\+I\+N\+B\+O\+ND}}~0x\+EF
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_ext_flash_info__t}{Ext\+Flash\+Info\+\_\+t}} $\ast$ \mbox{\hyperlink{_ext_flash_8c_a30939a5a39e9fbfcd23022c23083b66e}{Ext\+Flash\+\_\+info}} (void)
+\item 
+bool \mbox{\hyperlink{_ext_flash_8c_ad4b1bd8b121baef366934a9815871124}{Ext\+Flash\+\_\+open}} (void)
+\item 
+void \mbox{\hyperlink{_ext_flash_8c_ad456be39a9a700212437ff438410a594}{Ext\+Flash\+\_\+close}} (void)
+\item 
+bool \mbox{\hyperlink{_ext_flash_8c_a2d9f04462020d01ac5fdb55418b077b9}{Ext\+Flash\+\_\+read}} (size\+\_\+t offset, size\+\_\+t length, uint8\+\_\+t $\ast$buf)
+\item 
+bool \mbox{\hyperlink{_ext_flash_8c_af4e3c0fef71d31bb67c44979abab1feb}{Ext\+Flash\+\_\+write}} (size\+\_\+t offset, size\+\_\+t length, const uint8\+\_\+t $\ast$buf)
+\item 
+bool \mbox{\hyperlink{_ext_flash_8c_a3f0495f78fc59522bbd47b3965bfd325}{Ext\+Flash\+\_\+erase}} (size\+\_\+t offset, size\+\_\+t length)
+\item 
+bool \mbox{\hyperlink{_ext_flash_8c_a4f1fb7e68cb15dac521126d472edd81b}{Ext\+Flash\+\_\+test}} (void)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+============================================================================\hypertarget{_ext_flash_8c_autotoc_md139}{}\doxysubsection{@brief      External flash storage implementation.}\label{_ext_flash_8c_autotoc_md139}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{_ext_flash_8c_a20d7622dbd88dcb16beac3e8141c644c}\label{_ext_flash_8c_a20d7622dbd88dcb16beac3e8141c644c}} 
+\index{ExtFlash.c@{ExtFlash.c}!BLS\_CODE\_DP@{BLS\_CODE\_DP}}
+\index{BLS\_CODE\_DP@{BLS\_CODE\_DP}!ExtFlash.c@{ExtFlash.c}}
+\doxysubsubsection{\texorpdfstring{BLS\_CODE\_DP}{BLS\_CODE\_DP}}
+{\footnotesize\ttfamily \#define B\+L\+S\+\_\+\+C\+O\+D\+E\+\_\+\+DP~0x\+B9}
+
+Power down 
+
+Definition at line 71 of file Ext\+Flash.\+c.
+
+\mbox{\Hypertarget{_ext_flash_8c_af9f58caa3c3c5de5c44363b177d17194}\label{_ext_flash_8c_af9f58caa3c3c5de5c44363b177d17194}} 
+\index{ExtFlash.c@{ExtFlash.c}!BLS\_CODE\_ERASE\_32K@{BLS\_CODE\_ERASE\_32K}}
+\index{BLS\_CODE\_ERASE\_32K@{BLS\_CODE\_ERASE\_32K}!ExtFlash.c@{ExtFlash.c}}
+\doxysubsubsection{\texorpdfstring{BLS\_CODE\_ERASE\_32K}{BLS\_CODE\_ERASE\_32K}}
+{\footnotesize\ttfamily \#define B\+L\+S\+\_\+\+C\+O\+D\+E\+\_\+\+E\+R\+A\+S\+E\+\_\+32K~0x52}
+
+
+
+Definition at line 76 of file Ext\+Flash.\+c.
+
+\mbox{\Hypertarget{_ext_flash_8c_a0df31bb344fd5e36f3fec8f69cb293ad}\label{_ext_flash_8c_a0df31bb344fd5e36f3fec8f69cb293ad}} 
+\index{ExtFlash.c@{ExtFlash.c}!BLS\_CODE\_ERASE\_4K@{BLS\_CODE\_ERASE\_4K}}
+\index{BLS\_CODE\_ERASE\_4K@{BLS\_CODE\_ERASE\_4K}!ExtFlash.c@{ExtFlash.c}}
+\doxysubsubsection{\texorpdfstring{BLS\_CODE\_ERASE\_4K}{BLS\_CODE\_ERASE\_4K}}
+{\footnotesize\ttfamily \#define B\+L\+S\+\_\+\+C\+O\+D\+E\+\_\+\+E\+R\+A\+S\+E\+\_\+4K~0x20}
+
+Sector Erase 
+
+Definition at line 75 of file Ext\+Flash.\+c.
+
+\mbox{\Hypertarget{_ext_flash_8c_ae1d96e3da3382842f17ca5cafc94aae5}\label{_ext_flash_8c_ae1d96e3da3382842f17ca5cafc94aae5}} 
+\index{ExtFlash.c@{ExtFlash.c}!BLS\_CODE\_ERASE\_64K@{BLS\_CODE\_ERASE\_64K}}
+\index{BLS\_CODE\_ERASE\_64K@{BLS\_CODE\_ERASE\_64K}!ExtFlash.c@{ExtFlash.c}}
+\doxysubsubsection{\texorpdfstring{BLS\_CODE\_ERASE\_64K}{BLS\_CODE\_ERASE\_64K}}
+{\footnotesize\ttfamily \#define B\+L\+S\+\_\+\+C\+O\+D\+E\+\_\+\+E\+R\+A\+S\+E\+\_\+64K~0x\+D8}
+
+
+
+Definition at line 77 of file Ext\+Flash.\+c.
+
+\mbox{\Hypertarget{_ext_flash_8c_a53b0528989a74aa8768974d795216d2e}\label{_ext_flash_8c_a53b0528989a74aa8768974d795216d2e}} 
+\index{ExtFlash.c@{ExtFlash.c}!BLS\_CODE\_ERASE\_ALL@{BLS\_CODE\_ERASE\_ALL}}
+\index{BLS\_CODE\_ERASE\_ALL@{BLS\_CODE\_ERASE\_ALL}!ExtFlash.c@{ExtFlash.c}}
+\doxysubsubsection{\texorpdfstring{BLS\_CODE\_ERASE\_ALL}{BLS\_CODE\_ERASE\_ALL}}
+{\footnotesize\ttfamily \#define B\+L\+S\+\_\+\+C\+O\+D\+E\+\_\+\+E\+R\+A\+S\+E\+\_\+\+A\+LL~0x\+C7}
+
+Mass Erase 
+
+Definition at line 78 of file Ext\+Flash.\+c.
+
+\mbox{\Hypertarget{_ext_flash_8c_a57bc3bedf4e302893bd0f3a0d9bfc4c7}\label{_ext_flash_8c_a57bc3bedf4e302893bd0f3a0d9bfc4c7}} 
+\index{ExtFlash.c@{ExtFlash.c}!BLS\_CODE\_MDID@{BLS\_CODE\_MDID}}
+\index{BLS\_CODE\_MDID@{BLS\_CODE\_MDID}!ExtFlash.c@{ExtFlash.c}}
+\doxysubsubsection{\texorpdfstring{BLS\_CODE\_MDID}{BLS\_CODE\_MDID}}
+{\footnotesize\ttfamily \#define B\+L\+S\+\_\+\+C\+O\+D\+E\+\_\+\+M\+D\+ID~0x90}
+
+Manufacturer Device ID 
+
+Definition at line 69 of file Ext\+Flash.\+c.
+
+\mbox{\Hypertarget{_ext_flash_8c_af7f385ddfac8c3665707b89f38d244ff}\label{_ext_flash_8c_af7f385ddfac8c3665707b89f38d244ff}} 
+\index{ExtFlash.c@{ExtFlash.c}!BLS\_CODE\_PROGRAM@{BLS\_CODE\_PROGRAM}}
+\index{BLS\_CODE\_PROGRAM@{BLS\_CODE\_PROGRAM}!ExtFlash.c@{ExtFlash.c}}
+\doxysubsubsection{\texorpdfstring{BLS\_CODE\_PROGRAM}{BLS\_CODE\_PROGRAM}}
+{\footnotesize\ttfamily \#define B\+L\+S\+\_\+\+C\+O\+D\+E\+\_\+\+P\+R\+O\+G\+R\+AM~0x02}
+
+Page Program 
+
+Definition at line 64 of file Ext\+Flash.\+c.
+
+\mbox{\Hypertarget{_ext_flash_8c_a76128a16c3436b4144f5205c3fd1e79c}\label{_ext_flash_8c_a76128a16c3436b4144f5205c3fd1e79c}} 
+\index{ExtFlash.c@{ExtFlash.c}!BLS\_CODE\_RDP@{BLS\_CODE\_RDP}}
+\index{BLS\_CODE\_RDP@{BLS\_CODE\_RDP}!ExtFlash.c@{ExtFlash.c}}
+\doxysubsubsection{\texorpdfstring{BLS\_CODE\_RDP}{BLS\_CODE\_RDP}}
+{\footnotesize\ttfamily \#define B\+L\+S\+\_\+\+C\+O\+D\+E\+\_\+\+R\+DP~0x\+AB}
+
+Power standby 
+
+Definition at line 72 of file Ext\+Flash.\+c.
+
+\mbox{\Hypertarget{_ext_flash_8c_a9e63a8e9ef9e4f8c4a84a1a2ae11cf38}\label{_ext_flash_8c_a9e63a8e9ef9e4f8c4a84a1a2ae11cf38}} 
+\index{ExtFlash.c@{ExtFlash.c}!BLS\_CODE\_READ@{BLS\_CODE\_READ}}
+\index{BLS\_CODE\_READ@{BLS\_CODE\_READ}!ExtFlash.c@{ExtFlash.c}}
+\doxysubsubsection{\texorpdfstring{BLS\_CODE\_READ}{BLS\_CODE\_READ}}
+{\footnotesize\ttfamily \#define B\+L\+S\+\_\+\+C\+O\+D\+E\+\_\+\+R\+E\+AD~0x03}
+
+Read Data 
+
+Definition at line 65 of file Ext\+Flash.\+c.
+
+\mbox{\Hypertarget{_ext_flash_8c_a8da27214cc36cdfeded873f5ba902aee}\label{_ext_flash_8c_a8da27214cc36cdfeded873f5ba902aee}} 
+\index{ExtFlash.c@{ExtFlash.c}!BLS\_CODE\_READ\_STATUS@{BLS\_CODE\_READ\_STATUS}}
+\index{BLS\_CODE\_READ\_STATUS@{BLS\_CODE\_READ\_STATUS}!ExtFlash.c@{ExtFlash.c}}
+\doxysubsubsection{\texorpdfstring{BLS\_CODE\_READ\_STATUS}{BLS\_CODE\_READ\_STATUS}}
+{\footnotesize\ttfamily \#define B\+L\+S\+\_\+\+C\+O\+D\+E\+\_\+\+R\+E\+A\+D\+\_\+\+S\+T\+A\+T\+US~0x05}
+
+Read Status Register 
+
+Definition at line 66 of file Ext\+Flash.\+c.
+
+\mbox{\Hypertarget{_ext_flash_8c_a5e76eac84116b400c078055b9fc2e438}\label{_ext_flash_8c_a5e76eac84116b400c078055b9fc2e438}} 
+\index{ExtFlash.c@{ExtFlash.c}!BLS\_CODE\_SECTOR\_ERASE@{BLS\_CODE\_SECTOR\_ERASE}}
+\index{BLS\_CODE\_SECTOR\_ERASE@{BLS\_CODE\_SECTOR\_ERASE}!ExtFlash.c@{ExtFlash.c}}
+\doxysubsubsection{\texorpdfstring{BLS\_CODE\_SECTOR\_ERASE}{BLS\_CODE\_SECTOR\_ERASE}}
+{\footnotesize\ttfamily \#define B\+L\+S\+\_\+\+C\+O\+D\+E\+\_\+\+S\+E\+C\+T\+O\+R\+\_\+\+E\+R\+A\+SE~0x20}
+
+Sector Erase 
+
+Definition at line 68 of file Ext\+Flash.\+c.
+
+\mbox{\Hypertarget{_ext_flash_8c_ae53c2b498f5c1f90f4af03cbd009e387}\label{_ext_flash_8c_ae53c2b498f5c1f90f4af03cbd009e387}} 
+\index{ExtFlash.c@{ExtFlash.c}!BLS\_CODE\_WRITE\_ENABLE@{BLS\_CODE\_WRITE\_ENABLE}}
+\index{BLS\_CODE\_WRITE\_ENABLE@{BLS\_CODE\_WRITE\_ENABLE}!ExtFlash.c@{ExtFlash.c}}
+\doxysubsubsection{\texorpdfstring{BLS\_CODE\_WRITE\_ENABLE}{BLS\_CODE\_WRITE\_ENABLE}}
+{\footnotesize\ttfamily \#define B\+L\+S\+\_\+\+C\+O\+D\+E\+\_\+\+W\+R\+I\+T\+E\+\_\+\+E\+N\+A\+B\+LE~0x06}
+
+Write Enable 
+
+Definition at line 67 of file Ext\+Flash.\+c.
+
+\mbox{\Hypertarget{_ext_flash_8c_a8ee4462977af7f7f526266452d14bbec}\label{_ext_flash_8c_a8ee4462977af7f7f526266452d14bbec}} 
+\index{ExtFlash.c@{ExtFlash.c}!BLS\_ERASE\_SECTOR\_SIZE@{BLS\_ERASE\_SECTOR\_SIZE}}
+\index{BLS\_ERASE\_SECTOR\_SIZE@{BLS\_ERASE\_SECTOR\_SIZE}!ExtFlash.c@{ExtFlash.c}}
+\doxysubsubsection{\texorpdfstring{BLS\_ERASE\_SECTOR\_SIZE}{BLS\_ERASE\_SECTOR\_SIZE}}
+{\footnotesize\ttfamily \#define B\+L\+S\+\_\+\+E\+R\+A\+S\+E\+\_\+\+S\+E\+C\+T\+O\+R\+\_\+\+S\+I\+ZE~4096}
+
+
+
+Definition at line 90 of file Ext\+Flash.\+c.
+
+\mbox{\Hypertarget{_ext_flash_8c_ac41df1071e617bcf8cd6e729864ab6bd}\label{_ext_flash_8c_ac41df1071e617bcf8cd6e729864ab6bd}} 
+\index{ExtFlash.c@{ExtFlash.c}!BLS\_PROGRAM\_PAGE\_SIZE@{BLS\_PROGRAM\_PAGE\_SIZE}}
+\index{BLS\_PROGRAM\_PAGE\_SIZE@{BLS\_PROGRAM\_PAGE\_SIZE}!ExtFlash.c@{ExtFlash.c}}
+\doxysubsubsection{\texorpdfstring{BLS\_PROGRAM\_PAGE\_SIZE}{BLS\_PROGRAM\_PAGE\_SIZE}}
+{\footnotesize\ttfamily \#define B\+L\+S\+\_\+\+P\+R\+O\+G\+R\+A\+M\+\_\+\+P\+A\+G\+E\+\_\+\+S\+I\+ZE~256}
+
+
+
+Definition at line 89 of file Ext\+Flash.\+c.
+
+\mbox{\Hypertarget{_ext_flash_8c_a72e273e3dc039e5cf33d6fd5f580c192}\label{_ext_flash_8c_a72e273e3dc039e5cf33d6fd5f580c192}} 
+\index{ExtFlash.c@{ExtFlash.c}!BLS\_STATUS\_BIT\_BUSY@{BLS\_STATUS\_BIT\_BUSY}}
+\index{BLS\_STATUS\_BIT\_BUSY@{BLS\_STATUS\_BIT\_BUSY}!ExtFlash.c@{ExtFlash.c}}
+\doxysubsubsection{\texorpdfstring{BLS\_STATUS\_BIT\_BUSY}{BLS\_STATUS\_BIT\_BUSY}}
+{\footnotesize\ttfamily \#define B\+L\+S\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+B\+I\+T\+\_\+\+B\+U\+SY~0x01}
+
+Busy bit of the status register 
+
+Definition at line 86 of file Ext\+Flash.\+c.
+
+\mbox{\Hypertarget{_ext_flash_8c_a68c2011c2976374407da818e4999aa54}\label{_ext_flash_8c_a68c2011c2976374407da818e4999aa54}} 
+\index{ExtFlash.c@{ExtFlash.c}!BLS\_STATUS\_BP\_BM@{BLS\_STATUS\_BP\_BM}}
+\index{BLS\_STATUS\_BP\_BM@{BLS\_STATUS\_BP\_BM}!ExtFlash.c@{ExtFlash.c}}
+\doxysubsubsection{\texorpdfstring{BLS\_STATUS\_BP\_BM}{BLS\_STATUS\_BP\_BM}}
+{\footnotesize\ttfamily \#define B\+L\+S\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+B\+P\+\_\+\+BM~0x0C}
+
+
+
+Definition at line 82 of file Ext\+Flash.\+c.
+
+\mbox{\Hypertarget{_ext_flash_8c_aa7ae8be36f811c4cb0ddab451d20ca09}\label{_ext_flash_8c_aa7ae8be36f811c4cb0ddab451d20ca09}} 
+\index{ExtFlash.c@{ExtFlash.c}!BLS\_STATUS\_SRWD\_BM@{BLS\_STATUS\_SRWD\_BM}}
+\index{BLS\_STATUS\_SRWD\_BM@{BLS\_STATUS\_SRWD\_BM}!ExtFlash.c@{ExtFlash.c}}
+\doxysubsubsection{\texorpdfstring{BLS\_STATUS\_SRWD\_BM}{BLS\_STATUS\_SRWD\_BM}}
+{\footnotesize\ttfamily \#define B\+L\+S\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+S\+R\+W\+D\+\_\+\+BM~0x80}
+
+
+
+Definition at line 81 of file Ext\+Flash.\+c.
+
+\mbox{\Hypertarget{_ext_flash_8c_a5d1d6e28ca13bdc91ba494eba533578d}\label{_ext_flash_8c_a5d1d6e28ca13bdc91ba494eba533578d}} 
+\index{ExtFlash.c@{ExtFlash.c}!BLS\_STATUS\_WEL\_BM@{BLS\_STATUS\_WEL\_BM}}
+\index{BLS\_STATUS\_WEL\_BM@{BLS\_STATUS\_WEL\_BM}!ExtFlash.c@{ExtFlash.c}}
+\doxysubsubsection{\texorpdfstring{BLS\_STATUS\_WEL\_BM}{BLS\_STATUS\_WEL\_BM}}
+{\footnotesize\ttfamily \#define B\+L\+S\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+W\+E\+L\+\_\+\+BM~0x02}
+
+
+
+Definition at line 83 of file Ext\+Flash.\+c.
+
+\mbox{\Hypertarget{_ext_flash_8c_af7364470edc4c9cdeaee96ce740841cc}\label{_ext_flash_8c_af7364470edc4c9cdeaee96ce740841cc}} 
+\index{ExtFlash.c@{ExtFlash.c}!BLS\_STATUS\_WIP\_BM@{BLS\_STATUS\_WIP\_BM}}
+\index{BLS\_STATUS\_WIP\_BM@{BLS\_STATUS\_WIP\_BM}!ExtFlash.c@{ExtFlash.c}}
+\doxysubsubsection{\texorpdfstring{BLS\_STATUS\_WIP\_BM}{BLS\_STATUS\_WIP\_BM}}
+{\footnotesize\ttfamily \#define B\+L\+S\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+W\+I\+P\+\_\+\+BM~0x01}
+
+
+
+Definition at line 84 of file Ext\+Flash.\+c.
+
+\mbox{\Hypertarget{_ext_flash_8c_a0c962fd79877d7e84b7d3db0d8ea494b}\label{_ext_flash_8c_a0c962fd79877d7e84b7d3db0d8ea494b}} 
+\index{ExtFlash.c@{ExtFlash.c}!MF\_MACRONIX@{MF\_MACRONIX}}
+\index{MF\_MACRONIX@{MF\_MACRONIX}!ExtFlash.c@{ExtFlash.c}}
+\doxysubsubsection{\texorpdfstring{MF\_MACRONIX}{MF\_MACRONIX}}
+{\footnotesize\ttfamily \#define M\+F\+\_\+\+M\+A\+C\+R\+O\+N\+IX~0x\+C2}
+
+
+
+Definition at line 93 of file Ext\+Flash.\+c.
+
+\mbox{\Hypertarget{_ext_flash_8c_adb7131115f27056a300e392824c5b2bf}\label{_ext_flash_8c_adb7131115f27056a300e392824c5b2bf}} 
+\index{ExtFlash.c@{ExtFlash.c}!MF\_WINBOND@{MF\_WINBOND}}
+\index{MF\_WINBOND@{MF\_WINBOND}!ExtFlash.c@{ExtFlash.c}}
+\doxysubsubsection{\texorpdfstring{MF\_WINBOND}{MF\_WINBOND}}
+{\footnotesize\ttfamily \#define M\+F\+\_\+\+W\+I\+N\+B\+O\+ND~0x\+EF}
+
+
+
+Definition at line 94 of file Ext\+Flash.\+c.
+
+\mbox{\Hypertarget{_ext_flash_8c_a572cf423a2b50bc49e86db025a9481fb}\label{_ext_flash_8c_a572cf423a2b50bc49e86db025a9481fb}} 
+\index{ExtFlash.c@{ExtFlash.c}!SPI\_BIT\_RATE@{SPI\_BIT\_RATE}}
+\index{SPI\_BIT\_RATE@{SPI\_BIT\_RATE}!ExtFlash.c@{ExtFlash.c}}
+\doxysubsubsection{\texorpdfstring{SPI\_BIT\_RATE}{SPI\_BIT\_RATE}}
+{\footnotesize\ttfamily \#define S\+P\+I\+\_\+\+B\+I\+T\+\_\+\+R\+A\+TE~4000000}
+
+
+
+Definition at line 61 of file Ext\+Flash.\+c.
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{_ext_flash_8c_ad456be39a9a700212437ff438410a594}\label{_ext_flash_8c_ad456be39a9a700212437ff438410a594}} 
+\index{ExtFlash.c@{ExtFlash.c}!ExtFlash\_close@{ExtFlash\_close}}
+\index{ExtFlash\_close@{ExtFlash\_close}!ExtFlash.c@{ExtFlash.c}}
+\doxysubsubsection{\texorpdfstring{ExtFlash\_close()}{ExtFlash\_close()}}
+{\footnotesize\ttfamily void Ext\+Flash\+\_\+close (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Close the storage driver 
+
+Definition at line 422 of file Ext\+Flash.\+c.
+
+\mbox{\Hypertarget{_ext_flash_8c_a3f0495f78fc59522bbd47b3965bfd325}\label{_ext_flash_8c_a3f0495f78fc59522bbd47b3965bfd325}} 
+\index{ExtFlash.c@{ExtFlash.c}!ExtFlash\_erase@{ExtFlash\_erase}}
+\index{ExtFlash\_erase@{ExtFlash\_erase}!ExtFlash.c@{ExtFlash.c}}
+\doxysubsubsection{\texorpdfstring{ExtFlash\_erase()}{ExtFlash\_erase()}}
+{\footnotesize\ttfamily bool Ext\+Flash\+\_\+erase (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{offset,  }\item[{size\+\_\+t}]{length }\end{DoxyParamCaption})}
+
+Erase storage sectors corresponding to the range.
+
+\begin{DoxyReturn}{Returns}
+True when successful. 
+\end{DoxyReturn}
+
+
+Definition at line 541 of file Ext\+Flash.\+c.
+
+\mbox{\Hypertarget{_ext_flash_8c_a30939a5a39e9fbfcd23022c23083b66e}\label{_ext_flash_8c_a30939a5a39e9fbfcd23022c23083b66e}} 
+\index{ExtFlash.c@{ExtFlash.c}!ExtFlash\_info@{ExtFlash\_info}}
+\index{ExtFlash\_info@{ExtFlash\_info}!ExtFlash.c@{ExtFlash.c}}
+\doxysubsubsection{\texorpdfstring{ExtFlash\_info()}{ExtFlash\_info()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_ext_flash_info__t}{Ext\+Flash\+Info\+\_\+t}}$\ast$ Ext\+Flash\+\_\+info (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Get flash information 
+
+Definition at line 201 of file Ext\+Flash.\+c.
+
+\mbox{\Hypertarget{_ext_flash_8c_ad4b1bd8b121baef366934a9815871124}\label{_ext_flash_8c_ad4b1bd8b121baef366934a9815871124}} 
+\index{ExtFlash.c@{ExtFlash.c}!ExtFlash\_open@{ExtFlash\_open}}
+\index{ExtFlash\_open@{ExtFlash\_open}!ExtFlash.c@{ExtFlash.c}}
+\doxysubsubsection{\texorpdfstring{ExtFlash\_open()}{ExtFlash\_open()}}
+{\footnotesize\ttfamily bool Ext\+Flash\+\_\+open (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Initialize storage driver.
+
+\begin{DoxyReturn}{Returns}
+True when successful. 
+\end{DoxyReturn}
+
+
+Definition at line 387 of file Ext\+Flash.\+c.
+
+\mbox{\Hypertarget{_ext_flash_8c_a2d9f04462020d01ac5fdb55418b077b9}\label{_ext_flash_8c_a2d9f04462020d01ac5fdb55418b077b9}} 
+\index{ExtFlash.c@{ExtFlash.c}!ExtFlash\_read@{ExtFlash\_read}}
+\index{ExtFlash\_read@{ExtFlash\_read}!ExtFlash.c@{ExtFlash.c}}
+\doxysubsubsection{\texorpdfstring{ExtFlash\_read()}{ExtFlash\_read()}}
+{\footnotesize\ttfamily bool Ext\+Flash\+\_\+read (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{offset,  }\item[{size\+\_\+t}]{length,  }\item[{uint8\+\_\+t $\ast$}]{buf }\end{DoxyParamCaption})}
+
+Read storage content
+
+\begin{DoxyReturn}{Returns}
+True when successful. 
+\end{DoxyReturn}
+
+
+Definition at line 442 of file Ext\+Flash.\+c.
+
+\mbox{\Hypertarget{_ext_flash_8c_a4f1fb7e68cb15dac521126d472edd81b}\label{_ext_flash_8c_a4f1fb7e68cb15dac521126d472edd81b}} 
+\index{ExtFlash.c@{ExtFlash.c}!ExtFlash\_test@{ExtFlash\_test}}
+\index{ExtFlash\_test@{ExtFlash\_test}!ExtFlash.c@{ExtFlash.c}}
+\doxysubsubsection{\texorpdfstring{ExtFlash\_test()}{ExtFlash\_test()}}
+{\footnotesize\ttfamily bool Ext\+Flash\+\_\+test (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Test the flash (power on self-\/test)
+
+\begin{DoxyReturn}{Returns}
+True when successful. 
+\end{DoxyReturn}
+
+
+Definition at line 594 of file Ext\+Flash.\+c.
+
+\mbox{\Hypertarget{_ext_flash_8c_af4e3c0fef71d31bb67c44979abab1feb}\label{_ext_flash_8c_af4e3c0fef71d31bb67c44979abab1feb}} 
+\index{ExtFlash.c@{ExtFlash.c}!ExtFlash\_write@{ExtFlash\_write}}
+\index{ExtFlash\_write@{ExtFlash\_write}!ExtFlash.c@{ExtFlash.c}}
+\doxysubsubsection{\texorpdfstring{ExtFlash\_write()}{ExtFlash\_write()}}
+{\footnotesize\ttfamily bool Ext\+Flash\+\_\+write (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{offset,  }\item[{size\+\_\+t}]{length,  }\item[{const uint8\+\_\+t $\ast$}]{buf }\end{DoxyParamCaption})}
+
+Write to storage sectors.
+
+\begin{DoxyReturn}{Returns}
+True when successful. 
+\end{DoxyReturn}
+
+
+Definition at line 478 of file Ext\+Flash.\+c.
+

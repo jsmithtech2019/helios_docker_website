@@ -1,0 +1,72 @@
+\hypertarget{group___g_a_t_t___b_m___a_p_i}{}\doxysection{G\+A\+TT Buffer Management A\+PI Functions}
+\label{group___g_a_t_t___b_m___a_p_i}\index{GATT Buffer Management API Functions@{GATT Buffer Management API Functions}}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void $\ast$ \mbox{\hyperlink{group___g_a_t_t___b_m___a_p_i_gaaf21b84a128832b1f4b5ef0638580d9b}{G\+A\+T\+T\+\_\+bm\+\_\+alloc}} (uint16 conn\+Handle, uint8 \mbox{\hyperlink{icall__apimsg_8h_a2f91dfde180796f5efbaf6db19ac9c09}{opcode}}, uint16 size, uint16 $\ast$p\+Size\+Alloc)
+\begin{DoxyCompactList}\small\item\em G\+A\+TT implementation of the allocator functionality. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___g_a_t_t___b_m___a_p_i_ga2aa77ddaedaf91c5bea41697716586eb}{G\+A\+T\+T\+\_\+bm\+\_\+free}} (\mbox{\hyperlink{uniongatt_msg__t}{gatt\+Msg\+\_\+t}} $\ast$p\+Msg, uint8 \mbox{\hyperlink{icall__apimsg_8h_a2f91dfde180796f5efbaf6db19ac9c09}{opcode}})
+\begin{DoxyCompactList}\small\item\em G\+A\+TT implementation of the de-\/allocator functionality. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{group___g_a_t_t___b_m___a_p_i_gaaf21b84a128832b1f4b5ef0638580d9b}\label{group___g_a_t_t___b_m___a_p_i_gaaf21b84a128832b1f4b5ef0638580d9b}} 
+\index{GATT Buffer Management API Functions@{GATT Buffer Management API Functions}!GATT\_bm\_alloc@{GATT\_bm\_alloc}}
+\index{GATT\_bm\_alloc@{GATT\_bm\_alloc}!GATT Buffer Management API Functions@{GATT Buffer Management API Functions}}
+\doxysubsubsection{\texorpdfstring{GATT\_bm\_alloc()}{GATT\_bm\_alloc()}}
+{\footnotesize\ttfamily void$\ast$ G\+A\+T\+T\+\_\+bm\+\_\+alloc (\begin{DoxyParamCaption}\item[{uint16}]{conn\+Handle,  }\item[{uint8}]{opcode,  }\item[{uint16}]{size,  }\item[{uint16 $\ast$}]{p\+Size\+Alloc }\end{DoxyParamCaption})}
+
+
+
+G\+A\+TT implementation of the allocator functionality. 
+
+\begin{DoxyVerb}     Note: This function should only be called by GATT and
+           the upper layer protocol/application.
+\end{DoxyVerb}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em conn\+Handle} & -\/ connection that message is to be sent on. \\
+\hline
+{\em opcode} & -\/ opcode of message that buffer to be allocated for. \\
+\hline
+{\em size} & -\/ number of bytes to allocate from the heap. \\
+\hline
+{\em p\+Size\+Alloc} & -\/ number of bytes allocated for the caller from the heap.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+pointer to the heap allocation; N\+U\+LL if error or failure. 
+\end{DoxyReturn}
+
+
+Definition at line 3249 of file icall\+\_\+api.\+c.
+
+\mbox{\Hypertarget{group___g_a_t_t___b_m___a_p_i_ga2aa77ddaedaf91c5bea41697716586eb}\label{group___g_a_t_t___b_m___a_p_i_ga2aa77ddaedaf91c5bea41697716586eb}} 
+\index{GATT Buffer Management API Functions@{GATT Buffer Management API Functions}!GATT\_bm\_free@{GATT\_bm\_free}}
+\index{GATT\_bm\_free@{GATT\_bm\_free}!GATT Buffer Management API Functions@{GATT Buffer Management API Functions}}
+\doxysubsubsection{\texorpdfstring{GATT\_bm\_free()}{GATT\_bm\_free()}}
+{\footnotesize\ttfamily void G\+A\+T\+T\+\_\+bm\+\_\+free (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{uniongatt_msg__t}{gatt\+Msg\+\_\+t}} $\ast$}]{p\+Msg,  }\item[{uint8}]{opcode }\end{DoxyParamCaption})}
+
+
+
+G\+A\+TT implementation of the de-\/allocator functionality. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Msg} & -\/ pointer to G\+A\+TT message containing the memory to free. \\
+\hline
+{\em opcode} & -\/ opcode of the message\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+
+
+Definition at line 3291 of file icall\+\_\+api.\+c.
+

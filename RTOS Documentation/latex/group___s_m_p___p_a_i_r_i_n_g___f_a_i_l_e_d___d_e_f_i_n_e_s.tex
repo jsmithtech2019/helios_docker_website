@@ -1,0 +1,203 @@
+\hypertarget{group___s_m_p___p_a_i_r_i_n_g___f_a_i_l_e_d___d_e_f_i_n_e_s}{}\doxysection{Pairing failure status values}
+\label{group___s_m_p___p_a_i_r_i_n_g___f_a_i_l_e_d___d_e_f_i_n_e_s}\index{Pairing failure status values@{Pairing failure status values}}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group___s_m_p___p_a_i_r_i_n_g___f_a_i_l_e_d___d_e_f_i_n_e_s_ga235429663c8e55eb3f5315939025e5ad}{S\+M\+P\+\_\+\+P\+A\+I\+R\+I\+N\+G\+\_\+\+F\+A\+I\+L\+E\+D\+\_\+\+P\+A\+S\+S\+K\+E\+Y\+\_\+\+E\+N\+T\+R\+Y\+\_\+\+F\+A\+I\+L\+ED}}~0x01
+\begin{DoxyCompactList}\small\item\em The user input of the passkey failed, for example, the user cancelled the operation. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___s_m_p___p_a_i_r_i_n_g___f_a_i_l_e_d___d_e_f_i_n_e_s_ga204b420f6240c4f5aa4bc26c12f15526}{S\+M\+P\+\_\+\+P\+A\+I\+R\+I\+N\+G\+\_\+\+F\+A\+I\+L\+E\+D\+\_\+\+O\+O\+B\+\_\+\+N\+O\+T\+\_\+\+A\+V\+A\+IL}}~0x02
+\begin{DoxyCompactList}\small\item\em The O\+OB data is not available. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___s_m_p___p_a_i_r_i_n_g___f_a_i_l_e_d___d_e_f_i_n_e_s_gac79a86f03059498a4243fd371a57f4e3}{S\+M\+P\+\_\+\+P\+A\+I\+R\+I\+N\+G\+\_\+\+F\+A\+I\+L\+E\+D\+\_\+\+A\+U\+T\+H\+\_\+\+R\+EQ}}~0x03
+\begin{DoxyCompactList}\small\item\em The pairing procedure can\textquotesingle{}t be performed as authentication requirements can\textquotesingle{}t be met due to IO capabilities of one or both devices. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___s_m_p___p_a_i_r_i_n_g___f_a_i_l_e_d___d_e_f_i_n_e_s_ga223cbb4d743b5eec897f54affc338a86}{S\+M\+P\+\_\+\+P\+A\+I\+R\+I\+N\+G\+\_\+\+F\+A\+I\+L\+E\+D\+\_\+\+C\+O\+N\+F\+I\+R\+M\+\_\+\+V\+A\+L\+UE}}~0x04
+\begin{DoxyCompactList}\small\item\em The confirm value doesn\textquotesingle{}t match the calculated compare value. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___s_m_p___p_a_i_r_i_n_g___f_a_i_l_e_d___d_e_f_i_n_e_s_ga1fa58661e49bedada84b41d767507ee0}{S\+M\+P\+\_\+\+P\+A\+I\+R\+I\+N\+G\+\_\+\+F\+A\+I\+L\+E\+D\+\_\+\+N\+O\+T\+\_\+\+S\+U\+P\+P\+O\+R\+T\+ED}}~0x05
+\begin{DoxyCompactList}\small\item\em Pairing isn\textquotesingle{}t supported by the device. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___s_m_p___p_a_i_r_i_n_g___f_a_i_l_e_d___d_e_f_i_n_e_s_gab62afc95d6bab6c5a470120f4e2540e7}{S\+M\+P\+\_\+\+P\+A\+I\+R\+I\+N\+G\+\_\+\+F\+A\+I\+L\+E\+D\+\_\+\+E\+N\+C\+\_\+\+K\+E\+Y\+\_\+\+S\+I\+ZE}}~0x06
+\begin{DoxyCompactList}\small\item\em The resultant encryption key size is insufficient for the security requirements of this device. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___s_m_p___p_a_i_r_i_n_g___f_a_i_l_e_d___d_e_f_i_n_e_s_gad1e0c9c7ba3ac1efed649661826e3417}{S\+M\+P\+\_\+\+P\+A\+I\+R\+I\+N\+G\+\_\+\+F\+A\+I\+L\+E\+D\+\_\+\+C\+M\+D\+\_\+\+N\+O\+T\+\_\+\+S\+U\+P\+P\+O\+R\+T\+ED}}~0x07
+\begin{DoxyCompactList}\small\item\em The S\+MP command received is not supported on this device. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___s_m_p___p_a_i_r_i_n_g___f_a_i_l_e_d___d_e_f_i_n_e_s_gad8302d6515f6e6bb2fad57e18af34400}{S\+M\+P\+\_\+\+P\+A\+I\+R\+I\+N\+G\+\_\+\+F\+A\+I\+L\+E\+D\+\_\+\+U\+N\+S\+P\+E\+C\+I\+F\+I\+ED}}~0x08
+\begin{DoxyCompactList}\small\item\em Pairing failed due to an unspecified reason. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___s_m_p___p_a_i_r_i_n_g___f_a_i_l_e_d___d_e_f_i_n_e_s_gaadbe7702b60890baabc3f80cac13ad8d}{S\+M\+P\+\_\+\+P\+A\+I\+R\+I\+N\+G\+\_\+\+F\+A\+I\+L\+E\+D\+\_\+\+R\+E\+P\+E\+A\+T\+E\+D\+\_\+\+A\+T\+T\+E\+M\+P\+TS}}~0x09
+\begin{DoxyCompactList}\small\item\em Pairing or authentication procedure is disallowed because too little time has elapsed since the last pairing request or security request. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___s_m_p___p_a_i_r_i_n_g___f_a_i_l_e_d___d_e_f_i_n_e_s_ga7a62bd0ad6066c95300725db82f5afda}{S\+M\+P\+\_\+\+P\+A\+I\+R\+I\+N\+G\+\_\+\+F\+A\+I\+L\+E\+D\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+P\+A\+R\+A\+M\+E\+T\+E\+RS}}~0x0A
+\begin{DoxyCompactList}\small\item\em Indicates that the command length is invalid or that a parameter is outside of the specified range. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___s_m_p___p_a_i_r_i_n_g___f_a_i_l_e_d___d_e_f_i_n_e_s_ga5a37258c6101c548adf98a648801b851}{S\+M\+P\+\_\+\+P\+A\+I\+R\+I\+N\+G\+\_\+\+F\+A\+I\+L\+E\+D\+\_\+\+D\+H\+K\+E\+Y\+\_\+\+C\+H\+E\+C\+K\+\_\+\+F\+A\+I\+L\+ED}}~0x0B
+\begin{DoxyCompactList}\small\item\em Indicates to the remote device that the D\+H\+Key Check value received does not match the one calculated by the local device. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___s_m_p___p_a_i_r_i_n_g___f_a_i_l_e_d___d_e_f_i_n_e_s_gacf407a8a3a6fb0f1c65d3d9fcf875e06}{S\+M\+P\+\_\+\+P\+A\+I\+R\+I\+N\+G\+\_\+\+F\+A\+I\+L\+E\+D\+\_\+\+N\+U\+M\+\_\+\+C\+O\+M\+P\+A\+R\+I\+S\+O\+N\+\_\+\+F\+A\+I\+L\+ED}}~0x0C
+\begin{DoxyCompactList}\small\item\em Indicates that the confirm value in the numeric comparison protocol do not match. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{group___s_m_p___p_a_i_r_i_n_g___f_a_i_l_e_d___d_e_f_i_n_e_s_gac79a86f03059498a4243fd371a57f4e3}\label{group___s_m_p___p_a_i_r_i_n_g___f_a_i_l_e_d___d_e_f_i_n_e_s_gac79a86f03059498a4243fd371a57f4e3}} 
+\index{Pairing failure status values@{Pairing failure status values}!SMP\_PAIRING\_FAILED\_AUTH\_REQ@{SMP\_PAIRING\_FAILED\_AUTH\_REQ}}
+\index{SMP\_PAIRING\_FAILED\_AUTH\_REQ@{SMP\_PAIRING\_FAILED\_AUTH\_REQ}!Pairing failure status values@{Pairing failure status values}}
+\doxysubsubsection{\texorpdfstring{SMP\_PAIRING\_FAILED\_AUTH\_REQ}{SMP\_PAIRING\_FAILED\_AUTH\_REQ}}
+{\footnotesize\ttfamily \#define S\+M\+P\+\_\+\+P\+A\+I\+R\+I\+N\+G\+\_\+\+F\+A\+I\+L\+E\+D\+\_\+\+A\+U\+T\+H\+\_\+\+R\+EQ~0x03}
+
+
+
+The pairing procedure can\textquotesingle{}t be performed as authentication requirements can\textquotesingle{}t be met due to IO capabilities of one or both devices. 
+
+
+
+Definition at line 174 of file gapbondmgr.\+h.
+
+\mbox{\Hypertarget{group___s_m_p___p_a_i_r_i_n_g___f_a_i_l_e_d___d_e_f_i_n_e_s_gad1e0c9c7ba3ac1efed649661826e3417}\label{group___s_m_p___p_a_i_r_i_n_g___f_a_i_l_e_d___d_e_f_i_n_e_s_gad1e0c9c7ba3ac1efed649661826e3417}} 
+\index{Pairing failure status values@{Pairing failure status values}!SMP\_PAIRING\_FAILED\_CMD\_NOT\_SUPPORTED@{SMP\_PAIRING\_FAILED\_CMD\_NOT\_SUPPORTED}}
+\index{SMP\_PAIRING\_FAILED\_CMD\_NOT\_SUPPORTED@{SMP\_PAIRING\_FAILED\_CMD\_NOT\_SUPPORTED}!Pairing failure status values@{Pairing failure status values}}
+\doxysubsubsection{\texorpdfstring{SMP\_PAIRING\_FAILED\_CMD\_NOT\_SUPPORTED}{SMP\_PAIRING\_FAILED\_CMD\_NOT\_SUPPORTED}}
+{\footnotesize\ttfamily \#define S\+M\+P\+\_\+\+P\+A\+I\+R\+I\+N\+G\+\_\+\+F\+A\+I\+L\+E\+D\+\_\+\+C\+M\+D\+\_\+\+N\+O\+T\+\_\+\+S\+U\+P\+P\+O\+R\+T\+ED~0x07}
+
+
+
+The S\+MP command received is not supported on this device. 
+
+
+
+Definition at line 178 of file gapbondmgr.\+h.
+
+\mbox{\Hypertarget{group___s_m_p___p_a_i_r_i_n_g___f_a_i_l_e_d___d_e_f_i_n_e_s_ga223cbb4d743b5eec897f54affc338a86}\label{group___s_m_p___p_a_i_r_i_n_g___f_a_i_l_e_d___d_e_f_i_n_e_s_ga223cbb4d743b5eec897f54affc338a86}} 
+\index{Pairing failure status values@{Pairing failure status values}!SMP\_PAIRING\_FAILED\_CONFIRM\_VALUE@{SMP\_PAIRING\_FAILED\_CONFIRM\_VALUE}}
+\index{SMP\_PAIRING\_FAILED\_CONFIRM\_VALUE@{SMP\_PAIRING\_FAILED\_CONFIRM\_VALUE}!Pairing failure status values@{Pairing failure status values}}
+\doxysubsubsection{\texorpdfstring{SMP\_PAIRING\_FAILED\_CONFIRM\_VALUE}{SMP\_PAIRING\_FAILED\_CONFIRM\_VALUE}}
+{\footnotesize\ttfamily \#define S\+M\+P\+\_\+\+P\+A\+I\+R\+I\+N\+G\+\_\+\+F\+A\+I\+L\+E\+D\+\_\+\+C\+O\+N\+F\+I\+R\+M\+\_\+\+V\+A\+L\+UE~0x04}
+
+
+
+The confirm value doesn\textquotesingle{}t match the calculated compare value. 
+
+
+
+Definition at line 175 of file gapbondmgr.\+h.
+
+\mbox{\Hypertarget{group___s_m_p___p_a_i_r_i_n_g___f_a_i_l_e_d___d_e_f_i_n_e_s_ga5a37258c6101c548adf98a648801b851}\label{group___s_m_p___p_a_i_r_i_n_g___f_a_i_l_e_d___d_e_f_i_n_e_s_ga5a37258c6101c548adf98a648801b851}} 
+\index{Pairing failure status values@{Pairing failure status values}!SMP\_PAIRING\_FAILED\_DHKEY\_CHECK\_FAILED@{SMP\_PAIRING\_FAILED\_DHKEY\_CHECK\_FAILED}}
+\index{SMP\_PAIRING\_FAILED\_DHKEY\_CHECK\_FAILED@{SMP\_PAIRING\_FAILED\_DHKEY\_CHECK\_FAILED}!Pairing failure status values@{Pairing failure status values}}
+\doxysubsubsection{\texorpdfstring{SMP\_PAIRING\_FAILED\_DHKEY\_CHECK\_FAILED}{SMP\_PAIRING\_FAILED\_DHKEY\_CHECK\_FAILED}}
+{\footnotesize\ttfamily \#define S\+M\+P\+\_\+\+P\+A\+I\+R\+I\+N\+G\+\_\+\+F\+A\+I\+L\+E\+D\+\_\+\+D\+H\+K\+E\+Y\+\_\+\+C\+H\+E\+C\+K\+\_\+\+F\+A\+I\+L\+ED~0x0B}
+
+
+
+Indicates to the remote device that the D\+H\+Key Check value received does not match the one calculated by the local device. 
+
+
+
+Definition at line 182 of file gapbondmgr.\+h.
+
+\mbox{\Hypertarget{group___s_m_p___p_a_i_r_i_n_g___f_a_i_l_e_d___d_e_f_i_n_e_s_gab62afc95d6bab6c5a470120f4e2540e7}\label{group___s_m_p___p_a_i_r_i_n_g___f_a_i_l_e_d___d_e_f_i_n_e_s_gab62afc95d6bab6c5a470120f4e2540e7}} 
+\index{Pairing failure status values@{Pairing failure status values}!SMP\_PAIRING\_FAILED\_ENC\_KEY\_SIZE@{SMP\_PAIRING\_FAILED\_ENC\_KEY\_SIZE}}
+\index{SMP\_PAIRING\_FAILED\_ENC\_KEY\_SIZE@{SMP\_PAIRING\_FAILED\_ENC\_KEY\_SIZE}!Pairing failure status values@{Pairing failure status values}}
+\doxysubsubsection{\texorpdfstring{SMP\_PAIRING\_FAILED\_ENC\_KEY\_SIZE}{SMP\_PAIRING\_FAILED\_ENC\_KEY\_SIZE}}
+{\footnotesize\ttfamily \#define S\+M\+P\+\_\+\+P\+A\+I\+R\+I\+N\+G\+\_\+\+F\+A\+I\+L\+E\+D\+\_\+\+E\+N\+C\+\_\+\+K\+E\+Y\+\_\+\+S\+I\+ZE~0x06}
+
+
+
+The resultant encryption key size is insufficient for the security requirements of this device. 
+
+
+
+Definition at line 177 of file gapbondmgr.\+h.
+
+\mbox{\Hypertarget{group___s_m_p___p_a_i_r_i_n_g___f_a_i_l_e_d___d_e_f_i_n_e_s_ga7a62bd0ad6066c95300725db82f5afda}\label{group___s_m_p___p_a_i_r_i_n_g___f_a_i_l_e_d___d_e_f_i_n_e_s_ga7a62bd0ad6066c95300725db82f5afda}} 
+\index{Pairing failure status values@{Pairing failure status values}!SMP\_PAIRING\_FAILED\_INVALID\_PARAMETERS@{SMP\_PAIRING\_FAILED\_INVALID\_PARAMETERS}}
+\index{SMP\_PAIRING\_FAILED\_INVALID\_PARAMETERS@{SMP\_PAIRING\_FAILED\_INVALID\_PARAMETERS}!Pairing failure status values@{Pairing failure status values}}
+\doxysubsubsection{\texorpdfstring{SMP\_PAIRING\_FAILED\_INVALID\_PARAMETERS}{SMP\_PAIRING\_FAILED\_INVALID\_PARAMETERS}}
+{\footnotesize\ttfamily \#define S\+M\+P\+\_\+\+P\+A\+I\+R\+I\+N\+G\+\_\+\+F\+A\+I\+L\+E\+D\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+P\+A\+R\+A\+M\+E\+T\+E\+RS~0x0A}
+
+
+
+Indicates that the command length is invalid or that a parameter is outside of the specified range. 
+
+
+
+Definition at line 181 of file gapbondmgr.\+h.
+
+\mbox{\Hypertarget{group___s_m_p___p_a_i_r_i_n_g___f_a_i_l_e_d___d_e_f_i_n_e_s_ga1fa58661e49bedada84b41d767507ee0}\label{group___s_m_p___p_a_i_r_i_n_g___f_a_i_l_e_d___d_e_f_i_n_e_s_ga1fa58661e49bedada84b41d767507ee0}} 
+\index{Pairing failure status values@{Pairing failure status values}!SMP\_PAIRING\_FAILED\_NOT\_SUPPORTED@{SMP\_PAIRING\_FAILED\_NOT\_SUPPORTED}}
+\index{SMP\_PAIRING\_FAILED\_NOT\_SUPPORTED@{SMP\_PAIRING\_FAILED\_NOT\_SUPPORTED}!Pairing failure status values@{Pairing failure status values}}
+\doxysubsubsection{\texorpdfstring{SMP\_PAIRING\_FAILED\_NOT\_SUPPORTED}{SMP\_PAIRING\_FAILED\_NOT\_SUPPORTED}}
+{\footnotesize\ttfamily \#define S\+M\+P\+\_\+\+P\+A\+I\+R\+I\+N\+G\+\_\+\+F\+A\+I\+L\+E\+D\+\_\+\+N\+O\+T\+\_\+\+S\+U\+P\+P\+O\+R\+T\+ED~0x05}
+
+
+
+Pairing isn\textquotesingle{}t supported by the device. 
+
+
+
+Definition at line 176 of file gapbondmgr.\+h.
+
+\mbox{\Hypertarget{group___s_m_p___p_a_i_r_i_n_g___f_a_i_l_e_d___d_e_f_i_n_e_s_gacf407a8a3a6fb0f1c65d3d9fcf875e06}\label{group___s_m_p___p_a_i_r_i_n_g___f_a_i_l_e_d___d_e_f_i_n_e_s_gacf407a8a3a6fb0f1c65d3d9fcf875e06}} 
+\index{Pairing failure status values@{Pairing failure status values}!SMP\_PAIRING\_FAILED\_NUM\_COMPARISON\_FAILED@{SMP\_PAIRING\_FAILED\_NUM\_COMPARISON\_FAILED}}
+\index{SMP\_PAIRING\_FAILED\_NUM\_COMPARISON\_FAILED@{SMP\_PAIRING\_FAILED\_NUM\_COMPARISON\_FAILED}!Pairing failure status values@{Pairing failure status values}}
+\doxysubsubsection{\texorpdfstring{SMP\_PAIRING\_FAILED\_NUM\_COMPARISON\_FAILED}{SMP\_PAIRING\_FAILED\_NUM\_COMPARISON\_FAILED}}
+{\footnotesize\ttfamily \#define S\+M\+P\+\_\+\+P\+A\+I\+R\+I\+N\+G\+\_\+\+F\+A\+I\+L\+E\+D\+\_\+\+N\+U\+M\+\_\+\+C\+O\+M\+P\+A\+R\+I\+S\+O\+N\+\_\+\+F\+A\+I\+L\+ED~0x0C}
+
+
+
+Indicates that the confirm value in the numeric comparison protocol do not match. 
+
+
+
+Definition at line 183 of file gapbondmgr.\+h.
+
+\mbox{\Hypertarget{group___s_m_p___p_a_i_r_i_n_g___f_a_i_l_e_d___d_e_f_i_n_e_s_ga204b420f6240c4f5aa4bc26c12f15526}\label{group___s_m_p___p_a_i_r_i_n_g___f_a_i_l_e_d___d_e_f_i_n_e_s_ga204b420f6240c4f5aa4bc26c12f15526}} 
+\index{Pairing failure status values@{Pairing failure status values}!SMP\_PAIRING\_FAILED\_OOB\_NOT\_AVAIL@{SMP\_PAIRING\_FAILED\_OOB\_NOT\_AVAIL}}
+\index{SMP\_PAIRING\_FAILED\_OOB\_NOT\_AVAIL@{SMP\_PAIRING\_FAILED\_OOB\_NOT\_AVAIL}!Pairing failure status values@{Pairing failure status values}}
+\doxysubsubsection{\texorpdfstring{SMP\_PAIRING\_FAILED\_OOB\_NOT\_AVAIL}{SMP\_PAIRING\_FAILED\_OOB\_NOT\_AVAIL}}
+{\footnotesize\ttfamily \#define S\+M\+P\+\_\+\+P\+A\+I\+R\+I\+N\+G\+\_\+\+F\+A\+I\+L\+E\+D\+\_\+\+O\+O\+B\+\_\+\+N\+O\+T\+\_\+\+A\+V\+A\+IL~0x02}
+
+
+
+The O\+OB data is not available. 
+
+
+
+Definition at line 173 of file gapbondmgr.\+h.
+
+\mbox{\Hypertarget{group___s_m_p___p_a_i_r_i_n_g___f_a_i_l_e_d___d_e_f_i_n_e_s_ga235429663c8e55eb3f5315939025e5ad}\label{group___s_m_p___p_a_i_r_i_n_g___f_a_i_l_e_d___d_e_f_i_n_e_s_ga235429663c8e55eb3f5315939025e5ad}} 
+\index{Pairing failure status values@{Pairing failure status values}!SMP\_PAIRING\_FAILED\_PASSKEY\_ENTRY\_FAILED@{SMP\_PAIRING\_FAILED\_PASSKEY\_ENTRY\_FAILED}}
+\index{SMP\_PAIRING\_FAILED\_PASSKEY\_ENTRY\_FAILED@{SMP\_PAIRING\_FAILED\_PASSKEY\_ENTRY\_FAILED}!Pairing failure status values@{Pairing failure status values}}
+\doxysubsubsection{\texorpdfstring{SMP\_PAIRING\_FAILED\_PASSKEY\_ENTRY\_FAILED}{SMP\_PAIRING\_FAILED\_PASSKEY\_ENTRY\_FAILED}}
+{\footnotesize\ttfamily \#define S\+M\+P\+\_\+\+P\+A\+I\+R\+I\+N\+G\+\_\+\+F\+A\+I\+L\+E\+D\+\_\+\+P\+A\+S\+S\+K\+E\+Y\+\_\+\+E\+N\+T\+R\+Y\+\_\+\+F\+A\+I\+L\+ED~0x01}
+
+
+
+The user input of the passkey failed, for example, the user cancelled the operation. 
+
+
+
+Definition at line 172 of file gapbondmgr.\+h.
+
+\mbox{\Hypertarget{group___s_m_p___p_a_i_r_i_n_g___f_a_i_l_e_d___d_e_f_i_n_e_s_gaadbe7702b60890baabc3f80cac13ad8d}\label{group___s_m_p___p_a_i_r_i_n_g___f_a_i_l_e_d___d_e_f_i_n_e_s_gaadbe7702b60890baabc3f80cac13ad8d}} 
+\index{Pairing failure status values@{Pairing failure status values}!SMP\_PAIRING\_FAILED\_REPEATED\_ATTEMPTS@{SMP\_PAIRING\_FAILED\_REPEATED\_ATTEMPTS}}
+\index{SMP\_PAIRING\_FAILED\_REPEATED\_ATTEMPTS@{SMP\_PAIRING\_FAILED\_REPEATED\_ATTEMPTS}!Pairing failure status values@{Pairing failure status values}}
+\doxysubsubsection{\texorpdfstring{SMP\_PAIRING\_FAILED\_REPEATED\_ATTEMPTS}{SMP\_PAIRING\_FAILED\_REPEATED\_ATTEMPTS}}
+{\footnotesize\ttfamily \#define S\+M\+P\+\_\+\+P\+A\+I\+R\+I\+N\+G\+\_\+\+F\+A\+I\+L\+E\+D\+\_\+\+R\+E\+P\+E\+A\+T\+E\+D\+\_\+\+A\+T\+T\+E\+M\+P\+TS~0x09}
+
+
+
+Pairing or authentication procedure is disallowed because too little time has elapsed since the last pairing request or security request. 
+
+
+
+Definition at line 180 of file gapbondmgr.\+h.
+
+\mbox{\Hypertarget{group___s_m_p___p_a_i_r_i_n_g___f_a_i_l_e_d___d_e_f_i_n_e_s_gad8302d6515f6e6bb2fad57e18af34400}\label{group___s_m_p___p_a_i_r_i_n_g___f_a_i_l_e_d___d_e_f_i_n_e_s_gad8302d6515f6e6bb2fad57e18af34400}} 
+\index{Pairing failure status values@{Pairing failure status values}!SMP\_PAIRING\_FAILED\_UNSPECIFIED@{SMP\_PAIRING\_FAILED\_UNSPECIFIED}}
+\index{SMP\_PAIRING\_FAILED\_UNSPECIFIED@{SMP\_PAIRING\_FAILED\_UNSPECIFIED}!Pairing failure status values@{Pairing failure status values}}
+\doxysubsubsection{\texorpdfstring{SMP\_PAIRING\_FAILED\_UNSPECIFIED}{SMP\_PAIRING\_FAILED\_UNSPECIFIED}}
+{\footnotesize\ttfamily \#define S\+M\+P\+\_\+\+P\+A\+I\+R\+I\+N\+G\+\_\+\+F\+A\+I\+L\+E\+D\+\_\+\+U\+N\+S\+P\+E\+C\+I\+F\+I\+ED~0x08}
+
+
+
+Pairing failed due to an unspecified reason. 
+
+
+
+Definition at line 179 of file gapbondmgr.\+h.
+

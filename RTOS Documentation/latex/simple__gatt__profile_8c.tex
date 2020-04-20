@@ -1,0 +1,232 @@
+\hypertarget{simple__gatt__profile_8c}{}\doxysection{P\+R\+O\+F\+I\+L\+E\+S/simple\+\_\+gatt\+\_\+profile.c File Reference}
+\label{simple__gatt__profile_8c}\index{PROFILES/simple\_gatt\_profile.c@{PROFILES/simple\_gatt\_profile.c}}
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}bcomdef.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}osal.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}linkdb.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}att.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}gatt.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}gatt\+\_\+uuid.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}gattservapp.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}gapbondmgr.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}simple\+\_\+gatt\+\_\+profile.\+h\char`\"{}}\newline
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{simple__gatt__profile_8c_ad0f9f33898bc2d93f9e5ea246f811cb7}{S\+E\+R\+V\+A\+P\+P\+\_\+\+N\+U\+M\+\_\+\+A\+T\+T\+R\+\_\+\+S\+U\+P\+P\+O\+R\+T\+ED}}~17
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+b\+Status\+\_\+t \mbox{\hyperlink{simple__gatt__profile_8c_a47e0bfe23b1d44f7803b8beebf2aa7c2}{Simple\+Profile\+\_\+\+Add\+Service}} (uint32 services)
+\item 
+b\+Status\+\_\+t \mbox{\hyperlink{simple__gatt__profile_8c_ab7a920d5c8a0f1eaef199fa3136d0853}{Simple\+Profile\+\_\+\+Register\+App\+C\+Bs}} (\mbox{\hyperlink{structsimple_profile_c_bs__t}{simple\+Profile\+C\+Bs\+\_\+t}} $\ast$app\+Callbacks)
+\item 
+b\+Status\+\_\+t \mbox{\hyperlink{simple__gatt__profile_8c_a0511130883180d2101d3e1c0f33a2611}{Simple\+Profile\+\_\+\+Set\+Parameter}} (uint8 param, uint8 \mbox{\hyperlink{icall__apimsg_8h_a8ccac76f35f79d74917e1c5dd6f69fea}{len}}, void $\ast$value)
+\item 
+b\+Status\+\_\+t \mbox{\hyperlink{simple__gatt__profile_8c_ad5db30f0ef90feb808b44bea29612e90}{Simple\+Profile\+\_\+\+Get\+Parameter}} (uint8 param, void $\ast$value)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+C\+O\+N\+ST uint8 \mbox{\hyperlink{simple__gatt__profile_8c_a1ff1dad1893bde8bfb1d027028787273}{simple\+Profile\+Serv\+U\+U\+ID}} \mbox{[}A\+T\+T\+\_\+\+B\+T\+\_\+\+U\+U\+I\+D\+\_\+\+S\+I\+ZE\mbox{]}
+\item 
+C\+O\+N\+ST uint8 \mbox{\hyperlink{simple__gatt__profile_8c_adf6bd562a568305b8de01ce536e17c2e}{simple\+Profilechar1\+U\+U\+ID}} \mbox{[}A\+T\+T\+\_\+\+B\+T\+\_\+\+U\+U\+I\+D\+\_\+\+S\+I\+ZE\mbox{]}
+\item 
+C\+O\+N\+ST uint8 \mbox{\hyperlink{simple__gatt__profile_8c_a24ebada17441ec1fd57ed3f94788e3a8}{simple\+Profilechar2\+U\+U\+ID}} \mbox{[}A\+T\+T\+\_\+\+B\+T\+\_\+\+U\+U\+I\+D\+\_\+\+S\+I\+ZE\mbox{]}
+\item 
+C\+O\+N\+ST uint8 \mbox{\hyperlink{simple__gatt__profile_8c_a38368edaaed16e1efea310ae116ba0a3}{simple\+Profilechar3\+U\+U\+ID}} \mbox{[}A\+T\+T\+\_\+\+B\+T\+\_\+\+U\+U\+I\+D\+\_\+\+S\+I\+ZE\mbox{]}
+\item 
+C\+O\+N\+ST uint8 \mbox{\hyperlink{simple__gatt__profile_8c_aac596ccea16ce3e24483e3e955b5943a}{simple\+Profilechar4\+U\+U\+ID}} \mbox{[}A\+T\+T\+\_\+\+B\+T\+\_\+\+U\+U\+I\+D\+\_\+\+S\+I\+ZE\mbox{]}
+\item 
+C\+O\+N\+ST uint8 \mbox{\hyperlink{simple__gatt__profile_8c_adb6e344d0a20a98fbc5857f35aec7538}{simple\+Profilechar5\+U\+U\+ID}} \mbox{[}A\+T\+T\+\_\+\+B\+T\+\_\+\+U\+U\+I\+D\+\_\+\+S\+I\+ZE\mbox{]}
+\item 
+C\+O\+N\+ST gatt\+Service\+C\+Bs\+\_\+t \mbox{\hyperlink{simple__gatt__profile_8c_a0424ff44df10a70bacab05ad643208c0}{simple\+Profile\+C\+Bs}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{simple__gatt__profile_8c_ad0f9f33898bc2d93f9e5ea246f811cb7}\label{simple__gatt__profile_8c_ad0f9f33898bc2d93f9e5ea246f811cb7}} 
+\index{simple\_gatt\_profile.c@{simple\_gatt\_profile.c}!SERVAPP\_NUM\_ATTR\_SUPPORTED@{SERVAPP\_NUM\_ATTR\_SUPPORTED}}
+\index{SERVAPP\_NUM\_ATTR\_SUPPORTED@{SERVAPP\_NUM\_ATTR\_SUPPORTED}!simple\_gatt\_profile.c@{simple\_gatt\_profile.c}}
+\doxysubsubsection{\texorpdfstring{SERVAPP\_NUM\_ATTR\_SUPPORTED}{SERVAPP\_NUM\_ATTR\_SUPPORTED}}
+{\footnotesize\ttfamily \#define S\+E\+R\+V\+A\+P\+P\+\_\+\+N\+U\+M\+\_\+\+A\+T\+T\+R\+\_\+\+S\+U\+P\+P\+O\+R\+T\+ED~17}
+
+
+
+Definition at line 73 of file simple\+\_\+gatt\+\_\+profile.\+c.
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{simple__gatt__profile_8c_a47e0bfe23b1d44f7803b8beebf2aa7c2}\label{simple__gatt__profile_8c_a47e0bfe23b1d44f7803b8beebf2aa7c2}} 
+\index{simple\_gatt\_profile.c@{simple\_gatt\_profile.c}!SimpleProfile\_AddService@{SimpleProfile\_AddService}}
+\index{SimpleProfile\_AddService@{SimpleProfile\_AddService}!simple\_gatt\_profile.c@{simple\_gatt\_profile.c}}
+\doxysubsubsection{\texorpdfstring{SimpleProfile\_AddService()}{SimpleProfile\_AddService()}}
+{\footnotesize\ttfamily b\+Status\+\_\+t Simple\+Profile\+\_\+\+Add\+Service (\begin{DoxyParamCaption}\item[{uint32}]{services }\end{DoxyParamCaption})}
+
+
+
+Definition at line 384 of file simple\+\_\+gatt\+\_\+profile.\+c.
+
+\mbox{\Hypertarget{simple__gatt__profile_8c_ad5db30f0ef90feb808b44bea29612e90}\label{simple__gatt__profile_8c_ad5db30f0ef90feb808b44bea29612e90}} 
+\index{simple\_gatt\_profile.c@{simple\_gatt\_profile.c}!SimpleProfile\_GetParameter@{SimpleProfile\_GetParameter}}
+\index{SimpleProfile\_GetParameter@{SimpleProfile\_GetParameter}!simple\_gatt\_profile.c@{simple\_gatt\_profile.c}}
+\doxysubsubsection{\texorpdfstring{SimpleProfile\_GetParameter()}{SimpleProfile\_GetParameter()}}
+{\footnotesize\ttfamily b\+Status\+\_\+t Simple\+Profile\+\_\+\+Get\+Parameter (\begin{DoxyParamCaption}\item[{uint8}]{param,  }\item[{void $\ast$}]{value }\end{DoxyParamCaption})}
+
+
+
+Definition at line 539 of file simple\+\_\+gatt\+\_\+profile.\+c.
+
+\mbox{\Hypertarget{simple__gatt__profile_8c_ab7a920d5c8a0f1eaef199fa3136d0853}\label{simple__gatt__profile_8c_ab7a920d5c8a0f1eaef199fa3136d0853}} 
+\index{simple\_gatt\_profile.c@{simple\_gatt\_profile.c}!SimpleProfile\_RegisterAppCBs@{SimpleProfile\_RegisterAppCBs}}
+\index{SimpleProfile\_RegisterAppCBs@{SimpleProfile\_RegisterAppCBs}!simple\_gatt\_profile.c@{simple\_gatt\_profile.c}}
+\doxysubsubsection{\texorpdfstring{SimpleProfile\_RegisterAppCBs()}{SimpleProfile\_RegisterAppCBs()}}
+{\footnotesize\ttfamily b\+Status\+\_\+t Simple\+Profile\+\_\+\+Register\+App\+C\+Bs (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structsimple_profile_c_bs__t}{simple\+Profile\+C\+Bs\+\_\+t}} $\ast$}]{app\+Callbacks }\end{DoxyParamCaption})}
+
+
+
+Definition at line 425 of file simple\+\_\+gatt\+\_\+profile.\+c.
+
+\mbox{\Hypertarget{simple__gatt__profile_8c_a0511130883180d2101d3e1c0f33a2611}\label{simple__gatt__profile_8c_a0511130883180d2101d3e1c0f33a2611}} 
+\index{simple\_gatt\_profile.c@{simple\_gatt\_profile.c}!SimpleProfile\_SetParameter@{SimpleProfile\_SetParameter}}
+\index{SimpleProfile\_SetParameter@{SimpleProfile\_SetParameter}!simple\_gatt\_profile.c@{simple\_gatt\_profile.c}}
+\doxysubsubsection{\texorpdfstring{SimpleProfile\_SetParameter()}{SimpleProfile\_SetParameter()}}
+{\footnotesize\ttfamily b\+Status\+\_\+t Simple\+Profile\+\_\+\+Set\+Parameter (\begin{DoxyParamCaption}\item[{uint8}]{param,  }\item[{uint8}]{len,  }\item[{void $\ast$}]{value }\end{DoxyParamCaption})}
+
+
+
+Definition at line 453 of file simple\+\_\+gatt\+\_\+profile.\+c.
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{simple__gatt__profile_8c_a0424ff44df10a70bacab05ad643208c0}\label{simple__gatt__profile_8c_a0424ff44df10a70bacab05ad643208c0}} 
+\index{simple\_gatt\_profile.c@{simple\_gatt\_profile.c}!simpleProfileCBs@{simpleProfileCBs}}
+\index{simpleProfileCBs@{simpleProfileCBs}!simple\_gatt\_profile.c@{simple\_gatt\_profile.c}}
+\doxysubsubsection{\texorpdfstring{simpleProfileCBs}{simpleProfileCBs}}
+{\footnotesize\ttfamily C\+O\+N\+ST gatt\+Service\+C\+Bs\+\_\+t simple\+Profile\+C\+Bs}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{  simpleProfile\_ReadAttrCB,  }
+\DoxyCodeLine{  simpleProfile\_WriteAttrCB, }
+\DoxyCodeLine{  NULL                       }
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+Definition at line 362 of file simple\+\_\+gatt\+\_\+profile.\+c.
+
+\mbox{\Hypertarget{simple__gatt__profile_8c_adf6bd562a568305b8de01ce536e17c2e}\label{simple__gatt__profile_8c_adf6bd562a568305b8de01ce536e17c2e}} 
+\index{simple\_gatt\_profile.c@{simple\_gatt\_profile.c}!simpleProfilechar1UUID@{simpleProfilechar1UUID}}
+\index{simpleProfilechar1UUID@{simpleProfilechar1UUID}!simple\_gatt\_profile.c@{simple\_gatt\_profile.c}}
+\doxysubsubsection{\texorpdfstring{simpleProfilechar1UUID}{simpleProfilechar1UUID}}
+{\footnotesize\ttfamily C\+O\+N\+ST uint8 simple\+Profilechar1\+U\+U\+ID\mbox{[}A\+T\+T\+\_\+\+B\+T\+\_\+\+U\+U\+I\+D\+\_\+\+S\+I\+ZE\mbox{]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{  LO\_UINT16(\mbox{\hyperlink{simple__gatt__profile_8h_aec642c71298188b2911589bfbc93c04b}{SIMPLEPROFILE\_CHAR1\_UUID}}), HI\_UINT16(\mbox{\hyperlink{simple__gatt__profile_8h_aec642c71298188b2911589bfbc93c04b}{SIMPLEPROFILE\_CHAR1\_UUID}})}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+Definition at line 88 of file simple\+\_\+gatt\+\_\+profile.\+c.
+
+\mbox{\Hypertarget{simple__gatt__profile_8c_a24ebada17441ec1fd57ed3f94788e3a8}\label{simple__gatt__profile_8c_a24ebada17441ec1fd57ed3f94788e3a8}} 
+\index{simple\_gatt\_profile.c@{simple\_gatt\_profile.c}!simpleProfilechar2UUID@{simpleProfilechar2UUID}}
+\index{simpleProfilechar2UUID@{simpleProfilechar2UUID}!simple\_gatt\_profile.c@{simple\_gatt\_profile.c}}
+\doxysubsubsection{\texorpdfstring{simpleProfilechar2UUID}{simpleProfilechar2UUID}}
+{\footnotesize\ttfamily C\+O\+N\+ST uint8 simple\+Profilechar2\+U\+U\+ID\mbox{[}A\+T\+T\+\_\+\+B\+T\+\_\+\+U\+U\+I\+D\+\_\+\+S\+I\+ZE\mbox{]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{  LO\_UINT16(\mbox{\hyperlink{simple__gatt__profile_8h_abe028deef4a21bdbe37aa08f7be6b66a}{SIMPLEPROFILE\_CHAR2\_UUID}}), HI\_UINT16(\mbox{\hyperlink{simple__gatt__profile_8h_abe028deef4a21bdbe37aa08f7be6b66a}{SIMPLEPROFILE\_CHAR2\_UUID}})}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+Definition at line 94 of file simple\+\_\+gatt\+\_\+profile.\+c.
+
+\mbox{\Hypertarget{simple__gatt__profile_8c_a38368edaaed16e1efea310ae116ba0a3}\label{simple__gatt__profile_8c_a38368edaaed16e1efea310ae116ba0a3}} 
+\index{simple\_gatt\_profile.c@{simple\_gatt\_profile.c}!simpleProfilechar3UUID@{simpleProfilechar3UUID}}
+\index{simpleProfilechar3UUID@{simpleProfilechar3UUID}!simple\_gatt\_profile.c@{simple\_gatt\_profile.c}}
+\doxysubsubsection{\texorpdfstring{simpleProfilechar3UUID}{simpleProfilechar3UUID}}
+{\footnotesize\ttfamily C\+O\+N\+ST uint8 simple\+Profilechar3\+U\+U\+ID\mbox{[}A\+T\+T\+\_\+\+B\+T\+\_\+\+U\+U\+I\+D\+\_\+\+S\+I\+ZE\mbox{]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{  LO\_UINT16(\mbox{\hyperlink{simple__gatt__profile_8h_afb2bc9d25f7bbecd74cd54bf40836706}{SIMPLEPROFILE\_CHAR3\_UUID}}), HI\_UINT16(\mbox{\hyperlink{simple__gatt__profile_8h_afb2bc9d25f7bbecd74cd54bf40836706}{SIMPLEPROFILE\_CHAR3\_UUID}})}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+Definition at line 100 of file simple\+\_\+gatt\+\_\+profile.\+c.
+
+\mbox{\Hypertarget{simple__gatt__profile_8c_aac596ccea16ce3e24483e3e955b5943a}\label{simple__gatt__profile_8c_aac596ccea16ce3e24483e3e955b5943a}} 
+\index{simple\_gatt\_profile.c@{simple\_gatt\_profile.c}!simpleProfilechar4UUID@{simpleProfilechar4UUID}}
+\index{simpleProfilechar4UUID@{simpleProfilechar4UUID}!simple\_gatt\_profile.c@{simple\_gatt\_profile.c}}
+\doxysubsubsection{\texorpdfstring{simpleProfilechar4UUID}{simpleProfilechar4UUID}}
+{\footnotesize\ttfamily C\+O\+N\+ST uint8 simple\+Profilechar4\+U\+U\+ID\mbox{[}A\+T\+T\+\_\+\+B\+T\+\_\+\+U\+U\+I\+D\+\_\+\+S\+I\+ZE\mbox{]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{  LO\_UINT16(\mbox{\hyperlink{simple__gatt__profile_8h_a64fe29bc72185f6cbec12cfaec827eb4}{SIMPLEPROFILE\_CHAR4\_UUID}}), HI\_UINT16(\mbox{\hyperlink{simple__gatt__profile_8h_a64fe29bc72185f6cbec12cfaec827eb4}{SIMPLEPROFILE\_CHAR4\_UUID}})}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+Definition at line 106 of file simple\+\_\+gatt\+\_\+profile.\+c.
+
+\mbox{\Hypertarget{simple__gatt__profile_8c_adb6e344d0a20a98fbc5857f35aec7538}\label{simple__gatt__profile_8c_adb6e344d0a20a98fbc5857f35aec7538}} 
+\index{simple\_gatt\_profile.c@{simple\_gatt\_profile.c}!simpleProfilechar5UUID@{simpleProfilechar5UUID}}
+\index{simpleProfilechar5UUID@{simpleProfilechar5UUID}!simple\_gatt\_profile.c@{simple\_gatt\_profile.c}}
+\doxysubsubsection{\texorpdfstring{simpleProfilechar5UUID}{simpleProfilechar5UUID}}
+{\footnotesize\ttfamily C\+O\+N\+ST uint8 simple\+Profilechar5\+U\+U\+ID\mbox{[}A\+T\+T\+\_\+\+B\+T\+\_\+\+U\+U\+I\+D\+\_\+\+S\+I\+ZE\mbox{]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{  LO\_UINT16(\mbox{\hyperlink{simple__gatt__profile_8h_adcc49853b494df57a8786afe7cbeb257}{SIMPLEPROFILE\_CHAR5\_UUID}}), HI\_UINT16(\mbox{\hyperlink{simple__gatt__profile_8h_adcc49853b494df57a8786afe7cbeb257}{SIMPLEPROFILE\_CHAR5\_UUID}})}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+Definition at line 112 of file simple\+\_\+gatt\+\_\+profile.\+c.
+
+\mbox{\Hypertarget{simple__gatt__profile_8c_a1ff1dad1893bde8bfb1d027028787273}\label{simple__gatt__profile_8c_a1ff1dad1893bde8bfb1d027028787273}} 
+\index{simple\_gatt\_profile.c@{simple\_gatt\_profile.c}!simpleProfileServUUID@{simpleProfileServUUID}}
+\index{simpleProfileServUUID@{simpleProfileServUUID}!simple\_gatt\_profile.c@{simple\_gatt\_profile.c}}
+\doxysubsubsection{\texorpdfstring{simpleProfileServUUID}{simpleProfileServUUID}}
+{\footnotesize\ttfamily C\+O\+N\+ST uint8 simple\+Profile\+Serv\+U\+U\+ID\mbox{[}A\+T\+T\+\_\+\+B\+T\+\_\+\+U\+U\+I\+D\+\_\+\+S\+I\+ZE\mbox{]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{  LO\_UINT16(\mbox{\hyperlink{simple__gatt__profile_8h_a4c58766621c5e95d6f92d11dbd75d7c7}{SIMPLEPROFILE\_SERV\_UUID}}), HI\_UINT16(\mbox{\hyperlink{simple__gatt__profile_8h_a4c58766621c5e95d6f92d11dbd75d7c7}{SIMPLEPROFILE\_SERV\_UUID}})}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+Definition at line 82 of file simple\+\_\+gatt\+\_\+profile.\+c.
+
