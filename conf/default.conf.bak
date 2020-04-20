@@ -5,11 +5,11 @@ server {
 
     # Domains
     server_name hitch.helioscapstone.com;
+    server_name localhost;
 
     # File indexing and logging
     autoindex on;
-    access_log /var/log/nginx/http_access.log;
-    error_log /var/log/nginx/error.log warn;
+    #access_log /var/log/nginx/http_access.log;
 
     # Serve static HTML files
     location / {
@@ -43,7 +43,7 @@ server {
     server_name duet.helioscapstone.com;
 
     # File indexing and logging
-    access_log /var/log/nginx/duet_http_access.log;
+    #access_log /var/log/nginx/duet_http_access.log;
 
     # Reverse proxy forward traffic to DUET
     location / {
