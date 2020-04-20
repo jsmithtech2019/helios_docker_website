@@ -28,7 +28,6 @@ while($row = mysqli_fetch_array($customer))
 
     // Print info & tables for every test run on this truck/trailer combo
     while(($truckrow = mysqli_fetch_array($truck)) && ($trailerrow = mysqli_fetch_array($trailer))) {
-
         // Create customer information table
         echo "<p align='left'><b>Customer Email:</b> {$row['email']} | <b>Customer Phone Number:</b> {$row['phone']} | <b>Truck License Plate:</b> {$truckrow['truck_plate']} | <b>Trailer License Plate:</b> {$truckrow['trailer_plate']}</p>";
 
